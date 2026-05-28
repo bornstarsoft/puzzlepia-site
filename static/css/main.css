@@ -298,7 +298,8 @@ img {
 
 .game-grid,
 .feature-grid,
-.daily-link-grid {
+.daily-link-grid,
+.blog-grid {
   display: grid;
   gap: 14px;
   margin-top: 26px;
@@ -382,7 +383,8 @@ img {
 }
 
 .game-hero,
-.detail-section {
+.detail-section,
+.blog-card {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 12px 34px rgba(87, 62, 140, 0.1);
@@ -467,6 +469,34 @@ img {
   font-weight: 950;
 }
 
+.blog-card {
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.blog-card__date {
+  margin: 0 0 8px;
+  color: var(--pink);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.blog-card h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.35rem, 5vw, 1.8rem);
+  line-height: 1.15;
+}
+
+.blog-card h2 a {
+  text-decoration: none;
+}
+
+.blog-card p:not(.blog-card__date) {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
 .feature {
   padding: 20px;
   border-radius: 20px;
@@ -539,7 +569,8 @@ img {
 
   .game-grid,
   .feature-grid,
-  .daily-link-grid {
+  .daily-link-grid,
+  .blog-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

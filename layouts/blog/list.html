@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="page blog-list">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default .Title }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div class="page__content">
+{{ .Content }}
+  </div>
+  <div class="blog-grid">
+{{ range .Pages.ByDate.Reverse }}
+    <article class="blog-card">
+      <p class="blog-card__date">{{ .Date.Format "January 2, 2006" }}</p>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p>{{ .Description }}</p>
+      <a class="button button--secondary" href="{{ .RelPermalink }}">Read post</a>
+    </article>
+{{ end }}
+  </div>
+</section>
+{{ end }}
