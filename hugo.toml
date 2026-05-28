@@ -4,4 +4,9 @@ title = "Puzzlepia"
 disableKinds = ["taxonomy", "term"]
 
 [params]
+  defaultTitle = "Puzzlepia | Your Daily Puzzle World"
   description = "Puzzlepia is BornstarSoft's official puzzle hub for daily puzzle breaks, colorful casual games, and friendly brain-teasing fun."
+  defaultDescription = "Puzzlepia is BornstarSoft's official puzzle hub for daily puzzle breaks, colorful casual games, and friendly brain-teasing fun."
+  siteName = "Puzzlepia"
+  defaultLocale = "en_US"
+  twitterCard = "summary"

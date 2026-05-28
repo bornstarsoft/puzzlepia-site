@@ -1,0 +1,45 @@
+{{- $siteName := .Site.Params.siteName | default .Site.Title -}}
+{{- $siteURL := .Site.BaseURL -}}
+{{- $description := .Description | default (.Site.Params.defaultDescription | default .Site.Params.description) -}}
+{{- $org := dict "@type" "Organization" "@id" (printf "%s#organization" $siteURL) "name" "BornstarSoft" "url" $siteURL -}}
+{{- $items := slice -}}
+
+{{- if .IsHome -}}
+  {{- $website := dict "@context" "https://schema.org" "@type" "WebSite" "@id" (printf "%s#website" $siteURL) "name" $siteName "url" $siteURL "description" $description "inLanguage" (.Site.LanguageCode | default "en") "publisher" $org -}}
+  {{- $organization := merge (dict "@context" "https://schema.org" "description" "BornstarSoft operates Puzzlepia, an official daily puzzle hub.") $org -}}
+  {{- $items = $items | append $website | append $organization -}}
+{{- else if and .IsPage (eq .Section "blog") -}}
+  {{- $posting := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "description" $description "url" .Permalink "mainEntityOfPage" .Permalink "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00") "author" $org "publisher" $org "isPartOf" (dict "@type" "Blog" "name" (printf "%s Blog" $siteName) "url" (absURL "blog/")) -}}
+  {{- $items = $items | append $posting -}}
+{{- else if and .IsPage (eq .Section "games") -}}
+  {{- $work := dict "@context" "https://schema.org" "@type" "CreativeWork" "name" .Title "description" $description "url" .Permalink "publisher" $org "isPartOf" (dict "@type" "WebSite" "name" $siteName "url" $siteURL) -}}
+  {{- with .Params.genre }}{{ $work = merge $work (dict "genre" .) }}{{ end -}}
+  {{- with .Params.storeURL }}{{ $work = merge $work (dict "sameAs" (slice .)) }}{{ end -}}
+  {{- $items = $items | append $work -}}
+{{- else if and .IsPage (eq .Section "daily") -}}
+  {{- $work := dict "@context" "https://schema.org" "@type" "CreativeWork" "name" .Title "description" $description "url" .Permalink "publisher" $org "isPartOf" (dict "@type" "WebSite" "name" $siteName "url" $siteURL) -}}
+  {{- with .Params.puzzleType }}{{ $work = merge $work (dict "genre" .) }}{{ end -}}
+  {{- $items = $items | append $work -}}
+{{- end -}}
+
+{{- if not .IsHome -}}
+  {{- $breadcrumbItems := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" $siteURL) -}}
+  {{- if .Section -}}
+    {{- $sectionName := .Section | title -}}
+    {{- $sectionURL := absURL (printf "%s/" .Section) -}}
+    {{- if .IsSection -}}
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+    {{- else -}}
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" $sectionName "item" $sectionURL) -}}
+      {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+  {{- end -}}
+  {{- $breadcrumbs := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $breadcrumbItems -}}
+  {{- $items = $items | append $breadcrumbs -}}
+{{- end -}}
+
+{{- range $items }}
+  <script type="application/ld+json">{{ . | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- end }}
