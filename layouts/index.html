@@ -1,84 +1,74 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Site.Title }} - Your Daily Puzzle World</title>
-  <meta name="description" content="Play fresh daily puzzles, discover clever puzzle games, and explore the BornstarSoft puzzle universe.">
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f5edff, #ffffff 45%, #e9fbff);
-      color: #241c35;
-    }
-    main {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 32px;
-      text-align: center;
-    }
-    .card {
-      max-width: 760px;
-      padding: 56px 36px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.82);
-      box-shadow: 0 24px 80px rgba(99, 65, 180, 0.18);
-      border: 1px solid rgba(120, 87, 200, 0.12);
-    }
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(44px, 8vw, 82px);
-      letter-spacing: -0.05em;
-    }
-    .tagline {
-      margin: 0 0 24px;
-      font-size: clamp(22px, 4vw, 34px);
-      font-weight: 700;
-      color: #7c3aed;
-    }
-    p {
-      margin: 0 auto 32px;
-      max-width: 560px;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #554a68;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    a {
-      display: inline-block;
-      padding: 14px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .primary {
-      background: #7c3aed;
-      color: white;
-    }
-    .secondary {
-      background: #f0e7ff;
-      color: #5b21b6;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <section class="card">
-      <h1>Puzzlepia</h1>
-      <div class="tagline">Your Daily Puzzle World</div>
-      <p>Play fresh puzzles, discover clever games, and explore the BornstarSoft puzzle universe.</p>
-      <div class="buttons">
-        <a class="primary" href="#">Play Today’s Puzzle</a>
-        <a class="secondary" href="#">Explore Games</a>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+{{ define "main" }}
+<section class="hero">
+  <div class="hero__content">
+    <p class="eyebrow">Official puzzle hub by BornstarSoft</p>
+    <h1>Puzzlepia</h1>
+    <p class="hero__tagline">Your Daily Puzzle World</p>
+    <p class="hero__copy">Play fresh puzzles, discover clever games, and explore the BornstarSoft puzzle universe.</p>
+    <div class="hero__actions">
+      <a class="button button--primary" href="/daily/">Play Today's Puzzle</a>
+      <a class="button button--secondary" href="/games/">Explore Games</a>
+    </div>
+  </div>
+  <div class="hero__visual" aria-label="Colorful puzzle tiles">
+    <span class="tile tile--mint">7</span>
+    <span class="tile tile--pink">?</span>
+    <span class="tile tile--gold">A</span>
+    <span class="tile tile--purple">3</span>
+    <span class="tile tile--white">+</span>
+    <span class="tile tile--mint">K</span>
+    <span class="tile tile--gold">5</span>
+    <span class="tile tile--pink">*</span>
+    <span class="tile tile--purple">9</span>
+  </div>
+</section>
+
+<section class="section section--daily">
+  <div class="section__header">
+    <p class="eyebrow">Daily puzzle</p>
+    <h2>Today's Puzzle Preview</h2>
+    <p>A quick daily challenge is coming soon. Puzzlepia will become your home base for bite-sized puzzle play.</p>
+  </div>
+  <div class="daily-preview">
+    <div>
+      <h3>Fresh puzzle energy, every day</h3>
+      <p>Start with a light brain warm-up, then explore more BornstarSoft games from the Puzzlepia hub.</p>
+    </div>
+    <a class="button button--primary" href="/daily/">Open Daily Puzzle</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section__header">
+    <p class="eyebrow">Featured games</p>
+    <h2>Explore the Puzzlepia Collection</h2>
+    <p>Classic logic, word play, color matching, and relaxing puzzle games from BornstarSoft.</p>
+  </div>
+  <div class="game-grid">
+{{ range first 5 ((where .Site.RegularPages "Section" "games").ByWeight) }}
+{{ partial "game-card.html" . }}
+{{ end }}
+  </div>
+</section>
+
+<section class="section section--why">
+  <div class="section__header">
+    <p class="eyebrow">Why Puzzlepia?</p>
+    <h2>A cheerful place for clever breaks</h2>
+  </div>
+  <div class="feature-grid">
+    <article class="feature">
+      <h3>Daily-friendly</h3>
+      <p>Designed for quick, satisfying puzzle moments that fit into everyday routines.</p>
+    </article>
+    <article class="feature">
+      <h3>Game discovery</h3>
+      <p>Find BornstarSoft puzzle games from one simple, lightweight hub.</p>
+    </article>
+    <article class="feature">
+      <h3>Built to grow</h3>
+      <p>Starting simple now, with room for more puzzles, guides, and game updates later.</p>
+    </article>
+  </div>
+</section>
+{{ end }}

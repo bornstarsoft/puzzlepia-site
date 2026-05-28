@@ -1,0 +1,7 @@
+<article class="game-card">
+  <div class="game-card__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</div>
+  <div>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description }}</p>
+  </div>
+</article>

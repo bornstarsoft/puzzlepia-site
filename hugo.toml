@@ -1,3 +1,6 @@
 baseURL = "https://puzzlepia.com/"
 languageCode = "en-us"
 title = "Puzzlepia"
+
+[params]
+  description = "Play fresh daily puzzles, discover clever puzzle games, and explore the BornstarSoft puzzle universe."

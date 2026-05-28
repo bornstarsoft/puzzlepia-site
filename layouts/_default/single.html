@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="page">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default .Section | humanize }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div class="page__content">
+{{ .Content }}
+  </div>
+</article>
+{{ end }}
