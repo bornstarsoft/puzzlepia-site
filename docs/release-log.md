@@ -41,3 +41,28 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added publishing checklist, content style guide, future content queue, and this release log.
 - Focused on repeatable publishing quality without changing the public feature set.
+
+## Phase 2D Local Publishing Checks
+
+- Added `tools/check_site.sh` for repeatable local Hugo, generated output, ignored `public/`, robots, sitemap, and whitespace checks.
+- Added URL inventory documentation for link and sitemap review.
+
+## Phase 2E SEO and Sharing Metadata
+
+- Improved shared head metadata with Open Graph, Twitter card, article dates, and JSON-LD.
+- Added conservative structured data for home, Blog posts, Games, Daily pages, and breadcrumbs.
+
+## Phase 2F SVG Open Graph Image
+
+- Added a lightweight 1200x630 SVG Open Graph source image for Puzzlepia.
+- Wired default social image metadata with page-level override support.
+
+## Phase 2G PNG Open Graph Image
+
+- Added a 1200x630 PNG social sharing image generated from the SVG source.
+- Switched default `og:image` and `twitter:image` to the PNG for better social compatibility.
+
+## Phase 3-Prep Documentation Checkpoint
+
+- Documented the current live MVP status, completed scope, known limitations, and next phase options.
+- Added a practical next-phase plan for Daily Puzzle UX, content cadence, Games hub conversion, and brand assets.
