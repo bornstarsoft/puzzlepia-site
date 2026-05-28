@@ -8,7 +8,7 @@
 {{ $title := cond .IsHome $defaultTitle (printf "%s | %s" .Title $siteName) }}
 {{ $canonical := .Permalink }}
 {{ $ogType := cond .IsPage "article" "website" }}
-{{ $image := .Params.ogImage | default .Params.image | default "/images/og/puzzlepia-og.svg" }}
+{{ $image := .Params.ogImage | default .Params.image | default "/images/og/puzzlepia-og.png" }}
 {{ $imageURL := absURL $image }}
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}">

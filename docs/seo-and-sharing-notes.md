@@ -20,8 +20,9 @@ Puzzlepia uses lightweight Hugo metadata in the shared head partial. Keep this f
 
 - Open Graph title, description, URL, site name, type, and locale are generated in `layouts/partials/head.html`.
 - Twitter card metadata uses `summary_large_image` by default.
-- Default share image: `/images/og/puzzlepia-og.svg`.
-- The default image is 1200x630 and is emitted as `og:image` and `twitter:image`.
+- Default share image: `/images/og/puzzlepia-og.png`.
+- The default PNG is 1200x630 and is emitted as `og:image` and `twitter:image`.
+- The SVG source remains available at `/static/images/og/puzzlepia-og.svg` for future edits.
 - Pages may set `image` or `ogImage` in front matter to use a page-specific share image later.
 - Page-specific images should be real static assets or confirmed absolute URLs.
 
@@ -43,10 +44,11 @@ Puzzlepia uses lightweight Hugo metadata in the shared head partial. Keep this f
 
 ## Future Open Graph Images
 
-The default image is now available at:
+The default share image is now available at:
 
-- Source path: `/static/images/og/puzzlepia-og.svg`
-- Public path: `/images/og/puzzlepia-og.svg`
+- PNG source path: `/static/images/og/puzzlepia-og.png`
+- PNG public path: `/images/og/puzzlepia-og.png`
+- Editable SVG source path: `/static/images/og/puzzlepia-og.svg`
 
 Future page-specific share images can use:
 
