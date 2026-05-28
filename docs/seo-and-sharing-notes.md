@@ -19,8 +19,11 @@ Puzzlepia uses lightweight Hugo metadata in the shared head partial. Keep this f
 ## Sharing Metadata
 
 - Open Graph title, description, URL, site name, type, and locale are generated in `layouts/partials/head.html`.
-- Twitter card metadata uses `summary` by default.
-- No `og:image` is currently emitted because there is no final share image yet.
+- Twitter card metadata uses `summary_large_image` by default.
+- Default share image: `/images/og/puzzlepia-og.svg`.
+- The default image is 1200x630 and is emitted as `og:image` and `twitter:image`.
+- Pages may set `image` or `ogImage` in front matter to use a page-specific share image later.
+- Page-specific images should be real static assets or confirmed absolute URLs.
 
 ## JSON-LD Included
 
@@ -38,12 +41,17 @@ Puzzlepia uses lightweight Hugo metadata in the shared head partial. Keep this f
 - Do not imply dynamic daily puzzle generation unless it exists.
 - Do not add analytics snippets manually.
 
-## Future Open Graph Image
+## Future Open Graph Images
 
-A future task can add a real share image:
+The default image is now available at:
 
-- Path: `/static/images/og/puzzlepia-og.png`
+- Source path: `/static/images/og/puzzlepia-og.svg`
+- Public path: `/images/og/puzzlepia-og.svg`
+
+Future page-specific share images can use:
+
 - Recommended size: 1200x630
-- Suggested content: Puzzlepia logo with "Your Daily Puzzle World"
+- Suggested content: Puzzlepia logo, page topic, and "Your Daily Puzzle World"
+- Suggested future raster path pattern: `/static/images/og/page-name-og.png`
 
-Do not emit an `og:image` URL until the actual image exists.
+Do not add fake screenshots, misleading store badges, fake ratings, or app-store claims to share images.

@@ -9,4 +9,4 @@ disableKinds = ["taxonomy", "term"]
   defaultDescription = "Puzzlepia is BornstarSoft's official puzzle hub for daily puzzle breaks, colorful casual games, and friendly brain-teasing fun."
   siteName = "Puzzlepia"
   defaultLocale = "en_US"
-  twitterCard = "summary"
+  twitterCard = "summary_large_image"
