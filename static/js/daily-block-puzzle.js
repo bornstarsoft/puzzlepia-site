@@ -8,21 +8,19 @@
   }
 
   var size = 6;
-  var board = Array.from({ length: size }, function () {
-    return Array(size).fill(false);
-  });
   var pieces = [
     { id: "line3", label: "Line 3", cells: [[0, 0], [0, 1], [0, 2]] },
     { id: "square", label: "Square", cells: [[0, 0], [0, 1], [1, 0], [1, 1]] },
     { id: "corner", label: "Corner", cells: [[0, 0], [1, 0], [1, 1]] }
   ];
-  var selected = null;
+  var board = [];
   var placed = {};
+  var selected = null;
   var boardEl = helpers.qs(root, "[data-board]");
   var trayEl = helpers.qs(root, "[data-tray]");
 
-  function emptyBoard() {
-    board = Array.from({ length: size }, function () {
+  function makeBoard() {
+    return Array.from({ length: size }, function () {
       return Array(size).fill(false);
     });
   }
@@ -35,50 +33,33 @@
     });
   }
 
-  function clearLines() {
-    var rows = [];
-    var cols = [];
-    var r;
-    var c;
-    for (r = 0; r < size; r += 1) {
-      if (board[r].every(Boolean)) {
-        rows.push(r);
-      }
-    }
-    for (c = 0; c < size; c += 1) {
-      if (board.every(function (row) { return row[c]; })) {
-        cols.push(c);
-      }
-    }
-    rows.forEach(function (row) {
-      for (c = 0; c < size; c += 1) {
-        board[row][c] = false;
-      }
-    });
-    cols.forEach(function (col) {
-      for (r = 0; r < size; r += 1) {
-        board[r][col] = false;
-      }
-    });
-    return rows.length + cols.length;
-  }
-
   function renderBoard() {
     helpers.qsa(boardEl, ".block-cell").forEach(function (cell) {
       var row = Number(cell.dataset.row);
       var col = Number(cell.dataset.col);
       cell.classList.toggle("is-filled", board[row][col]);
+      cell.classList.remove("is-invalid");
     });
   }
 
+  function completeIfReady() {
+    if (pieces.every(function (piece) { return placed[piece.id]; })) {
+      selected = null;
+      helpers.setStatus(root, "All pieces placed.");
+      helpers.showComplete(root);
+    }
+  }
+
   function place(row, col) {
+    var cell = boardEl.querySelector('[data-row="' + row + '"][data-col="' + col + '"]');
     if (!selected) {
       helpers.setStatus(root, "Choose a piece first.");
+      helpers.pulse(cell, "is-invalid");
       return;
     }
     if (!canPlace(selected, row, col)) {
       helpers.setStatus(root, "That piece needs more open space.");
-      helpers.pulse(boardEl.querySelector('[data-row="' + row + '"][data-col="' + col + '"]'), "is-invalid");
+      helpers.pulse(cell, "is-invalid");
       return;
     }
     selected.cells.forEach(function (offset) {
@@ -90,21 +71,27 @@
       button.disabled = true;
       button.classList.remove("is-selected");
     }
-    var clears = clearLines();
-    renderBoard();
     selected = null;
-    if (pieces.every(function (piece) { return placed[piece.id]; })) {
-      helpers.setStatus(root, "All pieces placed.");
-      helpers.showComplete(root);
-    } else {
-      helpers.setStatus(root, clears ? "Line cleared. Choose the next piece." : "Piece placed. Choose the next piece.");
+    renderBoard();
+    helpers.setStatus(root, "Piece placed. Choose the next piece.");
+    completeIfReady();
+  }
+
+  function selectPiece(piece) {
+    if (placed[piece.id]) {
+      return;
     }
+    selected = piece;
+    helpers.qsa(trayEl, ".piece-button").forEach(function (button) {
+      button.classList.toggle("is-selected", button.dataset.piece === piece.id);
+    });
+    helpers.setStatus(root, piece.label + " selected. Tap a board cell.");
   }
 
   function resetGame() {
-    emptyBoard();
-    selected = null;
+    board = makeBoard();
     placed = {};
+    selected = null;
     renderBoard();
     helpers.qsa(trayEl, ".piece-button").forEach(function (button) {
       button.disabled = false;
@@ -115,8 +102,10 @@
   }
 
   function buildBoard() {
-    for (var row = 0; row < size; row += 1) {
-      for (var col = 0; col < size; col += 1) {
+    var row;
+    var col;
+    for (row = 0; row < size; row += 1) {
+      for (col = 0; col < size; col += 1) {
         var cell = document.createElement("button");
         cell.type = "button";
         cell.className = "block-cell";
@@ -139,11 +128,7 @@
       button.dataset.piece = piece.id;
       button.textContent = piece.label;
       button.addEventListener("click", function () {
-        selected = piece;
-        helpers.qsa(trayEl, ".piece-button").forEach(function (item) {
-          item.classList.toggle("is-selected", item.dataset.piece === piece.id);
-        });
-        helpers.setStatus(root, piece.label + " selected. Tap the board.");
+        selectPiece(piece);
       });
       trayEl.appendChild(button);
     });
@@ -152,4 +137,5 @@
   buildBoard();
   buildTray();
   helpers.wireReset(root, resetGame);
+  resetGame();
 })();

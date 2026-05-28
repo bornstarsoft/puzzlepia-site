@@ -139,11 +139,22 @@
 }
 
 .target-list li {
-  padding: 8px 10px;
+  padding: 0;
   border-radius: 999px;
   background: #ffffff;
   color: var(--muted);
   font-weight: 900;
+}
+
+.target-list button {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 950;
 }
 
 .target-list li.is-found {

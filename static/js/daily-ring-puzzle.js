@@ -7,7 +7,6 @@
     return;
   }
 
-  var cells = Array.from({ length: 9 }, function () { return {}; });
   var pieces = [
     { id: "pink-large", color: "pink", size: "large", label: "Pink large" },
     { id: "pink-medium", color: "pink", size: "medium", label: "Pink medium" },
@@ -15,15 +14,19 @@
     { id: "mint-large", color: "mint", size: "large", label: "Mint large" },
     { id: "gold-medium", color: "gold", size: "medium", label: "Gold medium" }
   ];
-  var lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-  var selected = null;
+  var cells = [];
   var placed = {};
+  var selected = null;
   var boardEl = helpers.qs(root, "[data-board]");
   var trayEl = helpers.qs(root, "[data-tray]");
 
   function renderCell(index) {
     var cell = boardEl.querySelector('[data-cell="' + index + '"]');
+    if (!cell) {
+      return;
+    }
     cell.innerHTML = "";
+    cell.classList.remove("is-invalid", "is-match");
     ["large", "medium", "small"].forEach(function (size) {
       var color = cells[index][size];
       if (!color) {
@@ -36,34 +39,30 @@
     });
   }
 
-  function markMatches() {
-    var matched = 0;
-    ["pink", "mint", "gold"].forEach(function (color) {
-      lines.forEach(function (line) {
-        var match = line.every(function (index) {
-          return Object.keys(cells[index]).some(function (size) {
-            return cells[index][size] === color;
-          });
-        });
-        if (match) {
-          line.forEach(function (index) {
-            matched += 1;
-            helpers.pulse(boardEl.querySelector('[data-cell="' + index + '"]'), "is-match");
-          });
-        }
-      });
+  function renderBoard() {
+    cells.forEach(function (_, index) {
+      renderCell(index);
     });
-    return matched;
+  }
+
+  function completeIfReady() {
+    if (pieces.every(function (piece) { return placed[piece.id]; })) {
+      selected = null;
+      helpers.setStatus(root, "All rings placed.");
+      helpers.showComplete(root);
+    }
   }
 
   function place(index) {
+    var cell = boardEl.querySelector('[data-cell="' + index + '"]');
     if (!selected) {
       helpers.setStatus(root, "Choose a ring first.");
+      helpers.pulse(cell, "is-invalid");
       return;
     }
     if (cells[index][selected.size]) {
       helpers.setStatus(root, "That cell already has a " + selected.size + " ring.");
-      helpers.pulse(boardEl.querySelector('[data-cell="' + index + '"]'), "is-invalid");
+      helpers.pulse(cell, "is-invalid");
       return;
     }
     cells[index][selected.size] = selected.color;
@@ -74,24 +73,27 @@
       button.disabled = true;
       button.classList.remove("is-selected");
     }
-    var matched = markMatches();
     selected = null;
-    if (pieces.every(function (piece) { return placed[piece.id]; })) {
-      helpers.setStatus(root, "All rings placed.");
-      helpers.showComplete(root);
-    } else {
-      helpers.setStatus(root, matched ? "Color line matched. Choose another ring." : "Ring placed. Choose another ring.");
+    helpers.setStatus(root, "Ring placed. Choose another ring.");
+    completeIfReady();
+  }
+
+  function selectPiece(piece) {
+    if (placed[piece.id]) {
+      return;
     }
+    selected = piece;
+    helpers.qsa(trayEl, ".ring-piece").forEach(function (button) {
+      button.classList.toggle("is-selected", button.dataset.piece === piece.id);
+    });
+    helpers.setStatus(root, piece.label + " selected. Tap a compatible cell.");
   }
 
   function resetGame() {
     cells = Array.from({ length: 9 }, function () { return {}; });
-    selected = null;
     placed = {};
-    helpers.qsa(boardEl, ".ring-cell").forEach(function (cell) {
-      cell.innerHTML = "";
-      cell.classList.remove("is-invalid", "is-match");
-    });
+    selected = null;
+    renderBoard();
     helpers.qsa(trayEl, ".ring-piece").forEach(function (button) {
       button.disabled = false;
       button.classList.remove("is-selected");
@@ -101,12 +103,12 @@
   }
 
   function buildBoard() {
-    for (var i = 0; i < 9; i += 1) {
+    for (var index = 0; index < 9; index += 1) {
       var cell = document.createElement("button");
       cell.type = "button";
       cell.className = "ring-cell";
-      cell.dataset.cell = i;
-      cell.setAttribute("aria-label", "Ring cell " + (i + 1));
+      cell.dataset.cell = index;
+      cell.setAttribute("aria-label", "Ring cell " + (index + 1));
       cell.addEventListener("click", function (event) {
         place(Number(event.currentTarget.dataset.cell));
       });
@@ -123,11 +125,7 @@
       button.dataset.color = piece.color;
       button.textContent = piece.label;
       button.addEventListener("click", function () {
-        selected = piece;
-        helpers.qsa(trayEl, ".ring-piece").forEach(function (item) {
-          item.classList.toggle("is-selected", item.dataset.piece === piece.id);
-        });
-        helpers.setStatus(root, piece.label + " selected.");
+        selectPiece(piece);
       });
       trayEl.appendChild(button);
     });
@@ -136,4 +134,5 @@
   buildBoard();
   buildTray();
   helpers.wireReset(root, resetGame);
+  resetGame();
 })();

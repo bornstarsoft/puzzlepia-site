@@ -11,6 +11,28 @@
   var next = 1;
   var grid = helpers.qs(root, "[data-grid]");
 
+  function completeIfReady() {
+    if (next > 16) {
+      helpers.setStatus(root, "Complete.");
+      helpers.showComplete(root);
+    }
+  }
+
+  function tapNumber(button, number) {
+    if (number !== next) {
+      helpers.setStatus(root, "Look for " + next + " first.");
+      helpers.pulse(button, "is-wrong");
+      return;
+    }
+    button.classList.add("is-done");
+    button.disabled = true;
+    next += 1;
+    if (next <= 16) {
+      helpers.setStatus(root, "Next number: " + next);
+    }
+    completeIfReady();
+  }
+
   function resetGame() {
     next = 1;
     helpers.qsa(grid, ".number-cell").forEach(function (button) {
@@ -29,25 +51,10 @@
     button.dataset.number = number;
     button.setAttribute("aria-label", "Number " + number);
     button.addEventListener("click", function () {
-      if (number !== next) {
-        button.classList.add("is-wrong");
-        helpers.setStatus(root, "Look for " + next + " first.");
-        window.setTimeout(function () {
-          button.classList.remove("is-wrong");
-        }, 260);
-        return;
-      }
-      button.classList.add("is-done");
-      button.disabled = true;
-      next += 1;
-      if (next > 16) {
-        helpers.setStatus(root, "Complete.");
-        helpers.showComplete(root);
-      } else {
-        helpers.setStatus(root, "Next number: " + next);
-      }
+      tapNumber(button, number);
     });
     grid.appendChild(button);
   });
   helpers.wireReset(root, resetGame);
+  resetGame();
 })();

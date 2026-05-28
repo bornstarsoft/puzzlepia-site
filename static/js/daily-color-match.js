@@ -8,6 +8,8 @@
   }
 
   var size = 5;
+  var targetColor = "pink";
+  var targetLabel = "Pink";
   var startingColors = [
     ["pink", "pink", "mint", "gold", "gold"],
     ["purple", "pink", "mint", "mint", "gold"],
@@ -15,7 +17,6 @@
     ["pink", "gold", "gold", "purple", "purple"],
     ["pink", "pink", "mint", "purple", "purple"]
   ];
-  var targets = ["pink", "mint", "gold", "purple"];
   var labels = {
     gold: "Gold",
     mint: "Mint",
@@ -23,7 +24,6 @@
     purple: "Purple"
   };
   var colors = [];
-  var targetIndex = 0;
   var grid = helpers.qs(root, "[data-grid]");
 
   function cloneColors() {
@@ -32,23 +32,14 @@
     });
   }
 
-  function currentTarget() {
-    return targets[targetIndex];
-  }
-
-  function remainingFor(color) {
+  function remainingTargetTiles() {
     return colors.reduce(function (total, row) {
-      return total + row.filter(function (tile) { return tile === color; }).length;
+      return total + row.filter(function (tile) { return tile === targetColor; }).length;
     }, 0);
   }
 
   function setProgress() {
-    var target = currentTarget();
-    if (!target) {
-      helpers.setStatus(root, "All colors cleared.");
-      return;
-    }
-    helpers.setStatus(root, "Target color: " + labels[target] + ". " + remainingFor(target) + " left.");
+    helpers.setStatus(root, "Target color: " + targetLabel + ". " + remainingTargetTiles() + " left.");
   }
 
   function render() {
@@ -63,56 +54,57 @@
     });
   }
 
-  function advanceTarget() {
-    while (currentTarget() && remainingFor(currentTarget()) === 0) {
-      targetIndex += 1;
-    }
-    if (!currentTarget()) {
-      helpers.setStatus(root, "All colors cleared.");
+  function completeIfReady() {
+    if (remainingTargetTiles() === 0) {
+      helpers.setStatus(root, "All pink tiles cleared.");
       helpers.showComplete(root);
-      return;
+    } else {
+      setProgress();
     }
-    setProgress();
   }
 
   function tapTile(row, col) {
     var color = colors[row][col];
-    var target = currentTarget();
     var button = grid.querySelector('[data-row="' + row + '"][data-col="' + col + '"]');
-    if (!color || !target) {
+    if (!color) {
       return;
     }
-    if (color !== target) {
-      helpers.setStatus(root, "Look for " + labels[target] + " tiles first.");
+    if (color !== targetColor) {
+      helpers.setStatus(root, "Look for " + targetLabel + " tiles first.");
       helpers.pulse(button, "is-invalid");
       return;
     }
     colors[row][col] = "";
     render();
-    advanceTarget();
+    completeIfReady();
   }
 
   function resetGame() {
     colors = cloneColors();
-    targetIndex = 0;
     render();
     helpers.hideComplete(root);
     setProgress();
   }
 
-  for (var row = 0; row < size; row += 1) {
-    for (var col = 0; col < size; col += 1) {
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "color-cell";
-      button.dataset.row = row;
-      button.dataset.col = col;
-      button.addEventListener("click", function (event) {
-        tapTile(Number(event.currentTarget.dataset.row), Number(event.currentTarget.dataset.col));
-      });
-      grid.appendChild(button);
+  function buildGrid() {
+    var row;
+    var col;
+    for (row = 0; row < size; row += 1) {
+      for (col = 0; col < size; col += 1) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = "color-cell";
+        button.dataset.row = row;
+        button.dataset.col = col;
+        button.addEventListener("click", function (event) {
+          tapTile(Number(event.currentTarget.dataset.row), Number(event.currentTarget.dataset.col));
+        });
+        grid.appendChild(button);
+      }
     }
   }
-  resetGame();
+
+  buildGrid();
   helpers.wireReset(root, resetGame);
+  resetGame();
 })();
