@@ -1,0 +1,51 @@
+{{ define "main" }}
+{{ $playable := where .RegularPagesRecursive "Params.playable" true }}
+{{ $challenges := where .RegularPagesRecursive "Params.challenge" true }}
+<section class="page daily-hub">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default .Title }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div class="page__content">
+{{ .Content }}
+  </div>
+
+{{ if $playable }}
+  <section class="daily-hub__section" aria-labelledby="playable-daily-title">
+    <div class="daily-hub__heading">
+      <p class="eyebrow">Playable puzzles</p>
+      <h2 id="playable-daily-title">Start with a quick game</h2>
+    </div>
+    <div class="game-grid">
+{{ range $playable.ByWeight }}
+{{ partial "game-card.html" . }}
+{{ end }}
+    </div>
+  </section>
+{{ end }}
+
+{{ if $challenges }}
+  <section class="daily-hub__section" aria-labelledby="daily-challenge-title">
+    <div class="daily-hub__heading">
+      <p class="eyebrow">Challenge ideas</p>
+      <h2 id="daily-challenge-title">Static daily puzzle prompts</h2>
+      <p>Use these short prompts as warmups, hints, or simple puzzle breaks before playing a daily game.</p>
+    </div>
+    <div class="challenge-grid">
+{{ range $challenges.ByWeight }}
+      <article class="challenge-card">
+        <div class="game-card__meta">
+{{ with .Params.puzzleType }}<span>{{ . }}</span>{{ end }}
+{{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
+        </div>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Description }}</p>
+        <a class="button button--secondary" href="{{ .RelPermalink }}">Open challenge</a>
+      </article>
+{{ end }}
+    </div>
+  </section>
+{{ end }}
+</section>
+{{ end }}
