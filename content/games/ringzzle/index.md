@@ -9,7 +9,7 @@ status: "In development"
 dailyTitle: "Daily Ring Puzzle"
 dailyURL: "/daily/ring-puzzle/"
 storeLabel: "Store link coming soon"
-storeNote: "Follow Puzzlepia for updates while Ringzzle details are prepared."
+storeNote: "The exact store link is not available yet. Play the related Daily Ring Puzzle now, and follow Puzzlepia for Ringzzle updates."
 why:
   - "Colorful ring placement creates a clean, tactile puzzle loop."
   - "Small choices feel satisfying without needing a long session."

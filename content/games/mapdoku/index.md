@@ -9,7 +9,7 @@ status: "In development"
 dailyTitle: "Daily Number Puzzle"
 dailyURL: "/daily/number-puzzle/"
 storeLabel: "Store link coming soon"
-storeNote: "Follow Puzzlepia for updates while Mapdoku details are prepared."
+storeNote: "The exact store link is not available yet. Try the related Daily Number Puzzle now, and follow Puzzlepia for Mapdoku updates."
 why:
   - "A logic-first puzzle direction for players who like careful deduction."
   - "Designed around thoughtful choices and steady progress."

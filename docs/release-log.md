@@ -71,3 +71,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Improved Daily Word Search grid interaction with defensive pointer drag plus tap-start/tap-end selection.
 - Added clearer progress, found-word feedback, invalid-selection feedback, and reset restoration for the Word Search starter.
+
+## Phase 3B Games Hub Conversion Polish
+
+- Clarified Games hub paths for playing Daily Puzzles or viewing BornstarSoft game pages.
+- Improved game detail CTAs with related Daily Puzzle actions and safe store/update messaging.

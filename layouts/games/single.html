@@ -10,6 +10,14 @@
 {{ with .Params.genre }}<span>{{ . }}</span>{{ end }}
 {{ with .Params.status }}<span>{{ . }}</span>{{ end }}
       </div>
+      <div class="game-hero__actions">
+        <a class="button button--primary" href="{{ .Params.dailyURL | default "/daily/" }}">{{ .Params.dailyHeroLabel | default "Play related daily puzzle" }}</a>
+{{ if .Params.storeURL }}
+        <a class="button button--secondary" href="{{ .Params.storeURL }}" rel="noopener" target="_blank">{{ .Params.storeLabel | default "Open store page" }}</a>
+{{ else }}
+        <span class="button button--disabled" aria-disabled="true">{{ .Params.storeLabel | default "Store link coming soon" }}</span>
+{{ end }}
+      </div>
     </div>
   </section>
 
@@ -33,9 +41,9 @@
   <section class="detail-section detail-section--split">
     <div>
       <h2>Related Daily Puzzle</h2>
-      <p>Try a lightweight Puzzlepia daily starter connected to this game style.</p>
+      <p>Start with a lightweight Puzzlepia daily puzzle connected to this game style.</p>
     </div>
-    <a class="button button--secondary" href="{{ .Params.dailyURL | default "/daily/" }}">{{ .Params.dailyTitle | default "Open Daily Puzzle" }}</a>
+    <a class="button button--primary" href="{{ .Params.dailyURL | default "/daily/" }}">{{ .Params.dailyTitle | default "Play Daily Puzzle" }}</a>
   </section>
 
   <section class="detail-section detail-section--split">
@@ -46,7 +54,7 @@
 {{ if .Params.storeURL }}
     <a class="button button--primary" href="{{ .Params.storeURL }}" rel="noopener" target="_blank">{{ .Params.storeLabel | default "Open store page" }}</a>
 {{ else }}
-    <span class="button button--disabled" aria-disabled="true">{{ .Params.storeLabel | default "Store link coming soon" }}</span>
+    <a class="button button--secondary" href="{{ .Params.dailyURL | default "/daily/" }}">Play related daily puzzle</a>
 {{ end }}
   </section>
 </article>

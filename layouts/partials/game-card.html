@@ -9,6 +9,15 @@
 {{ end }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     <p>{{ .Description }}</p>
-    <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">{{ if eq .Section "daily" }}Open puzzle{{ else }}View game{{ end }}</a>
+    <div class="game-card__actions">
+{{ if eq .Section "games" }}
+      <a class="button button--primary game-card__button" href="{{ .RelPermalink }}">View game</a>
+{{ with .Params.dailyURL }}
+      <a class="button button--secondary game-card__button" href="{{ . }}">Play daily puzzle</a>
+{{ end }}
+{{ else }}
+      <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">Open puzzle</a>
+{{ end }}
+    </div>
   </div>
 </article>

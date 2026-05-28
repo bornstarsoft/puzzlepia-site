@@ -8,7 +8,11 @@
   <div class="page__content">
 {{ .Content }}
   </div>
-  <div class="game-grid game-grid--hub">
+  <div class="hub-actions" aria-label="Puzzlepia game discovery options">
+    <a class="button button--primary" href="/daily/">Play Daily Puzzles</a>
+    <a class="button button--secondary" href="#games-list">View Game Pages</a>
+  </div>
+  <div class="game-grid game-grid--hub" id="games-list">
 {{ range .Pages.ByWeight }}
 {{ partial "game-card.html" . }}
 {{ end }}

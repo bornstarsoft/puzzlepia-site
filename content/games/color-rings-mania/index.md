@@ -9,7 +9,7 @@ status: "Coming soon"
 dailyTitle: "Daily Color Match"
 dailyURL: "/daily/color-match/"
 storeLabel: "Store link coming soon"
-storeNote: "Follow Puzzlepia for updates while Color Rings Mania details are prepared."
+storeNote: "The exact store link is not available yet. Try Daily Color Match now, and follow Puzzlepia for Color Rings Mania updates."
 why:
   - "Simple color matching makes it easy to understand at a glance."
   - "Ring and color play are a natural fit for relaxed puzzle sessions."

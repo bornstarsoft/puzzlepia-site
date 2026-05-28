@@ -165,11 +165,18 @@ img {
 }
 
 .hero__actions,
-.daily-preview {
+.daily-preview,
+.hub-actions,
+.game-card__actions,
+.game-hero__actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.hero__actions,
+.daily-preview {
   margin-top: 26px;
 }
 
@@ -379,7 +386,22 @@ img {
 }
 
 .game-card__button {
-  margin-top: 14px;
+  flex: 1 1 150px;
+  min-width: 0;
+  padding-inline: 14px;
+  text-align: center;
+}
+
+.hub-actions {
+  margin-top: 22px;
+}
+
+.game-card__actions {
+  margin-top: 16px;
+}
+
+.game-hero__actions {
+  margin-top: 18px;
 }
 
 .section__actions {

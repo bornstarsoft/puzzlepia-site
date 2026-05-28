@@ -9,7 +9,7 @@ status: "In development"
 dailyTitle: "Daily Block Puzzle"
 dailyURL: "/daily/block-puzzle/"
 storeLabel: "Store link coming soon"
-storeNote: "Follow Puzzlepia for updates while Blockzzle details are prepared."
+storeNote: "The exact store link is not available yet. Play the related Daily Block Puzzle now, and follow Puzzlepia for Blockzzle updates."
 why:
   - "Built for quick, satisfying block placement."
   - "Simple rules make it easy to start a calm puzzle break."
