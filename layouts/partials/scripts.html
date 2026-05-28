@@ -1,0 +1,6 @@
+{{ if .Params.playable }}
+  <script src="/js/puzzlepia-games.js"></script>
+{{ with .Params.gameScript }}
+  <script src="/js/{{ . }}"></script>
+{{ end }}
+{{ end }}

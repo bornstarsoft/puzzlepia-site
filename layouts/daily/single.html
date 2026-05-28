@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="page daily-game-page">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default "Daily puzzle" }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+{{ with .Params.difficulty }}<p class="difficulty">Difficulty: <strong>{{ . }}</strong></p>{{ end }}
+  </header>
+  <div class="page__content">
+{{ .Content }}
+  </div>
+{{ with .Params.game }}
+{{ partial (printf "daily-game/%s.html" .) $ }}
+{{ end }}
+</article>
+{{ end }}

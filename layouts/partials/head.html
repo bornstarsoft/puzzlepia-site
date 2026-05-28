@@ -12,4 +12,7 @@
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <link rel="stylesheet" href="/css/main.css">
+{{ if .Params.playable }}
+  <link rel="stylesheet" href="/css/games.css">
+{{ end }}
 </head>

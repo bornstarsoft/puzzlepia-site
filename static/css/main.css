@@ -290,10 +290,30 @@ img {
 }
 
 .game-grid,
-.feature-grid {
+.feature-grid,
+.daily-link-grid {
   display: grid;
   gap: 14px;
   margin-top: 26px;
+}
+
+.daily-link-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.daily-link-grid a {
+  display: grid;
+  min-height: 54px;
+  place-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--purple-dark);
+  background: rgba(255, 255, 255, 0.74);
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(87, 62, 140, 0.08);
 }
 
 .game-card {
@@ -396,7 +416,8 @@ img {
   }
 
   .game-grid,
-  .feature-grid {
+  .feature-grid,
+  .daily-link-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
