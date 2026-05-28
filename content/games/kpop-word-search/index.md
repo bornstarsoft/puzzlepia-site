@@ -1,6 +1,6 @@
 ---
 title: "Kpop Word Search"
-description: "A word search puzzle game with upbeat K-pop energy."
+description: "Discover Kpop Word Search, a BornstarSoft word search puzzle game with upbeat music-inspired energy."
 kicker: "Featured game"
 weight: 20
 icon: "K"

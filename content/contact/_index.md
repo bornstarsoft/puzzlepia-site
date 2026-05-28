@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-description: "Contact Puzzlepia and BornstarSoft support."
+description: "Contact Puzzlepia support or send a general message to BornstarSoft."
 kicker: "Contact"
 ---
 

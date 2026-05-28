@@ -1,6 +1,6 @@
 ---
 title: "Ringzzle"
-description: "A ring puzzle game built around color, placement, and clean strategy."
+description: "Discover Ringzzle, a BornstarSoft ring puzzle game about color matching, placement, and clean strategy."
 kicker: "Featured game"
 weight: 30
 icon: "R"

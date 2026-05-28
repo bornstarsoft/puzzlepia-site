@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Learn about Puzzlepia, the official puzzle hub for BornstarSoft."
+description: "Learn about Puzzlepia, BornstarSoft's official hub for daily puzzles and casual puzzle games."
 kicker: "About Puzzlepia"
 ---
 

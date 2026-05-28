@@ -1,6 +1,6 @@
 ---
 title: "Mapdoku"
-description: "A logic puzzle adventure inspired by maps, numbers, and clever deduction."
+description: "Discover Mapdoku, a BornstarSoft logic puzzle adventure inspired by maps, numbers, and clever deduction."
 kicker: "Featured game"
 weight: 40
 icon: "M"

@@ -1,6 +1,6 @@
 ---
 title: "Terms of Use"
-description: "Puzzlepia terms of use for the early static website."
+description: "Read the Puzzlepia terms of use for this early static website operated by BornstarSoft."
 kicker: "Terms"
 ---
 

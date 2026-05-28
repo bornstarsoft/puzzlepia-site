@@ -1,6 +1,6 @@
 ---
 title: "Color Rings Mania"
-description: "A relaxing color ring puzzle game with simple rules and satisfying combos."
+description: "Discover Color Rings Mania, a BornstarSoft color ring puzzle game with simple rules and satisfying combos."
 kicker: "Featured game"
 weight: 50
 icon: "C"

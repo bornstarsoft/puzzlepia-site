@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-description: "Puzzlepia privacy policy for the early static website."
+description: "Read the Puzzlepia privacy policy for this early static website operated by BornstarSoft."
 kicker: "Privacy"
 ---
 

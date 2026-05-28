@@ -1,6 +1,6 @@
 ---
 title: "Blockzzle"
-description: "A bright block puzzle game for satisfying logic play."
+description: "Discover Blockzzle, a bright BornstarSoft block puzzle game built for relaxed focus and satisfying logic play."
 kicker: "Featured game"
 weight: 10
 icon: "B"
