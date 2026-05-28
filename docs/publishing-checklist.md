@@ -37,6 +37,7 @@ Use this checklist before publishing Blog, Daily Challenge, or Games updates.
 
 ## Before Pushing to GitHub
 
+- Run `bash tools/check_site.sh`.
 - Run `hugo`.
 - Run `git diff --check`.
 - Run `git ls-files public` and confirm it returns nothing.
@@ -49,6 +50,7 @@ Use this checklist before publishing Blog, Daily Challenge, or Games updates.
 ## After Cloudflare Pages Deployment
 
 - Confirm the deployment finished successfully.
+- Confirm Cloudflare Pages deployed the pushed commit.
 - Visit the changed URL on `https://puzzlepia.com/`.
 - Confirm footer links still work.
 - Confirm `https://puzzlepia.com/sitemap.xml` loads.
@@ -57,6 +59,7 @@ Use this checklist before publishing Blog, Daily Challenge, or Games updates.
 ## After Search Console Indexing Check
 
 - Check Search Console sitemap status after deployment.
+- Confirm Search Console sitemap status after major content batches.
 - Use URL Inspection for important new pages after they are live.
 - Confirm Google can access the page.
 - Record any indexing issue before changing content again.
