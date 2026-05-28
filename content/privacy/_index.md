@@ -6,11 +6,11 @@ kicker: "Privacy"
 
 Puzzlepia is a simple static website operated by BornstarSoft.
 
-At this stage, Puzzlepia does not provide user accounts, login features, ranking systems, or a dynamic backend on this website.
+At this stage, Puzzlepia does not provide user accounts, a login system, a payment system, a ranking system, or a dynamic backend on this website.
 
 We may receive basic technical information that browsers and hosting providers normally process when you visit a website, such as request time, page URL, device or browser information, and approximate region. This information is used to keep the website available, secure, and working properly.
 
-Puzzlepia may use basic analytics in the future to understand site traffic and improve the website. If analytics are added, this policy should be updated to describe what is used.
+Puzzlepia uses Cloudflare Web Analytics to understand aggregate site usage and page performance. Cloudflare Web Analytics is enabled with EU visitor data excluded. Puzzlepia does not use Google Analytics 4 on this website.
 
 If you contact us by email, we may use the information you provide to respond to your message.
 
