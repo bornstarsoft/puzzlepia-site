@@ -36,8 +36,8 @@
     });
   }
 
-  function clearMatches() {
-    var cleared = 0;
+  function markMatches() {
+    var matched = 0;
     ["pink", "mint", "gold"].forEach(function (color) {
       lines.forEach(function (line) {
         var match = line.every(function (index) {
@@ -47,18 +47,13 @@
         });
         if (match) {
           line.forEach(function (index) {
-            Object.keys(cells[index]).forEach(function (size) {
-              if (cells[index][size] === color) {
-                delete cells[index][size];
-                cleared += 1;
-                renderCell(index);
-              }
-            });
+            matched += 1;
+            helpers.pulse(boardEl.querySelector('[data-cell="' + index + '"]'), "is-match");
           });
         }
       });
     });
-    return cleared;
+    return matched;
   }
 
   function place(index) {
@@ -68,6 +63,7 @@
     }
     if (cells[index][selected.size]) {
       helpers.setStatus(root, "That cell already has a " + selected.size + " ring.");
+      helpers.pulse(boardEl.querySelector('[data-cell="' + index + '"]'), "is-invalid");
       return;
     }
     cells[index][selected.size] = selected.color;
@@ -78,14 +74,30 @@
       button.disabled = true;
       button.classList.remove("is-selected");
     }
-    var cleared = clearMatches();
+    var matched = markMatches();
     selected = null;
     if (pieces.every(function (piece) { return placed[piece.id]; })) {
       helpers.setStatus(root, "All rings placed.");
       helpers.showComplete(root);
     } else {
-      helpers.setStatus(root, cleared ? "Color line cleared. Choose another ring." : "Ring placed. Choose another ring.");
+      helpers.setStatus(root, matched ? "Color line matched. Choose another ring." : "Ring placed. Choose another ring.");
     }
+  }
+
+  function resetGame() {
+    cells = Array.from({ length: 9 }, function () { return {}; });
+    selected = null;
+    placed = {};
+    helpers.qsa(boardEl, ".ring-cell").forEach(function (cell) {
+      cell.innerHTML = "";
+      cell.classList.remove("is-invalid", "is-match");
+    });
+    helpers.qsa(trayEl, ".ring-piece").forEach(function (button) {
+      button.disabled = false;
+      button.classList.remove("is-selected");
+    });
+    helpers.hideComplete(root);
+    helpers.setStatus(root, "Select a ring, then tap a cell.");
   }
 
   function buildBoard() {
@@ -123,4 +135,5 @@
 
   buildBoard();
   buildTray();
+  helpers.wireReset(root, resetGame);
 })();

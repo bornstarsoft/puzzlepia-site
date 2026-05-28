@@ -19,6 +19,27 @@
       if (complete) {
         complete.hidden = false;
       }
+    },
+    hideComplete: function (root) {
+      var complete = root.querySelector("[data-complete]");
+      if (complete) {
+        complete.hidden = true;
+      }
+    },
+    wireReset: function (root, reset) {
+      var button = root.querySelector("[data-reset]");
+      if (button) {
+        button.addEventListener("click", reset);
+      }
+    },
+    pulse: function (element, className) {
+      if (!element) {
+        return;
+      }
+      element.classList.add(className);
+      window.setTimeout(function () {
+        element.classList.remove(className);
+      }, 320);
     }
   };
 })();

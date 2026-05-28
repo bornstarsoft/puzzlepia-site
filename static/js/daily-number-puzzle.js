@@ -11,11 +11,22 @@
   var next = 1;
   var grid = helpers.qs(root, "[data-grid]");
 
+  function resetGame() {
+    next = 1;
+    helpers.qsa(grid, ".number-cell").forEach(function (button) {
+      button.disabled = false;
+      button.classList.remove("is-done", "is-wrong");
+    });
+    helpers.hideComplete(root);
+    helpers.setStatus(root, "Next number: 1");
+  }
+
   numbers.forEach(function (number) {
     var button = document.createElement("button");
     button.type = "button";
     button.className = "number-cell";
     button.textContent = number;
+    button.dataset.number = number;
     button.setAttribute("aria-label", "Number " + number);
     button.addEventListener("click", function () {
       if (number !== next) {
@@ -38,4 +49,5 @@
     });
     grid.appendChild(button);
   });
+  helpers.wireReset(root, resetGame);
 })();

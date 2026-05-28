@@ -1,6 +1,6 @@
 ---
 title: "Daily Color Match"
-description: "Play a small Puzzlepia color matching puzzle by clearing connected color groups."
+description: "Play a small Puzzlepia color matching puzzle by clearing each target color."
 kicker: "Daily puzzle"
 difficulty: "Easy"
 weight: 50
@@ -10,11 +10,11 @@ game: "color-match"
 gameScript: "daily-color-match.js"
 ---
 
-Clear matching color groups from a small grid. This starter puzzle is bright, tactile, and easy to play on mobile.
+Clear each target color from a small grid. This starter puzzle is bright, tactile, and easy to play on mobile.
 
 ## How to play
 
-Tap a connected group of two or more matching colors to clear it. Clear every tile to finish the puzzle.
+Tap every tile of the current target color. When one color is clear, the next target color appears.
 
 ## Related game
 

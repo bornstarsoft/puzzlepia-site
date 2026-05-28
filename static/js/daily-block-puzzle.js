@@ -21,6 +21,12 @@
   var boardEl = helpers.qs(root, "[data-board]");
   var trayEl = helpers.qs(root, "[data-tray]");
 
+  function emptyBoard() {
+    board = Array.from({ length: size }, function () {
+      return Array(size).fill(false);
+    });
+  }
+
   function canPlace(piece, row, col) {
     return piece.cells.every(function (offset) {
       var r = row + offset[0];
@@ -72,6 +78,7 @@
     }
     if (!canPlace(selected, row, col)) {
       helpers.setStatus(root, "That piece needs more open space.");
+      helpers.pulse(boardEl.querySelector('[data-row="' + row + '"][data-col="' + col + '"]'), "is-invalid");
       return;
     }
     selected.cells.forEach(function (offset) {
@@ -92,6 +99,19 @@
     } else {
       helpers.setStatus(root, clears ? "Line cleared. Choose the next piece." : "Piece placed. Choose the next piece.");
     }
+  }
+
+  function resetGame() {
+    emptyBoard();
+    selected = null;
+    placed = {};
+    renderBoard();
+    helpers.qsa(trayEl, ".piece-button").forEach(function (button) {
+      button.disabled = false;
+      button.classList.remove("is-selected");
+    });
+    helpers.hideComplete(root);
+    helpers.setStatus(root, "Select a piece, then tap the board.");
   }
 
   function buildBoard() {
@@ -131,4 +151,5 @@
 
   buildBoard();
   buildTray();
+  helpers.wireReset(root, resetGame);
 })();

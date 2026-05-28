@@ -36,6 +36,12 @@
   font-weight: 800;
 }
 
+.puzzle-instructions {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-weight: 750;
+}
+
 .puzzle-complete {
   margin: 18px 0 0;
   padding: 12px 14px;
@@ -45,8 +51,13 @@
   font-weight: 900;
 }
 
+.puzzle-reset,
 .puzzle-cta {
   margin-top: 18px;
+}
+
+.puzzle-reset + .puzzle-cta {
+  margin-left: 0;
 }
 
 .word-search-layout,
@@ -100,6 +111,16 @@
 .number-cell.is-done {
   color: #ffffff;
   background: var(--mint);
+}
+
+.block-cell.is-invalid,
+.ring-cell.is-invalid,
+.color-cell.is-invalid {
+  outline: 3px solid rgba(255, 95, 168, 0.44);
+}
+
+.ring-cell.is-match {
+  outline: 3px solid rgba(45, 212, 191, 0.54);
 }
 
 .target-list {

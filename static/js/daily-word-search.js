@@ -19,7 +19,9 @@
   var found = {};
   var cells = [];
   var dragStart = null;
+  var tapStart = null;
   var currentSelection = [];
+  var activePointer = null;
 
   function cellAt(row, col) {
     return cells.find(function (cell) {
@@ -65,6 +67,22 @@
     });
   }
 
+  function resetGame() {
+    found = {};
+    dragStart = null;
+    tapStart = null;
+    activePointer = null;
+    clearSelection();
+    cells.forEach(function (cell) {
+      cell.el.classList.remove("is-found");
+    });
+    helpers.qsa(root, "[data-word]").forEach(function (item) {
+      item.classList.remove("is-found");
+    });
+    helpers.hideComplete(root);
+    helpers.setStatus(root, "Drag across the grid to begin.");
+  }
+
   function markFound(word, path) {
     found[word] = true;
     path.forEach(function (cell) {
@@ -98,6 +116,32 @@
       clearSelection();
     }
     dragStart = null;
+    activePointer = null;
+  }
+
+  function tapSelect(event) {
+    var cell = {
+      row: Number(event.currentTarget.dataset.row),
+      col: Number(event.currentTarget.dataset.col),
+      letter: event.currentTarget.textContent,
+      el: event.currentTarget
+    };
+    if (!tapStart) {
+      tapStart = cell;
+      renderSelection([cell]);
+      helpers.setStatus(root, "Tap the last letter or drag to finish the word.");
+      return;
+    }
+    var path = makePath(tapStart, cell);
+    if (!path.length) {
+      tapStart = cell;
+      renderSelection([cell]);
+      helpers.setStatus(root, "Choose a straight line.");
+      return;
+    }
+    renderSelection(path);
+    tapStart = null;
+    finishSelection();
   }
 
   function pointerCell(event) {
@@ -120,12 +164,16 @@
       return;
     }
     event.preventDefault();
+    activePointer = event.pointerId;
+    if (event.target.setPointerCapture) {
+      event.target.setPointerCapture(event.pointerId);
+    }
     dragStart = cell;
     renderSelection([cell]);
   }
 
   function moveDrag(event) {
-    if (!dragStart) {
+    if (!dragStart || (activePointer !== null && event.pointerId !== activePointer)) {
       return;
     }
     var cell = pointerCell(event);
@@ -150,6 +198,7 @@
         button.dataset.row = rowIndex;
         button.dataset.col = colIndex;
         button.setAttribute("aria-label", "Letter " + letter);
+        button.addEventListener("click", tapSelect);
         grid.appendChild(button);
         cells.push({ row: rowIndex, col: colIndex, letter: letter, el: button });
       });
@@ -161,4 +210,5 @@
   }
 
   buildGrid();
+  helpers.wireReset(root, resetGame);
 })();

@@ -8,30 +8,47 @@
   }
 
   var size = 5;
-  var colors = [
+  var startingColors = [
     ["pink", "pink", "mint", "gold", "gold"],
     ["purple", "pink", "mint", "mint", "gold"],
     ["purple", "purple", "gold", "mint", "mint"],
     ["pink", "gold", "gold", "purple", "purple"],
     ["pink", "pink", "mint", "purple", "purple"]
   ];
+  var targets = ["pink", "mint", "gold", "purple"];
+  var labels = {
+    gold: "Gold",
+    mint: "Mint",
+    pink: "Pink",
+    purple: "Purple"
+  };
+  var colors = [];
+  var targetIndex = 0;
   var grid = helpers.qs(root, "[data-grid]");
 
-  function neighbors(row, col) {
-    return [[row - 1, col], [row + 1, col], [row, col - 1], [row, col + 1]].filter(function (point) {
-      return point[0] >= 0 && point[1] >= 0 && point[0] < size && point[1] < size;
+  function cloneColors() {
+    return startingColors.map(function (row) {
+      return row.slice();
     });
   }
 
-  function group(row, col, color, seen) {
-    var key = row + "," + col;
-    if (seen[key] || colors[row][col] !== color) {
-      return [];
+  function currentTarget() {
+    return targets[targetIndex];
+  }
+
+  function remainingFor(color) {
+    return colors.reduce(function (total, row) {
+      return total + row.filter(function (tile) { return tile === color; }).length;
+    }, 0);
+  }
+
+  function setProgress() {
+    var target = currentTarget();
+    if (!target) {
+      helpers.setStatus(root, "All colors cleared.");
+      return;
     }
-    seen[key] = true;
-    return [[row, col]].concat.apply([], neighbors(row, col).map(function (point) {
-      return group(point[0], point[1], color, seen);
-    }));
+    helpers.setStatus(root, "Target color: " + labels[target] + ". " + remainingFor(target) + " left.");
   }
 
   function render() {
@@ -42,36 +59,45 @@
       cell.dataset.color = color || "";
       cell.classList.toggle("is-empty", !color);
       cell.disabled = !color;
-      cell.setAttribute("aria-label", color ? color + " tile" : "cleared tile");
+      cell.setAttribute("aria-label", color ? labels[color] + " tile" : "cleared tile");
     });
   }
 
-  function isComplete() {
-    return colors.every(function (row) {
-      return row.every(function (color) { return !color; });
-    });
-  }
-
-  function clearGroup(row, col) {
-    var color = colors[row][col];
-    if (!color) {
-      return;
+  function advanceTarget() {
+    while (currentTarget() && remainingFor(currentTarget()) === 0) {
+      targetIndex += 1;
     }
-    var matches = group(row, col, color, {});
-    if (matches.length < 2) {
-      helpers.setStatus(root, "Find a connected group of two or more.");
-      return;
-    }
-    matches.forEach(function (point) {
-      colors[point[0]][point[1]] = "";
-    });
-    render();
-    if (isComplete()) {
+    if (!currentTarget()) {
       helpers.setStatus(root, "All colors cleared.");
       helpers.showComplete(root);
-    } else {
-      helpers.setStatus(root, matches.length + " tiles cleared.");
+      return;
     }
+    setProgress();
+  }
+
+  function tapTile(row, col) {
+    var color = colors[row][col];
+    var target = currentTarget();
+    var button = grid.querySelector('[data-row="' + row + '"][data-col="' + col + '"]');
+    if (!color || !target) {
+      return;
+    }
+    if (color !== target) {
+      helpers.setStatus(root, "Look for " + labels[target] + " tiles first.");
+      helpers.pulse(button, "is-invalid");
+      return;
+    }
+    colors[row][col] = "";
+    render();
+    advanceTarget();
+  }
+
+  function resetGame() {
+    colors = cloneColors();
+    targetIndex = 0;
+    render();
+    helpers.hideComplete(root);
+    setProgress();
   }
 
   for (var row = 0; row < size; row += 1) {
@@ -82,10 +108,11 @@
       button.dataset.row = row;
       button.dataset.col = col;
       button.addEventListener("click", function (event) {
-        clearGroup(Number(event.currentTarget.dataset.row), Number(event.currentTarget.dataset.col));
+        tapTile(Number(event.currentTarget.dataset.row), Number(event.currentTarget.dataset.col));
       });
       grid.appendChild(button);
     }
   }
-  render();
+  resetGame();
+  helpers.wireReset(root, resetGame);
 })();
