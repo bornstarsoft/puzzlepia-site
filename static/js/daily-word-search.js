@@ -25,7 +25,26 @@
   var found = {};
   var cells = [];
   var startCell = null;
+  var dragStartCell = null;
+  var dragPath = [];
+  var isPointerDown = false;
+  var isDragging = false;
+  var suppressNextClick = false;
   var grid = helpers.qs(root, "[data-grid]");
+
+  function foundCount() {
+    return words.filter(function (word) {
+      return found[word];
+    }).length;
+  }
+
+  function progressText() {
+    return foundCount() + " / " + words.length + " words found.";
+  }
+
+  function setFeedback(message) {
+    helpers.setStatus(root, progressText() + " " + message);
+  }
 
   function cellAt(row, col) {
     return cells.find(function (cell) {
@@ -75,12 +94,19 @@
     });
   }
 
-  function markWord(word) {
-    if (!word || found[word]) {
+  function markWord(word, source) {
+    if (!word) {
+      return;
+    }
+    if (found[word]) {
+      setFeedback(word + " is already found.");
       return;
     }
     found[word] = true;
     clearSelection();
+    startCell = null;
+    dragStartCell = null;
+    dragPath = [];
     highlightPath(wordPaths[word], "is-found");
     var item = root.querySelector('[data-word="' + word + '"]');
     var button = root.querySelector('[data-word-button="' + word + '"]');
@@ -88,19 +114,33 @@
       item.classList.add("is-found");
     }
     if (button) {
-      button.disabled = true;
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("aria-label", word + " found");
     }
     if (words.every(function (target) { return found[target]; })) {
-      helpers.setStatus(root, "All words found.");
+      helpers.setStatus(root, progressText() + " Puzzle complete!");
       helpers.showComplete(root);
     } else {
-      helpers.setStatus(root, "Found " + word + ". Keep going.");
+      setFeedback(source === "list" ? word + " marked from the list." : "Great find: " + word + ".");
     }
   }
 
   function submitPath(path) {
+    if (!path || !path.length) {
+      setFeedback("Choose a straight line.");
+      return;
+    }
     var forward = pathWord(path);
     var backward = forward.split("").reverse().join("");
+    var alreadyFound = words.find(function (target) {
+      return found[target] && (target === forward || target === backward);
+    });
+    if (alreadyFound) {
+      clearSelection();
+      highlightPath(wordPaths[alreadyFound], "is-found");
+      setFeedback(alreadyFound + " is already found.");
+      return;
+    }
     var word = words.find(function (target) {
       return !found[target] && (target === forward || target === backward);
     });
@@ -108,11 +148,23 @@
       markWord(word);
       return;
     }
-    helpers.setStatus(root, "That line is not one of today's words.");
     clearSelection();
+    path.forEach(function (cell) {
+      cell.el.classList.add("is-invalid");
+    });
+    setFeedback("Try a straight line that matches a word.");
+    window.setTimeout(function () {
+      path.forEach(function (cell) {
+        cell.el.classList.remove("is-invalid");
+      });
+    }, 360);
   }
 
   function tapCell(event) {
+    if (suppressNextClick) {
+      suppressNextClick = false;
+      return;
+    }
     var cell = cellAt(Number(event.currentTarget.dataset.row), Number(event.currentTarget.dataset.col));
     if (!cell) {
       return;
@@ -121,14 +173,14 @@
       startCell = cell;
       clearSelection();
       cell.el.classList.add("is-selected");
-      helpers.setStatus(root, "Now tap the last letter of the word.");
+      setFeedback("Now tap the last letter of the word.");
       return;
     }
     var path = pathBetween(startCell, cell);
     startCell = null;
     if (!path.length) {
       clearSelection();
-      helpers.setStatus(root, "Choose letters in a straight line.");
+      setFeedback("Choose letters in a straight line.");
       return;
     }
     clearSelection();
@@ -136,21 +188,90 @@
     submitPath(path);
   }
 
+  function cellFromPoint(x, y) {
+    var element = document.elementFromPoint(x, y);
+    if (!element || !element.classList || !element.classList.contains("letter-cell")) {
+      return null;
+    }
+    return cellAt(Number(element.dataset.row), Number(element.dataset.col));
+  }
+
+  function previewPath(path) {
+    clearSelection();
+    highlightPath(path, "is-selected");
+  }
+
+  function beginDrag(event) {
+    var cell = cellAt(Number(event.currentTarget.dataset.row), Number(event.currentTarget.dataset.col));
+    if (!cell) {
+      return;
+    }
+    isPointerDown = true;
+    isDragging = false;
+    dragStartCell = cell;
+    dragPath = [cell];
+    previewPath(dragPath);
+  }
+
+  function updateDrag(event) {
+    var cell;
+    var path;
+    if (!isPointerDown || !dragStartCell) {
+      return;
+    }
+    cell = cellFromPoint(event.clientX, event.clientY);
+    if (!cell) {
+      return;
+    }
+    if (cell !== dragStartCell) {
+      isDragging = true;
+    }
+    path = pathBetween(dragStartCell, cell);
+    if (path.length) {
+      dragPath = path;
+      previewPath(path);
+    }
+    event.preventDefault();
+  }
+
+  function endDrag() {
+    if (!isPointerDown) {
+      return;
+    }
+    isPointerDown = false;
+    dragStartCell = null;
+    if (isDragging) {
+      suppressNextClick = true;
+      window.setTimeout(function () {
+        suppressNextClick = false;
+      }, 400);
+      submitPath(dragPath);
+    }
+    isDragging = false;
+    dragPath = [];
+  }
+
   function resetGame() {
     found = {};
     startCell = null;
+    dragStartCell = null;
+    dragPath = [];
+    isPointerDown = false;
+    isDragging = false;
+    suppressNextClick = false;
     clearSelection();
     cells.forEach(function (cell) {
-      cell.el.classList.remove("is-found");
+      cell.el.classList.remove("is-found", "is-invalid");
     });
     helpers.qsa(root, "[data-word]").forEach(function (item) {
       item.classList.remove("is-found");
     });
     helpers.qsa(root, "[data-word-button]").forEach(function (button) {
-      button.disabled = false;
+      button.setAttribute("aria-pressed", "false");
+      button.setAttribute("aria-label", button.dataset.wordButton);
     });
     helpers.hideComplete(root);
-    helpers.setStatus(root, "Tap the first letter of a word, or tap a word in the list.");
+    helpers.setStatus(root, progressText() + " Tap or drag across a word.");
   }
 
   function buildGrid() {
@@ -163,6 +284,10 @@
         button.dataset.row = rowIndex;
         button.dataset.col = colIndex;
         button.setAttribute("aria-label", "Letter " + letter + " row " + (rowIndex + 1) + " column " + (colIndex + 1));
+        button.addEventListener("pointerdown", beginDrag);
+        button.addEventListener("pointermove", updateDrag);
+        button.addEventListener("pointerup", endDrag);
+        button.addEventListener("pointercancel", endDrag);
         button.addEventListener("click", tapCell);
         grid.appendChild(button);
         cells.push({ row: rowIndex, col: colIndex, letter: letter, el: button });
@@ -171,8 +296,9 @@
   }
 
   helpers.qsa(root, "[data-word-button]").forEach(function (button) {
+    button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", function () {
-      markWord(button.dataset.wordButton);
+      markWord(button.dataset.wordButton, "list");
     });
   });
   buildGrid();

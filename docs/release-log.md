@@ -66,3 +66,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Documented the current live MVP status, completed scope, known limitations, and next phase options.
 - Added a practical next-phase plan for Daily Puzzle UX, content cadence, Games hub conversion, and brand assets.
+
+## Phase 3A Daily Word Search Polish
+
+- Improved Daily Word Search grid interaction with defensive pointer drag plus tap-start/tap-end selection.
+- Added clearer progress, found-word feedback, invalid-selection feedback, and reset restoration for the Word Search starter.
