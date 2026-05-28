@@ -18,4 +18,4 @@ Tap a word in the list, or tap the first and last letter of a word in the grid. 
 
 ## Related game
 
-Enjoy word puzzles? Explore [Kpop Word Search](/games/kpop-word-search/) from BornstarSoft.
+Enjoy word puzzles? Explore [KPOP Word Search](/games/kpop-word-search/) from BornstarSoft.

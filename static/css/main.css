@@ -105,6 +105,9 @@ img {
 }
 
 .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 8px 10px;
   border-radius: 999px;
   color: var(--muted);
@@ -537,6 +540,9 @@ img {
 }
 
 .site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
   color: var(--muted);
   font-weight: 800;
   text-decoration: none;
