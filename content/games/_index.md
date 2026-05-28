@@ -4,4 +4,6 @@ description: "Explore relaxing, colorful puzzle games from BornstarSoft in the P
 kicker: "Puzzle games"
 ---
 
-Discover relaxing, clever, and colorful puzzle games from BornstarSoft. Puzzlepia brings the collection together in one simple place.
+Explore puzzle games from BornstarSoft and the Puzzlepia universe.
+
+Puzzlepia brings daily puzzle starters and BornstarSoft game pages together in one simple place.

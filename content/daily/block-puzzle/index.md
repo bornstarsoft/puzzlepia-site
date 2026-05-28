@@ -14,8 +14,8 @@ Place the three pieces on the board. This is a starter prototype focused on safe
 
 ## How to play
 
-Tap a piece, then tap a board cell to place it. Completed rows or columns clear automatically when possible.
+Tap a piece, then tap a board cell to place it. Place all three starter pieces to complete the puzzle.
 
 ## Related game
 
-Want a fuller block puzzle experience? Visit [Blockzzle](/games/blockzzle/).
+Want a fuller block puzzle direction? Visit [Blockzzle](/games/blockzzle/).

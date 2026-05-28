@@ -14,7 +14,7 @@ Find the four target words hidden in the grid. This starter puzzle is short, fri
 
 ## How to play
 
-Drag across letters in a straight line. Words may appear forward or backward. Found words stay highlighted in the list.
+Tap a word in the list, or tap the first and last letter of a word in the grid. Found words stay highlighted in the list.
 
 ## Related game
 

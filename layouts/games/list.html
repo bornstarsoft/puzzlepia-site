@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="page games-hub">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default .Title }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div class="page__content">
+{{ .Content }}
+  </div>
+  <div class="game-grid game-grid--hub">
+{{ range .Pages.ByWeight }}
+{{ partial "game-card.html" . }}
+{{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,53 @@
+{{ define "main" }}
+<article class="page game-detail">
+  <section class="game-hero">
+    <div class="game-hero__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</div>
+    <div>
+      <p class="eyebrow">{{ .Params.kicker | default "BornstarSoft game" }}</p>
+      <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+      <div class="game-meta">
+{{ with .Params.genre }}<span>{{ . }}</span>{{ end }}
+{{ with .Params.status }}<span>{{ . }}</span>{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <div class="page__content">
+{{ .Content }}
+  </div>
+
+  <section class="detail-section">
+    <h2>Why play it?</h2>
+{{ with .Params.why }}
+    <ul class="check-list">
+{{ range . }}
+      <li>{{ . }}</li>
+{{ end }}
+    </ul>
+{{ else }}
+    <p>A friendly BornstarSoft puzzle experience for relaxed, thoughtful play.</p>
+{{ end }}
+  </section>
+
+  <section class="detail-section detail-section--split">
+    <div>
+      <h2>Related Daily Puzzle</h2>
+      <p>Try a lightweight Puzzlepia daily starter connected to this game style.</p>
+    </div>
+    <a class="button button--secondary" href="{{ .Params.dailyURL | default "/daily/" }}">{{ .Params.dailyTitle | default "Open Daily Puzzle" }}</a>
+  </section>
+
+  <section class="detail-section detail-section--split">
+    <div>
+      <h2>Store and Updates</h2>
+{{ with .Params.storeNote }}<p>{{ . }}</p>{{ else }}<p>Follow Puzzlepia for updates.</p>{{ end }}
+    </div>
+{{ if .Params.storeURL }}
+    <a class="button button--primary" href="{{ .Params.storeURL }}" rel="noopener" target="_blank">{{ .Params.storeLabel | default "Open store page" }}</a>
+{{ else }}
+    <span class="button button--disabled" aria-disabled="true">{{ .Params.storeLabel | default "Store link coming soon" }}</span>
+{{ end }}
+  </section>
+</article>
+{{ end }}

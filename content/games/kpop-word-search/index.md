@@ -1,11 +1,20 @@
 ---
-title: "Kpop Word Search"
-description: "Discover Kpop Word Search, a BornstarSoft word search puzzle game with upbeat music-inspired energy."
+title: "KPOP Word Search"
+description: "Discover KPOP Word Search, a BornstarSoft word search puzzle game with upbeat music-inspired energy."
 kicker: "Featured game"
 weight: 20
 icon: "K"
+genre: "Word search"
+status: "Available"
+dailyTitle: "Daily Word Search"
+dailyURL: "/daily/word-search/"
+storeLabel: "Get it on Google Play"
+storeURL: "https://play.google.com/store/apps/details?id=com.bornstarsoft.wordkpopsearch"
+storeNote: "Available on Google Play."
+why:
+  - "Classic word search play with a bright music-inspired mood."
+  - "Easy to understand, quick to revisit, and friendly for short sessions."
+  - "Pairs naturally with Puzzlepia's Daily Word Search starter."
 ---
 
-Kpop Word Search brings familiar word-search play together with a bright music-inspired mood.
-
-More details, store links, and gameplay updates will be added as the Puzzlepia hub grows.
+KPOP Word Search brings familiar word-search play together with a bright music-inspired mood.
