@@ -138,6 +138,12 @@ Recommended scope:
 - Use Phaser only where it clearly improves player feel or implementation quality.
 - Do not migrate existing stable Daily Puzzles without a clear benefit and separate plan.
 
+Phase 4D outcome:
+
+- Keep `/daily/word-search/` on the current Vanilla JS implementation.
+- Keep `/labs/phaser-word-search/` as a separate Phaser lab experiment.
+- Reconsider replacement only after real-device mobile testing, accessibility fallback work, and bundle-size review.
+
 ## Default Phase Recommendation
 
 Start with Phase 3A if the next work should improve player experience.

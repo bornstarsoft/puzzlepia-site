@@ -86,3 +86,16 @@ Before any Phaser output is committed into the Hugo repository, confirm:
 ## Decision Gate
 
 After the first Phaser Word Search lab, decide whether Phaser should become the standard for future richer HTML5 Puzzlepia games. Keep Vanilla JS for small static puzzle pages unless Phaser clearly improves reliability, accessibility, player feel, or maintainability.
+
+## Phase 4D Decision Snapshot
+
+Phase 4D keeps the current Vanilla JS `/daily/word-search/` as the stable Daily Puzzle and keeps Phaser as a separate lab only.
+
+Summary:
+
+- The Phaser lab is playable and useful for future experiments.
+- The iframe integration is safer than direct script integration.
+- The Phaser bundle is much larger than the current Vanilla JS Word Search.
+- The lab does not yet feel meaningfully better enough to replace the stable Daily Puzzle.
+
+See `docs/phaser-word-search-adoption-decision.md` for the comparison notes and adoption checklist.

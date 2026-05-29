@@ -86,3 +86,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Copied the validated external Phaser Word Search lab `dist/` output into `static/games/phaser-word-search/`.
 - Updated `/labs/phaser-word-search/` to embed the static Phaser lab build with an iframe while keeping the stable Daily Word Search available.
+
+## Phase 4D Phaser Word Search Adoption Review
+
+- Documented bundle size, iframe behavior, UX comparison, and adoption criteria for the Phaser Word Search lab.
+- Recommended keeping `/daily/word-search/` on Vanilla JS while Phaser remains a separate lab experiment.
