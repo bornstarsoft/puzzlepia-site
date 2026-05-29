@@ -30,6 +30,13 @@ Use an iframe first.
 
 The safest initial production path is to build the Phaser game as a self-contained static bundle and embed it from `/games/phaser-word-search/` or another static path with an iframe on the lab page. This keeps the Hugo layout, metadata, navigation, and existing Daily Puzzle pages insulated from Phaser runtime changes.
 
+Phase 4C uses this iframe-first path:
+
+- Built files from the external `puzzlepia-phaser-lab/dist/` folder are copied into `static/games/phaser-word-search/`.
+- `/games/phaser-word-search/` serves the self-contained Phaser build as static files.
+- `/labs/phaser-word-search/` embeds that static build with a responsive iframe.
+- Future Phaser work should continue in the external lab folder first, then only the validated `dist/` output should be copied into Hugo.
+
 Direct script integration should be considered later only if:
 
 - The iframe version is stable on desktop and mobile.

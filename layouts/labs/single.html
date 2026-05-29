@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="page lab-page">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default .Section | humanize }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+
+{{ with .Params.labEmbedURL }}
+  <section class="lab-embed" aria-label="Embedded lab prototype">
+    <iframe src="{{ . }}" title="{{ $.Params.labEmbedTitle | default $.Title }}" loading="lazy"></iframe>
+  </section>
+{{ end }}
+
+  <div class="page__content">
+{{ .Content }}
+  </div>
+</article>
+{{ end }}

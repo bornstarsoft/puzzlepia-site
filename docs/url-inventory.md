@@ -45,6 +45,10 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/labs/`
 - `/labs/phaser-word-search/`
 
+## Static Lab Build URLs
+
+- `/games/phaser-word-search/`
+
 ## Blog URLs
 
 - `/blog/`

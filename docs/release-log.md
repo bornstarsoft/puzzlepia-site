@@ -81,3 +81,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added a safe Phaser lab plan for future HTML5 game experiments without changing the current Vanilla JS Daily Puzzles.
 - Added `/labs/` and `/labs/phaser-word-search/` placeholder pages with clear non-live wording.
+
+## Phase 4C Phaser Word Search Lab Integration
+
+- Copied the validated external Phaser Word Search lab `dist/` output into `static/games/phaser-word-search/`.
+- Updated `/labs/phaser-word-search/` to embed the static Phaser lab build with an iframe while keeping the stable Daily Word Search available.

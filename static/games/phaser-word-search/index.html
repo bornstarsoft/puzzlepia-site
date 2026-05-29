@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Puzzlepia Phaser Word Search lab prototype." />
+    <title>Puzzlepia Phaser Word Search Lab</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script type="module" crossorigin src="./assets/index-BlT0qHIh.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bl0FMDas.css">
+  </head>
+  <body>
+    <main class="lab-shell">
+      <section class="lab-hero" aria-labelledby="lab-title">
+        <p class="eyebrow">Puzzlepia Labs</p>
+        <h1 id="lab-title">Phaser Word Search</h1>
+        <p>A lightweight Phaser prototype for testing smoother word selection before any future Puzzlepia integration.</p>
+      </section>
+
+      <section class="game-card" aria-labelledby="game-title">
+        <div class="game-header">
+          <div>
+            <p class="eyebrow">Prototype</p>
+            <h2 id="game-title">Find today's words</h2>
+          </div>
+          <p id="game-status" class="status" role="status" aria-live="polite">0 / 4 words found. Drag across a word.</p>
+        </div>
+
+        <div class="game-layout">
+          <div id="game-root" class="game-root" aria-label="6 by 6 Phaser word search board"></div>
+          <aside class="word-panel" aria-label="Target words">
+            <h3>Words</h3>
+            <ul id="word-list" class="word-list">
+              <li data-word="STAR">STAR</li>
+              <li data-word="MOON">MOON</li>
+              <li data-word="MINT">MINT</li>
+              <li data-word="PLAY">PLAY</li>
+            </ul>
+            <button id="reset-button" class="reset-button" type="button">Reset puzzle</button>
+          </aside>
+        </div>
+
+        <p id="complete-message" class="complete-message" hidden>Puzzle complete! Great job.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -410,6 +410,7 @@ img {
 
 .game-hero,
 .detail-section,
+.lab-embed,
 .blog-card,
 .challenge-card {
   border: 1px solid var(--line);
@@ -472,6 +473,23 @@ img {
   display: grid;
   gap: 16px;
   align-items: center;
+}
+
+.lab-embed {
+  width: 100%;
+  max-width: 980px;
+  margin-top: 24px;
+  padding: 10px;
+  border-radius: 24px;
+}
+
+.lab-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 820px;
+  border: 0;
+  border-radius: 18px;
+  background: #fffafc;
 }
 
 .check-list {

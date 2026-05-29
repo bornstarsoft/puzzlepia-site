@@ -1,2 +1,4 @@
 public/
 cf_rum_sites*.json
+node_modules/
+.vite/
