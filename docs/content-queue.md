@@ -2,6 +2,26 @@
 
 This queue is a practical idea bank for future Puzzlepia updates. Keep each item small enough to publish safely.
 
+## Used in Phase 5A
+
+Blog topics published:
+
+- Daily Word Games for Beginners
+- How to Improve at Block Puzzles
+- Color Puzzle Strategy Basics
+- Why Short Puzzle Sessions Work So Well
+- Puzzle Games for Kids and Families
+
+Daily Challenge prompts published:
+
+- Star Word Warmup
+- Moon Word Search Mini
+- Block Corner Placement
+- Open Board Block Challenge
+- Ring Size Practice
+- Mint Color Match
+- Quick Number Focus
+
 ## Blog Topic Ideas
 
 1. How to Choose a Puzzle for a Five-Minute Break
@@ -24,6 +44,11 @@ This queue is a practical idea bank for future Puzzlepia updates. Keep each item
 18. Daily Puzzle Variety: Words, Blocks, Rings, Numbers, Colors
 19. How to Use Hints Without Spoiling the Fun
 20. Why Simple Rules Can Make Strong Puzzle Games
+21. Gentle Puzzle Routines for Evenings
+22. How to Compare Word, Block, and Color Puzzles
+23. Puzzle Breaks for Travel Days
+24. What Makes a Puzzle Feel Fair?
+25. How to Pick an Easy Puzzle When You Are Tired
 
 ## Daily Challenge Ideas
 
@@ -47,6 +72,11 @@ This queue is a practical idea bank for future Puzzlepia updates. Keep each item
 18. Quick Logic Prompt: Find the Missing Number
 19. Pattern Spotter: Repeated Colors
 20. Calm Puzzle Break: Three Tiny Goals
+21. Word Search: Find PLAY Backward
+22. Block Puzzle: Save the Center Space
+23. Ring Puzzle: One Color, Three Sizes
+24. Color Match: Pink and Mint Scan
+25. Number Focus: Even Numbers First
 
 ## Future Game Page Improvement Ideas
 

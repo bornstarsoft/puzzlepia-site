@@ -91,3 +91,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Documented bundle size, iframe behavior, UX comparison, and adoption criteria for the Phaser Word Search lab.
 - Recommended keeping `/daily/word-search/` on Vanilla JS while Phaser remains a separate lab experiment.
+
+## Phase 5A Second Content Batch
+
+- Added five starter Blog posts for word games, block puzzles, color strategy, short sessions, and family-friendly puzzle play.
+- Added seven static Daily Challenge prompts while keeping playable Daily Puzzles prominent and unchanged.
