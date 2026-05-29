@@ -8,6 +8,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/`
 - `/games/`
 - `/blog/`
+- `/labs/`
 - `/about/`
 - `/contact/`
 - `/privacy/`
@@ -38,6 +39,11 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/games/ringzzle/`
 - `/games/mapdoku/`
 - `/games/color-rings-mania/`
+
+## Lab URLs
+
+- `/labs/`
+- `/labs/phaser-word-search/`
 
 ## Blog URLs
 

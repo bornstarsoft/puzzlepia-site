@@ -91,6 +91,53 @@ Do not add:
 - Misleading store badges
 - Large image files without a clear purpose
 
+## Phase 4A: Phaser Lab Preparation
+
+Goal: prepare for future Phaser experiments without changing the current Daily Puzzle games.
+
+Recommended scope:
+
+- Document the Phaser lab plan and safety constraints.
+- Add placeholder pages for `/labs/` and `/labs/phaser-word-search/`.
+- Keep the Phaser Word Search page honest: planned lab only, not a live game.
+- Keep the existing Vanilla JS Daily Word Search unchanged.
+- Do not add Phaser, npm files, build output, or iframe embeds yet.
+
+## Phase 4B: Phaser Word Search Prototype
+
+Goal: build a first Phaser Word Search experiment outside the Hugo repository.
+
+Recommended scope:
+
+- Create a separate local `puzzlepia-phaser-lab/` folder.
+- Build a deterministic Word Search prototype with Phaser.
+- Keep the game static and mobile-first.
+- Confirm completion, reset, touch selection, and desktop pointer selection.
+- Run the lab build separately before considering Hugo integration.
+
+## Phase 4C: Integrate Built Phaser Output
+
+Goal: copy a proven Phaser build into the Hugo static tree safely.
+
+Recommended scope:
+
+- Copy built lab files into `static/games/phaser-word-search/`.
+- Embed the game with an iframe first.
+- Run `bash tools/check_site.sh`.
+- Browser QA `/labs/phaser-word-search/` on mobile and desktop.
+- Keep the current Vanilla JS Daily Word Search available.
+
+## Phase 4D: Decide Phaser Standard
+
+Goal: decide whether Phaser should become the default for future richer HTML5 puzzle games.
+
+Recommended scope:
+
+- Compare bundle size, QA effort, touch reliability, and maintainability.
+- Keep Vanilla JS for very small static puzzles if it remains simpler.
+- Use Phaser only where it clearly improves player feel or implementation quality.
+- Do not migrate existing stable Daily Puzzles without a clear benefit and separate plan.
+
 ## Default Phase Recommendation
 
 Start with Phase 3A if the next work should improve player experience.
@@ -100,3 +147,5 @@ Start with Phase 3B if the next work should improve SEO/content coverage.
 Start with Phase 3C only when confirmed store links or real game assets are available.
 
 Start with Phase 3D when Puzzlepia has stronger official visual assets ready.
+
+Start with Phase 4B only after Phase 4A is published and the Phaser experiment is kept outside the Hugo repo.

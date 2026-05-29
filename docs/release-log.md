@@ -76,3 +76,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Clarified Games hub paths for playing Daily Puzzles or viewing BornstarSoft game pages.
 - Improved game detail CTAs with related Daily Puzzle actions and safe store/update messaging.
+
+## Phase 4A Phaser Lab Preparation
+
+- Added a safe Phaser lab plan for future HTML5 game experiments without changing the current Vanilla JS Daily Puzzles.
+- Added `/labs/` and `/labs/phaser-word-search/` placeholder pages with clear non-live wording.
