@@ -45,6 +45,7 @@ This document captures the current live MVP state so future work can continue wi
 - Phase 2E: SEO, JSON-LD, and sharing metadata
 - Phase 2F: SVG Open Graph source image
 - Phase 2G: PNG Open Graph fallback image
+- Phase 5B: Operations observation and next-priority decision docs
 
 ## Page Inventory
 
@@ -93,12 +94,14 @@ See `docs/url-inventory.md` for the full URL list, including Blog posts and Dail
 
 ## Content Inventory
 
-- 10 Blog posts under `content/blog/`
-- 7 Daily Challenge pages under `content/daily/challenges/`
+- 15 Blog posts under `content/blog/`
+- 14 Daily Challenge pages under `content/daily/challenges/`
 - 5 playable HTML5 Daily Puzzle pages under `content/daily/`
 - 5 game detail pages under `content/games/`
 - Internal content operations docs under `docs/`
 - Local publishing helper at `tools/check_site.sh`
+- Operations observation notes in `docs/operations-observation-report.md`
+- Next-priority decision paths in `docs/phase-5-next-priorities.md`
 
 ## HTML5 Daily Puzzle Status
 
@@ -139,3 +142,5 @@ These are starter puzzles, not full commercial game engines. Keep changes small 
 3. Phase 3C: Improve Games hub conversion with confirmed store links and real assets only.
 4. Phase 3D: Improve social and brand assets with real image/icon sources.
 5. Keep publishing docs and URL inventory updated after each meaningful content or metadata phase.
+
+For operations-based prioritization, see `docs/operations-observation-report.md` and `docs/phase-5-next-priorities.md`.

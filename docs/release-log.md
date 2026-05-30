@@ -96,3 +96,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added five starter Blog posts for word games, block puzzles, color strategy, short sessions, and family-friendly puzzle play.
 - Added seven static Daily Challenge prompts while keeping playable Daily Puzzles prominent and unchanged.
+
+## Phase 5B Operations Observation Docs
+
+- Added an operations observation report for weekly checks across Cloudflare Pages, Cloudflare Web Analytics, Search Console, live QA, and known limitations.
+- Added next-priority decision paths for content growth, Daily game polish, Games hub conversion, and Phaser experiments.

@@ -2,6 +2,8 @@
 
 The next phases should keep Puzzlepia lightweight, static, and clear. Do not introduce backend systems, accounts, rankings, ads, analytics snippets, or complex frontend tooling.
 
+For operations-based decisions after Phase 5B, also review `docs/operations-observation-report.md` and `docs/phase-5-next-priorities.md`.
+
 ## Phase 3A: Improve Daily Word Search HTML5 Game
 
 Goal: make the most approachable playable puzzle feel better on desktop and mobile.
