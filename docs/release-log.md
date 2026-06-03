@@ -101,3 +101,9 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added an operations observation report for weekly checks across Cloudflare Pages, Cloudflare Web Analytics, Search Console, live QA, and known limitations.
 - Added next-priority decision paths for content growth, Daily game polish, Games hub conversion, and Phaser experiments.
+
+## Phase 5C Daily Block Puzzle Flow
+
+- Used early analytics signals from Home, Daily, Games, Blockzzle, and Daily Block Puzzle traffic to clarify the Home to Daily Block Puzzle to Blockzzle visitor path.
+- Kept Core Web Vitals work out of scope because LCP, INP, and CLS were already measured as good.
+- Focused on CTA wording, Daily Block Puzzle highlighting, and safe Blockzzle cross-linking without changing game logic.

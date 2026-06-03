@@ -131,3 +131,9 @@ Current recommendation:
 - Choose Content Batch 3 first unless analytics shows strong engagement on Daily Puzzle game pages.
 - If Daily Puzzle engagement stands out, improve Daily Block Puzzle next, one game at a time.
 - Keep Phaser experimental until it clearly improves user experience, mobile reliability, and maintainability.
+
+## Phase 5C Observation Note
+
+Early Cloudflare Web Analytics showed meaningful activity on `/`, `/daily/`, `/games/`, `/games/blockzzle/`, and `/daily/block-puzzle/`. Core Web Vitals were measured as good for LCP, INP, and CLS, so Phase 5C focused on visitor-flow clarity instead of performance optimization.
+
+The recommended observation follow-up is to watch whether more visitors move from `/daily/` to `/daily/block-puzzle/`, then from `/daily/block-puzzle/` to `/games/blockzzle/`.

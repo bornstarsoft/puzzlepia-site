@@ -385,6 +385,11 @@ img {
   font-weight: 900;
 }
 
+.game-card__meta .game-card__badge {
+  color: #5d3b00;
+  background: rgba(255, 200, 87, 0.34);
+}
+
 .game-card__button {
   flex: 1 1 150px;
   min-width: 0;
