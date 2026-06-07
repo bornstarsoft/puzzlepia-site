@@ -11,11 +11,18 @@
 {{ with .Params.status }}<span>{{ . }}</span>{{ end }}
       </div>
       <div class="game-hero__actions">
+{{ if .Params.playURL }}
+        <a class="button button--primary" href="{{ .Params.playURL }}" rel="noopener" target="_blank">{{ .Params.playLabel | default "Play online" }}</a>
+{{ with .Params.dailyURL }}
+        <a class="button button--secondary" href="{{ . }}">{{ $.Params.dailyHeroLabel | default "Play related daily puzzle" }}</a>
+{{ end }}
+{{ else }}
         <a class="button button--primary" href="{{ .Params.dailyURL | default "/daily/" }}">{{ .Params.dailyHeroLabel | default "Play related daily puzzle" }}</a>
 {{ if .Params.storeURL }}
         <a class="button button--secondary" href="{{ .Params.storeURL }}" rel="noopener" target="_blank">{{ .Params.storeLabel | default "Open store page" }}</a>
 {{ else }}
         <span class="button button--disabled" aria-disabled="true">{{ .Params.storeLabel | default "Store link coming soon" }}</span>
+{{ end }}
 {{ end }}
       </div>
     </div>
@@ -48,13 +55,26 @@
 
   <section class="detail-section detail-section--split">
     <div>
-      <h2>Store and Updates</h2>
+      <h2>{{ if .Params.playURL }}Play Online{{ else }}Store and Updates{{ end }}</h2>
+{{ if .Params.playURL }}
+{{ with .Params.playNote }}<p>{{ . }}</p>{{ else }}<p>Play this puzzle online from the official game site.</p>{{ end }}
+{{ else }}
 {{ with .Params.storeNote }}<p>{{ . }}</p>{{ else }}<p>Follow Puzzlepia for updates.</p>{{ end }}
+{{ end }}
     </div>
+{{ if .Params.playURL }}
+    <div class="game-hero__actions">
+      <a class="button button--primary" href="{{ .Params.playURL }}" rel="noopener" target="_blank">{{ .Params.playLabel | default "Play online" }}</a>
+{{ with .Params.infoURL }}
+      <a class="button button--secondary" href="{{ . }}" rel="noopener" target="_blank">{{ $.Params.infoLabel | default "Learn more" }}</a>
+{{ end }}
+    </div>
+{{ else }}
 {{ if .Params.storeURL }}
     <a class="button button--primary" href="{{ .Params.storeURL }}" rel="noopener" target="_blank">{{ .Params.storeLabel | default "Open store page" }}</a>
 {{ else }}
     <a class="button button--secondary" href="{{ .Params.dailyURL | default "/daily/" }}">Play related daily puzzle</a>
+{{ end }}
 {{ end }}
   </section>
 </article>

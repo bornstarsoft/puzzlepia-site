@@ -47,6 +47,7 @@ Phaser lab status:
 Games hub status:
 
 - `/games/` links to BornstarSoft game detail pages and related Daily Puzzle experiences.
+- Blockzzle links to the official free browser game at `https://blockzzle.com/play/`.
 - KPOP Word Search has a known Google Play link.
 - Other store CTAs remain safe placeholders until real URLs are confirmed.
 

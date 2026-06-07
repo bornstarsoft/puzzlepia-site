@@ -8,4 +8,4 @@ Explore puzzle games from BornstarSoft and the Puzzlepia universe.
 
 Puzzlepia brings daily puzzle starters and BornstarSoft game pages together in one simple place.
 
-Choose a quick Daily Puzzle if you want to play right away, or open a game page for details, related puzzles, and current store availability.
+Choose a quick Daily Puzzle if you want a small starter, play Blockzzle online from the Games cards, or open a game page for details and related puzzles.

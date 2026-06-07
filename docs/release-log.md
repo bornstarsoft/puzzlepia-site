@@ -107,3 +107,8 @@ Concise internal notes for major Puzzlepia phases.
 - Used early analytics signals from Home, Daily, Games, Blockzzle, and Daily Block Puzzle traffic to clarify the Home to Daily Block Puzzle to Blockzzle visitor path.
 - Kept Core Web Vitals work out of scope because LCP, INP, and CLS were already measured as good.
 - Focused on CTA wording, Daily Block Puzzle highlighting, and safe Blockzzle cross-linking without changing game logic.
+
+## Blockzzle Web Cross-Link
+
+- Updated the Puzzlepia Blockzzle game page and shared game cards to link to the official Blockzzle browser game at `https://blockzzle.com/play/`.
+- Added a secondary information link to `https://blockzzle.com/block-puzzle/` without adding mobile app, backend, ads, analytics, or monetization claims.

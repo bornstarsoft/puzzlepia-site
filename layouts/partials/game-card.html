@@ -12,9 +12,14 @@
     <p>{{ .Description }}</p>
     <div class="game-card__actions">
 {{ if eq .Section "games" }}
+{{ if .Params.playURL }}
+      <a class="button button--primary game-card__button" href="{{ .Params.playURL }}" rel="noopener" target="_blank">{{ .Params.playLabel | default "Play online" }}</a>
+      <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">View game</a>
+{{ else }}
       <a class="button button--primary game-card__button" href="{{ .RelPermalink }}">View game</a>
 {{ with .Params.dailyURL }}
       <a class="button button--secondary game-card__button" href="{{ . }}">Play daily puzzle</a>
+{{ end }}
 {{ end }}
 {{ else }}
       <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">Open puzzle</a>

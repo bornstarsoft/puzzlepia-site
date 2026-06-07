@@ -1,20 +1,36 @@
 ---
 title: "Blockzzle"
-description: "Discover Blockzzle, a bright BornstarSoft block puzzle game built for relaxed focus and satisfying logic play."
+description: "Play Blockzzle, a free block puzzle game you can open instantly in your browser with no install."
 kicker: "Featured game"
 weight: 10
 icon: "B"
 genre: "Block puzzle"
-status: "In development"
+status: "Playable online"
+badge: "Free browser game"
 dailyTitle: "Daily Block Puzzle"
 dailyURL: "/daily/block-puzzle/"
 dailyHeroLabel: "Try Daily Block Puzzle"
-storeLabel: "Store link coming soon"
-storeNote: "The exact store link is not available yet. Play the related Daily Block Puzzle now, and follow Puzzlepia for Blockzzle updates."
+playURL: "https://blockzzle.com/play/"
+playLabel: "Play Blockzzle Online"
+playNote: "Blockzzle is a free browser block puzzle game on the official Blockzzle site. Play online with no install."
+infoURL: "https://blockzzle.com/block-puzzle/"
+infoLabel: "Learn more about this block puzzle game"
+officialURL: "https://blockzzle.com/"
+category: "Puzzle"
+tags:
+  - "block puzzle"
+  - "browser game"
+  - "free puzzle game"
 why:
-  - "Built for quick, satisfying block placement."
-  - "Simple rules make it easy to start a calm puzzle break."
+  - "Play instantly in your browser with no install."
+  - "Drag blocks, clear rows and columns, and chase your best score."
   - "A natural companion to Puzzlepia's Daily Block Puzzle starter."
 ---
 
-Blockzzle is a colorful block puzzle experience built for relaxed focus and satisfying problem solving. If you are arriving from Puzzlepia's Daily Puzzles, start with the lightweight [Daily Block Puzzle](/daily/block-puzzle/) to practice the basic placement flow.
+Blockzzle is a free block puzzle game from BornstarSoft that you can play online in your browser. Drag blocks onto the board, clear rows and columns, and keep building your score in a quick no-install puzzle session.
+
+Start playing on the official Blockzzle site: [Play Blockzzle Online](https://blockzzle.com/play/).
+
+Want the overview first? [Learn more about this block puzzle game](https://blockzzle.com/block-puzzle/).
+
+If you are arriving from Puzzlepia's Daily Puzzles, start with the lightweight [Daily Block Puzzle](/daily/block-puzzle/) to practice the basic placement flow.

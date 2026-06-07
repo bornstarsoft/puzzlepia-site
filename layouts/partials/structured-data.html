@@ -14,7 +14,11 @@
 {{- else if and .IsPage (eq .Section "games") -}}
   {{- $work := dict "@context" "https://schema.org" "@type" "CreativeWork" "name" .Title "description" $description "url" .Permalink "publisher" $org "isPartOf" (dict "@type" "WebSite" "name" $siteName "url" $siteURL) -}}
   {{- with .Params.genre }}{{ $work = merge $work (dict "genre" .) }}{{ end -}}
-  {{- with .Params.storeURL }}{{ $work = merge $work (dict "sameAs" (slice .)) }}{{ end -}}
+  {{- $sameAs := slice -}}
+  {{- with .Params.storeURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+  {{- with .Params.playURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+  {{- with .Params.infoURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+  {{- if gt (len $sameAs) 0 }}{{ $work = merge $work (dict "sameAs" $sameAs) }}{{ end -}}
   {{- $items = $items | append $work -}}
 {{- else if and .IsPage (eq .Section "daily") -}}
   {{- $work := dict "@context" "https://schema.org" "@type" "CreativeWork" "name" .Title "description" $description "url" .Permalink "publisher" $org "isPartOf" (dict "@type" "WebSite" "name" $siteName "url" $siteURL) -}}
