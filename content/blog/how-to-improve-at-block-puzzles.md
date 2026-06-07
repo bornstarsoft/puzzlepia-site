@@ -75,6 +75,6 @@ Small puzzles are useful because every placement matters. You can see the result
 
 Try the [Daily Block Puzzle](/daily/block-puzzle/) as a quick practice space. It is intentionally lightweight, but it helps reinforce the basic habit: choose a piece, look at the board, and place it where it keeps the puzzle clean.
 
-For a related BornstarSoft game page, visit [Blockzzle](/games/blockzzle/).
+For a related BornstarSoft game page, visit [Blockzzle](/games/blockzzle/). If you want to keep playing after the starter puzzle, [play Blockzzle online](https://blockzzle.com/play/) as a free browser block puzzle.
 
 Block puzzle improvement is mostly about calm decisions. Keep space open, place difficult shapes early, and avoid trapping the board. Those simple ideas can make each puzzle feel clearer.

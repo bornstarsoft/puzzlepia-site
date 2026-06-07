@@ -112,3 +112,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Updated the Puzzlepia Blockzzle game page and shared game cards to link to the official Blockzzle browser game at `https://blockzzle.com/play/`.
 - Added a secondary information link to `https://blockzzle.com/block-puzzle/` without adding mobile app, backend, ads, analytics, or monetization claims.
+
+## Blockzzle Related Content Links
+
+- Updated relevant Block Puzzle blog posts and Daily Challenge pages so readers can move naturally from starter practice to the Puzzlepia Blockzzle page and the official Blockzzle web game.
+- Kept the copy limited to browser play and avoided mobile app, leaderboard, monetization, ranking, and store claims.

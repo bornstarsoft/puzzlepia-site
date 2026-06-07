@@ -29,4 +29,4 @@ Place the 2x2 square or the 3-block line before the single block. The single blo
 
 ## Play next
 
-Try [Daily Block Puzzle](/daily/block-puzzle/) and open [Blockzzle](/games/blockzzle/) for the related game page.
+Try [Daily Block Puzzle](/daily/block-puzzle/) and open [Blockzzle](/games/blockzzle/) for the related game page. For the full browser puzzle, [play the official Blockzzle web game](https://blockzzle.com/play/).

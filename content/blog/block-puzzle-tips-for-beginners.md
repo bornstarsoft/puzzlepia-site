@@ -50,4 +50,4 @@ Look for the largest open area. Try to keep that area useful. If the board has a
 
 Small starter puzzles are useful because they make cause and effect easy to see. Puzzlepia's [Daily Block Puzzle](/daily/block-puzzle/) is intentionally modest. It is not trying to be a full commercial puzzle engine. It is a quick way to practice piece selection, placement, and completion.
 
-When you are ready to explore more block puzzle content from BornstarSoft, visit the [Blockzzle](/games/blockzzle/) page on Puzzlepia.
+When you are ready to explore more block puzzle content from BornstarSoft, visit the [Blockzzle](/games/blockzzle/) page on Puzzlepia. You can also [play Blockzzle online](https://blockzzle.com/play/) on the official Blockzzle site when you want a free browser block puzzle with no install.

@@ -32,7 +32,7 @@ Block puzzles are another good daily format. They ask you to look at space, shap
 
 The best beginner-friendly block puzzles avoid overwhelming the player. They start with a few pieces and let the player understand the board through action. Puzzlepia's [Daily Block Puzzle](/daily/block-puzzle/) follows this starter approach.
 
-For players who enjoy this kind of spatial puzzle, the [Puzzlepia Games](/games/) section also connects to BornstarSoft game pages such as Blockzzle.
+For players who enjoy this kind of spatial puzzle, the [Puzzlepia Games](/games/) section also connects to BornstarSoft game pages such as [Blockzzle](/games/blockzzle/), where you can continue to the official browser game.
 
 ## Number and color puzzles for quick wins
 

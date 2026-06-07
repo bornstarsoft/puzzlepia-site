@@ -29,4 +29,4 @@ A safe approach is to place the line along an edge, place the square near a corn
 
 ## Play next
 
-Try the playable [Daily Block Puzzle](/daily/block-puzzle/), then visit [Blockzzle](/games/blockzzle/) for the related BornstarSoft game page.
+Try the playable [Daily Block Puzzle](/daily/block-puzzle/), then visit [Blockzzle](/games/blockzzle/) for the related BornstarSoft game page. If you want a longer no-install session, [play the official Blockzzle web game](https://blockzzle.com/play/).

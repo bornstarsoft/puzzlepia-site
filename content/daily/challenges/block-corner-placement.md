@@ -32,4 +32,4 @@ The better plan is to place the L-shape tightly into the corner while keeping th
 
 ## Play next
 
-Practice placement in [Daily Block Puzzle](/daily/block-puzzle/), then visit [Blockzzle](/games/blockzzle/).
+Practice placement in [Daily Block Puzzle](/daily/block-puzzle/), then visit [Blockzzle](/games/blockzzle/) for the related game page.

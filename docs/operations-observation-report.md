@@ -138,3 +138,5 @@ Current recommendation:
 Early Cloudflare Web Analytics showed meaningful activity on `/`, `/daily/`, `/games/`, `/games/blockzzle/`, and `/daily/block-puzzle/`. Core Web Vitals were measured as good for LCP, INP, and CLS, so Phase 5C focused on visitor-flow clarity instead of performance optimization.
 
 The recommended observation follow-up is to watch whether more visitors move from `/daily/` to `/daily/block-puzzle/`, then from `/daily/block-puzzle/` to `/games/blockzzle/`.
+
+Related Block Puzzle blog posts and block-focused Daily Challenge pages now include clearer paths to `/daily/block-puzzle/`, `/games/blockzzle/`, and the official Blockzzle web game. Future observation should compare whether these content pages send meaningful traffic into the Blockzzle flow.
