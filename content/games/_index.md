@@ -8,4 +8,4 @@ Explore puzzle games from BornstarSoft and the Puzzlepia universe.
 
 Puzzlepia brings daily puzzle starters and BornstarSoft game pages together in one simple place.
 
-Choose a quick Daily Puzzle if you want a small starter, play Blockzzle or Ringzzle online from the Games cards, or open a game page for details and related puzzles.
+Choose a quick Daily Puzzle if you want a small starter, play Blockzzle for browser block puzzle play, try Ringzzle for color rings, or open a game page for details and related puzzles.

@@ -122,3 +122,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Updated the Puzzlepia Ringzzle game page and shared game cards to link to the official Ringzzle browser game, how-to-play page, and anonymous leaderboard.
 - Kept the update to safe cross-promotion only, with no fake ranking, review, player count, backend, analytics, ads, login, or monetization changes.
+
+## Blockzzle Cross-Link Refresh
+
+- Updated Blockzzle to match the official playable browser-game pattern used for Ringzzle, including play, overview, official site, and anonymous leaderboard links.
+- Kept Blockzzle clearly positioned as a block puzzle game while Ringzzle remains the separate color rings puzzle game.
