@@ -20,3 +20,5 @@ Tap a piece, then tap a board cell where the piece should begin. If the placemen
 ## Related game
 
 Want a deeper block puzzle direction from the Puzzlepia and BornstarSoft puzzle universe? Explore [Blockzzle](/games/blockzzle/).
+
+For a full browser session, [play Blockzzle](https://blockzzle.com/play/) on the official site. You can also [view the Blockzzle leaderboard](https://blockzzle.com/leaderboard/) after exploring the game.

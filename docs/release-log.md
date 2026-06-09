@@ -127,3 +127,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Updated Blockzzle to match the official playable browser-game pattern used for Ringzzle, including play, overview, official site, and anonymous leaderboard links.
 - Kept Blockzzle clearly positioned as a block puzzle game while Ringzzle remains the separate color rings puzzle game.
+
+## Blockzzle Leaderboard Link Pass
+
+- Added secondary official Blockzzle leaderboard links to selected high-relevance Block Puzzle content only.
+- Kept the primary flow focused on playing Blockzzle and avoided fake ranking, player count, reward, monetization, or popularity claims.

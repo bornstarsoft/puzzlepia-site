@@ -140,3 +140,5 @@ Early Cloudflare Web Analytics showed meaningful activity on `/`, `/daily/`, `/g
 The recommended observation follow-up is to watch whether more visitors move from `/daily/` to `/daily/block-puzzle/`, then from `/daily/block-puzzle/` to `/games/blockzzle/`.
 
 Related Block Puzzle blog posts and block-focused Daily Challenge pages now include clearer paths to `/daily/block-puzzle/`, `/games/blockzzle/`, and the official Blockzzle web game. Future observation should compare whether these content pages send meaningful traffic into the Blockzzle flow.
+
+Selected high-relevance Block Puzzle content now also includes secondary links to the official Blockzzle leaderboard. These links should be observed as supporting CTAs only; no fake ranking, player count, reward, monetization, or popularity claims were added.
