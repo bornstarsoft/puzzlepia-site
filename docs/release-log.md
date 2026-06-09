@@ -117,3 +117,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Updated relevant Block Puzzle blog posts and Daily Challenge pages so readers can move naturally from starter practice to the Puzzlepia Blockzzle page and the official Blockzzle web game.
 - Kept the copy limited to browser play and avoided mobile app, leaderboard, monetization, ranking, and store claims.
+
+## Ringzzle Cross-Link
+
+- Updated the Puzzlepia Ringzzle game page and shared game cards to link to the official Ringzzle browser game, how-to-play page, and anonymous leaderboard.
+- Kept the update to safe cross-promotion only, with no fake ranking, review, player count, backend, analytics, ads, login, or monetization changes.

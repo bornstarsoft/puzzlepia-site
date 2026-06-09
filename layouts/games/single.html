@@ -68,6 +68,9 @@
 {{ with .Params.infoURL }}
       <a class="button button--secondary" href="{{ . }}" rel="noopener" target="_blank">{{ $.Params.infoLabel | default "Learn more" }}</a>
 {{ end }}
+{{ with .Params.leaderboardURL }}
+      <a class="button button--secondary" href="{{ . }}" rel="noopener" target="_blank">{{ $.Params.leaderboardLabel | default "Leaderboard" }}</a>
+{{ end }}
     </div>
 {{ else }}
 {{ if .Params.storeURL }}

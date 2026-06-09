@@ -14,6 +14,9 @@
 {{ if eq .Section "games" }}
 {{ if .Params.playURL }}
       <a class="button button--primary game-card__button" href="{{ .Params.playURL }}" rel="noopener" target="_blank">{{ .Params.playLabel | default "Play online" }}</a>
+{{ with .Params.leaderboardURL }}
+      <a class="button button--secondary game-card__button" href="{{ . }}" rel="noopener" target="_blank">{{ $.Params.leaderboardLabel | default "Leaderboard" }}</a>
+{{ end }}
       <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">View game</a>
 {{ else }}
       <a class="button button--primary game-card__button" href="{{ .RelPermalink }}">View game</a>

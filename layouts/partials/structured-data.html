@@ -18,6 +18,8 @@
   {{- with .Params.storeURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
   {{- with .Params.playURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
   {{- with .Params.infoURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+  {{- with .Params.leaderboardURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+  {{- with .Params.officialURL }}{{ $sameAs = $sameAs | append . }}{{ end -}}
   {{- if gt (len $sameAs) 0 }}{{ $work = merge $work (dict "sameAs" $sameAs) }}{{ end -}}
   {{- $items = $items | append $work -}}
 {{- else if and .IsPage (eq .Section "daily") -}}
