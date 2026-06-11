@@ -132,3 +132,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added secondary official Blockzzle leaderboard links to selected high-relevance Block Puzzle content only.
 - Kept the primary flow focused on playing Blockzzle and avoided fake ranking, player count, reward, monetization, or popularity claims.
+
+## Phase 5E Daily Block Puzzle UX Polish
+
+- Used early activity on `/daily/block-puzzle/` and `/games/blockzzle/` to polish the Daily Block Puzzle selection, feedback, and completion CTA flow.
+- Preserved the simple deterministic mechanic: tap a piece, tap the board, place all required pieces, reset when needed.

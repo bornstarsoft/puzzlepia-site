@@ -18,6 +18,7 @@
   var selected = null;
   var boardEl = helpers.qs(root, "[data-board]");
   var trayEl = helpers.qs(root, "[data-tray]");
+  var completeActionsEl = helpers.qs(root, "[data-complete-actions]");
 
   function makeBoard() {
     return Array.from({ length: size }, function () {
@@ -42,23 +43,41 @@
     });
   }
 
+  function setFeedback(message, tone) {
+    var status = helpers.qs(root, "[data-status]");
+    helpers.setStatus(root, message);
+    if (status) {
+      status.classList.remove("is-good", "is-warn", "is-complete");
+      if (tone) {
+        status.classList.add("is-" + tone);
+      }
+    }
+  }
+
+  function showCompletionActions(show) {
+    if (completeActionsEl) {
+      completeActionsEl.hidden = !show;
+    }
+  }
+
   function completeIfReady() {
     if (pieces.every(function (piece) { return placed[piece.id]; })) {
       selected = null;
-      helpers.setStatus(root, "All pieces placed.");
+      setFeedback("Puzzle complete! Great job.", "complete");
       helpers.showComplete(root);
+      showCompletionActions(true);
     }
   }
 
   function place(row, col) {
     var cell = boardEl.querySelector('[data-row="' + row + '"][data-col="' + col + '"]');
     if (!selected) {
-      helpers.setStatus(root, "Choose a piece first.");
+      setFeedback("Tap a piece first.", "warn");
       helpers.pulse(cell, "is-invalid");
       return;
     }
     if (!canPlace(selected, row, col)) {
-      helpers.setStatus(root, "That piece needs more open space.");
+      setFeedback("That spot does not fit.", "warn");
       helpers.pulse(cell, "is-invalid");
       return;
     }
@@ -70,10 +89,11 @@
     if (button) {
       button.disabled = true;
       button.classList.remove("is-selected");
+      button.setAttribute("aria-pressed", "false");
     }
     selected = null;
     renderBoard();
-    helpers.setStatus(root, "Piece placed. Choose the next piece.");
+    setFeedback("Nice placement. Pick the next piece.", "good");
     completeIfReady();
   }
 
@@ -83,12 +103,14 @@
     }
     selected = piece;
     helpers.qsa(trayEl, ".piece-button").forEach(function (button) {
-      button.classList.toggle("is-selected", button.dataset.piece === piece.id);
+      var isSelected = button.dataset.piece === piece.id;
+      button.classList.toggle("is-selected", isSelected);
+      button.setAttribute("aria-pressed", String(isSelected));
     });
-    helpers.setStatus(root, piece.label + " selected. Tap a board cell.");
+    setFeedback(piece.label + " selected. Tap the board.", "good");
   }
 
-  function resetGame() {
+  function resetGame(showResetFeedback) {
     board = makeBoard();
     placed = {};
     selected = null;
@@ -96,9 +118,11 @@
     helpers.qsa(trayEl, ".piece-button").forEach(function (button) {
       button.disabled = false;
       button.classList.remove("is-selected");
+      button.setAttribute("aria-pressed", "false");
     });
     helpers.hideComplete(root);
-    helpers.setStatus(root, "Select a piece, then tap the board.");
+    showCompletionActions(false);
+    setFeedback(showResetFeedback ? "Puzzle reset. Tap a piece." : "Tap a piece, then tap the board.", showResetFeedback ? "good" : "");
   }
 
   function buildBoard() {
@@ -127,6 +151,7 @@
       button.className = "piece-button";
       button.dataset.piece = piece.id;
       button.textContent = piece.label;
+      button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", function () {
         selectPiece(piece);
       });

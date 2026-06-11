@@ -142,3 +142,5 @@ The recommended observation follow-up is to watch whether more visitors move fro
 Related Block Puzzle blog posts and block-focused Daily Challenge pages now include clearer paths to `/daily/block-puzzle/`, `/games/blockzzle/`, and the official Blockzzle web game. Future observation should compare whether these content pages send meaningful traffic into the Blockzzle flow.
 
 Selected high-relevance Block Puzzle content now also includes secondary links to the official Blockzzle leaderboard. These links should be observed as supporting CTAs only; no fake ranking, player count, reward, monetization, or popularity claims were added.
+
+Phase 5E polished the Daily Block Puzzle because early analytics showed activity on `/daily/block-puzzle/` and `/games/blockzzle/` while Core Web Vitals were already good. The update focused on clearer piece selection, friendlier placement/reset/completion feedback, and a completion-only path to play Blockzzle online without changing scoring, storage, leaderboard logic, or row/column clearing.

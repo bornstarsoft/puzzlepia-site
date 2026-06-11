@@ -36,10 +36,35 @@
   font-weight: 800;
 }
 
+.puzzle-status.is-good {
+  color: var(--purple-dark);
+}
+
+.puzzle-status.is-warn {
+  color: #b83272;
+}
+
+.puzzle-status.is-complete {
+  color: #16756d;
+}
+
 .puzzle-instructions {
   margin: 0 0 16px;
   color: var(--muted);
   font-weight: 750;
+}
+
+.puzzle-helper {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(111, 69, 216, 0.16);
+  border-radius: 999px;
+  background: rgba(45, 212, 191, 0.14);
+  color: var(--purple-dark);
+  font-weight: 900;
 }
 
 .puzzle-complete {
@@ -58,6 +83,21 @@
 
 .puzzle-reset + .puzzle-cta {
   margin-left: 0;
+}
+
+.completion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.completion-actions[hidden] {
+  display: none;
+}
+
+.completion-actions .puzzle-cta {
+  margin-top: 0;
 }
 
 .word-search-layout,
@@ -181,15 +221,23 @@
 .block-board {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 5px;
+  padding: 6px;
+  border: 1px solid rgba(111, 69, 216, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .block-cell {
   aspect-ratio: 1;
   padding: 0;
+  border-radius: 10px;
+  transition: background 0.16s ease, box-shadow 0.16s ease, outline-color 0.16s ease, transform 0.16s ease;
 }
 
 .block-cell.is-filled {
-  background: linear-gradient(135deg, var(--purple), var(--pink));
+  border-color: rgba(75, 42, 154, 0.34);
+  background: linear-gradient(135deg, var(--purple), var(--pink) 58%, var(--gold));
+  box-shadow: inset 0 -5px 0 rgba(36, 28, 53, 0.18), 0 4px 12px rgba(111, 69, 216, 0.18);
 }
 
 .block-cell.is-preview {
@@ -205,25 +253,31 @@
 
 .piece-button,
 .ring-piece {
-  min-height: 54px;
-  padding: 10px 12px;
+  min-height: 58px;
+  padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: #ffffff;
   color: var(--purple-dark);
   font: inherit;
   font-weight: 900;
+  box-shadow: inset 0 -4px 0 rgba(36, 28, 53, 0.06);
+  transition: background 0.16s ease, box-shadow 0.16s ease, outline-color 0.16s ease, transform 0.16s ease;
 }
 
 .piece-button.is-selected,
 .ring-piece.is-selected {
-  outline: 3px solid rgba(255, 95, 168, 0.36);
-  background: rgba(111, 69, 216, 0.08);
+  outline: 4px solid rgba(255, 95, 168, 0.42);
+  outline-offset: 2px;
+  background: linear-gradient(135deg, rgba(255, 95, 168, 0.2), rgba(45, 212, 191, 0.18));
+  box-shadow: inset 0 -4px 0 rgba(36, 28, 53, 0.08), 0 8px 18px rgba(111, 69, 216, 0.16);
+  transform: translateY(-1px);
 }
 
 .piece-button:disabled,
 .ring-piece:disabled {
   opacity: 0.42;
+  box-shadow: none;
 }
 
 .ring-board {
