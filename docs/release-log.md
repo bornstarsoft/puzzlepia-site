@@ -137,3 +137,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Used early activity on `/daily/block-puzzle/` and `/games/blockzzle/` to polish the Daily Block Puzzle selection, feedback, and completion CTA flow.
 - Preserved the simple deterministic mechanic: tap a piece, tap the board, place all required pieces, reset when needed.
+
+## DaySudoku Discovery Link
+
+- Added a small natural discovery link from Puzzlepia to `https://daysudoku.com/` as a related daily Sudoku site with a Key9 twist.
+- Kept the update to homepage and Daily Puzzle discovery copy only, without embeds, gameplay code, analytics scripts, accounts, rankings, archives, app claims, or leaderboard claims.
