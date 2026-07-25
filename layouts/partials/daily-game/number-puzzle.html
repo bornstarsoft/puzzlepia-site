@@ -4,11 +4,16 @@
       <p class="eyebrow">Playable starter</p>
       <h2 id="number-puzzle-title">Tap 1 to 16</h2>
     </div>
-    <p class="puzzle-status" data-status>Next number: 1</p>
+    <p class="puzzle-status" data-status aria-live="polite">Next number: 1. 0 of 16 done.</p>
   </div>
-  <p class="puzzle-instructions">Tap the numbers in ascending order from 1 to 16.</p>
+  <p class="puzzle-instructions">Find and tap the numbers in ascending order from 1 to 16.</p>
+  <p class="puzzle-helper">Start at 1 and keep going until every tile is complete.</p>
   <div class="number-grid" data-grid aria-label="4 by 4 number puzzle grid"></div>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
+  <div class="completion-actions" data-complete-actions hidden>
+    <a class="button button--primary puzzle-cta" href="https://daysudoku.com/" rel="noopener" target="_blank">Try DaySudoku</a>
+    <a class="button button--secondary puzzle-cta" href="/daily/">More Daily Puzzles</a>
+  </div>
   <button class="button button--primary puzzle-reset" type="button" data-reset>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/">Explore Puzzlepia Games</a>
 </section>

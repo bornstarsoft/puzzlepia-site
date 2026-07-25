@@ -152,3 +152,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Aligned Daily Color Match instructions with its six-pink-tile mechanic and added a visible target swatch, progress, and clearer feedback.
 - Preserved the deterministic grid and added a completion-only path to play Ringzzle online.
+
+## Phase 5H Daily Number Puzzle UX Polish
+
+- Added next-number progress, clearer feedback, completed-tile accessibility labels, and reliable reset restoration to Daily Number Puzzle.
+- Preserved the fixed 1-to-16 sequence and added a completion-only path to DaySudoku and other Daily Puzzles.

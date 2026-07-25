@@ -10,12 +10,12 @@ game: "number-puzzle"
 gameScript: "daily-number-puzzle.js"
 ---
 
-Follow the number path from 1 to 16. It is simple, quick, and made for a calm daily logic warm-up.
+Follow the number path from 1 to 16. The progress message keeps the next target clear while you scan the grid.
 
 ## How to play
 
-Tap the numbers in ascending order. A correct tap locks the tile; an incorrect tap gives gentle feedback and lets you continue.
+Tap the numbers in ascending order. A correct tap locks and marks the tile; an incorrect tap gives gentle feedback and lets you continue.
 
 ## Related game
 
-For more puzzle discovery, browse the [Puzzlepia games collection](/games/).
+For more number puzzle play, [try DaySudoku](https://daysudoku.com/) or browse the [Puzzlepia games collection](/games/).

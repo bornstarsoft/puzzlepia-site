@@ -32,10 +32,10 @@ Choose this path when:
 - Manual QA finds a specific Daily Puzzle friction point.
 - A single puzzle can be improved without changing the whole starter pack.
 
-Recommended next review:
+Current Daily game status:
 
-- Review Daily Number Puzzle traffic and manual QA findings.
-- Start another game-polish pass only when the page shows a clear need.
+- All five playable Daily Puzzles have received focused stability or UX polish.
+- Start another game-polish pass only when analytics or manual QA shows a clear need.
 
 Recommended scope:
 
@@ -103,4 +103,4 @@ Current decision:
 
 Pick Path A next unless Cloudflare Web Analytics shows Daily Puzzle pages outperforming content pages in a way that justifies gameplay polish.
 
-Daily Block Puzzle received its focused Phase 5E polish, Daily Ring Puzzle received Phase 5F, and Daily Color Match received Phase 5G without changing their completion rules. If Daily Puzzle engagement remains strong, review Daily Number Puzzle before choosing another single-game pass.
+All five playable Daily Puzzles now have focused stability or UX polish while preserving their deterministic completion rules. Default to Path A content growth next unless analytics or a reproducible QA issue supports another game-specific pass.

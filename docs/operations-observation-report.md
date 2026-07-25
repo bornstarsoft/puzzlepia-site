@@ -35,7 +35,7 @@ Current content inventory:
 Daily Puzzle status:
 
 - `/daily/word-search/` remains the stable Vanilla JS Word Search.
-- `/daily/number-puzzle/` remains a starter-level static HTML5 puzzle; Block Puzzle, Ring Puzzle, and Color Match have received focused UX polish while keeping their starter mechanics.
+- All five playable Daily Puzzles have received focused stability or UX polish while keeping their deterministic starter mechanics.
 - Daily Puzzle games are deterministic, local-only, and do not use accounts, rankings, or backend services.
 
 Phaser lab status:
@@ -130,7 +130,7 @@ Decision options:
 Current recommendation:
 
 - Choose Content Batch 3 first unless analytics shows strong engagement on Daily Puzzle game pages.
-- If Daily Puzzle engagement stands out, review Daily Number Puzzle before improving one game at a time.
+- Start another Daily game pass only when analytics or a reproducible manual QA issue identifies a specific need.
 - Keep Phaser experimental until it clearly improves user experience, mobile reliability, and maintainability.
 
 ## Phase 5C Observation Note
@@ -148,3 +148,5 @@ Phase 5E polished the Daily Block Puzzle because early analytics showed activity
 Phase 5F applies the same one-game-at-a-time approach to the Daily Ring Puzzle. It improves ring selection, placement progress, invalid-placement feedback, reset feedback, and a completion-only Ringzzle path while preserving the deterministic place-all-five-rings mechanic.
 
 Phase 5G aligned Daily Color Match instructions with its actual tap-the-pink-tiles mechanic. It added a visible target swatch, six-tile progress, friendly correct/incorrect/reset/completion feedback, and a completion-only Ringzzle path without changing the deterministic grid.
+
+Phase 5H completed the first focused polish pass across all five playable Daily Puzzles. Daily Number Puzzle gained next-number progress, clearer correct/incorrect/reset/completion feedback, accessible completed-tile labels, and a completion-only DaySudoku path without changing its fixed 1-to-16 sequence.
