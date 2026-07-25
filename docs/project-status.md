@@ -94,8 +94,8 @@ See `docs/url-inventory.md` for the full URL list, including Blog posts and Dail
 
 ## Content Inventory
 
-- 15 Blog posts under `content/blog/`
-- 14 Daily Challenge pages under `content/daily/challenges/`
+- 20 Blog posts under `content/blog/`
+- 21 Daily Challenge pages under `content/daily/challenges/`
 - 5 playable HTML5 Daily Puzzle pages under `content/daily/`
 - 5 game detail pages under `content/games/`
 - Internal content operations docs under `docs/`

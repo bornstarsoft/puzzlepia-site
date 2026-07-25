@@ -22,61 +22,72 @@ Daily Challenge prompts published:
 - Mint Color Match
 - Quick Number Focus
 
+## Used in Phase 5I
+
+Blog topics published:
+
+- How to Choose a Puzzle for a Five-Minute Break
+- Why Block Puzzles Reward Patience
+- How Color Helps Puzzle Games Feel Clear
+- Number Puzzle Warmups for Casual Players
+- What Makes a Good Daily Challenge?
+
+Daily Challenge prompts published:
+
+- Mini Word Search: Fruit Words
+- Block Placement: Keep the Center Open
+- Ring Placement: One Cell, Three Sizes
+- Number Order: 1 to 10
+- Color Match: Gold Target
+- Pattern Spotter: Repeated Colors
+- Weekend Mixed Puzzle: Word and Color
+
 ## Blog Topic Ideas
 
-1. How to Choose a Puzzle for a Five-Minute Break
-2. Easy Word Search Tips for Beginners
-3. Why Block Puzzles Reward Patience
-4. How Color Helps Puzzle Games Feel Clear
-5. Number Puzzle Warmups for Casual Players
-6. Ring Puzzle Strategy for Small Boards
-7. Puzzle Habits for Busy Weekdays
-8. How to Read a Puzzle Board Before Moving
-9. Relaxing Puzzle Games Without Pressure
-10. Beginner Mistakes in Color Matching Puzzles
-11. Why Short Puzzle Goals Feel Satisfying
-12. How Puzzle Themes Make Games Easier to Enjoy
-13. Word Search Tips for Music Fans
-14. Spatial Puzzle Thinking for Beginners
-15. What Makes a Good Daily Challenge?
-16. Puzzle Break Ideas for Weekends
-17. How to Keep Casual Games Friendly
-18. Daily Puzzle Variety: Words, Blocks, Rings, Numbers, Colors
-19. How to Use Hints Without Spoiling the Fun
-20. Why Simple Rules Can Make Strong Puzzle Games
-21. Gentle Puzzle Routines for Evenings
-22. How to Compare Word, Block, and Color Puzzles
-23. Puzzle Breaks for Travel Days
-24. What Makes a Puzzle Feel Fair?
-25. How to Pick an Easy Puzzle When You Are Tired
+1. Easy Word Search Tips for Beginners
+2. Ring Puzzle Strategy for Small Boards
+3. Puzzle Habits for Busy Weekdays
+4. How to Read a Puzzle Board Before Moving
+5. Relaxing Puzzle Games Without Pressure
+6. Beginner Mistakes in Color Matching Puzzles
+7. Why Short Puzzle Goals Feel Satisfying
+8. How Puzzle Themes Make Games Easier to Enjoy
+9. Word Search Tips for Music Fans
+10. Spatial Puzzle Thinking for Beginners
+11. Puzzle Break Ideas for Weekends
+12. How to Keep Casual Games Friendly
+13. Daily Puzzle Variety: Words, Blocks, Rings, Numbers, Colors
+14. How to Use Hints Without Spoiling the Fun
+15. Why Simple Rules Can Make Strong Puzzle Games
+16. Gentle Puzzle Routines for Evenings
+17. How to Compare Word, Block, and Color Puzzles
+18. Puzzle Breaks for Travel Days
+19. What Makes a Puzzle Feel Fair?
+20. How to Pick an Easy Puzzle When You Are Tired
 
 ## Daily Challenge Ideas
 
-1. Mini Word Search: Fruit Words
-2. Mini Word Search: Music Words
-3. Mini Word Search: Puzzle Words
-4. Block Placement: Keep the Center Open
-5. Block Placement: Corner First
-6. Block Placement: Avoid One-Cell Gaps
-7. Ring Placement: Three Pink Rings
-8. Ring Placement: Mint and Gold Mix
-9. Ring Placement: One Cell, Three Sizes
-10. Number Order: 1 to 10
-11. Number Order: Odd Then Even
-12. Number Path: Small Grid Warmup
-13. Color Match: Mint Target
-14. Color Match: Gold Target
-15. Color Match: Edge Scan
-16. Weekend Mixed Puzzle: Word and Color
-17. Daily Puzzle Warmup: Choose a Mood
-18. Quick Logic Prompt: Find the Missing Number
-19. Pattern Spotter: Repeated Colors
-20. Calm Puzzle Break: Three Tiny Goals
-21. Word Search: Find PLAY Backward
-22. Block Puzzle: Save the Center Space
-23. Ring Puzzle: One Color, Three Sizes
-24. Color Match: Pink and Mint Scan
-25. Number Focus: Even Numbers First
+1. Mini Word Search: Music Words
+2. Mini Word Search: Puzzle Words
+3. Block Placement: Corner First
+4. Block Placement: Avoid One-Cell Gaps
+5. Ring Placement: Three Pink Rings
+6. Ring Placement: Mint and Gold Mix
+7. Number Order: Odd Then Even
+8. Number Path: Small Grid Warmup
+9. Color Match: Mint Target
+10. Color Match: Edge Scan
+11. Daily Puzzle Warmup: Choose a Mood
+12. Quick Logic Prompt: Find the Missing Number
+13. Calm Puzzle Break: Three Tiny Goals
+14. Word Search: Find PLAY Backward
+15. Color Match: Pink and Mint Scan
+16. Number Focus: Even Numbers First
+17. Mini Word Search: Weather Words
+18. Block Placement: Protect a 2x2 Space
+19. Ring Placement: Alternate Pink and Mint
+20. Number Focus: Count Down from 10
+21. Color Match: Scan the Four Corners
 
 ## Future Game Page Improvement Ideas
 
