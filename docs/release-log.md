@@ -147,3 +147,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Improved Daily Ring Puzzle selection, placement progress, invalid-placement feedback, reset feedback, and mobile board clarity.
 - Preserved the deterministic place-all-five-rings completion rule and added completion-only links to the official Ringzzle play page and leaderboard.
+
+## Phase 5G Daily Color Match UX Polish
+
+- Aligned Daily Color Match instructions with its six-pink-tile mechanic and added a visible target swatch, progress, and clearer feedback.
+- Preserved the deterministic grid and added a completion-only path to play Ringzzle online.

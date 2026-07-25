@@ -34,8 +34,8 @@ Choose this path when:
 
 Recommended next review:
 
-- Compare Daily Color Match and Daily Number Puzzle traffic and manual QA findings.
-- Choose only one game for the next polish pass.
+- Review Daily Number Puzzle traffic and manual QA findings.
+- Start another game-polish pass only when the page shows a clear need.
 
 Recommended scope:
 
@@ -103,4 +103,4 @@ Current decision:
 
 Pick Path A next unless Cloudflare Web Analytics shows Daily Puzzle pages outperforming content pages in a way that justifies gameplay polish.
 
-Daily Block Puzzle received its focused Phase 5E polish, and Daily Ring Puzzle received its focused Phase 5F polish without changing either completion rule. If Daily Puzzle engagement remains strong, compare Daily Color Match and Daily Number Puzzle before choosing the next single-game pass.
+Daily Block Puzzle received its focused Phase 5E polish, Daily Ring Puzzle received Phase 5F, and Daily Color Match received Phase 5G without changing their completion rules. If Daily Puzzle engagement remains strong, review Daily Number Puzzle before choosing another single-game pass.
