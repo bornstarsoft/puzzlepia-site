@@ -10,12 +10,12 @@ game: "ring-puzzle"
 gameScript: "daily-ring-puzzle.js"
 ---
 
-Place rings into compatible cells. This starter version keeps the rules small and readable.
+Place all five rings into compatible cells. This starter keeps the rules small, clear, and easy to reset.
 
 ## How to play
 
-Tap a ring from the tray, then tap a cell. Each cell can hold one small, one medium, and one large ring. Place all tray rings to complete the puzzle.
+Tap a ring from the tray, then tap a cell. Each cell can hold one small, one medium, and one large ring. Place all five tray rings to complete the puzzle.
 
 ## Related game
 
-For more ring puzzle play, visit [Ringzzle](/games/ringzzle/).
+For more color ring play, [explore Ringzzle](/games/ringzzle/) or [play Ringzzle online](https://ringzzle.com/play/).

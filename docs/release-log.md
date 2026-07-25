@@ -142,3 +142,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added a small natural discovery link from Puzzlepia to `https://daysudoku.com/` as a related daily Sudoku site with a Key9 twist.
 - Kept the update to homepage and Daily Puzzle discovery copy only, without embeds, gameplay code, analytics scripts, accounts, rankings, archives, app claims, or leaderboard claims.
+
+## Phase 5F Daily Ring Puzzle UX Polish
+
+- Improved Daily Ring Puzzle selection, placement progress, invalid-placement feedback, reset feedback, and mobile board clarity.
+- Preserved the deterministic place-all-five-rings completion rule and added completion-only links to the official Ringzzle play page and leaderboard.

@@ -4,14 +4,19 @@
       <p class="eyebrow">Playable starter</p>
       <h2 id="ring-puzzle-title">Place colorful rings</h2>
     </div>
-    <p class="puzzle-status" data-status>Select a ring, then tap a cell.</p>
+    <p class="puzzle-status" data-status aria-live="polite">Tap a ring, then tap a cell.</p>
   </div>
-  <p class="puzzle-instructions">Tap a ring, then place it into a cell that does not already hold that size.</p>
+  <p class="puzzle-instructions">Place all five rings. A cell can hold one small, one medium, and one large ring.</p>
+  <p class="puzzle-helper">Tap a ring, then tap a compatible board cell.</p>
   <div class="ring-layout">
     <div class="ring-board" data-board aria-label="3 by 3 ring puzzle board"></div>
     <div class="ring-tray" data-tray aria-label="Ring piece tray"></div>
   </div>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
+  <div class="completion-actions" data-complete-actions hidden>
+    <a class="button button--primary puzzle-cta" href="https://ringzzle.com/play/" rel="noopener" target="_blank">Play Ringzzle online</a>
+    <a class="button button--secondary puzzle-cta" href="https://ringzzle.com/leaderboard/" rel="noopener" target="_blank">View Ringzzle leaderboard</a>
+  </div>
   <button class="button button--primary puzzle-reset" type="button" data-reset>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/ringzzle/">Explore Ringzzle</a>
 </section>

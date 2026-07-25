@@ -19,6 +19,28 @@
   var selected = null;
   var boardEl = helpers.qs(root, "[data-board]");
   var trayEl = helpers.qs(root, "[data-tray]");
+  var completeActionsEl = helpers.qs(root, "[data-complete-actions]");
+
+  function placedCount() {
+    return pieces.filter(function (piece) { return placed[piece.id]; }).length;
+  }
+
+  function setFeedback(message, tone) {
+    var status = helpers.qs(root, "[data-status]");
+    helpers.setStatus(root, message);
+    if (status) {
+      status.classList.remove("is-good", "is-warn", "is-complete");
+      if (tone) {
+        status.classList.add("is-" + tone);
+      }
+    }
+  }
+
+  function showCompletionActions(show) {
+    if (completeActionsEl) {
+      completeActionsEl.hidden = !show;
+    }
+  }
 
   function renderCell(index) {
     var cell = boardEl.querySelector('[data-cell="' + index + '"]');
@@ -26,7 +48,8 @@
       return;
     }
     cell.innerHTML = "";
-    cell.classList.remove("is-invalid", "is-match");
+    cell.classList.remove("is-invalid");
+    var labels = [];
     ["large", "medium", "small"].forEach(function (size) {
       var color = cells[index][size];
       if (!color) {
@@ -36,7 +59,10 @@
       ring.className = "ring-layer ring-layer--" + size;
       ring.dataset.color = color;
       cell.appendChild(ring);
+      labels.push(color + " " + size);
     });
+    cell.classList.toggle("is-filled", labels.length > 0);
+    cell.setAttribute("aria-label", "Ring cell " + (index + 1) + (labels.length ? ", contains " + labels.join(", ") : ", empty"));
   }
 
   function renderBoard() {
@@ -48,20 +74,21 @@
   function completeIfReady() {
     if (pieces.every(function (piece) { return placed[piece.id]; })) {
       selected = null;
-      helpers.setStatus(root, "All rings placed.");
+      setFeedback("Puzzle complete! Great job.", "complete");
       helpers.showComplete(root);
+      showCompletionActions(true);
     }
   }
 
   function place(index) {
     var cell = boardEl.querySelector('[data-cell="' + index + '"]');
     if (!selected) {
-      helpers.setStatus(root, "Choose a ring first.");
+      setFeedback("Tap a ring first.", "warn");
       helpers.pulse(cell, "is-invalid");
       return;
     }
     if (cells[index][selected.size]) {
-      helpers.setStatus(root, "That cell already has a " + selected.size + " ring.");
+      setFeedback("That cell already has a " + selected.size + " ring.", "warn");
       helpers.pulse(cell, "is-invalid");
       return;
     }
@@ -72,9 +99,10 @@
     if (button) {
       button.disabled = true;
       button.classList.remove("is-selected");
+      button.setAttribute("aria-pressed", "false");
     }
     selected = null;
-    helpers.setStatus(root, "Ring placed. Choose another ring.");
+    setFeedback("Ring placed. " + placedCount() + " of " + pieces.length + " done.", "good");
     completeIfReady();
   }
 
@@ -84,12 +112,14 @@
     }
     selected = piece;
     helpers.qsa(trayEl, ".ring-piece").forEach(function (button) {
-      button.classList.toggle("is-selected", button.dataset.piece === piece.id);
+      var isSelected = button.dataset.piece === piece.id;
+      button.classList.toggle("is-selected", isSelected);
+      button.setAttribute("aria-pressed", String(isSelected));
     });
-    helpers.setStatus(root, piece.label + " selected. Tap a compatible cell.");
+    setFeedback(piece.label + " selected. Tap a compatible cell.", "good");
   }
 
-  function resetGame() {
+  function resetGame(showResetFeedback) {
     cells = Array.from({ length: 9 }, function () { return {}; });
     placed = {};
     selected = null;
@@ -97,9 +127,11 @@
     helpers.qsa(trayEl, ".ring-piece").forEach(function (button) {
       button.disabled = false;
       button.classList.remove("is-selected");
+      button.setAttribute("aria-pressed", "false");
     });
     helpers.hideComplete(root);
-    helpers.setStatus(root, "Select a ring, then tap a cell.");
+    showCompletionActions(false);
+    setFeedback(showResetFeedback ? "Puzzle reset. Tap a ring." : "Tap a ring, then tap a cell.", showResetFeedback ? "good" : "");
   }
 
   function buildBoard() {
@@ -124,6 +156,7 @@
       button.dataset.piece = piece.id;
       button.dataset.color = piece.color;
       button.textContent = piece.label;
+      button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", function () {
         selectPiece(piece);
       });

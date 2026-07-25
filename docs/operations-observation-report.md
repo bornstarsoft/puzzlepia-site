@@ -123,14 +123,14 @@ Recommended sequence:
 Decision options:
 
 - Content Batch 3: best when Search Console impressions begin to appear or content URLs are indexing steadily.
-- Daily Block Puzzle polish: best when Daily Puzzle pages show stronger engagement than Blog content.
+- Daily game polish: best when a specific Daily Puzzle page shows stronger engagement or a clear manual QA issue.
 - Games Hub real store link update: best when confirmed store URLs or real game assets become available.
 - Phaser lab iteration: best when the lab page shows promising engagement and mobile iframe UX feels clearly better than Vanilla JS.
 
 Current recommendation:
 
 - Choose Content Batch 3 first unless analytics shows strong engagement on Daily Puzzle game pages.
-- If Daily Puzzle engagement stands out, improve Daily Block Puzzle next, one game at a time.
+- If Daily Puzzle engagement stands out, compare Daily Color Match and Daily Number Puzzle before improving one game at a time.
 - Keep Phaser experimental until it clearly improves user experience, mobile reliability, and maintainability.
 
 ## Phase 5C Observation Note
@@ -144,3 +144,5 @@ Related Block Puzzle blog posts and block-focused Daily Challenge pages now incl
 Selected high-relevance Block Puzzle content now also includes secondary links to the official Blockzzle leaderboard. These links should be observed as supporting CTAs only; no fake ranking, player count, reward, monetization, or popularity claims were added.
 
 Phase 5E polished the Daily Block Puzzle because early analytics showed activity on `/daily/block-puzzle/` and `/games/blockzzle/` while Core Web Vitals were already good. The update focused on clearer piece selection, friendlier placement/reset/completion feedback, and a completion-only path to play Blockzzle online without changing scoring, storage, leaderboard logic, or row/column clearing.
+
+Phase 5F applies the same one-game-at-a-time approach to the Daily Ring Puzzle. It improves ring selection, placement progress, invalid-placement feedback, reset feedback, and a completion-only Ringzzle path while preserving the deterministic place-all-five-rings mechanic.
