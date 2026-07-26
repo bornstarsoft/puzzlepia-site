@@ -11,6 +11,10 @@
 {{ .Content }}
   </div>
 
+  <div class="daily-hub__recent">
+{{ partial "recent-puzzle.html" (dict "titleID" "daily-recent-puzzle-title") }}
+  </div>
+
 {{ if $playable }}
   <section class="daily-hub__section" aria-labelledby="playable-daily-title">
     <div class="daily-hub__heading">

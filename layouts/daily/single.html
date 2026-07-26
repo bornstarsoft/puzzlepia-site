@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="page daily-game-page">
+<article class="page daily-game-page"{{ if .Params.playable }} data-puzzle-entry data-puzzle-title="{{ .Title }}" data-puzzle-description="{{ .Description }}" data-puzzle-icon="{{ .Params.icon | default "P" }}" data-puzzle-url="{{ .RelPermalink }}"{{ end }}>
 {{ partial "breadcrumbs.html" . }}
   <header class="page__header">
     <p class="eyebrow">{{ .Params.kicker | default "Daily puzzle" }}</p>

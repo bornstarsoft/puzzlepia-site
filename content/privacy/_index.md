@@ -12,6 +12,8 @@ We may receive basic technical information that browsers and hosting providers n
 
 Puzzlepia uses Cloudflare Web Analytics to understand aggregate site usage and page performance. Cloudflare Web Analytics is enabled with EU visitor data excluded. Puzzlepia does not use Google Analytics 4 on this website.
 
+For convenience, Puzzlepia may store the most recently opened Daily Puzzle in your browser's local storage. This stays on your device, does not save puzzle progress or scores, and can be cleared from the recent-puzzle panel.
+
 If you contact us by email, we may use the information you provide to respond to your message.
 
 For privacy questions, contact [support@puzzlepia.com](mailto:support@puzzlepia.com).

@@ -178,3 +178,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Separated browser-playable games from available, upcoming, and in-development game pages so visitors can identify what they can play immediately.
 - Connected each game detail page to relevant Puzzlepia guides while keeping official play links primary and unsupported claims out of the experience.
+
+## Phase 6D Recent Puzzle Return Path
+
+- Added an optional, device-local record of the most recently opened Daily Puzzle so returning visitors can play it again from Home or the Daily hub.
+- Kept puzzle progress and scores out of storage, added a clear control, and preserved the full site experience when browser storage is unavailable.

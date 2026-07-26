@@ -7,3 +7,6 @@
 {{ if and .IsSection (or (eq .Section "daily") (eq .Section "blog")) }}
   <script src="/js/puzzlepia-discovery.js"></script>
 {{ end }}
+{{ if or .IsHome (eq .Section "daily") }}
+  <script src="/js/puzzlepia-return.js"></script>
+{{ end }}

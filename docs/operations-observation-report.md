@@ -158,3 +158,5 @@ Phase 6A responded to the larger content inventory by improving discovery rather
 Phase 6B improved what happens after a visitor opens a Blog post. Each article now provides a table of contents, reading time, a relevant playable puzzle, and relevant follow-up guides. Weekly observation should compare Blog entry-page traffic with onward visits to Daily Puzzle pages and other Blog posts.
 
 Phase 6C separated immediately playable browser games from other game pages and added relevant guide links to game details. Weekly observation should compare Games hub visits with external Blockzzle and Ringzzle play-page visits, internal Daily Puzzle visits, and Blog guide visits.
+
+Phase 6D added a lightweight recent-puzzle return path on Home and the Daily hub. Weekly observation should compare repeat visits and Home-to-recent-puzzle clicks while remembering that the feature stores only the last opened puzzle locally and does not persist progress or scores.

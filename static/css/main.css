@@ -393,6 +393,88 @@ img {
   margin-top: 24px;
 }
 
+.recent-puzzle-slot {
+  width: min(1120px, calc(100% - 32px));
+  margin: 8px auto 0;
+}
+
+.daily-hub__recent {
+  margin-top: 28px;
+}
+
+.recent-puzzle {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid rgba(111, 69, 216, 0.22);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 30px rgba(87, 62, 140, 0.1);
+}
+
+.recent-puzzle__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 9px;
+  color: #ffffff;
+  background: var(--purple);
+  font-weight: 950;
+}
+
+.recent-puzzle__body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.recent-puzzle__body .eyebrow {
+  margin-bottom: 4px;
+}
+
+.recent-puzzle__body h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.recent-puzzle__body > p:not(.eyebrow) {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.recent-puzzle__actions {
+  display: flex;
+  grid-column: 2;
+  gap: 8px;
+  align-items: center;
+}
+
+.recent-puzzle__clear {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--muted);
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.recent-puzzle__clear:hover,
+.recent-puzzle__clear:focus-visible {
+  color: var(--purple-dark);
+  border-color: rgba(111, 69, 216, 0.38);
+}
+
 .game-hero,
 .detail-section,
 .lab-embed,
@@ -1182,6 +1264,10 @@ img {
     flex: 1 1 150px;
   }
 
+  .recent-puzzle__actions .button {
+    flex: 1 1 auto;
+  }
+
   .filter-tabs {
     flex-wrap: nowrap;
     padding-bottom: 5px;
@@ -1224,6 +1310,14 @@ img {
   .browser-game__actions {
     grid-column: auto;
     flex-wrap: nowrap;
+  }
+
+  .recent-puzzle {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+  }
+
+  .recent-puzzle__actions {
+    grid-column: auto;
   }
 
   .guide-grid {

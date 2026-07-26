@@ -1,0 +1,13 @@
+{{- $titleID := .titleID -}}
+<aside class="recent-puzzle" data-recent-puzzle hidden aria-labelledby="{{ $titleID }}">
+  <span class="recent-puzzle__icon" data-recent-icon aria-hidden="true">P</span>
+  <div class="recent-puzzle__body">
+    <p class="eyebrow">Recently opened</p>
+    <h2 id="{{ $titleID }}">Play <span data-recent-title>your puzzle</span> again</h2>
+    <p><span data-recent-description>Return to your latest Puzzlepia pick.</span> The puzzle starts fresh.</p>
+  </div>
+  <div class="recent-puzzle__actions">
+    <a class="button button--primary" href="/daily/" data-recent-link>Play again</a>
+    <button class="recent-puzzle__clear" type="button" data-recent-clear aria-label="Clear recently opened puzzle" title="Clear recently opened puzzle">&times;</button>
+  </div>
+</aside>
