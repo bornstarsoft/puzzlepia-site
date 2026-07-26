@@ -1,86 +1,108 @@
 {{ define "main" }}
+{{ $playable := where .Site.RegularPages "Params.playable" true }}
+{{ $games := where .Site.RegularPages "Section" "games" }}
+{{ $browserGames := where $games "Params.playURL" "ne" nil }}
+{{ $latestGuides := first 3 ((where .Site.RegularPages "Section" "blog").ByDate.Reverse) }}
 <section class="hero">
   <div class="hero__content">
-    <p class="eyebrow">Official puzzle hub by BornstarSoft</p>
+    <p class="eyebrow">Puzzle hub by BornstarSoft</p>
     <h1>Puzzlepia</h1>
     <p class="hero__tagline">Your Daily Puzzle World</p>
-    <p class="hero__copy">Play fresh puzzles, discover clever games, and explore BornstarSoft's colorful puzzle universe.</p>
+    <p class="hero__copy">Choose a quick puzzle, play a browser game, or pick up a practical guide for your next puzzle break.</p>
     <div class="hero__actions">
-      <a class="button button--primary" href="/daily/">Play Daily Puzzle</a>
-      <a class="button button--secondary" href="/games/">Explore Puzzle Games</a>
-      <a class="button button--secondary" href="/daily/block-puzzle/">Try Daily Block Puzzle</a>
+      <a class="button button--primary" href="#quick-start">Start a quick puzzle</a>
+      <a class="button button--secondary" href="/games/">Browse games</a>
+      <a class="button button--secondary" href="/blog/">Read puzzle guides</a>
     </div>
-  </div>
-  <div class="hero__visual" aria-label="Colorful puzzle tiles">
-    <span class="tile tile--mint">7</span>
-    <span class="tile tile--pink">?</span>
-    <span class="tile tile--gold">A</span>
-    <span class="tile tile--purple">3</span>
-    <span class="tile tile--white">+</span>
-    <span class="tile tile--mint">K</span>
-    <span class="tile tile--gold">5</span>
-    <span class="tile tile--pink">*</span>
-    <span class="tile tile--purple">9</span>
   </div>
 </section>
 
-<section class="section section--daily">
+<section class="section section--quick" id="quick-start">
   <div class="section__header">
-    <p class="eyebrow">Daily puzzle</p>
-    <h2>Today's Puzzle Preview</h2>
-    <p>Try a quick starter puzzle from Puzzlepia's daily collection, built for short and friendly puzzle breaks.</p>
+    <p class="eyebrow">Quick start</p>
+    <h2>Pick a puzzle and play</h2>
+    <p>Five lightweight browser puzzles, each with one clear goal and no account required.</p>
   </div>
-  <div class="daily-preview">
-    <div>
-      <h3>Start with Daily Block Puzzle</h3>
-      <p>Place all three pieces in a quick starter puzzle, then continue toward Blockzzle for the related BornstarSoft game page. For Sudoku, <a href="https://daysudoku.com/">Play DaySudoku</a>, a free daily Sudoku puzzle with a Key9 twist.</p>
-    </div>
-    <a class="button button--primary" href="/daily/block-puzzle/">Try Daily Block Puzzle</a>
-    <a class="button button--secondary" href="/daily/">View All Daily Puzzles</a>
-  </div>
-  <div class="daily-link-grid" aria-label="Playable daily puzzles">
-    <a href="/daily/word-search/">Word Search</a>
-    <a href="/daily/block-puzzle/">Block Puzzle</a>
-    <a href="/daily/ring-puzzle/">Ring Puzzle</a>
-    <a href="/daily/number-puzzle/">Number Puzzle</a>
-    <a href="/daily/color-match/">Color Match</a>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section__header">
-    <p class="eyebrow">Featured games</p>
-    <h2>Explore the Puzzlepia Collection</h2>
-    <p>Classic logic, word play, color matching, and relaxing puzzle games from BornstarSoft.</p>
-  </div>
-  <div class="game-grid">
-{{ range first 5 ((where .Site.RegularPages "Section" "games").ByWeight) }}
-{{ partial "game-card.html" . }}
+  <div class="quick-pick-grid" aria-label="Playable daily puzzles">
+{{ range $playable.ByWeight }}
+    <a class="quick-pick" href="{{ .RelPermalink }}">
+      <span class="quick-pick__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</span>
+      <span class="quick-pick__body">
+        <strong>{{ .Title }}</strong>
+        <small>{{ .Params.difficulty | default "Starter" }} ·
+{{ if eq .Params.game "word-search" }}Find four hidden words
+{{ else if eq .Params.game "block-puzzle" }}Place three block pieces
+{{ else if eq .Params.game "ring-puzzle" }}Fit five colorful rings
+{{ else if eq .Params.game "number-puzzle" }}Tap numbers 1 to 16
+{{ else if eq .Params.game "color-match" }}Clear six pink tiles
+{{ else }}Play a quick puzzle
+{{ end }}</small>
+      </span>
+      <span class="quick-pick__arrow" aria-hidden="true">&rarr;</span>
+    </a>
 {{ end }}
   </div>
   <div class="section__actions">
-    <a class="button button--primary" href="/games/">Explore Puzzle Games</a>
+    <a class="button button--secondary" href="/daily/">Browse Daily Puzzles and Challenges</a>
   </div>
 </section>
 
-<section class="section section--why">
+<section class="section section--browser-games">
   <div class="section__header">
-    <p class="eyebrow">Why Puzzlepia?</p>
-    <h2>A cheerful place for clever breaks</h2>
+    <p class="eyebrow">Play in your browser</p>
+    <h2>More puzzles, no install</h2>
+    <p>Continue with official browser puzzle games, or open a related daily Sudoku.</p>
   </div>
-  <div class="feature-grid">
-    <article class="feature">
-      <h3>Daily-friendly</h3>
-      <p>Designed for quick, satisfying puzzle moments that fit into everyday routines.</p>
+  <div class="browser-game-list">
+{{ range $browserGames.ByWeight }}
+    <article class="browser-game">
+      <span class="browser-game__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</span>
+      <div class="browser-game__body">
+        <p class="browser-game__meta">{{ .Params.genre }} · Official game</p>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description }}</p>
+      </div>
+      <div class="browser-game__actions">
+        <a class="button button--primary" href="{{ .Params.playURL }}" rel="noopener" target="_blank">{{ .Params.playLabel | default "Play online" }}</a>
+        <a class="button button--secondary" href="{{ .RelPermalink }}">View details</a>
+      </div>
     </article>
-    <article class="feature">
-      <h3>Game discovery</h3>
-      <p>Find BornstarSoft puzzle games from one simple, lightweight official hub.</p>
+{{ end }}
+    <article class="browser-game browser-game--related">
+      <span class="browser-game__icon" aria-hidden="true">9</span>
+      <div class="browser-game__body">
+        <p class="browser-game__meta">Related daily puzzle</p>
+        <h3>DaySudoku</h3>
+        <p>A free daily Sudoku puzzle online. Find the Key9 first, then finish the full Sudoku.</p>
+      </div>
+      <div class="browser-game__actions">
+        <a class="button button--secondary" href="https://daysudoku.com/" rel="noopener" target="_blank">Try DaySudoku</a>
+      </div>
     </article>
-    <article class="feature">
-      <h3>Built to grow</h3>
-      <p>Starting simple now, with room for more puzzles, guides, and game updates later.</p>
+  </div>
+  <div class="section__actions">
+    <a class="button button--secondary" href="/games/">Explore all Puzzlepia games</a>
+  </div>
+</section>
+
+<section class="section section--guides">
+  <div class="section__header">
+    <p class="eyebrow">Latest guides</p>
+    <h2>Make your next puzzle easier to choose</h2>
+    <p>Practical ideas for word, block, color, number, and short daily puzzle sessions.</p>
+  </div>
+  <div class="guide-grid">
+{{ range $latestGuides }}
+    <article class="guide-card">
+      <p class="guide-card__meta">{{ .Date.Format "January 2, 2006" }}</p>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Description }}</p>
+      <a class="guide-card__link" href="{{ .RelPermalink }}">Read guide <span aria-hidden="true">&rarr;</span></a>
     </article>
+{{ end }}
+  </div>
+  <div class="section__actions">
+    <a class="button button--secondary" href="/blog/">Browse all puzzle guides</a>
   </div>
 </section>
 {{ end }}

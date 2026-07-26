@@ -162,3 +162,9 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added five practical Blog posts covering short puzzle selection, block patience, color clarity, number warmups, and Daily Challenge design.
 - Added seven deterministic Daily Challenge pages across word, block, ring, number, color, pattern, and mixed-puzzle formats.
+
+## Phase 6A Discovery and Return-Visit UX
+
+- Reworked the Home page around immediate puzzle choice, official browser games, and recent practical guides instead of a long decorative introduction.
+- Added topic filters, guide search, result counts, and progressive "show all" controls to the growing Daily Challenge and Blog libraries.
+- Improved mobile header fit and added a direct Blog navigation path without changing public URLs, game logic, analytics, or deployment settings.

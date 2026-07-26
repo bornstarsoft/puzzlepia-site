@@ -4,8 +4,8 @@ description: "Puzzlepia blog posts about daily puzzle ideas, puzzle tips, and ca
 kicker: "Puzzlepia blog"
 ---
 
-Welcome to the Puzzlepia blog, a simple place for daily puzzle ideas, beginner-friendly puzzle tips, and casual brain-game recommendations.
+Use the Puzzlepia Blog to find practical puzzle tips, short-break ideas, and beginner-friendly guides for words, blocks, colors, rings, and numbers.
 
-Puzzlepia is still an early official puzzle hub from BornstarSoft, so this blog will grow steadily over time. Start with the [Daily Puzzles](/daily/), explore the [Games](/games/), or read the starter posts below.
+Search or filter the guides below, start with the [Daily Puzzles](/daily/), or explore the [Games](/games/) connected to Puzzlepia and BornstarSoft.
 
-New puzzle tips, game notes, and daily puzzle ideas will be added over time.
+New puzzle tips and Daily Challenge ideas are added in focused batches so the library stays useful and easy to browse.

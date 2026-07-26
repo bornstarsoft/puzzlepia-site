@@ -4,3 +4,6 @@
   <script src="/js/{{ . }}"></script>
 {{ end }}
 {{ end }}
+{{ if and .IsSection (or (eq .Section "daily") (eq .Section "blog")) }}
+  <script src="/js/puzzlepia-discovery.js"></script>
+{{ end }}

@@ -26,15 +26,35 @@
 {{ end }}
 
 {{ if $challenges }}
-  <section class="daily-hub__section" aria-labelledby="daily-challenge-title">
+  <section class="daily-hub__section" aria-labelledby="daily-challenge-title" data-discovery data-limit="9" data-unit="challenges">
     <div class="daily-hub__heading">
       <p class="eyebrow">Challenge ideas</p>
-      <h2 id="daily-challenge-title">Static daily puzzle prompts</h2>
-      <p>Use these short prompts as warmups, hints, or simple puzzle breaks before playing a daily game.</p>
+      <h2 id="daily-challenge-title">Find a challenge for your mood</h2>
+      <p>Filter short prompts by puzzle type, then open one as a warmup or a simple puzzle break.</p>
     </div>
-    <div class="challenge-grid">
+    <div class="discovery-toolbar">
+      <div class="filter-tabs" role="group" aria-label="Filter Daily Challenges by puzzle type">
+        <button type="button" data-filter-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter-value="word" aria-pressed="false">Words</button>
+        <button type="button" data-filter-value="block" aria-pressed="false">Blocks</button>
+        <button type="button" data-filter-value="ring" aria-pressed="false">Rings</button>
+        <button type="button" data-filter-value="number" aria-pressed="false">Numbers</button>
+        <button type="button" data-filter-value="color" aria-pressed="false">Colors</button>
+        <button type="button" data-filter-value="mixed" aria-pressed="false">Mixed</button>
+      </div>
+      <p class="discovery-count" data-filter-count aria-live="polite">{{ len $challenges }} challenges</p>
+    </div>
+    <div class="challenge-grid" data-filter-list>
 {{ range $challenges.ByWeight }}
-      <article class="challenge-card">
+{{ $type := lower (.Params.puzzleType | default "") }}
+{{ $topic := "mixed" }}
+{{ if in $type "word" }}{{ $topic = "word" }}
+{{ else if in $type "block" }}{{ $topic = "block" }}
+{{ else if in $type "ring" }}{{ $topic = "ring" }}
+{{ else if in $type "number" }}{{ $topic = "number" }}
+{{ else if or (in $type "color") (in $type "pattern") }}{{ $topic = "color" }}
+{{ end }}
+      <article class="challenge-card" data-discovery-item data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
         <div class="game-card__meta">
 {{ with .Params.puzzleType }}<span>{{ . }}</span>{{ end }}
 {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
@@ -44,6 +64,10 @@
         <a class="button button--secondary" href="{{ .RelPermalink }}">Open challenge</a>
       </article>
 {{ end }}
+    </div>
+    <p class="discovery-empty" data-filter-empty hidden>No challenges match this filter yet.</p>
+    <div class="discovery-more">
+      <button class="button button--secondary" type="button" data-filter-more>Show all challenges</button>
     </div>
   </section>
 {{ end }}

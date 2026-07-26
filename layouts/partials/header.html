@@ -7,9 +7,9 @@
     </span>
   </a>
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="/daily/">Daily</a>
-    <a href="/games/">Games</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
+    <a href="/daily/"{{ if eq .Section "daily" }} aria-current="page"{{ end }}>Daily</a>
+    <a href="/games/"{{ if eq .Section "games" }} aria-current="page"{{ end }}>Games</a>
+    <a href="/blog/"{{ if eq .Section "blog" }} aria-current="page"{{ end }}>Blog</a>
+    <a href="/about/"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a>
   </nav>
 </header>

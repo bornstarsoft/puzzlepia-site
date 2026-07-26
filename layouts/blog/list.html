@@ -8,15 +8,48 @@
   <div class="page__content">
 {{ .Content }}
   </div>
-  <div class="blog-grid">
+  <section class="blog-discovery" aria-labelledby="blog-guides-title" data-discovery data-limit="9" data-unit="guides">
+    <div class="daily-hub__heading">
+      <p class="eyebrow">Browse by topic</p>
+      <h2 id="blog-guides-title">Find a useful puzzle guide</h2>
+    </div>
+    <div class="discovery-toolbar discovery-toolbar--search">
+      <label class="filter-search" for="blog-guide-search">
+        <span>Search guides</span>
+        <input id="blog-guide-search" type="search" placeholder="Try block, word, color..." autocomplete="off" data-filter-search>
+      </label>
+      <div class="filter-tabs" role="group" aria-label="Filter puzzle guides by topic">
+        <button type="button" data-filter-value="all" aria-pressed="true">All</button>
+        <button type="button" data-filter-value="word" aria-pressed="false">Words</button>
+        <button type="button" data-filter-value="block" aria-pressed="false">Blocks</button>
+        <button type="button" data-filter-value="color" aria-pressed="false">Colors & rings</button>
+        <button type="button" data-filter-value="number" aria-pressed="false">Numbers</button>
+        <button type="button" data-filter-value="daily" aria-pressed="false">Daily habits</button>
+      </div>
+      <p class="discovery-count" data-filter-count aria-live="polite">{{ len .Pages }} guides</p>
+    </div>
+    <div class="blog-grid" data-filter-list>
 {{ range .Pages.ByDate.Reverse }}
-    <article class="blog-card">
+{{ $keywords := lower .Title }}
+{{ with .Params.tags }}{{ $keywords = printf "%s %s" $keywords (lower (delimit . " ")) }}{{ end }}
+{{ $topic := "daily" }}
+{{ if in $keywords "block" }}{{ $topic = "block" }}
+{{ else if or (in $keywords "word") (in $keywords "kpop") }}{{ $topic = "word" }}
+{{ else if or (in $keywords "color") (in $keywords "ring") }}{{ $topic = "color" }}
+{{ else if or (in $keywords "number") (in $keywords "sudoku") }}{{ $topic = "number" }}
+{{ end }}
+    <article class="blog-card" data-discovery-item data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $keywords) }}">
       <p class="blog-card__date">{{ .Date.Format "January 2, 2006" }}</p>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       <p>{{ .Description }}</p>
       <a class="button button--secondary" href="{{ .RelPermalink }}">Read post</a>
     </article>
 {{ end }}
-  </div>
+    </div>
+    <p class="discovery-empty" data-filter-empty hidden>No guides match that search yet.</p>
+    <div class="discovery-more">
+      <button class="button button--secondary" type="button" data-filter-more>Show all guides</button>
+    </div>
+  </section>
 </section>
 {{ end }}
