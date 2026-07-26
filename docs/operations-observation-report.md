@@ -160,3 +160,5 @@ Phase 6B improved what happens after a visitor opens a Blog post. Each article n
 Phase 6C separated immediately playable browser games from other game pages and added relevant guide links to game details. Weekly observation should compare Games hub visits with external Blockzzle and Ringzzle play-page visits, internal Daily Puzzle visits, and Blog guide visits.
 
 Phase 6D added a lightweight recent-puzzle return path on Home and the Daily hub. Weekly observation should compare repeat visits and Home-to-recent-puzzle clicks while remembering that the feature stores only the last opened puzzle locally and does not persist progress or scores.
+
+Phase 6E added unified Puzzlepia search across playable puzzles, games, guides, and challenges. Weekly observation should check whether visitors use `/search/`, which result categories they open, and whether search creates clearer paths into Daily Puzzle and Games pages.

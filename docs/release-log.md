@@ -183,3 +183,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added an optional, device-local record of the most recently opened Daily Puzzle so returning visitors can play it again from Home or the Daily hub.
 - Kept puzzle progress and scores out of storage, added a clear control, and preserved the full site experience when browser storage is unavailable.
+
+## Phase 6E Unified Puzzle Search
+
+- Added a lightweight client-side search across playable Daily Puzzles, game pages, puzzle guides, and Daily Challenges using Hugo-generated page metadata.
+- Added category filters and query URLs while keeping the search utility `noindex`, excluded from the sitemap, and independent of any backend or external search service.

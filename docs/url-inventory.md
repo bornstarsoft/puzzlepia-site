@@ -8,6 +8,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/`
 - `/games/`
 - `/blog/`
+- `/search/` (internal search utility; excluded from search indexing and sitemap)
 - `/labs/`
 - `/about/`
 - `/contact/`

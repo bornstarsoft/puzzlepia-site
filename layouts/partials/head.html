@@ -12,6 +12,8 @@
 {{ $imageURL := absURL $image }}
   <title>{{ $title }}</title>
   <meta name="description" content="{{ $description }}">
+{{ if .Params.noindex }}  <meta name="robots" content="noindex,follow">
+{{ end }}
   <link rel="canonical" href="{{ $canonical }}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="{{ $ogType }}">

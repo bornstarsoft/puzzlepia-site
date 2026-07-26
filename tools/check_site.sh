@@ -27,6 +27,7 @@ required_pages=(
   "public/daily/index.html"
   "public/games/index.html"
   "public/blog/index.html"
+  "public/search/index.html"
   "public/about/index.html"
   "public/contact/index.html"
   "public/privacy/index.html"

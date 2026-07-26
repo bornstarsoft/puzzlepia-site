@@ -1,0 +1,116 @@
+{{ define "main" }}
+{{ $searchIndex := slice }}
+{{ range where .Site.RegularPages "Section" "in" (slice "daily" "games" "blog") }}
+  {{ $category := "" }}
+  {{ $typeLabel := "" }}
+  {{ $actionLabel := "" }}
+  {{ $topic := "daily" }}
+  {{ if .Params.playable }}
+    {{ $category = "playable" }}
+    {{ $typeLabel = "Playable puzzle" }}
+    {{ $actionLabel = "Play puzzle" }}
+    {{ $game := lower (.Params.game | default "") }}
+    {{ if in $game "word" }}{{ $topic = "word" }}
+    {{ else if in $game "block" }}{{ $topic = "block" }}
+    {{ else if in $game "ring" }}{{ $topic = "color" }}
+    {{ else if in $game "number" }}{{ $topic = "number" }}
+    {{ else if in $game "color" }}{{ $topic = "color" }}
+    {{ end }}
+  {{ else if eq .Section "games" }}
+    {{ $category = "games" }}
+    {{ $typeLabel = "Game page" }}
+    {{ $actionLabel = "View game" }}
+    {{ $topic = partial "game-topic.html" . }}
+  {{ else if eq .Section "blog" }}
+    {{ $category = "guides" }}
+    {{ $typeLabel = "Puzzle guide" }}
+    {{ $actionLabel = "Read guide" }}
+    {{ $topic = partial "blog-topic.html" . }}
+  {{ else if .Params.challenge }}
+    {{ $category = "challenges" }}
+    {{ $typeLabel = "Daily Challenge" }}
+    {{ $actionLabel = "Open challenge" }}
+    {{ $puzzleType := lower (.Params.puzzleType | default "") }}
+    {{ if in $puzzleType "word" }}{{ $topic = "word" }}
+    {{ else if in $puzzleType "block" }}{{ $topic = "block" }}
+    {{ else if in $puzzleType "ring" }}{{ $topic = "color" }}
+    {{ else if in $puzzleType "number" }}{{ $topic = "number" }}
+    {{ else if or (in $puzzleType "color") (in $puzzleType "pattern") }}{{ $topic = "color" }}
+    {{ end }}
+  {{ end }}
+  {{ if $category }}
+    {{ $keywords := lower (printf "%s %s %s" .Title .Description $topic) }}
+    {{ with .Params.tags }}{{ $keywords = printf "%s %s" $keywords (lower (delimit . " ")) }}{{ end }}
+    {{ $searchIndex = $searchIndex | append (dict
+      "title" .Title
+      "description" .Description
+      "url" .RelPermalink
+      "category" $category
+      "typeLabel" $typeLabel
+      "actionLabel" $actionLabel
+      "topic" $topic
+      "keywords" $keywords
+    ) }}
+  {{ end }}
+{{ end }}
+<section class="page search-page">
+  <header class="page__header">
+    <p class="eyebrow">{{ .Params.kicker | default .Title }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div class="page__content">
+{{ .Content }}
+  </div>
+
+  <section class="site-search" aria-labelledby="site-search-title" data-site-search>
+    <h2 id="site-search-title" class="visually-hidden">Search Puzzlepia content</h2>
+    <form class="site-search__form" role="search" data-search-form>
+      <label for="site-search-input">What would you like to find?</label>
+      <div class="site-search__input-row">
+        <input id="site-search-input" type="search" placeholder="Try block puzzle, word search, color..." autocomplete="off" spellcheck="false" data-search-input>
+        <button class="site-search__clear" type="button" aria-label="Clear search" title="Clear search" data-search-clear hidden>&times;</button>
+      </div>
+      <div class="filter-tabs site-search__filters" role="group" aria-label="Filter search results">
+        <button type="button" data-search-category="all" aria-pressed="true">All</button>
+        <button type="button" data-search-category="playable" aria-pressed="false">Playable</button>
+        <button type="button" data-search-category="games" aria-pressed="false">Games</button>
+        <button type="button" data-search-category="guides" aria-pressed="false">Guides</button>
+        <button type="button" data-search-category="challenges" aria-pressed="false">Challenges</button>
+      </div>
+    </form>
+    <p class="site-search__status" data-search-status role="status" aria-live="polite">Enter at least two characters to search.</p>
+    <div class="search-results" data-search-results></div>
+    <p class="discovery-empty" data-search-empty hidden>No Puzzlepia results match that search yet.</p>
+  </section>
+
+  <section class="search-start" data-search-start aria-labelledby="search-start-title">
+    <div class="daily-hub__heading">
+      <p class="eyebrow">Start here</p>
+      <h2 id="search-start-title">Browse Puzzlepia's main collections</h2>
+    </div>
+    <div class="quick-pick-grid">
+      <a class="quick-pick" href="/daily/">
+        <span class="quick-pick__icon" aria-hidden="true">D</span>
+        <span class="quick-pick__body"><strong>Daily Puzzles</strong><small>Playable starters and short challenges</small></span>
+        <span class="quick-pick__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="quick-pick" href="/games/">
+        <span class="quick-pick__icon" aria-hidden="true">G</span>
+        <span class="quick-pick__body"><strong>Puzzle Games</strong><small>Official browser games and game pages</small></span>
+        <span class="quick-pick__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="quick-pick" href="/blog/">
+        <span class="quick-pick__icon" aria-hidden="true">B</span>
+        <span class="quick-pick__body"><strong>Puzzle Guides</strong><small>Simple tips for your next puzzle break</small></span>
+        <span class="quick-pick__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <noscript>
+    <p class="discovery-empty">JavaScript is needed for combined search. The collection links above remain available.</p>
+  </noscript>
+  <script id="puzzlepia-search-index" type="application/json">{{ $searchIndex | jsonify | safeJS }}</script>
+</section>
+{{ end }}
