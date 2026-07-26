@@ -4,8 +4,4 @@ description: "Explore relaxing, colorful puzzle games from BornstarSoft in the P
 kicker: "Puzzle games"
 ---
 
-Explore puzzle games from BornstarSoft and the Puzzlepia universe.
-
-Puzzlepia brings daily puzzle starters and BornstarSoft game pages together in one simple place.
-
-Choose a quick Daily Puzzle if you want a small starter, play Blockzzle for browser block puzzle play, try Ringzzle for color rings, or open a game page for details and related puzzles.
+Play Blockzzle and Ringzzle instantly in your browser with no install. Other game pages clearly show their current status and connect to a related Puzzlepia Daily Puzzle.

@@ -156,3 +156,5 @@ Phase 5I returned to the default content-growth path with five practical Blog po
 Phase 6A responded to the larger content inventory by improving discovery rather than adding more pages. The Home page now presents playable choices earlier, while the Daily and Blog hubs offer lightweight topic filters, Blog search, and shorter initial lists. Weekly observation should compare Home-to-Daily, Home-to-Games, Home-to-Blog, and hub-to-detail traffic before another large content batch is scheduled.
 
 Phase 6B improved what happens after a visitor opens a Blog post. Each article now provides a table of contents, reading time, a relevant playable puzzle, and relevant follow-up guides. Weekly observation should compare Blog entry-page traffic with onward visits to Daily Puzzle pages and other Blog posts.
+
+Phase 6C separated immediately playable browser games from other game pages and added relevant guide links to game details. Weekly observation should compare Games hub visits with external Blockzzle and Ringzzle play-page visits, internal Daily Puzzle visits, and Blog guide visits.

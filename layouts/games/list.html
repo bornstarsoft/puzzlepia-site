@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ $playable := where .Pages "Params.playURL" "ne" nil }}
+{{ $catalog := where .Pages "Params.playURL" "eq" nil }}
 <section class="page games-hub">
   <header class="page__header">
     <p class="eyebrow">{{ .Params.kicker | default .Title }}</p>
@@ -9,13 +11,61 @@
 {{ .Content }}
   </div>
   <div class="hub-actions" aria-label="Puzzlepia game discovery options">
-    <a class="button button--primary" href="/daily/">Play Daily Puzzles</a>
-    <a class="button button--secondary" href="#games-list">View Game Pages</a>
+    <a class="button button--primary" href="#play-now">Play now in your browser</a>
+    <a class="button button--secondary" href="/daily/">Choose a Daily Puzzle</a>
   </div>
-  <div class="game-grid game-grid--hub" id="games-list">
-{{ range .Pages.ByWeight }}
+
+{{ if $playable }}
+  <section class="games-hub__section" id="play-now" aria-labelledby="play-now-title">
+    <div class="games-hub__heading">
+      <p class="eyebrow">Playable now</p>
+      <h2 id="play-now-title">Free browser puzzle games</h2>
+      <p>Open an official game and start playing with no install. Each game also has a related Puzzlepia Daily Puzzle.</p>
+    </div>
+    <div class="browser-game-list">
+{{ range $playable.ByWeight }}
+      <article class="browser-game">
+        <span class="browser-game__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</span>
+        <div class="browser-game__body">
+          <p class="browser-game__meta">{{ .Params.genre }} · {{ .Params.status }}</p>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description }}</p>
+{{ if .Params.dailyURL }}
+          <a class="browser-game__daily-link" href="{{ .Params.dailyURL }}">{{ .Params.dailyTitle | default "Play related Daily Puzzle" }}</a>
+{{ end }}
+        </div>
+        <div class="browser-game__actions">
+          <a class="button button--primary" href="{{ .Params.playURL }}" rel="noopener" target="_blank">{{ .Params.playLabel | default "Play online" }}</a>
+          <a class="button button--secondary" href="{{ .RelPermalink }}">View details</a>
+        </div>
+      </article>
+{{ end }}
+    </div>
+  </section>
+{{ end }}
+
+{{ if $catalog }}
+  <section class="games-hub__section" id="games-list" aria-labelledby="more-games-title">
+    <div class="games-hub__heading">
+      <p class="eyebrow">More game pages</p>
+      <h2 id="more-games-title">Explore more puzzle styles</h2>
+      <p>Review available, upcoming, and in-development BornstarSoft puzzle directions, then try the related Daily Puzzle.</p>
+    </div>
+    <div class="game-grid game-grid--hub">
+{{ range $catalog.ByWeight }}
 {{ partial "game-card.html" . }}
 {{ end }}
-  </div>
+    </div>
+  </section>
+{{ end }}
+
+  <section class="games-daily-bridge" aria-labelledby="games-daily-title">
+    <div>
+      <p class="eyebrow">Prefer a quick start?</p>
+      <h2 id="games-daily-title">Play a small Puzzlepia puzzle first</h2>
+      <p>Choose from Word Search, Block Puzzle, Ring Puzzle, Number Puzzle, or Color Match.</p>
+    </div>
+    <a class="button button--secondary" href="/daily/">Browse Daily Puzzles</a>
+  </section>
 </section>
 {{ end }}

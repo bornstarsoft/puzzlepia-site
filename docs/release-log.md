@@ -173,3 +173,8 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added Blog reading time, author context, in-page navigation, a related playable puzzle, and relevant follow-up guides to every Blog post.
 - Added visible breadcrumbs to detail pages and a keyboard skip link while keeping the experience static, lightweight, and crawlable.
+
+## Phase 6C Games Hub Play-Now Clarity
+
+- Separated browser-playable games from available, upcoming, and in-development game pages so visitors can identify what they can play immediately.
+- Connected each game detail page to relevant Puzzlepia guides while keeping official play links primary and unsupported claims out of the experience.

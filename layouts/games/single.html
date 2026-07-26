@@ -1,4 +1,11 @@
 {{ define "main" }}
+{{ $topic := partial "game-topic.html" . }}
+{{ $relatedGuides := slice }}
+{{ range ((where .Site.RegularPages "Section" "blog").ByDate.Reverse) }}
+  {{ if eq (partial "blog-topic.html" .) $topic }}
+    {{ $relatedGuides = $relatedGuides | append . }}
+  {{ end }}
+{{ end }}
 <article class="page game-detail">
 {{ partial "breadcrumbs.html" . }}
   <section class="game-hero">
@@ -81,5 +88,28 @@
 {{ end }}
 {{ end }}
   </section>
+
+{{ if $relatedGuides }}
+  <section class="related-guides game-related-guides" aria-labelledby="game-related-guides-title">
+    <div class="daily-hub__heading">
+      <p class="eyebrow">Puzzle guides</p>
+      <h2 id="game-related-guides-title">Learn this puzzle style</h2>
+      <p>Read a practical guide, then return to the game or its related Daily Puzzle.</p>
+    </div>
+    <div class="guide-grid">
+{{ range first 3 $relatedGuides }}
+      <article class="guide-card">
+        <p class="guide-card__meta">{{ .ReadingTime }} min read</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Description }}</p>
+        <a class="guide-card__link" href="{{ .RelPermalink }}">Read guide <span aria-hidden="true">&rarr;</span></a>
+      </article>
+{{ end }}
+    </div>
+    <div class="section__actions">
+      <a class="button button--secondary" href="/blog/">Browse all puzzle guides</a>
+    </div>
+  </section>
+{{ end }}
 </article>
 {{ end }}

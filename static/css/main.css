@@ -683,6 +683,19 @@ img {
   color: var(--muted);
 }
 
+.browser-game__daily-link {
+  display: inline-flex;
+  margin-top: 9px;
+  color: var(--purple-dark);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.browser-game__daily-link:hover {
+  text-decoration: underline;
+}
+
 .browser-game__meta,
 .guide-card__meta {
   margin: 0 0 5px;
@@ -980,6 +993,50 @@ img {
   margin-top: 44px;
 }
 
+.games-hub__section {
+  margin-top: 48px;
+}
+
+.games-hub__heading {
+  max-width: 760px;
+}
+
+.games-hub__heading h2 {
+  margin: 0;
+  font-size: 2.3rem;
+  line-height: 1.15;
+}
+
+.games-hub__heading p:not(.eyebrow) {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.games-daily-bridge {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  margin-top: 48px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.games-daily-bridge h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.games-daily-bridge p:not(.eyebrow) {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.game-related-guides {
+  max-width: 980px;
+}
+
 .site-footer {
   display: grid;
   gap: 18px;
@@ -1105,7 +1162,19 @@ img {
     font-size: 1.5rem;
   }
 
+  .games-hub__heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .games-daily-bridge h2 {
+    font-size: 1.55rem;
+  }
+
   .article-practice .button {
+    width: 100%;
+  }
+
+  .games-daily-bridge .button {
     width: 100%;
   }
 
@@ -1173,6 +1242,10 @@ img {
   }
 
   .article-practice {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .games-daily-bridge {
     grid-template-columns: minmax(0, 1fr) auto;
   }
 
