@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article class="page game-detail">
+{{ partial "breadcrumbs.html" . }}
   <section class="game-hero">
     <div class="game-hero__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</div>
     <div>

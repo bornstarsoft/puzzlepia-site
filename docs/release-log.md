@@ -168,3 +168,8 @@ Concise internal notes for major Puzzlepia phases.
 - Reworked the Home page around immediate puzzle choice, official browser games, and recent practical guides instead of a long decorative introduction.
 - Added topic filters, guide search, result counts, and progressive "show all" controls to the growing Daily Challenge and Blog libraries.
 - Improved mobile header fit and added a direct Blog navigation path without changing public URLs, game logic, analytics, or deployment settings.
+
+## Phase 6B Guided Reading and Related Content
+
+- Added Blog reading time, author context, in-page navigation, a related playable puzzle, and relevant follow-up guides to every Blog post.
+- Added visible breadcrumbs to detail pages and a keyboard skip link while keeping the experience static, lightweight, and crawlable.

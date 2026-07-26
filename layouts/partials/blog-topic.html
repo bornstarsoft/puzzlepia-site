@@ -1,0 +1,15 @@
+{{- $keywords := lower .Title -}}
+{{- with .Params.tags -}}
+  {{- $keywords = printf "%s %s" $keywords (lower (delimit . " ")) -}}
+{{- end -}}
+{{- $topic := "daily" -}}
+{{- if in $keywords "block" -}}
+  {{- $topic = "block" -}}
+{{- else if or (in $keywords "word") (in $keywords "kpop") -}}
+  {{- $topic = "word" -}}
+{{- else if or (in $keywords "color") (in $keywords "ring") -}}
+  {{- $topic = "color" -}}
+{{- else if or (in $keywords "number") (in $keywords "sudoku") -}}
+  {{- $topic = "number" -}}
+{{- end -}}
+{{- return $topic -}}

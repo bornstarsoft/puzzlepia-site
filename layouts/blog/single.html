@@ -1,0 +1,82 @@
+{{ define "main" }}
+{{ $topic := partial "blog-topic.html" . }}
+{{ $topicLabels := dict "word" "Word puzzles" "block" "Block puzzles" "color" "Color and ring puzzles" "number" "Number puzzles" "daily" "Daily puzzle habits" }}
+{{ $topicLabel := index $topicLabels $topic }}
+{{ $practicePaths := dict "word" "/daily/word-search/" "block" "/daily/block-puzzle/" "color" "/daily/color-match/" "number" "/daily/number-puzzle/" "daily" "/daily/" }}
+{{ $practiceLabels := dict "word" "Play Daily Word Search" "block" "Play Daily Block Puzzle" "color" "Play Daily Color Match" "number" "Play Daily Number Puzzle" "daily" "Choose a Daily Puzzle" }}
+{{ $practicePath := index $practicePaths $topic }}
+{{ $practiceLabel := index $practiceLabels $topic }}
+{{ if in (lower .Title) "ring" }}
+  {{ $practicePath = "/daily/ring-puzzle/" }}
+  {{ $practiceLabel = "Play Daily Ring Puzzle" }}
+{{ end }}
+{{ $related := slice }}
+{{ range ((where .Site.RegularPages "Section" "blog").ByDate.Reverse) }}
+  {{ if and (ne .RelPermalink $.RelPermalink) (eq (partial "blog-topic.html" .) $topic) }}
+    {{ $related = $related | append . }}
+  {{ end }}
+{{ end }}
+{{ $relatedTitle := printf "More guides about %s" ($topicLabel | lower) }}
+{{ if eq (len $related) 0 }}
+  {{ range ((where .Site.RegularPages "Section" "blog").ByDate.Reverse) }}
+    {{ if ne .RelPermalink $.RelPermalink }}
+      {{ $related = $related | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $relatedTitle = "More useful puzzle guides" }}
+{{ end }}
+<article class="page article-page">
+{{ partial "breadcrumbs.html" . }}
+  <header class="page__header article-header">
+    <p class="eyebrow">{{ $topicLabel }}</p>
+    <h1>{{ .Title }}</h1>
+{{ with .Description }}<p>{{ . }}</p>{{ end }}
+    <div class="article-meta" aria-label="Article details">
+      <span>By <a href="/about/">Puzzlepia</a></span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+  </header>
+
+  <div class="article-layout">
+    <aside class="article-toc" aria-label="In this guide">
+      <p class="article-toc__title">In this guide</p>
+{{ .TableOfContents }}
+    </aside>
+    <div class="page__content article-content">
+{{ .Content }}
+    </div>
+  </div>
+
+  <section class="article-practice" aria-labelledby="article-practice-title">
+    <div>
+      <p class="eyebrow">Try it now</p>
+      <h2 id="article-practice-title">Put the idea into practice</h2>
+      <p>Open a lightweight Puzzlepia puzzle with one clear goal and no account required.</p>
+    </div>
+    <a class="button button--primary" href="{{ $practicePath }}">{{ $practiceLabel }}</a>
+  </section>
+
+{{ if $related }}
+  <section class="related-guides" aria-labelledby="related-guides-title">
+    <div class="daily-hub__heading">
+      <p class="eyebrow">Keep exploring</p>
+      <h2 id="related-guides-title">{{ $relatedTitle }}</h2>
+    </div>
+    <div class="guide-grid">
+{{ range first 3 $related }}
+      <article class="guide-card">
+        <p class="guide-card__meta">{{ .ReadingTime }} min read</p>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Description }}</p>
+        <a class="guide-card__link" href="{{ .RelPermalink }}">Read next <span aria-hidden="true">&rarr;</span></a>
+      </article>
+{{ end }}
+    </div>
+    <div class="section__actions">
+      <a class="button button--secondary" href="/blog/">Browse all puzzle guides</a>
+    </div>
+  </section>
+{{ end }}
+</article>
+{{ end }}

@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article class="page">
+{{ partial "breadcrumbs.html" . }}
   <header class="page__header">
     <p class="eyebrow">{{ .Params.kicker | default .Section | humanize }}</p>
     <h1>{{ .Title }}</h1>
