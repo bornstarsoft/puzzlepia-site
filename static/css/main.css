@@ -989,6 +989,12 @@ img {
 
 .site-search__filters {
   margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.site-search__filters button {
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .site-search__status {
@@ -1043,8 +1049,19 @@ img {
 }
 
 .search-result__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--purple-dark);
   font-weight: 900;
+}
+
+.site-search .discovery-empty p {
+  margin: 0;
+}
+
+.site-search .discovery-empty .button {
+  margin-top: 12px;
 }
 
 .search-start {
@@ -1420,6 +1437,12 @@ img {
 
   .site-search__form {
     padding: 14px;
+  }
+
+  .site-search__filters {
+    flex-wrap: wrap;
+    overflow: visible;
+    padding-bottom: 0;
   }
 }
 

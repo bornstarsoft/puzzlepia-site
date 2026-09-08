@@ -8,35 +8,51 @@
     return;
   }
 
-  var entries;
-  try {
-    entries = JSON.parse(indexElement.textContent);
-  } catch (error) {
-    return;
-  }
-
   var form = root.querySelector("[data-search-form]");
   var input = root.querySelector("[data-search-input]");
   var clear = root.querySelector("[data-search-clear]");
   var status = root.querySelector("[data-search-status]");
   var results = root.querySelector("[data-search-results]");
   var empty = root.querySelector("[data-search-empty]");
+  var allTypes = root.querySelector("[data-search-all]");
+  var more = root.querySelector("[data-search-more]");
+  var moreWrap = root.querySelector("[data-search-more-wrap]");
   var start = document.querySelector("[data-search-start]");
   var categoryButtons = Array.prototype.slice.call(
     root.querySelectorAll("[data-search-category]")
   );
   var activeCategory = "all";
   var resultLimit = 24;
+  var matches = [];
+  var shown = 0;
 
-  if (!Array.isArray(entries) || !input || !results) {
+  if (!form || !input || !clear || !status || !results || !empty ||
+      !start || !allTypes || !more || !moreWrap) {
+    return;
+  }
+
+  var entries;
+  try {
+    entries = JSON.parse(indexElement.textContent);
+    if (!Array.isArray(entries) || !entries.every(function (entry) {
+      return entry && typeof entry.title === "string" &&
+        typeof entry.url === "string" &&
+        /^\/(daily|games|blog)\/[a-z0-9/-]+\/$/.test(entry.url);
+    })) {
+      throw new Error("Invalid search index");
+    }
+  } catch (error) {
+    status.textContent = "Search is unavailable right now. Browse a collection below.";
     return;
   }
 
   function normalize(value) {
     return String(value || "")
-      .trim()
       .toLowerCase()
-      .replace(/\s+/g, " ");
+      .replace(/[-_\u2010-\u2015]+/g, " ")
+      .replace(/\bk\s+pop\b/g, "kpop")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function resultScore(entry, query, tokens) {
@@ -123,20 +139,44 @@
     }
 
     var suffix = parameters.toString();
-    window.history.replaceState(
-      null,
-      "",
-      window.location.pathname + (suffix ? "?" + suffix : "")
-    );
+    var nextURL = window.location.pathname + (suffix ? "?" + suffix : "");
+    if (nextURL === window.location.pathname + window.location.search) {
+      return;
+    }
+    try {
+      window.history.replaceState(null, "", nextURL);
+    } catch (error) {
+      // Search remains usable if the browser restricts history updates.
+    }
+  }
+
+  function appendResults() {
+    var next = matches.slice(shown, shown + resultLimit);
+    var fragment = document.createDocumentFragment();
+    next.forEach(function (match) {
+      fragment.appendChild(createResult(match.entry));
+    });
+    results.appendChild(fragment);
+    shown += next.length;
+    moreWrap.hidden = shown >= matches.length;
+    status.textContent = shown < matches.length
+      ? "Showing " + shown + " of " + matches.length + " results."
+      : matches.length + (matches.length === 1 ? " result." : " results.");
   }
 
   function render() {
-    var query = normalize(input.value);
+    var rawQuery = input.value.slice(0, 100).trim();
+    var query = normalize(rawQuery);
     var tokens = query.split(" ").filter(Boolean);
 
     results.replaceChildren();
-    clear.hidden = query.length === 0;
-    start.hidden = query.length >= 2;
+    shown = 0;
+    matches = [];
+    moreWrap.hidden = true;
+    clear.hidden = input.value.length === 0;
+    start.hidden = false;
+    empty.hidden = true;
+    allTypes.hidden = activeCategory === "all";
 
     categoryButtons.forEach(function (button) {
       button.setAttribute(
@@ -145,23 +185,23 @@
       );
     });
 
-    updateURL(query);
+    updateURL(rawQuery);
 
-    if (query.length < 2) {
+    if ((query.length < 2 && query.length > 0) ||
+        (!query && (activeCategory === "all" || rawQuery))) {
       status.textContent =
         query.length === 1
           ? "Enter one more character to search."
-          : "Enter at least two characters to search.";
-      empty.hidden = true;
+          : "Search by name or choose a puzzle type.";
       return;
     }
 
-    var matches = entries
+    matches = entries
       .filter(function (entry) {
         return activeCategory === "all" || entry.category === activeCategory;
       })
       .map(function (entry) {
-        return { entry: entry, score: resultScore(entry, query, tokens) };
+        return { entry: entry, score: query ? resultScore(entry, query, tokens) : 0 };
       })
       .filter(function (result) {
         return result.score >= 0;
@@ -170,17 +210,9 @@
         return b.score - a.score || a.entry.title.localeCompare(b.entry.title);
       });
 
-    matches.slice(0, resultLimit).forEach(function (match) {
-      results.appendChild(createResult(match.entry));
-    });
-
-    status.textContent =
-      matches.length +
-      (matches.length === 1 ? " result" : " results") +
-      (matches.length > resultLimit
-        ? ". Showing the first " + resultLimit + "."
-        : ".");
+    appendResults();
     empty.hidden = matches.length !== 0;
+    start.hidden = matches.length !== 0;
   }
 
   if (form) {
@@ -191,8 +223,24 @@
 
   input.addEventListener("input", render);
 
+  more.addEventListener("click", function () {
+    var previousCount = shown;
+    appendResults();
+    var firstNewResult = results.children[previousCount];
+    if (firstNewResult) {
+      firstNewResult.querySelector("h2 a").focus();
+    }
+  });
+
+  allTypes.addEventListener("click", function () {
+    activeCategory = "all";
+    render();
+    input.focus();
+  });
+
   clear.addEventListener("click", function () {
     input.value = "";
+    activeCategory = "all";
     input.focus();
     render();
   });
@@ -204,15 +252,17 @@
     });
   });
 
-  var initialParameters = new URLSearchParams(window.location.search);
-  var initialQuery = initialParameters.get("q") || "";
-  var initialCategory = initialParameters.get("type") || "all";
-  var allowedCategories = ["all", "playable", "games", "guides", "challenges"];
-
-  input.value = initialQuery.slice(0, 100);
-  if (allowedCategories.indexOf(initialCategory) !== -1) {
-    activeCategory = initialCategory;
+  function restoreURL() {
+    var parameters = new URLSearchParams(window.location.search);
+    var category = parameters.get("type") || "all";
+    var allowedCategories = ["all", "playable", "games", "guides", "challenges"];
+    activeCategory = allowedCategories.indexOf(category) !== -1 ? category : "all";
+    input.value = (parameters.get("q") || "").slice(0, 100);
+    render();
   }
 
-  render();
+  form.hidden = false;
+  window.addEventListener("pageshow", restoreURL);
+  window.addEventListener("popstate", restoreURL);
+  restoreURL();
 })();

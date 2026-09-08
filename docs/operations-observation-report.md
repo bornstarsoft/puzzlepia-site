@@ -162,3 +162,7 @@ Phase 6C separated immediately playable browser games from other game pages and 
 Phase 6D added a lightweight recent-puzzle return path on Home and the Daily hub. Weekly observation should compare repeat visits and Home-to-recent-puzzle clicks while remembering that the feature stores only the last opened puzzle locally and does not persist progress or scores.
 
 Phase 6E added unified Puzzlepia search across playable puzzles, games, guides, and challenges. Weekly observation should check whether visitors use `/search/`, which result categories they open, and whether search creates clearer paths into Daily Puzzle and Games pages.
+
+Phase 6F fixed a reproducible search issue: the live `puzzle` query matched 42 entries but exposed only the first 24. Visitors can now load the remaining results, browse a content type without typing, and recover from empty searches through the main collections. Hyphenated word searches and mobile filter targets were also improved. This is a usability fix, not evidence of increased traffic or retention.
+
+Search follow-up: repeat the `puzzle` query, reveal every result, try `word-search`, browse each type without a query, and recover from a no-match query. Confirm keyboard focus, Back navigation, and 390px layout. Existing aggregate analytics can show search-page traffic, but do not assume they measure filter use, result clicks, or individual visitor paths; no new event tracking was added.

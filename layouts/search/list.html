@@ -59,16 +59,12 @@
     <h1>{{ .Title }}</h1>
 {{ with .Description }}<p>{{ . }}</p>{{ end }}
   </header>
-  <div class="page__content">
-{{ .Content }}
-  </div>
-
   <section class="site-search" aria-labelledby="site-search-title" data-site-search>
     <h2 id="site-search-title" class="visually-hidden">Search Puzzlepia content</h2>
-    <form class="site-search__form" role="search" data-search-form>
+    <form class="site-search__form" role="search" data-search-form hidden>
       <label for="site-search-input">What would you like to find?</label>
       <div class="site-search__input-row">
-        <input id="site-search-input" type="search" placeholder="Try block puzzle, word search, color..." autocomplete="off" spellcheck="false" data-search-input>
+        <input id="site-search-input" type="search" placeholder="Try block puzzle or word search" maxlength="100" autocomplete="off" spellcheck="false" aria-controls="search-results" data-search-input>
         <button class="site-search__clear" type="button" aria-label="Clear search" title="Clear search" data-search-clear hidden>&times;</button>
       </div>
       <div class="filter-tabs site-search__filters" role="group" aria-label="Filter search results">
@@ -79,9 +75,15 @@
         <button type="button" data-search-category="challenges" aria-pressed="false">Challenges</button>
       </div>
     </form>
-    <p class="site-search__status" data-search-status role="status" aria-live="polite">Enter at least two characters to search.</p>
-    <div class="search-results" data-search-results></div>
-    <p class="discovery-empty" data-search-empty hidden>No Puzzlepia results match that search yet.</p>
+    <p class="site-search__status" data-search-status role="status" aria-live="polite">Browse a collection below.</p>
+    <div class="search-results" id="search-results" data-search-results></div>
+    <div class="discovery-more" data-search-more-wrap hidden>
+      <button class="button button--secondary" type="button" aria-controls="search-results" data-search-more>Show more results</button>
+    </div>
+    <div class="discovery-empty" data-search-empty hidden>
+      <p>No matches yet. Try a shorter phrase or browse a collection below.</p>
+      <button class="button button--secondary" type="button" data-search-all hidden>Search all types</button>
+    </div>
   </section>
 
   <section class="search-start" data-search-start aria-labelledby="search-start-title">

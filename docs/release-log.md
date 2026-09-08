@@ -188,3 +188,10 @@ Concise internal notes for major Puzzlepia phases.
 
 - Added a lightweight client-side search across playable Daily Puzzles, game pages, puzzle guides, and Daily Challenges using Hugo-generated page metadata.
 - Added category filters and query URLs while keeping the search utility `noindex`, excluded from the sitemap, and independent of any backend or external search service.
+
+## Phase 6F Search Completion and Recovery
+
+- Removed the 24-result dead end with progressive result loading and keyboard focus on newly revealed results.
+- Added browsing by content type without a query, hyphen-friendly matching, and collection links plus a filter reset when no results match.
+- Reduced repeated mobile introduction copy, wrapped search filters with 44px touch targets, and kept collection links available when JavaScript or search initialization is unavailable.
+- Preserved public URLs, published-only indexing, game logic, external game links, and analytics/deployment settings.
