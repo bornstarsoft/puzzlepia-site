@@ -10,8 +10,10 @@
   <div class="page__content">
 {{ .Content }}
   </div>
+{{ if not (.HasShortcode "daily-pair-board") }}
 {{ with .Params.game }}
 {{ partial (printf "daily-game/%s.html" .) $ }}
+{{ end }}
 {{ end }}
 </article>
 {{ end }}

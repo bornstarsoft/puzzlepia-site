@@ -1,0 +1,32 @@
+{{ $memory := eq .Params.pairMode "memory" }}
+{{ $cards := slice 1 6 3 8 5 2 9 4 7 1 5 8 2 6 9 4 }}
+{{ $faces := dict }}
+{{ if $memory }}
+  {{ $cards = slice "star" "moon" "sun" "diamond" "circle" "triangle" "moon" "circle" "star" "triangle" "diamond" "sun" }}
+  {{ $faces = dict "star" "★" "moon" "☽" "sun" "☀" "diamond" "◆" "circle" "●" "triangle" "▲" }}
+{{ end }}
+<section class="puzzle-card pair-puzzle" data-pair-game="{{ .Params.pairMode }}" aria-labelledby="pair-game-title">
+  <h2 id="pair-game-title">{{ if $memory }}Find six matching pairs{{ else }}Find eight pairs that make 10{{ end }}</h2>
+  <p class="puzzle-instructions">{{ if $memory }}Turn over two cards. Match their symbols to keep them face up.{{ else }}Tap two different tiles whose numbers add up to 10. They can be anywhere on the board.{{ end }}</p>
+  <p data-unavailable>The interactive board needs JavaScript. You can still read the guide and try the linked challenge below.</p>
+  <div class="pair-grid" aria-label="{{ if $memory }}Three rows of four memory cards{{ else }}Four rows of four number tiles{{ end }}">
+{{ range $index, $card := $cards }}
+    <button class="pair-tile" type="button" data-value="{{ $card }}" data-label="{{ if $memory }}{{ $card | humanize }}{{ else }}{{ $card }}{{ end }}" aria-label="{{ if $memory }}Card {{ add $index 1 }}, face down{{ else }}Tile {{ add $index 1 }}, number {{ $card }}{{ end }}" aria-pressed="false" disabled>
+      <span class="pair-face" aria-hidden="true">{{ if $memory }}?{{ else }}{{ $card }}{{ end }}</span>
+      <span class="pair-position" aria-hidden="true">{{ add $index 1 }}</span>
+{{ if $memory }}<span data-symbol hidden>{{ index $faces $card }}</span>{{ end }}
+    </button>
+{{ end }}
+  </div>
+  <p class="pair-progress" data-progress aria-live="polite">0 / {{ div (len $cards) 2 }} pairs found</p>
+  <p class="puzzle-status pair-feedback" data-status role="status">Choose any two {{ if $memory }}cards{{ else }}tiles{{ end }} to begin.</p>
+  <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
+  <div class="completion-actions" data-complete-actions hidden>
+    <a class="button button--primary" href="{{ .Params.nextPuzzle }}">{{ .Params.nextPuzzleLabel }}</a>
+    <a class="button button--secondary" href="/daily/">More Daily Puzzles</a>
+  </div>
+  <div class="pair-controls" data-controls hidden>
+    <button class="button button--secondary" type="button" data-clear disabled>Clear selection</button>
+    <button class="button button--primary" type="button" data-reset>Reset puzzle</button>
+  </div>
+</section>

@@ -203,3 +203,11 @@ Concise internal notes for major Puzzlepia phases.
 - Used six small, original SVG diagrams and native HTML disclosures. No game logic, runtime JavaScript, Phaser output, or external tracking changed.
 - Connected the examples to existing Daily Puzzles and the separate Blockzzle, Ringzzle, and DaySudoku sites. The exercises are fixed practice boards, not screenshots or live daily game states.
 - Validation: enumerated placements and Sudoku solutions from the SVG board data; each challenge has one answer. Checked 34 page/viewport combinations at 390, 430, 768, and 1280px, 64 internal links, and keyboard/click plus no-JavaScript touch disclosure behavior. Use explicit timezone offsets for new publication dates so local morning releases are not treated as future UTC dates.
+
+## Phase 6H Matching Games and Guides
+
+- Added Memory Pairs (six symbol pairs) and Make 10 (eight number pairs), expanding the local playable collection from five to seven games.
+- Added two worked guides, two illustrated static challenges, and contextual links from Home, Daily, Games, and the existing search index.
+- Kept fixed boards, untimed click/touch/keyboard input, full reset, explicit completion, and no asynchronous mismatch timers. These are practice starters, not automatically changing daily puzzles.
+- Preserved all five existing game scripts, external game destinations, Phaser output, and deployment/analytics settings. No new dependencies, backend, scoring, or progress storage.
+- Added dependency-free state checks and [matching game QA steps](matching-games-qa.md), including exact completion paths and script-unavailable behavior. Generated Hugo output remains untracked.

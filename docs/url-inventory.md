@@ -22,6 +22,8 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/ring-puzzle/`
 - `/daily/number-puzzle/`
 - `/daily/color-match/`
+- `/daily/memory-pairs/`
+- `/daily/number-pairs/`
 
 ## Daily Challenge URLs
 
@@ -49,6 +51,8 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/find-the-square-space/`
 - `/daily/challenges/three-rings-three-spaces/`
 - `/daily/challenges/one-certain-sudoku-number/`
+- `/daily/challenges/remember-the-star-pair/`
+- `/daily/challenges/find-the-ten-pairs/`
 
 ## Game Page URLs
 
@@ -91,6 +95,8 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/blog/number-puzzle-warmups-for-casual-players/`
 - `/blog/what-makes-a-good-daily-challenge/`
 - `/blog/sudoku-first-move-for-beginners/`
+- `/blog/memory-matching-tips/`
+- `/blog/make-ten-number-puzzle-tips/`
 
 ## Utility URLs
 

@@ -13,7 +13,7 @@
     {{ if in $game "word" }}{{ $topic = "word" }}
     {{ else if in $game "block" }}{{ $topic = "block" }}
     {{ else if in $game "ring" }}{{ $topic = "color" }}
-    {{ else if in $game "number" }}{{ $topic = "number" }}
+    {{ else if or (in $game "number") (eq .Params.pairMode "sum") }}{{ $topic = "number" }}
     {{ else if in $game "color" }}{{ $topic = "color" }}
     {{ end }}
   {{ else if eq .Section "games" }}

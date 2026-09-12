@@ -10,6 +10,12 @@
   {{ $practicePath = "/daily/ring-puzzle/" }}
   {{ $practiceLabel = "Play Daily Ring Puzzle" }}
 {{ end }}
+{{ with .Params.practiceURL }}
+  {{ with $.Site.GetPage . }}
+    {{ $practicePath = .RelPermalink }}
+    {{ $practiceLabel = printf "Play %s" .Title }}
+  {{ end }}
+{{ end }}
 {{ $related := slice }}
 {{ range ((where .Site.RegularPages "Section" "blog").ByDate.Reverse) }}
   {{ if and (ne .RelPermalink $.RelPermalink) (eq (partial "blog-topic.html" .) $topic) }}

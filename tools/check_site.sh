@@ -32,6 +32,8 @@ required_pages=(
   "public/contact/index.html"
   "public/privacy/index.html"
   "public/terms/index.html"
+  "public/daily/memory-pairs/index.html"
+  "public/daily/number-pairs/index.html"
 )
 
 for page in "${required_pages[@]}"; do

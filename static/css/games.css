@@ -426,6 +426,55 @@
   box-shadow: inset 0 0 0 3px rgba(45, 212, 191, 0.08);
 }
 
+.pair-puzzle {
+  border-radius: 8px;
+}
+
+.pair-puzzle h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.pair-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 400px);
+}
+
+.pair-tile {
+  display: grid;
+  place-content: center;
+  position: relative;
+  min-width: 0;
+  min-height: 48px;
+  aspect-ratio: 1;
+  padding: 4px;
+  border: 2px solid #b8a5de;
+  border-radius: 8px;
+  background: #f4f0fc;
+  color: #493276;
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.pair-face { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.pair-position { position: absolute; bottom: 3px; right: 6px; font-size: 0.65rem; }
+.pair-tile.is-selected { background: #fff0d3; border-color: #866000; }
+.pair-tile.is-mismatch { background: #ffe9f1; border-color: #9c3961; }
+.pair-tile.is-matched { background: #d5f5e9; border-color: #25735b; color: #185640; }
+.pair-tile.is-matched::after { content: "\2713"; position: absolute; top: 2px; right: 5px; font-size: 0.8rem; }
+.pair-tile:focus-visible { outline: 3px solid #493276; outline-offset: 2px; }
+.pair-tile:disabled { cursor: default; opacity: 1; }
+.pair-tile [hidden], .pair-controls[hidden] { display: none; }
+.pair-progress { font-weight: 800; margin: 16px 0 8px; }
+.pair-feedback { min-height: 3.2em; max-width: 480px; }
+.pair-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.pair-controls .button { min-height: 44px; }
+.pair-controls .button:disabled { opacity: 0.55; cursor: default; }
+.pair-puzzle .button--primary { color: #ffffff; background: #57369c; }
+
 @media (min-width: 720px) {
   .puzzle-card {
     padding: 24px;
