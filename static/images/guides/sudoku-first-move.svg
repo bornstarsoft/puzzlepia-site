@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="title description">
+  <title id="title">Your first Sudoku move</title>
+  <desc id="description">Rows with zero as blank: 1 0 0 4; 0 4 1 0; 2 0 4 0; 0 3 0 1. Find B1.</desc>
+  <rect width="480" height="480" fill="#fbfaff"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#241c35">
+    <text x="116" y="40" font-size="24">A</text>
+    <text x="204" y="40" font-size="24">B</text>
+    <text x="292" y="40" font-size="24">C</text>
+    <text x="380" y="40" font-size="24">D</text>
+    <text x="40" y="118" font-size="24">1</text>
+    <rect x="72" y="64" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="116" y="120" font-size="34" font-weight="700">1</text>
+    <rect x="160" y="64" width="88" height="88" fill="#ffda80" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="204" y="120" font-size="34" font-weight="700">?</text>
+    <rect x="248" y="64" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="336" y="64" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="380" y="120" font-size="34" font-weight="700">4</text>
+    <text x="40" y="206" font-size="24">2</text>
+    <rect x="72" y="152" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="160" y="152" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="204" y="208" font-size="34" font-weight="700">4</text>
+    <rect x="248" y="152" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="292" y="208" font-size="34" font-weight="700">1</text>
+    <rect x="336" y="152" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="40" y="294" font-size="24">3</text>
+    <rect x="72" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="116" y="296" font-size="34" font-weight="700">2</text>
+    <rect x="160" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="248" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="292" y="296" font-size="34" font-weight="700">4</text>
+    <rect x="336" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="40" y="382" font-size="24">4</text>
+    <rect x="72" y="328" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="160" y="328" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="204" y="384" font-size="34" font-weight="700">3</text>
+    <rect x="248" y="328" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="336" y="328" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="380" y="384" font-size="34" font-weight="700">1</text>
+    <path d="M72 64H424V416H72Z M248 64V416 M72 240H424" fill="none" stroke="#4c3d60" stroke-width="4"/>
+  </g>
+</svg>

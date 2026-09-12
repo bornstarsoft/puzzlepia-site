@@ -34,6 +34,9 @@
     <div class="article-meta" aria-label="Article details">
       <span>By <a href="/about/">Puzzlepia</a></span>
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+{{ if .Lastmod.After .Date }}
+      <span>Updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time></span>
+{{ end }}
       <span>{{ .ReadingTime }} min read</span>
     </div>
   </header>

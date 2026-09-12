@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="title description">
+  <title id="title">Find the only square space</title>
+  <desc id="description">Occupied: B1 C1 D1 A2 D2 A3 B4 D4. Other cells are empty.</desc>
+  <rect width="480" height="480" fill="#fbfaff"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#241c35">
+    <text x="116" y="40" font-size="24">A</text>
+    <text x="204" y="40" font-size="24">B</text>
+    <text x="292" y="40" font-size="24">C</text>
+    <text x="380" y="40" font-size="24">D</text>
+    <text x="40" y="118" font-size="24">1</text>
+    <rect x="72" y="64" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="160" y="64" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="248" y="64" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="336" y="64" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="40" y="206" font-size="24">2</text>
+    <rect x="72" y="152" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="160" y="152" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="248" y="152" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="336" y="152" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="40" y="294" font-size="24">3</text>
+    <rect x="72" y="240" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="160" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="248" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="336" y="240" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <text x="40" y="382" font-size="24">4</text>
+    <rect x="72" y="328" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="160" y="328" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="248" y="328" width="88" height="88" fill="#ffffff" stroke="#a79bb8" stroke-width="1.5"/>
+    <rect x="336" y="328" width="88" height="88" fill="#6f45d8" stroke="#a79bb8" stroke-width="1.5"/>
+  </g>
+</svg>

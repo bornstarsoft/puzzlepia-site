@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="260" viewBox="0 0 600 260" role="img" aria-labelledby="title description">
+  <title id="title">Read three ring cells</title>
+  <desc id="description">A contains small pink and medium mint rings. B contains medium gold and large purple rings. C contains small mint and large pink rings. Dashed outlines are empty size positions.</desc>
+  <rect width="600" height="260" fill="#fbfaff"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#241c35">
+    <text x="100" y="34" font-size="28" font-weight="700">A</text>
+    <circle cx="100" cy="122" r="62" fill="none" stroke="#9588a9" stroke-width="2.5" stroke-dasharray="5 5"/>
+    <circle cx="100" cy="122" r="42" fill="none" stroke="#118577" stroke-width="10"/>
+    <circle cx="100" cy="122" r="22" fill="none" stroke="#df3686" stroke-width="10"/>
+    <text x="100" y="230" font-size="24">S + M</text>
+    <text x="300" y="34" font-size="28" font-weight="700">B</text>
+    <circle cx="300" cy="122" r="62" fill="none" stroke="#7044c9" stroke-width="10"/>
+    <circle cx="300" cy="122" r="42" fill="none" stroke="#c28d13" stroke-width="10"/>
+    <circle cx="300" cy="122" r="22" fill="none" stroke="#9588a9" stroke-width="2.5" stroke-dasharray="5 5"/>
+    <text x="300" y="230" font-size="24">M + L</text>
+    <text x="500" y="34" font-size="28" font-weight="700">C</text>
+    <circle cx="500" cy="122" r="62" fill="none" stroke="#df3686" stroke-width="10"/>
+    <circle cx="500" cy="122" r="42" fill="none" stroke="#9588a9" stroke-width="2.5" stroke-dasharray="5 5"/>
+    <circle cx="500" cy="122" r="22" fill="none" stroke="#118577" stroke-width="10"/>
+    <text x="500" y="230" font-size="24">S + L</text>
+  </g>
+</svg>

@@ -42,6 +42,16 @@ Daily Challenge prompts published:
 - Pattern Spotter: Repeated Colors
 - Weekend Mixed Puzzle: Word and Color
 
+## Used in Phase 6G
+
+- Expanded Block Puzzle Space Management Tips with a two-move board comparison.
+- Expanded Ring Puzzle Basics with a color-versus-size placement example.
+- Published Your First Sudoku Move: Rows, Columns, and Boxes.
+- Published Find the Only Square Space, Three Rings, Three Spaces, and One Certain Sudoku Number.
+- Added original static board diagrams and optional hints/solutions. These are fixed exercises, not generated daily games.
+
+Next: a second Sudoku deduction example, a word-search direction diagram, and a domino-placement exercise. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
+
 ## Blog Topic Ideas
 
 1. Easy Word Search Tips for Beginners
@@ -84,7 +94,7 @@ Daily Challenge prompts published:
 15. Color Match: Pink and Mint Scan
 16. Number Focus: Even Numbers First
 17. Mini Word Search: Weather Words
-18. Block Placement: Protect a 2x2 Space
+18. Block Placement: A Horizontal or Vertical Domino?
 19. Ring Placement: Alternate Pink and Mint
 20. Number Focus: Count Down from 10
 21. Color Match: Scan the Four Corners

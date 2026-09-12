@@ -1,0 +1,4 @@
+<details class="puzzle-reveal">
+  <summary>{{ .Get "title" | default "Answer and explanation" }}</summary>
+  <div>{{ .Page.RenderString (dict "display" "block") .Inner }}</div>
+</details>

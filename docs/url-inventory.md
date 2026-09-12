@@ -46,6 +46,9 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/gold-color-target/`
 - `/daily/challenges/repeated-color-pattern/`
 - `/daily/challenges/weekend-word-and-color/`
+- `/daily/challenges/find-the-square-space/`
+- `/daily/challenges/three-rings-three-spaces/`
+- `/daily/challenges/one-certain-sudoku-number/`
 
 ## Game Page URLs
 
@@ -87,6 +90,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/blog/how-color-helps-puzzle-games-feel-clear/`
 - `/blog/number-puzzle-warmups-for-casual-players/`
 - `/blog/what-makes-a-good-daily-challenge/`
+- `/blog/sudoku-first-move-for-beginners/`
 
 ## Utility URLs
 

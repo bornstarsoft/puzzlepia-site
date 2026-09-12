@@ -1,7 +1,8 @@
 ---
 title: "Ring Puzzle Basics: Colors, Sizes, and Simple Strategy"
-description: "An approachable guide to ring puzzle basics, including colors, sizes, placement, and simple strategy."
+description: "Read a ring puzzle cell by size and color, then follow a worked placement example with three clearly labeled cells."
 date: 2026-05-28
+lastmod: 2026-09-12T08:54:35+09:00
 draft: false
 tags:
   - "ring puzzle"
@@ -24,6 +25,22 @@ Many ring puzzles use different ring sizes, such as small, medium, and large. A 
 This size rule is easy to understand visually. The rings nest inside each other, so the board can show multiple layers at once.
 
 When you play, check the size before placing. A color may look perfect, but the cell still needs to have room for that size.
+
+## Read three cells before choosing
+
+Use this small example to separate color from size. Each cell has one small, one medium, and one large position. A solid ring occupies a position; a dashed outline marks an empty one. S, M, and L mean small, medium, and large.
+
+{{< figure src="/images/guides/ring-slots-example.svg" width="600" height="260" alt="Three ring cells. A contains small pink and medium mint rings. B contains medium gold and large purple rings. C contains small mint and large pink rings. The other size in each cell is empty." caption="A: S + M occupied. B: M + L occupied. C: S + L occupied." >}}
+
+You are holding a **large gold ring**. Where can it go?
+
+**Cell A is the only compatible choice.** Its large position is empty, even though neither existing ring is gold. Cell B already contains a large purple ring, so its gold medium ring does not make the placement valid. Cell C also has its large position occupied.
+
+Now consider a **small pink ring** on the original board. It fits B, whose small position is empty. The pink ring already in A is a reason to reject A: it occupies the small position you need. Color cannot override an occupied size.
+
+This example uses placement only. Puzzlepia's [Daily Ring Puzzle](/daily/ring-puzzle/) finishes when all five tray rings are placed; it does not require a line clear. Ringzzle has its own color-line rules, described on the official game site. Read those rules before transferring a matching strategy between games.
+
+For a complete three-piece exercise, try [Three Rings, Three Spaces](/daily/challenges/three-rings-three-spaces/).
 
 ## Watch color patterns
 
@@ -69,4 +86,4 @@ Ring puzzles can feel satisfying even when they are short. Placing the final rin
 
 Puzzlepia's ring starter is intentionally simple, but it introduces the basic rhythm: choose, place, check, complete.
 
-Try the [Daily Ring Puzzle](/daily/ring-puzzle/) when you want a quick color-and-placement challenge, then visit [Ringzzle](/games/ringzzle/) for the related BornstarSoft game direction.
+Try the [Daily Ring Puzzle](/daily/ring-puzzle/) for a quick placement challenge, then visit [Ringzzle](/games/ringzzle/) or [play Ringzzle online](https://ringzzle.com/play/) for the separate color rings game.

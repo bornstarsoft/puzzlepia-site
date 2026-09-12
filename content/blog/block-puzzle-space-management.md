@@ -1,7 +1,8 @@
 ---
 title: "Block Puzzle Space Management Tips"
-description: "Simple block puzzle space management tips for keeping boards open and avoiding isolated gaps."
+description: "Compare two placements on a small block puzzle board and learn how to protect space for the next piece."
 date: 2026-05-28
+lastmod: 2026-09-12T08:54:35+09:00
 draft: false
 tags:
   - "block puzzle"
@@ -15,7 +16,7 @@ Block puzzles are easy to start because the rules are clear: place shapes on a b
 
 That is why space management matters. You are not only placing the current block. You are shaping the future board.
 
-Puzzlepia's [Daily Block Puzzle](/daily/block-puzzle/) is a small starter puzzle for practicing safe placement. You can also visit the [Blockzzle](/games/blockzzle/) page to learn about the related BornstarSoft game direction.
+Puzzlepia's [Daily Block Puzzle](/daily/block-puzzle/) is a small starter puzzle for practicing safe placement. You can also visit the [Blockzzle](/games/blockzzle/) page for its separate browser game.
 
 ## Keep the board open
 
@@ -24,6 +25,20 @@ The strongest beginner habit is to protect open space. A board with one large op
 Before placing a block, ask: does this move keep useful space available? If the answer is yes, the move is probably safer. If the move splits the board into awkward pockets, think again.
 
 Open space gives you choices. Choices are valuable because future pieces may not fit exactly where you expect.
+
+## Compare two moves on the same board
+
+Here is a small placement exercise. Purple cells are occupied; white cells are empty. Columns run A to D and rows run 1 to 4. Place a **single block first**, then a **2x2 square**. Nothing clears in this exercise.
+
+{{< figure src="/images/guides/block-space-example.svg" width="480" height="480" alt="Four-by-four board. Occupied cells: A1, C1, A2, B2, D2, C3, D3, D4. Choice 1 is A3; choice 2 is C4. All other cells are empty." caption="Choice 1: A3. Choice 2: C4. Which leaves room for the square?" >}}
+
+Both marked cells accept the single block. But **choice 1, at A3, blocks the only remaining 2x2 space**: A3, B3, A4, and B4. The other empty cells do not form a complete square. Counting empty cells alone would miss that problem.
+
+**Choice 2, at C4, keeps that square open.** Place the single block there, then put the square at A3. Both pieces fit, with no overlap. You have not created more empty cells; you have preserved the shape you need.
+
+This is why "always place the biggest piece first" is only a starting suggestion. Here the exercise sets the order, and planning the smaller piece correctly is enough. In a game that clears lines, recheck the board after a clear because the available shapes may change.
+
+Try a different board in [Find the Only Square Space](/daily/challenges/find-the-square-space/). Its hint and explanation stay closed until you open them.
 
 ## Avoid isolated gaps
 

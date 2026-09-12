@@ -195,3 +195,11 @@ Concise internal notes for major Puzzlepia phases.
 - Added browsing by content type without a query, hyphen-friendly matching, and collection links plus a filter reset when no results match.
 - Reduced repeated mobile introduction copy, wrapped search filters with 44px touch targets, and kept collection links available when JavaScript or search initialization is unavailable.
 - Preserved public URLs, published-only indexing, game logic, external game links, and analytics/deployment settings.
+
+## Phase 6G Worked Puzzle Examples
+
+- Added worked board examples to the existing block space-management and ring basics guides, keeping their original publication dates and recording the update date.
+- Published a 4x4 Sudoku beginner guide and three illustrated challenges with optional hints and explained answers.
+- Used six small, original SVG diagrams and native HTML disclosures. No game logic, runtime JavaScript, Phaser output, or external tracking changed.
+- Connected the examples to existing Daily Puzzles and the separate Blockzzle, Ringzzle, and DaySudoku sites. The exercises are fixed practice boards, not screenshots or live daily game states.
+- Validation: enumerated placements and Sudoku solutions from the SVG board data; each challenge has one answer. Checked 34 page/viewport combinations at 390, 430, 768, and 1280px, 64 internal links, and keyboard/click plus no-JavaScript touch disclosure behavior. Use explicit timezone offsets for new publication dates so local morning releases are not treated as future UTC dates.
