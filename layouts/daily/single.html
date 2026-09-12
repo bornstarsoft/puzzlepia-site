@@ -15,5 +15,18 @@
 {{ partial (printf "daily-game/%s.html" .) $ }}
 {{ end }}
 {{ end }}
+{{ with index .Site.Data.puzzle_catalog .RelPermalink }}
+  <section class="puzzle-followup" aria-labelledby="puzzle-followup-title">
+    <h2 id="puzzle-followup-title">A little idea for your next round</h2>
+    <div class="puzzle-followup__links">
+{{ with $.Site.GetPage .guide }}
+      <a href="{{ .RelPermalink }}"><span>Read a guide</span><strong>{{ .Title }}</strong><small>{{ .ReadingTime }} min read</small></a>
+{{ end }}
+{{ with $.Site.GetPage .challenge }}
+      <a href="{{ .RelPermalink }}"><span>Try a short challenge</span><strong>{{ .Title }}</strong><small>Hint and answer included</small></a>
+{{ end }}
+    </div>
+  </section>
+{{ end }}
 </article>
 {{ end }}

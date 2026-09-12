@@ -29,19 +29,12 @@
   </div>
   <div class="quick-pick-grid" aria-label="Playable daily puzzles">
 {{ range $playable.ByWeight }}
-    <a class="quick-pick" href="{{ .RelPermalink }}">
-      <span class="quick-pick__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</span>
+    <a class="quick-pick quick-pick--visual" href="{{ .RelPermalink }}">
+{{ partial "puzzle-preview.html" . }}
       <span class="quick-pick__body">
         <strong>{{ .Title }}</strong>
         <small>{{ .Params.difficulty | default "Starter" }} ·
-{{ if .Params.quickGoal }}{{ .Params.quickGoal }}
-{{ else if eq .Params.game "word-search" }}Find four hidden words
-{{ else if eq .Params.game "block-puzzle" }}Place three block pieces
-{{ else if eq .Params.game "ring-puzzle" }}Fit five colorful rings
-{{ else if eq .Params.game "number-puzzle" }}Tap numbers 1 to 16
-{{ else if eq .Params.game "color-match" }}Clear six pink tiles
-{{ else }}Play a quick puzzle
-{{ end }}</small>
+{{ with index $.Site.Data.puzzle_catalog .RelPermalink }}{{ .goal }}{{ else }}Play a quick puzzle{{ end }}</small>
       </span>
       <span class="quick-pick__arrow" aria-hidden="true">&rarr;</span>
     </a>
@@ -94,16 +87,11 @@
   <div class="section__header">
     <p class="eyebrow">Latest guides</p>
     <h2>Make your next puzzle easier to choose</h2>
-    <p>Practical ideas for word, block, color, number, and short daily puzzle sessions.</p>
+    <p>Practical ideas for word, block, color, number, and memory puzzles.</p>
   </div>
   <div class="guide-grid">
 {{ range $latestGuides }}
-    <article class="guide-card">
-      <p class="guide-card__meta">{{ .Date.Format "January 2, 2006" }}</p>
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Description }}</p>
-      <a class="guide-card__link" href="{{ .RelPermalink }}">Read guide <span aria-hidden="true">&rarr;</span></a>
-    </article>
+{{ partial "guide-card.html" . }}
 {{ end }}
   </div>
   <div class="section__actions">

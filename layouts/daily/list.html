@@ -44,6 +44,7 @@
         <button type="button" data-filter-value="ring" aria-pressed="false">Rings</button>
         <button type="button" data-filter-value="number" aria-pressed="false">Numbers</button>
         <button type="button" data-filter-value="color" aria-pressed="false">Colors</button>
+        <button type="button" data-filter-value="memory" aria-pressed="false">Memory</button>
         <button type="button" data-filter-value="mixed" aria-pressed="false">Mixed</button>
       </div>
       <p class="discovery-count" data-filter-count aria-live="polite">{{ len $challenges }} challenges</p>
@@ -56,6 +57,7 @@
 {{ else if in $type "block" }}{{ $topic = "block" }}
 {{ else if in $type "ring" }}{{ $topic = "ring" }}
 {{ else if in $type "number" }}{{ $topic = "number" }}
+{{ else if in $type "memory" }}{{ $topic = "memory" }}
 {{ else if or (in $type "color") (in $type "pattern") }}{{ $topic = "color" }}
 {{ end }}
       <article class="challenge-card" data-discovery-item data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">

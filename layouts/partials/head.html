@@ -36,8 +36,10 @@
 {{ end }}
 {{ end }}
 {{ partial "structured-data.html" . }}
-  <link rel="stylesheet" href="/css/main.css">
+{{ $mainCSS := resources.FromString "css/main.css" (readFile "static/css/main.css") | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $mainCSS.RelPermalink }}">
 {{ if .Params.playable }}
-  <link rel="stylesheet" href="/css/games.css">
+{{ $gamesCSS := resources.FromString "css/games.css" (readFile "static/css/games.css") | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $gamesCSS.RelPermalink }}">
 {{ end }}
 </head>

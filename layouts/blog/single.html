@@ -1,9 +1,9 @@
 {{ define "main" }}
 {{ $topic := partial "blog-topic.html" . }}
-{{ $topicLabels := dict "word" "Word puzzles" "block" "Block puzzles" "color" "Color and ring puzzles" "number" "Number puzzles" "daily" "Daily puzzle habits" }}
+{{ $topicLabels := dict "word" "Word puzzles" "block" "Block puzzles" "color" "Color and ring puzzles" "number" "Number puzzles" "memory" "Memory puzzles" "daily" "Daily puzzle habits" }}
 {{ $topicLabel := index $topicLabels $topic }}
-{{ $practicePaths := dict "word" "/daily/word-search/" "block" "/daily/block-puzzle/" "color" "/daily/color-match/" "number" "/daily/number-puzzle/" "daily" "/daily/" }}
-{{ $practiceLabels := dict "word" "Play Daily Word Search" "block" "Play Daily Block Puzzle" "color" "Play Daily Color Match" "number" "Play Daily Number Puzzle" "daily" "Choose a Daily Puzzle" }}
+{{ $practicePaths := dict "word" "/daily/word-search/" "block" "/daily/block-puzzle/" "color" "/daily/color-match/" "number" "/daily/number-puzzle/" "memory" "/daily/memory-pairs/" "daily" "/daily/" }}
+{{ $practiceLabels := dict "word" "Play Daily Word Search" "block" "Play Daily Block Puzzle" "color" "Play Daily Color Match" "number" "Play Daily Number Puzzle" "memory" "Play Memory Pairs" "daily" "Choose a Daily Puzzle" }}
 {{ $practicePath := index $practicePaths $topic }}
 {{ $practiceLabel := index $practiceLabels $topic }}
 {{ if in (lower .Title) "ring" }}
@@ -74,12 +74,7 @@
     </div>
     <div class="guide-grid">
 {{ range first 3 $related }}
-      <article class="guide-card">
-        <p class="guide-card__meta">{{ .ReadingTime }} min read</p>
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p>{{ .Description }}</p>
-        <a class="guide-card__link" href="{{ .RelPermalink }}">Read next <span aria-hidden="true">&rarr;</span></a>
-      </article>
+{{ partial "guide-card.html" . }}
 {{ end }}
     </div>
     <div class="section__actions">

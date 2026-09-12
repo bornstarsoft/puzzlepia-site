@@ -211,3 +211,10 @@ Concise internal notes for major Puzzlepia phases.
 - Kept fixed boards, untimed click/touch/keyboard input, full reset, explicit completion, and no asynchronous mismatch timers. These are practice starters, not automatically changing daily puzzles.
 - Preserved all five existing game scripts, external game destinations, Phaser output, and deployment/analytics settings. No new dependencies, backend, scoring, or progress storage.
 - Added dependency-free state checks and [matching game QA steps](matching-games-qa.md), including exact completion paths and script-unavailable behavior. Generated Hugo output remains untracked.
+
+## Phase 6I Visual Puzzle Discovery
+
+- Replaced letter-only internal game previews with seven actual board screenshots; added six optimized original editorial covers for puzzle guides.
+- Connected each playable puzzle to a relevant guide and challenge, added Memory filters, and kept mobile topic controls wrapped and readable.
+- Added shared preview/guide partials, a small content catalog, and CSS fingerprints to avoid stale styles after updates. No gameplay, external game URLs, tracking, or deployment settings changed.
+- Recorded [asset sources, generation prompts, and maintenance steps](visual-assets.md). Illustrations are not official game screenshots or popularity claims.

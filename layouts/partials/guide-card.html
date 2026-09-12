@@ -1,0 +1,9 @@
+<article class="guide-card">
+  <a class="guide-card__title" href="{{ .RelPermalink }}">
+{{ partial "guide-cover.html" . }}
+    <h3>{{ .Title }}</h3>
+  </a>
+  <p class="guide-card__meta">{{ .ReadingTime }} min read</p>
+  <p>{{ .Description }}</p>
+  <a class="guide-card__link" href="{{ .RelPermalink }}">Read guide <span aria-hidden="true">&rarr;</span></a>
+</article>

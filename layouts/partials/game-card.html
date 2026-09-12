@@ -1,5 +1,9 @@
-<article class="game-card">
+<article class="game-card{{ if .Params.playable }} game-card--playable{{ end }}">
+{{ if .Params.playable }}
+{{ partial "puzzle-preview.html" . }}
+{{ else }}
   <div class="game-card__icon" aria-hidden="true">{{ .Params.icon | default "P" }}</div>
+{{ end }}
   <div>
 {{ if or .Params.genre .Params.status .Params.badge }}
     <div class="game-card__meta">
@@ -9,7 +13,12 @@
     </div>
 {{ end }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+{{ if .Params.playable }}
+    <p>{{ with index .Site.Data.puzzle_catalog .RelPermalink }}{{ .goal }}.{{ else }}{{ .Description }}{{ end }}</p>
+    <p class="game-card__difficulty">{{ .Params.difficulty | default "Starter" }} · No timer</p>
+{{ else }}
     <p>{{ .Description }}</p>
+{{ end }}
     <div class="game-card__actions">
 {{ if eq .Section "games" }}
 {{ if .Params.playURL }}
@@ -25,7 +34,7 @@
 {{ end }}
 {{ end }}
 {{ else }}
-      <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">Open puzzle</a>
+      <a class="button button--secondary game-card__button" href="{{ .RelPermalink }}">{{ if .Params.playable }}Play puzzle{{ else }}Open puzzle{{ end }}</a>
 {{ end }}
     </div>
   </div>

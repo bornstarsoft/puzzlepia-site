@@ -14,6 +14,7 @@
     {{ else if in $game "block" }}{{ $topic = "block" }}
     {{ else if in $game "ring" }}{{ $topic = "color" }}
     {{ else if or (in $game "number") (eq .Params.pairMode "sum") }}{{ $topic = "number" }}
+    {{ else if eq .Params.pairMode "memory" }}{{ $topic = "memory" }}
     {{ else if in $game "color" }}{{ $topic = "color" }}
     {{ end }}
   {{ else if eq .Section "games" }}
@@ -35,6 +36,7 @@
     {{ else if in $puzzleType "block" }}{{ $topic = "block" }}
     {{ else if in $puzzleType "ring" }}{{ $topic = "color" }}
     {{ else if in $puzzleType "number" }}{{ $topic = "number" }}
+    {{ else if in $puzzleType "memory" }}{{ $topic = "memory" }}
     {{ else if or (in $puzzleType "color") (in $puzzleType "pattern") }}{{ $topic = "color" }}
     {{ end }}
   {{ end }}

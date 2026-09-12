@@ -683,6 +683,87 @@ img {
   box-shadow: 0 12px 28px rgba(87, 62, 140, 0.13);
 }
 
+.quick-pick--visual {
+  grid-template-columns: 84px minmax(0, 1fr) auto;
+  min-height: 108px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.puzzle-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.quick-pick--visual .puzzle-preview {
+  width: 84px;
+  height: 84px;
+}
+
+.game-card--playable {
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.game-card--playable .puzzle-preview {
+  width: 104px;
+  height: 104px;
+}
+
+.game-card--playable h3 { margin-top: 0; }
+.game-card--playable p { margin: 8px 0; }
+.game-card__difficulty { color: var(--muted); font-size: 0.85rem; }
+
+.guide-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: #f8f7fa;
+}
+
+.guide-card__title,
+.blog-card__title { display: block; text-decoration: none; }
+.guide-card__title:hover h3,
+.blog-card__title:hover h2 { color: var(--purple-dark); text-decoration: underline; }
+.guide-card__title:focus-visible,
+.blog-card__title:focus-visible,
+.quick-pick--visual:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 4px; }
+
+.puzzle-followup {
+  max-width: 860px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.puzzle-followup h2 { font-size: 1.4rem; line-height: 1.3; }
+.puzzle-followup__links { display: grid; gap: 20px; }
+.puzzle-followup__links a { display: grid; gap: 5px; min-height: 44px; text-decoration: none; }
+.puzzle-followup__links a:hover strong { text-decoration: underline; }
+.puzzle-followup__links span { font-size: 0.8rem; color: var(--purple-dark); font-weight: 750; }
+.puzzle-followup__links small { color: var(--muted); }
+
+@media (min-width: 760px) {
+  .game-card--playable { grid-template-columns: minmax(0, 1fr); }
+  .game-card--playable .puzzle-preview { width: 100%; height: 152px; }
+  .puzzle-followup__links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 759px) {
+  .blog-card .guide-cover { max-height: 180px; object-fit: contain; }
+  .blog-discovery .filter-tabs,
+  .daily-hub .filter-tabs { flex-wrap: wrap; overflow: visible; }
+}
+
 .quick-pick__icon,
 .browser-game__icon {
   display: grid;

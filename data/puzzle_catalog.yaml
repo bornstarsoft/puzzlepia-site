@@ -1,0 +1,63 @@
+"/daily/word-search/":
+  preview: word-search
+  width: 420
+  height: 420
+  alt: "Word Search board with STAR highlighted in the first row."
+  goal: "Find four hidden words"
+  topic: word
+  guide: "/blog/word-search-patterns-to-look-for/"
+  challenge: "/daily/challenges/star-word-warmup/"
+"/daily/block-puzzle/":
+  preview: block-puzzle
+  width: 420
+  height: 420
+  alt: "Block Puzzle board with a three-block line and a square placed."
+  goal: "Place three block pieces"
+  topic: block
+  guide: "/blog/block-puzzle-space-management/"
+  challenge: "/daily/challenges/find-the-square-space/"
+"/daily/ring-puzzle/":
+  preview: ring-puzzle
+  width: 360
+  height: 360
+  alt: "Ring Puzzle board with three pink ring sizes nested in one cell."
+  goal: "Fit five colorful rings"
+  topic: color
+  guide: "/blog/ring-puzzle-basics/"
+  challenge: "/daily/challenges/three-rings-three-spaces/"
+"/daily/number-puzzle/":
+  preview: number-puzzle
+  width: 420
+  height: 420
+  alt: "Number Puzzle board showing the numbers 1 to 16 in a mixed order."
+  goal: "Tap numbers 1 to 16"
+  topic: number
+  guide: "/blog/number-puzzle-warmups-for-casual-players/"
+  challenge: "/daily/challenges/quick-number-focus/"
+"/daily/color-match/":
+  preview: color-match
+  width: 420
+  height: 420
+  alt: "Color Match board with pink, mint, gold, and purple tiles."
+  goal: "Clear six pink tiles"
+  topic: color
+  guide: "/blog/color-puzzle-strategy-basics/"
+  challenge: "/daily/challenges/pink-color-match-challenge/"
+"/daily/memory-pairs/":
+  preview: memory-pairs
+  width: 400
+  height: 298
+  alt: "Memory Pairs board with two matched stars and one diamond revealed."
+  goal: "Find six matching symbol pairs"
+  topic: memory
+  guide: "/blog/memory-matching-tips/"
+  challenge: "/daily/challenges/remember-the-star-pair/"
+"/daily/number-pairs/":
+  preview: number-pairs
+  width: 400
+  height: 400
+  alt: "Make 10 board with sixteen number tiles ready to pair."
+  goal: "Match eight pairs that add to 10"
+  topic: number
+  guide: "/blog/make-ten-number-puzzle-tips/"
+  challenge: "/daily/challenges/find-the-ten-pairs/"

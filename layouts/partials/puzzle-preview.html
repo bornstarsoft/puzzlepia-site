@@ -1,0 +1,3 @@
+{{ with index .Site.Data.puzzle_catalog .RelPermalink }}
+<img class="puzzle-preview" src="/images/previews/{{ .preview }}.png" width="{{ .width }}" height="{{ .height }}" alt="{{ .alt }}" loading="lazy" decoding="async">
+{{ end }}

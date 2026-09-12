@@ -24,6 +24,7 @@
         <button type="button" data-filter-value="block" aria-pressed="false">Blocks</button>
         <button type="button" data-filter-value="color" aria-pressed="false">Colors & rings</button>
         <button type="button" data-filter-value="number" aria-pressed="false">Numbers</button>
+        <button type="button" data-filter-value="memory" aria-pressed="false">Memory</button>
         <button type="button" data-filter-value="daily" aria-pressed="false">Daily habits</button>
       </div>
       <p class="discovery-count" data-filter-count aria-live="polite">{{ len .Pages }} guides</p>
@@ -35,7 +36,10 @@
 {{ with .Params.tags }}{{ $searchText = printf "%s %s" $searchText (lower (delimit . " ")) }}{{ end }}
     <article class="blog-card" data-discovery-item data-topic="{{ $topic }}" data-search-text="{{ $searchText }}">
       <p class="blog-card__date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time> <span aria-hidden="true">·</span> {{ .ReadingTime }} min read</p>
-      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <a class="blog-card__title" href="{{ .RelPermalink }}">
+{{ partial "guide-cover.html" . }}
+        <h2>{{ .Title }}</h2>
+      </a>
       <p>{{ .Description }}</p>
       <a class="button button--secondary" href="{{ .RelPermalink }}">Read post</a>
     </article>
