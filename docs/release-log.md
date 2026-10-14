@@ -225,3 +225,9 @@ Concise internal notes for major Puzzlepia phases.
 - Preserved endpoint selection, drag, reveal buttons, completion, and reset; added a completion-only next-set action and a static fallback if scripts or data are unavailable.
 - Put the Word Search board before longer instructions and fingerprinted its scripts. No other game mechanics, Phaser output, analytics, storage, or hosting settings changed.
 - See [rotation behavior, checks, and release boundary](word-search-rotation.md). Local implementation only; no claim of a deployed release or measured retention improvement.
+
+## GitHub Release Verification: 2026-10-14
+
+- Owner approved a GitHub deployment exception for this repository. Pushed `ad47034`, `d71f224`, and `c095c97`; the Cloudflare Pages check succeeded and the live site was verified.
+- Production checks covered four viewport widths, Word Search and both new pair games, Block Puzzle reset/completion, footer links, sitemap, and matching image/script hashes. See [release evidence](CURRENT_STATE.md#production-verification-2026-10-14).
+- No hosting settings, analytics, gameplay, or public content changed during deployment. Native Safari and retention outcomes remain unverified.

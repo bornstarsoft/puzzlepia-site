@@ -3,10 +3,12 @@
 ## Current Checkpoint: 2026-10-14
 
 The owner approved starting the retention plan. [Phase 7A](word-search-rotation.md)
-implements a fourteen-set Word Search rotation locally, with honest replay
-labels and full completion/reset validation. [CURRENT_STATE](CURRENT_STATE.md)
-is the writer and release handoff record. Next: resolve the GitHub publishing
-exception and verify deployment before adding weekly records or another game.
+implements a fourteen-set Word Search rotation, with honest replay labels and
+full completion/reset validation. The owner approved the repository-specific
+GitHub exception, and production was verified on 2026-10-14.
+[CURRENT_STATE](CURRENT_STATE.md) is the writer and release handoff record.
+Next: review a comparable seven-day analytics window before choosing another
+game or weekly-record feature. No automatic monitoring is scheduled.
 Older phase options below are historical planning context, not new approvals.
 
 The next phases should keep Puzzlepia lightweight, static, and clear. Do not introduce backend systems, accounts, rankings, ads, analytics snippets, or complex frontend tooling.
