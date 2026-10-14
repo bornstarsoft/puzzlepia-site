@@ -218,3 +218,10 @@ Concise internal notes for major Puzzlepia phases.
 - Connected each playable puzzle to a relevant guide and challenge, added Memory filters, and kept mobile topic controls wrapped and readable.
 - Added shared preview/guide partials, a small content catalog, and CSS fingerprints to avoid stale styles after updates. No gameplay, external game URLs, tracking, or deployment settings changed.
 - Recorded [asset sources, generation prompts, and maintenance steps](visual-assets.md). Illustrations are not official game screenshots or popularity claims.
+
+## Phase 7A Curated Word Search Rotation
+
+- Added fourteen fixed 6x6 boards with a UTC date-based pick, explicit replay labeling, and manual practice-set selection.
+- Preserved endpoint selection, drag, reveal buttons, completion, and reset; added a completion-only next-set action and a static fallback if scripts or data are unavailable.
+- Put the Word Search board before longer instructions and fingerprinted its scripts. No other game mechanics, Phaser output, analytics, storage, or hosting settings changed.
+- See [rotation behavior, checks, and release boundary](word-search-rotation.md). Local implementation only; no claim of a deployed release or measured retention improvement.

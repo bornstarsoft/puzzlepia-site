@@ -107,6 +107,16 @@
   gap: 18px;
 }
 
+.word-search-schedule { color: var(--purple-dark); font-weight: 750; }
+.word-search-picker { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin-bottom: 20px; }
+.word-search-picker[hidden] { display: none; }
+.word-search-picker label { display: grid; gap: 6px; min-width: 0; flex: 1 1 140px; font-weight: 750; }
+.word-search-picker select { width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: white; color: var(--ink); font: inherit; }
+.word-search-note { margin: 16px 0 0; color: var(--muted); font-size: 0.875rem; }
+.word-search-game .letter-cell:disabled { opacity: 1; }
+.word-search-game .letter-cell:focus-visible,
+.word-search-game select:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 2px; }
+
 .letter-grid,
 .block-board,
 .number-grid,

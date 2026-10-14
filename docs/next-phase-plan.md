@@ -1,5 +1,14 @@
 # Puzzlepia Next Phase Plan
 
+## Current Checkpoint: 2026-10-14
+
+The owner approved starting the retention plan. [Phase 7A](word-search-rotation.md)
+implements a fourteen-set Word Search rotation locally, with honest replay
+labels and full completion/reset validation. [CURRENT_STATE](CURRENT_STATE.md)
+is the writer and release handoff record. Next: resolve the GitHub publishing
+exception and verify deployment before adding weekly records or another game.
+Older phase options below are historical planning context, not new approvals.
+
 The next phases should keep Puzzlepia lightweight, static, and clear. Do not introduce backend systems, accounts, rankings, ads, analytics snippets, or complex frontend tooling.
 
 For operations-based decisions after Phase 5B, also review `docs/operations-observation-report.md` and `docs/phase-5-next-priorities.md`.

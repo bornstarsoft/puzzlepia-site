@@ -1,0 +1,257 @@
+{
+  "startDate": "2026-10-14",
+  "sets": [
+    {
+      "id": "starter",
+      "title": "First steps",
+      "rows": [
+        "STARPM",
+        "ULAYIO",
+        "NPMINO",
+        "CATRTN",
+        "PLAYSQ",
+        "MINTAR"
+      ],
+      "words": [
+        "STAR",
+        "MOON",
+        "MINT",
+        "PLAY"
+      ]
+    },
+    {
+      "id": "fruit",
+      "title": "Fruit bowl",
+      "rows": [
+        "RPQLNP",
+        "ALSIZE",
+        "TUCMRA",
+        "OMNEAR",
+        "NQOETQ",
+        "ESIWIK"
+      ],
+      "words": [
+        "PEAR",
+        "LIME",
+        "PLUM",
+        "KIWI"
+      ]
+    },
+    {
+      "id": "garden",
+      "title": "In the garden",
+      "rows": [
+        "ENOTAR",
+        "SQESOR",
+        "MONCSQ",
+        "EEDEES",
+        "TTARZN",
+        "SQFAEL"
+      ],
+      "words": [
+        "LEAF",
+        "SEED",
+        "ROSE",
+        "STEM"
+      ]
+    },
+    {
+      "id": "coast",
+      "title": "By the coast",
+      "rows": [
+        "SURFSE",
+        "QTEOQN",
+        "EADNEO",
+        "VRNCDT",
+        "AZASIA",
+        "WNSQTR"
+      ],
+      "words": [
+        "WAVE",
+        "SAND",
+        "TIDE",
+        "SURF"
+      ]
+    },
+    {
+      "id": "night-sky",
+      "title": "Night sky",
+      "rows": [
+        "SREKAM",
+        "ITLQBO",
+        "CNAPEO",
+        "ODARUN",
+        "GLOWQC",
+        "MARSQB"
+      ],
+      "words": [
+        "STAR",
+        "MOON",
+        "MARS",
+        "GLOW"
+      ]
+    },
+    {
+      "id": "music",
+      "title": "A little music",
+      "rows": [
+        "RTQBNS",
+        "AUSEZO",
+        "TNCARN",
+        "OENTAG",
+        "NQOETQ",
+        "ESETON"
+      ],
+      "words": [
+        "SONG",
+        "BEAT",
+        "TUNE",
+        "NOTE"
+      ]
+    },
+    {
+      "id": "cozy",
+      "title": "Cozy corner",
+      "rows": [
+        "ENOTAR",
+        "SQAFOS",
+        "SONCSQ",
+        "GEPMAL",
+        "UTARZN",
+        "RQKOOB"
+      ],
+      "words": [
+        "BOOK",
+        "LAMP",
+        "SOFA",
+        "RUGS"
+      ]
+    },
+    {
+      "id": "trail",
+      "title": "On the trail",
+      "rows": [
+        "ROCKSE",
+        "QTEOQN",
+        "HAENLO",
+        "TRNCLT",
+        "AZISIA",
+        "PNPQHR"
+      ],
+      "words": [
+        "PATH",
+        "PINE",
+        "HILL",
+        "ROCK"
+      ]
+    },
+    {
+      "id": "colors",
+      "title": "Color palette",
+      "rows": [
+        "PINKQL",
+        "NZRATI",
+        "BLUEEM",
+        "QSCNOE",
+        "GOLDQS",
+        "RATONE"
+      ],
+      "words": [
+        "PINK",
+        "BLUE",
+        "GOLD",
+        "LIME"
+      ]
+    },
+    {
+      "id": "kindness",
+      "title": "Small kindness",
+      "rows": [
+        "RCQHNK",
+        "AASEZI",
+        "TRCLRN",
+        "OENPAD",
+        "NQOETQ",
+        "ESEVIG"
+      ],
+      "words": [
+        "KIND",
+        "HELP",
+        "CARE",
+        "GIVE"
+      ]
+    },
+    {
+      "id": "motion",
+      "title": "Time to move",
+      "rows": [
+        "ENOTAR",
+        "SQEVOM",
+        "PONCSQ",
+        "MEKLAW",
+        "UTARZN",
+        "JQPETS"
+      ],
+      "words": [
+        "STEP",
+        "WALK",
+        "MOVE",
+        "JUMP"
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Weather watch",
+      "rows": [
+        "HAILSE",
+        "QTEOQN",
+        "NAWNDO",
+        "IROCNT",
+        "AZNSIA",
+        "RNSQWR"
+      ],
+      "words": [
+        "RAIN",
+        "SNOW",
+        "WIND",
+        "HAIL"
+      ]
+    },
+    {
+      "id": "baking",
+      "title": "Fresh baking",
+      "rows": [
+        "BAKEQO",
+        "NZRATA",
+        "CAKEET",
+        "QSCNOS",
+        "LOAFQS",
+        "RATONE"
+      ],
+      "words": [
+        "BAKE",
+        "CAKE",
+        "LOAF",
+        "OATS"
+      ]
+    },
+    {
+      "id": "playtime",
+      "title": "Playtime",
+      "rows": [
+        "RDQGNP",
+        "AISAZL",
+        "TCCMRA",
+        "OENEAY",
+        "NQOETQ",
+        "ESMAET"
+      ],
+      "words": [
+        "PLAY",
+        "GAME",
+        "DICE",
+        "TEAM"
+      ]
+    }
+  ]
+}

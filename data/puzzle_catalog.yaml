@@ -3,7 +3,7 @@
   width: 420
   height: 420
   alt: "Word Search board with STAR highlighted in the first row."
-  goal: "Find four hidden words"
+  goal: "Find four words; choose from 14 sets"
   topic: word
   guide: "/blog/word-search-patterns-to-look-for/"
   challenge: "/daily/challenges/star-word-warmup/"

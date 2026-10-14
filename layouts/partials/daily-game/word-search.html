@@ -1,25 +1,50 @@
+{{ $catalog := .Site.Data.word_search }}
+{{ $first := index $catalog.sets 0 }}
 <section class="puzzle-card word-search-game" data-game="word-search" aria-labelledby="word-search-title">
+  <script type="application/json" data-word-search-catalog>{{ $catalog | jsonify | safeJS }}</script>
   <div class="puzzle-card__header">
     <div>
-      <p class="eyebrow">Playable starter</p>
-      <h2 id="word-search-title">Find today's words</h2>
+      <p class="eyebrow">{{ len $catalog.sets }} fixed practice sets</p>
+      <h2 id="word-search-title" data-set-title>{{ $first.title }}</h2>
     </div>
-    <p class="puzzle-status" data-status role="status" aria-live="polite">0 / 4 words found. Tap or drag across a word.</p>
+    <p class="puzzle-status" data-status role="status" aria-live="polite">Four words to find.</p>
   </div>
-  <p class="puzzle-instructions">Drag across a word, tap its first and last letter, or use the word list as a reliable fallback.</p>
+  <p class="puzzle-instructions">Tap a word's first and last letter, or drag. Word buttons reveal answers.</p>
+  <p class="word-search-schedule" data-schedule>Practice set 1 of {{ len $catalog.sets }}. The starter board is shown below.</p>
+  <p class="word-search-unavailable" data-unavailable>Interactive selection needs JavaScript. You can still look for the words on this board, or <a href="/blog/word-search-patterns-to-look-for/">read the word search guide</a>.</p>
+  <div class="word-search-picker" data-set-controls hidden>
+    <label for="word-search-set">Practice set
+      <select id="word-search-set" data-set-select aria-describedby="word-search-set-note">
+{{ range $index, $set := $catalog.sets }}
+        <option value="{{ $index }}">{{ add $index 1 }}. {{ $set.title }}</option>
+{{ end }}
+      </select>
+    </label>
+    <button type="button" class="button button--secondary" data-today>Today's pick</button>
+  </div>
   <div class="word-search-layout">
-    <div class="letter-grid" data-grid aria-label="6 by 6 word search grid"></div>
+    <div class="letter-grid" data-grid aria-label="6 by 6 word search grid">
+{{ range $rowIndex, $row := $first.rows }}
+{{ range $colIndex, $letter := split $row "" }}
+      <button class="letter-cell" type="button" disabled aria-label="Letter {{ $letter }}, row {{ add $rowIndex 1 }}, column {{ add $colIndex 1 }}">{{ $letter }}</button>
+{{ end }}
+{{ end }}
+    </div>
     <div class="target-list">
       <h3>Words</h3>
       <ul data-word-list>
-        <li data-word="STAR"><button type="button" data-word-button="STAR">STAR</button></li>
-        <li data-word="MOON"><button type="button" data-word-button="MOON">MOON</button></li>
-        <li data-word="MINT"><button type="button" data-word-button="MINT">MINT</button></li>
-        <li data-word="PLAY"><button type="button" data-word-button="PLAY">PLAY</button></li>
+{{ range $first.words }}
+        <li data-word="{{ . }}"><button type="button" data-word-button="{{ . }}" disabled>{{ . }}</button></li>
+{{ end }}
       </ul>
     </div>
   </div>
+  <p class="word-search-note" id="word-search-set-note">Changing sets starts a fresh board. The daily pick changes at 00:00 UTC and repeats every {{ len $catalog.sets }} days. An open board stays unchanged.</p>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
-  <button class="button button--primary puzzle-reset" type="button" data-reset>Reset puzzle</button>
+  <div class="completion-actions" data-complete-actions hidden>
+    <button class="button button--primary" type="button" data-next-set>Try another word set</button>
+    <a class="button button--secondary" href="/blog/word-search-patterns-to-look-for/">Read word search tips</a>
+  </div>
+  <button class="button button--primary puzzle-reset" type="button" data-reset disabled>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/kpop-word-search/">Explore KPOP Word Search</a>
 </section>

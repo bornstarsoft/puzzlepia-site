@@ -7,10 +7,13 @@
 {{ with .Description }}<p>{{ . }}</p>{{ end }}
 {{ with .Params.difficulty }}<p class="difficulty">Difficulty: <strong>{{ . }}</strong></p>{{ end }}
   </header>
+{{ if eq .Params.game "word-search" }}
+{{ partial "daily-game/word-search.html" . }}
+{{ end }}
   <div class="page__content">
 {{ .Content }}
   </div>
-{{ if not (.HasShortcode "daily-pair-board") }}
+{{ if and (ne .Params.game "word-search") (not (.HasShortcode "daily-pair-board")) }}
 {{ with .Params.game }}
 {{ partial (printf "daily-game/%s.html" .) $ }}
 {{ end }}
