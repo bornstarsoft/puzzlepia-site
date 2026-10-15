@@ -21,6 +21,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
   script, and multi-tab opt-out passed. Existing games initialized and reset.
 - Unit tests, Hugo build, whitespace, internal references, sitemap and ignored
   output checks: PASS. Production deployment for this change: NOT_RUN yet.
+- Initial deployment `75e9bd3` succeeded. Fresh production sessions passed
+  resume flows, but the first validation browser cached an HTML fallback at the
+  new progress script URL. The output name was changed to
+  `word-search-progress-v1` to avoid that cached response without modifying
+  Cloudflare settings. Production verification is being repeated.
+- Local/live main CSS fingerprints differ only in minified whitespace before
+  `!important`; validate the live HTML's asset references, not stale local URLs.
 
 ## Publishing Approval
 
