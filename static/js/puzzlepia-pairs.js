@@ -25,6 +25,27 @@
     var selected = [];
     var found = new Set();
     var total = tiles.length / 2;
+    var layoutIndex = 0;
+    var layouts = null;
+    var model = typeof window === "object" && window.PuzzlepiaMemoryLayouts;
+    var picker = root.querySelector("[data-memory-select]");
+    var today = root.querySelector("[data-memory-today]");
+    var nextLayout = root.querySelector("[data-memory-next]");
+    var layoutControls = root.querySelector("[data-memory-controls]");
+    var layoutNote = root.querySelector("[data-memory-note]");
+    var layoutData = root.querySelector("[data-memory-layouts]");
+    var faces = {};
+    if (mode === "memory" && model && picker && today && nextLayout &&
+        layoutControls && layoutNote && layoutData && tiles.length === 12) {
+      try {
+        var parsed = JSON.parse(layoutData.textContent);
+        if (model.valid(parsed)) layouts = parsed;
+      } catch (_) { /* Keep the original practice board if optional data is unavailable. */ }
+      tiles.forEach(function (tile) {
+        faces[tile.dataset.value] = tile.querySelector("[data-symbol]").textContent;
+      });
+      if (layouts && !layouts[0].every(function (symbol) { return faces[symbol]; })) layouts = null;
+    }
 
     function feedback(message, tone) {
       status.textContent = message;
@@ -93,6 +114,23 @@
         (mode === "memory" ? "Turn over two cards to begin." : "Find two numbers that add up to 10."));
     }
 
+    function loadLayout(index, focusBoard) {
+      if (!layouts || !Number.isInteger(index) || index < 0 || index >= layouts.length) return;
+      layoutIndex = index;
+      picker.value = String(index);
+      tiles.forEach(function (tile, position) {
+        var symbol = layouts[index][position];
+        tile.dataset.value = symbol;
+        tile.dataset.label = symbol.charAt(0).toUpperCase() + symbol.slice(1);
+        tile.querySelector("[data-symbol]").textContent = faces[symbol];
+      });
+      layoutNote.textContent = "Layout " + (index + 1) +
+        ". Seven fixed layouts repeat weekly; today's pick changes at 00:00 UTC. Changing layouts starts a fresh board.";
+      resetGame(false);
+      feedback("Layout " + (index + 1) + " ready. Turn over two cards to begin.");
+      if (focusBoard) tiles[0].focus();
+    }
+
     tiles.forEach(function (tile, index) {
       tile.addEventListener("click", function () { choose(index); });
     });
@@ -105,6 +143,18 @@
     });
     reset.addEventListener("click", function () { resetGame(true); });
     resetGame(false);
+    if (layouts) {
+      picker.addEventListener("change", function () { loadLayout(Number(picker.value), false); });
+      today.addEventListener("click", function () { loadLayout(model.today(), true); });
+      nextLayout.addEventListener("click", function () {
+        if (found.size === tiles.length) loadLayout((layoutIndex + 1) % layouts.length, true);
+      });
+      loadLayout(model.today(), false);
+      layoutControls.hidden = false;
+      nextLayout.hidden = false;
+    } else if (mode === "memory" && layoutNote) {
+      layoutNote.textContent = "Starter layout. Other layouts are unavailable, but you can still play this board.";
+    }
     controls.hidden = false;
     if (unavailable) unavailable.hidden = true;
   });

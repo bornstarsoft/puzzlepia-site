@@ -491,6 +491,13 @@
 .pair-controls .button:disabled { opacity: 0.55; cursor: default; }
 .pair-puzzle .button--primary { color: #ffffff; background: #57369c; }
 
+.memory-picker { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; max-width: 400px; }
+.memory-picker[hidden] { display: none; }
+.memory-picker label { display: grid; gap: 6px; min-width: 0; flex: 1 1 140px; font-weight: 750; }
+.memory-picker select { width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: white; color: var(--ink); font: inherit; }
+.memory-picker .button { min-height: 44px; }
+.memory-layout-note { max-width: 480px; font-size: 0.9rem; }
+
 @media (min-width: 720px) {
   .puzzle-card {
     padding: 24px;

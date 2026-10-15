@@ -1,6 +1,6 @@
 ---
 title: "Memory Pairs"
-description: "Play a free memory matching game in your browser. Turn over twelve cards, find six symbol pairs, and reset whenever you like."
+description: "Find six symbol pairs in a free browser memory game. Try today's pick from seven fixed card layouts, or choose another untimed practice board."
 date: 2026-09-12T14:40:00+09:00
 draft: false
 difficulty: "Easy"
@@ -15,7 +15,7 @@ nextPuzzle: "/daily/number-pairs/"
 nextPuzzleLabel: "Try Make 10"
 ---
 
-Take a quiet matching break with twelve face-down cards. Every symbol has one partner. There is no timer or penalty for trying again. This is a fixed practice board, not a newly generated daily puzzle.
+Take a quiet matching break with twelve face-down cards. Every symbol has one partner. There is no timer or penalty for trying again.
 
 {{< daily-pair-board >}}
 
@@ -26,6 +26,12 @@ Take a quiet matching break with twelve face-down cards. Every symbol has one pa
 3. Find all six pairs to finish. **Clear selection** turns your current cards back over; **Reset puzzle** restores the whole board.
 
 The small numbers identify card positions, not matching values. Colors are only feedback: match the symbols, not their background color.
+
+## Another small break tomorrow
+
+Today's pick rotates through **seven fixed layouts**, changing at 00:00 UTC and repeating each week. These are curated practice boards, not newly generated puzzles. Choose any layout to practice, or try the next one after finding all six pairs.
+
+An open board stays in place when the date changes. **Today's layout** opens the current pick; **Reset puzzle** restarts the layout you are playing. Switching layouts clears the board. Progress is not saved, so reopening this page starts today's pick again.
 
 ## A little help
 

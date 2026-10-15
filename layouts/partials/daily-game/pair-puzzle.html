@@ -8,6 +8,20 @@
 <section class="puzzle-card pair-puzzle" data-pair-game="{{ .Params.pairMode }}" aria-labelledby="pair-game-title">
   <h2 id="pair-game-title">{{ if $memory }}Find six matching pairs{{ else }}Find eight pairs that make 10{{ end }}</h2>
   <p class="puzzle-instructions">{{ if $memory }}Turn over two cards. Match their symbols to keep them face up.{{ else }}Tap two different tiles whose numbers add up to 10. They can be anywhere on the board.{{ end }}</p>
+{{ if $memory }}
+  <script type="application/json" data-memory-layouts>{{ site.Data.memory_pairs | jsonify | safeJS }}</script>
+  <div class="memory-picker" data-memory-controls hidden>
+    <label for="memory-layout">Card layout
+      <select id="memory-layout" data-memory-select aria-describedby="memory-layout-note">
+{{ range $index, $_ := site.Data.memory_pairs }}
+        <option value="{{ $index }}">Layout {{ add $index 1 }}</option>
+{{ end }}
+      </select>
+    </label>
+    <button class="button button--secondary" type="button" data-memory-today>Today's layout</button>
+  </div>
+  <p id="memory-layout-note" class="memory-layout-note" data-memory-note>Seven fixed layouts repeat weekly. Today's pick changes at 00:00 UTC. Changing layouts starts a fresh board.</p>
+{{ end }}
   <p data-unavailable>The interactive board needs JavaScript. You can still read the guide and try the linked challenge below.</p>
   <div class="pair-grid" aria-label="{{ if $memory }}Three rows of four memory cards{{ else }}Four rows of four number tiles{{ end }}">
 {{ range $index, $card := $cards }}
@@ -22,6 +36,9 @@
   <p class="puzzle-status pair-feedback" data-status role="status">Choose any two {{ if $memory }}cards{{ else }}tiles{{ end }} to begin.</p>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
   <div class="completion-actions" data-complete-actions hidden>
+{{ if $memory }}
+    <button class="button button--secondary" type="button" data-memory-next hidden>Try next layout</button>
+{{ end }}
     <a class="button button--primary" href="{{ .Params.nextPuzzle }}">{{ .Params.nextPuzzleLabel }}</a>
     <a class="button button--secondary" href="/daily/">More Daily Puzzles</a>
   </div>

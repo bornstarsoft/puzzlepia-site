@@ -1,0 +1,9 @@
+[
+  ["star", "moon", "sun", "diamond", "circle", "triangle", "moon", "circle", "star", "triangle", "diamond", "sun"],
+  ["circle", "star", "triangle", "sun", "moon", "diamond", "star", "triangle", "sun", "circle", "diamond", "moon"],
+  ["moon", "diamond", "circle", "star", "sun", "triangle", "diamond", "moon", "triangle", "sun", "star", "circle"],
+  ["triangle", "sun", "moon", "circle", "diamond", "star", "sun", "diamond", "circle", "moon", "triangle", "star"],
+  ["sun", "circle", "star", "moon", "triangle", "diamond", "circle", "star", "diamond", "triangle", "moon", "sun"],
+  ["diamond", "triangle", "moon", "star", "circle", "sun", "triangle", "circle", "sun", "moon", "star", "diamond"],
+  ["star", "sun", "diamond", "triangle", "moon", "circle", "triangle", "diamond", "circle", "star", "sun", "moon"]
+]

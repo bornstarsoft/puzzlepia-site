@@ -238,3 +238,9 @@ Concise internal notes for major Puzzlepia phases.
 - Preserved completion and reset; turning saving off deletes the save. Invalid/expired records and blocked storage cannot prevent play. No accounts, tracking, or device sync added.
 - Kept the home layout unchanged, removed its blanket fresh-start promise, and clarified local storage in the Privacy Policy. See [behavior and QA](word-search-rotation.md#phase-7b-optional-browser-resume-2026-10-15) and [current release state](CURRENT_STATE.md).
 - Deployed `75e9bd3` and asset-URL refresh `ca81986`. Four-width production resume/reset/opt-out QA passed after correcting an initially cached HTML response for the new script. No Cloudflare configuration was changed.
+
+## Phase 7C Memory Pairs Layout Rotation: 2026-10-15
+
+- Added seven curated Memory Pairs layouts with a UTC daily pick, explicit weekly-repeat labeling, manual practice selection, and a completion-only next-layout action.
+- Preserved the untimed matching rules, full reset, and original starter board as a fallback if optional layout data is unavailable. No saved progress or random generation.
+- Kept the homepage unchanged and preserved Make 10, Word Search, external game links, Phaser output and deployment/analytics settings. See [QA steps](matching-games-qa.md#phase-7c-memory-layout-rotation) and [release state](CURRENT_STATE.md).

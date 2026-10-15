@@ -1,11 +1,33 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WORD-RESUME
-Phase: production release verified; observation next.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MEMORY-ROTATION
+Phase: local validation passed; owner-approved production deployment next.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MEMORY-ROTATION; Memory Pairs rotation and verified GitHub deployment; main; 2026-10-15)
 LAST_WRITER = CODEX (PUZZLEPIA-WORD-RESUME; 2026-10-15)
 
 ## Current Approved Work
+
+- Owner approved another small retention improvement and deployment on
+  2026-10-15, superseding the observation-only next task below.
+- Starting HEAD `f48066b`; clean main matches origin/main after fetch.
+- Add seven curated Memory Pairs layouts, a UTC daily pick, manual practice
+  selection and completion-only next layout. Keep the homepage unchanged.
+- Preserve Make 10 and all other games; no new storage, tracking, dependencies,
+  backend, hosting configuration or Phaser changes.
+- Local QA: PASS. Seven layouts completed twice at each of 390, 430, 768 and
+  1280px (56 completions), including mismatch/clear/reset, next-layout wrap and
+  UTC rollover. Mobile widths used touch taps. Screenshots were inspected.
+- Regression QA: PASS. 28 core-page/viewport checks, 16 completions across
+  Make 10, Block Puzzle and Word Search; Word Search opt-in restore/reset and
+  opt-out preserved. Ring, Number and Color games initialize/reset normally.
+- Fallback QA: PASS. Missing optional model, malformed JSON, JavaScript off,
+  blocked storage and keyboard input. Four additional fallback/keyboard
+  completions passed, with no console/page errors in these or normal checks.
+- Pair/rotation and Word Search/progress unit tests, Hugo/check_site, whitespace,
+  2,100 internal references across 72 HTML pages, unique IDs and sitemap: PASS.
+  Generated output stays ignored/untracked. Production verification: PENDING.
+
+## Previous Approved Work
 
 - Owner requested the next retention improvement, a simple home page, and
   deployment after validation on 2026-10-15.
@@ -96,13 +118,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-WORD-RESUME; 2026-10-15)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Optional latest-set Word Search resume implemented, validated and deployed.
-HEAD/WIP: Application HEAD `ca81986`; documentation handoff commit is titled
-`Record Puzzlepia word search resume deployment`. No uncommitted source work.
-QA: PASS for local unit/browser/build checks and final production verification.
+DONE: Memory Pairs rotation implemented and locally validated.
+HEAD/WIP: Starting HEAD `f48066b`; scoped Memory Pairs changes pending commit.
+QA: PASS for local unit/browser/build checks. Production verification PENDING.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review a comparable seven-day analytics window before choosing
-another retention change; no automatic monitoring is scheduled.
+NEXT_SINGLE_TASK: Push the tested change and verify Cloudflare Pages deployment
+and live Memory Pairs behavior under the owner's current approval.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

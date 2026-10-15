@@ -50,8 +50,8 @@ function fixture(mode, values) {
   return root;
 }
 
-function init(roots) {
-  vm.runInNewContext(source, { document: { querySelectorAll: () => roots } });
+function init(roots, window = {}) {
+  vm.runInNewContext(source, { document: { querySelectorAll: () => roots }, window });
 }
 
 function checkInitial(root) {
@@ -140,3 +140,89 @@ init([missing, fixture("unknown", [1, 9]), fixture("sum", ["bad", 9])]);
 assert.equal(missing.querySelector("[data-unavailable]").hidden, false);
 assert.equal(missing.tiles[0].listeners.click, undefined);
 console.log("Pair puzzle tests passed: selection, mismatch, duplicate taps, reset, 28 completions, independent games, and missing markup.");
+
+const layouts = require("../data/memory_pairs.json");
+const model = require("../static/js/puzzlepia-memory-layouts.js");
+assert.equal(model.valid(layouts), true);
+for (const bad of [null, [], layouts.slice(1), Array(7).fill(layouts[0]),
+  [...layouts.slice(0, 6), Array(12).fill("star")],
+  [...layouts.slice(0, 6), [...layouts[6].slice(0, 11), "unknown"]]]) {
+  assert.equal(model.valid(bad), false);
+}
+assert.equal(model.today(new Date("invalid")), 0);
+assert.equal(model.today(new Date("2026-10-14T23:59:59Z")), 0);
+assert.equal(model.today(new Date("2026-10-15T23:59:59Z")), 0);
+assert.equal(model.today(new Date("2026-10-16T00:00:00Z")), 1);
+assert.equal(model.today(new Date("2026-10-22T00:00:00Z")), 0);
+assert.equal(model.today(new Date("2026-10-16T09:00:00+09:00")), 1);
+
+function rotatingFixture(data = layouts) {
+  const root = fixture("memory", layouts[0]);
+  ["select", "today", "next", "controls", "note", "layouts"].forEach((name) => {
+    root.children["[data-memory-" + name + "]"] = new Element();
+  });
+  root.querySelector("[data-memory-controls]").hidden = true;
+  root.querySelector("[data-memory-next]").hidden = true;
+  root.querySelector("[data-memory-layouts]").textContent = JSON.stringify(data);
+  return root;
+}
+const rotated = rotatingFixture();
+let dayIndex = 2;
+init([rotated], { PuzzlepiaMemoryLayouts: { valid: model.valid, today: () => dayIndex } });
+const picker = rotated.querySelector("[data-memory-select]");
+const next = rotated.querySelector("[data-memory-next]");
+const resetRotated = rotated.querySelector("[data-reset]");
+const valuesOf = (root) => root.tiles.map((tile) => tile.dataset.value);
+const selectLayout = (index) => { picker.value = String(index); picker.listeners.change(); };
+assert.deepEqual(valuesOf(rotated), layouts[2]);
+next.click();
+assert.equal(picker.value, "2", "cannot skip an unfinished board through completion action");
+rotated.tiles[0].click();
+dayIndex = 3;
+resetRotated.click();
+assert.deepEqual(valuesOf(rotated), layouts[2], "reset keeps current board across UTC rollover");
+rotated.querySelector("[data-memory-today]").click();
+assert.deepEqual(valuesOf(rotated), layouts[3]);
+assert.equal(rotated.tiles[0].focused, true);
+
+for (let index = 0; index < 7; index += 1) {
+  selectLayout(index);
+  checkInitial(rotated);
+  for (let replay = 0; replay < 2; replay += 1) {
+    for (const symbol of new Set(layouts[index])) {
+      const positions = layouts[index].flatMap((value, i) => value === symbol ? [i] : []);
+      positions.forEach((i) => rotated.tiles[i].click());
+    }
+    assert.equal(rotated.querySelector("[data-complete]").hidden, false);
+    assert.equal(rotated.querySelector("[data-complete-actions]").hidden, false);
+    assert.equal(rotated.querySelector("[data-progress]").textContent, "6 / 6 pairs found");
+    if (!replay) { resetRotated.click(); checkInitial(rotated); }
+  }
+  next.click();
+  assert.equal(picker.value, String((index + 1) % 7));
+  checkInitial(rotated);
+}
+selectLayout(0);
+rotated.tiles[0].click();
+selectLayout(1);
+checkInitial(rotated);
+for (const bad of [-1, 7, 0.5, "invalid"]) {
+  selectLayout(bad);
+  assert.deepEqual(valuesOf(rotated), layouts[1]);
+}
+const missingModel = rotatingFixture();
+const badData = rotatingFixture([]);
+const brokenJSON = rotatingFixture();
+brokenJSON.querySelector("[data-memory-layouts]").textContent = "{";
+init([missingModel]);
+init([badData, brokenJSON], { PuzzlepiaMemoryLayouts: model });
+for (const root of [missingModel, badData, brokenJSON]) {
+  checkInitial(root);
+  assert.equal(root.querySelector("[data-memory-controls]").hidden, true);
+  assert.equal(root.querySelector("[data-memory-next]").hidden, true);
+  assert.match(root.querySelector("[data-memory-note]").textContent, /Starter layout/);
+  root.tiles[0].click();
+  root.tiles[8].click();
+  assert.equal(root.querySelector("[data-progress]").textContent, "1 / 6 pairs found");
+}
+console.log("Memory rotation tests passed: seven valid unique layouts, UTC boundaries, 14 completions, reset/replay, next wrap, and optional-data fallback.");

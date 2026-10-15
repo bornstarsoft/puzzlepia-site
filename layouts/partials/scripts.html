@@ -8,6 +8,13 @@
   <script src="{{ $model.RelPermalink }}"></script>
   <script src="{{ $progress.RelPermalink }}"></script>
   <script src="{{ $game.RelPermalink }}"></script>
+{{ else if eq $.Params.game "pair-puzzle" }}
+{{ if eq $.Params.pairMode "memory" }}
+{{ $model := resources.FromString "js/puzzlepia-memory-layouts.js" (readFile "static/js/puzzlepia-memory-layouts.js") | minify | fingerprint }}
+  <script src="{{ $model.RelPermalink }}"></script>
+{{ end }}
+{{ $pairs := resources.FromString "js/puzzlepia-pairs.js" (readFile "static/js/puzzlepia-pairs.js") | minify | fingerprint }}
+  <script src="{{ $pairs.RelPermalink }}"></script>
 {{ else }}
   <script src="/js/{{ . }}"></script>
 {{ end }}
