@@ -231,3 +231,9 @@ Concise internal notes for major Puzzlepia phases.
 - Owner approved a GitHub deployment exception for this repository. Pushed `ad47034`, `d71f224`, and `c095c97`; the Cloudflare Pages check succeeded and the live site was verified.
 - Production checks covered four viewport widths, Word Search and both new pair games, Block Puzzle reset/completion, footer links, sitemap, and matching image/script hashes. See [release evidence](CURRENT_STATE.md#production-verification-2026-10-14).
 - No hosting settings, analytics, gameplay, or public content changed during deployment. Native Safari and retention outcomes remain unverified.
+
+## Phase 7B Optional Word Search Resume: 2026-10-15
+
+- Added an off-by-default browser-only save for the latest Word Search set, with same-day resume, a fresh daily pick after UTC rollover, and an optional previous-set resume action.
+- Preserved completion and reset; turning saving off deletes the save. Invalid/expired records and blocked storage cannot prevent play. No accounts, tracking, or device sync added.
+- Kept the home layout unchanged, removed its blanket fresh-start promise, and clarified local storage in the Privacy Policy. See [behavior and QA](word-search-rotation.md#phase-7b-optional-browser-resume-2026-10-15) and [current release state](CURRENT_STATE.md).

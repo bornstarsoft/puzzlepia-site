@@ -22,6 +22,7 @@
     </label>
     <button type="button" class="button button--secondary" data-today>Today's pick</button>
   </div>
+  <button class="button button--secondary word-search-resume" type="button" data-resume hidden>Continue saved puzzle</button>
   <div class="word-search-layout">
     <div class="letter-grid" data-grid aria-label="6 by 6 word search grid">
 {{ range $rowIndex, $row := $first.rows }}
@@ -47,4 +48,9 @@
   </div>
   <button class="button button--primary puzzle-reset" type="button" data-reset disabled>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/kpop-word-search/">Explore KPOP Word Search</a>
+  <div class="word-search-save" data-save-controls hidden>
+    <label><input type="checkbox" data-remember aria-describedby="word-search-save-note"> Remember my progress on this browser</label>
+    <p id="word-search-save-note">Only the latest set is kept, for up to 30 days. Switching sets replaces it. Turn this off to delete the save. No account or sync.</p>
+    <p data-save-status role="status" aria-live="polite">Saving is off.</p>
+  </div>
 </section>

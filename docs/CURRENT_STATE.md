@@ -1,9 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-GITHUB-RELEASE
-Phase: production release verified; observation next.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WORD-RESUME
+Phase: implementation, validation, and approved production release.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-RESUME; optional Word Search resume, validation and deployment; main / puzzlepia-site; 2026-10-15)
 LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
+
+## Current Approved Work
+
+- Owner requested the next retention improvement, a simple home page, and
+  deployment after validation on 2026-10-15.
+- Starting HEAD `583a7c0`; clean main matched origin/main after fetch.
+- Add opt-in, browser-only saving for the latest Word Search set. Preserve the
+  UTC daily pick, manual selection, completion and reset. No accounts, tracking,
+  backend, other game changes, or new homepage sections.
+- Update storage disclosure and test corrupt/expired/blocked storage, day
+  rollover, restoring completion, and turning saving off before deployment.
+- Local QA: PASS. Four-width matrix restored all fourteen completed sets,
+  including partial progress/reset/opt-out/UTC rollover and previous-set resume.
+  Blocked/corrupt/expired storage, quota errors, deletion errors, missing optional
+  script, and multi-tab opt-out passed. Existing games initialized and reset.
+- Unit tests, Hugo build, whitespace, internal references, sitemap and ignored
+  output checks: PASS. Production deployment for this change: NOT_RUN yet.
 
 ## Publishing Approval
 
@@ -23,7 +40,7 @@ LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
 - GitHub publishing was originally blocked by global Gitea-only policy. The
   repository-specific owner approval above resolves that blocker.
 
-## Scope
+## Previous Word Search Scope
 
 - Keep Hugo, vanilla JavaScript, existing routes, and other games intact.
 - Add fourteen fixed Word Search boards, a date-based pick, manual practice
@@ -61,7 +78,7 @@ as `Record Puzzlepia GitHub release verification`. No public-source edits here.
 QA: PASS for local build/tests and production Chromium checks above.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review a comparable seven-day post-release analytics window
-and select one follow-up improvement; no automatic monitoring is scheduled.
+NEXT_SINGLE_TASK: Commit the validated optional-resume change, deploy via the
+approved GitHub integration, and verify production behavior.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

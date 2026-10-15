@@ -41,6 +41,38 @@
       !nextButton || !actions || !resetButton || !unavailable || !helpers.qs(root, "[data-status]") ||
       !helpers.qs(root, "[data-complete]")) return;
 
+  var progressModel = window.PuzzlepiaWordProgress;
+  var remember = helpers.qs(root, "[data-remember]");
+  var saveControls = helpers.qs(root, "[data-save-controls]");
+  var saveStatus = helpers.qs(root, "[data-save-status]");
+  var resumeButton = helpers.qs(root, "[data-resume]");
+  var store = progressModel && remember && saveControls && saveStatus && resumeButton ?
+    progressModel.create(function () { return window.localStorage; }, catalog) : null;
+  var boardDay = "", boardMode = "practice", saved = null;
+
+  function persist() {
+    if (!store || !remember.checked) return;
+    var ok = store.write({ index: currentIndex, day: boardDay, mode: boardMode,
+      found: words.filter(function (word) { return found[word]; }) });
+    saveStatus.textContent = ok ? "Progress saved on this browser." :
+      "Saving is unavailable. Your latest changes may not be saved.";
+    if (ok) { saved = null; resumeButton.hidden = true; }
+  }
+
+  function restore(record) {
+    var choice = record.mode === "daily" ? model.pick(catalog, new Date(record.day + "T00:00:00Z")) : null;
+    loadSet(record.index, choice);
+    boardDay = record.day;
+    if (boardDay !== new Date().toISOString().slice(0, 10)) {
+      schedule.textContent = "Saved set from " + boardDay + " (UTC) - set " + (record.index + 1) + " of " + catalog.sets.length + ".";
+    }
+    record.found.forEach(function (word) { markWord(word, "restore"); });
+    setFeedback(record.found.length === words.length ? "Puzzle complete! Restored from this browser." : "Welcome back. Your progress is restored.");
+    saveStatus.textContent = "Saved progress restored. Reset starts this set again.";
+    saved = null;
+    resumeButton.hidden = true;
+  }
+
   function foundCount() {
     return words.filter(function (word) {
       return found[word];
@@ -133,6 +165,7 @@
     } else {
       setFeedback(source === "list" ? word + " marked from the list." : "Great find: " + word + ".");
     }
+    if (source !== "restore") persist();
   }
 
   function submitPath(path) {
@@ -306,6 +339,7 @@
     helpers.hideComplete(root);
     actions.hidden = true;
     helpers.setStatus(root, progressText() + (isReset ? " Puzzle reset. Find the four words." : " Tap or drag across a word."));
+    if (isReset) persist();
   }
 
   function buildGrid() {
@@ -335,6 +369,8 @@
     if (!Number.isInteger(index) || !catalog.sets[index]) return;
     cancelInput();
     currentIndex = index;
+    boardDay = dayPick && dayPick.day ? dayPick.day : new Date().toISOString().slice(0, 10);
+    boardMode = dayPick && dayPick.scheduled ? "daily" : "practice";
     var set = catalog.sets[index];
     letters = set.rows.map(function (row) { return row.split(""); });
     words = set.words.slice();
@@ -368,10 +404,11 @@
     loadSet(choice.index, choice);
   }
 
-  select.addEventListener("change", function () { loadSet(Number(select.value)); });
-  todayButton.addEventListener("click", loadToday);
+  select.addEventListener("change", function () { loadSet(Number(select.value)); persist(); });
+  todayButton.addEventListener("click", function () { loadToday(); persist(); });
   nextButton.addEventListener("click", function () {
     loadSet((currentIndex + 1) % catalog.sets.length);
+    persist();
     cells[0].el.focus();
   });
   resetButton.addEventListener("click", function () { resetGame(true); });
@@ -383,4 +420,42 @@
   controls.hidden = false;
   resetButton.disabled = false;
   unavailable.hidden = true;
+  if (store) {
+    saveControls.hidden = false;
+    var result = store.read();
+    saved = result.record;
+    remember.checked = !!saved;
+    if (!result.ok) saveStatus.textContent = "Saving is unavailable here. You can still play.";
+    if (saved) {
+      if (saved.day === new Date().toISOString().slice(0, 10)) restore(saved);
+      else if (saved.found.length) {
+        resumeButton.textContent = "Continue " + catalog.sets[saved.index].title + " (" + saved.found.length + " / 4 found)";
+        resumeButton.hidden = false;
+        saveStatus.textContent = "Today's board is fresh. Your previous set is available above until you play or change sets.";
+      } else saveStatus.textContent = "Saving is on. Today's board starts fresh.";
+    }
+    remember.addEventListener("change", function () {
+      if (remember.checked) persist();
+      else if (store.clear()) {
+        saved = null;
+        resumeButton.hidden = true;
+        saveStatus.textContent = "Saved progress deleted. Saving is off; this board stays playable.";
+      } else {
+        remember.checked = true;
+        saveStatus.textContent = "The save could not be deleted. Clear this site's data in your browser settings.";
+      }
+    });
+    resumeButton.addEventListener("click", function () {
+      if (saved) { restore(saved); cells[0].el.focus(); }
+    });
+    // An opt-out in another tab must not be silently undone by this tab.
+    window.addEventListener("storage", function (event) {
+      if ((event.key === progressModel.key || event.key === null) && event.newValue === null) {
+        remember.checked = false;
+        saved = null;
+        resumeButton.hidden = true;
+        saveStatus.textContent = "Saved progress cleared in another tab. Saving is off.";
+      }
+    });
+  }
 })();

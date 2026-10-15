@@ -4,7 +4,9 @@
 {{ if eq $.Params.game "word-search" }}
 {{ $model := resources.FromString "js/puzzlepia-word-search.js" (readFile "static/js/puzzlepia-word-search.js") | minify | fingerprint }}
 {{ $game := resources.FromString "js/daily-word-search.js" (readFile "static/js/daily-word-search.js") | minify | fingerprint }}
+{{ $progress := resources.FromString "js/puzzlepia-word-progress.js" (readFile "static/js/puzzlepia-word-progress.js") | minify | fingerprint }}
   <script src="{{ $model.RelPermalink }}"></script>
+  <script src="{{ $progress.RelPermalink }}"></script>
   <script src="{{ $game.RelPermalink }}"></script>
 {{ else }}
   <script src="/js/{{ . }}"></script>

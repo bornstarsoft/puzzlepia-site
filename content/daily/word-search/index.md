@@ -16,7 +16,9 @@ Find four hidden words in a compact 6x6 grid. Choose the daily pick or explore 1
 
 Drag across a word, or tap its first and last letter. Words can run in either direction, including diagonally. A word-list button reveals its word when you need help. Find all four to finish, then try another set or reset the same board.
 
-The daily pick uses UTC and repeats the same 14-set collection. It is not a newly generated puzzle each day. Your board does not change during play, and progress is not saved when you leave.
+The daily pick uses UTC and repeats the same 14-set collection. It is not a newly generated puzzle each day. Your board does not change during play.
+
+Want to come back later? Turn on **Remember my progress on this browser** below the board. It keeps only your latest set for up to 30 days, without an account or device sync. A new UTC day opens today's pick, with a link to continue your saved set. Switching sets replaces the save; Reset starts the current set again. Turn saving off to delete it. Without saving, each visit starts fresh.
 
 ## Related game
 
