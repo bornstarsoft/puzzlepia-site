@@ -237,3 +237,4 @@ Concise internal notes for major Puzzlepia phases.
 - Added an off-by-default browser-only save for the latest Word Search set, with same-day resume, a fresh daily pick after UTC rollover, and an optional previous-set resume action.
 - Preserved completion and reset; turning saving off deletes the save. Invalid/expired records and blocked storage cannot prevent play. No accounts, tracking, or device sync added.
 - Kept the home layout unchanged, removed its blanket fresh-start promise, and clarified local storage in the Privacy Policy. See [behavior and QA](word-search-rotation.md#phase-7b-optional-browser-resume-2026-10-15) and [current release state](CURRENT_STATE.md).
+- Deployed `75e9bd3` and asset-URL refresh `ca81986`. Four-width production resume/reset/opt-out QA passed after correcting an initially cached HTML response for the new script. No Cloudflare configuration was changed.

@@ -1,11 +1,14 @@
 # Puzzlepia Next Phase Plan
 
-## Current Checkpoint: 2026-10-14
+## Current Checkpoint: 2026-10-15
 
 The owner approved starting the retention plan. [Phase 7A](word-search-rotation.md)
 implements a fourteen-set Word Search rotation, with honest replay labels and
 full completion/reset validation. The owner approved the repository-specific
 GitHub exception, and production was verified on 2026-10-14.
+Phase 7B optional Word Search resume was deployed and verified on 2026-10-15:
+saving is off by default, keeps only the latest set in this browser, and leaves
+the homepage layout unchanged. No account or new tracking was introduced.
 [CURRENT_STATE](CURRENT_STATE.md) is the writer and release handoff record.
 Next: review a comparable seven-day analytics window before choosing another
 game or weekly-record feature. No automatic monitoring is scheduled.

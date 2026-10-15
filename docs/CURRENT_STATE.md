@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WORD-RESUME
-Phase: implementation, validation, and approved production release.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-RESUME; optional Word Search resume, validation and deployment; main / puzzlepia-site; 2026-10-15)
-LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
+Phase: production release verified; observation next.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WORD-RESUME; 2026-10-15)
 
 ## Current Approved Work
 
@@ -20,12 +20,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
   Blocked/corrupt/expired storage, quota errors, deletion errors, missing optional
   script, and multi-tab opt-out passed. Existing games initialized and reset.
 - Unit tests, Hugo build, whitespace, internal references, sitemap and ignored
-  output checks: PASS. Production deployment for this change: NOT_RUN yet.
+  output checks: PASS. Production verification: PASS after the asset refresh.
 - Initial deployment `75e9bd3` succeeded. Fresh production sessions passed
   resume flows, but the first validation browser cached an HTML fallback at the
   new progress script URL. The output name was changed to
   `word-search-progress-v1` to avoid that cached response without modifying
-  Cloudflare settings. Production verification is being repeated.
+  Cloudflare settings. Repeated production verification passed, including the
+  previously affected browser session.
 - Local/live main CSS fingerprints differ only in minified whitespace before
   `!important`; validate the live HTML's asset references, not stale local URLs.
 
@@ -36,7 +37,7 @@ LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
   live site. This exception does not apply to other BornstarSoft repositories.
 - Preserve the existing `https://github.com/bornstarsoft/puzzlepia-site.git`
   origin and Git-connected Cloudflare Pages deployment. No hosting/DNS changes.
-- Released application HEAD: `c095c97`, including `d71f224` and `ad47034`.
+- 2026-10-14 released application HEAD: `c095c97`, including `d71f224` and `ad47034`.
 - Fetch succeeded; `main` was clean and three commits ahead of `origin/main`.
 
 ## Previous Implementation Evidence
@@ -79,13 +80,29 @@ LAST_WRITER = CODEX (PUZZLEPIA-GITHUB-RELEASE; 2026-10-14)
   `hugo --gc --minify`, and `git diff --check`. Generated `public/` and
   `resources/_gen/` remain ignored and untracked.
 
-DONE: Approved GitHub release of three validated application commits and live QA.
-HEAD/WIP: Application HEAD `c095c97`; this documentation-only handoff is committed
-as `Record Puzzlepia GitHub release verification`. No public-source edits here.
-QA: PASS for local build/tests and production Chromium checks above.
+## Production Verification: 2026-10-15
+
+- Application commits `75e9bd3` and `ca81986` were pushed; their Cloudflare Pages
+  checks succeeded. No DNS, Cloudflare settings, accounts, or analytics changes.
+- Fresh Chromium sessions at 390, 430, 768, and 1280px passed twelve set-resume
+  scenarios on the real domain: partial progress, completed progress, reset and
+  reload, and opt-out deletion. Mobile tests used touch taps.
+- Twenty live core-page checks passed with no overflow. The final browser matrix
+  reported no console/page errors. The homepage has no new sections or controls.
+- All seven same-origin script/style references returned the appropriate MIME
+  types; fingerprinted asset bytes matched their URLs. The original browser
+  that cached the bad response also loaded the refreshed progress module.
+- Footer destinations, sitemap, and robots returned 200. Storage disclosure is
+  live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
+  checks also passed. Generated output remains ignored and untracked.
+
+DONE: Optional latest-set Word Search resume implemented, validated and deployed.
+HEAD/WIP: Application HEAD `ca81986`; documentation handoff commit is titled
+`Record Puzzlepia word search resume deployment`. No uncommitted source work.
+QA: PASS for local unit/browser/build checks and final production verification.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Commit the validated optional-resume change, deploy via the
-approved GitHub integration, and verify production behavior.
+NEXT_SINGLE_TASK: Review a comparable seven-day analytics window before choosing
+another retention change; no automatic monitoring is scheduled.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.
