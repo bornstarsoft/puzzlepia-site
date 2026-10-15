@@ -244,3 +244,4 @@ Concise internal notes for major Puzzlepia phases.
 - Added seven curated Memory Pairs layouts with a UTC daily pick, explicit weekly-repeat labeling, manual practice selection, and a completion-only next-layout action.
 - Preserved the untimed matching rules, full reset, and original starter board as a fallback if optional layout data is unavailable. No saved progress or random generation.
 - Kept the homepage unchanged and preserved Make 10, Word Search, external game links, Phaser output and deployment/analytics settings. See [QA steps](matching-games-qa.md#phase-7c-memory-layout-rotation) and [release state](CURRENT_STATE.md).
+- Deployed `1ffb091` through the approved GitHub/Cloudflare Pages path. Live four-width QA passed 56 Memory completions plus existing-game regression checks, asset integrity, footer and sitemap checks. No measured retention gain or native Safari validation is claimed.
