@@ -1,0 +1,16 @@
+{{ $number := int (.Get "layout" | default "2") }}
+{{ if or (lt $number 1) (gt $number (len site.Data.number_pairs)) }}
+  {{ errorf "Unknown number-pairs-example layout %d in %s" $number .Page.File.Path }}
+{{ else }}
+{{ $cards := index site.Data.number_pairs (sub $number 1) }}
+<div class="word-example number-example">
+  <table>
+    <caption>Make 10: Layout {{ $number }}</caption>
+    <tbody>
+{{ range $row := seq 0 3 }}
+      <tr>{{ range $col := seq 0 3 }}{{ $position := add (mul $row 4) $col }}<td>{{ index $cards $position }}<small>Position {{ add $position 1 }}</small></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}

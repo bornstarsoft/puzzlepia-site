@@ -57,7 +57,7 @@
   width: 400
   height: 400
   alt: "Make 10 board with sixteen number tiles ready to pair."
-  goal: "Match eight pairs that add to 10"
+  goal: "Make 10; choose from seven layouts"
   topic: number
   guide: "/blog/make-ten-number-puzzle-tips/"
-  challenge: "/daily/challenges/find-the-ten-pairs/"
+  challenge: "/daily/challenges/choose-either-eight/"

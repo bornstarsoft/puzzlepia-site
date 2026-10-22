@@ -1,7 +1,9 @@
 # Matching Games QA
 
 The two practice games share `static/js/puzzlepia-pairs.js`. The fallback Memory
-board and Make 10 data live in `layouts/partials/daily-game/pair-puzzle.html`.
+board lives in `layouts/partials/daily-game/pair-puzzle.html`.
+Make 10 uses seven balanced layouts in `data/number_pairs.json`, with its first
+layout rendered as the playable fallback if optional rotation is unavailable.
 Seven Memory layouts live in `data/memory_pairs.json`; the optional
 `puzzlepia-memory-layouts.js` model validates them and selects the UTC daily pick.
 No package installation is needed.
@@ -23,7 +25,7 @@ The Node test is a dependency-free DOM adapter for selection, feedback, independ
 Use the small corner numbers as positions. Check at 390, 430, 768, and desktop widths; also use touch emulation and keyboard Enter/Space. Native device Safari remains a separate device check.
 
 - Memory Pairs: `/daily/memory-pairs/`. Select **Layout 1**, then complete positions **1-9, 2-7, 3-12, 4-11, 5-8, 6-10**. Expect six pairs, visible symbols/check marks, and completion. Reset and repeat.
-- Make 10: `/daily/number-pairs/`. Complete positions **1-7, 2-8, 3-9, 4-6, 5-11, 10-15, 12-13, 14-16**. Expect eight pairs and completion. Reset and repeat.
+- Make 10: `/daily/number-pairs/`. Select **Layout 1**, then complete positions **1-7, 2-8, 3-9, 4-6, 5-11, 10-15, 12-13, 14-16**. Expect eight pairs and completion. Reset and repeat.
 - Before completing each game, select 1 twice: only one tile is selected. Select 2 next: the pair is incorrect. Select 3: the old attempt clears and a new one starts.
 - Test Clear selection, then reset after an unfinished pair and after a successful pair. Every face, disabled state, progress counter, message, and completion link must return to its initial state.
 - No timer resolves a mismatch. It stays visible until the player chooses another card or clears the selection.
@@ -57,6 +59,34 @@ Use the small corner numbers as positions. Check at 390, 430, 768, and desktop w
   Both pair-game scripts are fingerprinted to prevent stale state/UI code.
 - No homepage layout, external links, storage, analytics or Cloudflare settings
   change. Native Safari and measured retention are separate follow-up checks.
+
+## Phase 7F Make 10 Layout Rotation
+
+- Seven fixed 4x4 layouts repeat weekly, anchored to 2026-10-22 at 00:00 UTC
+  (the release's UTC date; the local release date is 2026-10-23 KST).
+  Earlier/invalid clocks use Layout 1. Numbers stay visible; pairs can be
+  anywhere. Eight pairs complete a board. No scoring, timer or saved progress.
+- `puzzlepia-number-layouts.js` validates integer values 1-9, sixteen tiles,
+  seven unique boards and balanced partner counts (including an even count
+  of 5s). State tests explore every reachable remainder to catch dead ends.
+- Layout selection, today's pick, next-layout wrap, reset and fallback reuse
+  the existing pair-game flow. Memory retains its own model and date anchor.
+- Test all seven layouts at 390/430/768/1280px, with touch and keyboard.
+  Check a wrong pair, repeated tile, clear selection, reset before/after a
+  match and completion, then complete again. Change layouts mid-selection;
+  no old markers or disabled tiles may remain. The next action is completion-only.
+- Advance the browser clock across UTC midnight: the open board and Reset
+  must stay unchanged; Today's layout must select the new pick. Test weekly wrap.
+- Block the optional number model or corrupt JSON: Layout 1 must remain
+  playable and layout controls hidden. Block storage: play must still work.
+  Disable JavaScript: visible board, guide links and challenge answers remain
+  readable, with inert game buttons. Regression-test all Memory layouts,
+  Word Search hints/save/reset, and the other starter games.
+- The new challenge renders Layout 2 from the same data via
+  `number-pairs-example`; both explained solution routes are asserted in tests.
+  Keep these paths in sync if that layout changes. Preserve published dates
+  when refreshing guides; use lastmod for the update.
+- Actual local and production results are recorded in CURRENT_STATE.md.
 
 Local validation on 2026-10-15 passed: 56 Memory completions across all seven
 layouts and four widths, four fallback/keyboard completions, plus 16 regression

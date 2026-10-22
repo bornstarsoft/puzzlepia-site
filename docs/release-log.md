@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 7F Make 10 Practice Variety: 2026-10-23
+
+- Added seven curated number layouts, a weekly-repeating UTC pick, manual selection and a completion-only next-layout action. Kept untimed sum-to-ten matching, reset and no progress storage.
+- Reused the pair-game controls with separate number validation; Memory Pairs keeps its own layouts and date anchor. Invalid/missing optional rotation falls back to the original playable board.
+- Refreshed the existing Make 10 guide and added Which Eight Can You Choose?, an optional-hint challenge rendered from Layout 2 data. Both valid routes are tested.
+- Kept the home structure, other games, external links, analytics and Cloudflare settings unchanged. See [QA procedure](matching-games-qa.md#phase-7f-make-10-layout-rotation) and [release evidence](CURRENT_STATE.md). No measured retention improvement is claimed.
+
 ## Phase 7E Gentle Word Search Hints and Worked Directions: 2026-10-23
 
 - Added optional starting-letter hints that cycle through unfound words without completing them or changing saved progress. Reset and set changes clear hints; completed boards disable the hint control.

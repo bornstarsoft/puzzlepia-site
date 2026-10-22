@@ -226,3 +226,113 @@ for (const root of [missingModel, badData, brokenJSON]) {
   assert.equal(root.querySelector("[data-progress]").textContent, "1 / 6 pairs found");
 }
 console.log("Memory rotation tests passed: seven valid unique layouts, UTC boundaries, 14 completions, reset/replay, next wrap, and optional-data fallback.");
+
+const numberLayouts = require("../data/number_pairs.json");
+const numberModel = require("../static/js/puzzlepia-number-layouts.js");
+assert.equal(numberModel.valid(numberLayouts), true);
+const changed = (value) => {
+  const data = numberLayouts.map(row => row.slice());
+  data[6][0] = value;
+  return data;
+};
+for (const bad of [null, [], numberLayouts.slice(1), Array(7).fill(numberLayouts[0]),
+  changed(0), changed(10), changed(1.5), changed("8"), changed(7), changed(5),
+  [...numberLayouts.slice(0, 6), numberLayouts[6].slice(1)]]) {
+  assert.equal(numberModel.valid(bad), false);
+}
+assert.equal(numberModel.today(new Date("invalid")), 0);
+assert.equal(numberModel.today(new Date("2026-10-21T23:59:59Z")), 0);
+assert.equal(numberModel.today(new Date("2026-10-22T23:59:59Z")), 0);
+assert.equal(numberModel.today(new Date("2026-10-23T00:00:00Z")), 1);
+assert.equal(numberModel.today(new Date("2026-10-29T00:00:00Z")), 0);
+assert.equal(numberModel.today(new Date("2026-10-23T09:00:00+09:00")), 1);
+
+// Explore every reachable remainder, not just one solution per board.
+let remainders = 0;
+for (const cards of numberLayouts) {
+  const seen = new Set();
+  function visit(mask) {
+    if (seen.has(mask)) return;
+    seen.add(mask);
+    if (!mask) return;
+    let moves = 0;
+    for (let a = 0; a < 16; a += 1) for (let b = a + 1; b < 16; b += 1) {
+      if ((mask & (1 << a)) && (mask & (1 << b)) && cards[a] + cards[b] === 10) {
+        moves += 1;
+        visit(mask ^ (1 << a) ^ (1 << b));
+      }
+    }
+    assert.ok(moves, "every nonempty reachable board has another pair");
+  }
+  visit(65535);
+  remainders += seen.size;
+}
+
+function numberFixture(data = numberLayouts) {
+  const root = fixture("sum", numberLayouts[0]);
+  ["select", "today", "next", "controls", "note", "layouts"].forEach(name => {
+    root.children["[data-number-" + name + "]"] = new Element();
+  });
+  root.querySelector("[data-number-controls]").hidden = true;
+  root.querySelector("[data-number-next]").hidden = true;
+  root.querySelector("[data-number-layouts]").textContent = JSON.stringify(data);
+  return root;
+}
+const numbered = numberFixture();
+let numberDay = 1;
+init([numbered], { PuzzlepiaNumberLayouts: { valid: numberModel.valid, today: () => numberDay } });
+const numberPicker = numbered.querySelector("[data-number-select]");
+const numberNext = numbered.querySelector("[data-number-next]");
+const numberReset = numbered.querySelector("[data-reset]");
+const pickNumber = i => { numberPicker.value = String(i); numberPicker.listeners.change(); };
+assert.deepEqual(valuesOf(numbered), numberLayouts[1].map(String));
+numberNext.click();
+assert.equal(numberPicker.value, "1");
+numbered.tiles[0].click();
+numberDay = 2;
+numberReset.click();
+assert.deepEqual(valuesOf(numbered), numberLayouts[1].map(String));
+numbered.querySelector("[data-number-today]").click();
+assert.deepEqual(valuesOf(numbered), numberLayouts[2].map(String));
+
+for (let index = 0; index < 7; index += 1) {
+  pickNumber(index);
+  checkInitial(numbered);
+  for (let replay = 0; replay < 2; replay += 1) {
+    const available = Array.from({ length: 16 }, (_, i) => i);
+    if (replay) available.reverse();
+    while (available.length) {
+      const a = available.shift();
+      const b = available.splice(available.findIndex(i => numberLayouts[index][a] + numberLayouts[index][i] === 10), 1)[0];
+      numbered.tiles[a].click(); numbered.tiles[b].click();
+    }
+    assert.equal(numbered.querySelector("[data-complete]").hidden, false);
+    assert.equal(numbered.querySelector("[data-progress]").textContent, "8 / 8 pairs found");
+    if (!replay) { numberReset.click(); checkInitial(numbered); }
+  }
+  numberNext.click();
+  assert.equal(numberPicker.value, String((index + 1) % 7));
+  checkInitial(numbered);
+}
+pickNumber(0); numbered.tiles[0].click(); pickNumber(1); checkInitial(numbered);
+for (const bad of [-1, 7, 0.5, "invalid"]) {
+  pickNumber(bad); assert.deepEqual(valuesOf(numbered), numberLayouts[1].map(String));
+}
+const noNumberModel = numberFixture(), badNumbers = numberFixture(changed(0)), brokenNumbers = numberFixture();
+brokenNumbers.querySelector("[data-number-layouts]").textContent = "{";
+init([noNumberModel]);
+init([badNumbers, brokenNumbers], { PuzzlepiaNumberLayouts: numberModel });
+for (const root of [noNumberModel, badNumbers, brokenNumbers]) {
+  checkInitial(root);
+  assert.equal(root.querySelector("[data-number-controls]").hidden, true);
+  assert.match(root.querySelector("[data-number-note]").textContent, /Starter layout/);
+  root.tiles[0].click(); root.tiles[6].click();
+  assert.equal(root.querySelector("[data-progress]").textContent, "1 / 8 pairs found");
+}
+// Both routes described in the new challenge consume each position exactly once.
+for (const first of [[[1, 3], [12, 9]], [[1, 9], [12, 3]]]) {
+  const pairs = [...first, [2, 7], [4, 10], [5, 8], [6, 11], [13, 14], [15, 16]];
+  assert.equal(new Set(pairs.flat()).size, 16);
+  pairs.forEach(([a, b]) => assert.equal(numberLayouts[1][a - 1] + numberLayouts[1][b - 1], 10));
+}
+console.log(`Make 10 rotation passed: seven balanced boards, ${remainders} reachable remainders, 14 completions, UTC/reset/next/fallback and both challenge solutions.`);

@@ -1,11 +1,42 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-GENTLE-HINTS
-Phase: deployed and production-verified; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NUMBER-VARIETY
+Phase: implementation and validation; owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; Make 10 variety, related content and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content and another small retention improvement,
+  keeping the home simple and deploying after validation on 2026-10-23.
+- Starting HEAD `fdb2140`; clean main matches origin/main after fetch. No
+  other active writer. The repository-specific GitHub exception still applies.
+- Add seven curated Make 10 layouts, a UTC daily choice and a completion-only
+  next-layout action. Reuse the existing pair-game flow and test Memory Pairs
+  for regressions. Refresh its guide and add one worked duplicate-number challenge.
+- Preserve matching/reset rules, other games, home structure, external links,
+  storage and hosting settings. No dependencies, tracking or backend additions.
+- Local QA: PASS. Make 10 and Memory Pairs each completed twice across all
+  seven layouts at 390/430/768/1280px (112 completions). Wrong/repeated taps,
+  clear selection, reset, next-layout wrap and mid-selection switching passed.
+- UTC midnight checks passed on the final 2026-10-22 anchor: open boards stay
+  stable, Reset preserves them, Today's layout selects the new pick, and
+  reload starts fresh. No progress storage was added.
+- Twenty-eight core/content page checks passed, along with challenge/guide
+  links, search discovery, eight footer destinations and Word Search
+  save/restore/hint/reset regression at all four widths. Other four starter
+  games initialized/reset. No console/page errors or horizontal overflow.
+- Keyboard completion, missing model, malformed JSON, blocked storage and
+  no-JavaScript behavior passed. Mobile screenshots were inspected.
+- All three dependency-free test scripts, check_site, Hugo and diff checks
+  passed. Tests explored 7,056 reachable number-board remainders without a
+  dead end and verified both challenge solution routes. 2,457 internal
+  references across 76 HTML pages resolve; sitemap/canonicals are valid.
+  Generated public/resources output stays ignored and untracked.
+- Production verification: NOT_RUN, pending approved push. Native Safari,
+  Search Console indexing and retention gains are not verified.
+
+## Previous Gentle Hint Work
 
 - Owner requested suitable new content plus a small retention improvement and
   live deployment on 2026-10-23. Starting HEAD `d3121ff`; clean main matches
@@ -230,14 +261,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Gentle hints and worked content implemented, validated and verified live.
-HEAD/WIP: Application HEAD `664f449`; documentation handoff commit is titled
-`Record Puzzlepia hint and guide deployment`. No unfinished source work.
-QA: PASS for local unit/browser/build checks and production verification.
+DONE: Make 10 variety and worked content implemented and locally validated.
+HEAD/WIP: Based on `fdb2140`; intended changes await commit and deployment.
+QA: PASS for local unit/browser/build checks; production NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Compare owner-provided before/after analytics windows before
-choosing the next content or puzzle improvement. No monitoring is scheduled;
-aggregate page views alone cannot establish return visits or causality.
+NEXT_SINGLE_TASK: Push validated changes through the approved GitHub path,
+verify Cloudflare Pages and the live game/content, then record the handoff.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

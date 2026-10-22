@@ -12,6 +12,9 @@
 {{ if eq $.Params.pairMode "memory" }}
 {{ $model := resources.FromString "js/puzzlepia-memory-layouts.js" (readFile "static/js/puzzlepia-memory-layouts.js") | minify | fingerprint }}
   <script src="{{ $model.RelPermalink }}"></script>
+{{ else if eq $.Params.pairMode "sum" }}
+{{ $model := resources.FromString "js/puzzlepia-number-layouts.js" (readFile "static/js/puzzlepia-number-layouts.js") | minify | fingerprint }}
+  <script src="{{ $model.RelPermalink }}"></script>
 {{ end }}
 {{ $pairs := resources.FromString "js/puzzlepia-pairs.js" (readFile "static/js/puzzlepia-pairs.js") | minify | fingerprint }}
   <script src="{{ $pairs.RelPermalink }}"></script>

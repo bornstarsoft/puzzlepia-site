@@ -27,24 +27,29 @@
     var total = tiles.length / 2;
     var layoutIndex = 0;
     var layouts = null;
-    var model = typeof window === "object" && window.PuzzlepiaMemoryLayouts;
-    var picker = root.querySelector("[data-memory-select]");
-    var today = root.querySelector("[data-memory-today]");
-    var nextLayout = root.querySelector("[data-memory-next]");
-    var layoutControls = root.querySelector("[data-memory-controls]");
-    var layoutNote = root.querySelector("[data-memory-note]");
-    var layoutData = root.querySelector("[data-memory-layouts]");
+    var prefix = mode === "memory" ? "memory" : "number";
+    var model = typeof window === "object" &&
+      (mode === "memory" ? window.PuzzlepiaMemoryLayouts : window.PuzzlepiaNumberLayouts);
+    function layoutElement(name) { return root.querySelector("[data-" + prefix + "-" + name + "]"); }
+    var picker = layoutElement("select");
+    var today = layoutElement("today");
+    var nextLayout = layoutElement("next");
+    var layoutControls = layoutElement("controls");
+    var layoutNote = layoutElement("note");
+    var layoutData = layoutElement("layouts");
     var faces = {};
-    if (mode === "memory" && model && picker && today && nextLayout &&
-        layoutControls && layoutNote && layoutData && tiles.length === 12) {
+    if (model && picker && today && nextLayout && layoutControls && layoutNote &&
+        layoutData && tiles.length === (mode === "memory" ? 12 : 16)) {
       try {
         var parsed = JSON.parse(layoutData.textContent);
         if (model.valid(parsed)) layouts = parsed;
       } catch (_) { /* Keep the original practice board if optional data is unavailable. */ }
-      tiles.forEach(function (tile) {
-        faces[tile.dataset.value] = tile.querySelector("[data-symbol]").textContent;
-      });
-      if (layouts && !layouts[0].every(function (symbol) { return faces[symbol]; })) layouts = null;
+      if (mode === "memory") {
+        tiles.forEach(function (tile) {
+          faces[tile.dataset.value] = tile.querySelector("[data-symbol]").textContent;
+        });
+        if (layouts && !layouts[0].every(function (symbol) { return faces[symbol]; })) layouts = null;
+      }
     }
 
     function feedback(message, tone) {
@@ -119,15 +124,16 @@
       layoutIndex = index;
       picker.value = String(index);
       tiles.forEach(function (tile, position) {
-        var symbol = layouts[index][position];
-        tile.dataset.value = symbol;
-        tile.dataset.label = symbol.charAt(0).toUpperCase() + symbol.slice(1);
-        tile.querySelector("[data-symbol]").textContent = faces[symbol];
+        var value = String(layouts[index][position]);
+        tile.dataset.value = value;
+        tile.dataset.label = value.charAt(0).toUpperCase() + value.slice(1);
+        if (mode === "memory") tile.querySelector("[data-symbol]").textContent = faces[value];
       });
       layoutNote.textContent = "Layout " + (index + 1) +
         ". Seven fixed layouts repeat weekly; today's pick changes at 00:00 UTC. Changing layouts starts a fresh board.";
       resetGame(false);
-      feedback("Layout " + (index + 1) + " ready. Turn over two cards to begin.");
+      feedback("Layout " + (index + 1) + " ready. " +
+        (mode === "memory" ? "Turn over two cards to begin." : "Find two numbers that add up to 10."));
       if (focusBoard) tiles[0].focus();
     }
 
@@ -152,7 +158,7 @@
       loadLayout(model.today(), false);
       layoutControls.hidden = false;
       nextLayout.hidden = false;
-    } else if (mode === "memory" && layoutNote) {
+    } else if (layoutNote) {
       layoutNote.textContent = "Starter layout. Other layouts are unavailable, but you can still play this board.";
     }
     controls.hidden = false;

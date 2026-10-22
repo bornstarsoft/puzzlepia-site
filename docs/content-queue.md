@@ -58,6 +58,12 @@ Next: a second Sudoku deduction example and a domino-placement exercise. Build o
 - Rendered accessible letter tables from the same curated data as the game, with optional answers and explicit practice-set links.
 - Added a starting-letter hint that leaves progress unchanged; this covers the practical part of the hints-without-spoilers topic below.
 
+## Used in Phase 7F
+
+- Refreshed Make 10 Puzzle Tips with layout rotation, duplicate-partner choices and accurate reset/return behavior; preserved its original publication date.
+- Added Which Eight Can You Choose?, using Layout 2 directly from the game data.
+- Added seven balanced Make 10 practice layouts, with no time limit or score.
+
 ## Blog Topic Ideas
 
 1. Easy Word Search Tips for Beginners
