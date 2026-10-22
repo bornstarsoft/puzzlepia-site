@@ -6,6 +6,7 @@
 - Added one worked direction guide and two short challenges using the actual Fruit bowl and Night sky data, with optional answers and direct practice-set links.
 - Kept the homepage structure, game completion rules, other games, storage format, external destinations, Phaser output, analytics and hosting settings unchanged. The existing latest-guides area picks up the new article naturally.
 - Validation and production evidence are recorded in [current work state](CURRENT_STATE.md). No retention outcome is claimed.
+- Deployed `664f449` through the approved GitHub/Cloudflare Pages path. Local QA passed 112 Word Search completions; live four-width QA passed 24 completions plus save compatibility, 32 core/content page checks, footer links, metadata, sitemap and fingerprinted asset checks. Native Safari was not tested.
 
 Concise internal notes for major Puzzlepia phases.
 

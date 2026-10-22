@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-GENTLE-HINTS
-Phase: implementation and validation; owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; Word Search starting-letter hints, worked content and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-SET-LINKS; 2026-10-23)
+Phase: deployed and production-verified; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; 2026-10-23)
 
 ## Current Approved Work
 
@@ -33,8 +33,28 @@ LAST_WRITER = CODEX (PUZZLEPIA-SET-LINKS; 2026-10-23)
 - Final hint-button styling passed at all four widths after restarting the
   local Hugo server: static-file sync had retained an older fingerprinted CSS
   resource. Fresh production builds already contain the intended styles.
-- Production verification: NOT_RUN, pending owner-approved GitHub push.
-  Native Safari and retention outcomes remain NOT_RUN.
+- Production verification: PASS. Native Safari and retention outcomes remain
+  NOT_RUN.
+
+## Gentle Hints Production Verification: 2026-10-23
+
+- Pushed application commit `664f449`. Cloudflare Pages completed successfully
+  at 2026-10-22 15:53:09 UTC (2026-10-23 00:53:09 KST).
+- Live Chromium at 390/430/768/1280px passed 24 completions across Fruit bowl,
+  Night sky and Playtime, including cycling/skipping hints, touch endpoints,
+  reveal fallback, reset and next-set wrap. No console/page errors or overflow.
+- Thirty-two live core/content page checks passed. Four-width save checks
+  confirmed hints do not write progress, explicit set links preserve saves,
+  partial/completed restore works, and reset/opt-out remain intact.
+- Optional answers, direct practice-set CTAs and eight footer destinations
+  passed. Three new canonicals/descriptions and JSON-LD blocks are valid;
+  sitemap includes the three pages and robots retains its sitemap link.
+- Seven same-origin script/style assets returned the correct MIME types;
+  all five fingerprinted assets matched their SHA-256 URL hashes. Mobile
+  board and guide screenshots were inspected. Homepage still shows only
+  three latest guide cards and has no new section or controls.
+- No new tracking, storage keys, backend, dependencies or hosting changes.
+  Other game scripts, Phaser output and external game destinations are unchanged.
 
 ## Previous Set Link Work
 
@@ -210,12 +230,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-SET-LINKS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Gentle hints and worked content implemented and locally validated.
-HEAD/WIP: Based on `d3121ff`; intended task changes await commit and deployment.
-QA: PASS for local unit/browser/build checks; production NOT_RUN.
+DONE: Gentle hints and worked content implemented, validated and verified live.
+HEAD/WIP: Application HEAD `664f449`; documentation handoff commit is titled
+`Record Puzzlepia hint and guide deployment`. No unfinished source work.
+QA: PASS for local unit/browser/build checks and production verification.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Push the validated task commit, verify Cloudflare Pages and
-the live hints/content, then record release evidence and release the writer.
+NEXT_SINGLE_TASK: Compare owner-provided before/after analytics windows before
+choosing the next content or puzzle improvement. No monitoring is scheduled;
+aggregate page views alone cannot establish return visits or causality.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.
