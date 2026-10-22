@@ -1,11 +1,43 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-PRACTICE-DISCOVERY
-Phase: deployed and verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NUMBER-VARIETY
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; number-order layouts, tests and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-PRACTICE-DISCOVERY; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content and another return-visit improvement with
+  live deployment, keeping the homepage simple. Starting HEAD `b0d4db5`; clean
+  main matches origin/main after fetch. Repository-specific GitHub exception
+  applies; no hosting settings change.
+- Add seven fixed Daily Number Puzzle layouts, a UTC daily pick, manual picker,
+  completion-only next layout and stable layout links. Preserve ascending 1-16
+  taps, completion/reset and the original board as the optional-data fallback.
+- Refresh the existing number warmup guide. No new homepage content, scoring,
+  storage, accounts, analytics, Phaser changes or external destination changes.
+- Local QA: PASS. Eight dependency-free Node test scripts and the practice-path
+  Python check pass. Number tests cover seven unique permutations, 400 UTC days,
+  fourteen completions plus fallback, wrong/duplicate taps, reset, next wrap,
+  fixed/invalid links, history selector restoration, missing inputs and no storage.
+- Chromium at 390/430/768/1280px passed all seven layouts twice (56 completions),
+  partial/completed reset, wrong taps, next wrap, manual selection, fresh links,
+  28 core/guide page checks and eight footer destinations. Additional fallback
+  checks passed missing model, malformed JSON, missing URL API, UTC rollover,
+  history, invalid queries, blocked storage, keyboard and no-JavaScript messaging.
+- Four fallback/keyboard completions and eight existing-game regression
+  completions/resets pass. Other starter games initialize/reset. No console/page
+  errors or horizontal overflow in final matrices. Final mobile/desktop captures
+  were taken after transitions settled and scrolling to the top.
+- Number Puzzle now renders before its instructions; completed numbers use
+  dark text on mint for better contrast. Homepage and other game layouts/rules
+  stay unchanged. Two extra completed-board screenshots verified these changes.
+- check_site, Hugo --gc --minify and diff checks pass. 2,671 internal references
+  across 83 HTML files resolve. IDs, two updated page metadata/schema/sitemap
+  checks, robots and unchanged external URLs pass. Generated output stays
+  ignored/untracked. Production verification: NOT_RUN.
+
+## Previous Practice Discovery Work
 
 - Owner requested another useful return-visit improvement and live deployment
   while keeping the homepage simple. Starting HEAD `f7ab407`; clean main matches
@@ -683,10 +715,9 @@ LAST_WRITER = CODEX (PUZZLEPIA-PRACTICE-DISCOVERY; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Contextual practice paths deployed and verified on puzzlepia.com.
-HEAD/WIP: Application `be2dbc1` deployed; this documentation-only follow-up
-records the evidence. No outstanding implementation WIP.
-QA: PASS locally and on production.
+DONE: Number Puzzle layout variety implemented and validated locally.
+HEAD/WIP: Starting HEAD `b0d4db5`; twelve intended files ready for commit.
+QA: PASS locally. Production verification NOT_RUN; approved deployment next.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

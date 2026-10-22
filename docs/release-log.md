@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 7O Number Puzzle Layout Variety: 2026-10-23
+
+- Added seven fixed 1-16 layouts to Daily Number Puzzle, with a UTC daily pick, manual selection, completion-only next layout and stable `?layout=1` through `?layout=7` links. Reset keeps the current board; no progress is saved.
+- Preserved ascending taps, gentle wrong-tap feedback, completion and the original starter fallback. Updated the existing game copy and number warmup guide; kept the homepage and other games unchanged.
+- Fingerprinted the number model/game scripts and added data/state validation. No new storage, tracking, backend or external destinations. Release evidence belongs in [current work state](CURRENT_STATE.md); no measured retention improvement is claimed.
+- Moved only the Number Puzzle board ahead of its instructions and improved completed-tile text contrast. Run `node tools/test_number_puzzle.cjs` for layout, state, UTC, fixed-link and fallback checks.
+
 ## Phase 7N Contextual Practice Paths: 2026-10-23
 
 - Connected existing Word Search, Block, Ring, Memory and Make 10 practice rounds directly from each game's existing lower-page follow-up. Ordinary ordered links work without JavaScript; readers can choose any round or bookmark it for a later break.

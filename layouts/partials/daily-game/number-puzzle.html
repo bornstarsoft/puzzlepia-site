@@ -8,12 +8,27 @@
   </div>
   <p class="puzzle-instructions">Find and tap the numbers in ascending order from 1 to 16.</p>
   <p class="puzzle-helper">Start at 1 and keep going until every tile is complete.</p>
+  <script type="application/json" data-order-layouts>{{ site.Data.number_order | jsonify | safeJS }}</script>
+  <div class="memory-picker" data-order-controls hidden>
+    <label for="order-layout">Number layout
+      <select id="order-layout" data-order-select aria-describedby="order-layout-note">
+{{ range $index, $_ := site.Data.number_order }}
+        <option value="{{ $index }}">Layout {{ add $index 1 }}</option>
+{{ end }}
+      </select>
+    </label>
+    <button class="button button--secondary" type="button" data-order-today>Today's layout</button>
+  </div>
+  <p id="order-layout-note" class="memory-layout-note" data-order-note>Seven fixed layouts repeat weekly. Today's pick changes at 00:00 UTC.</p>
+  <p data-layout-link-row hidden><a class="pair-layout-link" data-layout-link href="{{ .RelPermalink }}">Open this layout again</a></p>
+  <p data-unavailable>The interactive board needs JavaScript. You can still read the guide and try the linked challenge below.</p>
   <div class="number-grid" data-grid aria-label="4 by 4 number puzzle grid"></div>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
   <div class="completion-actions" data-complete-actions hidden>
+    <button class="button button--secondary" type="button" data-order-next hidden>Try next layout</button>
     <a class="button button--primary puzzle-cta" href="https://daysudoku.com/" rel="noopener" target="_blank">Try DaySudoku</a>
     <a class="button button--secondary puzzle-cta" href="/daily/">More Daily Puzzles</a>
   </div>
-  <button class="button button--primary puzzle-reset" type="button" data-reset>Reset puzzle</button>
+  <button class="button button--primary puzzle-reset" type="button" data-reset disabled>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/">Explore Puzzlepia Games</a>
 </section>

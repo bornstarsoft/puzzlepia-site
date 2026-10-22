@@ -2,6 +2,7 @@
 title: "Number Puzzle Warmups for Casual Players"
 description: "Try simple number-order, missing-number, and Sudoku warmups designed for short and comfortable puzzle sessions."
 date: 2026-07-24
+lastmod: 2026-10-23T03:27:00+09:00
 draft: false
 tags:
   - "number puzzles"
@@ -80,6 +81,12 @@ For a related daily number puzzle, [try DaySudoku](https://daysudoku.com/). It o
 Puzzlepia links to DaySudoku as a related external daily puzzle site. No Puzzlepia account is required for the local starter puzzles.
 
 ## Keep the warmup short
+
+Daily Number Puzzle has seven fixed layouts. Its daily pick changes at 00:00 UTC and repeats weekly, but you can choose any layout without waiting. The rule stays the same: tap 1 through 16, wherever they appear.
+
+For a change of position, [open Layout 2](/daily/number-puzzle/?layout=2). Find 1, 2 and 3 before you begin. Finish the board, reset it, then try scanning by columns instead of rows. Neither approach earns a score; choose the one that feels clear to you.
+
+The fixed layout link can bring you back to the same arrangement next time. It does not save completed tiles, and reset keeps your current layout. These are practice boards, not a newly generated puzzle or a timed test each day.
 
 A useful number routine can be simple:
 
