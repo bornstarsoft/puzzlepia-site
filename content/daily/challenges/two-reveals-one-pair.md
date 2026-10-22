@@ -2,6 +2,7 @@
 title: "Two Reveals, One Remembered Pair"
 description: "Turn a mismatch into a useful clue. Remember one symbol location, check the answer, then play the same Memory Pairs layout."
 date: 2026-10-23T01:26:00+09:00
+lastmod: 2026-10-23T02:53:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Memory matching"
@@ -12,6 +13,8 @@ weight: 107
 ---
 
 ## Keep one location in mind
+
+**Memory practice: 2 of 3.** Start here or warm up with [Remember the Star Pair](/daily/challenges/remember-the-star-pair/).
 
 Imagine your first two cards are **1: circle** and **2: star**. They do not match. On your next turn, you open **card 7**, which is a star. Which card should you choose next?
 
@@ -36,3 +39,5 @@ The remaining pairs are **3 and 8** (triangles), **4 and 9** (suns), **5 and 12*
 [Play Memory Pairs: Layout 2](/daily/memory-pairs/?layout=2). Tap **1**, then **2**. Tap **7** to start a new pair, then **2** to match the stars. Your first mismatch stays visible until that next turn; there is no flip timer to hurry you.
 
 Reset keeps the same arrangement. The link also reopens Layout 2 on another day, with a fresh board and no saved matches. For more ideas, read [Memory Matching Tips](/blog/memory-matching-tips/). Prefer visible numbers? Try [Which Eight Can You Choose?](/daily/challenges/choose-either-eight/) or browse [all Daily Puzzles](/daily/).
+
+[Continue to round 3: Remember Two Pair Locations](/daily/challenges/remember-two-pair-locations/). A different board asks you to keep two earlier reveals separate and use the right one next.

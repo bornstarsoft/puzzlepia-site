@@ -1,11 +1,43 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-LINKS
-Phase: deployed and verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MEMORY-PRACTICE
+Phase: local validation complete; owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MEMORY-PRACTICE; memory practice content and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content and a small return-visit improvement with
+  production deployment, keeping the homepage simple. Starting HEAD `96c726e`;
+  clean main matches origin/main after fetch. GitHub exception applies.
+- Connect three short memory practice rounds. Add Remember Two Pair Locations
+  using the actual fixed Layout 3, optional hints/answers and a direct game
+  link. Refresh the two existing exercises and the memory guide.
+- Preserve all gameplay, layouts/data, homepage, styling, external URLs,
+  storage, analytics, Phaser output and hosting settings. No new health,
+  memory-improvement or measured retention claim.
+- Local QA: PASS. Seven dependency-free test scripts pass. The extended pair
+  test runs Layout 3's two mismatches, six documented pairs, reset before/after
+  completion and replay against the actual existing game script.
+- Chromium at 390/430/768/1280px passed 36 core/content page checks, exact
+  twelve-card data, closed-by-default disclosures, three-round navigation,
+  search, memory collection/back navigation and eight footer destinations.
+- Layouts 2/3 passed twelve completions/resets, partial reset and fresh replay.
+  Existing Word Search, Block, Ring and Number Puzzle passed eight further
+  completions/resets at 390/1280px; remaining starters initialize/reset.
+- No console/page errors or horizontal overflow in final matrices. Native
+  disclosures work with JavaScript disabled and keyboard input at 390px.
+  Open/closed board screenshots checked at mobile/desktop widths. A full-page
+  capture taken while scrolled showed an offscreen fixed skip link; its real
+  bounding box is outside the viewport, and settled top captures are clean.
+- check_site, Hugo --gc --minify and diff checks pass. 2,384 internal references
+  across 82 HTML files resolve. Four canonicals/descriptions/JSON-LD and sitemap
+  entries, robots and unchanged external URLs pass. Generated public/resources
+  output remains ignored and untracked.
+- Production verification: NOT_RUN. Native Safari and retention measurement
+  remain NOT_RUN.
+
+## Previous Collection Link Work
 
 - Owner requested another suitable improvement and production deployment,
   keeping the homepage simple. Starting HEAD `5391442`; clean main matches
@@ -536,13 +568,11 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Daily collection links deployed and verified on puzzlepia.com.
-HEAD/WIP: Application `5ff9b34` deployed; this documentation-only follow-up
-records the evidence. No outstanding implementation WIP.
-QA: PASS locally and on production.
+DONE: Three-round memory practice implemented and locally validated.
+HEAD/WIP: Based on `96c726e`; current changes not yet committed/deployed.
+QA: PASS locally; production NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence
-before selecting another content batch; keep the homepage simple.
+NEXT_SINGLE_TASK: Deploy through the approved GitHub path and verify the live site.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

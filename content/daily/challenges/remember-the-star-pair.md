@@ -2,6 +2,7 @@
 title: "Remember the Star Pair"
 description: "Look at an eight-card symbol board, close it, and recall the two star positions. A short memory challenge with an explained answer."
 date: 2026-09-12T14:40:00+09:00
+lastmod: 2026-10-23T02:53:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Memory matching"
@@ -12,6 +13,8 @@ weight: 104
 ---
 
 ## Puzzle prompt
+
+**Memory practice: 1 of 3.** Start with one remembered pair, then use a mismatch as a clue in the next round. Each exercise also works on its own.
 
 Open the cards below. Notice the two **star** positions, then close the cards and name their small position numbers. Take as long as you like. This is a fixed practice exercise, not a timed test.
 
@@ -34,5 +37,7 @@ The stars are at **1 and 7**. Both show the same symbol, even though their posit
 {{< /puzzle-reveal >}}
 
 ## Play next
+
+[Continue to round 2: Two Reveals, One Remembered Pair](/daily/challenges/two-reveals-one-pair/). Use one known position instead of guessing at a new card. You can bookmark the next round for another break; the exercise is fixed and does not save progress.
 
 [Play Memory Pairs](/daily/memory-pairs/) to uncover a twelve-card board yourself. Read [memory matching tips](/blog/memory-matching-tips/) for a way to remember places, or browse [Puzzlepia Games](/games/) for a different puzzle style.

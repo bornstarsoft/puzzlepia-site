@@ -2,7 +2,7 @@
 title: "Memory Matching Tips: Remember Places, Not Just Pictures"
 description: "Learn a simple way to approach memory matching games: name card positions, use each reveal, and follow an eight-card worked example."
 date: 2026-09-12T14:40:00+09:00
-lastmod: 2026-10-23T01:26:00+09:00
+lastmod: 2026-10-23T02:53:00+09:00
 draft: false
 tags: ["memory pairs", "matching games", "beginner guide"]
 categories: ["Puzzle Tips"]
@@ -58,3 +58,15 @@ Memory Pairs offers seven fixed layouts. Its daily pick changes at 00:00 UTC and
 Try [Two Reveals, One Remembered Pair](/daily/challenges/two-reveals-one-pair/) for a short example using the real twelve-card Layout 2. Look at two different symbols, then use one remembered location to complete a pair. The exercise links straight to [Memory Pairs: Layout 2](/daily/memory-pairs/?layout=2), so the positions agree even if today's pick is different.
 
 Choose the same layout to practise a familiar route, or another layout for a fresh arrangement. Neither choice is a test of your memory ability. There is no timer, attempt score, streak, or penalty for taking a break.
+
+## Three short practice rounds
+
+Choose one small question now and keep the next for another break:
+
+1. [Remember the Star Pair](/daily/challenges/remember-the-star-pair/): look at eight cards, close the board and name two positions.
+2. [Two Reveals, One Remembered Pair](/daily/challenges/two-reveals-one-pair/): use one earlier reveal on the real twelve-card Layout 2.
+3. [Remember Two Pair Locations](/daily/challenges/remember-two-pair-locations/): keep the symbols from two mismatches separate on Layout 3 and choose a known partner.
+
+Hints and answers stay closed until you open them. The last two exercises link to their exact playable layouts, so the positions stay consistent when you return. They are fixed examples, not new daily-generated boards or a scored memory test.
+
+Browse the [memory challenge collection](/daily/?topic=memory#daily-challenge-title) for these rounds together. You can return to any question without completing the previous one; no progress is recorded for the exercises.

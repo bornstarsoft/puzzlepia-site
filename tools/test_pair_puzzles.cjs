@@ -409,3 +409,31 @@ const exercisePairs = [[7, 2], [10, 1], [3, 8], [4, 9], [5, 12], [6, 11]];
 assert.equal(new Set(exercisePairs.flat()).size, 12);
 exercisePairs.forEach(([a, b]) => assert.equal(layouts[1][a - 1], layouts[1][b - 1]));
 console.log("Pair layout links passed: 14 fixed links, invalid/duplicate queries, reset/today/switch, fresh replay, missing URL API/markup/model, no storage and memory exercise.");
+
+// Round 3 uses two actual mismatches before the two remembered matches.
+assert.deepEqual(layouts[2].slice(0, 4), ["moon", "diamond", "circle", "star"]);
+const roundThreePairs = [[7, 2], [8, 1], [12, 3], [11, 4], [9, 6], [10, 5]];
+assert.equal(new Set(roundThreePairs.flat()).size, 12);
+roundThreePairs.forEach(([a, b]) => assert.equal(layouts[2][a - 1], layouts[2][b - 1]));
+const practice = rotatingFixture();
+init([practice], { PuzzlepiaMemoryLayouts: model, location: { search: "?layout=3" } });
+const practiceTap = position => practice.tiles[position - 1].click();
+const practiceReset = practice.querySelector("[data-reset]");
+practiceTap(1); practiceTap(2); practiceReset.click(); checkInitial(practice);
+for (let replay = 0; replay < 2; replay += 1) {
+  [1, 2, 3, 4].forEach(practiceTap);
+  assert.equal(practice.tiles[0].querySelector(".pair-face").textContent, "?");
+  assert.equal(practice.tiles[2].classList.contains("is-mismatch"), true);
+  assert.equal(practice.tiles[3].classList.contains("is-mismatch"), true);
+  assert.equal(practice.querySelector("[data-progress]").textContent, "0 / 6 pairs found");
+  roundThreePairs.forEach(([a, b], i) => {
+    practiceTap(a); practiceTap(b);
+    assert.equal(practice.querySelector("[data-progress]").textContent, (i + 1) + " / 6 pairs found");
+    assert.equal(practice.tiles[a - 1].disabled, true);
+    assert.equal(practice.tiles[b - 1].disabled, true);
+  });
+  assert.equal(practice.querySelector("[data-complete]").hidden, false);
+  practiceReset.click(); checkInitial(practice);
+  assert.deepEqual(valuesOf(practice), layouts[2]);
+}
+console.log("Memory practice passed: Layout 3 reveals, two mismatches, six correct pairs, reset before/after completion and replay.");

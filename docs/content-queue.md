@@ -104,6 +104,17 @@ The second Sudoku deduction and domino-placement exercises were published in Pha
   game code, progress storage or analytics additions. Observe discovery before
   expanding another series; a color-group comparison is a possible later topic.
 
+## Used in Phase 7L
+
+- Added Remember Two Pair Locations using Memory Pairs Layout 3. Connected
+  the two earlier memory exercises and the existing guide as three short rounds.
+- Optional board/hint/answer disclosures and exact playable layout links support
+  returning to the same exercise without progress tracking. The board uses
+  existing data and the full tap sequence is checked in `test_pair_puzzles.cjs`.
+- No homepage, gameplay, layout data, styling or analytics changes. No measured
+  memory or retention improvement is claimed. Review discovery before adding
+  more exercises; the owner explicitly requested this follow-up batch.
+
 ## Blog Topic Ideas
 
 1. Easy Word Search Tips for Beginners
