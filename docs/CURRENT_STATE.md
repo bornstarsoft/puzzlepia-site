@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COLOR-TARGETS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-TARGETS; Color Match targets, content, tests and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; 2026-10-23)
+Phase: production verification complete; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COLOR-TARGETS; 2026-10-23)
 
 ## Current Approved Work
 
@@ -33,7 +33,30 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; 2026-10-23)
 - Hugo/check_site/diff checks pass. 2,471 internal references across 84 HTML
   files resolve; IDs are unique. Four page metadata/schema/sitemap checks,
   robots, unchanged external URLs and three asset fingerprints/MIME types pass.
-  Generated output stays ignored/untracked. Production QA: NOT_RUN.
+  Generated output stays ignored/untracked. Production QA: PASS.
+
+## Color Targets Production Verification: 2026-10-23
+
+- Application commit `746c5e8` was pushed through the approved GitHub path.
+  Cloudflare Pages succeeded at 2026-10-22 19:05:02 UTC
+  (2026-10-23 04:05:02 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 32 core/content page checks and
+  32 Color Match completions, partial/completed reset, forward/reverse tapping,
+  next-color wrap, manual switching, completed-state stability and fixed links.
+  Small widths used emulated touch. Color names fit, initial text contrast is
+  at least 4.5:1 and tile widths at least 44px at these tested widths.
+- Three keyboard/fallback completions passed; missing controls/URL API,
+  blocked storage, history, invalid/duplicate queries, missing script and
+  JavaScript-disabled messaging work. Eight existing-game completions/resets
+  and remaining-starter initialization/reset pass.
+- No console/page errors or horizontal overflow in final live matrices.
+  Settled mobile/desktop screenshots inspected. Exact mint/gold challenge
+  links and eight footer destinations work. Four canonicals, descriptions,
+  Open Graph/JSON-LD and sitemap entries, robots and three CSS/game asset
+  MIME types/SHA-256 fingerprints pass.
+- Homepage, other games, external destinations, storage, analytics, Phaser
+  output and hosting settings remain unchanged. Native Safari, indexing and
+  retention outcomes were not measured; this is release evidence only.
 
 ## Previous Number Practice Work
 
@@ -816,9 +839,9 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Color Match target choice implemented and validated locally.
-HEAD/WIP: Starting HEAD `3992d1b`; twelve intended files ready for commit.
-QA: PASS locally. Production verification NOT_RUN; approved deployment next.
+DONE: Color Match target choice implemented, deployed and verified live.
+HEAD/WIP: Application HEAD `746c5e8`; documentation-only release evidence follows.
+QA: PASS locally and on production. No source WIP remains.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

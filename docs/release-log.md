@@ -6,6 +6,7 @@
 - Put the Color Match board before longer copy, fingerprinted its script, and preserved completion feedback after extra taps. Optional-control/URL failures fall back to pink; unavailable JavaScript leaves a clear message.
 - Connected existing mint/gold exercises to matching playable targets and clarified the guide's distinction between target finding and line/group games. Homepage, other games, external destinations and hosting/analytics settings remain unchanged.
 - Run `node tools/test_color_match.cjs` for target counts, label/state/reset, fixed-link and fallback checks. Validation/deployment evidence belongs in [current work state](CURRENT_STATE.md); no retention gain is claimed.
+- Deployed `746c5e8`; Cloudflare Pages succeeded at 2026-10-23 04:05:02 KST. Live four-width QA passed 32 Color Match completions/resets and 32 page checks, plus keyboard/fallback and existing-game regressions. Color-label contrast, touch sizes, target links, footer, SEO/sitemap and asset integrity passed. Native Safari and retention gains were not tested.
 
 ## Phase 7P Three-Round Number Practice: 2026-10-23
 
