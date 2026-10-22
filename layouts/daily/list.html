@@ -30,7 +30,7 @@
 {{ end }}
 
 {{ if $challenges }}
-  <section class="daily-hub__section" aria-labelledby="daily-challenge-title" data-discovery data-limit="9" data-unit="challenges">
+  <section class="daily-hub__section" aria-labelledby="daily-challenge-title" data-discovery data-discovery-url data-limit="9" data-unit="challenges">
     <div class="daily-hub__heading">
       <p class="eyebrow">Challenge ideas</p>
       <h2 id="daily-challenge-title">Find a challenge for your mood</h2>
@@ -48,6 +48,7 @@
         <button type="button" data-filter-value="mixed" aria-pressed="false">Mixed</button>
       </div>
       <p class="discovery-count" data-filter-count aria-live="polite">{{ len $challenges }} challenges</p>
+      <p class="discovery-count" data-filter-link-wrap hidden><a href="{{ .RelPermalink }}#daily-challenge-title" data-filter-link>Link to these challenges</a></p>
     </div>
     <div class="challenge-grid" data-filter-list>
 {{ range $challenges.ByWeight }}
@@ -73,7 +74,7 @@
     </div>
     <p class="discovery-empty" data-filter-empty hidden>No challenges match this filter yet.</p>
     <div class="discovery-more">
-      <button class="button button--secondary" type="button" data-filter-more>Show all challenges</button>
+      <button class="button button--secondary" type="button" data-filter-more hidden>Show all challenges</button>
     </div>
   </section>
 {{ end }}

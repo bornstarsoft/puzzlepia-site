@@ -2,7 +2,7 @@
 title: "Ring Puzzle Basics: Colors, Sizes, and Simple Strategy"
 description: "Read a ring puzzle cell by size and color, then follow a worked placement example with three clearly labeled cells."
 date: 2026-05-28
-lastmod: 2026-10-23T02:19:00+09:00
+lastmod: 2026-10-23T02:40:00+09:00
 draft: false
 tags:
   - "ring puzzle"
@@ -95,3 +95,5 @@ Ring puzzles can feel satisfying even when they are short. Placing the final rin
 Puzzlepia's ring starter is intentionally simple, but it introduces the basic rhythm: choose, place, check, complete.
 
 Try the [Daily Ring Puzzle](/daily/ring-puzzle/) for a quick placement challenge, then visit [Ringzzle](/games/ringzzle/) or [play Ringzzle online](https://ringzzle.com/play/) for the separate color rings game.
+
+For another short read-and-solve warmup, browse the [ring challenge collection](/daily/?topic=ring#daily-challenge-title). Keep that collection for a later break, or return to one of the three practice rounds above.

@@ -1,5 +1,11 @@
 # Puzzlepia Release Log
 
+## Phase 7K Daily Challenge Collection Links: 2026-10-23
+
+- Made Daily Challenge topics and expanded lists addressable, with a native collection link and browser back/forward restoration. Related ring, block and number guides now link to their collections.
+- Preserved all seven playable games, homepage, game rules, Blog search, external links, storage, Phaser output and hosting settings. Added defensive URL/history tests and a fingerprinted discovery script; no retention gain is claimed.
+- See [collection link behavior and QA](challenge-collection-links.md) and [current work state](CURRENT_STATE.md) for validation/deployment evidence.
+
 ## Phase 7J Ring Placement Practice: 2026-10-23
 
 - Added Two Rings, One Cell and upgraded Ring Size Practice; connected three short rounds through Three Rings, Three Spaces and the existing guide. Optional explanations distinguish one valid assignment from two valid finishes.

@@ -2,7 +2,7 @@
 title: "Block Puzzle Space Management Tips"
 description: "Compare two placements on a small block puzzle board and learn how to protect space for the next piece."
 date: 2026-05-28
-lastmod: 2026-10-23T01:47:00+09:00
+lastmod: 2026-10-23T02:40:00+09:00
 draft: false
 tags:
   - "block puzzle"
@@ -97,3 +97,5 @@ Every player makes imperfect placements. If the board becomes messy, focus on re
 Block puzzles reward calm adjustments. You do not need a perfect board to keep playing well.
 
 If you want to practice, start with [Daily Block Puzzle](/daily/block-puzzle/) and then explore [Blockzzle](/games/blockzzle/) through the Puzzlepia games hub. For a fuller browser puzzle session, you can [play Blockzzle online](https://blockzzle.com/play/) from the official Blockzzle site. After that, you can [view the Blockzzle leaderboard](https://blockzzle.com/leaderboard/) as a secondary reference for submitted scores.
+
+For your next short break, the [block challenge collection](/daily/?topic=block#daily-challenge-title) gathers Puzzlepia's read-and-solve placement prompts in one place. Pick a question, then return to the collection for another board to think through.

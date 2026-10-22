@@ -19,9 +19,43 @@
     var activeTopic = "all";
     var query = "";
     var expanded = false;
+    var linked = group.hasAttribute("data-discovery-url") &&
+      typeof window.URLSearchParams === "function";
+    var collectionLink = group.querySelector("[data-filter-link]");
+    var linkWrap = group.querySelector("[data-filter-link-wrap]");
 
     if (!items.length) {
       return;
+    }
+
+    function readLocation() {
+      activeTopic = "all";
+      expanded = false;
+      try {
+        var params = new window.URLSearchParams(window.location.search);
+        var topic = params.get("topic");
+        if (params.getAll("topic").length === 1 && buttons.some(function (button) {
+          return button.getAttribute("data-filter-value") === topic;
+        })) activeTopic = topic;
+        expanded = params.getAll("view").length === 1 && params.get("view") === "all";
+      } catch (_) { /* Keep the complete default collection available. */ }
+    }
+
+    function collectionURL() {
+      var params = new window.URLSearchParams();
+      if (activeTopic !== "all") params.set("topic", activeTopic);
+      if (expanded) params.set("view", "all");
+      var queryString = params.toString();
+      return window.location.pathname + (queryString ? "?" + queryString : "");
+    }
+
+    function updateLocation() {
+      if (!linked) return;
+      var url = collectionURL() + window.location.hash;
+      if (url === window.location.pathname + window.location.search + window.location.hash) return;
+      try {
+        window.history.pushState(window.history.state, "", url);
+      } catch (_) { /* Filtering and the ordinary collection link still work. */ }
     }
 
     function render() {
@@ -58,6 +92,11 @@
       if (more) {
         more.hidden = expanded || matched.length <= limit;
       }
+
+      if (linked && collectionLink) {
+        collectionLink.setAttribute("href", collectionURL() + "#daily-challenge-title");
+        if (linkWrap) linkWrap.hidden = false;
+      }
     }
 
     buttons.forEach(function (button) {
@@ -65,6 +104,7 @@
         activeTopic = button.getAttribute("data-filter-value") || "all";
         expanded = false;
         render();
+        updateLocation();
       });
     });
 
@@ -80,9 +120,19 @@
       more.addEventListener("click", function () {
         expanded = true;
         render();
+        updateLocation();
       });
     }
 
+    if (linked) {
+      function restoreLocation() {
+        readLocation();
+        render();
+      }
+      window.addEventListener("popstate", restoreLocation);
+      window.addEventListener("pageshow", restoreLocation);
+      readLocation();
+    }
     render();
   });
 })();

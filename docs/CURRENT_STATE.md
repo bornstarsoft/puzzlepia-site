@@ -1,11 +1,43 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-RING-PRACTICE
-Phase: deployed and verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-LINKS
+Phase: local validation complete; owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; Daily collection links and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested another suitable improvement and production deployment,
+  keeping the homepage simple. Starting HEAD `5391442`; clean main matches
+  origin/main after fetch. The repository-specific GitHub exception applies.
+- Make Daily Challenge filters bookmarkable, including expanded lists and
+  browser back/forward. Add contextual collection links to three existing
+  guides. Preserve the homepage, game logic, blog filter behavior, external
+  URLs, storage, analytics, Phaser output and hosting configuration.
+- Use only allowlisted URL values; canonical/sitemap stay on base URLs. No
+  account, progress tracking, storage or new public section. Ordinary content
+  stays readable without JavaScript. No measured retention gain is claimed.
+- Local QA: PASS. Seven dependency-free test scripts pass. Discovery tests
+  cover eight topics, expanded links, history, duplicate/invalid values, no
+  storage, optional controls, blocked history, missing URL API and Blog search.
+- Chromium at 390/430/768/1280px passed 132 collection/core checks, including
+  32 topic-link openings, reload, back/forward from challenge pages, expanded
+  lists, fresh-page section links, three guide CTAs and eight footer links.
+- Blog filtering/search/empty/show-all behavior remains intact. No-JavaScript
+  content, keyboard filtering, blocked history and missing URL API passed.
+  Anchor checks wait for the existing smooth scroll to finish. No console/page
+  errors or horizontal overflow in final QA; mobile/desktop screenshots checked.
+- Word Search, Block, Ring and Number Puzzle passed eight completions/resets
+  at 390/1280px; remaining starter games initialize/reset. Existing Sudoku
+  target styling remains intact.
+- check_site, Hugo --gc --minify and diff checks pass. 2,351 internal references
+  across 81 HTML files resolve. Four canonicals/descriptions/JSON-LD, base-only
+  sitemap entries and robots pass. Existing external URLs are unchanged;
+  generated public/resources output remains ignored and untracked.
+- Production verification: NOT_RUN. Native Safari and retention measurement
+  remain NOT_RUN.
+
+## Previous Ring Practice Work
 
 - Owner requested suitable content, a small return-visit improvement and live
   deployment while keeping the homepage simple. Starting HEAD `9ecf785`;
@@ -482,13 +514,11 @@ LAST_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round ring practice deployed and verified on puzzlepia.com.
-HEAD/WIP: Application `fa299f5` deployed; this documentation-only follow-up
-records the evidence. No outstanding implementation WIP.
-QA: PASS locally and on production.
+DONE: Daily collection links implemented and locally validated.
+HEAD/WIP: Based on `5391442`; current changes not yet committed/deployed.
+QA: PASS locally; production NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence
-before selecting another content batch; keep the homepage simple.
+NEXT_SINGLE_TASK: Deploy through the approved GitHub path and verify the live site.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

@@ -2,7 +2,7 @@
 title: "Your First Sudoku Move: Rows, Columns, and Boxes"
 description: "Learn Sudoku with a small 4x4 worked example: narrow the candidates, find one certain number, and check the complete solution."
 date: 2026-09-12T08:54:35+09:00
-lastmod: 2026-10-23T02:06:00+09:00
+lastmod: 2026-10-23T02:40:00+09:00
 draft: false
 tags:
   - "sudoku"
@@ -73,3 +73,5 @@ Both are fixed teaching boards with optional hints and explanations. You can boo
 When you are ready for a full-size puzzle, [play DaySudoku](https://daysudoku.com/), a related external daily Sudoku site with a Key9 twist. Find the Key9 first, then continue the full Sudoku. Our 4x4 teaching board is separate from its live puzzle.
 
 You can also browse [Daily Puzzles](/daily/) or the [Games hub](/games/) for a different kind of short break. Keep the first goal small: find one number you can explain, check it, and build from there.
+
+The [number challenge collection](/daily/?topic=number#daily-challenge-title) brings these Sudoku exercises together with lighter number-order and pair prompts. The cards name each puzzle type so you can choose a deduction exercise or a simpler warmup for your next visit.

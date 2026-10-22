@@ -24,7 +24,8 @@
 {{ end }}
 {{ end }}
 {{ if and .IsSection (or (eq .Section "daily") (eq .Section "blog")) }}
-  <script src="/js/puzzlepia-discovery.js"></script>
+{{ $discovery := resources.FromString "js/puzzlepia-discovery.js" (readFile "static/js/puzzlepia-discovery.js") | minify | fingerprint }}
+  <script src="{{ $discovery.RelPermalink }}"></script>
 {{ end }}
 {{ if or .IsHome (eq .Section "daily") }}
   <script src="/js/puzzlepia-return.js"></script>
