@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 7E Gentle Word Search Hints and Worked Directions: 2026-10-23
+
+- Added optional starting-letter hints that cycle through unfound words without completing them or changing saved progress. Reset and set changes clear hints; completed boards disable the hint control.
+- Added one worked direction guide and two short challenges using the actual Fruit bowl and Night sky data, with optional answers and direct practice-set links.
+- Kept the homepage structure, game completion rules, other games, storage format, external destinations, Phaser output, analytics and hosting settings unchanged. The existing latest-guides area picks up the new article naturally.
+- Validation and production evidence are recorded in [current work state](CURRENT_STATE.md). No retention outcome is claimed.
+
 Concise internal notes for major Puzzlepia phases.
 
 ## Phase 0 Infrastructure Completion

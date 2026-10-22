@@ -1,11 +1,42 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-SET-LINKS
-Phase: production release verified; observation next.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-GENTLE-HINTS
+Phase: implementation and validation; owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; Word Search starting-letter hints, worked content and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-SET-LINKS; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable new content plus a small retention improvement and
+  live deployment on 2026-10-23. Starting HEAD `d3121ff`; clean main matches
+  origin/main after fetch. No other active writer is recorded.
+- Add optional starting-letter hints to Word Search, one worked direction guide
+  and two static challenges linked to existing practice-set URLs. Reuse the
+  curated board data to keep examples accurate. Homepage structure stays unchanged.
+- Preserve completion, reset, saved progress, set links and other games.
+  No new tracking, storage, dependencies, hosting changes or Phaser changes.
+- Local QA: PASS. All fourteen sets at 390/430/768/1280px completed twice
+  (112 completions), with hint cycling, found-word skipping, endpoint/touch
+  selection, reveal fallback, reset and next-set state checks.
+- Thirty-two content/core-page checks passed, with optional answers, direct
+  practice-set links, eight footer links and no horizontal overflow. Saves
+  remain byte-identical after hints; partial/completed restore, reset, reload
+  and opt-out passed at all four widths.
+- Keyboard, desktop drag, invalid selection, blocked storage and no-JavaScript
+  fallback passed. Block Puzzle and both pair games completed/reset at mobile
+  and desktop widths; Ring, Number and Color games initialized/reset.
+  New content is discoverable in search. No console/page errors in final QA.
+- All three dependency-free test scripts, Hugo/check_site and diff checks
+  passed. 2,427 internal references across 75 generated HTML pages resolve;
+  new page canonicals and all three sitemap entries are correct. Generated
+  public/resources output stays ignored and untracked. Screenshots inspected.
+- Final hint-button styling passed at all four widths after restarting the
+  local Hugo server: static-file sync had retained an older fingerprinted CSS
+  resource. Fresh production builds already contain the intended styles.
+- Production verification: NOT_RUN, pending owner-approved GitHub push.
+  Native Safari and retention outcomes remain NOT_RUN.
+
+## Previous Set Link Work
 
 - Owner requested another small retention improvement and production deployment
   on 2026-10-23. Starting HEAD `759f712`, clean main matches origin/main after fetch.
@@ -179,14 +210,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-SET-LINKS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Word Search set links implemented, validated, pushed and verified live.
-HEAD/WIP: Application HEAD `6ffa7c8`; documentation handoff commit is titled
-`Record Puzzlepia set link deployment`. No unfinished source work.
-QA: PASS for local unit/browser/build checks and production verification.
+DONE: Gentle hints and worked content implemented and locally validated.
+HEAD/WIP: Based on `d3121ff`; intended task changes await commit and deployment.
+QA: PASS for local unit/browser/build checks; production NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review owner-provided comparable analytics windows before
-choosing another retention change. No monitoring is scheduled; aggregate views
-alone cannot establish repeat visitors or causality.
+NEXT_SINGLE_TASK: Push the validated task commit, verify Cloudflare Pages and
+the live hints/content, then record release evidence and release the writer.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

@@ -1,0 +1,18 @@
+{{ $id := .Get "set" }}
+{{ $matches := where .Site.Data.word_search.sets "id" $id }}
+{{ if ne (len $matches) 1 }}
+  {{ errorf "Unknown word-search-example set %q in %s" $id .Page.File.Path }}
+{{ else }}
+{{ $set := index $matches 0 }}
+<div class="word-example">
+  <table>
+    <caption>{{ $set.title }}: fixed practice board</caption>
+    <thead><tr><th scope="col">Row</th>{{ range seq 6 }}<th scope="col">{{ . }}</th>{{ end }}</tr></thead>
+    <tbody>
+{{ range $rowIndex, $row := $set.rows }}
+      <tr><th scope="row">{{ add $rowIndex 1 }}</th>{{ range split $row "" }}<td>{{ . }}</td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}

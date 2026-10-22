@@ -18,6 +18,8 @@ Drag across a word, or tap its first and last letter. Words can run in either di
 
 The daily pick uses UTC and repeats the same 14-set collection. It is not a newly generated puzzle each day. Your board does not change during play.
 
+Need a small nudge? **Show a starting letter** outlines the first letter of an unfound word without completing it. Tap again for another unfound word. Try the worked [Word Search Directions guide](/blog/word-search-directions-worked-example/) to practise reading backward and diagonally.
+
 Want to come back later? Turn on **Remember my progress on this browser** below the board. It keeps only your latest set for up to 30 days, without an account or device sync. A new UTC day opens today's pick, with a link to continue your saved set. Switching sets replaces the save; Reset starts the current set again. Turn saving off to delete it. Without saving, each visit starts fresh.
 
 ## Return to a favorite set

@@ -1646,3 +1646,40 @@ img {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+.word-example {
+  max-width: 420px;
+  margin: 20px 0;
+}
+
+.word-example table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.word-example caption {
+  text-align: left;
+  font-weight: 750;
+  margin-bottom: 10px;
+}
+
+.word-example th,
+.word-example td {
+  text-align: center;
+  padding: 8px 0;
+  border: 1px solid #c8c0d8;
+}
+
+.word-example th {
+  font-size: 0.8rem;
+  background: #edf7f2;
+  color: #28473c;
+}
+
+.word-example td {
+  font-size: 1.125rem;
+  font-weight: 750;
+  background: #faf8ff;
+  color: #3b2c56;
+}

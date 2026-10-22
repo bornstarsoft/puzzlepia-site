@@ -188,6 +188,12 @@
   outline: 3px solid rgba(255, 95, 168, 0.44);
 }
 
+.word-search-game .letter-cell.is-hint { outline: 3px dashed #654600; outline-offset: -4px; box-shadow: inset 0 0 0 5px #ffe7a0; }
+.word-search-game .letter-cell.is-hint:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 2px; }
+.target-list .word-search-hint { margin-top: 14px; min-height: 44px; width: 100%; border: 1px solid #c8aa54; border-radius: 6px; background: #fff6dc; color: #533e0e; }
+.word-search-hint:disabled { opacity: 0.6; cursor: default; }
+.word-search-hint-note { margin: 8px 0 0; font-size: 0.875rem; }
+
 .block-cell.is-invalid,
 .ring-cell.is-invalid,
 .color-cell.is-invalid {

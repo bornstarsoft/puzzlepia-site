@@ -50,7 +50,13 @@ Daily Challenge prompts published:
 - Published Find the Only Square Space, Three Rings, Three Spaces, and One Certain Sudoku Number.
 - Added original static board diagrams and optional hints/solutions. These are fixed exercises, not generated daily games.
 
-Next: a second Sudoku deduction example, a word-search direction diagram, and a domino-placement exercise. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
+Next: a second Sudoku deduction example and a domino-placement exercise. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
+
+## Used in Phase 7E
+
+- Published Word Search Directions: Backward and Diagonal Examples, Find KIWI Backward, and Trace STAR Diagonally.
+- Rendered accessible letter tables from the same curated data as the game, with optional answers and explicit practice-set links.
+- Added a starting-letter hint that leaves progress unchanged; this covers the practical part of the hints-without-spoilers topic below.
 
 ## Blog Topic Ideas
 

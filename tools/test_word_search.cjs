@@ -82,6 +82,29 @@ assert.equal(model.linkedSet(null, "?set=starter"), -1);
 console.log("Set links passed: 14 stable IDs, reordered catalog, unknown/duplicate/malformed parameters, no arbitrary URL destinations.");
 
 const browserScript = fs.readFileSync(path.join(__dirname, "../static/js/daily-word-search.js"), "utf8");
+for (const set of catalog.sets) {
+  const before = JSON.stringify(set);
+  const found = [];
+  let previous = null;
+  for (const word of set.words) {
+    const hint = model.nextHint(set, found, previous);
+    assert.equal(hint.word, word);
+    assert.deepEqual([hint.row, hint.col], set.paths[word][0]);
+    assert.equal(set.rows[hint.row][hint.col], word[0]);
+    previous = word;
+  }
+  assert.equal(model.nextHint(set, found, previous).word, set.words[0]);
+  found.push(set.words[0], set.words[1], set.words[3]);
+  assert.equal(model.nextHint(set, found, set.words[2]).word, set.words[2]);
+  assert.equal(found.length, 3, "hints never mark words found");
+  assert.equal(model.nextHint(set, set.words, null), null);
+  assert.equal(JSON.stringify(set), before);
+}
+assert.equal(model.nextHint(null, [], null), null);
+assert.deepEqual(catalog.sets.find(s => s.id === "fruit").paths.KIWI, [[5, 5], [5, 4], [5, 3], [5, 2]]);
+assert.deepEqual(catalog.sets.find(s => s.id === "night-sky").paths.STAR, [[0, 0], [1, 1], [2, 2], [3, 3]]);
+console.log("Hint checks passed: 56 starting cells, cycling, skipping found words, completion and no mutation; worked example paths match.");
+
 vm.runInNewContext(browserScript, { window: {}, document: { querySelector: () => null } });
 vm.runInNewContext(browserScript, { window: { PuzzlepiaGames: {}, PuzzlepiaWordSearch: model }, document: { querySelector: () => null } });
 console.log(`Word Search checks passed: ${paths} unique word paths, 14 boards, UTC boundaries, 400 rotation days, invalid data and missing-root guards.`);

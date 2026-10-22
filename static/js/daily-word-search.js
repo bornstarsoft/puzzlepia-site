@@ -37,6 +37,8 @@
   var actions = helpers.qs(root, "[data-complete-actions]");
   var resetButton = helpers.qs(root, "[data-reset]");
   var unavailable = helpers.qs(root, "[data-unavailable]");
+  var hintButton = helpers.qs(root, "[data-hint]");
+  var previousHint = null;
   if (!grid || !list || !select || !title || !schedule || !controls || !todayButton ||
       !nextButton || !actions || !resetButton || !unavailable || !helpers.qs(root, "[data-status]") ||
       !helpers.qs(root, "[data-complete]")) return;
@@ -166,6 +168,26 @@
     });
   }
 
+  function clearHint() {
+    cells.forEach(function (cell) {
+      if (!cell.el.classList.contains("is-hint")) return;
+      cell.el.classList.remove("is-hint");
+      cell.el.setAttribute("aria-label", "Letter " + cell.letter + " row " + (cell.row + 1) + " column " + (cell.col + 1));
+    });
+  }
+
+  if (hintButton) hintButton.addEventListener("click", function () {
+    var hint = model.nextHint(catalog.sets[currentIndex], words.filter(function (word) { return found[word]; }), previousHint);
+    if (!hint) return;
+    cancelInput();
+    clearHint();
+    previousHint = hint.word;
+    var cell = cellAt(hint.row, hint.col);
+    cell.el.classList.add("is-hint");
+    cell.el.setAttribute("aria-label", "Hint for " + hint.word + ": " + cell.el.getAttribute("aria-label"));
+    setFeedback(hint.word + " starts at row " + (hint.row + 1) + ", column " + (hint.col + 1) + ". Follow a straight line from the outlined letter.");
+  });
+
   function highlightPath(path, className) {
     path.forEach(function (point) {
       var cell = Array.isArray(point) ? cellAt(point[0], point[1]) : point;
@@ -184,6 +206,7 @@
       return;
     }
     found[word] = true;
+    clearHint();
     clearSelection();
     startCell = null;
     dragStartCell = null;
@@ -206,6 +229,7 @@
       setFeedback(source === "list" ? word + " marked from the list." : "Great find: " + word + ".");
     }
     if (source !== "restore") persist();
+    if (hintButton) hintButton.disabled = foundCount() === words.length;
   }
 
   function submitPath(path) {
@@ -365,6 +389,9 @@
 
   function resetGame(isReset) {
     cancelInput();
+    clearHint();
+    previousHint = null;
+    if (hintButton) hintButton.disabled = false;
     found = {};
     cells.forEach(function (cell) {
       cell.el.classList.remove("is-found", "is-invalid");

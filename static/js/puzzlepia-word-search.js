@@ -83,5 +83,18 @@
     return "/daily/word-search/?set=" + encodeURIComponent(prepared.sets[index].id);
   }
 
-  return { prepare: prepare, pick: pick, findPaths: findPaths, linkedSet: linkedSet, setLink: setLink };
+  function nextHint(set, found, previous) {
+    if (!set || !set.words || !set.paths) return null;
+    var start = set.words.indexOf(previous) + 1;
+    for (var offset = 0; offset < set.words.length; offset += 1) {
+      var word = set.words[(start + offset) % set.words.length];
+      if (found.indexOf(word) === -1) {
+        var point = set.paths[word][0];
+        return { word: word, row: point[0], col: point[1] };
+      }
+    }
+    return null;
+  }
+
+  return { prepare: prepare, pick: pick, findPaths: findPaths, linkedSet: linkedSet, setLink: setLink, nextHint: nextHint };
 });

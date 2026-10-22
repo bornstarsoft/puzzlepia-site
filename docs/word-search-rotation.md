@@ -200,6 +200,27 @@ tests, build, generated internal references, canonical and sitemap checks passed
 The first local test used a production canonical expectation, and another
 asserted before navigation finished; corrected checks passed without source fixes.
 
+## Phase 7E: Starting-Letter Hints (2026-10-23)
+
+- An optional button outlines the first cell of an unfound word and announces
+  the word, row and column in the existing live status. Repeated requests cycle
+  through unfound words. It never marks an answer found or writes a save.
+- A found word clears the hint. Reset and set changes clear all hint state;
+  completion disables the button, and reset enables it again. Saved completed
+  boards also disable it. Hints are temporary and never restored from storage.
+- Existing word-list reveal buttons, mouse drag, touch endpoints, keyboard
+  activation, set links and optional progress saving remain available.
+- The `word-search-example` shortcode renders a table from the same catalog.
+  Unknown set IDs fail the Hugo build. The direction guide and two challenges
+  use Fruit bowl's backward KIWI and Night sky's diagonal STAR; unit tests
+  assert their exact paths. Optional answers use native details disclosures.
+- QA: request hints before and after finding words, cycle all four, solve
+  using endpoints, complete with reveal buttons, reset before/after completion,
+  and complete again. Check that saves are unchanged by hints, restore works,
+  disabled storage does not block play, and no-JavaScript content is readable.
+  Check all fourteen sets and 390/430/768/1280px widths. Record actual results
+  and production verification in CURRENT_STATE.md.
+
 ## Release Boundary
 
 This is a curated collection rotation, not evidence of increased retention.

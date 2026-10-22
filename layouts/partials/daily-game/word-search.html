@@ -38,6 +38,8 @@
         <li data-word="{{ . }}"><button type="button" data-word-button="{{ . }}" disabled>{{ . }}</button></li>
 {{ end }}
       </ul>
+      <button class="button button--secondary word-search-hint" type="button" data-hint disabled>Show a starting letter</button>
+      <p class="word-search-hint-note">A small hint, without marking a word found.</p>
     </div>
   </div>
   <p class="word-search-note" id="word-search-set-note">Changing sets starts a fresh board. The daily pick changes at 00:00 UTC and repeats every {{ len $catalog.sets }} days. An open board stays unchanged.</p>
