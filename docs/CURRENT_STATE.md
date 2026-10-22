@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MEMORY-PRACTICE
-Phase: local validation complete; owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MEMORY-PRACTICE; memory practice content and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; 2026-10-23)
+Phase: deployed and verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -34,8 +34,28 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; 2026-10-23)
   across 82 HTML files resolve. Four canonicals/descriptions/JSON-LD and sitemap
   entries, robots and unchanged external URLs pass. Generated public/resources
   output remains ignored and untracked.
-- Production verification: NOT_RUN. Native Safari and retention measurement
+- Production verification: PASS. Native Safari and retention measurement
   remain NOT_RUN.
+
+## Memory Practice Production Verification: 2026-10-23
+
+- Application commit `3d603cc` was pushed through the approved GitHub path.
+  Cloudflare Pages completed successfully at 2026-10-22 17:58:29 UTC
+  (2026-10-23 02:58:29 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 36 core/content page checks,
+  exact Layout 3 data, optional disclosures, three-round links, search,
+  memory collection/back navigation and eight footer destinations.
+- Layouts 2/3 passed twelve completions/resets, partial reset and fresh replay.
+  Word Search, Block, Ring and Number Puzzle passed eight further completions
+  and resets at 390/1280px; remaining starter games initialize/reset.
+- No console/page errors or horizontal overflow in final matrices. Disclosures
+  work with JavaScript disabled and keyboard input; live mobile screenshot
+  inspected. Four canonicals/descriptions/JSON-LD and sitemap entries pass;
+  robots retains the sitemap. Live CSS and pair-game JavaScript have correct
+  MIME types and matching SHA-256 fingerprints.
+- Homepage, all game code/layout data, styling, external destinations, storage,
+  analytics, Phaser output and Cloudflare/DNS settings remain unchanged. This
+  verifies the release, not an increase in return visits or memory ability.
 
 ## Previous Collection Link Work
 
@@ -568,11 +588,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round memory practice implemented and locally validated.
-HEAD/WIP: Based on `96c726e`; current changes not yet committed/deployed.
-QA: PASS locally; production NOT_RUN.
+DONE: Three-round memory practice deployed and verified on puzzlepia.com.
+HEAD/WIP: Application `3d603cc` deployed; this documentation-only follow-up
+records the evidence. No outstanding implementation WIP.
+QA: PASS locally and on production.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Deploy through the approved GitHub path and verify the live site.
+NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence
+before selecting another content batch; keep the homepage simple.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.
