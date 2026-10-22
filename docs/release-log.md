@@ -16,6 +16,11 @@
   restorations, 12 practice visits and 24 core/search page checks. Keyboard,
   fallback, metadata and existing-game regression checks pass; no final console
   errors or overflow. Mobile practice links were enlarged after initial QA.
+- Deployed `07d1614`; Cloudflare Pages succeeded at 2026-10-23 04:34:04 KST.
+  Live four-width QA repeated all 12 restorations, 12 practice visits and 24
+  core/search checks. Keyboard/fallbacks, existing games, footer, metadata and
+  asset integrity passed with no console errors or overflow. Native Safari
+  and retention impact were not measured.
 
 ## Phase 7R Color Practice Path: 2026-10-23
 

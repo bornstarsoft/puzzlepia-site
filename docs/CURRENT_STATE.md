@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-SEARCH-RETURN
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; search return-state and existing practice discovery; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PRACTICE; 2026-10-23)
+Phase: production verification complete; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; 2026-10-23)
 
 ## Current Approved Work
 
@@ -29,8 +29,30 @@ LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PRACTICE; 2026-10-23)
   robots and two asset SHA-256/MIME checks pass. All 2,489 internal references
   across 84 generated HTML files resolve; IDs are unique.
 - Generated output stays ignored/untracked; Home, game logic and external
-  destinations are unchanged. Deployment: NOT_RUN. NEXT_SINGLE_TASK: commit,
-  push via approved GitHub exception and verify the live release.
+  destinations are unchanged. DONE: implemented and verified live. QA: PASS.
+- Application HEAD: `07d1614`; only this handoff and release-log record remain
+  before the final documentation commit. BLOCKER: none. NEXT_SINGLE_TASK:
+  review search/discovery usage evidence before adding another navigation feature.
+
+## Search Return Production Verification: 2026-10-23
+
+- Application commit `07d1614` was pushed through the approved GitHub exception.
+  Cloudflare Pages succeeded at 2026-10-22 19:34:04 UTC
+  (2026-10-23 04:34:04 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 24 core/search page checks,
+  12 back/reload/reusable-link restorations and 12 practice visits. Expanded
+  order and back scroll, category totals, query/type reset, more-result focus,
+  no-results recovery and footer links pass. Small widths used emulated touch.
+- Five fallback modes, seven invalid/bounded URL cases and keyboard more pass.
+  Native disclosures remain available without JavaScript. Eight existing-game
+  completions/resets and eight starter reset checks pass. No console/page
+  errors or horizontal overflow in the final live matrices.
+- Search noindex/canonical and sitemap exclusion, eight public page metadata/
+  schema/sitemap checks, robots and two deployed CSS/search asset SHA-256
+  hashes/MIME types pass. Mobile/desktop start/results captures inspected.
+- No Home, game logic, storage, external destination, analytics, Phaser or
+  hosting-setting changes. Native Safari, indexing and retention gains were
+  not measured; these are release checks, not evidence of business impact.
 
 ## Previous Color Practice Work
 
