@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-PRACTICE-DISCOVERY
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-PRACTICE-DISCOVERY; contextual practice links, checks and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
+Phase: deployed and verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-PRACTICE-DISCOVERY; 2026-10-23)
 
 ## Current Approved Work
 
@@ -14,7 +14,7 @@ LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
   curated two/three-round practice links. Reuse published challenges and guides;
   keep Number Puzzle/Color Match fallbacks. No new public section or tracking.
 - Preserve homepage, game code/data, external URLs, storage, analytics, Phaser
-  output and hosting configuration. Production verification: NOT_RUN.
+  output and hosting configuration. Production verification: PASS.
 - Local QA: PASS. Seven existing dependency-free test scripts and the new
   Python standard-library practice-path check pass. Isolated Hugo fixtures
   verify published links and reject missing, draft, future or wrong-type pages.
@@ -32,6 +32,27 @@ LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
   across 83 HTML files resolve; IDs are unique. Seven game canonicals,
   descriptions/JSON-LD and sitemap entries, plus robots, pass. Generated output
   stays ignored/untracked; no external game links or game scripts changed.
+
+## Practice Paths Production Verification: 2026-10-23
+
+- Application commit `be2dbc1` was pushed through the approved GitHub path.
+  Cloudflare Pages succeeded at 2026-10-22 18:22:07 UTC
+  (2026-10-23 03:22:07 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 48 core/game page checks,
+  56 practice-link visits/back navigations, guide links and fourteen correctly
+  ordered round links across five games. Minimum 44px link targets, placement
+  below the game and unchanged fallbacks for Number/Color passed.
+- All five practice paths work without JavaScript and via keyboard. Sixteen
+  Memory/Make 10 completions/resets and eight further Word Search, Block, Ring
+  and Number completions/resets pass; remaining starters initialize/reset.
+- No console/page errors or horizontal overflow in final live matrices. Mobile
+  and desktop screenshots inspected. Eight footer destinations, seven game
+  canonicals/descriptions/JSON-LD and sitemap entries, robots, CSS/pair-script
+  MIME types and three SHA-256 fingerprints pass. Link underlines/color verified.
+- Homepage structure, game rules/data, external destinations, storage,
+  analytics, Phaser output and hosting settings remain unchanged. Native Safari
+  and retention measurement were not performed; this is release evidence, not
+  proof of increased return visits or business outcomes.
 
 ## Previous Make 10 Practice Work
 
@@ -662,9 +683,10 @@ LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Contextual practice paths implemented and validated locally.
-HEAD/WIP: Starting HEAD `f7ab407`; six intended files ready for commit.
-QA: PASS locally. Production verification NOT_RUN; approved deployment next.
+DONE: Contextual practice paths deployed and verified on puzzlepia.com.
+HEAD/WIP: Application `be2dbc1` deployed; this documentation-only follow-up
+records the evidence. No outstanding implementation WIP.
+QA: PASS locally and on production.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

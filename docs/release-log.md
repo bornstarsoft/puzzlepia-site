@@ -6,6 +6,7 @@
 - Kept guide links and the original single-challenge fallback for Number Puzzle and Color Match. Hugo rejects missing, draft, future or non-challenge practice destinations. No new homepage section, gameplay, storage or analytics.
 - The exercises are fixed and do not save progress. No measured return-visit improvement is claimed; validation and deployment evidence belongs in [current work state](CURRENT_STATE.md).
 - After `hugo`, run `python3 tools/check_practice_paths.py` to check generated paths and isolated missing/draft/future/non-challenge fixtures. No extra Python packages or changes to real content are needed.
+- Deployed `be2dbc1`; Cloudflare Pages succeeded at 2026-10-23 03:22:07 KST. Live four-width QA passed 48 page checks, 56 round-link visits, sixteen pair-game completions/resets and eight other game completions/resets. No-JavaScript/keyboard navigation, footer links, metadata/sitemap and asset fingerprints passed. Native Safari and retention gains were not tested.
 
 ## Phase 7M Three-Round Make 10 Practice: 2026-10-23
 
