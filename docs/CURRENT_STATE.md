@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-NUMBER-VARIETY
-Phase: implementation and validation; owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; Make 10 variety, related content and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; 2026-10-23)
+Phase: deployed and validated; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
 
 ## Current Approved Work
 
@@ -33,8 +33,27 @@ LAST_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; 2026-10-23)
   dead end and verified both challenge solution routes. 2,457 internal
   references across 76 HTML pages resolve; sitemap/canonicals are valid.
   Generated public/resources output stays ignored and untracked.
-- Production verification: NOT_RUN, pending approved push. Native Safari,
-  Search Console indexing and retention gains are not verified.
+- Production verification: PASS. Native Safari, Search Console indexing and
+  retention gains are not verified.
+
+## Make 10 Production Verification: 2026-10-23
+
+- Pushed application commit `cc86ca8`. Cloudflare Pages completed successfully
+  at 2026-10-22 16:15:18 UTC (2026-10-23 01:15:18 KST).
+- Live Chromium at 390/430/768/1280px passed 48 Make 10 and Memory Pairs
+  completions across layouts 1, 4 and 7, including reset before/after completion,
+  repeated/wrong taps, clearing selection and next-layout behavior.
+- Twenty-eight live core/content page checks passed. Challenge data matches
+  Layout 2; guide/challenge CTAs, search and eight footer destinations work.
+  UTC rollover preserves an open board until explicit selection or reload.
+- Word Search save/restore/hint/reset/opt-out regression passed at all four
+  widths. The other four starter games initialize and reset. No console/page
+  errors or horizontal overflow in the live matrices. Mobile screenshots inspected.
+- Six same-origin script/style assets returned correct MIME types. All four
+  fingerprinted assets matched their SHA-256 URL hashes. Challenge and guide
+  canonicals, descriptions and JSON-LD parse correctly; sitemap and robots pass.
+- Homepage structure, external games, analytics, storage, Phaser output and
+  Cloudflare/DNS settings remain unchanged. No retention improvement is claimed.
 
 ## Previous Gentle Hint Work
 
@@ -261,12 +280,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-GENTLE-HINTS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Make 10 variety and worked content implemented and locally validated.
-HEAD/WIP: Based on `fdb2140`; intended changes await commit and deployment.
-QA: PASS for local unit/browser/build checks; production NOT_RUN.
+DONE: Make 10 variety and worked content implemented, deployed and validated.
+HEAD/WIP: Application `cc86ca8` is live; this documentation handoff records QA.
+QA: PASS for local unit/browser/build checks and production verification.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Push validated changes through the approved GitHub path,
-verify Cloudflare Pages and the live game/content, then record the handoff.
+NEXT_SINGLE_TASK: Review owner-provided Search Console/Web Analytics observations
+before choosing another game or content improvement; keep the homepage compact.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

@@ -6,6 +6,7 @@
 - Reused the pair-game controls with separate number validation; Memory Pairs keeps its own layouts and date anchor. Invalid/missing optional rotation falls back to the original playable board.
 - Refreshed the existing Make 10 guide and added Which Eight Can You Choose?, an optional-hint challenge rendered from Layout 2 data. Both valid routes are tested.
 - Kept the home structure, other games, external links, analytics and Cloudflare settings unchanged. See [QA procedure](matching-games-qa.md#phase-7f-make-10-layout-rotation) and [release evidence](CURRENT_STATE.md). No measured retention improvement is claimed.
+- Deployed `cc86ca8` through the approved GitHub/Cloudflare Pages path. Local QA passed 112 pair-game completions; live four-width QA passed 48 completions, 28 core/content page checks, existing-game regressions, UTC rollover, footer links, metadata and fingerprinted assets. Native Safari was not tested.
 
 ## Phase 7E Gentle Word Search Hints and Worked Directions: 2026-10-23
 
