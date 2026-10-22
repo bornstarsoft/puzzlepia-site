@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-NUMBER-PRACTICE
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; number practice content, tests and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
+Phase: production verification complete; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -32,7 +32,27 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
 - Hugo/check_site/diff checks pass. 2,468 internal references across 84 HTML
   files resolve; IDs are unique. Five canonicals/descriptions/OG/JSON-LD and
   sitemap entries, robots, and four asset fingerprints/MIME types pass.
-  Generated output remains ignored/untracked. Production verification: NOT_RUN.
+  Generated output remains ignored/untracked. Production verification: PASS.
+
+## Number Practice Production Verification: 2026-10-23
+
+- Application commit `d206a8a` was pushed through the approved GitHub path.
+  Cloudflare Pages succeeded at 2026-10-22 18:50:42 UTC
+  (2026-10-23 03:50:42 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 36 core/content page checks,
+  24 Number completions/resets on Layouts 1/2/7, 24 disclosure open/close
+  checks, exact diagram-to-game data and fixed layout links. Small widths used
+  emulated touch. Manual keyboard and JavaScript-disabled disclosures pass.
+- Practice links, guide links, number collection/back navigation, search
+  discovery and eight footer destinations pass. Eight further Word Search,
+  Block, Ring and Number completions/resets pass; other starters initialize/reset.
+- Final live matrices report no console/page errors or horizontal overflow.
+  Mobile/desktop screenshots inspected. Five canonicals, unique descriptions,
+  Open Graph/JSON-LD and sitemap entries, robots, plus four CSS/model/game
+  asset MIME types and SHA-256 fingerprints pass.
+- Homepage, gameplay/data/scripts, styling, external destinations, storage,
+  analytics, Phaser output and hosting settings remain unchanged. Native
+  Safari, indexing outcomes and retention gains were not measured.
 
 ## Previous Number Variety Work
 
@@ -766,9 +786,9 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round Number Puzzle practice implemented and validated locally.
-HEAD/WIP: Starting HEAD `6cecd0e`; ten intended files ready for commit.
-QA: PASS locally. Production verification NOT_RUN; approved deployment next.
+DONE: Three-round Number Puzzle practice implemented, deployed and verified live.
+HEAD/WIP: Application HEAD `d206a8a`; documentation-only release evidence follows.
+QA: PASS locally and on production. No source WIP remains.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

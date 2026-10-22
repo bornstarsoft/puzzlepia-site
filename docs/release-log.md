@@ -6,6 +6,7 @@
 - Connected the three rounds from the existing Number Puzzle follow-up and warmup guide. Each fixed link opens the same playable board fresh at 1; no course or game progress is saved.
 - Reused existing styles and game data. Homepage, gameplay/scripts, external destinations, storage, analytics, Phaser output and hosting settings stay unchanged. No measured retention gain is claimed.
 - After `hugo`, run `python3 tools/check_number_practice.py` and `python3 tools/check_practice_paths.py` for diagram/answer/link and publication-guard checks. Deployment evidence belongs in [current work state](CURRENT_STATE.md).
+- Deployed `d206a8a`; Cloudflare Pages succeeded at 2026-10-23 03:50:42 KST. Live four-width QA passed 36 page checks, 24 Number completions/resets, optional disclosures, search/collection discovery and eight additional game completions/resets. Footer, SEO/sitemap and asset integrity checks passed. Native Safari and retention gains were not tested.
 
 ## Phase 7O Number Puzzle Layout Variety: 2026-10-23
 
