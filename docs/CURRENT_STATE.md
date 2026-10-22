@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-SUDOKU-PRACTICE
-Phase: release preparation; local validation passed, owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; static Sudoku practice and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; 2026-10-23)
+Phase: deployed and verified; observation is the next step.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -32,7 +32,28 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; 2026-10-23)
   across 80 HTML files resolve. IDs, three changed-page targets/canonicals,
   descriptions/JSON-LD/sitemap and robots pass. Existing external links remain
   identical; generated public/resources output is ignored and untracked.
-- Production verification: NOT_RUN until deployment.
+- Production verification: PASS. Native Safari and retention measurement remain
+  NOT_RUN.
+
+## Sudoku Practice Production Verification: 2026-10-23
+
+- Application commit `090b926` was pushed through the approved GitHub path.
+  Cloudflare Pages completed successfully at 2026-10-22 17:13:31 UTC
+  (2026-10-23 02:13:31 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 32 core/content page checks,
+  exact clues/targets/box boundaries, optional hints/answers, search/filter
+  discovery, practice-round links and eight footer destinations.
+- Number Puzzle passed eight completions with wrong-tap feedback, reset before
+  and after completion, and replay. Word Search and Block Puzzle passed four
+  further completions/resets at 390/1280px. Pair, Ring and Color games initialize
+  and reset. No console/page errors or horizontal overflow in final site QA.
+- JavaScript-disabled diagrams and keyboard disclosures work. Live mobile
+  screenshots inspected; target styles checked. Three changed-page canonicals,
+  descriptions/JSON-LD and sitemap entries pass. Robots retains the sitemap.
+  The live CSS has the correct MIME type and matches its SHA-256 fingerprint.
+- Homepage, game scripts, external destinations, storage, Phaser output,
+  analytics and Cloudflare/DNS settings remain unchanged. This verifies the
+  release, not an increase in return visits or business outcomes.
 
 ## Previous Block Practice Work
 
@@ -409,12 +430,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Sudoku box exercise and data-backed diagrams implemented; local QA passed.
-HEAD/WIP: Based on `34d9d7c`; ready for the scoped application commit.
-QA: PASS locally; production verification NOT_RUN.
+DONE: Sudoku box exercise and data-backed diagrams implemented, deployed and verified.
+HEAD/WIP: Application `090b926` pushed; this documentation-only handoff records
+the completed verification. No public changes remain to deploy.
+QA: PASS for local checks, Cloudflare application deployment and live browser/source QA.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Commit and deploy through the approved GitHub path, verify
-the live practice flow and release the writer record.
+NEXT_SINGLE_TASK: Observe discovery of the short practice series before choosing
+another batch. Consider a ring-placement comparison only after reviewing usage.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

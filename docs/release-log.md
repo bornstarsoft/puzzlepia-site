@@ -5,6 +5,7 @@
 - Added Let the Sudoku Box Decide and linked it with One Certain Sudoku Number and the existing introductory guide. Optional hints and answers support one small, certain move at a time.
 - Rendered all three teaching boards as accessible data-backed tables. Preserved existing clues, routes, original dates and SVG assets. Test-only exhaustive checks confirm unique solutions and the box-based deduction.
 - Kept the homepage, games, external destinations, storage, Phaser output, analytics and hosting settings unchanged. No retention gain is claimed. Validation and deployment evidence belongs in [current work state](CURRENT_STATE.md).
+- Deployed `090b926`; Cloudflare Pages succeeded at 2026-10-23 02:13:31 KST. Live four-width QA passed 32 page checks, eight Number Puzzle completions/reset cycles, practice navigation/discovery and optional disclosures. Other game regressions, metadata/sitemap and CSS fingerprint checks passed. Native Safari and retention gains were not tested.
 
 ## Phase 7H Three-Round Block Practice: 2026-10-23
 
