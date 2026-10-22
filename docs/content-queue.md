@@ -50,7 +50,7 @@ Daily Challenge prompts published:
 - Published Find the Only Square Space, Three Rings, Three Spaces, and One Certain Sudoku Number.
 - Added original static board diagrams and optional hints/solutions. These are fixed exercises, not generated daily games.
 
-Next: a second Sudoku deduction example and a domino-placement exercise. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
+Next: a second Sudoku deduction example. The domino-placement exercise was published in Phase 7H below. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
 
 ## Used in Phase 7E
 
@@ -64,11 +64,23 @@ Next: a second Sudoku deduction example and a domino-placement exercise. Build o
 - Added Which Eight Can You Choose?, using Layout 2 directly from the game data.
 - Added seven balanced Make 10 practice layouts, with no time limit or score.
 
-## Blog Topic Ideas
+## Used in Phase 7G
 
-Phase 7G follow-through: refreshed Memory Matching Tips and added Two Reveals,
-One Remembered Pair. Memory and Make 10 exercises now open their exact playable
-layouts. Prefer another puzzle type next rather than more introductory pair tips.
+- Refreshed Memory Matching Tips and added Two Reveals, One Remembered Pair.
+- Memory and Make 10 exercises now open their exact playable layouts.
+
+## Used in Phase 7H
+
+- Published A Domino Before the Square with a checked, static placement diagram.
+- Replaced the vague Open Board Block Challenge with a three-piece board and an
+  exact solution, preserving its route and original date.
+- Connected the existing square warmup, domino comparison and full tray as
+  three short rounds in Block Puzzle Space Management Tips. No new homepage
+  section, game logic, account, progress storage or publishing schedule.
+- Run `node tools/test_block_practice.cjs` after changing the board data or
+  explanations; all six tray orders and both domino choices are checked.
+
+## Blog Topic Ideas
 
 1. Easy Word Search Tips for Beginners
 2. Ring Puzzle Strategy for Small Boards

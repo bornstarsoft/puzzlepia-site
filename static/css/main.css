@@ -1695,3 +1695,7 @@ img {
   font-size: 0.875rem;
   overflow-wrap: anywhere;
 }
+
+.block-example th:first-child { width: 2rem; }
+.block-example td { height: 56px; padding: 0; background: #fff; }
+.block-example td.block-example__filled { background: #61478c; color: #fff; }

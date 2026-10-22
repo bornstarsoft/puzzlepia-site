@@ -1,5 +1,11 @@
 # Puzzlepia Release Log
 
+## Phase 7H Three-Round Block Practice: 2026-10-23
+
+- Added A Domino Before the Square and upgraded Open Board Block Challenge with data-backed 4x4 diagrams, optional hints and checked explanations. Preserved existing routes and publication dates.
+- Linked these with Find the Only Square Space and the existing space-management guide as three short rounds. The sequence is static and untracked, with an easy return to Daily Block Puzzle or the existing Blockzzle page.
+- Kept the homepage, game scripts, external destinations, Phaser output, analytics and hosting settings unchanged. Board validation uses `node tools/test_block_practice.cjs`; release evidence is recorded in [current work state](CURRENT_STATE.md). No retention improvement is claimed.
+
 ## Phase 7G Pair Layout Links and Memory Practice: 2026-10-23
 
 - Added fixed `?layout=1` through `?layout=7` links for Memory Pairs and Make 10. Explicit links start a fresh chosen board; the base URL keeps its UTC daily pick. Invalid or duplicate parameters fall back to today's pick.

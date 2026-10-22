@@ -2,7 +2,7 @@
 title: "Block Puzzle Space Management Tips"
 description: "Compare two placements on a small block puzzle board and learn how to protect space for the next piece."
 date: 2026-05-28
-lastmod: 2026-09-12T08:54:35+09:00
+lastmod: 2026-10-23T01:47:00+09:00
 draft: false
 tags:
   - "block puzzle"
@@ -38,7 +38,15 @@ Both marked cells accept the single block. But **choice 1, at A3, blocks the onl
 
 This is why "always place the biggest piece first" is only a starting suggestion. Here the exercise sets the order, and planning the smaller piece correctly is enough. In a game that clears lines, recheck the board after a clear because the available shapes may change.
 
-Try a different board in [Find the Only Square Space](/daily/challenges/find-the-square-space/). Its hint and explanation stay closed until you open them.
+## Three small practice rounds
+
+Use one round for a short break, or follow the sequence. Each board has an optional hint and explained answer, with no timer or saved progress:
+
+1. [Find the Only Square Space](/daily/challenges/find-the-square-space/): locate one shape before making a move.
+2. [A Domino Before the Square](/daily/challenges/domino-before-the-square/): compare two legal first moves and protect the next shape.
+3. [Open Board Block Challenge](/daily/challenges/open-board-block-challenge/): reserve places for a complete three-piece tray.
+
+These are fixed teaching boards, separate from Daily Block Puzzle and Blockzzle. Nothing clears in the examples. Bookmark the next round to return to it later; the sequence does not track visits or completion.
 
 ## Avoid isolated gaps
 

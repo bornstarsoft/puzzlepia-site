@@ -1,0 +1,17 @@
+{{ $id := .Get "id" }}
+{{ with index site.Data.block_practice $id }}
+{{ $columns := slice "A" "B" "C" "D" }}
+<div class="word-example block-example" data-block-example="{{ $id }}">
+  <table>
+    <caption>{{ .caption }}</caption>
+    <thead><tr><th scope="col"><span class="visually-hidden">Row</span></th>{{ range $columns }}<th scope="col">{{ . }}</th>{{ end }}</tr></thead>
+    <tbody>
+{{ range $row, $cells := .rows }}
+      <tr><th scope="row">{{ add $row 1 }}</th>{{ range $col, $filled := $cells }}<td{{ if $filled }} class="block-example__filled"{{ end }}><span aria-hidden="true">{{ if $filled }}X{{ else }}.{{ end }}</span><span class="visually-hidden">{{ index $columns $col }}{{ add $row 1 }}: {{ if $filled }}occupied{{ else }}empty{{ end }}</span></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ else }}
+  {{ errorf "Unknown block-practice-board %q in %s" $id .Page.File.Path }}
+{{ end }}

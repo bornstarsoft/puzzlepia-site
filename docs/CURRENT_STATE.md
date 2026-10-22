@@ -1,11 +1,39 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-PAIR-LINKS
-Phase: deployed and validated; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-BLOCK-PRACTICE
+Phase: release preparation; local validation passed, owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; static block practice content and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content, a small return-visit improvement and live
+  deployment, while keeping the homepage simple. Starting HEAD `4a4b3b5`;
+  clean main matches origin/main after fetch. GitHub exception applies.
+- Add one domino-placement challenge and replace the vague Open Board prompt
+  with a checked three-piece board. Connect these to the existing square
+  challenge and guide as three short practice rounds, without a new section.
+- Keep all game scripts, homepage, external destinations, storage, analytics,
+  Phaser output and hosting settings unchanged. Use static data-backed diagrams
+  and optional explanations; no progress tracking or automatic publishing.
+- Local QA: PASS. New board tests check both domino choices, all six tray
+  placement orders and all eight single-first choices; each explanation matches
+  the fixed data. Existing pair, Word Search and saved-progress tests pass.
+- Chromium at 390/430/768/1280px passed 36 core/content page checks, the full
+  three-round link path, search/filter discovery, eight footer destinations and
+  eight Block Puzzle completions with invalid placement and reset/replay.
+- Word Search, Memory Pairs and Make 10 completed/reset at 390/1280px; Ring,
+  Number and Color starters initialized/reset. No console/page errors or
+  horizontal overflow in the final matrices. Mobile/desktop screenshots inspected.
+- Diagrams have row/column headers and text cell labels. Native hint/answer
+  controls work with JavaScript disabled and keyboard input at 390px.
+- check_site, Hugo --gc --minify and diff checks pass. 2,214 internal references
+  across 79 generated HTML files resolve; IDs are unique, four changed pages
+  have valid canonicals/descriptions/JSON-LD and sitemap entries. Existing
+  external links are unchanged. Public/resources output is ignored/untracked.
+- Production verification: NOT_RUN until deployment.
+
+## Previous Pair Link Work
 
 - Owner requested another suitable content/retention improvement and deployment,
   keeping the homepage simple. Starting HEAD `c938699`; clean main matches
@@ -329,12 +357,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Pair layout links and worked memory content implemented, deployed and validated.
-HEAD/WIP: Application `6b8afeb` is live; this documentation handoff records QA.
-QA: PASS for local checks and production verification.
+DONE: Three-round static block practice implemented; local validation passed.
+HEAD/WIP: Based on `4a4b3b5`; ready for the scoped application commit.
+QA: PASS locally; production verification NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review owner-provided traffic/search observations before choosing
-the next non-pair content improvement; keep the homepage compact.
+NEXT_SINGLE_TASK: Deploy through the approved GitHub path, verify the live
+practice flow and existing games, then release the writer record.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

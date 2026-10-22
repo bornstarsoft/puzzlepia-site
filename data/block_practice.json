@@ -1,0 +1,20 @@
+{
+  "domino": {
+    "caption": "Domino first, square next",
+    "rows": [[0, 0, 1, 0], [0, 0, 1, 0], [1, 0, 1, 1], [0, 1, 0, 1]],
+    "pieces": {
+      "horizontal": [[0, 0], [0, 1]],
+      "vertical": [[0, 0], [1, 0]],
+      "square": [[0, 0], [0, 1], [1, 0], [1, 1]]
+    }
+  },
+  "tray": {
+    "caption": "Room for a line, a square, and one block",
+    "rows": [[0, 0, 0, 1], [1, 1, 1, 0], [1, 0, 0, 1], [1, 0, 0, 1]],
+    "pieces": {
+      "line": [[0, 0], [0, 1], [0, 2]],
+      "square": [[0, 0], [0, 1], [1, 0], [1, 1]],
+      "single": [[0, 0]]
+    }
+  }
+}

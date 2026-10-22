@@ -2,6 +2,7 @@
 title: "Find the Only Square Space"
 description: "Find the single place where a 2x2 block fits on a small illustrated board, then check the exact four cells."
 date: 2026-09-12T08:54:35+09:00
+lastmod: 2026-10-23T01:47:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Block puzzle"
@@ -12,6 +13,8 @@ weight: 101
 ---
 
 ## Puzzle prompt
+
+**Block practice: 1 of 3.** Find one space first, then compare two moves in the next round. Each exercise can also be played on its own.
 
 Place one **2x2 square** on this 4x4 board. It must cover four empty cells without overlap or extending outside the board. Purple cells are occupied; white cells are empty. Nothing moves or clears in this exercise.
 
@@ -34,5 +37,7 @@ Rows 1 and 2 cannot hold it because row 1 has no adjacent empty pair. In rows 2 
 {{< /puzzle-reveal >}}
 
 ## Play next
+
+[Continue to round 2: A Domino Before the Square](/daily/challenges/domino-before-the-square/). You will choose a first move that leaves the next piece room. The exercises are fixed, so you can bookmark the next round and return without a timer or streak.
 
 Try [Daily Block Puzzle](/daily/block-puzzle/) to place a full tray. The [space management guide](/blog/block-puzzle-space-management/) compares two moves that leave different options. For the separate browser game, visit [Blockzzle](/games/blockzzle/) or [play Blockzzle online](https://blockzzle.com/play/).
