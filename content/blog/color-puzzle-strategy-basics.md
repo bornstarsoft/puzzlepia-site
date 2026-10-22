@@ -2,7 +2,7 @@
 title: "Color Puzzle Strategy Basics"
 description: "Learn simple color puzzle strategy ideas for matching groups, reading space, and enjoying visual puzzle play."
 date: 2026-05-29
-lastmod: 2026-10-23T03:56:00+09:00
+lastmod: 2026-10-23T04:15:00+09:00
 draft: false
 tags:
   - "color puzzles"
@@ -69,6 +69,16 @@ Daily Color Match now offers pink, mint, gold and purple targets on one fixed bo
 Start with [a mint round](/daily/color-match/?target=mint) or [a gold round](/daily/color-match/?target=gold). Each has six targets. Purple has seven, but the goal stays the same: find every tile of that color, in any order. A wrong tap does not remove a tile or end the round.
 
 After finishing, choose **Try next color** to start fresh, or keep the fixed target link for another break. Reset preserves your selected color and restores all tiles. There is no timer or saved progress, and these practice rounds do not change automatically each day.
+
+## Three short practice rounds
+
+Want to look before tapping? These three reading exercises use the same board as Color Match, with optional hints and answers:
+
+1. [Pink Color Match Challenge](/daily/challenges/pink-color-match-challenge/): scan row by row.
+2. [Mint Color Match](/daily/challenges/mint-color-match/): notice a target separated from the rest.
+3. [Color Match: Gold Target](/daily/challenges/gold-color-target/): check the middle and the edges.
+
+Each exercise links straight to its matching playable target. Try one now and another during a later break. The board and questions stay fixed, so there is no deadline or daily streak to maintain.
 
 ## Enjoy the visual reward
 

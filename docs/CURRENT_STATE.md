@@ -1,11 +1,34 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COLOR-TARGETS
-Phase: production verification complete; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COLOR-PRACTICE
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-PRACTICE; existing color practice content and validation; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-COLOR-TARGETS; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content and a return-visit improvement, with a simple
+  homepage, validation and live deployment. Starting HEAD `f7c74ca`; clean main
+  matches origin/main after fetch. Repository-specific GitHub exception applies.
+- Improve three existing color challenges using the real fixed board, optional
+  hints/answers and exact-target play links. Connect them through the existing
+  practice path and guide. No new routes, gameplay, storage or homepage changes.
+- Local QA: PASS. Hugo/check_site/diff checks, nine Node suites and three Python
+  content checks pass. Exercise diagrams match the initialized game board;
+  answer positions, closed disclosures, published routes and exact targets pass.
+- Chromium at 390/430/768/1280px passed 36 page checks, 24 Color Match
+  completions/resets, 24 disclosure interactions, keyboard/no-JavaScript
+  reading, collection/search discovery and footer links. Diagram contrast is
+  at least 4.5:1; text fits. Settled mobile/desktop screenshots inspected.
+- Eight existing-game regression completions and eight starter resets pass.
+  No console/page errors or horizontal overflow in the tested matrices.
+  Five metadata/schema/sitemap checks and three asset fingerprints/MIME types
+  pass; 2,485 internal references across 84 HTML files resolve with unique IDs.
+- Generated output stays ignored/untracked. Homepage, gameplay and external
+  destinations are unchanged. Deployment: NOT_RUN. NEXT_SINGLE_TASK: commit,
+  push via approved GitHub exception and verify the live site.
+
+## Previous Color Targets Work
 
 - Owner approved a suitable return-visit improvement and live deployment while
   keeping the homepage simple. Starting HEAD `3992d1b`; clean main matches

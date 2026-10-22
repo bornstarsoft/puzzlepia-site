@@ -58,6 +58,10 @@
   topic: color
   guide: "/blog/color-puzzle-strategy-basics/"
   challenge: "/daily/challenges/pink-color-match-challenge/"
+  practice:
+    - "/daily/challenges/pink-color-match-challenge/"
+    - "/daily/challenges/mint-color-match/"
+    - "/daily/challenges/gold-color-target/"
 "/daily/memory-pairs/":
   preview: memory-pairs
   width: 400

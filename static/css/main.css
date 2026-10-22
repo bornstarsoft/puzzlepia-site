@@ -1713,6 +1713,13 @@ img {
   overflow-wrap: anywhere;
 }
 
+.color-example td { font-size: 0.875rem; color: #252033; }
+.color-example small { display: block; font-size: 0.75rem; font-weight: 400; }
+.color-example td[data-color="pink"] { background: #fbcfe8; }
+.color-example td[data-color="mint"] { background: #a7f3d0; }
+.color-example td[data-color="gold"] { background: #fde68a; }
+.color-example td[data-color="purple"] { background: #6d28d9; color: #fff; }
+
 .block-example th:first-child { width: 2rem; }
 .block-example td { height: 56px; padding: 0; background: #fff; }
 .block-example td.block-example__filled { background: #61478c; color: #fff; }

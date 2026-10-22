@@ -1,5 +1,18 @@
 # Puzzlepia Release Log
 
+## Phase 7R Color Practice Path: 2026-10-23
+
+- Improved the existing pink, mint and gold challenges with the real fixed board,
+  color names, position labels, optional hints/answers and exact-target play links.
+- Connected the three rounds through the existing Color Match follow-up and
+  strategy guide. No homepage, gameplay, storage, external link or hosting changes.
+- Added `python3 tools/check_color_practice.py`; pair it with
+  `node tools/test_color_match.cjs` after Hugo to check real-board parity.
+  All nine Node suites and three Python content checks pass, as do Hugo and
+  whitespace checks. Four-width local Chromium QA passed 36 page checks and
+  24 color completions/resets, keyboard/no-JavaScript disclosures, discovery,
+  footer links, contrast and metadata. Existing-game regression passed.
+
 ## Phase 7Q Color Match Target Choice: 2026-10-23
 
 - Kept the fixed 5x5 board and default six-pink-tile round; added mint/gold/purple targets, explicit color names, completion-only next color and fixed target links. Reset restores the same target; no scores, timers or saved progress.

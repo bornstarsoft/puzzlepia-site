@@ -1,8 +1,8 @@
 ---
 title: "Color Match: Gold Target"
-description: "A simple color scanning challenge that asks players to count every gold target in a short row."
+description: "Find six gold tiles on the real Color Match board and check the row with none. Use optional hints, then play the gold target."
 date: 2026-07-25
-lastmod: 2026-10-23T03:56:00+09:00
+lastmod: 2026-10-23T04:15:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Color match"
@@ -12,22 +12,32 @@ challenge: true
 weight: 350
 ---
 
-Switch the target color and scan carefully.
+## Round 3: check every row for gold
 
-## Puzzle prompt
+Count all the **Gold** tiles. Which row has none? Give the six target positions before opening the answer.
 
-Count the gold tiles in this row:
+Use the color names as well as the fills. The small position labels count cells from left to right, top to bottom. This is a fixed reading exercise using the actual Color Match board, not an interactive table.
 
-`Gold  Mint  Pink  Gold  Purple  Gold  Mint`
+{{< color-match-example >}}
 
-## Hint
+{{< puzzle-reveal title="Show a small hint" >}}
+Start at the two gold tiles in the top-right corner. Then scan every remaining row, including the bottom one.
+{{< /puzzle-reveal >}}
 
-Read from left to right and count only the word `Gold`.
+{{< puzzle-reveal title="Show the positions and explanation" >}}
+There are **six** gold tiles, at positions **4, 5, 10, 13, 17, 18**.
 
-## Answer
+The fifth row has no gold. Row counts are **2, 1, 1, 2, 0**. Position 13 is easy to miss between other colors, so scan the middle as carefully as the edges. You do not need to make a line or clear adjacent tiles together.
+{{< /puzzle-reveal >}}
 
-There are three gold tiles, in positions 1, 4, and 6.
+## Try it on the same board
 
-## Play next
+[Play Color Match: Gold](/daily/color-match/?target=gold). Find all six gold tiles in any order. A wrong-color tap leaves the board unchanged. Reset restores every tile and keeps gold selected. The link opens a fresh board; there is no timer or saved progress.
 
-Try [Daily Color Match with a gold target](/daily/color-match/?target=gold). The full playable board has six gold tiles; this row exercise has three. Find all six in any order, then reset or try another target. The link opens fresh and does not save progress. For a related BornstarSoft game page, explore [Color Rings Mania](/games/color-rings-mania/).
+## Your three-round practice
+
+1. [Pink Color Match Challenge](/daily/challenges/pink-color-match-challenge/): scan row by row.
+2. [Mint Color Match](/daily/challenges/mint-color-match/): notice a separated target.
+3. **Color Match: Gold Target**: check the middle and the edges.
+
+Choose another round for a later break; these questions stay the same. Read [Color Puzzle Strategy Basics](/blog/color-puzzle-strategy-basics/) for more scanning ideas, or explore [Color Rings Mania](/games/color-rings-mania/) for a related BornstarSoft game page.

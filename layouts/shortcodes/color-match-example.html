@@ -1,0 +1,10 @@
+<div class="word-example color-example">
+  <table>
+    <caption>Color Match: fixed practice board</caption>
+    <tbody>
+{{ range $row, $tiles := site.Data.color_practice }}
+      <tr>{{ range $col, $color := $tiles }}<td data-color="{{ $color }}">{{ $color | title }}<small>Pos. {{ add (add (mul $row 5) $col) 1 }}</small></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>

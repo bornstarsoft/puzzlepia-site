@@ -10,6 +10,12 @@ const totals = { pink: 6, mint: 6, gold: 6, purple: 7 };
 const board = ["pink", "pink", "mint", "gold", "gold", "purple", "pink", "mint", "mint", "gold", "purple", "purple", "gold", "mint", "mint", "pink", "gold", "gold", "purple", "purple", "pink", "pink", "mint", "purple", "purple"];
 const label = s => s[0].toUpperCase() + s.slice(1);
 
+// Keep the static reading exercises aligned with the actual initialized game.
+const practiceBoard = require("../data/color_practice.json");
+assert.equal(practiceBoard.length, 5);
+practiceBoard.forEach(row => assert.equal(row.length, 5));
+assert.deepEqual(practiceBoard.flat(), board);
+
 class Element {
   constructor() {
     this.children = []; this.nodes = {}; this.dataset = {}; this.listeners = {};
