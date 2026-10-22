@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COLOR-PRACTICE
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-PRACTICE; existing color practice content and validation; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-COLOR-TARGETS; 2026-10-23)
+Phase: production verification complete; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -25,8 +25,29 @@ LAST_WRITER = CODEX (PUZZLEPIA-COLOR-TARGETS; 2026-10-23)
   Five metadata/schema/sitemap checks and three asset fingerprints/MIME types
   pass; 2,485 internal references across 84 HTML files resolve with unique IDs.
 - Generated output stays ignored/untracked. Homepage, gameplay and external
-  destinations are unchanged. Deployment: NOT_RUN. NEXT_SINGLE_TASK: commit,
-  push via approved GitHub exception and verify the live site.
+  destinations are unchanged. DONE: implemented and verified live. QA: PASS.
+- Application HEAD: `6debeae`; only this handoff and release-log documentation
+  remain before the final commit. BLOCKER: none. NEXT_SINGLE_TASK: review
+  observed discovery/return traffic before choosing another content expansion.
+
+## Color Practice Production Verification: 2026-10-23
+
+- Application commit `6debeae` was pushed through the approved GitHub exception.
+  Cloudflare Pages succeeded at 2026-10-22 19:18:22 UTC
+  (2026-10-23 04:18:22 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 36 core/content page checks,
+  24 Color Match completions/replays with partial/completed reset, and
+  24 hint/answer disclosure interactions. Small widths used emulated touch.
+- Real-board equality, exact target links, collection/search navigation,
+  eight footer destinations and keyboard/no-JavaScript reading pass.
+  No console/page errors or horizontal overflow in the tested matrices.
+  Diagram contrast passes 4.5:1 and labels fit; mobile/desktop captures inspected.
+- Eight existing-game completion/reset runs and eight starter reset checks pass.
+  Five canonicals, unique descriptions, Open Graph/JSON-LD and sitemap entries,
+  robots and three deployed CSS/game asset SHA-256 hashes/MIME types pass.
+- No homepage, gameplay, storage, analytics, external destination, Phaser or
+  hosting-setting changes. Native Safari, indexing and retention outcomes were
+  not measured; the results above verify release behavior only.
 
 ## Previous Color Targets Work
 
