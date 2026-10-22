@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-PAIR-LINKS
-Phase: implementation and validation; owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; pair layout links, worked memory content and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
+Phase: deployed and validated; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; 2026-10-23)
 
 ## Current Approved Work
 
@@ -31,7 +31,28 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
 - Three test scripts, check_site, Hugo and diff checks pass. 2,489 internal
   references across 77 HTML pages resolve. Canonicals/sitemap contain base game
   URLs only; the new challenge is included. Generated output is ignored/untracked.
-- Production verification: NOT_RUN, pending approved push.
+- Production verification: PASS. Native Safari and retention outcomes NOT_RUN.
+
+## Pair Links Production Verification: 2026-10-23
+
+- Pushed application commit `6b8afeb`. Cloudflare Pages completed successfully
+  at 2026-10-22 16:38:44 UTC (2026-10-23 01:38:44 KST).
+- Live Chromium at 390/430/768/1280px passed 48 pair-game completions across
+  layouts 1, 2 and 7. Touch/click, reset before/after, next links, fresh link
+  opening and reload passed. No page/console errors or horizontal overflow.
+- Thirty-two live core/content page checks passed. Exact challenge CTAs and
+  worked card sequence, memory filter discovery, midnight/reset behavior,
+  invalid/duplicate queries, history back/forward and footer destinations passed.
+  CTA assertions wait for page load, not merely the navigation's first response.
+- Word Search save/hint/completion/reset/opt-out and Block Puzzle completion/reset
+  passed at all four widths. Ring, Number and Color starters initialize/reset.
+- Six same-origin assets returned correct MIME types; all four fingerprinted
+  assets matched their SHA-256 URL hashes. The final pageshow fix is present.
+  Canonicals/descriptions/JSON-LD, sitemap and robots pass; no layout-query URLs
+  were added to the sitemap. Live mobile screenshots were inspected.
+- Homepage structure, external destinations, pair progress storage, other game
+  scripts, Phaser output, analytics and hosting/DNS settings remain unchanged.
+  This is functionality evidence, not proof of increased return visits.
 
 ## Previous Make 10 Work
 
@@ -308,12 +329,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Pair layout links and worked memory content implemented and locally validated.
-HEAD/WIP: Based on `c938699`; intended changes await commit and deployment.
-QA: PASS for local checks; production NOT_RUN.
+DONE: Pair layout links and worked memory content implemented, deployed and validated.
+HEAD/WIP: Application `6b8afeb` is live; this documentation handoff records QA.
+QA: PASS for local checks and production verification.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Push validated changes through the approved GitHub path, verify
-Cloudflare Pages and live game/content, then record the release handoff.
+NEXT_SINGLE_TASK: Review owner-provided traffic/search observations before choosing
+the next non-pair content improvement; keep the homepage compact.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

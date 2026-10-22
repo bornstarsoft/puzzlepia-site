@@ -5,6 +5,7 @@
 - Added fixed `?layout=1` through `?layout=7` links for Memory Pairs and Make 10. Explicit links start a fresh chosen board; the base URL keeps its UTC daily pick. Invalid or duplicate parameters fall back to today's pick.
 - Added a compact native layout link, a worked Memory Pairs Layout 2 exercise, and direct practice links from the existing Make 10 challenge. Refreshed the memory guide without changing its publication date.
 - Kept the homepage structure, game rules, storage, external destinations, Phaser output and hosting settings unchanged. No retention gains are claimed. Validation/deployment evidence is tracked in [current work state](CURRENT_STATE.md).
+- Deployed `6b8afeb` via the approved GitHub/Cloudflare Pages path. Live four-width QA passed 48 pair completions, 32 core/content page checks, exact challenge links, history/UTC behavior, existing-game regressions and asset/SEO checks. Fixed a browser history select-restoration mismatch found locally. Native Safari was not tested.
 
 ## Phase 7F Make 10 Practice Variety: 2026-10-23
 
