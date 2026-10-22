@@ -6,6 +6,7 @@
 - Preserved ascending taps, gentle wrong-tap feedback, completion and the original starter fallback. Updated the existing game copy and number warmup guide; kept the homepage and other games unchanged.
 - Fingerprinted the number model/game scripts and added data/state validation. No new storage, tracking, backend or external destinations. Release evidence belongs in [current work state](CURRENT_STATE.md); no measured retention improvement is claimed.
 - Moved only the Number Puzzle board ahead of its instructions and improved completed-tile text contrast. Run `node tools/test_number_puzzle.cjs` for layout, state, UTC, fixed-link and fallback checks.
+- Deployed `f0f90b1`; Cloudflare Pages succeeded at 2026-10-23 03:36:31 KST. Live four-width QA passed 56 Number completions/resets, 28 page checks, four fallback/keyboard completions and eight game regression completions. Footer links, metadata/sitemap and four asset fingerprints passed. Native Safari and retention gains were not tested.
 
 ## Phase 7N Contextual Practice Paths: 2026-10-23
 
