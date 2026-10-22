@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-SET-LINKS
-Phase: local validation passed; owner-approved deployment next.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-SET-LINKS; Word Search set links and validated GitHub deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-ROTATION; 2026-10-15)
+Phase: production release verified; observation next.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-SET-LINKS; 2026-10-23)
 
 ## Current Approved Work
 
@@ -28,7 +28,25 @@ LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-ROTATION; 2026-10-15)
 - All three dependency-free test scripts, Hugo/check_site and diff checks
   passed. 2,101 generated internal references across 72 HTML pages resolve,
   IDs are unique and the sitemap contains only the base Word Search URL.
-- Production verification: PENDING. Native Safari and retention outcomes NOT_RUN.
+- Production verification: PASS. Native Safari and retention outcomes NOT_RUN.
+
+## Set Links Production Verification: 2026-10-23
+
+- Pushed application commit `6ffa7c8`. Cloudflare Pages completed successfully
+  at 2026-10-22 15:23:23 UTC (2026-10-23 00:23:23 KST).
+- Live Chromium at 390, 430, 768 and 1280px passed 24 endpoint/fallback
+  completions across first, second and final set URLs, reset, next-set wrap,
+  cross-date reopening, daily pick and canonical checks. Mobile used touch taps.
+- Live 390/1280px save compatibility checks passed for same/different saved
+  sets, explicit resume, record preservation before play, reset, opt-out,
+  invalid/duplicate links, stripped extra URL parameters and back navigation.
+- Native clipboard write succeeded on the live site; clipboard data was not
+  read. Seven same-origin scripts/styles have correct MIME types and matching
+  fingerprints. Footer links, sitemap and robots responded successfully.
+- Twenty core-page/viewport checks passed with no horizontal overflow. No
+  console/page errors in final live tests. Screenshots were inspected.
+- Homepage, puzzle rules, other games, external links, storage keys, analytics,
+  Phaser output and Cloudflare/DNS settings remain unchanged.
 
 ## Previous Memory Rotation Work
 
@@ -161,12 +179,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-ROTATION; 2026-10-15)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Word Search set links implemented and locally validated.
-HEAD/WIP: Starting HEAD `759f712`; scoped set-link changes pending commit.
-QA: PASS for local unit/browser/build checks; production verification PENDING.
+DONE: Word Search set links implemented, validated, pushed and verified live.
+HEAD/WIP: Application HEAD `6ffa7c8`; documentation handoff commit is titled
+`Record Puzzlepia set link deployment`. No unfinished source work.
+QA: PASS for local unit/browser/build checks and production verification.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Push validated set links and verify the Git-connected
-Cloudflare Pages deployment plus live page behavior under current approval.
+NEXT_SINGLE_TASK: Review owner-provided comparable analytics windows before
+choosing another retention change. No monitoring is scheduled; aggregate views
+alone cannot establish repeat visitors or causality.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

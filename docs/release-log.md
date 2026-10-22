@@ -251,3 +251,4 @@ Concise internal notes for major Puzzlepia phases.
 - Added links to individual practice sets for returning to a favorite board or sharing the same puzzle, with copy and manual-copy fallback in a compact disclosure.
 - Explicit set links open fresh without exposing answers or progress. Existing browser saves remain available until deliberate play replaces them; normal daily/resume behavior remains on the base URL.
 - Homepage, game rules, other games, canonical URLs, analytics and hosting settings are unchanged. See [set-link behavior](word-search-rotation.md#phase-7d-links-to-practice-sets-2026-10-23) and [release state](CURRENT_STATE.md).
+- Deployed `6ffa7c8` through the approved GitHub/Cloudflare Pages path. Live four-width QA passed 24 completions/reset checks, saved-progress compatibility, native link copy, asset integrity and 20 core-page checks. No measured retention gain or native Safari validation is claimed.
