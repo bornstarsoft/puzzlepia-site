@@ -35,8 +35,9 @@ class Element {
 function fixture(mode, values) {
   const root = new Element();
   root.dataset.pairGame = mode;
-  ["progress", "status", "complete", "complete-actions", "reset", "clear", "controls", "unavailable"]
+  ["progress", "status", "complete", "complete-actions", "reset", "clear", "controls", "unavailable", "layout-link", "layout-link-row"]
     .forEach((key) => { root.children["[data-" + key + "]"] = new Element(); });
+  root.querySelector("[data-layout-link-row]").hidden = true;
   root.tiles = values.map((value) => {
     const tile = new Element();
     tile.dataset = { value: String(value), label: String(value) };
@@ -50,8 +51,8 @@ function fixture(mode, values) {
   return root;
 }
 
-function init(roots, window = {}) {
-  vm.runInNewContext(source, { document: { querySelectorAll: () => roots }, window });
+function init(roots, window = {}, globals = {}) {
+  vm.runInNewContext(source, { document: { querySelectorAll: () => roots }, window, URLSearchParams, ...globals });
 }
 
 function checkInitial(root) {
@@ -336,3 +337,75 @@ for (const first of [[[1, 3], [12, 9]], [[1, 9], [12, 3]]]) {
   pairs.forEach(([a, b]) => assert.equal(numberLayouts[1][a - 1] + numberLayouts[1][b - 1], 10));
 }
 console.log(`Make 10 rotation passed: seven balanced boards, ${remainders} reachable remainders, 14 completions, UTC/reset/next/fallback and both challenge solutions.`);
+
+for (const [mode, data, gameModel, create, base] of [
+  ["memory", layouts, model, rotatingFixture, "/daily/memory-pairs/"],
+  ["number", numberLayouts, numberModel, numberFixture, "/daily/number-pairs/"]
+]) {
+  const property = mode === "memory" ? "PuzzlepiaMemoryLayouts" : "PuzzlepiaNumberLayouts";
+  const withLocation = search => ({
+    [property]: { valid: gameModel.valid, today: () => 5 },
+    location: { search },
+    get localStorage() { throw Error("pair links must not access storage"); }
+  });
+  for (let i = 0; i < 7; i++) {
+    const root = create();
+    init([root], withLocation("?layout=" + (i + 1) + "&extra=ignored"));
+    assert.deepEqual(valuesOf(root), data[i].map(String));
+    const link = root.querySelector("[data-layout-link]");
+    assert.equal(link.href, base + "?layout=" + (i + 1));
+    assert.equal(root.querySelector("[data-layout-link-row]").hidden, false);
+    root.tiles[0].click();
+    root.querySelector("[data-reset]").click();
+    checkInitial(root);
+    assert.deepEqual(valuesOf(root), data[i].map(String));
+    root.querySelector("[data-" + mode + "-today]").click();
+    assert.equal(link.href, base + "?layout=6");
+    const select = root.querySelector("[data-" + mode + "-select]");
+    select.value = "0"; select.listeners.change();
+    assert.equal(link.href, base + "?layout=1");
+    const fresh = create();
+    init([fresh], withLocation(new URL(link.href, "https://puzzlepia.com").search));
+    checkInitial(fresh);
+    assert.deepEqual(valuesOf(fresh), data[0].map(String));
+  }
+  for (const search of ["", "?layout=", "?layout=0", "?layout=8", "?layout=-1", "?layout=1.5",
+    "?layout=01", "?layout=+1", "?layout=1&layout=2", "?layout=2&layout=2", "?layout=<script>", "?layout=%FF"]) {
+    const root = create();
+    init([root], withLocation(search));
+    assert.deepEqual(valuesOf(root), data[5].map(String), "invalid link uses today's pick: " + search);
+  }
+  const missingURL = create();
+  init([missingURL], withLocation("?layout=2"), { URLSearchParams: undefined });
+  assert.deepEqual(valuesOf(missingURL), data[5].map(String));
+  const historyRoot = create();
+  const historyWindow = withLocation("?layout=2");
+  const historyEvents = {};
+  historyWindow.addEventListener = (name, callback) => { historyEvents[name] = callback; };
+  init([historyRoot], historyWindow);
+  const historyPicker = historyRoot.querySelector("[data-" + mode + "-select]");
+  historyRoot.tiles[0].click();
+  historyPicker.value = "6";
+  historyEvents.pageshow();
+  assert.equal(historyPicker.value, "1", "history-restored selector must match the actual board");
+  assert.equal(historyRoot.tiles[0].classList.contains("is-selected"), true, "pageshow does not reset progress");
+  historyPicker.value = "3"; historyPicker.listeners.change();
+  historyPicker.value = "0"; historyEvents.pageshow();
+  assert.equal(historyPicker.value, "3");
+  const missingLink = create();
+  delete missingLink.children["[data-layout-link]"];
+  init([missingLink], withLocation("?layout=2"));
+  assert.deepEqual(valuesOf(missingLink), data[1].map(String));
+  const unavailable = create();
+  init([unavailable], { location: { search: "?layout=2" } });
+  assert.equal(unavailable.querySelector("[data-layout-link-row]").hidden, true);
+  assert.deepEqual(valuesOf(unavailable), data[0].map(String));
+}
+
+// The memory exercise uses the exact published Layout 2 positions.
+assert.equal(layouts[1][0], "circle");
+assert.equal(layouts[1][1], "star");
+const exercisePairs = [[7, 2], [10, 1], [3, 8], [4, 9], [5, 12], [6, 11]];
+assert.equal(new Set(exercisePairs.flat()).size, 12);
+exercisePairs.forEach(([a, b]) => assert.equal(layouts[1][a - 1], layouts[1][b - 1]));
+console.log("Pair layout links passed: 14 fixed links, invalid/duplicate queries, reset/today/switch, fresh replay, missing URL API/markup/model, no storage and memory exercise.");

@@ -2,6 +2,7 @@
 title: "Memory Matching Tips: Remember Places, Not Just Pictures"
 description: "Learn a simple way to approach memory matching games: name card positions, use each reveal, and follow an eight-card worked example."
 date: 2026-09-12T14:40:00+09:00
+lastmod: 2026-10-23T01:26:00+09:00
 draft: false
 tags: ["memory pairs", "matching games", "beginner guide"]
 categories: ["Puzzle Tips"]
@@ -49,3 +50,11 @@ The remaining pairs in the example are **3 with 5** and **4 with 6**. Every card
 Try [Remember the Star Pair](/daily/challenges/remember-the-star-pair/) for a short look-and-recall exercise, then [play Memory Pairs](/daily/memory-pairs/). Reset restores the same board, so a second completion is a chance to practise familiar locations, not a new difficulty level.
 
 For a different kind of matching, [Make 10](/daily/number-pairs/) keeps every number visible and asks you to find totals instead of remembered symbols. You can browse [Daily Puzzles](/daily/) and [Puzzlepia Games](/games/) whenever you want a different kind of break.
+
+## Return to a familiar board
+
+Memory Pairs offers seven fixed layouts. Its daily pick changes at 00:00 UTC and repeats weekly, but you can revisit a particular layout without waiting for its turn. Use the layout link above the game board and bookmark the page it opens. The link keeps the arrangement, not your progress; your cards start face down again.
+
+Try [Two Reveals, One Remembered Pair](/daily/challenges/two-reveals-one-pair/) for a short example using the real twelve-card Layout 2. Look at two different symbols, then use one remembered location to complete a pair. The exercise links straight to [Memory Pairs: Layout 2](/daily/memory-pairs/?layout=2), so the positions agree even if today's pick is different.
+
+Choose the same layout to practise a familiar route, or another layout for a fresh arrangement. Neither choice is a test of your memory ability. There is no timer, attempt score, streak, or penalty for taking a break.

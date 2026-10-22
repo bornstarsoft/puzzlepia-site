@@ -51,7 +51,7 @@
   goal: "Find six matching symbol pairs"
   topic: memory
   guide: "/blog/memory-matching-tips/"
-  challenge: "/daily/challenges/remember-the-star-pair/"
+  challenge: "/daily/challenges/two-reveals-one-pair/"
 "/daily/number-pairs/":
   preview: number-pairs
   width: 400

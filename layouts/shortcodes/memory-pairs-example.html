@@ -1,0 +1,19 @@
+{{ $number := int (.Get "layout" | default "2") }}
+{{ if or (lt $number 1) (gt $number (len site.Data.memory_pairs)) }}
+  {{ errorf "Unknown memory-pairs-example layout %d in %s" $number .Page.File.Path }}
+{{ else }}
+{{ $cards := index site.Data.memory_pairs (sub $number 1) }}
+<details class="puzzle-reveal">
+  <summary>Look at the whole board (optional)</summary>
+<div class="word-example number-example memory-example">
+  <table>
+    <caption>Memory Pairs: Layout {{ $number }} (all faces shown)</caption>
+    <tbody>
+{{ range $row := seq 0 2 }}
+      <tr>{{ range $col := seq 0 3 }}{{ $position := add (mul $row 4) $col }}<td>{{ index $cards $position | humanize }}<small>Card {{ add $position 1 }}</small></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+</details>
+{{ end }}

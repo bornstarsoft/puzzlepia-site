@@ -510,6 +510,7 @@
 .memory-picker label { display: grid; gap: 6px; min-width: 0; flex: 1 1 140px; font-weight: 750; }
 .memory-picker select { width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: white; color: var(--ink); font: inherit; }
 .memory-picker .button { min-height: 44px; }
+.pair-layout-link { display: inline-flex; align-items: center; min-height: 44px; }
 .memory-layout-note { max-width: 480px; font-size: 0.9rem; }
 
 @media (min-width: 720px) {

@@ -31,8 +31,10 @@ The small numbers identify card positions, not matching values. Colors are only 
 
 Today's pick rotates through **seven fixed layouts**, changing at 00:00 UTC and repeating each week. These are curated practice boards, not newly generated puzzles. Choose any layout to practice, or try the next one after finding all six pairs.
 
-An open board stays in place when the date changes. **Today's layout** opens the current pick; **Reset puzzle** restarts the layout you are playing. Switching layouts clears the board. Progress is not saved, so reopening this page starts today's pick again.
+An open board stays in place when the date changes. **Today's layout** opens the current pick; **Reset puzzle** restarts the layout you are playing. Switching layouts clears the board.
+
+Want the same board next time? Use **Open a fresh Layout** above the cards, then bookmark that page. Its link opens the chosen layout on any date. The regular game address opens today's pick. Neither link saves your progress: every new visit starts a fresh board.
 
 ## A little help
 
-Read [Memory Matching Tips: Remember Places, Not Just Pictures](/blog/memory-matching-tips/) or try the short [Remember the Star Pair](/daily/challenges/remember-the-star-pair/) exercise. For another quick game, find number partners in [Make 10](/daily/number-pairs/). Explore [all Daily Puzzles](/daily/) or the [Games hub](/games/) for a different pace.
+Read [Memory Matching Tips: Remember Places, Not Just Pictures](/blog/memory-matching-tips/) or try [Two Reveals, One Remembered Pair](/daily/challenges/two-reveals-one-pair/), which connects directly to Layout 2. For a smaller warmup, try [Remember the Star Pair](/daily/challenges/remember-the-star-pair/). For another quick game, find number partners in [Make 10](/daily/number-pairs/). Explore [all Daily Puzzles](/daily/) or the [Games hub](/games/) for a different pace.

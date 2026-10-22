@@ -1,11 +1,39 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NUMBER-VARIETY
-Phase: deployed and validated; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-PAIR-LINKS
+Phase: implementation and validation; owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; pair layout links, worked memory content and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested another suitable content/retention improvement and deployment,
+  keeping the homepage simple. Starting HEAD `c938699`; clean main matches
+  origin/main after fetch. No other active writer. GitHub exception applies.
+- Add stable layout links for Memory Pairs and Make 10, plus a short worked
+  memory challenge that opens its exact board. Refresh existing guide links.
+- Preserve daily rotation, matching/reset, no pair-progress storage, homepage,
+  other games, external links and hosting settings. No new dependencies.
+- Local QA: PASS. Four-width (390/430/768/1280px) matrix passed all fourteen
+  fixed links and 112 pair-game completions, reset/replay, next links and touch.
+- History QA found browser-restored select values could differ from the board.
+  Added a pageshow resync without resetting progress. Restarted Hugo to refresh
+  its fingerprinted script (static-file sync alone retained the old resource).
+  Final back/forward checks passed at all four widths.
+- Final 32 core/content page checks passed, including challenge data and exact
+  CTAs, daily filters, UTC rollover, invalid/duplicate queries, footer links,
+  Word Search save/hint/reset/opt-out and Block Puzzle completion/reset. Ring,
+  Number and Color starters initialize/reset. No page/console errors or overflow
+  in final test contexts. Dev-server restart WebSocket errors were not site errors.
+- Sixteen further pair completions passed with keyboard, missing model, blocked
+  storage or missing URL API. No-JavaScript game explanations and native challenge
+  disclosures work. Mobile screenshots inspected.
+- Three test scripts, check_site, Hugo and diff checks pass. 2,489 internal
+  references across 77 HTML pages resolve. Canonicals/sitemap contain base game
+  URLs only; the new challenge is included. Generated output is ignored/untracked.
+- Production verification: NOT_RUN, pending approved push.
+
+## Previous Make 10 Work
 
 - Owner requested suitable content and another small retention improvement,
   keeping the home simple and deploying after validation on 2026-10-23.
@@ -280,12 +308,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Make 10 variety and worked content implemented, deployed and validated.
-HEAD/WIP: Application `cc86ca8` is live; this documentation handoff records QA.
-QA: PASS for local unit/browser/build checks and production verification.
+DONE: Pair layout links and worked memory content implemented and locally validated.
+HEAD/WIP: Based on `c938699`; intended changes await commit and deployment.
+QA: PASS for local checks; production NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review owner-provided Search Console/Web Analytics observations
-before choosing another game or content improvement; keep the homepage compact.
+NEXT_SINGLE_TASK: Push validated changes through the approved GitHub path, verify
+Cloudflare Pages and live game/content, then record the release handoff.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

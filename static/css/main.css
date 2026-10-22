@@ -1690,3 +1690,8 @@ img {
   font-weight: 400;
   color: var(--muted);
 }
+
+.memory-example td {
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}

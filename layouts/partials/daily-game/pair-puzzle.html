@@ -23,6 +23,7 @@
     <button class="button button--secondary" type="button" data-{{ $prefix }}-today>Today's layout</button>
   </div>
   <p id="{{ $prefix }}-layout-note" class="memory-layout-note" data-{{ $prefix }}-note>Seven fixed layouts repeat weekly. Today's pick changes at 00:00 UTC. Changing layouts starts a fresh board.</p>
+  <p data-layout-link-row hidden><a class="pair-layout-link" data-layout-link href="{{ .RelPermalink }}">Open this layout again</a></p>
   <p data-unavailable>The interactive board needs JavaScript. You can still read the guide and try the linked challenge below.</p>
   <div class="pair-grid" aria-label="{{ if $memory }}Three rows of four memory cards{{ else }}Four rows of four number tiles{{ end }}">
 {{ range $index, $card := $cards }}

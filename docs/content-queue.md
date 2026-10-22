@@ -66,6 +66,10 @@ Next: a second Sudoku deduction example and a domino-placement exercise. Build o
 
 ## Blog Topic Ideas
 
+Phase 7G follow-through: refreshed Memory Matching Tips and added Two Reveals,
+One Remembered Pair. Memory and Make 10 exercises now open their exact playable
+layouts. Prefer another puzzle type next rather than more introductory pair tips.
+
 1. Easy Word Search Tips for Beginners
 2. Ring Puzzle Strategy for Small Boards
 3. Puzzle Habits for Busy Weekdays

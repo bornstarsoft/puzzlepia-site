@@ -37,6 +37,8 @@
     var layoutControls = layoutElement("controls");
     var layoutNote = layoutElement("note");
     var layoutData = layoutElement("layouts");
+    var layoutLink = root.querySelector("[data-layout-link]");
+    var layoutLinkRow = root.querySelector("[data-layout-link-row]");
     var faces = {};
     if (model && picker && today && nextLayout && layoutControls && layoutNote &&
         layoutData && tiles.length === (mode === "memory" ? 12 : 16)) {
@@ -131,6 +133,12 @@
       });
       layoutNote.textContent = "Layout " + (index + 1) +
         ". Seven fixed layouts repeat weekly; today's pick changes at 00:00 UTC. Changing layouts starts a fresh board.";
+      if (layoutLink && layoutLinkRow) {
+        layoutLink.href = (mode === "memory" ? "/daily/memory-pairs/" : "/daily/number-pairs/") +
+          "?layout=" + (index + 1);
+        layoutLink.textContent = "Open a fresh Layout " + (index + 1);
+        layoutLinkRow.hidden = false;
+      }
       resetGame(false);
       feedback("Layout " + (index + 1) + " ready. " +
         (mode === "memory" ? "Turn over two cards to begin." : "Find two numbers that add up to 10."));
@@ -155,7 +163,20 @@
       nextLayout.addEventListener("click", function () {
         if (found.size === tiles.length) loadLayout((layoutIndex + 1) % layouts.length, true);
       });
-      loadLayout(model.today(), false);
+      var initialLayout = model.today();
+      // Explicit links reopen a fixed board, without saving or restoring progress.
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var requested = params.get("layout");
+        if (params.getAll("layout").length === 1 && /^[1-7]$/.test(requested)) {
+          initialLayout = Number(requested) - 1;
+        }
+      } catch (_) { /* Missing URL APIs keep the normal daily pick. */ }
+      loadLayout(initialLayout, false);
+      // Browser history may restore the select value after scripts initialize.
+      if (typeof window.addEventListener === "function") {
+        window.addEventListener("pageshow", function () { picker.value = String(layoutIndex); });
+      }
       layoutControls.hidden = false;
       nextLayout.hidden = false;
     } else if (layoutNote) {

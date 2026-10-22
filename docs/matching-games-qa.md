@@ -88,6 +88,29 @@ Use the small corner numbers as positions. Check at 390, 430, 768, and desktop w
   when refreshing guides; use lastmod for the update.
 - Actual local and production results are recorded in CURRENT_STATE.md.
 
+## Phase 7G Fixed Pair Layout Links
+
+- Both games accept exactly one `layout` parameter with a value from `1` to `7`.
+  Invalid, empty, out-of-range or duplicate values use today's pick. Other URL
+  parameters are not copied into the generated link. Canonical URLs and sitemap
+  entries remain the base game URLs, without query strings.
+- The link above the board opens a fresh chosen layout on any date. It does not
+  save matches, change browser storage or change the current URL when choosing
+  another layout. Open that link before bookmarking the selected arrangement.
+- Published layout numbers are permanent references: do not reorder or replace
+  the existing data arrays casually. New data needs new identifiers and tests.
+- Test all fourteen game/layout combinations at 390/430/768/1280px. Complete,
+  reset and complete again, follow the layout link, and confirm fresh state.
+  Check selector/next/today link updates and reset before/after completion.
+- Test explicit links across UTC rollover and reload; base URLs still rotate.
+  Test invalid/duplicate parameters, back/forward navigation, keyboard/touch,
+  missing model/URL APIs, malformed data, disabled JavaScript and blocked storage.
+- Verify the memory challenge's 1/2 mismatch then 7/2 match on Layout 2; its
+  optional table comes from the game data. Check the Make 10 challenge CTA opens
+  Layout 2 directly. Both guides and other existing games must remain usable.
+- No native Safari or retention outcome is implied by Chromium checks. Actual
+  local and production evidence belongs in CURRENT_STATE.md.
+
 Local validation on 2026-10-15 passed: 56 Memory completions across all seven
 layouts and four widths, four fallback/keyboard completions, plus 16 regression
 completions across Make 10, Block Puzzle and Word Search. Reset, rollover, touch,

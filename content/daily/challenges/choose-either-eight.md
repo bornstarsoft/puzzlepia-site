@@ -36,6 +36,6 @@ There is no hidden preferred partner. Correct pairs leave balanced partners behi
 
 ## Play both routes
 
-[Open Make 10](/daily/number-pairs/) and choose **Layout 2**. Try one route, reset the same layout, then try the other. For the matching rule and a smaller example, read [Make 10 Puzzle Tips](/blog/make-ten-number-puzzle-tips/).
+[Play Make 10: Layout 2](/daily/number-pairs/?layout=2). Try one route, reset the same layout, then try the other. This link always starts a fresh copy of the board above. For the matching rule and a smaller example, read [Make 10 Puzzle Tips](/blog/make-ten-number-puzzle-tips/).
 
 Prefer another kind of number puzzle? Browse the [Games hub](/games/), or try [Daily Number Puzzle](/daily/number-puzzle/) for ascending-order taps.
