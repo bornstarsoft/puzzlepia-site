@@ -7,6 +7,9 @@
   topic: word
   guide: "/blog/word-search-directions-worked-example/"
   challenge: "/daily/challenges/star-diagonal-word-search/"
+  practice:
+    - "/daily/challenges/kiwi-backward-word-search/"
+    - "/daily/challenges/star-diagonal-word-search/"
 "/daily/block-puzzle/":
   preview: block-puzzle
   width: 420
@@ -16,6 +19,10 @@
   topic: block
   guide: "/blog/block-puzzle-space-management/"
   challenge: "/daily/challenges/find-the-square-space/"
+  practice:
+    - "/daily/challenges/find-the-square-space/"
+    - "/daily/challenges/domino-before-the-square/"
+    - "/daily/challenges/open-board-block-challenge/"
 "/daily/ring-puzzle/":
   preview: ring-puzzle
   width: 360
@@ -25,6 +32,10 @@
   topic: color
   guide: "/blog/ring-puzzle-basics/"
   challenge: "/daily/challenges/three-rings-three-spaces/"
+  practice:
+    - "/daily/challenges/ring-size-practice/"
+    - "/daily/challenges/three-rings-three-spaces/"
+    - "/daily/challenges/two-rings-one-cell/"
 "/daily/number-puzzle/":
   preview: number-puzzle
   width: 420
@@ -52,6 +63,10 @@
   topic: memory
   guide: "/blog/memory-matching-tips/"
   challenge: "/daily/challenges/two-reveals-one-pair/"
+  practice:
+    - "/daily/challenges/remember-the-star-pair/"
+    - "/daily/challenges/two-reveals-one-pair/"
+    - "/daily/challenges/remember-two-pair-locations/"
 "/daily/number-pairs/":
   preview: number-pairs
   width: 400
@@ -61,3 +76,7 @@
   topic: number
   guide: "/blog/make-ten-number-puzzle-tips/"
   challenge: "/daily/challenges/choose-either-eight/"
+  practice:
+    - "/daily/challenges/find-the-ten-pairs/"
+    - "/daily/challenges/choose-either-eight/"
+    - "/daily/challenges/four-fives-two-pairs/"

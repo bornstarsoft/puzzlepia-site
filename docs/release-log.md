@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 7N Contextual Practice Paths: 2026-10-23
+
+- Connected existing Word Search, Block, Ring, Memory and Make 10 practice rounds directly from each game's existing lower-page follow-up. Ordinary ordered links work without JavaScript; readers can choose any round or bookmark it for a later break.
+- Kept guide links and the original single-challenge fallback for Number Puzzle and Color Match. Hugo rejects missing, draft, future or non-challenge practice destinations. No new homepage section, gameplay, storage or analytics.
+- The exercises are fixed and do not save progress. No measured return-visit improvement is claimed; validation and deployment evidence belongs in [current work state](CURRENT_STATE.md).
+- After `hugo`, run `python3 tools/check_practice_paths.py` to check generated paths and isolated missing/draft/future/non-challenge fixtures. No extra Python packages or changes to real content are needed.
+
 ## Phase 7M Three-Round Make 10 Practice: 2026-10-23
 
 - Added Four Fives, Two Pairs using actual Layout 4, with three valid groupings and an optional full-board explanation. Linked it with the two existing number-pair challenges and the Make 10 guide as three short rounds.

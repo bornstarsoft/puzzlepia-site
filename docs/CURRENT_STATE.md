@@ -1,11 +1,39 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MAKE10-PRACTICE
-Phase: deployed and verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-PRACTICE-DISCOVERY
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-PRACTICE-DISCOVERY; contextual practice links, checks and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested another useful return-visit improvement and live deployment
+  while keeping the homepage simple. Starting HEAD `f7ab407`; clean main matches
+  origin/main after fetch. The repository-specific GitHub exception applies.
+- Expand the existing lower-page follow-up on five playable puzzles into
+  curated two/three-round practice links. Reuse published challenges and guides;
+  keep Number Puzzle/Color Match fallbacks. No new public section or tracking.
+- Preserve homepage, game code/data, external URLs, storage, analytics, Phaser
+  output and hosting configuration. Production verification: NOT_RUN.
+- Local QA: PASS. Seven existing dependency-free test scripts and the new
+  Python standard-library practice-path check pass. Isolated Hugo fixtures
+  verify published links and reject missing, draft, future or wrong-type pages.
+  The initial test fixture omitted the existing catalog's guide field; fixing
+  that fixture allowed the intended guard checks, without changing site logic.
+- Chromium at 390/430/768/1280px passed 48 core/game page checks, 56 practice
+  link visits/back navigations, guide links, 44px minimum link targets and
+  sixteen Memory/Make 10 completions/resets. All five paths work with JavaScript
+  disabled and keyboard navigation. Final mobile/desktop screenshots inspected;
+  links were given explicit color and underlines after visual review.
+- Word Search, Block, Ring and Number Puzzle passed eight further completions
+  and resets at 390/1280px; remaining starters initialize/reset. Footer links,
+  no console/page errors and no horizontal overflow pass in the final matrices.
+- check_site, Hugo --gc --minify and diff checks pass. 2,668 internal references
+  across 83 HTML files resolve; IDs are unique. Seven game canonicals,
+  descriptions/JSON-LD and sitemap entries, plus robots, pass. Generated output
+  stays ignored/untracked; no external game links or game scripts changed.
+
+## Previous Make 10 Practice Work
 
 - Owner requested suitable content and another small return-visit improvement,
   keeping the homepage simple, with validation and live deployment. Starting
@@ -634,10 +662,9 @@ LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round Make 10 practice deployed and verified on puzzlepia.com.
-HEAD/WIP: Application `929c592` deployed; this documentation-only follow-up
-records the evidence. No outstanding implementation WIP.
-QA: PASS locally and on production.
+DONE: Contextual practice paths implemented and validated locally.
+HEAD/WIP: Starting HEAD `f7ab407`; six intended files ready for commit.
+QA: PASS locally. Production verification NOT_RUN; approved deployment next.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

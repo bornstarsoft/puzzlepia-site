@@ -746,11 +746,28 @@ img {
 }
 
 .puzzle-followup h2 { font-size: 1.4rem; line-height: 1.3; }
-.puzzle-followup__links { display: grid; gap: 20px; }
+.puzzle-followup__links { display: grid; gap: 20px; align-items: start; }
 .puzzle-followup__links a { display: grid; gap: 5px; min-height: 44px; text-decoration: none; }
 .puzzle-followup__links a:hover strong { text-decoration: underline; }
 .puzzle-followup__links span { font-size: 0.8rem; color: var(--purple-dark); font-weight: 750; }
 .puzzle-followup__links small { color: var(--muted); }
+
+.practice-path { min-width: 0; }
+.practice-path h3 { margin: 0 0 8px; font-size: 1.05rem; line-height: 1.4; }
+.practice-path p { margin: 0 0 12px; }
+.practice-path__rounds { margin: 0 0 12px; padding-left: 1.5rem; }
+.practice-path__rounds li { padding-left: 4px; }
+.practice-path__rounds li + li { border-top: 1px solid var(--line); }
+.practice-path__rounds a {
+  align-content: center;
+  padding: 8px 0;
+  color: var(--purple-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.practice-path__rounds a:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 2px; }
+.practice-path .practice-path__note { color: var(--muted); font-size: 0.9rem; }
 
 @media (min-width: 760px) {
   .game-card--playable { grid-template-columns: minmax(0, 1fr); }

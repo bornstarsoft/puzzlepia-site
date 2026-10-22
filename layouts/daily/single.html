@@ -25,8 +25,29 @@
 {{ with $.Site.GetPage .guide }}
       <a href="{{ .RelPermalink }}"><span>Read a guide</span><strong>{{ .Title }}</strong><small>{{ .ReadingTime }} min read</small></a>
 {{ end }}
+{{ with .practice }}
+      <nav class="practice-path" aria-labelledby="practice-path-title">
+        <h3 id="practice-path-title">{{ len . }} short practice rounds</h3>
+        <p>One small question at a time, with optional hints and answers. Choose any round for this break or your next.</p>
+        <ol class="practice-path__rounds">
+{{ range . }}
+{{ with $.Site.GetPage . }}
+{{ if and .IsPage .Params.challenge (not .Draft) (not (.PublishDate.After now)) }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ else }}
+{{ errorf "Practice path on %s requires a published challenge: %s" $.RelPermalink .RelPermalink }}
+{{ end }}
+{{ else }}
+{{ errorf "Missing practice challenge on %s: %s" $.RelPermalink . }}
+{{ end }}
+{{ end }}
+        </ol>
+        <p class="practice-path__note">Fixed exercises, no saved progress. Bookmark a round to return to the same question.</p>
+      </nav>
+{{ else }}
 {{ with $.Site.GetPage .challenge }}
       <a href="{{ .RelPermalink }}"><span>Try a short challenge</span><strong>{{ .Title }}</strong><small>Hint and answer included</small></a>
+{{ end }}
 {{ end }}
     </div>
   </section>
