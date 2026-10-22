@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-LINKS
-Phase: local validation complete; owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; Daily collection links and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; 2026-10-23)
+Phase: deployed and verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-LINKS; 2026-10-23)
 
 ## Current Approved Work
 
@@ -34,8 +34,30 @@ LAST_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; 2026-10-23)
   across 81 HTML files resolve. Four canonicals/descriptions/JSON-LD, base-only
   sitemap entries and robots pass. Existing external URLs are unchanged;
   generated public/resources output remains ignored and untracked.
-- Production verification: NOT_RUN. Native Safari and retention measurement
+- Production verification: PASS. Native Safari and retention measurement
   remain NOT_RUN.
+
+## Collection Links Production Verification: 2026-10-23
+
+- Application commit `5ff9b34` was pushed through the approved GitHub path.
+  Cloudflare Pages completed successfully at 2026-10-22 17:46:56 UTC
+  (2026-10-23 02:46:56 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 132 collection/core checks,
+  including all eight topics at each width, reload, back/forward from a
+  challenge, expanded-list restoration, fresh-page anchor links, three guide
+  CTAs and all eight footer destinations. All seven playable cards remain.
+- Blog search/filter/empty/show-all behavior, no-JavaScript content, keyboard
+  filtering, blocked history and missing URL API passed. No console/page errors
+  or horizontal overflow in final matrices. Live mobile screenshot inspected.
+- Word Search, Block, Ring and Number Puzzle passed eight completions/resets
+  at 390/1280px; remaining starter games initialize/reset. Existing Sudoku
+  target styles remain intact.
+- Four canonical/description/JSON-LD checks pass. Sitemap retains base URLs
+  without topic/view variants, and robots retains its sitemap link. Live CSS
+  and discovery JavaScript have correct MIME types and matching SHA-256 hashes.
+- Homepage, gameplay, external destinations, storage, Phaser output, analytics
+  and Cloudflare/DNS settings remain unchanged. Functional checks do not
+  establish increased return visits or business outcomes.
 
 ## Previous Ring Practice Work
 
@@ -514,11 +536,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Daily collection links implemented and locally validated.
-HEAD/WIP: Based on `5391442`; current changes not yet committed/deployed.
-QA: PASS locally; production NOT_RUN.
+DONE: Daily collection links deployed and verified on puzzlepia.com.
+HEAD/WIP: Application `5ff9b34` deployed; this documentation-only follow-up
+records the evidence. No outstanding implementation WIP.
+QA: PASS locally and on production.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Deploy through the approved GitHub path and verify the live site.
+NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence
+before selecting another content batch; keep the homepage simple.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

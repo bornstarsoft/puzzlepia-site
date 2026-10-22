@@ -5,6 +5,7 @@
 - Made Daily Challenge topics and expanded lists addressable, with a native collection link and browser back/forward restoration. Related ring, block and number guides now link to their collections.
 - Preserved all seven playable games, homepage, game rules, Blog search, external links, storage, Phaser output and hosting settings. Added defensive URL/history tests and a fingerprinted discovery script; no retention gain is claimed.
 - See [collection link behavior and QA](challenge-collection-links.md) and [current work state](CURRENT_STATE.md) for validation/deployment evidence.
+- Deployed `5ff9b34`; Cloudflare Pages succeeded at 2026-10-23 02:46:56 KST. Live four-width QA passed 132 collection/core checks, all topic links, history/reload/expanded restoration, guide navigation, Blog search and fallbacks. Eight existing-game completions/resets, SEO/sitemap and asset fingerprints passed. Native Safari and retention gains were not tested.
 
 ## Phase 7J Ring Placement Practice: 2026-10-23
 
