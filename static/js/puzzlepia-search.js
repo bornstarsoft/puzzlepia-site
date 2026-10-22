@@ -18,6 +18,8 @@
   var more = root.querySelector("[data-search-more]");
   var moreWrap = root.querySelector("[data-search-more-wrap]");
   var start = document.querySelector("[data-search-start]");
+  var savedLink = root.querySelector("[data-search-link]");
+  var savedLinkWrap = root.querySelector("[data-search-link-wrap]");
   var categoryButtons = Array.prototype.slice.call(
     root.querySelectorAll("[data-search-category]")
   );
@@ -25,6 +27,9 @@
   var resultLimit = 24;
   var matches = [];
   var shown = 0;
+  var batches = 1;
+  var allowedCategories = ["all", "playable", "games", "guides", "challenges"];
+  var linked = typeof window.URLSearchParams === "function";
 
   if (!form || !input || !clear || !status || !results || !empty ||
       !start || !allTypes || !more || !moreWrap) {
@@ -126,38 +131,43 @@
   }
 
   function updateURL(query) {
-    if (!window.history || !window.history.replaceState) {
-      return;
-    }
+    if (!linked) return;
 
-    var parameters = new URLSearchParams();
+    var parameters = new window.URLSearchParams();
     if (query) {
       parameters.set("q", query);
     }
     if (activeCategory !== "all") {
       parameters.set("type", activeCategory);
     }
+    if (batches > 1) parameters.set("batch", String(batches));
 
     var suffix = parameters.toString();
     var nextURL = window.location.pathname + (suffix ? "?" + suffix : "");
+    if (savedLink && savedLinkWrap) {
+      savedLink.href = nextURL;
+      savedLinkWrap.hidden = matches.length === 0;
+    }
+    if (!window.history || !window.history.replaceState) return;
     if (nextURL === window.location.pathname + window.location.search) {
       return;
     }
     try {
-      window.history.replaceState(null, "", nextURL);
+      window.history.replaceState(window.history.state, "", nextURL);
     } catch (error) {
       // Search remains usable if the browser restricts history updates.
     }
   }
 
-  function appendResults() {
-    var next = matches.slice(shown, shown + resultLimit);
+  function appendResults(count) {
+    var next = matches.slice(shown, shown + (count || resultLimit));
     var fragment = document.createDocumentFragment();
     next.forEach(function (match) {
       fragment.appendChild(createResult(match.entry));
     });
     results.appendChild(fragment);
     shown += next.length;
+    batches = Math.max(1, Math.ceil(shown / resultLimit));
     moreWrap.hidden = shown >= matches.length;
     status.textContent = shown < matches.length
       ? "Showing " + shown + " of " + matches.length + " results."
@@ -185,14 +195,14 @@
       );
     });
 
-    updateURL(rawQuery);
-
     if ((query.length < 2 && query.length > 0) ||
         (!query && (activeCategory === "all" || rawQuery))) {
       status.textContent =
         query.length === 1
           ? "Enter one more character to search."
           : "Search by name or choose a puzzle type.";
+      batches = 1;
+      updateURL(rawQuery);
       return;
     }
 
@@ -210,7 +220,8 @@
         return b.score - a.score || a.entry.title.localeCompare(b.entry.title);
       });
 
-    appendResults();
+    appendResults(batches * resultLimit);
+    updateURL(rawQuery);
     empty.hidden = matches.length !== 0;
     start.hidden = matches.length !== 0;
   }
@@ -218,14 +229,19 @@
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+      render();
     });
   }
 
-  input.addEventListener("input", render);
+  input.addEventListener("input", function () {
+    batches = 1;
+    render();
+  });
 
   more.addEventListener("click", function () {
     var previousCount = shown;
     appendResults();
+    updateURL(input.value.slice(0, 100).trim());
     var firstNewResult = results.children[previousCount];
     if (firstNewResult) {
       firstNewResult.querySelector("h2 a").focus();
@@ -234,6 +250,7 @@
 
   allTypes.addEventListener("click", function () {
     activeCategory = "all";
+    batches = 1;
     render();
     input.focus();
   });
@@ -241,28 +258,42 @@
   clear.addEventListener("click", function () {
     input.value = "";
     activeCategory = "all";
+    batches = 1;
     input.focus();
     render();
   });
 
   categoryButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      activeCategory = button.getAttribute("data-search-category") || "all";
+      var category = button.getAttribute("data-search-category");
+      activeCategory = allowedCategories.indexOf(category) !== -1 ? category : "all";
+      batches = 1;
       render();
     });
   });
 
   function restoreURL() {
-    var parameters = new URLSearchParams(window.location.search);
-    var category = parameters.get("type") || "all";
-    var allowedCategories = ["all", "playable", "games", "guides", "challenges"];
-    activeCategory = allowedCategories.indexOf(category) !== -1 ? category : "all";
-    input.value = (parameters.get("q") || "").slice(0, 100);
+    activeCategory = "all";
+    batches = 1;
+    input.value = "";
+    if (linked) {
+      var parameters = new window.URLSearchParams(window.location.search);
+      var category = parameters.getAll("type").length === 1 ? parameters.get("type") : "all";
+      activeCategory = allowedCategories.indexOf(category) !== -1 ? category : "all";
+      if (parameters.getAll("q").length === 1) input.value = parameters.get("q").slice(0, 100);
+      var batch = parameters.get("batch") || "";
+      // Bound URL-controlled rendering to the actual local index size.
+      if (parameters.getAll("batch").length === 1 && /^[1-9][0-9]{0,5}$/.test(batch)) {
+        batches = Math.min(Number(batch), Math.max(1, Math.ceil(entries.length / resultLimit)));
+      }
+    }
     render();
   }
 
   form.hidden = false;
-  window.addEventListener("pageshow", restoreURL);
-  window.addEventListener("popstate", restoreURL);
+  if (linked) {
+    window.addEventListener("pageshow", restoreURL);
+    window.addEventListener("popstate", restoreURL);
+  }
   restoreURL();
 })();

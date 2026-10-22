@@ -1,5 +1,22 @@
 # Puzzlepia Release Log
 
+## Phase 7S Search Return Links: 2026-10-23
+
+- Search now retains expanded results in its URL (`q`, `type`, optional `batch`)
+  for back/reload and an ordinary "Open these results again" link. Query/type
+  changes reset to the first 24 results; URL batches are bounded by index size.
+- Added three existing worked exercises to the empty/start view, with 44px
+  touch targets and Hugo guards against missing/draft/future practice picks.
+- Fingerprinted the search script; kept collection fallback links, no-JavaScript
+  practice reading, search noindex/sitemap exclusion and original ranking.
+  No Home, gameplay, new storage, external destination or analytics changes.
+- Local checks: `node tools/test_search.cjs` and (after Hugo)
+  `python3 tools/check_search.py`. Ten Node suites, four Python content checks,
+  Hugo and diff checks pass. Four-width local Chromium QA passed 12 result
+  restorations, 12 practice visits and 24 core/search page checks. Keyboard,
+  fallback, metadata and existing-game regression checks pass; no final console
+  errors or overflow. Mobile practice links were enlarged after initial QA.
+
 ## Phase 7R Color Practice Path: 2026-10-23
 
 - Improved the existing pink, mint and gold challenges with the real fixed board,

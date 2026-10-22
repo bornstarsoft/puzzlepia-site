@@ -78,6 +78,7 @@
       </div>
     </form>
     <p class="site-search__status" data-search-status role="status" aria-live="polite">Browse a collection below.</p>
+    <p data-search-link-wrap hidden><a class="site-search__return-link" href="/search/" data-search-link>Open these results again</a></p>
     <div class="search-results" id="search-results" data-search-results></div>
     <div class="discovery-more" data-search-more-wrap hidden>
       <button class="button button--secondary" type="button" aria-controls="search-results" data-search-more>Show more results</button>
@@ -110,6 +111,17 @@
         <span class="quick-pick__arrow" aria-hidden="true">&rarr;</span>
       </a>
     </div>
+    <h3>Three short practice picks</h3>
+    <ul class="practice-path__rounds">
+{{ range slice "/daily/challenges/kiwi-backward-word-search/" "/daily/challenges/find-the-square-space/" "/daily/challenges/pink-color-match-challenge/" }}
+{{ $pick := site.GetPage . }}
+{{ if and $pick (not $pick.Draft) (not ($pick.PublishDate.After now)) $pick.Params.challenge }}
+      <li><a href="{{ $pick.RelPermalink }}">{{ $pick.Title }}</a></li>
+{{ else }}
+  {{ errorf "Search practice pick must be a published challenge: %s" . }}
+{{ end }}
+{{ end }}
+    </ul>
   </section>
 
   <noscript>

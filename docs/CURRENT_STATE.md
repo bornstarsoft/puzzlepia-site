@@ -1,11 +1,38 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COLOR-PRACTICE
-Phase: production verification complete; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-SEARCH-RETURN
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; search return-state and existing practice discovery; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved another suitable return-visit improvement, keeping Home simple,
+  followed by validation and live deployment. Starting HEAD `11e2687`; clean
+  main matches origin/main after fetch. Existing GitHub exception applies.
+- Preserve expanded search results through URL state and back/reload; provide
+  an ordinary reusable search link and three existing worked practice picks.
+  Keep Home, gameplay, analytics, storage and external destinations unchanged.
+- Local QA: PASS. Hugo/check_site/diff checks, ten dependency-free Node suites
+  and four Python content checks pass. Search index has 72 unique published
+  entries; draft/future/missing/type guards pass in isolated Hugo fixtures.
+- Chromium at 390/430/768/1280px passed 24 page checks, 12 back/reload/reusable
+  link restorations and 12 practice visits. Expanded result order and back
+  scroll, all category totals, more-result keyboard focus and empty recovery
+  pass. Fixed 35px practice links found during QA to at least 44px.
+- Five fallback modes, seven invalid/bounded URL cases and keyboard more
+  pass; no storage is used. Missing JavaScript/index still leaves collections
+  and native exercise disclosures usable. Eight existing-game completions and
+  eight starter reset checks pass, with no console/page errors or overflow.
+- Mobile/desktop start/result screenshots inspected. Search noindex/canonical
+  and sitemap exclusion, eight public page metadata/schema/sitemap checks,
+  robots and two asset SHA-256/MIME checks pass. All 2,489 internal references
+  across 84 generated HTML files resolve; IDs are unique.
+- Generated output stays ignored/untracked; Home, game logic and external
+  destinations are unchanged. Deployment: NOT_RUN. NEXT_SINGLE_TASK: commit,
+  push via approved GitHub exception and verify the live release.
+
+## Previous Color Practice Work
 
 - Owner requested suitable content and a return-visit improvement, with a simple
   homepage, validation and live deployment. Starting HEAD `f7c74ca`; clean main

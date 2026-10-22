@@ -39,5 +39,6 @@
   <script src="/js/puzzlepia-return.js"></script>
 {{ end }}
 {{ if eq .Section "search" }}
-  <script src="/js/puzzlepia-search.js"></script>
+{{ $search := resources.FromString "js/puzzlepia-search.js" (readFile "static/js/puzzlepia-search.js") | minify | fingerprint }}
+  <script src="{{ $search.RelPermalink }}"></script>
 {{ end }}
