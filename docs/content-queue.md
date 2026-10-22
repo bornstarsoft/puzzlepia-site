@@ -50,7 +50,7 @@ Daily Challenge prompts published:
 - Published Find the Only Square Space, Three Rings, Three Spaces, and One Certain Sudoku Number.
 - Added original static board diagrams and optional hints/solutions. These are fixed exercises, not generated daily games.
 
-Next: a second Sudoku deduction example. The domino-placement exercise was published in Phase 7H below. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
+The second Sudoku deduction and domino-placement exercises were published in Phases 7I and 7H below. Build on these examples before repeating general beginner tips. No automatic publishing schedule is configured.
 
 ## Used in Phase 7E
 
@@ -79,6 +79,18 @@ Next: a second Sudoku deduction example. The domino-placement exercise was publi
   section, game logic, account, progress storage or publishing schedule.
 - Run `node tools/test_block_practice.cjs` after changing the board data or
   explanations; all six tray orders and both domino choices are checked.
+
+## Used in Phase 7I
+
+- Added Let the Sudoku Box Decide after One Certain Sudoku Number, with optional
+  hint, deduction and full solution. The box removes a candidate that the row
+  and column alone cannot remove.
+- Refreshed Your First Sudoku Move and connected two short practice rounds.
+  All three 4x4 diagrams now use accessible HTML tables backed by checked data;
+  the original clues, solutions, publication dates and SVG assets are preserved.
+- Run `node tools/test_sudoku_practice.cjs` after changing examples. No homepage,
+  game logic, tracking or external-site feature changes. Next: observe discovery
+  before expanding the series; a ring-placement comparison is a future option.
 
 ## Blog Topic Ideas
 

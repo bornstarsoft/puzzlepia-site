@@ -1,5 +1,11 @@
 # Puzzlepia Release Log
 
+## Phase 7I Sudoku Box Practice: 2026-10-23
+
+- Added Let the Sudoku Box Decide and linked it with One Certain Sudoku Number and the existing introductory guide. Optional hints and answers support one small, certain move at a time.
+- Rendered all three teaching boards as accessible data-backed tables. Preserved existing clues, routes, original dates and SVG assets. Test-only exhaustive checks confirm unique solutions and the box-based deduction.
+- Kept the homepage, games, external destinations, storage, Phaser output, analytics and hosting settings unchanged. No retention gain is claimed. Validation and deployment evidence belongs in [current work state](CURRENT_STATE.md).
+
 ## Phase 7H Three-Round Block Practice: 2026-10-23
 
 - Added A Domino Before the Square and upgraded Open Board Block Challenge with data-backed 4x4 diagrams, optional hints and checked explanations. Preserved existing routes and publication dates.

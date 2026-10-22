@@ -1,11 +1,40 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-BLOCK-PRACTICE
-Phase: deployed and verified; observation is the next step.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-SUDOKU-PRACTICE
+Phase: release preparation; local validation passed, owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; static Sudoku practice and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content, another small return-visit improvement and
+  live deployment while keeping the homepage simple. Starting HEAD `34d9d7c`;
+  main is clean and matches origin/main after fetch. GitHub exception applies.
+- Add a box-based Sudoku deduction exercise after the existing row/column
+  exercise. Reuse native optional hints/answers and render the three teaching
+  boards from checked data, preserving all existing clues and URLs.
+- Keep the homepage, game scripts, external URLs, storage, analytics, Phaser
+  output and hosting settings unchanged. No new game or progress tracking.
+- Local QA: PASS. Five test scripts pass, including exhaustive unique-solution
+  checks for all three Sudoku boards and the row/column-versus-box deduction.
+- Initial browser inspection found JSON numeric target coordinates did not
+  match integer range indices in Hugo. Explicit integer conversion fixes the
+  target mark; final QA asserts exactly one correctly named target per board.
+- Chromium at 390/430/768/1280px passed 32 core/content page checks, exact clues,
+  box borders, target labels, native disclosures, search/filter discovery,
+  practice-round navigation and eight Number Puzzle completions/reset cycles.
+- Word Search and Block Puzzle passed four further completions/resets at
+  390/1280px. Memory Pairs, Make 10, Ring and Color starters initialize/reset.
+  Final matrices have no console/page errors or horizontal overflow.
+- JavaScript-disabled boards and keyboard answer disclosures work at 390px.
+  Mobile/desktop screenshots inspected; target background checked separately.
+- check_site, Hugo --gc --minify and diff checks pass. 2,238 internal references
+  across 80 HTML files resolve. IDs, three changed-page targets/canonicals,
+  descriptions/JSON-LD/sitemap and robots pass. Existing external links remain
+  identical; generated public/resources output is ignored and untracked.
+- Production verification: NOT_RUN until deployment.
+
+## Previous Block Practice Work
 
 - Owner requested suitable content, a small return-visit improvement and live
   deployment, while keeping the homepage simple. Starting HEAD `4a4b3b5`;
@@ -380,13 +409,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round static block practice implemented, deployed and live-verified.
-HEAD/WIP: Application `db665cc` pushed; this documentation-only handoff records
-the completed verification. No public changes remain to deploy.
-QA: PASS for local checks and direct production browser/source verification.
+DONE: Sudoku box exercise and data-backed diagrams implemented; local QA passed.
+HEAD/WIP: Based on `34d9d7c`; ready for the scoped application commit.
+QA: PASS locally; production verification NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Observe discovery of the three block practice rounds before
-choosing another content batch; consider a second worked Sudoku deduction next.
+NEXT_SINGLE_TASK: Commit and deploy through the approved GitHub path, verify
+the live practice flow and release the writer record.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

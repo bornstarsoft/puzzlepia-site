@@ -2,6 +2,7 @@
 title: "Your First Sudoku Move: Rows, Columns, and Boxes"
 description: "Learn Sudoku with a small 4x4 worked example: narrow the candidates, find one certain number, and check the complete solution."
 date: 2026-09-12T08:54:35+09:00
+lastmod: 2026-10-23T02:06:00+09:00
 draft: false
 tags:
   - "sudoku"
@@ -23,7 +24,9 @@ A blank cell belongs to all three groups at once. A number must be allowed by it
 
 ## Look at one cell
 
-{{< figure src="/images/guides/sudoku-first-move.svg" width="480" height="480" alt="Four-by-four Sudoku, with zero meaning blank. Rows: 1 0 0 4; 0 4 1 0; 2 0 4 0; 0 3 0 1. The highlighted blank is row 1, column B." caption="Find B1 first: column B, row 1. The small board uses digits 1 to 4." >}}
+A dot is an empty cell. The question mark highlights the cell to find; it is not a fixed clue.
+
+{{< sudoku-practice-board id="first-move" >}}
 
 The highlighted cell is **B1**, meaning column B, row 1. The first row already has 1 and 4, so B1 can only be **2 or 3**. These possible values are called candidates. Neither is an answer until the other groups have been checked.
 
@@ -60,7 +63,12 @@ Every fixed clue is preserved. Each row, column, and 2x2 box contains 1 to 4 exa
 
 ## Take the idea into another puzzle
 
-Try [One Certain Sudoku Number](/daily/challenges/one-certain-sudoku-number/) for a fresh board and a single target cell. For a lighter warmup, Puzzlepia's [Daily Number Puzzle](/daily/number-puzzle/) asks you to tap 1 to 16 in order. That starter is a number-order game, not Sudoku.
+Try two short practice rounds, one now or one at your next break:
+
+1. [One Certain Sudoku Number](/daily/challenges/one-certain-sudoku-number/): use a crossing column to remove one candidate.
+2. [Let the Sudoku Box Decide](/daily/challenges/let-the-sudoku-box-decide/): see why checking only the row and column can miss a certain move.
+
+Both are fixed teaching boards with optional hints and explanations. You can bookmark the next round; there is no timer, streak, or saved progress. For a lighter warmup, Puzzlepia's [Daily Number Puzzle](/daily/number-puzzle/) asks you to tap 1 to 16 in order. That starter is a number-order game, not Sudoku.
 
 When you are ready for a full-size puzzle, [play DaySudoku](https://daysudoku.com/), a related external daily Sudoku site with a Key9 twist. Find the Key9 first, then continue the full Sudoku. Our 4x4 teaching board is separate from its live puzzle.
 

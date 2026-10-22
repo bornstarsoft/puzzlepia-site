@@ -1699,3 +1699,9 @@ img {
 .block-example th:first-child { width: 2rem; }
 .block-example td { height: 56px; padding: 0; background: #fff; }
 .block-example td.block-example__filled { background: #61478c; color: #fff; }
+
+.sudoku-example th:first-child { width: 2rem; }
+.sudoku-example td { height: 56px; padding: 0; background: #fff; }
+.sudoku-example td:nth-child(3) { border-right: 3px solid #61478c; }
+.sudoku-example tbody tr:nth-child(2) td { border-bottom: 3px solid #61478c; }
+.sudoku-example td.sudoku-example__target { background: #d8f4e6; color: #244c3c; }

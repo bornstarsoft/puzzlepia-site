@@ -2,6 +2,7 @@
 title: "One Certain Sudoku Number"
 description: "Use a row and a column to find one certain number on a 4x4 Sudoku board, with a hint and complete checked solution."
 date: 2026-09-12T08:54:35+09:00
+lastmod: 2026-10-23T02:06:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Number puzzle"
@@ -13,9 +14,13 @@ weight: 103
 
 ## Puzzle prompt
 
+**Sudoku practice: 1 of 2.** Start with one certain number, then try a box-based deduction in the next round. Each round also works on its own.
+
 Find the number at **D3: column D, row 3**, highlighted with a question mark. This is a small 4x4 Sudoku: every row, column, and thick-bordered 2x2 box must contain **1, 2, 3, and 4 exactly once**. Keep the printed clues fixed.
 
-{{< figure src="/images/guides/sudoku-missing-number.svg" width="480" height="480" alt="Four-by-four Sudoku with zero meaning blank. Rows: 1 0 3 0; 0 4 0 2; 0 1 4 0; 4 0 0 1. Find D3, the last cell in row 3." caption="Find just D3 first. You can finish the other cells afterward." >}}
+A dot is an empty cell. The question mark is your target, not a fixed clue.
+
+{{< sudoku-practice-board id="one-certain" >}}
 
 {{< puzzle-reveal title="Hint" >}}
 
@@ -39,5 +44,7 @@ Check each column and 2x2 box as well as the rows. Every group contains each dig
 {{< /puzzle-reveal >}}
 
 ## Play next
+
+[Continue to round 2: Let the Sudoku Box Decide](/daily/challenges/let-the-sudoku-box-decide/). This time, a row and column leave two choices. Find what the box adds before guessing. You can bookmark it for another short break.
 
 See another worked board in [Your First Sudoku Move](/blog/sudoku-first-move-for-beginners/). For a quick number-order warmup, try [Daily Number Puzzle](/daily/number-puzzle/). For a full-size daily Sudoku with a Key9 twist, [play DaySudoku](https://daysudoku.com/), a related external puzzle site. Explore other styles in [Puzzlepia Games](/games/).

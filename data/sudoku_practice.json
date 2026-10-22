@@ -1,0 +1,20 @@
+{
+  "first-move": {
+    "caption": "Find B1 first: column B, row 1. Digits 1 to 4.",
+    "rows": [[1,0,0,4],[0,4,1,0],[2,0,4,0],[0,3,0,1]],
+    "target": [0,1],
+    "answer": 2
+  },
+  "one-certain": {
+    "caption": "Find D3 first. Finish the other cells afterward.",
+    "rows": [[1,0,3,0],[0,4,0,2],[0,1,4,0],[4,0,0,1]],
+    "target": [2,3],
+    "answer": 3
+  },
+  "box-decides": {
+    "caption": "Find B1: can the upper-left box remove one choice?",
+    "rows": [[1,0,0,4],[3,0,1,2],[0,1,4,0],[4,0,0,1]],
+    "target": [0,1],
+    "answer": 2
+  }
+}
