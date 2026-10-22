@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-BLOCK-PRACTICE
-Phase: release preparation; local validation passed, owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; static block practice content and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; 2026-10-23)
+Phase: deployed and verified; observation is the next step.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -31,7 +31,30 @@ LAST_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; 2026-10-23)
   across 79 generated HTML files resolve; IDs are unique, four changed pages
   have valid canonicals/descriptions/JSON-LD and sitemap entries. Existing
   external links are unchanged. Public/resources output is ignored/untracked.
-- Production verification: NOT_RUN until deployment.
+- Production verification: PASS. Native Safari and retention measurement remain
+  NOT_RUN.
+
+## Block Practice Production Verification: 2026-10-23
+
+- Pushed application commit `db665cc` through the approved GitHub path. Live
+  content and CSS were verified on puzzlepia.com after deployment propagation.
+  The public GitHub check-runs API returned HTTP 403, so its Cloudflare job
+  status was not independently confirmed; this is direct live-site evidence.
+- Live Chromium at 390/430/768/1280px passed 36 core/content page checks,
+  exact board data, closed-by-default hints/answers, search/filter discovery,
+  all three practice-round links, eight footer destinations and eight Block
+  Puzzle completions with invalid placement and reset/replay.
+- Word Search, Memory Pairs and Make 10 passed six additional completions and
+  resets at 390/1280px. Ring, Number and Color starters initialized/reset.
+  No console/page errors or horizontal overflow in the site test contexts.
+- JavaScript-disabled diagrams and keyboard disclosures work at 390px.
+  Live mobile screenshots were inspected. Four changed pages have correct
+  canonicals, descriptions and parseable JSON-LD; all appear in the sitemap.
+  Robots retains its sitemap URL. The live CSS has the correct MIME type,
+  matches its SHA-256 fingerprint and applies the new scoped board styling.
+- Homepage, gameplay scripts, external destinations, storage, Phaser output,
+  analytics and Cloudflare/DNS settings remain unchanged. No increase in
+  traffic, return visits or business outcomes is claimed.
 
 ## Previous Pair Link Work
 
@@ -357,12 +380,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-PAIR-LINKS; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round static block practice implemented; local validation passed.
-HEAD/WIP: Based on `4a4b3b5`; ready for the scoped application commit.
-QA: PASS locally; production verification NOT_RUN.
+DONE: Three-round static block practice implemented, deployed and live-verified.
+HEAD/WIP: Application `db665cc` pushed; this documentation-only handoff records
+the completed verification. No public changes remain to deploy.
+QA: PASS for local checks and direct production browser/source verification.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Deploy through the approved GitHub path, verify the live
-practice flow and existing games, then release the writer record.
+NEXT_SINGLE_TASK: Observe discovery of the three block practice rounds before
+choosing another content batch; consider a second worked Sudoku deduction next.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

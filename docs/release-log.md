@@ -5,6 +5,7 @@
 - Added A Domino Before the Square and upgraded Open Board Block Challenge with data-backed 4x4 diagrams, optional hints and checked explanations. Preserved existing routes and publication dates.
 - Linked these with Find the Only Square Space and the existing space-management guide as three short rounds. The sequence is static and untracked, with an easy return to Daily Block Puzzle or the existing Blockzzle page.
 - Kept the homepage, game scripts, external destinations, Phaser output, analytics and hosting settings unchanged. Board validation uses `node tools/test_block_practice.cjs`; release evidence is recorded in [current work state](CURRENT_STATE.md). No retention improvement is claimed.
+- Deployed `db665cc` and verified the live site at 390/430/768/1280px: 36 page checks, eight Block Puzzle completions/reset cycles, search/filter discovery, optional answers and footer links passed. Other game regressions, metadata/sitemap and CSS fingerprint checks passed. Public deployment-status API access returned 403; actual live content was verified directly. Native Safari was not tested.
 
 ## Phase 7G Pair Layout Links and Memory Practice: 2026-10-23
 
