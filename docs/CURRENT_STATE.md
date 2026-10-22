@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MAKE10-PRACTICE
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; content, tests, validation and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-PRACTICE; 2026-10-23)
+Phase: deployed and verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MAKE10-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -30,7 +30,26 @@ LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-PRACTICE; 2026-10-23)
 - check_site, Hugo --gc --minify and diff checks pass. 2,659 internal references
   across 83 HTML files resolve. Four canonicals/descriptions/JSON-LD and sitemap
   entries, robots and unchanged external URLs pass. Generated public/resources
-  remain ignored and untracked. Production verification: NOT_RUN.
+  remain ignored and untracked. Production verification: PASS.
+
+## Make 10 Practice Production Verification: 2026-10-23
+
+- Application commit `929c592` was pushed through the approved GitHub path.
+  Cloudflare Pages succeeded at 2026-10-22 18:10:45 UTC
+  (2026-10-23 03:10:45 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 36 core/content page checks,
+  sixteen Layout 2/4 completions/resets, same-tile and invalid selections,
+  partial reset and fresh replay. Exact board data, three-round navigation,
+  search, number collection/back navigation and eight footer destinations pass.
+- Existing Word Search, Block, Ring and Number Puzzle passed eight further
+  completions/resets at 390/1280px; remaining starter games initialize/reset.
+  No console/page errors or horizontal overflow in final matrices. Native
+  disclosures work without JavaScript and by keyboard; live mobile screenshot
+  inspected. Four canonicals/descriptions/JSON-LD and sitemap entries, robots,
+  and live CSS/pair-game script MIME types and SHA-256 fingerprints pass.
+- Homepage, game rules/data, styling, external destinations, storage, analytics,
+  Phaser output and hosting settings are unchanged. Native Safari and retention
+  measurement were not performed; this verifies release behavior, not growth.
 
 ## Previous Memory Practice Work
 
@@ -615,9 +634,10 @@ LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round Make 10 practice implemented and validated locally.
-HEAD/WIP: Starting HEAD `d83b264`; seven intended files ready for commit.
-QA: PASS locally. Production verification NOT_RUN; approved deployment next.
+DONE: Three-round Make 10 practice deployed and verified on puzzlepia.com.
+HEAD/WIP: Application `929c592` deployed; this documentation-only follow-up
+records the evidence. No outstanding implementation WIP.
+QA: PASS locally and on production.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

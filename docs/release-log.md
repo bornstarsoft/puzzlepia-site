@@ -5,6 +5,7 @@
 - Added Four Fives, Two Pairs using actual Layout 4, with three valid groupings and an optional full-board explanation. Linked it with the two existing number-pair challenges and the Make 10 guide as three short rounds.
 - Kept answers optional, removed an answer spoiler from the second round's disclosure label, and linked directly to the matching game layout and number collection.
 - Preserved homepage, game code/data, styling, external destinations, storage, analytics, Phaser output and hosting settings. No measured retention benefit is claimed. Validation/deployment evidence belongs in [current work state](CURRENT_STATE.md).
+- Deployed `929c592`; Cloudflare Pages succeeded at 2026-10-23 03:10:45 KST. Live four-width QA passed 36 page checks, sixteen Layout 2/4 completions/resets, practice discovery and optional disclosures. Eight further game completions/resets, SEO/sitemap and asset fingerprints passed. Native Safari and retention gains were not tested.
 
 ## Phase 7L Three-Round Memory Practice: 2026-10-23
 
