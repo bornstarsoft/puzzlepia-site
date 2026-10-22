@@ -437,3 +437,37 @@ for (let replay = 0; replay < 2; replay += 1) {
   assert.deepEqual(valuesOf(practice), layouts[2]);
 }
 console.log("Memory practice passed: Layout 3 reveals, two mismatches, six correct pairs, reset before/after completion and replay.");
+
+// The three four-fives groupings must each finish the real Layout 4.
+const fivesRoutes = [[[1, 6], [12, 15]], [[1, 12], [6, 15]], [[1, 15], [6, 12]]];
+const remainingPairs = [[2, 4], [13, 11], [3, 7], [14, 16], [5, 8], [9, 10]];
+assert.deepEqual(numberLayouts[3].flatMap((value, i) => value === 5 ? [i + 1] : []), [1, 6, 12, 15]);
+const fives = numberFixture();
+init([fives], { PuzzlepiaNumberLayouts: numberModel, location: { search: "?layout=4" } });
+const fivesTap = position => fives.tiles[position - 1].click();
+const fivesReset = fives.querySelector("[data-reset]");
+fivesTap(1); fivesTap(1);
+assert.equal(fives.querySelector("[data-progress]").textContent, "0 / 8 pairs found");
+assert.match(fives.querySelector("[data-status]").textContent, /different tile/);
+fivesTap(2);
+assert.equal(fives.tiles[0].classList.contains("is-mismatch"), true);
+assert.equal(fives.tiles[1].classList.contains("is-mismatch"), true);
+fivesReset.click(); checkInitial(fives);
+fivesTap(1); fivesTap(6);
+fivesReset.click(); checkInitial(fives);
+for (const route of fivesRoutes) {
+  const pairs = [...route, ...remainingPairs];
+  assert.deepEqual([...new Set(pairs.flat())].sort((a, b) => a - b), Array.from({ length: 16 }, (_, i) => i + 1));
+  pairs.forEach(([a, b], i) => {
+    assert.equal(numberLayouts[3][a - 1] + numberLayouts[3][b - 1], 10);
+    fivesTap(a); fivesTap(b);
+    assert.equal(fives.querySelector("[data-progress]").textContent, (i + 1) + " / 8 pairs found");
+    assert.equal(fives.tiles[a - 1].disabled, true);
+    assert.equal(fives.tiles[b - 1].disabled, true);
+  });
+  assert.equal(fives.querySelector("[data-complete]").hidden, false);
+  assert.equal(fives.tiles.filter(tile => tile.classList.contains("is-matched")).length, 16);
+  fivesReset.click(); checkInitial(fives);
+  assert.deepEqual(valuesOf(fives), numberLayouts[3].map(String));
+}
+console.log("Make 10 practice passed: Layout 4's three five-pair groupings, all eight pairs, invalid/same-tile taps, partial/completed reset and replay.");

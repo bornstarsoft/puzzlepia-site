@@ -1,5 +1,11 @@
 # Puzzlepia Release Log
 
+## Phase 7M Three-Round Make 10 Practice: 2026-10-23
+
+- Added Four Fives, Two Pairs using actual Layout 4, with three valid groupings and an optional full-board explanation. Linked it with the two existing number-pair challenges and the Make 10 guide as three short rounds.
+- Kept answers optional, removed an answer spoiler from the second round's disclosure label, and linked directly to the matching game layout and number collection.
+- Preserved homepage, game code/data, styling, external destinations, storage, analytics, Phaser output and hosting settings. No measured retention benefit is claimed. Validation/deployment evidence belongs in [current work state](CURRENT_STATE.md).
+
 ## Phase 7L Three-Round Memory Practice: 2026-10-23
 
 - Added Remember Two Pair Locations, a short Layout 3 exercise that uses two earlier mismatches to identify known partners. The optional board comes from existing game data; hints and explanations are closed by default.

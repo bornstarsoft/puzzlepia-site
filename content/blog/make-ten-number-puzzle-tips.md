@@ -2,7 +2,7 @@
 title: "Make 10 Puzzle Tips: Find the Missing Partner"
 description: "Find number pairs that add up to 10 with a small worked board. Learn how duplicate numbers, two fives, and free placement work in Puzzlepia."
 date: 2026-09-12T14:40:00+09:00
-lastmod: 2026-10-23T01:00:00+09:00
+lastmod: 2026-10-23T03:05:00+09:00
 draft: false
 tags: ["number puzzles", "make 10", "matching games"]
 categories: ["Puzzle Tips"]
@@ -52,6 +52,12 @@ There is no timer, score deduction, or limited number of tries. Reset restores t
 The [Which Eight Can You Choose?](/daily/challenges/choose-either-eight/) exercise uses the real second layout. Its 2 at position 1 can match either 8, at position 3 or position 9. The other 2, at position 12, still has an 8 left in either case. You can test both routes by choosing **Layout 2** in the game and resetting between attempts.
 
 Not every layout has the same repeated values. Some have four 5s, while another has none. Read the visible values instead of replaying a memorised sequence of positions. All seven layouts still contain sixteen tiles and eight valid pairs.
+
+## Try three short practice rounds
+
+Start with [Find Every Pair That Makes 10](/daily/challenges/find-the-ten-pairs/), an eight-tile exercise. Continue with [Which Eight Can You Choose?](/daily/challenges/choose-either-eight/) on Layout 2. Finish with [Four Fives, Two Pairs](/daily/challenges/four-fives-two-pairs/) on Layout 4, where four separate 5 tiles can form two pairs in three different groupings.
+
+Each round has an optional hint and explanation. The larger exercises link directly to their real game layouts, so you can test an answer, reset, and try another route. You do not need to finish all three in one sitting. Revisit a round through its link or the [number challenge collection](/daily/?topic=number#daily-challenge-title); these exercises do not track progress.
 
 ## Return for another layout
 
