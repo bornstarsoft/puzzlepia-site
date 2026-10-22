@@ -1,5 +1,23 @@
 # Puzzlepia Release Log
 
+## Phase 7T Recent Puzzle Return: 2026-10-23
+
+- Kept the existing one-item Recently opened panel and storage format. Refresh
+  it on browser back and other-tab updates without overwriting a newer pick.
+- Resolve saved URLs against published playable pages and display current
+  metadata. Missing, invalid or unavailable storage leaves the panel hidden.
+  Clearing the shortcut does not clear optional Word Search progress.
+- Added fixed-board examples and the distinction between links and saved
+  progress to the existing daily-habit guide. No new Home section, gameplay,
+  storage key, analytics, external destinations or hosting-setting changes.
+- Regression checks: `node tools/test_recent_puzzle.cjs` and, after Hugo,
+  `python3 tools/check_recent_puzzle.py`. Eleven Node suites, five Python content
+  checks, Hugo and diff checks pass. Four-width local QA passed back/cross-tab
+  refresh and clear, guide links, six fallback modes and existing-game checks.
+  Word Search progress stays separate. No final console errors or overflow.
+  Release evidence is recorded in [current work state](CURRENT_STATE.md);
+  no retention gain claimed.
+
 ## Phase 7S Search Return Links: 2026-10-23
 
 - Search now retains expanded results in its URL (`q`, `type`, optional `batch`)

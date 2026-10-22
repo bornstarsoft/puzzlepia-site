@@ -36,7 +36,13 @@
   <script src="{{ $discovery.RelPermalink }}"></script>
 {{ end }}
 {{ if or .IsHome (eq .Section "daily") }}
-  <script src="/js/puzzlepia-return.js"></script>
+{{ $recentIndex := slice }}
+{{ range where (where .Site.RegularPages "Section" "daily") "Params.playable" true }}
+{{ $recentIndex = $recentIndex | append (dict "url" .RelPermalink "title" .Title "description" .Description "icon" (.Params.icon | default "P")) }}
+{{ end }}
+  <script id="puzzlepia-recent-index" type="application/json">{{ $recentIndex | jsonify | safeJS }}</script>
+{{ $recent := resources.FromString "js/puzzlepia-return.js" (readFile "static/js/puzzlepia-return.js") | minify | fingerprint }}
+  <script src="{{ $recent.RelPermalink }}"></script>
 {{ end }}
 {{ if eq .Section "search" }}
 {{ $search := resources.FromString "js/puzzlepia-search.js" (readFile "static/js/puzzlepia-search.js") | minify | fingerprint }}

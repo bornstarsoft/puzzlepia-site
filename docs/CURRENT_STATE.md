@@ -1,11 +1,40 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-SEARCH-RETURN
-Phase: production verification complete; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-RECENT-RETURN
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; existing recent shortcut reliability and return guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested another suitable return-visit improvement, keeping Home simple,
+  with validation and live deployment. Starting HEAD `d2db700`; clean main
+  matches origin/main after fetch. Repository-specific GitHub exception applies.
+- Refresh the existing one-item recent shortcut on back navigation and other-tab
+  changes, using published playable metadata to reject invalid/stale URLs.
+  Keep its storage key/schema and canonical-page meaning; do not save boards or
+  progress. Add practical return-link examples to the existing puzzle-habit guide.
+- No new Home section, game rules, analytics, external destinations or hosting
+  settings. Local QA: PASS. Deployment: pending approved push and live checks.
+- Hugo/check_site/diff checks, eleven Node suites and five Python content
+  checks pass. Recent metadata matches all seven published games; isolated
+  Hugo fixtures exclude draft/future/non-playable content. Generated output
+  remains ignored/untracked. All 2,495 internal references across 84 generated
+  HTML files resolve, with unique IDs.
+- Chromium at 390/430/768/1280px passed 24 page checks, four back/cross-tab
+  refresh/clear flows and 12 fixed-board guide visits. Six fallback modes pass;
+  storage-blocked Block Puzzle completes/resets, and clearing the shortcut
+  preserves optional Word Search progress and its explicit resume flow.
+- Eight existing-game completions and eight starter resets pass. No console
+  errors or horizontal overflow in the final matrices. Seven titles, three
+  metadata/canonical/schema pages, robots/sitemap and the script fingerprint
+  pass; mobile/desktop panel screenshots inspected. Initial saved-word QA
+  assumed automatic fixed-link restore; corrected to the existing explicit
+  resume button and actual aria-pressed marker, without changing game logic.
+- NEXT_SINGLE_TASK: commit validated changes, push via the approved GitHub
+  exception, then verify Cloudflare completion and the deployed flows.
+
+## Previous Search Return Work
 
 - Owner approved another suitable return-visit improvement, keeping Home simple,
   followed by validation and live deployment. Starting HEAD `11e2687`; clean
