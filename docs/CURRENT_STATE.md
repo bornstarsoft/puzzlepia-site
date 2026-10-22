@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-RING-PRACTICE
-Phase: local validation complete; owner-approved deployment follows.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; static ring practice and deployment; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; 2026-10-23)
+Phase: deployed and verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -34,8 +34,28 @@ LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; 2026-10-23)
   across 81 HTML files resolve; IDs, four canonicals/descriptions/JSON-LD and
   sitemap entries, robots and unchanged existing external links pass. Generated
   public/resources output remains ignored and untracked.
-- Production verification: NOT_RUN. Native Safari and retention measurement
+- Production verification: PASS. Native Safari and retention measurement
   remain NOT_RUN.
+
+## Ring Practice Production Verification: 2026-10-23
+
+- Application commit `fa299f5` was pushed through the approved GitHub path.
+  Cloudflare Pages completed successfully at 2026-10-22 17:32:44 UTC
+  (2026-10-23 02:32:44 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 36 page checks, exact diagrams
+  and labels, optional hints/answers, search/filter discovery, three-round
+  navigation and eight footer destinations. Eight Ring completions/reset cycles
+  passed, including invalid placement, reset before/after completion and replay.
+- Word Search and Block Puzzle passed four further completions/resets at
+  390/1280px. Memory Pairs, Make 10, Number and Color initialize/reset. No
+  console/page errors or horizontal overflow in these live browser matrices.
+- JavaScript-disabled diagrams and keyboard disclosures work. Live mobile
+  screenshots inspected. Four changed-page canonicals, descriptions/JSON-LD
+  and sitemap entries pass; robots retains the sitemap URL. The live CSS has
+  the correct MIME type and matches its SHA-256 fingerprint.
+- Homepage, game scripts, external destinations, storage, Phaser output,
+  analytics and Cloudflare/DNS settings remain unchanged. This verifies the
+  release, not an increase in return visits or business outcomes.
 
 ## Previous Sudoku Practice Work
 
@@ -462,11 +482,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Ring practice implemented and locally validated.
-HEAD/WIP: Based on `9ecf785`; not committed or deployed.
-QA: PASS locally; production NOT_RUN.
+DONE: Three-round ring practice deployed and verified on puzzlepia.com.
+HEAD/WIP: Application `fa299f5` deployed; this documentation-only follow-up
+records the evidence. No outstanding implementation WIP.
+QA: PASS locally and on production.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Deploy through the approved GitHub path and verify the live site.
+NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence
+before selecting another content batch; keep the homepage simple.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

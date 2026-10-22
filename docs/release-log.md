@@ -5,6 +5,7 @@
 - Added Two Rings, One Cell and upgraded Ring Size Practice; connected three short rounds through Three Rings, Three Spaces and the existing guide. Optional explanations distinguish one valid assignment from two valid finishes.
 - Added data-backed ring diagrams with visible size/color labels and test-only placement enumeration. Clarified that different sizes can share a cell and color does not restrict the starter's placement rule.
 - Kept homepage, gameplay, existing external destinations, storage, Phaser output, analytics and hosting settings unchanged. No retention gain is claimed. Validation and deployment evidence belongs in [current work state](CURRENT_STATE.md).
+- Deployed `fa299f5`; Cloudflare Pages succeeded at 2026-10-23 02:32:44 KST. Live four-width QA passed 36 page checks, eight Ring completions/reset cycles, practice navigation/discovery and optional disclosures. Existing-game regressions, metadata/sitemap and CSS fingerprint checks passed. Native Safari and retention gains were not tested.
 
 ## Phase 7I Sudoku Box Practice: 2026-10-23
 
