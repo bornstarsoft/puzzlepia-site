@@ -16,6 +16,7 @@ ROUNDS = {
     "ring-puzzle": ["ring-size-practice", "three-rings-three-spaces", "two-rings-one-cell"],
     "memory-pairs": ["remember-the-star-pair", "two-reveals-one-pair", "remember-two-pair-locations"],
     "number-pairs": ["find-the-ten-pairs", "choose-either-eight", "four-fives-two-pairs"],
+    "number-puzzle": ["quick-number-focus", "number-order-1-to-10", "find-the-final-four-numbers"],
 }
 
 
@@ -55,7 +56,7 @@ for game, slugs in ROUNDS.items():
     for link in expected:
         assert (ROOT / "public" / link.strip("/") / "index.html").is_file(), link
 
-for game, challenge in [("number-puzzle", "quick-number-focus"), ("color-match", "pink-color-match-challenge")]:
+for game, challenge in [("color-match", "pink-color-match-challenge")]:
     page = Page((ROOT / "public/daily" / game / "index.html").read_text())
     assert page.lists == 0 and "/daily/challenges/" + challenge + "/" in page.links, game
 
@@ -103,4 +104,4 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-practice-") as folder:
             assert result.returncode != 0, case + " should fail the build"
             assert "practice" in (result.stdout + result.stderr).lower(), case
 
-print("Practice paths passed: five ordered paths, fourteen published rounds, two fallbacks, unchanged home, unique IDs, and missing/draft/future/type build guards.")
+print("Practice paths passed: six ordered paths, seventeen published rounds, one fallback, unchanged home, unique IDs, and missing/draft/future/type build guards.")

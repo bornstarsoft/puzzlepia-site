@@ -45,6 +45,10 @@
   topic: number
   guide: "/blog/number-puzzle-warmups-for-casual-players/"
   challenge: "/daily/challenges/quick-number-focus/"
+  practice:
+    - "/daily/challenges/quick-number-focus/"
+    - "/daily/challenges/number-order-1-to-10/"
+    - "/daily/challenges/find-the-final-four-numbers/"
 "/daily/color-match/":
   preview: color-match
   width: 420

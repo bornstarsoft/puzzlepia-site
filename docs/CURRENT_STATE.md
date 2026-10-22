@@ -1,11 +1,40 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NUMBER-VARIETY
-Phase: production verification complete; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NUMBER-PRACTICE
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; number practice content, tests and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content and another small return-visit improvement,
+  keeping the homepage simple, with validation and live deployment. Starting
+  HEAD `6cecd0e`; clean main matches origin/main after fetch. The documented
+  repository-specific GitHub deployment exception applies.
+- Connect three short Number Puzzle practice rounds. Upgrade Quick Number
+  Focus and Number Order: 1 to 10 with actual board diagrams; add a final-four
+  exercise. Optional hints/answers and fixed layout links allow fresh replay.
+- Reuse the existing practice-path layout and guide. Preserve homepage, game
+  rules/data/scripts, styling, external destinations, storage, analytics,
+  Phaser output and hosting settings. No measured retention gain is claimed.
+- Local QA: PASS. Eight existing Node test scripts plus both Python content
+  checks pass. The new check compares all three diagrams and answer routes
+  against game data; it caught and helped correct the initial Layout 2 answer
+  position for 10 before release. Publication guards reject invalid paths.
+- Chromium at 390/430/768/1280px passed 36 page checks, 24 Number completions
+  and resets, 24 disclosure open/close checks, exact board links, discovery,
+  collection back navigation and eight footer destinations. Native disclosures
+  and practice links work without JavaScript and via keyboard.
+- Eight further existing-game completions/resets passed; remaining starters
+  initialize/reset. Final matrices have no console/page errors or horizontal
+  overflow. Mobile and desktop screenshots inspected. Test selectors were
+  narrowed to title links where cards expose both a title and a button.
+- Hugo/check_site/diff checks pass. 2,468 internal references across 84 HTML
+  files resolve; IDs are unique. Five canonicals/descriptions/OG/JSON-LD and
+  sitemap entries, robots, and four asset fingerprints/MIME types pass.
+  Generated output remains ignored/untracked. Production verification: NOT_RUN.
+
+## Previous Number Variety Work
 
 - Owner requested suitable content and another return-visit improvement with
   live deployment, keeping the homepage simple. Starting HEAD `b0d4db5`; clean
@@ -737,9 +766,9 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-VARIETY; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Number Puzzle layout variety implemented, deployed and verified live.
-HEAD/WIP: Application HEAD `f0f90b1`; documentation-only release evidence follows.
-QA: PASS locally and on production. No source WIP remains.
+DONE: Three-round Number Puzzle practice implemented and validated locally.
+HEAD/WIP: Starting HEAD `6cecd0e`; ten intended files ready for commit.
+QA: PASS locally. Production verification NOT_RUN; approved deployment next.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

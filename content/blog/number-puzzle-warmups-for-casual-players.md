@@ -2,7 +2,7 @@
 title: "Number Puzzle Warmups for Casual Players"
 description: "Try simple number-order, missing-number, and Sudoku warmups designed for short and comfortable puzzle sessions."
 date: 2026-07-24
-lastmod: 2026-10-23T03:27:00+09:00
+lastmod: 2026-10-23T03:43:00+09:00
 draft: false
 tags:
   - "number puzzles"
@@ -95,6 +95,16 @@ A useful number routine can be simple:
 3. Play the [Daily Number Puzzle](/daily/number-puzzle/).
 
 You can stop there or continue into another puzzle. The warmup has done its job once you feel focused and comfortable with the number patterns.
+
+## Try three short board exercises
+
+Put the scanning ideas into practice with three optional rounds. Each shows an actual fixed game layout, keeps hints and answers closed until you choose them, and links to that same playable board.
+
+1. [Quick Number Focus](/daily/challenges/quick-number-focus/) uses Layout 1 to locate the first four numbers.
+2. [Number Order: 1 to 10](/daily/challenges/number-order-1-to-10/) uses Layout 2 to follow the change from one digit to two.
+3. [Find the Final Four Numbers](/daily/challenges/find-the-final-four-numbers/) uses Layout 7 to plan the finish after 12.
+
+Choose one question now and leave another for your next break. The diagrams are reading exercises, while each game link starts a fresh full board at 1. Neither the course nor the game records your progress. You can bookmark a round to find the same question again.
 
 ## Choose clarity over difficulty
 

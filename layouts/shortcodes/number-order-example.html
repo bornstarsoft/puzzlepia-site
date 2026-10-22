@@ -1,0 +1,16 @@
+{{ $number := int (.Get "layout" | default "1") }}
+{{ if or (lt $number 1) (gt $number (len site.Data.number_order)) }}
+  {{ errorf "Unknown number-order-example layout %d in %s" $number .Page.File.Path }}
+{{ else }}
+{{ $tiles := index site.Data.number_order (sub $number 1) }}
+<div class="word-example number-example">
+  <table>
+    <caption>Number Puzzle: Layout {{ $number }}</caption>
+    <tbody>
+{{ range $row := seq 0 3 }}
+      <tr>{{ range $col := seq 0 3 }}{{ $position := add (mul $row 4) $col }}<td>{{ index $tiles $position }}<small>Position {{ add $position 1 }}</small></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}
