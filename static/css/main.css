@@ -1705,3 +1705,24 @@ img {
 .sudoku-example td:nth-child(3) { border-right: 3px solid #61478c; }
 .sudoku-example tbody tr:nth-child(2) td { border-bottom: 3px solid #61478c; }
 .sudoku-example td.sudoku-example__target { background: #d8f4e6; color: #244c3c; }
+
+.page__content .ring-study { max-width: 480px; margin: 20px 0; }
+.page__content .ring-study--single { max-width: 160px; }
+.page__content .ring-study figcaption { margin: 0 0 12px; font-weight: 750; }
+.ring-study__cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ring-study--single .ring-study__cells { grid-template-columns: 1fr; }
+.ring-study__label { margin: 0; text-align: center; font-weight: 750; }
+.ring-study__diagram { position: relative; aspect-ratio: 1; }
+.ring-study__layer { position: absolute; border: 5px solid; border-radius: 50%; }
+.ring-study__layer--large { inset: 5%; }
+.ring-study__layer--medium { inset: 23%; }
+.ring-study__layer--small { inset: 41%; }
+.ring-study__layer[data-color=""] { border: 2px dashed #9588a9; }
+.ring-study__layer[data-color="pink"] { border-color: #df3686; }
+.ring-study__layer[data-color="mint"] { border-color: #118577; }
+.ring-study__layer[data-color="gold"] { border-color: #c28d13; }
+.ring-study__layer[data-color="purple"] { border-color: #7044c9; }
+.ring-study__key { margin: 0; font-size: 0.8125rem; }
+.ring-study__key > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 4px; }
+.ring-study__key dt { font-weight: 700; }
+.ring-study__key dd { margin: 0; }

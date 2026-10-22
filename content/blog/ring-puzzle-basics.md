@@ -2,7 +2,7 @@
 title: "Ring Puzzle Basics: Colors, Sizes, and Simple Strategy"
 description: "Read a ring puzzle cell by size and color, then follow a worked placement example with three clearly labeled cells."
 date: 2026-05-28
-lastmod: 2026-09-12T08:54:35+09:00
+lastmod: 2026-10-23T02:19:00+09:00
 draft: false
 tags:
   - "ring puzzle"
@@ -40,13 +40,21 @@ Now consider a **small pink ring** on the original board. It fits B, whose small
 
 This example uses placement only. Puzzlepia's [Daily Ring Puzzle](/daily/ring-puzzle/) finishes when all five tray rings are placed; it does not require a line clear. Ringzzle has its own color-line rules, described on the official game site. Read those rules before transferring a matching strategy between games.
 
-For a complete three-piece exercise, try [Three Rings, Three Spaces](/daily/challenges/three-rings-three-spaces/).
+## Three small practice rounds
+
+Try one round now and bookmark the next for another break. The diagrams have size and color labels, and hints and explanations stay closed until you open them:
+
+1. [Ring Size Practice](/daily/challenges/ring-size-practice/): check one cell and reject a duplicate size.
+2. [Three Rings, Three Spaces](/daily/challenges/three-rings-three-spaces/): assign a complete tray to three partly filled cells.
+3. [Two Rings, One Cell](/daily/challenges/two-rings-one-cell/): compare two placements and decide whether both can finish.
+
+These are fixed, placement-only exercises, not daily-generated boards. There is no timer, streak, or saved progress. The next link simply gives you a small question to return to.
 
 ## Watch color patterns
 
 Color is the most immediate part of a ring puzzle. Matching colors can create clean lines, sets, or satisfying board patterns depending on the rules of the game.
 
-Even when a starter puzzle does not use full line-clearing logic, color still matters. It helps the board feel organized. It also makes the puzzle easier to read at a glance.
+In the Puzzlepia starter, color is a visual label, not a placement requirement. It can help you recognize pieces, but a matching color does not clear a line or make an occupied size available.
 
 If you are deciding between two placements, ask which one creates a clearer color pattern. A tidy board is often easier to continue.
 
@@ -54,13 +62,13 @@ If you are deciding between two placements, ask which one creates a clearer colo
 
 A flexible cell can accept more future pieces. For example, if a cell has only a large ring, it may still accept medium and small rings. If a cell already has all sizes filled, it is complete but no longer flexible.
 
-This does not mean you should avoid filling cells. Completion is part of the fun. But early in a puzzle, it can help to keep several cells open for different sizes.
+This does not mean you should avoid filling cells. A medium ring uses only the medium position; it does not remove an empty small or large position in that cell. In our placement-only examples, two different sizes may share a cell without blocking each other.
 
-Flexibility gives you more options when the next ring appears.
+Count the remaining positions by size, rather than counting only completely empty cells. For a game with clears or other restrictions, check those rules separately.
 
 ## Place awkward pieces early
 
-Some rings are harder to place than others. A color may have fewer useful spots. A size may fit in fewer cells. When a piece feels awkward, consider placing it earlier instead of saving it for last.
+Some sizes fit in fewer cells than others. Find those available positions first. If a separate game rewards color patterns, color may affect a useful choice too, but it does not restrict placement in the Puzzlepia starter.
 
 This idea appears in many puzzle types. Difficult pieces become even more difficult when the board gets crowded.
 
@@ -70,7 +78,7 @@ In a small starter puzzle like [Daily Ring Puzzle](/daily/ring-puzzle/), the tra
 
 Ring puzzles are not only about positions. They are also about layers. A large ring changes the outside of a cell. A medium ring changes the middle. A small ring changes the center.
 
-Good placement often considers both the cell and the layer. If two colors might work in the same cell, choose the one that leaves better options for the remaining sizes.
+Good placement starts by checking the layer a piece needs. Two different colors of the same size compete for one position; two different sizes do not. Check the exact size positions before deciding that one arrangement is better than another.
 
 This kind of thinking is light, but it makes the puzzle more interesting.
 

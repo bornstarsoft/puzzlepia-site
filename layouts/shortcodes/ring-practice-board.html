@@ -1,0 +1,26 @@
+{{ $id := .Get "id" }}
+{{ with index site.Data.ring_practice $id }}
+<figure class="ring-study{{ if eq (len .cells) 1 }} ring-study--single{{ end }}" data-ring-example="{{ $id }}">
+  <figcaption>{{ .caption }}</figcaption>
+  <div class="ring-study__cells">
+{{ range .cells }}
+{{ $cell := . }}
+    <div class="ring-study__cell" role="group" aria-label="Cell {{ .id }}" data-ring-cell="{{ .id }}">
+      <p class="ring-study__label">Cell {{ .id }}</p>
+      <div class="ring-study__diagram" aria-hidden="true">
+{{ range slice "large" "medium" "small" }}
+        <span class="ring-study__layer ring-study__layer--{{ . }}" data-color="{{ index $cell . }}"></span>
+{{ end }}
+      </div>
+      <dl class="ring-study__key">
+{{ range slice "small" "medium" "large" }}
+        <div><dt>{{ . | humanize }}</dt><dd>{{ with index $cell . }}{{ . | humanize }}{{ else }}Empty{{ end }}</dd></div>
+{{ end }}
+      </dl>
+    </div>
+{{ end }}
+  </div>
+</figure>
+{{ else }}
+  {{ errorf "Unknown ring-practice-board %q in %s" $id .Page.File.Path }}
+{{ end }}

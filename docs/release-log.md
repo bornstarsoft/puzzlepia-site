@@ -1,5 +1,11 @@
 # Puzzlepia Release Log
 
+## Phase 7J Ring Placement Practice: 2026-10-23
+
+- Added Two Rings, One Cell and upgraded Ring Size Practice; connected three short rounds through Three Rings, Three Spaces and the existing guide. Optional explanations distinguish one valid assignment from two valid finishes.
+- Added data-backed ring diagrams with visible size/color labels and test-only placement enumeration. Clarified that different sizes can share a cell and color does not restrict the starter's placement rule.
+- Kept homepage, gameplay, existing external destinations, storage, Phaser output, analytics and hosting settings unchanged. No retention gain is claimed. Validation and deployment evidence belongs in [current work state](CURRENT_STATE.md).
+
 ## Phase 7I Sudoku Box Practice: 2026-10-23
 
 - Added Let the Sudoku Box Decide and linked it with One Certain Sudoku Number and the existing introductory guide. Optional hints and answers support one small, certain move at a time.

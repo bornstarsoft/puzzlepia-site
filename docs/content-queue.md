@@ -89,8 +89,20 @@ The second Sudoku deduction and domino-placement exercises were published in Pha
   All three 4x4 diagrams now use accessible HTML tables backed by checked data;
   the original clues, solutions, publication dates and SVG assets are preserved.
 - Run `node tools/test_sudoku_practice.cjs` after changing examples. No homepage,
-  game logic, tracking or external-site feature changes. Next: observe discovery
-  before expanding the series; a ring-placement comparison is a future option.
+  game logic, tracking or external-site feature changes. The ring-placement
+  comparison followed in Phase 7J at the owner's request; no usage gain is claimed.
+
+## Used in Phase 7J
+
+- Added Two Rings, One Cell, refreshed Ring Size Practice, and linked them with
+  Three Rings, Three Spaces as three short rounds. The final board has two
+  equally valid assignments, not a forced best answer.
+- Clarified the guide's size-versus-color advice for placement-only rules.
+  Data-backed diagrams show both ring shapes and visible size/color names;
+  existing SVG assets, routes, dates and external destinations are preserved.
+- Run `node tools/test_ring_practice.cjs` after changing examples. No homepage,
+  game code, progress storage or analytics additions. Observe discovery before
+  expanding another series; a color-group comparison is a possible later topic.
 
 ## Blog Topic Ideas
 

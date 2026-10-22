@@ -1,0 +1,32 @@
+{
+  "one-cell": {
+    "caption": "One cell, three size positions",
+    "cells": [{"id":"A","small":"mint","medium":"","large":"pink"}],
+    "tray": [{"id":"medium-gold","size":"medium","color":"gold"}]
+  },
+  "three-spaces": {
+    "caption": "Tray: small gold, medium pink, large mint",
+    "cells": [
+      {"id":"A","small":"pink","medium":"","large":"mint"},
+      {"id":"B","small":"mint","medium":"gold","large":""},
+      {"id":"C","small":"","medium":"pink","large":"purple"}
+    ],
+    "tray": [
+      {"id":"small-gold","size":"small","color":"gold"},
+      {"id":"medium-pink","size":"medium","color":"pink"},
+      {"id":"large-mint","size":"large","color":"mint"}
+    ]
+  },
+  "shared-cell": {
+    "caption": "Two tray rings: small pink and medium mint",
+    "cells": [
+      {"id":"A","small":"","medium":"","large":"purple"},
+      {"id":"B","small":"mint","medium":"","large":"pink"},
+      {"id":"C","small":"gold","medium":"gold","large":""}
+    ],
+    "tray": [
+      {"id":"small-pink","size":"small","color":"pink"},
+      {"id":"medium-mint","size":"medium","color":"mint"}
+    ]
+  }
+}

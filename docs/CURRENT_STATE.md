@@ -1,11 +1,43 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-SUDOKU-PRACTICE
-Phase: deployed and verified; observation is the next step.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-RING-PRACTICE
+Phase: local validation complete; owner-approved deployment follows.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-RING-PRACTICE; static ring practice and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner requested suitable content, a small return-visit improvement and live
+  deployment while keeping the homepage simple. Starting HEAD `9ecf785`;
+  main is clean and matches origin/main after fetch. GitHub exception applies.
+- Upgrade Ring Size Practice, add Two Rings, One Cell and connect these with
+  Three Rings, Three Spaces and the guide as three short practice rounds.
+  Distinguish one valid assignment from two equally valid assignments.
+- Use static data-backed diagrams with visible size/color names and optional
+  explanations. Preserve homepage, game scripts, existing external URLs,
+  storage, analytics, Phaser output and hosting settings. No measured retention
+  claim or new usage data is available; the owner authorized continued work.
+- Local QA: PASS. Six dependency-free test scripts pass. Ring checks enumerate
+  all nine tray orders, unique/two-answer assignments, duplicate-size rejection,
+  color independence and immutable source data.
+- Chromium at 390/430/768/1280px passed 36 page checks, exact diagrams and
+  visible labels, optional answers, three-round navigation, search/filter
+  discovery, eight footer destinations and eight Ring completions/reset cycles.
+- Word Search and Block Puzzle passed four further completions/resets at
+  390/1280px. Memory Pairs, Make 10, Number and Color initialize/reset. No
+  console/page errors or horizontal overflow in the final browser matrices.
+- JavaScript-disabled diagrams and keyboard disclosures work. Mobile/desktop
+  screenshots inspected. A stale Hugo dev-server rebuild mixed old shortcode
+  output with new copy; a fresh production build and server restart resolved
+  it. Final QA also rejects raw shortcodes and replacement characters.
+- check_site, Hugo --gc --minify and diff checks pass. 2,347 internal references
+  across 81 HTML files resolve; IDs, four canonicals/descriptions/JSON-LD and
+  sitemap entries, robots and unchanged existing external links pass. Generated
+  public/resources output remains ignored and untracked.
+- Production verification: NOT_RUN. Native Safari and retention measurement
+  remain NOT_RUN.
+
+## Previous Sudoku Practice Work
 
 - Owner requested suitable content, another small return-visit improvement and
   live deployment while keeping the homepage simple. Starting HEAD `34d9d7c`;
@@ -430,13 +462,11 @@ LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Sudoku box exercise and data-backed diagrams implemented, deployed and verified.
-HEAD/WIP: Application `090b926` pushed; this documentation-only handoff records
-the completed verification. No public changes remain to deploy.
-QA: PASS for local checks, Cloudflare application deployment and live browser/source QA.
+DONE: Ring practice implemented and locally validated.
+HEAD/WIP: Based on `9ecf785`; not committed or deployed.
+QA: PASS locally; production NOT_RUN.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Observe discovery of the short practice series before choosing
-another batch. Consider a ring-placement comparison only after reviewing usage.
+NEXT_SINGLE_TASK: Deploy through the approved GitHub path and verify the live site.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.
