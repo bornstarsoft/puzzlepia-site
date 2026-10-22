@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-RECENT-RETURN
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; existing recent shortcut reliability and return guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; 2026-10-23)
+Phase: release verified; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; 2026-10-23)
 
 ## Current Approved Work
 
@@ -15,7 +15,7 @@ LAST_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; 2026-10-23)
   Keep its storage key/schema and canonical-page meaning; do not save boards or
   progress. Add practical return-link examples to the existing puzzle-habit guide.
 - No new Home section, game rules, analytics, external destinations or hosting
-  settings. Local QA: PASS. Deployment: pending approved push and live checks.
+  settings. Local QA: PASS. Deployment: PASS, verified live below.
 - Hugo/check_site/diff checks, eleven Node suites and five Python content
   checks pass. Recent metadata matches all seven published games; isolated
   Hugo fixtures exclude draft/future/non-playable content. Generated output
@@ -31,8 +31,29 @@ LAST_WRITER = CODEX (PUZZLEPIA-SEARCH-RETURN; 2026-10-23)
   pass; mobile/desktop panel screenshots inspected. Initial saved-word QA
   assumed automatic fixed-link restore; corrected to the existing explicit
   resume button and actual aria-pressed marker, without changing game logic.
-- NEXT_SINGLE_TASK: commit validated changes, push via the approved GitHub
-  exception, then verify Cloudflare completion and the deployed flows.
+- DONE: implemented and verified live. Application HEAD: `8e949fb`; only this
+  handoff and release-log record remain before the documentation commit.
+  BLOCKER: none. NEXT_SINGLE_TASK: review observed return/discovery traffic
+  before adding further navigation or storage behavior. No automation scheduled.
+
+## Recent Puzzle Return Production Verification: 2026-10-23
+
+- Application commit `8e949fb` was pushed through the approved GitHub exception.
+  Cloudflare Pages succeeded at 2026-10-22 19:48:01 UTC
+  (2026-10-23 04:48:01 KST), confirmed by the public commit check.
+- Live Chromium at 390/430/768/1280px passed 24 core/guide page checks, four
+  back/cross-tab refresh/clear flows and 12 fixed-board guide visits. Small
+  widths used emulated touch. Footer links and seven recent entries pass.
+- Six fallback modes, storage-blocked Block Puzzle completion/reset and
+  preservation of optional Word Search progress pass. Fixed Word Search links
+  still open fresh; the explicit saved-set resume button still restores progress.
+- Eight existing-game completions and eight starter reset checks pass. No
+  console errors or horizontal overflow in tested flows. Three page metadata/
+  canonical/schema checks, robots and sitemap pass. Deployed recent script
+  SHA-256 matches local output: `4303566823eb380c7a315150e6f3a5240a51eea27e2099f1e3934b286a1638ee`.
+- Mobile and desktop panel captures inspected. No Home layout, game rules,
+  new storage keys, analytics, external destinations, Phaser or hosting changes.
+  Native Safari, indexing and retention gains were not measured.
 
 ## Previous Search Return Work
 

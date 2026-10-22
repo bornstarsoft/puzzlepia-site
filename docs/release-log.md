@@ -17,6 +17,11 @@
   Word Search progress stays separate. No final console errors or overflow.
   Release evidence is recorded in [current work state](CURRENT_STATE.md);
   no retention gain claimed.
+- Deployed `8e949fb`; Cloudflare Pages succeeded at 2026-10-23 04:48:01 KST.
+  Live four-width QA repeated all 24 page checks, four back/cross-tab flows and
+  12 guide visits. Fallbacks, saved-progress isolation, existing-game checks,
+  metadata and deployed script integrity pass with no console errors/overflow.
+  Native Safari and retention impact were not measured.
 
 ## Phase 7S Search Return Links: 2026-10-23
 
