@@ -66,6 +66,21 @@ assert.equal(model.prepare(null), null);
 assert.equal(model.prepare({}), null);
 assert.equal(JSON.stringify(source), original, "preparation must not modify the source catalog");
 
+for (const [index, set] of catalog.sets.entries()) {
+  const link = model.setLink(catalog, index);
+  assert.equal(link, "/daily/word-search/?set=" + set.id);
+  assert.equal(model.linkedSet(catalog, link.slice(link.indexOf("?"))), index);
+  assert.equal(model.linkedSet(catalog, "?set=" + set.id + "&utm_source=test"), index);
+  const reordered = { sets: catalog.sets.slice().reverse() };
+  assert.equal(reordered.sets[model.linkedSet(reordered, "?set=" + set.id)].id, set.id);
+}
+for (const search of ["", "?set=", "?set=unknown", "?set=STARTER", "?set=0", "?set=starter&set=fruit",
+  "?set=starter&set=starter", "?set=%3Cscript%3E", "?set=//evil.example/", "?set=%E0%A4%A"])
+  assert.equal(model.linkedSet(catalog, search), -1);
+for (const index of [-1, 14, NaN, 0.5, "0"]) assert.equal(model.setLink(catalog, index), "");
+assert.equal(model.linkedSet(null, "?set=starter"), -1);
+console.log("Set links passed: 14 stable IDs, reordered catalog, unknown/duplicate/malformed parameters, no arbitrary URL destinations.");
+
 const browserScript = fs.readFileSync(path.join(__dirname, "../static/js/daily-word-search.js"), "utf8");
 vm.runInNewContext(browserScript, { window: {}, document: { querySelector: () => null } });
 vm.runInNewContext(browserScript, { window: { PuzzlepiaGames: {}, PuzzlepiaWordSearch: model }, document: { querySelector: () => null } });

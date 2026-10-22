@@ -1,11 +1,36 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MEMORY-ROTATION
-Phase: production release verified; observation next.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-SET-LINKS
+Phase: local validation passed; owner-approved deployment next.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-SET-LINKS; Word Search set links and validated GitHub deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-ROTATION; 2026-10-15)
 
 ## Current Approved Work
+
+- Owner requested another small retention improvement and production deployment
+  on 2026-10-23. Starting HEAD `759f712`, clean main matches origin/main after fetch.
+- Add stable Word Search practice-set links with a compact copy/manual-copy
+  control. Keep homepage, puzzles, existing saving preference and other games.
+- Explicit set links open fresh and take priority over auto-resume; a saved
+  board remains available until deliberate play/reset/set change replaces it.
+- No new tracking/storage/dependencies, external services, hosting changes or
+  Phaser edits. Retention measurement is unavailable, not evidence for this choice.
+- Local QA: PASS. Four widths (390/430/768/1280px), all fourteen explicit
+  set URLs, 112 endpoint/fallback completions, reset and next-link updates,
+  date-independent reopening, daily pick, canonical base URL and no overflow.
+- Existing same/different-set saves survive link opening/copying; explicit
+  resume, reset, opt-out, date change and invalid-link normal entry passed.
+- Denied/missing clipboard, async set-switch race, keyboard, blocked storage
+  and no-JavaScript fallback passed. Native clipboard write and desktop drag
+  passed. Clipboard contents were not read. No console/page errors in final QA.
+- 20 core-page/viewport checks, eight pair-game completions and other starter
+  games' initialization/reset passed. Eight footer destinations resolve.
+- All three dependency-free test scripts, Hugo/check_site and diff checks
+  passed. 2,101 generated internal references across 72 HTML pages resolve,
+  IDs are unique and the sitemap contains only the base Word Search URL.
+- Production verification: PENDING. Native Safari and retention outcomes NOT_RUN.
+
+## Previous Memory Rotation Work
 
 - Owner approved another small retention improvement and deployment on
   2026-10-15, superseding the observation-only next task below.
@@ -136,14 +161,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-ROTATION; 2026-10-15)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Memory Pairs rotation implemented, validated, pushed and verified live.
-HEAD/WIP: Application HEAD `1ffb091`; documentation handoff commit is titled
-`Record Puzzlepia memory layout deployment`. No unfinished source work.
-QA: PASS for local unit/browser/build checks and production verification.
+DONE: Word Search set links implemented and locally validated.
+HEAD/WIP: Starting HEAD `759f712`; scoped set-link changes pending commit.
+QA: PASS for local unit/browser/build checks; production verification PENDING.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
-NEXT_SINGLE_TASK: Review a comparable seven-day analytics window for Memory
-Pairs and Word Search before selecting another change. No automatic monitoring
-is scheduled; aggregate page traffic alone does not establish repeat visitors.
+NEXT_SINGLE_TASK: Push validated set links and verify the Git-connected
+Cloudflare Pages deployment plus live page behavior under current approval.
 BLOCKER: None. GitHub exception applies only to this repository; future pushes
 still require task authorization, and credential prompts require manual entry.

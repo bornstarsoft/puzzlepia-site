@@ -49,6 +49,46 @@
   var store = progressModel && remember && saveControls && saveStatus && resumeButton ?
     progressModel.create(function () { return window.localStorage; }, catalog) : null;
   var boardDay = "", boardMode = "practice", saved = null;
+  var linkedIndex = model.linkedSet(catalog, window.location.search);
+  var linkControls = helpers.qs(root, "[data-link-controls]");
+  var setLink = helpers.qs(root, "[data-set-link]");
+  var linkValue = helpers.qs(root, "[data-link-value]");
+  var copyLink = helpers.qs(root, "[data-copy-link]");
+  var linkStatus = helpers.qs(root, "[data-link-status]");
+  var linkReady = linkControls && setLink && linkValue && copyLink && linkStatus;
+  var copyRequest = 0;
+
+  function updateSetLink() {
+    if (!linkReady) return;
+    copyRequest += 1;
+    var path = model.setLink(catalog, currentIndex);
+    setLink.setAttribute("href", path);
+    setLink.textContent = "Open " + catalog.sets[currentIndex].title;
+    linkValue.value = window.location.origin + path;
+    linkStatus.textContent = "This link opens a fresh board, without answers or saved progress.";
+    copyLink.disabled = false;
+    linkControls.hidden = false;
+  }
+
+  if (linkReady) {
+    copyLink.addEventListener("click", async function () {
+      var request = ++copyRequest;
+      var url = linkValue.value;
+      copyLink.disabled = true;
+      try {
+        await window.navigator.clipboard.writeText(url);
+        if (request === copyRequest) linkStatus.textContent = "Link copied. Come back to this set or share it.";
+      } catch (_) {
+        if (request === copyRequest) {
+          linkStatus.textContent = "Copy is unavailable. Select and copy the link above.";
+          linkValue.focus();
+          linkValue.select();
+        }
+      } finally {
+        if (request === copyRequest) copyLink.disabled = false;
+      }
+    });
+  }
 
   function persist() {
     if (!store || !remember.checked) return;
@@ -397,6 +437,7 @@
     schedule.textContent = label + " - set " + (index + 1) + " of " + catalog.sets.length + ".";
     grid.setAttribute("aria-label", set.title + ", 6 by 6 word search grid");
     resetGame();
+    updateSetLink();
   }
 
   function loadToday() {
@@ -416,7 +457,10 @@
   document.addEventListener("pointercancel", function (event) { if (event.pointerId === activePointer) cancelInput(); });
   window.addEventListener("blur", cancelInput);
   document.addEventListener("visibilitychange", function () { if (document.hidden) cancelInput(); });
-  loadToday();
+  if (linkedIndex >= 0) {
+    loadSet(linkedIndex);
+    setFeedback("Opened from a set link. Find the four words.");
+  } else loadToday();
   controls.hidden = false;
   resetButton.disabled = false;
   unavailable.hidden = true;
@@ -427,7 +471,11 @@
     remember.checked = !!saved;
     if (!result.ok) saveStatus.textContent = "Saving is unavailable here. You can still play.";
     if (saved) {
-      if (saved.day === new Date().toISOString().slice(0, 10)) restore(saved);
+      if (linkedIndex >= 0) {
+        resumeButton.textContent = "Continue saved " + catalog.sets[saved.index].title + " (" + saved.found.length + " / 4 found)";
+        resumeButton.hidden = false;
+        saveStatus.textContent = "The linked set is fresh. Your saved set is kept until you play, reset, or change sets.";
+      } else if (saved.day === new Date().toISOString().slice(0, 10)) restore(saved);
       else if (saved.found.length) {
         resumeButton.textContent = "Continue " + catalog.sets[saved.index].title + " (" + saved.found.length + " / 4 found)";
         resumeButton.hidden = false;

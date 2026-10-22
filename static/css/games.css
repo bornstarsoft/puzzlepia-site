@@ -115,6 +115,14 @@
 .word-search-note { margin: 16px 0 0; color: var(--muted); font-size: 0.875rem; }
 .word-search-resume { margin-bottom: 16px; }
 .word-search-resume[hidden], .word-search-save[hidden] { display: none; }
+.word-search-link { margin-top: 20px; max-width: 600px; }
+.word-search-link[hidden] { display: none; }
+.word-search-link summary { cursor: pointer; min-height: 44px; padding: 10px 0; font-weight: 750; }
+.word-search-link label { display: block; margin-bottom: 6px; font-weight: 750; }
+.word-search-link-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.word-search-link-row input { flex: 1 1 220px; min-width: 0; width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; font: inherit; color: var(--ink); background: white; }
+.word-search-link-row .button { min-height: 44px; }
+.word-search-link [data-link-status] { font-size: 0.9rem; }
 .word-search-save { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 12px; }
 .word-search-save label { display: flex; align-items: center; gap: 10px; min-height: 44px; cursor: pointer; font-weight: 700; }
 .word-search-save input { flex: 0 0 20px; width: 20px; height: 20px; accent-color: var(--purple-dark); }

@@ -165,6 +165,41 @@ internal file references and 71 sitemap entries were valid. Native Safari and
 retention improvements are not verified. Production evidence belongs in
 [CURRENT_STATE](CURRENT_STATE.md).
 
+## Phase 7D: Links to Practice Sets (2026-10-23)
+
+- A compact, initially closed disclosure below the board provides a link and
+  copy button for the current set, for example `/daily/word-search/?set=fruit`.
+  IDs come only from the curated catalog, not user-supplied destinations.
+- The link opens that fixed set fresh on any date. An explicit valid set wins
+  over automatic resume, including a save of the same set. The saved board can
+  still be resumed manually and is not overwritten merely by opening/copying
+  the link. Playing, resetting or switching sets follows existing save rules.
+- Unknown, malformed, duplicate or removed set IDs use the normal daily/resume
+  flow. No address-bar rewriting or custom back-button behavior is introduced.
+  Reloading a set URL opens that linked set again; use the base URL for the
+  normal daily/resume entry point.
+- Copy writes only the curated set URL after a click. It never reads the
+  clipboard. Denied/unavailable clipboard access selects a visible read-only
+  field for manual copy. Async copy feedback cannot leak onto a newly selected
+  set. Links contain no found words, answers, account IDs or analytics tags.
+- Existing canonical/OG URLs and sitemap stay at the base page. No public
+  routes, dependencies, storage keys, backend or tracking were added. Keep
+  existing IDs stable when editing future catalogs; do not repurpose an ID.
+- QA: complete/reset linked sets, reopen on another UTC date, preserve an
+  existing same/different-set save, resume it manually, and check opt-out and
+  denied clipboard. Test all fourteen IDs, next-set wrap, keyboard/touch and
+  390/430/768/1280px widths. Production evidence belongs in CURRENT_STATE.md.
+
+Local QA on 2026-10-23 passed 112 completions across all fourteen links and
+four widths, reset/next updates, cross-date reopening, saved-board precedence
+and opt-out. Copy success (including a native write), denied/missing clipboard,
+async set-switch race, keyboard, no-JavaScript and blocked-storage cases passed.
+Desktop drag and mobile endpoint taps passed. Core-page/footer and other-game
+regressions passed without console/page errors or horizontal overflow. Unit
+tests, build, generated internal references, canonical and sitemap checks passed.
+The first local test used a production canonical expectation, and another
+asserted before navigation finished; corrected checks passed without source fixes.
+
 ## Release Boundary
 
 This is a curated collection rotation, not evidence of increased retention.

@@ -69,5 +69,19 @@
     };
   }
 
-  return { prepare: prepare, pick: pick, findPaths: findPaths };
+  function linkedSet(prepared, search) {
+    try {
+      var params = new URLSearchParams(search);
+      if (params.getAll("set").length !== 1) return -1;
+      var id = params.get("set");
+      return prepared.sets.findIndex(function (set) { return set.id === id; });
+    } catch (_) { return -1; }
+  }
+
+  function setLink(prepared, index) {
+    if (!Number.isInteger(index) || !prepared.sets[index]) return "";
+    return "/daily/word-search/?set=" + encodeURIComponent(prepared.sets[index].id);
+  }
+
+  return { prepare: prepare, pick: pick, findPaths: findPaths, linkedSet: linkedSet, setLink: setLink };
 });

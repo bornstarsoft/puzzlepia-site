@@ -245,3 +245,9 @@ Concise internal notes for major Puzzlepia phases.
 - Preserved the untimed matching rules, full reset, and original starter board as a fallback if optional layout data is unavailable. No saved progress or random generation.
 - Kept the homepage unchanged and preserved Make 10, Word Search, external game links, Phaser output and deployment/analytics settings. See [QA steps](matching-games-qa.md#phase-7c-memory-layout-rotation) and [release state](CURRENT_STATE.md).
 - Deployed `1ffb091` through the approved GitHub/Cloudflare Pages path. Live four-width QA passed 56 Memory completions plus existing-game regression checks, asset integrity, footer and sitemap checks. No measured retention gain or native Safari validation is claimed.
+
+## Phase 7D Word Search Set Links: 2026-10-23
+
+- Added links to individual practice sets for returning to a favorite board or sharing the same puzzle, with copy and manual-copy fallback in a compact disclosure.
+- Explicit set links open fresh without exposing answers or progress. Existing browser saves remain available until deliberate play replaces them; normal daily/resume behavior remains on the base URL.
+- Homepage, game rules, other games, canonical URLs, analytics and hosting settings are unchanged. See [set-link behavior](word-search-rotation.md#phase-7d-links-to-practice-sets-2026-10-23) and [release state](CURRENT_STATE.md).

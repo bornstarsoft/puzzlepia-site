@@ -48,6 +48,16 @@
   </div>
   <button class="button button--primary puzzle-reset" type="button" data-reset disabled>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/kpop-word-search/">Explore KPOP Word Search</a>
+  <details class="word-search-link" data-link-controls hidden>
+    <summary>Keep a link to this set</summary>
+    <p><a data-set-link href="/daily/word-search/">Open this set</a></p>
+    <label for="word-search-link">Set link</label>
+    <div class="word-search-link-row">
+      <input id="word-search-link" type="text" data-link-value readonly spellcheck="false">
+      <button class="button button--secondary" type="button" data-copy-link>Copy link</button>
+    </div>
+    <p data-link-status role="status">This link opens a fresh board, without answers or saved progress.</p>
+  </details>
   <div class="word-search-save" data-save-controls hidden>
     <label><input type="checkbox" data-remember aria-describedby="word-search-save-note"> Remember my progress on this browser</label>
     <p id="word-search-save-note">Only the latest set is kept, for up to 30 days. Switching sets replaces it. Turn this off to delete the save. No account or sync.</p>
