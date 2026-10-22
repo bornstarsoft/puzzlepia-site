@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 7Q Color Match Target Choice: 2026-10-23
+
+- Kept the fixed 5x5 board and default six-pink-tile round; added mint/gold/purple targets, explicit color names, completion-only next color and fixed target links. Reset restores the same target; no scores, timers or saved progress.
+- Put the Color Match board before longer copy, fingerprinted its script, and preserved completion feedback after extra taps. Optional-control/URL failures fall back to pink; unavailable JavaScript leaves a clear message.
+- Connected existing mint/gold exercises to matching playable targets and clarified the guide's distinction between target finding and line/group games. Homepage, other games, external destinations and hosting/analytics settings remain unchanged.
+- Run `node tools/test_color_match.cjs` for target counts, label/state/reset, fixed-link and fallback checks. Validation/deployment evidence belongs in [current work state](CURRENT_STATE.md); no retention gain is claimed.
+
 ## Phase 7P Three-Round Number Practice: 2026-10-23
 
 - Upgraded Quick Number Focus and Number Order: 1 to 10 with actual Layout 1/2 diagrams, optional hints and explained answers. Added Find the Final Four Numbers using Layout 7.

@@ -2,6 +2,7 @@
 title: "Color Match: Gold Target"
 description: "A simple color scanning challenge that asks players to count every gold target in a short row."
 date: 2026-07-25
+lastmod: 2026-10-23T03:56:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Color match"
@@ -29,4 +30,4 @@ There are three gold tiles, in positions 1, 4, and 6.
 
 ## Play next
 
-Try [Daily Color Match](/daily/color-match/), then explore [Color Rings Mania](/games/color-rings-mania/) for a related BornstarSoft game page.
+Try [Daily Color Match with a gold target](/daily/color-match/?target=gold). The full playable board has six gold tiles; this row exercise has three. Find all six in any order, then reset or try another target. The link opens fresh and does not save progress. For a related BornstarSoft game page, explore [Color Rings Mania](/games/color-rings-mania/).

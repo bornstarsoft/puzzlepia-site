@@ -1,11 +1,41 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NUMBER-PRACTICE
-Phase: production verification complete; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COLOR-TARGETS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-TARGETS; Color Match targets, content, tests and deployment; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable return-visit improvement and live deployment while
+  keeping the homepage simple. Starting HEAD `3992d1b`; clean main matches
+  origin/main after fetch. Existing repository-specific GitHub exception applies.
+- Keep Color Match's fixed 5x5 board and pink default. Add four selectable
+  targets, visible color names, completion-only next target and fixed target
+  links. Reset preserves the current target; no timers, scores or storage.
+- Update existing color challenges/guide links. Keep homepage, other games,
+  external destinations, analytics, Phaser output and hosting settings unchanged.
+- Local QA: PASS. Nine dependency-free Node scripts and both Python content
+  checks pass. New Color Match tests exercise all target counts, visible/ARIA
+  names, forward/reverse completion, duplicate/wrong taps, reset, next wrap,
+  history, invalid links, optional markup/URL fallbacks and blocked storage.
+- Chromium at 390/430/768/1280px passed 32 page checks, 32 target completions,
+  partial/completed reset, target switching, completion-message stability,
+  next wrap and exact challenge links. Visible labels fit every cell; initial
+  label contrast is at least 4.5:1 and tile widths at least 44px at these widths.
+- Three more keyboard/fallback completions pass with missing controls/URL API,
+  blocked storage, history and invalid links. Missing script/disabled JavaScript
+  leaves clear unavailable copy, disabled reset and readable guide links.
+- Eight existing-game regression completions/resets pass; other starters
+  initialize/reset. No console/page errors or horizontal overflow in final
+  matrices; settled mobile/desktop screenshots inspected. Browser tests use
+  fixed cell coordinates, since clearing changes the data-color selectors.
+- Hugo/check_site/diff checks pass. 2,471 internal references across 84 HTML
+  files resolve; IDs are unique. Four page metadata/schema/sitemap checks,
+  robots, unchanged external URLs and three asset fingerprints/MIME types pass.
+  Generated output stays ignored/untracked. Production QA: NOT_RUN.
+
+## Previous Number Practice Work
 
 - Owner requested suitable content and another small return-visit improvement,
   keeping the homepage simple, with validation and live deployment. Starting
@@ -786,9 +816,9 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PRACTICE; 2026-10-23)
   live on `/privacy/`. Local no-JavaScript fallback and desktop drag-save-reload
   checks also passed. Generated output remains ignored and untracked.
 
-DONE: Three-round Number Puzzle practice implemented, deployed and verified live.
-HEAD/WIP: Application HEAD `d206a8a`; documentation-only release evidence follows.
-QA: PASS locally and on production. No source WIP remains.
+DONE: Color Match target choice implemented and validated locally.
+HEAD/WIP: Starting HEAD `3992d1b`; twelve intended files ready for commit.
+QA: PASS locally. Production verification NOT_RUN; approved deployment next.
 QA: NOT_RUN for native Safari devices, Search Console indexing, and retention
 measurement. This release does not prove improved traffic or business outcomes.
 NEXT_SINGLE_TASK: Review available aggregate discovery and engagement evidence

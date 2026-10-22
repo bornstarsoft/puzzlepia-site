@@ -2,6 +2,7 @@
 title: "Color Puzzle Strategy Basics"
 description: "Learn simple color puzzle strategy ideas for matching groups, reading space, and enjoying visual puzzle play."
 date: 2026-05-29
+lastmod: 2026-10-23T03:56:00+09:00
 draft: false
 tags:
   - "color puzzles"
@@ -31,6 +32,8 @@ The goal is not to solve everything instantly. The goal is to notice where the b
 
 ## Plan around limited space
 
+The rule matters more than the shape of a group. In Puzzlepia's **Daily Color Match**, a matching tile can be anywhere on the board. You do not need adjacent targets or a line. The Ring starter instead asks you to place all its tray rings into compatible sizes; it does not require a color line either. Check the goal before applying a strategy from another game.
+
 Color puzzles often look relaxed, but space still matters.
 
 If you place pieces without thinking about the board shape, you can block future matches. This is especially true in ring-style puzzles where one cell may hold different sizes. A cell can look available, but still be wrong for the piece you need later.
@@ -58,6 +61,14 @@ They are helpful because they frame the board. A piece placed along an edge has 
 They are limiting because pieces at the edge have fewer ways to connect. If you place too many unmatched colors along the border, you may make future matches harder.
 
 Try to use edges for stable patterns, not random leftovers.
+
+## Try a different target, not a faster round
+
+Daily Color Match now offers pink, mint, gold and purple targets on one fixed board. Read the color names on the tiles as well as their fills, then scan one row at a time. The board does not move while you play.
+
+Start with [a mint round](/daily/color-match/?target=mint) or [a gold round](/daily/color-match/?target=gold). Each has six targets. Purple has seven, but the goal stays the same: find every tile of that color, in any order. A wrong tap does not remove a tile or end the round.
+
+After finishing, choose **Try next color** to start fresh, or keep the fixed target link for another break. Reset preserves your selected color and restores all tiles. There is no timer or saved progress, and these practice rounds do not change automatically each day.
 
 ## Enjoy the visual reward
 

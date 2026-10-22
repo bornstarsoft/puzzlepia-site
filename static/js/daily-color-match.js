@@ -25,7 +25,20 @@
   };
   var colors = [];
   var grid = helpers.qs(root, "[data-grid]");
+  var reset = helpers.qs(root, "[data-reset]");
+  if (!grid || !reset || !helpers.qs(root, "[data-status]") || !helpers.qs(root, "[data-complete]")) return;
   var completeActionsEl = helpers.qs(root, "[data-complete-actions]");
+  var picker = helpers.qs(root, "[data-color-select]");
+  var controls = helpers.qs(root, "[data-color-controls]");
+  var heading = helpers.qs(root, "[data-color-title]");
+  var instructions = helpers.qs(root, "[data-color-instructions]");
+  var targetText = helpers.qs(root, "[data-color-target]");
+  var swatch = helpers.qs(root, "[data-color-swatch]");
+  var nextTarget = helpers.qs(root, "[data-color-next]");
+  var targetLink = helpers.qs(root, "[data-target-link]");
+  var linkRow = helpers.qs(root, "[data-target-link-row]");
+  var unavailable = helpers.qs(root, "[data-unavailable]");
+  var targets = ["pink", "mint", "gold", "purple"];
   var targetTotal = startingColors.reduce(function (total, row) {
     return total + row.filter(function (tile) { return tile === targetColor; }).length;
   }, 0);
@@ -73,6 +86,7 @@
       cell.classList.remove("is-invalid");
       cell.classList.toggle("is-empty", !color);
       cell.disabled = !color;
+      cell.textContent = color ? labels[color] : "Done";
       cell.setAttribute("aria-label", (color ? labels[color] + " tile" : "Cleared tile") + ", row " + (row + 1) + ", column " + (col + 1));
     });
   }
@@ -90,11 +104,11 @@
   function tapTile(row, col) {
     var color = colors[row][col];
     var button = grid.querySelector('[data-row="' + row + '"][data-col="' + col + '"]');
-    if (!color) {
+    if (!color || remainingTargetTiles() === 0) {
       return;
     }
     if (color !== targetColor) {
-      setFeedback("That tile is not pink. Try another.", "warn");
+      setFeedback("Look for " + targetColor + " tiles. Try another.", "warn");
       helpers.pulse(button, "is-invalid");
       return;
     }
@@ -108,7 +122,31 @@
     render();
     helpers.hideComplete(root);
     showCompletionActions(false);
-    setFeedback(showResetFeedback ? "Puzzle reset. Find the pink tiles." : "Pink tiles: 0 of " + targetTotal + " cleared.", showResetFeedback ? "good" : "");
+    setFeedback((showResetFeedback ? "Puzzle reset. " : "") + targetLabel + " tiles: 0 of " + targetTotal + " cleared.", showResetFeedback ? "good" : "");
+  }
+
+  function changeTarget(color, focusBoard) {
+    if (targets.indexOf(color) === -1) {
+      picker.value = targetColor;
+      return;
+    }
+    targetColor = color;
+    targetLabel = labels[color];
+    targetTotal = startingColors.reduce(function (total, row) {
+      return total + row.filter(function (tile) { return tile === color; }).length;
+    }, 0);
+    picker.value = color;
+    heading.textContent = "Find every " + color + " tile";
+    instructions.textContent = "Tap all " + targetTotal + " " + color + " tiles, in any order. Tiles do not need to touch.";
+    targetText.textContent = "Target: " + targetLabel + " (" + targetTotal + " tiles)";
+    swatch.dataset.color = color;
+    if (targetLink && linkRow) {
+      targetLink.href = "/daily/color-match/?target=" + color;
+      targetLink.textContent = "Open a fresh " + targetLabel + " round";
+      linkRow.hidden = false;
+    }
+    resetGame(false);
+    if (focusBoard) grid.querySelector(".color-cell").focus();
   }
 
   function buildGrid() {
@@ -132,4 +170,25 @@
   buildGrid();
   helpers.wireReset(root, resetGame);
   resetGame();
+  if (picker && controls && heading && instructions && targetText && swatch) {
+    picker.addEventListener("change", function () { changeTarget(picker.value, false); });
+    if (nextTarget && completeActionsEl) {
+      nextTarget.addEventListener("click", function () {
+        if (remainingTargetTiles() === 0) changeTarget(targets[(targets.indexOf(targetColor) + 1) % targets.length], true);
+      });
+      nextTarget.hidden = false;
+    }
+    var initial = "pink";
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.getAll("target").length === 1 && targets.indexOf(params.get("target")) !== -1) initial = params.get("target");
+    } catch (_) { /* Missing URL APIs keep the original pink target. */ }
+    changeTarget(initial, false);
+    controls.hidden = false;
+    if (typeof window.addEventListener === "function") {
+      window.addEventListener("pageshow", function () { picker.value = targetColor; });
+    }
+  }
+  reset.disabled = false;
+  if (unavailable) unavailable.hidden = true;
 })();

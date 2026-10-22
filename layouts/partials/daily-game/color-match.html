@@ -2,21 +2,35 @@
   <div class="puzzle-card__header">
     <div>
       <p class="eyebrow">Playable starter</p>
-      <h2 id="color-match-title">Find every pink tile</h2>
+      <h2 id="color-match-title" data-color-title>Find every pink tile</h2>
     </div>
     <p class="puzzle-status" data-status aria-live="polite">Pink tiles: 0 of 6 cleared.</p>
   </div>
-  <p class="puzzle-instructions">Tap all six pink tiles. A wrong-color tap gives feedback and lets you keep playing.</p>
+  <p class="puzzle-instructions" data-color-instructions>Tap all six pink tiles, in any order. Tiles do not need to touch.</p>
+  <div class="memory-picker" data-color-controls hidden>
+    <label for="color-target-select">Target color
+      <select id="color-target-select" data-color-select aria-describedby="color-target-note">
+        <option value="pink">Pink</option>
+        <option value="mint">Mint</option>
+        <option value="gold">Gold</option>
+        <option value="purple">Purple</option>
+      </select>
+    </label>
+  </div>
+  <p id="color-target-note" class="memory-layout-note">One fixed board, four target colors. Changing targets starts a fresh round. No timer or saved progress.</p>
   <p class="puzzle-helper color-target">
-    <span class="color-target__swatch" aria-hidden="true"></span>
-    <span>Target: Pink (6 tiles)</span>
+    <span class="color-target__swatch" data-color-swatch data-color="pink" aria-hidden="true"></span>
+    <span data-color-target>Target: Pink (6 tiles)</span>
   </p>
+  <p data-target-link-row hidden><a class="pair-layout-link" data-target-link href="{{ .RelPermalink }}">Open this target again</a></p>
+  <p data-unavailable>The interactive board needs JavaScript. You can still read the guide and challenge below.</p>
   <div class="color-grid" data-grid aria-label="5 by 5 color matching grid"></div>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
   <div class="completion-actions" data-complete-actions hidden>
+    <button class="button button--secondary" type="button" data-color-next hidden>Try next color</button>
     <a class="button button--primary puzzle-cta" href="https://ringzzle.com/play/" rel="noopener" target="_blank">Play Ringzzle online</a>
     <a class="button button--secondary puzzle-cta" href="/games/ringzzle/">Explore Ringzzle</a>
   </div>
-  <button class="button button--primary puzzle-reset" type="button" data-reset>Reset puzzle</button>
+  <button class="button button--primary puzzle-reset" type="button" data-reset disabled>Reset puzzle</button>
   <a class="button button--secondary puzzle-cta" href="/games/color-rings-mania/">Explore Color Rings Mania</a>
 </section>

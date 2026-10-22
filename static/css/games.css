@@ -432,24 +432,36 @@
 .color-cell {
   min-height: 54px;
   padding: 0;
+  font-size: 0.75rem;
+  font-weight: 750;
   transition: background 0.16s ease, box-shadow 0.16s ease, outline-color 0.16s ease, transform 0.16s ease;
 }
 
-.color-cell[data-color="pink"] {
+.color-cell[data-color="pink"],
+.color-target__swatch[data-color="pink"] {
   background: var(--pink);
 }
 
-.color-cell[data-color="mint"] {
+.color-cell[data-color="mint"],
+.color-target__swatch[data-color="mint"] {
   background: var(--mint);
 }
 
-.color-cell[data-color="gold"] {
+.color-cell[data-color="gold"],
+.color-target__swatch[data-color="gold"] {
   background: var(--gold);
 }
 
-.color-cell[data-color="purple"] {
-  background: var(--purple);
+.color-cell[data-color="purple"],
+.color-target__swatch[data-color="purple"] {
+  background: #6d28d9;
+  color: #fff;
 }
+
+.color-match-game .color-cell:disabled { opacity: 1; }
+.color-match-game .color-grid { touch-action: manipulation; }
+.color-match-game .color-cell:focus-visible,
+.color-match-game select:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 2px; }
 
 .color-cell.is-empty {
   border-style: dashed;

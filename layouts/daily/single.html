@@ -11,11 +11,13 @@
 {{ partial "daily-game/word-search.html" . }}
 {{ else if eq .Params.game "number-puzzle" }}
 {{ partial "daily-game/number-puzzle.html" . }}
+{{ else if eq .Params.game "color-match" }}
+{{ partial "daily-game/color-match.html" . }}
 {{ end }}
   <div class="page__content">
 {{ .Content }}
   </div>
-{{ if and (ne .Params.game "word-search") (ne .Params.game "number-puzzle") (not (.HasShortcode "daily-pair-board")) }}
+{{ if and (ne .Params.game "word-search") (ne .Params.game "number-puzzle") (ne .Params.game "color-match") (not (.HasShortcode "daily-pair-board")) }}
 {{ with .Params.game }}
 {{ partial (printf "daily-game/%s.html" .) $ }}
 {{ end }}

@@ -13,6 +13,9 @@
 {{ $game := resources.FromString "js/daily-number-puzzle.js" (readFile "static/js/daily-number-puzzle.js") | minify | fingerprint }}
   <script src="{{ $model.RelPermalink }}"></script>
   <script src="{{ $game.RelPermalink }}"></script>
+{{ else if eq $.Params.game "color-match" }}
+{{ $game := resources.FromString "js/daily-color-match.js" (readFile "static/js/daily-color-match.js") | minify | fingerprint }}
+  <script src="{{ $game.RelPermalink }}"></script>
 {{ else if eq $.Params.game "pair-puzzle" }}
 {{ if eq $.Params.pairMode "memory" }}
 {{ $model := resources.FromString "js/puzzlepia-memory-layouts.js" (readFile "static/js/puzzlepia-memory-layouts.js") | minify | fingerprint }}
