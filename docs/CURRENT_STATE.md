@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-NUMBER-RECOVERY
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-RECOVERY; existing number challenge and guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-RING-FIRST-FINISH; 2026-10-23)
+Phase: verified production deployment; final handoff record.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-RECOVERY; 2026-10-23)
 
 ## Current Approved Work
 
@@ -29,8 +29,26 @@ LAST_WRITER = CODEX (PUZZLEPIA-RING-FIRST-FINISH; 2026-10-23)
 - All 2,858 internal references/fragments across 84 generated HTML pages resolve
   with unique IDs. External destinations, publication dates and draft flags
   unchanged. Generated output ignored/untracked; no temporary Cloudflare JSON.
-- NEXT_SINGLE_TASK: commit, deploy and repeat production QA. Native Safari
-  NOT_RUN; retention impact unmeasured. No new monitoring or tracking.
+- DONE: implemented and verified live. Application HEAD: `1eb365c`; final
+  handoff record remains. BLOCKER: none. NEXT_SINGLE_TASK: review actual
+  guide-to-challenge-to-game visits before choosing another return feature.
+  Native Safari NOT_RUN; retention impact unmeasured. No monitoring scheduled.
+
+## Number Recovery Production Verification: 2026-10-23
+
+- Pushed `1eb365c` under the approved GitHub exception. Cloudflare Pages
+  succeeded at 2026-10-23 13:21:28 UTC (22:21:28 KST), confirmed by its public
+  commit check. Existing public URLs and publication flags are unchanged.
+- Live Chromium at 390/430/768/1280px repeated 28 page checks, eight Number
+  completions, twelve resets and twelve wrong taps. The published diagram
+  matches Layout 4. Wrong taps preserve progress; replay/reload/reset work.
+- Keyboard/no-JavaScript reading, touch targets, Daily/Blog/search discovery,
+  metadata/JSON-LD, footer, sitemap and robots pass. All seven games complete
+  and reset on live mobile emulation (seven completions, fourteen resets;
+  Word Search uses its existing word-list fallback). No errors or overflow.
+- Home, game logic, styles, runtime scripts, storage, external links, analytics,
+  Phaser output and hosting settings remain unchanged. Generated output stays
+  ignored/untracked. The owned local QA server was stopped. No growth claim.
 
 ## Previous Ring Starter Work
 

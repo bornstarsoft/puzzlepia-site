@@ -14,6 +14,10 @@
   QA (28 page checks, eight Number completions, twelve resets/wrong taps),
   keyboard/no-JavaScript, discovery, metadata and seven-game regression checks.
   No console errors or horizontal overflow in tested flows.
+- Deployed `1eb365c`; Cloudflare Pages succeeded at 2026-10-23 22:21:28 KST.
+  Live four-width checks repeated the page/game matrix, keyboard/no-JavaScript,
+  discovery, metadata, footer and seven-game completion/reset checks.
+  Native Safari and retention impact remain unverified.
 
 ## Phase 7Y Ring Starter Choices: 2026-10-23
 
