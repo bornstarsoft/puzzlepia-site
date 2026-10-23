@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WORD-WARMUPS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-WARMUPS; two existing beginner word challenges and guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; 2026-10-23)
+Phase: production verified; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WORD-WARMUPS; 2026-10-23)
 
 ## Current Approved Work
 
@@ -15,7 +15,7 @@ LAST_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; 2026-10-23)
   Connect both from the existing beginner guide and offer a later backward round.
 - No new route, homepage/layout, gameplay, storage, analytics or hosting changes.
   No new analytics evidence supplied; this is content quality work, not a claim
-  of measured retention improvement. Local QA: PASS; deployment pending.
+  of measured retention improvement. Local QA: PASS; deployment: PASS.
 - `check_site.sh`, `hugo --gc --minify`, eleven Node suites, seven Python checks
   and diff check pass. New `tools/check_word_warmups.py` checks generated cells
   against the game model, exact STAR/MOON paths, both O positions, closed
@@ -29,8 +29,26 @@ LAST_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; 2026-10-23)
   No console errors or horizontal overflow. Mobile/desktop captures inspected.
   All 2,759 internal references/fragments across 84 HTML pages resolve; IDs
   are unique. Generated output stays ignored/untracked; draft flags unchanged.
-- NEXT_SINGLE_TASK: commit validated content, push through approved GitHub
-  exception, then check Cloudflare and repeat live QA.
+- DONE: implemented and verified live. Application HEAD: `7d3b668`; only this
+  handoff/release record remains for the final documentation commit.
+  BLOCKER: none. NEXT_SINGLE_TASK: review comparable discovery/return traffic
+  before choosing another content or navigation change. No monitor scheduled.
+
+## Beginner Word Warmups Production Verification: 2026-10-23
+
+- Pushed `7d3b668` through the approved repository-specific GitHub exception.
+  Cloudflare Pages succeeded at 2026-10-23 12:26:26 UTC (21:26:26 KST),
+  verified through its public commit check.
+- Live Chromium at 390/430/768/1280px passed 32 page checks, 16 game
+  completions/resets and 16 disclosure interactions. Grid endpoints select
+  STAR and MOON correctly, including both O cells; partial resets, complete
+  resets and replay pass. Small widths use emulated touch.
+- Keyboard/no-JavaScript reading, disclosure touch size, Daily/Blog/search
+  discovery, footer links and three pages' canonical/description/JSON-LD pass.
+  No console errors or horizontal overflow in tested flows.
+- Home, gameplay, storage, analytics, external destinations and hosting settings
+  remain unchanged. Native Safari and retention/business impact were not
+  measured; this evidence verifies release behavior, not growth.
 
 ## Previous Mixed Practice Work
 

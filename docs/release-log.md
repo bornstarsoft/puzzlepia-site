@@ -14,6 +14,10 @@
   parity and published links. Local checks and four-width Chromium QA pass:
   32 page checks, 16 game completions/resets and 16 disclosures, plus keyboard,
   no-JavaScript, discovery, footer and SEO checks. No errors or overflow found.
+- Deployed `7d3b668`; Cloudflare Pages succeeded at 2026-10-23 21:26:26 KST.
+  Live four-width QA repeated those page, game and disclosure checks, plus
+  keyboard/no-JavaScript, discovery, footer and metadata checks. No errors or
+  mobile overflow. Native Safari and retention impact were not measured.
 
 ## Phase 7U Mixed Practice Break: 2026-10-23
 
