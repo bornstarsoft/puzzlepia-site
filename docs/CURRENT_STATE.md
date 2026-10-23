@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-FRUIT-PRACTICE
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-FRUIT-PRACTICE; existing fruit challenge and guide; main; 2026-10-24)
-LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PATTERN-ROUNDS; 2026-10-24)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-FRUIT-PRACTICE; 2026-10-24)
 
 ## Current Approved Work
 
@@ -27,8 +27,27 @@ LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PATTERN-ROUNDS; 2026-10-24)
   sitemap/robots and footer pass. Screenshots inspected. Seven existing games
   complete/reset (seven completions, fourteen resets; Word Search fallback).
   No console errors or horizontal overflow. Native Safari NOT_RUN.
-- NEXT_SINGLE_TASK: commit/deploy and repeat live QA. No measured retention
-  claim and no monitoring scheduled.
+- DONE: implemented and verified live. Application HEAD: `87c761c`; only the
+  final documentation record remains. BLOCKER: none. NEXT_SINGLE_TASK: review
+  actual guide-to-challenge-to-game visits before selecting another return
+  improvement. No measured retention claim and no monitoring scheduled.
+
+## Fruit Practice Production Verification: 2026-10-24
+
+- Pushed `87c761c` under the approved GitHub exception. Cloudflare Pages
+  succeeded at 2026-10-23 17:48:40 UTC (2026-10-24 02:48:40 KST), confirmed
+  by its public commit check. Existing routes and publication flags remain.
+- Live Chromium 390/430/768/1280px: 28 page checks, 32 disclosures, sixteen
+  section anchors, twelve Fruit bowl completions and sixteen resets pass.
+  Endpoint/reverse selection, desktop drag, fallback, wrong paths, highlights
+  and fixed-link reload checked. Small widths use emulated touch.
+- Keyboard/no-JavaScript reading, Daily/Blog/search discovery, metadata/JSON-LD,
+  sitemap/robots and footer pass. Live mobile screenshot inspected. Seven
+  existing games complete/reset (seven completions, fourteen resets; Word
+  Search fallback). No console errors or horizontal overflow in tested flows.
+- Home, game runtime, styles, data, external destinations, analytics, Phaser
+  and hosting settings unchanged. Generated output ignored/untracked. Owned
+  local server stopped. Native Safari NOT_RUN; retention impact unmeasured.
 
 ## Previous Color Pattern Work
 

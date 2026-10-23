@@ -12,6 +12,10 @@
 - Local checks pass: eleven Node suites, twelve Python checks, four-width
   Chromium reading/selection/completion/reset, keyboard/no-JavaScript,
   discovery/metadata/footer and seven-game regression. Native Safari NOT_RUN.
+- Deployed `87c761c`; Cloudflare Pages succeeded at 2026-10-24 02:48:40 KST.
+  Live checks repeat 28 page checks, 32 disclosures, sixteen anchors, twelve
+  Word Search completions and sixteen resets. Seven-game regression and
+  keyboard/no-JavaScript/discovery/SEO/footer checks pass. Retention unmeasured.
 
 ## Phase 8A Color Pattern Rounds: 2026-10-24
 
