@@ -1,5 +1,21 @@
 # Puzzlepia Release Log
 
+## Phase 7W Block First Moves: 2026-10-23
+
+- Replaced two imagined-board prompts with labeled 6x6 starter diagrams,
+  optional hints/answers and precise placements for Line 3, Square and Corner.
+- The corner exercise compares a valid start with an out-of-bounds start;
+  the beginner example places all three pieces without overlap. The existing
+  beginner guide connects both and offers a restricted-board round for later.
+- Kept Home, game logic, storage, analytics, external destinations and Phaser
+  unchanged. These are fixed reading exercises, not newly generated games.
+- After Hugo, run `python3 tools/check_block_first_moves.py`. Production and
+  browser validation evidence is recorded in [current work state](CURRENT_STATE.md).
+- Local QA passes: site/build checks, eleven Node suites, eight Python checks
+  and four-width Chromium testing. Verified 36 page checks, 16 completions/
+  resets, eight invalid placements, 16 disclosures, keyboard/no-JavaScript
+  reading, discovery and metadata. No errors or overflow in tested flows.
+
 ## Phase 7V Beginner Word Warmups: 2026-10-23
 
 - Replaced two answer-only prompts with real First steps board questions:

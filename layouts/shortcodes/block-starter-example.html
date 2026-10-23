@@ -1,0 +1,11 @@
+<div class="word-example block-example" data-block-starter-example>
+  <table>
+    <caption>Daily Block Puzzle: empty starter board</caption>
+    <thead><tr><th scope="col"><span class="visually-hidden">Row</span></th>{{ range seq 1 6 }}<th scope="col">{{ . }}</th>{{ end }}</tr></thead>
+    <tbody>
+{{ range $row := seq 1 6 }}
+      <tr><th scope="row">{{ $row }}</th>{{ range $col := seq 1 6 }}<td><span aria-hidden="true">.</span><span class="visually-hidden">Row {{ $row }}, column {{ $col }}: empty</span></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>

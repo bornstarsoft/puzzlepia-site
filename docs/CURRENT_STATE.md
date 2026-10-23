@@ -1,11 +1,40 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WORD-WARMUPS
-Phase: production verified; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-BLOCK-FIRST-MOVES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-FIRST-MOVES; two block exercises and beginner guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-WORD-WARMUPS; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable content/return improvement with a simple Home and
+  verified deployment. Clean main at `2c0185e` matches fetched origin/main.
+  The existing repository-specific GitHub exception remains approved.
+- Replace vague beginner/corner block prompts with a labeled empty 6x6 board,
+  precise non-overlapping placements, optional hints/answers and game links.
+  Connect from the existing beginner guide; preserve URLs and external links.
+- No Home, gameplay, storage, analytics, Phaser or hosting-setting changes.
+  No new analytics evidence supplied; retention impact remains unmeasured.
+- Local QA: PASS. `check_site.sh`, `hugo --gc --minify`, eleven Node suites,
+  eight Python checks and diff check pass. The new block-first-moves check
+  verifies 36 labeled empty cells, written positions, optional disclosures,
+  guide/round links and sitemap. Browser QA verifies the unchanged real game.
+- Chromium at 390/430/768/1280px passed 36 core/content page checks, 16 game
+  completions/resets, eight invalid placements and 16 disclosures. Partial reset,
+  post-completion reset, both placement orders and replay pass; small widths
+  use emulated touch. No console errors or horizontal overflow.
+- Keyboard/no-JavaScript reading, 44px disclosure targets, Daily/Blog/search
+  discovery, footer links and canonical/description/JSON-LD pass. Mobile and
+  desktop screenshots inspected. All 2,769 internal references/fragments across
+  84 HTML files resolve. External URLs and draft flags remain unchanged.
+- Generated output remains ignored/untracked. Initial browser test checked the
+  new board before link navigation completed; added an explicit navigation wait
+  to the QA script and reran successfully, without changing runtime code.
+- NEXT_SINGLE_TASK: commit validated changes, deploy through the approved
+  GitHub flow and repeat QA on production. Native Safari and business impact
+  are NOT_RUN/unmeasured.
+
+## Previous Word Warmups Work
 
 - Owner approved a suitable return/content improvement, simple Home and verified
   deployment. Clean main at `cecc9a9` matches fetched origin/main. Existing
