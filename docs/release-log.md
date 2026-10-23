@@ -1,5 +1,19 @@
 # Puzzlepia Release Log
 
+## Phase 8A Color Pattern Rounds: 2026-10-24
+
+- Expanded the existing repeated-color question into three labeled static
+  sequences, optional hints/explanations and native links to individual rounds.
+  The shortest repeating-block rule is explicit; row wrapping does not reset it.
+- Connected the existing color guide and a fixed Gold Color Match link while
+  distinguishing sequence reading from the game's target-finding rules.
+- Reused existing table/disclosure styles. No Home, gameplay, runtime scripts,
+  storage, analytics, external destinations, Phaser or hosting-setting changes.
+  See [current work state](CURRENT_STATE.md) for validation/deployment evidence.
+- Local checks pass: eleven Node suites, eleven Python checks, four-width
+  Chromium reading/game checks, keyboard/no-JavaScript disclosures, discovery,
+  metadata and seven-game completion/reset regression checks.
+
 ## Phase 7Z Number Recovery Practice: 2026-10-23
 
 - Replaced the old number-list question with the real Layout 4 board, optional

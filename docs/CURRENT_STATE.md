@@ -1,11 +1,33 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NUMBER-RECOVERY
-Phase: verified production deployment; final handoff record.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COLOR-PATTERN-ROUNDS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-PATTERN-ROUNDS; existing pattern challenge and guide; main; 2026-10-24)
 LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-RECOVERY; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable content/return improvement, simple Home and verified
+  deployment. Clean main at `21325be` matches fetched origin/main. The existing
+  repository-specific GitHub exception applies; no other writer is active.
+- Expand one existing color-pattern challenge into three labeled static rounds,
+  optional hints/answers and native round links. Connect from the color guide.
+- Reuse existing table/disclosure styles. No Home, runtime/game logic, storage,
+  analytics, external destination, Phaser or hosting-setting changes.
+- Local QA: PASS. Site checks, `hugo --gc --minify`, eleven Node suites,
+  eleven Python checks and diff check pass. All 2,868 internal references and
+  fragments across 84 HTML pages resolve. External URLs and draft flags remain.
+- Chromium at 390/430/768/1280px passed 28 page checks, 24 disclosures, twelve
+  round anchors, eight Gold Color Match completions and twelve resets.
+  Keyboard/no-JavaScript disclosures, discovery, metadata, sitemap and footer
+  checks pass. Screenshots inspected; no console errors or horizontal overflow.
+- Seven existing games complete/reset in mobile emulation (seven completions,
+  fourteen resets; Word Search uses its existing word-list fallback).
+  Generated output ignored/untracked; no temporary Cloudflare JSON.
+- NEXT_SINGLE_TASK: commit/deploy and repeat production QA. Native Safari
+  NOT_RUN; retention impact unmeasured. No monitoring scheduled.
+
+## Previous Number Recovery Work
 
 - Owner approved a suitable content/return improvement, simple Home and verified
   deployment. Clean main at `51fb110` matches fetched origin/main. The approved

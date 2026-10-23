@@ -1,0 +1,16 @@
+{{ $id := .Get "id" }}
+{{ with index site.Data.color_patterns $id }}
+{{ $pattern := . }}
+<div class="word-example color-example" data-color-pattern="{{ $id }}">
+  <table>
+    <caption>{{ .caption }}</caption>
+    <tbody>
+{{ range $row := seq 0 2 }}
+      <tr>{{ range $col := seq 0 3 }}{{ $step := add (mul $row 4) $col }}{{ $color := "" }}{{ if lt $step 8 }}{{ $color = index $pattern.unit (mod $step (len $pattern.unit)) }}{{ end }}<td data-color="{{ $color }}">{{ if $color }}{{ $color | title }}{{ else }}?{{ end }}<small>Step {{ add $step 1 }}</small></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ else }}
+  {{ errorf "Unknown color-pattern-example %q in %s" $id .Page.File.Path }}
+{{ end }}

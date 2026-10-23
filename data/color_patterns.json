@@ -1,0 +1,5 @@
+{
+  "three-colors": {"caption": "Round 1: three colors", "unit": ["pink", "mint", "gold"]},
+  "color-pairs": {"caption": "Round 2: colors in pairs", "unit": ["mint", "mint", "gold", "gold"]},
+  "returning-pink": {"caption": "Round 3: pink returns", "unit": ["pink", "mint", "pink", "gold"]}
+}

@@ -2,7 +2,7 @@
 title: "Color Puzzle Strategy Basics"
 description: "Learn simple color puzzle strategy ideas for matching groups, reading space, and enjoying visual puzzle play."
 date: 2026-05-29
-lastmod: 2026-10-23T04:15:00+09:00
+lastmod: 2026-10-24T02:32:00+09:00
 draft: false
 tags:
   - "color puzzles"
@@ -79,6 +79,12 @@ Want to look before tapping? These three reading exercises use the same board as
 3. [Color Match: Gold Target](/daily/challenges/gold-color-target/): check the middle and the edges.
 
 Each exercise links straight to its matching playable target. Try one now and another during a later break. The board and questions stay fixed, so there is no deadline or daily streak to maintain.
+
+## Try a repeating pattern
+
+Before another game, try [Pattern Spotter: Repeated Colors](/daily/challenges/repeated-color-pattern/) for three short reading rounds. Compare a three-color cycle, paired colors and a block where Pink occurs twice. Color names accompany every tile, and hints and explanations stay closed until you choose them.
+
+Use a round link to return to that same question during another break. These are fixed sequences, not changing daily boards or saved progress. Unlike Color Match, the task is to continue a repeating block; matching every tile of one color would answer a different question.
 
 ## Enjoy the visual reward
 
