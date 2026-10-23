@@ -1,11 +1,42 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-RETURN
-Phase: production verified; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-RING-FIRST-FINISH
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-RING-FIRST-FINISH; two existing ring challenges and guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RETURN; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable content/return improvement, simple Home and verified
+  deployment. Clean main at `1d4e4c6` matches fetched origin/main. The existing
+  repository-specific GitHub exception applies; no other writer is active.
+- Improve two existing ring prompts with diagrams of reproducible starter
+  states, optional answers, precise play steps and a two-choice final placement.
+  Connect from the existing ring guide and preserve external destinations.
+- Reuse the ring diagram shortcode and CSS. No Home, game code, storage,
+  analytics, Phaser or hosting-setting changes. Retention impact unmeasured.
+- Local QA: PASS. Site checks, `hugo --gc --minify`, eleven Node suites,
+  ten Python checks and diff check pass. Diagram data, optional answers, exact
+  solutions, reciprocal links, guide links and sitemap are checked.
+- Chromium at 390/430/768/1280px passed 36 page checks, 16 ring completions,
+  24 resets and 32 invalid placements. The two documented diagram states match
+  the actual game. Partial reset, both finishes, post-completion reset and replay
+  pass; smaller widths use emulated touch. No console errors or overflow.
+- Keyboard/no-JavaScript disclosures, 44px summary targets, Daily/Blog/search
+  discovery, canonical/description/JSON-LD, footer and sitemap/robots pass.
+  Mobile/desktop captures inspected. A scrolled full-page capture showed the
+  off-screen fixed skip link; fresh top-of-page capture confirms it stays hidden
+  when unfocused. No CSS change was needed.
+- Seven existing games complete/reset in mobile emulation (seven completions,
+  fourteen resets; Word Search uses its word-button fallback). All 2,852 local
+  references/fragments across 84 HTML pages resolve. External URLs and draft
+  flags unchanged; generated output ignored/untracked; no Cloudflare temp JSON.
+- QA helper fixes only: normalize minified empty attributes in the new Python
+  check and use the Playwright CLI's page callback signature. Game code unchanged.
+- NEXT_SINGLE_TASK: commit, deploy and repeat production QA under the approved
+  GitHub exception. Native Safari NOT_RUN; retention impact unmeasured.
+
+## Previous Challenge Return Work
 
 - Owner approved a suitable return/content improvement, a simple Home and
   verified production deployment. Clean main at `0671fa9` matches fetched

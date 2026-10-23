@@ -2,7 +2,7 @@
 title: "Ring Puzzle Basics: Colors, Sizes, and Simple Strategy"
 description: "Read a ring puzzle cell by size and color, then follow a worked placement example with three clearly labeled cells."
 date: 2026-05-28
-lastmod: 2026-10-23T02:40:00+09:00
+lastmod: 2026-10-23T22:02:00+09:00
 draft: false
 tags:
   - "ring puzzle"
@@ -39,6 +39,14 @@ You are holding a **large gold ring**. Where can it go?
 Now consider a **small pink ring** on the original board. It fits B, whose small position is empty. The pink ring already in A is a reason to reject A: it occupies the small position you need. Color cannot override an occupied size.
 
 This example uses placement only. Puzzlepia's [Daily Ring Puzzle](/daily/ring-puzzle/) finishes when all five tray rings are placed; it does not require a line clear. Ringzzle has its own color-line rules, described on the official game site. Read those rules before transferring a matching strategy between games.
+
+## Reproduce a starter position
+
+Prefer to check an example in the actual game? [Simple Ring Placement](/daily/challenges/simple-ring-placement-challenge/) shows the top-left cell after Pink large and Pink small have been placed. Decide whether Pink medium or Mint large can join them, then follow the exact taps in Daily Ring Puzzle. Filling one cell is not the same as completing the five-ring tray.
+
+Keep [One Cell, Three Sizes](/daily/challenges/one-cell-three-ring-sizes/) for another break. It compares two valid places for the final Gold medium ring. You can rebuild the same position after reset and try both finishes. These exercises do not require speed, a score or a line clear; they ask you to notice which size is still available.
+
+The diagrams are fixed reading prompts. The game link opens the empty starter, not the illustrated position or a saved game. Each page explains how to reach its diagram using the real tray.
 
 ## Three small practice rounds
 

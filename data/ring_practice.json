@@ -17,6 +17,20 @@
       {"id":"large-mint","size":"large","color":"mint"}
     ]
   },
+  "starter-nest": {
+    "caption": "Cell 1 after placing Pink large and Pink small",
+    "cells": [{"id":"1","small":"pink","medium":"","large":"pink"}],
+    "tray": [{"id":"pink-medium","size":"medium","color":"pink"}]
+  },
+  "starter-finish": {
+    "caption": "Compare cells 1, 2 and 3 before placing Gold medium",
+    "cells": [
+      {"id":"1","small":"pink","medium":"pink","large":"pink"},
+      {"id":"2","small":"","medium":"","large":"mint"},
+      {"id":"3","small":"","medium":"","large":""}
+    ],
+    "tray": [{"id":"gold-medium","size":"medium","color":"gold"}]
+  },
   "shared-cell": {
     "caption": "Two tray rings: small pink and medium mint",
     "cells": [

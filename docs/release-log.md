@@ -1,5 +1,22 @@
 # Puzzlepia Release Log
 
+## Phase 7Y Ring Starter Choices: 2026-10-23
+
+- Improved two existing ring challenges with reproducible starter diagrams,
+  optional hints/answers and exact game steps. Compare nesting different sizes
+  with two valid final placements; a full cell is not a completed five-ring tray.
+- Connected both from the existing ring guide and to each other for a later
+  short practice round. These are fixed exercises, not new daily generation.
+- Reused existing diagrams and styles. Home, game logic, storage, external
+  destinations, Phaser, analytics and hosting settings remain unchanged.
+- Run `node tools/test_ring_practice.cjs` and, after Hugo,
+  `python3 tools/check_ring_starter.py`. Browser/deployment evidence belongs in
+  [current work state](CURRENT_STATE.md). Retention impact is unmeasured.
+- Local QA passes: eleven Node suites, ten Python checks, 36 four-width page
+  checks, 16 ring completions, 24 resets and 32 rejected placements. Keyboard,
+  no-JavaScript, discovery, metadata and seven-game regression checks pass.
+  No console errors or horizontal overflow in tested flows.
+
 ## Phase 7X Challenge Collection Return: 2026-10-23
 
 - Added compact, crawlable topic/all links after each reading challenge.

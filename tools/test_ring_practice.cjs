@@ -6,6 +6,13 @@ const boards = require("../data/ring_practice.json");
 const original = JSON.stringify(boards);
 const sizes = ["small", "medium", "large"];
 const colors = ["pink", "mint", "gold", "purple"];
+const solutions = {
+  "one-cell": [{ "medium-gold": "A" }],
+  "three-spaces": [{ "small-gold": "C", "medium-pink": "A", "large-mint": "B" }],
+  "shared-cell": [{ "small-pink": "A", "medium-mint": "A" }, { "small-pink": "A", "medium-mint": "B" }],
+  "starter-nest": [{ "pink-medium": "1" }],
+  "starter-finish": [{ "gold-medium": "2" }, { "gold-medium": "3" }]
+};
 
 function place(cells, piece, id) {
   const target = cells.find(cell => cell.id === id);
@@ -37,9 +44,8 @@ for (const [id, board] of Object.entries(boards)) {
   board.cells.forEach(cell => sizes.forEach(size => assert.ok(cell[size] === "" || colors.includes(cell[size]))));
   assert.equal(new Set(board.tray.map(piece => piece.id)).size, board.tray.length);
   board.tray.forEach(piece => { assert.ok(sizes.includes(piece.size)); assert.ok(colors.includes(piece.color)); });
-  const expected = id === "one-cell" ? [{ "medium-gold": "A" }] : id === "three-spaces" ?
-    [{ "small-gold": "C", "medium-pink": "A", "large-mint": "B" }] :
-    [{ "small-pink": "A", "medium-mint": "A" }, { "small-pink": "A", "medium-mint": "B" }];
+  const expected = solutions[id];
+  assert.ok(expected, id + " requires expected solutions");
   for (const tray of orders(board.tray)) {
     assert.deepEqual(normalize(solve(board.cells, tray)), normalize(expected), id + " assignments in every tray order");
     for (const answer of expected) {
@@ -66,5 +72,10 @@ assert.equal(place(shared.cells, shared.tray[1], "C"), null, "C already has medi
 assert.equal(place(shared.cells, shared.tray[0], "B"), null, "B already has small");
 const recolored = shared.tray.map(piece => ({ ...piece, color: "gold" }));
 assert.deepEqual(normalize(solve(shared.cells, recolored)), normalize(solve(shared.cells, shared.tray)), "color does not change placement");
+const nest = boards["starter-nest"];
+assert.equal(place(nest.cells, { size: "large", color: "mint" }, "1"), null, "Mint large cannot replace Pink large");
+const nested = place(nest.cells, nest.tray[0], "1");
+assert.deepEqual(nested[0], boards["starter-finish"].cells[0], "three pink rings match the final exercise");
+assert.equal(place(boards["starter-finish"].cells, { size: "medium", color: "gold" }, "1"), null, "full cell rejects Gold medium");
 assert.equal(JSON.stringify(boards), original, "checks do not mutate the source");
-console.log("Ring practice passed: three boards, all nine tray orders, unique and two-answer assignments, fixed rings, duplicate-size rejection, color independence and immutable data.");
+console.log("Ring practice passed: five boards, all eleven tray orders, unique and two-answer assignments, starter-state continuity, duplicate-size rejection, color independence and immutable data.");
