@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-RING-FIRST-FINISH
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-RING-FIRST-FINISH; two existing ring challenges and guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RETURN; 2026-10-23)
+Phase: verified production deployment; final handoff record.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-RING-FIRST-FINISH; 2026-10-23)
 
 ## Current Approved Work
 
@@ -33,8 +33,29 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RETURN; 2026-10-23)
   flags unchanged; generated output ignored/untracked; no Cloudflare temp JSON.
 - QA helper fixes only: normalize minified empty attributes in the new Python
   check and use the Playwright CLI's page callback signature. Game code unchanged.
-- NEXT_SINGLE_TASK: commit, deploy and repeat production QA under the approved
-  GitHub exception. Native Safari NOT_RUN; retention impact unmeasured.
+- DONE: implemented and verified live. Application HEAD: `9240e13`; only the
+  final handoff record remains. BLOCKER: none. NEXT_SINGLE_TASK: review actual
+  guide-to-challenge-to-game visits before adding another discovery control.
+  Native Safari NOT_RUN; retention impact unmeasured. No monitoring scheduled.
+
+## Ring Starter Production Verification: 2026-10-23
+
+- Pushed `9240e13` under the approved GitHub exception. Cloudflare Pages
+  succeeded at 2026-10-23 13:10:09 UTC (22:10:09 KST), confirmed by its public
+  commit check. Existing publication flags and URLs remain unchanged.
+- Live Chromium at 390/430/768/1280px passed 36 page checks, 16 ring completions,
+  24 resets and 32 invalid placements. Both described finishes work, including
+  partial reset, post-completion reset and replay. No errors or overflow.
+- Live keyboard/no-JavaScript reading, disclosure touch sizes, Daily/Blog/search
+  discovery, metadata/JSON-LD, footer, sitemap and robots checks pass. All seven
+  games complete/reset with emulated mobile touch (seven completions, fourteen
+  resets; Word Search uses its existing word-list fallback).
+- A supplemental Python HTTP fetch returned 403. Normal Chromium navigation
+  returned 200 and verified the deployed content; browser HTTP checks also
+  passed. No access-control or Cloudflare settings were changed.
+- Home, game code, runtime scripts, CSS, storage, external game links, analytics
+  and Phaser output are unchanged. Generated output remains ignored/untracked.
+  The owned local QA server was stopped. No measured growth claim is made.
 
 ## Previous Challenge Return Work
 

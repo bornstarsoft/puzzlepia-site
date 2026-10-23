@@ -16,6 +16,10 @@
   checks, 16 ring completions, 24 resets and 32 rejected placements. Keyboard,
   no-JavaScript, discovery, metadata and seven-game regression checks pass.
   No console errors or horizontal overflow in tested flows.
+- Deployed `9240e13`; Cloudflare Pages succeeded at 2026-10-23 22:10:09 KST.
+  Live QA repeated the four-width page/game matrix, keyboard/no-JavaScript,
+  discovery, footer and metadata checks, plus seven-game completion/reset.
+  Native Safari and retention impact remain unverified.
 
 ## Phase 7X Challenge Collection Return: 2026-10-23
 
