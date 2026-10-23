@@ -1,5 +1,21 @@
 # Puzzlepia Release Log
 
+## Phase 7U Mixed Practice Break: 2026-10-23
+
+- Reworked the existing weekend word/color exercise into two real-board rounds:
+  find PLAY in First steps, then count all seven purple Color Match tiles.
+  Reused existing board shortcodes and optional native hint/answer disclosures.
+- Added exact playable board links and stable round anchors; distinguished the
+  one-word reading task from the four-word game's completion goal. Connected
+  both rounds from the existing five-minute guide without completion pressure.
+- Home, routes, gameplay, storage, analytics, external links and Phaser output
+  are unchanged. These are fixed exercises, not generated weekly content.
+  Validation and deployment evidence: [current work state](CURRENT_STATE.md).
+- Local checks: `python3 tools/check_mixed_practice.py` after Hugo, alongside
+  existing site/game suites. Four-width Chromium QA passed 28 page checks,
+  16 completions/resets and 16 disclosure interactions, plus keyboard/no-JS
+  reading, discovery, footer and SEO checks. No console errors or overflow.
+
 ## Phase 7T Recent Puzzle Return: 2026-10-23
 
 - Kept the existing one-item Recently opened panel and storage format. Refresh

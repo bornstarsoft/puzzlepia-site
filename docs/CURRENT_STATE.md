@@ -1,11 +1,39 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-RECENT-RETURN
-Phase: release verified; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MIXED-PRACTICE
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; existing mixed challenge and short-break guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved another suitable content/return improvement with a simple Home
+  and validated production deployment. Clean main at `7e1ce6f` matches fetched
+  origin/main. The repository-specific GitHub exception remains in scope.
+- Improve the existing weekend word/color challenge with two real game boards,
+  optional hints/answers and exact practice links. Connect it from the existing
+  five-minute guide, including stable round anchors for a later break.
+- No new route, Home section, game logic, storage, analytics, external link or
+  hosting change. No fresh analytics were supplied; this is a bounded content
+  quality improvement, not a measured retention claim.
+- Local QA: PASS. Deployment: pending approved push and live verification.
+  `check_site.sh`, `hugo --gc --minify`, eleven Node suites, six Python checks
+  and `git diff --check` pass. New `tools/check_mixed_practice.py` checks both
+  real boards, precise answers, four closed disclosures, anchors/play links,
+  unique descriptions, canonicals and sitemap. Draft flags remain unchanged.
+- Chromium at 390/430/768/1280px passed 28 core/content page checks, 16 game
+  completions/resets and 16 disclosure open/close interactions. Word Search
+  completed by grid endpoints, not word buttons. Partial resets, wrong color,
+  replay and matching fixed boards pass. Small widths used emulated touch.
+- Keyboard and no-JavaScript reading, 44px disclosure targets, Daily Mixed/
+  Blog/search discovery and footer links pass. No console errors or horizontal
+  overflow. Mobile/desktop board screenshots inspected. All 2,748 internal
+  references and fragments across 84 HTML pages resolve; IDs are unique.
+- Home/layout/game source and all external destinations unchanged; generated
+  output ignored/untracked. NEXT_SINGLE_TASK: commit validated content, push
+  via the approved GitHub exception, and verify Cloudflare plus live flows.
+
+## Previous Recent Puzzle Return Work
 
 - Owner requested another suitable return-visit improvement, keeping Home simple,
   with validation and live deployment. Starting HEAD `d2db700`; clean main

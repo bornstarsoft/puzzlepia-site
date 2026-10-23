@@ -1,7 +1,8 @@
 ---
 title: "How to Choose a Puzzle for a Five-Minute Break"
-description: "A simple guide to choosing a word, block, number, ring, or color puzzle for a short and refreshing break."
+description: "Choose one small puzzle goal for a short break, try a worked word or color round, and keep a clear stopping point without streak pressure."
 date: 2026-07-21
+lastmod: 2026-10-23T21:12:00+09:00
 draft: false
 tags:
   - "short puzzle sessions"
@@ -71,6 +72,14 @@ You might choose words on Monday, blocks on Tuesday, numbers on Wednesday, rings
 
 ## A simple five-minute plan
 
-Open the [Daily Puzzles](/daily/), choose the format that matches your energy, read the goal, and play until the completion message appears.
+Choose one goal before you open a game. Five minutes is a suggested break, not a target time or a promise that every puzzle will fit.
+
+For a worked example, try the [word round of Weekend Mixed Puzzle](/daily/challenges/weekend-word-and-color/#word-round). Find PLAY and check its starting position. That is a complete small reading task on its own. If you continue to the playable Word Search, its separate goal is to find all four target words.
+
+For a visual break, try [the purple-tile round](/daily/challenges/weekend-word-and-color/#color-round). Count one row at a time, then open the optional answer when you are ready. Its play link keeps purple selected, so the question and the game agree.
+
+You can do either round first. Keep the other round's link for another visit instead of adding more tasks to this break. These are fixed exercises, with no timer, streak or saved reading progress. The same question will still be there later.
+
+Prefer to go straight to a game? Open the [Daily Puzzles](/daily/) and choose one compact goal. Stop when you have had enough; a completion message is not a requirement for a useful break.
 
 That is enough for a useful puzzle break. A small, well-chosen puzzle can offer a clean pause without turning the rest of your day into a schedule.
