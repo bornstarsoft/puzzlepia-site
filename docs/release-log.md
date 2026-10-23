@@ -15,6 +15,10 @@
   existing site/game suites. Four-width Chromium QA passed 28 page checks,
   16 completions/resets and 16 disclosure interactions, plus keyboard/no-JS
   reading, discovery, footer and SEO checks. No console errors or overflow.
+- Deployed `13d913d`; Cloudflare Pages succeeded at 2026-10-23 21:17:02 KST.
+  Live four-width QA repeated those page, game and disclosure checks, plus
+  keyboard/no-JS, discovery, footer and SEO checks. No console errors or mobile
+  overflow. Native Safari and retention impact were not measured.
 
 ## Phase 7T Recent Puzzle Return: 2026-10-23
 

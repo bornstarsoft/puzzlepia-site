@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MIXED-PRACTICE
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; existing mixed challenge and short-break guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; 2026-10-23)
+Phase: release verified; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
 
@@ -16,7 +16,7 @@ LAST_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; 2026-10-23)
 - No new route, Home section, game logic, storage, analytics, external link or
   hosting change. No fresh analytics were supplied; this is a bounded content
   quality improvement, not a measured retention claim.
-- Local QA: PASS. Deployment: pending approved push and live verification.
+- Local QA: PASS. Deployment: PASS, verified live below.
   `check_site.sh`, `hugo --gc --minify`, eleven Node suites, six Python checks
   and `git diff --check` pass. New `tools/check_mixed_practice.py` checks both
   real boards, precise answers, four closed disclosures, anchors/play links,
@@ -30,8 +30,27 @@ LAST_WRITER = CODEX (PUZZLEPIA-RECENT-RETURN; 2026-10-23)
   overflow. Mobile/desktop board screenshots inspected. All 2,748 internal
   references and fragments across 84 HTML pages resolve; IDs are unique.
 - Home/layout/game source and all external destinations unchanged; generated
-  output ignored/untracked. NEXT_SINGLE_TASK: commit validated content, push
-  via the approved GitHub exception, and verify Cloudflare plus live flows.
+  output ignored/untracked. DONE: implemented and verified live. Application
+  HEAD: `13d913d`; only this handoff/release record remains for the final docs
+  commit. BLOCKER: none. NEXT_SINGLE_TASK: review comparable discovery/return
+  traffic before deciding on more navigation or a new puzzle. No monitor set.
+
+## Mixed Practice Production Verification: 2026-10-23
+
+- Pushed `13d913d` via the approved GitHub exception. Cloudflare Pages completed
+  successfully at 2026-10-23 12:17:02 UTC (21:17:02 KST), verified through its
+  public commit check. Both existing URLs remain unchanged.
+- Live Chromium at 390/430/768/1280px repeated 28 page checks, 16 game
+  completions/resets and 16 disclosure open/close interactions. Both reading
+  boards match their playable versions. Partial reset, wrong-color taps and
+  replay pass. Word Search was solved by grid endpoints; small widths used
+  emulated touch. Mobile/desktop board captures inspected.
+- Keyboard/no-JavaScript reading, disclosure touch size, Daily Mixed/Blog/search
+  discovery, footer links, canonical/description/JSON-LD, sitemap and robots
+  pass. No console errors or horizontal overflow in tested flows.
+- No Home layout, game logic, storage, analytics, external destination, Phaser
+  or Cloudflare-setting changes. Native Safari and retention/business impact
+  were not measured. These checks verify release behavior, not growth.
 
 ## Previous Recent Puzzle Return Work
 
