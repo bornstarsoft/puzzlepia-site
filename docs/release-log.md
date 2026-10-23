@@ -13,6 +13,11 @@
 - Local checks pass: eleven Node suites, eleven Python checks, four-width
   Chromium reading/game checks, keyboard/no-JavaScript disclosures, discovery,
   metadata and seven-game completion/reset regression checks.
+- Deployed `eb4a844`; Cloudflare Pages succeeded at 2026-10-24 02:38:49 KST.
+  Live four-width checks repeated 28 page checks, 24 disclosure checks, twelve
+  round anchors, eight Color Match completions and twelve resets. Discovery,
+  keyboard/no-JavaScript, metadata/footer and seven-game regression also pass.
+  Native Safari and retention impact remain unverified.
 
 ## Phase 7Z Number Recovery Practice: 2026-10-23
 

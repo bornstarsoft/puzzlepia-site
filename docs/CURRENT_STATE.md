@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COLOR-PATTERN-ROUNDS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-PATTERN-ROUNDS; existing pattern challenge and guide; main; 2026-10-24)
-LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-RECOVERY; 2026-10-23)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PATTERN-ROUNDS; 2026-10-24)
 
 ## Current Approved Work
 
@@ -24,8 +24,26 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-RECOVERY; 2026-10-23)
 - Seven existing games complete/reset in mobile emulation (seven completions,
   fourteen resets; Word Search uses its existing word-list fallback).
   Generated output ignored/untracked; no temporary Cloudflare JSON.
-- NEXT_SINGLE_TASK: commit/deploy and repeat production QA. Native Safari
-  NOT_RUN; retention impact unmeasured. No monitoring scheduled.
+- DONE: implemented and verified live. Application HEAD: `eb4a844`; final
+  handoff record remains. BLOCKER: none. NEXT_SINGLE_TASK: review actual
+  guide-to-challenge-to-game visits before adding another return feature.
+  Native Safari NOT_RUN; retention impact unmeasured. No monitoring scheduled.
+
+## Color Pattern Production Verification: 2026-10-24
+
+- Pushed `eb4a844` under the approved GitHub exception. Cloudflare Pages
+  succeeded at 2026-10-23 17:38:49 UTC (2026-10-24 02:38:49 KST), confirmed
+  by its public commit check. Existing routes and publication flags remain.
+- Live Chromium at 390/430/768/1280px repeated 28 page checks, 24 disclosure
+  checks, twelve round anchors, eight Gold Color Match completions and twelve
+  resets. Keyboard/no-JavaScript disclosures, Daily/Blog/search discovery,
+  metadata/JSON-LD, sitemap/robots and footer checks pass.
+- All seven existing games complete and reset in live mobile emulation
+  (seven completions, fourteen resets; Word Search via word-list fallback).
+  No console errors or horizontal overflow. Live mobile screenshot inspected.
+- Home, styles, game runtime, storage, external destinations, analytics, Phaser
+  and hosting settings are unchanged. Generated output remains ignored and
+  untracked. Owned local QA server stopped. No measured retention claim.
 
 ## Previous Number Recovery Work
 
