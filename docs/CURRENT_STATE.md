@@ -1,11 +1,41 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-BLOCK-FIRST-MOVES
-Phase: production verified; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-RETURN
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RETURN; challenge collection return links and guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-FIRST-MOVES; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable return/content improvement, a simple Home and
+  verified production deployment. Clean main at `0671fa9` matches fetched
+  origin/main; existing repository-specific GitHub exception applies.
+- Add small static links from challenge pages to their matching Daily topic
+  collection and the full challenge list. Reuse the list's classification
+  through one Hugo partial. Update the existing habit guide with examples.
+- No Home expansion, new public route, game logic, storage, analytics or
+  hosting-setting changes. No new analytics evidence supplied.
+- Local QA: PASS. `check_site.sh`, `hugo --gc --minify`, eleven Node suites,
+  nine Python checks and diff check pass. New `check_challenge_return.py`
+  verifies 36 pages, seven topic collections, non-challenge exclusion, native
+  links, sitemap and 14 topic/publication fixtures; draft flags unchanged.
+- Chromium at 390/430/768/1280px passed 28 topic-return/reload/back/All flows
+  and 24 core page checks. Keyboard and no-JavaScript navigation pass for all
+  seven topics. Touch targets are at least 44px. Mobile/desktop captures inspected.
+- All seven existing games complete/reset in emulated mobile touch QA (seven
+  completions, fourteen initial/post-completion resets). New navigation is absent
+  on playable pages. Metadata, footer, sitemap/robots and guide links pass.
+  No console errors or horizontal overflow in final tested flows.
+- All 2,844 internal references/fragments across 84 HTML pages resolve, with
+  unique IDs. External destinations unchanged; generated output ignored/untracked.
+- QA-only adjustments: wait for smooth scrolling and respect the document's
+  bottom limit when checking anchors; identify Color Match targets by fixed
+  coordinates rather than indices in the shrinking uncleared-color list.
+  No game or scroll behavior was changed to accommodate tests.
+- NEXT_SINGLE_TASK: commit validated changes, deploy and repeat production QA.
+  Native Safari and retention impact remain NOT_RUN/unmeasured.
+
+## Previous Block First Moves Work
 
 - Owner approved a suitable content/return improvement with a simple Home and
   verified deployment. Clean main at `2c0185e` matches fetched origin/main.

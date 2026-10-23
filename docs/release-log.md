@@ -1,5 +1,22 @@
 # Puzzlepia Release Log
 
+## Phase 7X Challenge Collection Return: 2026-10-23
+
+- Added compact, crawlable topic/all links after each reading challenge.
+  The topic link opens the existing filtered Daily collection and its section
+  anchor. No storage or new JavaScript is involved; the no-JavaScript fallback
+  keeps all questions visible.
+- Shared the list's existing topic classifier with the return navigation and
+  added collection examples to the existing daily-habit guide. Home, gameplay,
+  external destinations, analytics and hosting settings remain unchanged.
+- Run `python3 tools/check_challenge_return.py` after Hugo. Release evidence
+  belongs in [current work state](CURRENT_STATE.md); retention is unmeasured.
+- Local checks pass: build/site checks, eleven Node suites, nine Python checks,
+  36 published challenge return paths and 14 isolated type/publication fixtures.
+  Four-width Chromium QA passed 28 topic flows and 24 core page checks, plus
+  keyboard/no-JavaScript fallback, seven game completions and fourteen resets.
+  No console errors or horizontal overflow in the final tests.
+
 ## Phase 7W Block First Moves: 2026-10-23
 
 - Replaced two imagined-board prompts with labeled 6x6 starter diagrams,

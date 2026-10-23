@@ -2,7 +2,7 @@
 title: "How to Build a Daily Puzzle Habit"
 description: "Build a relaxed puzzle routine with short sessions, reusable board links, and a clear way to return without accounts or streak pressure."
 date: 2026-05-28
-lastmod: 2026-10-23T04:40:00+09:00
+lastmod: 2026-10-23T21:45:00+09:00
 draft: false
 tags:
   - "daily puzzles"
@@ -73,6 +73,14 @@ Word Search separately offers **Remember my progress on this browser**, off by d
 For variety, the regular Word Search, Memory Pairs, Make 10 and Number Puzzle pages select from fixed collections at 00:00 UTC. Their boards repeat; they are not newly generated each day. Color Match, Block Puzzle and Ring Puzzle remain fixed starters. An open game will not change in the middle of play.
 
 Prefer a reading warmup? [Find the Only Square Space](/daily/challenges/find-the-square-space/) has an optional hint and answer. Or use [Search](/search/) to find another topic and keep a link to the results for later. There is no need to finish a list in one sitting.
+
+## Keep a collection for your next break
+
+After a reading challenge, use the link to more challenges of the same type, such as **More block challenges**. It opens the matching part of the Daily library, so you do not have to choose the filter again. **All Daily Challenges** returns to the full list when you want a different kind of puzzle.
+
+Try a [block challenge collection](/daily/?topic=block#daily-challenge-title) for placement questions, or a [ring challenge collection](/daily/?topic=ring#daily-challenge-title) for sizes and layers. Bookmark either collection for a later visit. The link remembers a topic, not completed exercises or game progress; there is no account or streak attached to it.
+
+Choose one question and stop when you are ready. The collection remains available for another break. If JavaScript is unavailable, the link still opens the challenge section with all questions visible, rather than a filtered list.
 
 ## Build slowly
 

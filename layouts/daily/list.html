@@ -53,14 +53,7 @@
     <div class="challenge-grid" data-filter-list>
 {{ range $challenges.ByWeight }}
 {{ $type := lower (.Params.puzzleType | default "") }}
-{{ $topic := "mixed" }}
-{{ if in $type "word" }}{{ $topic = "word" }}
-{{ else if in $type "block" }}{{ $topic = "block" }}
-{{ else if in $type "ring" }}{{ $topic = "ring" }}
-{{ else if in $type "number" }}{{ $topic = "number" }}
-{{ else if in $type "memory" }}{{ $topic = "memory" }}
-{{ else if or (in $type "color") (in $type "pattern") }}{{ $topic = "color" }}
-{{ end }}
+{{ $topic := partial "daily-challenge-topic.html" . }}
       <article class="challenge-card" data-discovery-item data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
         <div class="game-card__meta">
 {{ with .Params.puzzleType }}<span>{{ . }}</span>{{ end }}

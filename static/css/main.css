@@ -769,6 +769,17 @@ img {
 .practice-path__rounds a:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 2px; }
 .practice-path .practice-path__note { color: var(--muted); font-size: 0.9rem; }
 
+.challenge-return {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 28px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.challenge-return a { display: inline-flex; align-items: center; min-height: 44px; }
+.challenge-return a:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 3px; }
+
 @media (min-width: 760px) {
   .game-card--playable { grid-template-columns: minmax(0, 1fr); }
   .game-card--playable .puzzle-preview { width: 100%; height: 152px; }

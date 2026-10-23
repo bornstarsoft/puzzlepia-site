@@ -20,6 +20,14 @@ are involved; this is list navigation, not saved puzzle progress.
 
 ## Boundaries
 
+- Challenge pages now include two ordinary links after their content: the
+  matching topic collection and All Daily Challenges. The list and return link
+  use `daily-challenge-topic.html`, preserving the existing classification.
+  Only non-playable challenge pages show this navigation; Home and games do not.
+- These are collection links, not browser Back. They select a topic with the
+  default collapsed list, rather than restoring a previous scroll or expansion.
+  With no JavaScript, the native section anchor and complete list still work.
+
 - Only the Daily group opts into URL behavior with `data-discovery-url`.
   Blog search and filtering retain their existing behavior.
 - Without JavaScript all challenge cards and their normal links remain visible.
@@ -39,6 +47,10 @@ Run `node tools/test_discovery.cjs`, `bash tools/check_site.sh` and
 - Open the collection link in a fresh page; confirm the same list and section.
 - Follow collection links in Ring Puzzle Basics, Block Puzzle Space Management
   and Your First Sudoku Move. Keep all seven playable games above the list.
+- Follow the return links from every topic; check the matching active filter,
+  section anchor, reload/back behavior, All link and keyboard/no-JavaScript use.
+  Run `python3 tools/check_challenge_return.py` after building to verify every
+  published challenge and fixture cases for topic/draft/type boundaries.
 - Check malformed/duplicate URLs, keyboard operation, no-JavaScript content,
   blocked history, missing URL API, Blog search and core/footer destinations.
 - Check game completion/reset, console errors and horizontal overflow.

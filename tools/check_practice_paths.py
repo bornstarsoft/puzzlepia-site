@@ -80,6 +80,7 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-practice-") as folder:
         path.write_text(value)
     (fixture / "layouts/daily").mkdir()
     shutil.copyfile(ROOT / "layouts/daily/single.html", fixture / "layouts/daily/single.html")
+    shutil.copyfile(ROOT / "layouts/partials/daily-challenge-topic.html", fixture / "layouts/partials/daily-challenge-topic.html")
     challenge = fixture / "content/daily/challenges/example.md"
     challenge.parent.mkdir()
     for case, fields in [

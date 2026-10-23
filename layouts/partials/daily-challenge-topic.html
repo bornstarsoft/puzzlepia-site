@@ -1,0 +1,10 @@
+{{- $type := lower (.Params.puzzleType | default "") -}}
+{{- $topic := "mixed" -}}
+{{- if in $type "word" -}}{{- $topic = "word" -}}
+{{- else if in $type "block" -}}{{- $topic = "block" -}}
+{{- else if in $type "ring" -}}{{- $topic = "ring" -}}
+{{- else if in $type "number" -}}{{- $topic = "number" -}}
+{{- else if in $type "memory" -}}{{- $topic = "memory" -}}
+{{- else if or (in $type "color") (in $type "pattern") -}}{{- $topic = "color" -}}
+{{- end -}}
+{{- return $topic -}}

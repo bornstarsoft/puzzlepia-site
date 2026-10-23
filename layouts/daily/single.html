@@ -17,6 +17,15 @@
   <div class="page__content">
 {{ .Content }}
   </div>
+{{ if and .Params.challenge (not .Params.playable) }}
+{{ $topic := partial "daily-challenge-topic.html" . }}
+{{ with .Site.GetPage "/daily" }}
+  <nav class="challenge-return" aria-label="More Daily Challenges">
+    <a href="{{ printf "%s?topic=%s#daily-challenge-title" .RelPermalink $topic }}">More {{ $topic }} challenges</a>
+    <a href="{{ .RelPermalink }}#daily-challenge-title">All Daily Challenges</a>
+  </nav>
+{{ end }}
+{{ end }}
 {{ if and (ne .Params.game "word-search") (ne .Params.game "number-puzzle") (ne .Params.game "color-match") (not (.HasShortcode "daily-pair-board")) }}
 {{ with .Params.game }}
 {{ partial (printf "daily-game/%s.html" .) $ }}
