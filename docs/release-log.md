@@ -1,5 +1,18 @@
 # Puzzlepia Release Log
 
+## Phase 8B Fruit Word Practice: 2026-10-24
+
+- Replaced the old four-row fruit answer list with the real Fruit bowl board,
+  four optional hint/answer pairs and links to each question and the exact game.
+- Connected the scanning guide and clarified first/end-letter checking. Reading
+  one word is separate from completing all four in the playable puzzle.
+- Home, gameplay, storage, external links, analytics, Phaser and hosting settings
+  are unchanged. Validation/deployment evidence is in [current state](CURRENT_STATE.md).
+  No measured retention claim.
+- Local checks pass: eleven Node suites, twelve Python checks, four-width
+  Chromium reading/selection/completion/reset, keyboard/no-JavaScript,
+  discovery/metadata/footer and seven-game regression. Native Safari NOT_RUN.
+
 ## Phase 8A Color Pattern Rounds: 2026-10-24
 
 - Expanded the existing repeated-color question into three labeled static

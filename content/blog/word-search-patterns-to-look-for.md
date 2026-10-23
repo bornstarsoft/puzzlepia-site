@@ -2,6 +2,7 @@
 title: "Word Search Patterns to Look For"
 description: "Helpful word search patterns for spotting horizontal, vertical, and diagonal words in small puzzle grids."
 date: 2026-05-28
+lastmod: 2026-10-24T02:45:00+09:00
 draft: false
 tags:
   - "word search"
@@ -37,11 +38,19 @@ This method is especially helpful when the word list is short. You can focus on 
 
 ## Use last letters too
 
-If a puzzle allows backward words, the last letter becomes just as useful as the first letter. For "STAR," that means R may be the start of the hidden line if the word runs backward.
+If a puzzle allows backward words, the last letter can help you locate the opposite end. For "STAR," an R can be a clue, but check the full word from S through T and A to R. Reading leftward does not change the order of letters within the word.
 
 Even when backward words are not part of the puzzle, checking last letters can help you confirm a direction. If you find S and then see R exactly three spaces away in a straight line, the word might be there.
 
 First and last letters act like anchors. They reduce the amount of grid you need to think about.
+
+## Practise on the Fruit bowl board
+
+Try [Mini Word Search: Fruit Words](/daily/challenges/mini-word-search-fruit-words/) on the real 6x6 Fruit bowl grid. Find PEAR, LIME and PLUM down columns, then change direction for KIWI. Each word has its own optional hint and explained path, so you can check one answer without revealing all four.
+
+Notice how a repeated first letter can lead to a different word. Finding P is not enough: the following letters decide whether the path spells PEAR or PLUM. A start and end that look promising still need every middle letter in order.
+
+Keep the [KIWI question link](/daily/challenges/mini-word-search-fruit-words/#find-kiwi) for another break, or [play the same Fruit bowl set](/daily/word-search/?set=fruit) now. These links keep the question or board consistent; the reading exercise does not save progress. The full game finishes after all four words, not after one short practice question.
 
 ## Find short words first
 

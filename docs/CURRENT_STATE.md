@@ -1,11 +1,36 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COLOR-PATTERN-ROUNDS
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-FRUIT-PRACTICE
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-FRUIT-PRACTICE; existing fruit challenge and guide; main; 2026-10-24)
 LAST_WRITER = CODEX (PUZZLEPIA-COLOR-PATTERN-ROUNDS; 2026-10-24)
 
 ## Current Approved Work
+
+- Owner approved a suitable return/content improvement and verified deployment.
+  Clean main at `fc87a8a` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub publishing exception applies.
+- Replace the old fruit word list with the real Fruit bowl board, optional
+  word-specific hints/answers and fixed section/game links. Connect the existing
+  scanning guide, clarifying that end letters alone do not prove a match.
+- Reuse existing shortcodes. No Home, game logic, storage, analytics, external
+  links, Phaser or hosting changes. Retention impact remains unmeasured.
+- Local QA: PASS. Site checks, `hugo --gc --minify`, eleven Node suites,
+  twelve Python checks and diff check pass. All 2,880 internal references and
+  fragments across 84 HTML pages resolve. Generated output ignored/untracked;
+  no temporary Cloudflare JSON. External URLs and publication flags preserved.
+- Chromium 390/430/768/1280px: 28 page checks, 32 disclosures, sixteen section
+  anchors, twelve Fruit bowl completions and sixteen resets pass. Endpoints,
+  reverse endpoints, desktop drag and word-button fallback tested. Wrong paths
+  do not mark words; fixed board, highlights and fresh reload are correct.
+- Keyboard/no-JavaScript disclosures, Daily/Blog/search discovery, metadata,
+  sitemap/robots and footer pass. Screenshots inspected. Seven existing games
+  complete/reset (seven completions, fourteen resets; Word Search fallback).
+  No console errors or horizontal overflow. Native Safari NOT_RUN.
+- NEXT_SINGLE_TASK: commit/deploy and repeat live QA. No measured retention
+  claim and no monitoring scheduled.
+
+## Previous Color Pattern Work
 
 - Owner approved a suitable content/return improvement, simple Home and verified
   deployment. Clean main at `21325be` matches fetched origin/main. The existing
