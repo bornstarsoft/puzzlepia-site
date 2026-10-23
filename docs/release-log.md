@@ -16,6 +16,10 @@
   Four-width Chromium QA passed 28 topic flows and 24 core page checks, plus
   keyboard/no-JavaScript fallback, seven game completions and fourteen resets.
   No console errors or horizontal overflow in the final tests.
+- Deployed `fc558a0`; Cloudflare Pages succeeded at 2026-10-23 21:53:28 KST.
+  Live QA repeated all 28 topic flows and 24 core page checks, keyboard/no-JS
+  navigation, seven game completions and fourteen resets. Metadata, sitemap,
+  robots and footer checks pass. Native Safari and retention impact unmeasured.
 
 ## Phase 7W Block First Moves: 2026-10-23
 

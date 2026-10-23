@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-RETURN
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RETURN; challenge collection return links and guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-FIRST-MOVES; 2026-10-23)
+Phase: production verified; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RETURN; 2026-10-23)
 
 ## Current Approved Work
 
@@ -32,8 +32,28 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-FIRST-MOVES; 2026-10-23)
   bottom limit when checking anchors; identify Color Match targets by fixed
   coordinates rather than indices in the shrinking uncleared-color list.
   No game or scroll behavior was changed to accommodate tests.
-- NEXT_SINGLE_TASK: commit validated changes, deploy and repeat production QA.
-  Native Safari and retention impact remain NOT_RUN/unmeasured.
+- DONE: implemented and verified live. Application HEAD: `fc558a0`; only the
+  final handoff/release-record commit remains. BLOCKER: none.
+  NEXT_SINGLE_TASK: review actual challenge-to-collection traffic before adding
+  another discovery control. No monitor scheduled. Native Safari and retention
+  impact remain NOT_RUN/unmeasured.
+
+## Challenge Return Production Verification: 2026-10-23
+
+- Pushed `fc558a0` through the approved GitHub exception. Cloudflare Pages
+  succeeded at 2026-10-23 12:53:28 UTC (21:53:28 KST), confirmed through its
+  public commit check.
+- Live Chromium at 390/430/768/1280px repeated 28 topic-return/reload/back/All
+  flows and 24 core page checks. Topic filters and native section anchors work;
+  short lists stop at the document bottom as expected. Touch targets and
+  mobile/desktop layouts pass, with no horizontal overflow or console errors.
+- Keyboard and no-JavaScript navigation pass for seven topics; the latter
+  exposes the full 36-question list. Canonicals, metadata, sitemap, robots,
+  guide links and footer destinations pass.
+- All seven existing games complete and reset on the live site using emulated
+  mobile touch (seven completions, fourteen initial/post-completion resets).
+  New navigation is absent from playable pages. No game/JavaScript/storage,
+  external destination, analytics or hosting-setting changes. Growth unmeasured.
 
 ## Previous Block First Moves Work
 
