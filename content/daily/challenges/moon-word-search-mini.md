@@ -1,7 +1,8 @@
 ---
 title: "Moon Word Search Mini"
-description: "A small word search prompt for spotting MOON in a vertical letter path."
+description: "Find MOON down a column on the First steps Word Search board. Check both O letters with an optional hint and answer, then play the same set."
 date: 2026-05-29
+lastmod: 2026-10-23T21:23:00+09:00
 draft: false
 difficulty: "Easy"
 puzzleType: "Word search"
@@ -11,29 +12,30 @@ challenge: true
 weight: 220
 ---
 
-This mini challenge practices vertical scanning.
+## Follow one column
 
-## Puzzle prompt
+Find **MOON** from top to bottom on this First steps board. Which column holds the complete word? Give its first and last row, and check that the two O letters occupy different squares.
 
-Find the word `MOON` in this column:
+{{< word-search-example set="starter" >}}
 
-```text
-M
-O
-O
-N
-```
+{{< puzzle-reveal title="Show a small hint" >}}
+Look for M in the top row, then keep the same column as you move down. You need two consecutive O squares, not one O counted twice.
+{{< /puzzle-reveal >}}
 
-Read from top to bottom.
+{{< puzzle-reveal title="Show the answer and why it works" >}}
+**Column 6, rows 1 to 4** spells **M O O N**. The O letters are at **row 2, column 6** and **row 3, column 6**. Each letter uses its own square.
 
-## Hint
+The column stays fixed while the row increases by one. Moving sideways to a nearby letter would bend the word, which is not a valid Word Search selection.
+{{< /puzzle-reveal >}}
 
-Vertical words can be easier when you say each letter quietly in order.
+## Try it on the same board
 
-## Answer
+[Play the First steps Word Search set](/daily/word-search/?set=starter). Tap the starting M and final N, or drag straight between them. Both O squares belong to the selection even though their letters are identical.
 
-The answer is `MOON`, using all four letters from top to bottom.
+Finding MOON finishes this reading question. The playable game needs **STAR, MOON, MINT and PLAY** for completion. Reset clears the found words and restores the same set.
 
-## Play next
+## Keep another direction for later
 
-Play [Daily Word Search](/daily/word-search/) for a full 6x6 starter grid, then explore [KPOP Word Search](/games/kpop-word-search/).
+For a horizontal warmup, return to [Easy Word Search Challenge](/daily/challenges/easy-word-search-challenge/). For a new direction on a different board, try [Find KIWI Backward](/daily/challenges/kiwi-backward-word-search/). These are fixed questions, not newly generated daily rounds; the reading pages do not save progress.
+
+Read [Daily Word Games for Beginners](/blog/daily-word-games-for-beginners/) for more starting ideas, or explore [KPOP Word Search](/games/kpop-word-search/) for a separate themed game.

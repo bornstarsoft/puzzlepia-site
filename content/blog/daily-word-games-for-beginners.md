@@ -1,7 +1,8 @@
 ---
 title: "Daily Word Games for Beginners"
-description: "A beginner-friendly guide to simple daily word games, word search habits, and easy ways to start playing."
+description: "Start with one word at a time. Try real horizontal and vertical Word Search examples, optional hints, and a fixed board you can return to later."
 date: 2026-05-29
+lastmod: 2026-10-23T21:23:00+09:00
 draft: false
 tags:
   - "word games"
@@ -48,6 +49,18 @@ Short words are good warmups because they are easier to confirm. They also help 
 Try scanning in one direction at a time. Look across rows first. Then check columns. After that, scan diagonals if the puzzle allows them.
 
 This slower method often works better than jumping around randomly. It keeps the puzzle calm and gives your eyes a pattern to follow.
+
+## Try two small direction exercises
+
+Start with [Easy Word Search Challenge](/daily/challenges/easy-word-search-challenge/). It asks for STAR's starting and ending positions on a real 6x6 board. Read every letter between the endpoints: a familiar first or last letter is only a clue, not a complete answer.
+
+For your next break, try [Moon Word Search Mini](/daily/challenges/moon-word-search-mini/). It uses the same board but asks you to scan down one column. MOON has two O letters, so part of the task is checking two separate squares without turning sideways.
+
+Both questions have an optional hint and an answer you can leave closed. Solve one today and keep the other link for later. There is no need to finish both in one sitting, and the fixed reading exercises do not track a streak or save progress.
+
+Each page links to [the First steps playable set](/daily/word-search/?set=starter), so the letters match what you just studied. Finding the one word finishes the reading exercise; finding all four target words completes the game. A word-list button reveals its word, while the starting-letter hint leaves you to find the rest yourself.
+
+Ready for another direction? [Find KIWI Backward](/daily/challenges/kiwi-backward-word-search/) moves to the Fruit bowl set. Its separate link keeps that board available for another visit. These sets stay fixed even when the regular Daily Word Search page chooses a different daily pick.
 
 ## Make it part of a daily routine
 

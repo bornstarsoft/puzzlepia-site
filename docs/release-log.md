@@ -1,5 +1,20 @@
 # Puzzlepia Release Log
 
+## Phase 7V Beginner Word Warmups: 2026-10-23
+
+- Replaced two answer-only prompts with real First steps board questions:
+  horizontal STAR and vertical MOON, including its two separate O squares.
+- Reused board and optional disclosure shortcodes. Added exact set links,
+  reciprocal reading links and an existing backward-word round for later.
+  The beginner guide now distinguishes one-word practice from game completion.
+- No new routes, Home/layout changes, game rules, storage, analytics, external
+  destinations or Phaser changes. These are fixed exercises, not new daily
+  generation. Release evidence belongs in [current work state](CURRENT_STATE.md).
+- Run `python3 tools/check_word_warmups.py` after Hugo to verify board/answer
+  parity and published links. Local checks and four-width Chromium QA pass:
+  32 page checks, 16 game completions/resets and 16 disclosures, plus keyboard,
+  no-JavaScript, discovery, footer and SEO checks. No errors or overflow found.
+
 ## Phase 7U Mixed Practice Break: 2026-10-23
 
 - Reworked the existing weekend word/color exercise into two real-board rounds:

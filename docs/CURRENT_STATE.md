@@ -1,11 +1,38 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MIXED-PRACTICE
-Phase: release verified; documentation handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WORD-WARMUPS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-WARMUPS; two existing beginner word challenges and guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-MIXED-PRACTICE; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable return/content improvement, simple Home and verified
+  deployment. Clean main at `cecc9a9` matches fetched origin/main. Existing
+  repository-specific GitHub exception applies; no other writer is active.
+- Turn the existing Easy Word Search and Moon Mini pages into real-board
+  horizontal/vertical questions, optional hints/answers and fixed-set play links.
+  Connect both from the existing beginner guide and offer a later backward round.
+- No new route, homepage/layout, gameplay, storage, analytics or hosting changes.
+  No new analytics evidence supplied; this is content quality work, not a claim
+  of measured retention improvement. Local QA: PASS; deployment pending.
+- `check_site.sh`, `hugo --gc --minify`, eleven Node suites, seven Python checks
+  and diff check pass. New `tools/check_word_warmups.py` checks generated cells
+  against the game model, exact STAR/MOON paths, both O positions, closed
+  disclosures, fixed links, reciprocal discovery and sitemap.
+- Chromium at 390/430/768/1280px passed 32 page checks, 16 game completions/
+  resets and 16 disclosure open/close interactions. Small widths used emulated
+  touch; all game completions used grid endpoints. One-word vs full completion,
+  partial reset, post-completion reset and replay all pass.
+- Keyboard/no-JavaScript reading, 44px disclosure targets, Daily/Blog/search
+  discovery, footer links and three pages' canonical/description/JSON-LD pass.
+  No console errors or horizontal overflow. Mobile/desktop captures inspected.
+  All 2,759 internal references/fragments across 84 HTML pages resolve; IDs
+  are unique. Generated output stays ignored/untracked; draft flags unchanged.
+- NEXT_SINGLE_TASK: commit validated content, push through approved GitHub
+  exception, then check Cloudflare and repeat live QA.
+
+## Previous Mixed Practice Work
 
 - Owner approved another suitable content/return improvement with a simple Home
   and validated production deployment. Clean main at `7e1ce6f` matches fetched
