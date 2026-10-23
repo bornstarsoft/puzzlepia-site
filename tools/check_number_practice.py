@@ -71,4 +71,24 @@ for slug, layout, values in EXERCISES:
             assert "/daily/challenges/" + other + "/" in page.links, slug
     assert "https://puzzlepia.com" + route in urls, slug + ": missing sitemap URL"
 
-print("Number practice passed: three exact game boards, labeled positions, correct answer routes, closed disclosures, fixed play links, cross-links and sitemap.")
+route = "/daily/challenges/number-order-challenge/"
+page = BoardPage((ROOT / "public" / route.strip("/") / "index.html").read_text())
+board = LAYOUTS[3]
+assert page.cells == board and page.positions == ["Position " + str(n) for n in range(1, 17)]
+assert page.reveals == [False, False]
+assert "/daily/number-puzzle/?layout=4" in page.links
+source = (ROOT / "content/daily/challenges/number-order-challenge.md").read_text()
+for values in [range(1, 6), range(6, 9)]:
+    expected = ", ".join(str(board.index(value) + 1) for value in values)
+    assert "**" + expected + "**" in source, "recovery route positions"
+assert board[5] == 5 and board[15] == 6
+for phrase in ['"Look for 6 first."', "**No reset is needed.**", "full, unmarked", "9 to 16"]:
+    assert phrase in source, phrase
+guide_route = "/blog/number-puzzle-warmups-for-casual-players/"
+guide = BoardPage((ROOT / "public" / guide_route.strip("/") / "index.html").read_text())
+assert route in guide.links and guide_route in page.links
+for slug in ["quick-number-focus", "find-the-final-four-numbers"]:
+    assert "/daily/challenges/" + slug + "/" in page.links
+assert "https://puzzlepia.com" + route in urls
+
+print("Number practice passed: four exact game boards, positions/recovery route, closed disclosures, fixed play links, guide links and sitemap.")

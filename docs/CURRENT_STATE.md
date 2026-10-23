@@ -1,11 +1,38 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-RING-FIRST-FINISH
-Phase: verified production deployment; final handoff record.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NUMBER-RECOVERY
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-RECOVERY; existing number challenge and guide; main; 2026-10-23)
 LAST_WRITER = CODEX (PUZZLEPIA-RING-FIRST-FINISH; 2026-10-23)
 
 ## Current Approved Work
+
+- Owner approved a suitable content/return improvement, simple Home and verified
+  deployment. Clean main at `51fb110` matches fetched origin/main. The approved
+  repository-specific GitHub exception applies; no competing writer is active.
+- Improve the existing Number Order Challenge with the real Layout 4, optional
+  hints/answers and a reproducible wrong-tap recovery exercise. Link from the
+  number warmup guide and preserve the existing three-round practice path.
+- No Home, gameplay, CSS, storage, external destination, analytics, Phaser or
+  hosting changes. No new analytics evidence supplied; retention unmeasured.
+- Local QA: PASS. Site checks, `hugo --gc --minify`, eleven Node suites,
+  ten Python checks and diff check pass. The updated checks cover the real
+  runtime's wrong-tap recovery/replay and the diagram's exact Layout 4 positions.
+- Chromium at 390/430/768/1280px passed 28 page checks, eight Number completions,
+  twelve resets and twelve wrong taps. Fixed-link reload opens a fresh Layout 4;
+  wrong taps preserve previous tiles, and eight tiles do not finish the game.
+  Smaller widths use emulated touch. No console errors or horizontal overflow.
+- Keyboard/no-JavaScript disclosures, 44px summary targets, Daily/Blog/search
+  discovery, metadata/JSON-LD, sitemap/robots and footer checks pass. Mobile and
+  desktop screenshots inspected. Seven existing games complete/reset (seven
+  completions, fourteen resets; Word Search via existing word-list fallback).
+- All 2,858 internal references/fragments across 84 generated HTML pages resolve
+  with unique IDs. External destinations, publication dates and draft flags
+  unchanged. Generated output ignored/untracked; no temporary Cloudflare JSON.
+- NEXT_SINGLE_TASK: commit, deploy and repeat production QA. Native Safari
+  NOT_RUN; retention impact unmeasured. No new monitoring or tracking.
+
+## Previous Ring Starter Work
 
 - Owner approved a suitable content/return improvement, simple Home and verified
   deployment. Clean main at `1d4e4c6` matches fetched origin/main. The existing

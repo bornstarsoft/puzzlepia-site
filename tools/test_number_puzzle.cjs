@@ -107,6 +107,21 @@ for (let index = 0; index < 7; index += 1) {
   el(root, "reset").click(); initial(root, (index + 1) % 7);
 }
 
+const recovery = fixture(), recoveryRun = init(recovery, "?layout=4");
+for (let replay = 0; replay < 2; replay += 1) {
+  initial(recovery, 3);
+  for (let n = 1; n <= 5; n += 1) tap(recovery, n);
+  tap(recovery, 7);
+  assert.equal(el(recovery, "status").textContent, "Look for 6 first.");
+  assert.deepEqual(cells(recovery).filter(b => b.disabled).map(b => Number(b.dataset.number)).sort((a, b) => a - b), [1, 2, 3, 4, 5]);
+  assert.equal(cells(recovery).find(b => Number(b.dataset.number) === 7).disabled, false);
+  for (let n = 6; n <= 16; n += 1) tap(recovery, n);
+  assert.equal(el(recovery, "complete").hidden, false);
+  el(recovery, "reset").click();
+  recoveryRun.timers.forEach(f => f());
+  initial(recovery, 3);
+}
+
 let today = 2;
 const root = fixture(), run = init(root, "", { valid: model.valid, today: () => today });
 initial(root, 2); tap(root, 1); today = 3;
@@ -138,4 +153,4 @@ for (const missing of ["grid", "reset", "status", "complete"]) {
 }
 init(null);
 assert.equal(JSON.stringify(layouts), original);
-console.log("Number Puzzle passed: seven permutations, 400 UTC days, " + completions + " completions plus fallback, wrong taps, partial/completed reset, next wrap, fixed links, history, invalid/missing inputs and no storage.");
+console.log("Number Puzzle passed: seven permutations, 400 UTC days, " + completions + " completions plus fallback, two Layout 4 wrong-tap recovery/replays, partial/completed reset, next wrap, fixed links, history, invalid/missing inputs and no storage.");

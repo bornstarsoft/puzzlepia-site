@@ -1,5 +1,20 @@
 # Puzzlepia Release Log
 
+## Phase 7Z Number Recovery Practice: 2026-10-23
+
+- Replaced the old number-list question with the real Layout 4 board, optional
+  hint/answer and a wrong-tap recovery example. It distinguishes tile values
+  from position labels and finishing a short exercise from completing 1 to 16.
+- Connected the existing number guide to the exercise and its fixed layout
+  link for later practice. Existing three-round paths and public URLs remain.
+- No Home, game logic, CSS, storage, external URLs, analytics, Phaser or hosting
+  changes. No measured retention claim. Tests cover diagram positions and the
+  actual runtime's recovery, completion and reset; see [release state](CURRENT_STATE.md).
+- Local checks pass: eleven Node suites, ten Python checks, four-width Chromium
+  QA (28 page checks, eight Number completions, twelve resets/wrong taps),
+  keyboard/no-JavaScript, discovery, metadata and seven-game regression checks.
+  No console errors or horizontal overflow in tested flows.
+
 ## Phase 7Y Ring Starter Choices: 2026-10-23
 
 - Improved two existing ring challenges with reproducible starter diagrams,

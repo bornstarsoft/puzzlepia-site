@@ -2,7 +2,7 @@
 title: "Number Puzzle Warmups for Casual Players"
 description: "Try simple number-order, missing-number, and Sudoku warmups designed for short and comfortable puzzle sessions."
 date: 2026-07-24
-lastmod: 2026-10-23T03:43:00+09:00
+lastmod: 2026-10-23T22:17:00+09:00
 draft: false
 tags:
   - "number puzzles"
@@ -61,6 +61,14 @@ A warmup does not need a timer.
 Moving quickly can be fun, but accuracy gives the puzzle its structure. If you tap the wrong number, pause, check the visible target, and continue. A gentle error should not end the session.
 
 This keeps number play comfortable for beginners and casual players. The puzzle remains a small focus exercise rather than a performance test.
+
+## Recover without starting over
+
+In Puzzlepia's Number Puzzle, a wrong tap leaves your completed tiles in place. The message tells you which value to find next. You do not need to press Reset unless you want a fresh attempt.
+
+Try the [Number Order Challenge](/daily/challenges/number-order-challenge/) on Layout 4. After completing 1 through 5, it asks what happens when 7 is tapped before 6. A labeled board and optional explanation show the next three positions, and a fixed link opens the same layout for practice.
+
+On a later break, revisit that link and scan for 6 before playing. The board starts fresh, without saved progress, and there is no speed target. The useful habit is checking the next value rather than treating one wrong tap as a failed puzzle.
 
 ## Use rows and columns
 
