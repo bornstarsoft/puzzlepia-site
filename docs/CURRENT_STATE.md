@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-BLOCK-FIRST-MOVES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-FIRST-MOVES; two block exercises and beginner guide; main; 2026-10-23)
-LAST_WRITER = CODEX (PUZZLEPIA-WORD-WARMUPS; 2026-10-23)
+Phase: production verified; documentation handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-FIRST-MOVES; 2026-10-23)
 
 ## Current Approved Work
 
@@ -30,9 +30,25 @@ LAST_WRITER = CODEX (PUZZLEPIA-WORD-WARMUPS; 2026-10-23)
 - Generated output remains ignored/untracked. Initial browser test checked the
   new board before link navigation completed; added an explicit navigation wait
   to the QA script and reran successfully, without changing runtime code.
-- NEXT_SINGLE_TASK: commit validated changes, deploy through the approved
-  GitHub flow and repeat QA on production. Native Safari and business impact
-  are NOT_RUN/unmeasured.
+- DONE: implemented and verified live. Application HEAD: `c210824`; only the
+  final documentation commit remains. BLOCKER: none. NEXT_SINGLE_TASK: review
+  comparable guide-to-game and returning-visitor evidence before choosing
+  another improvement. Native Safari and business impact are NOT_RUN/unmeasured.
+  No monitoring automation was scheduled.
+
+## Block First Moves Production Verification: 2026-10-23
+
+- Pushed `c210824` through the approved GitHub exception. Cloudflare Pages
+  succeeded at 2026-10-23 12:38:51 UTC (21:38:51 KST), verified through its
+  public commit check. Existing URLs and publication flags are preserved.
+- Live Chromium at 390/430/768/1280px repeated 36 page checks, 16 completions/
+  resets, eight invalid placements and 16 disclosure interactions. Both
+  documented placement orders complete with 10 filled cells. Partial reset,
+  completion reset and replay pass; small widths use emulated touch.
+- Keyboard/no-JavaScript reading, touch sizes, Daily/Blog/search discovery,
+  footer links and metadata checks pass. No console errors or horizontal
+  overflow in tested flows. Game source, Home, storage, external destinations,
+  analytics and Cloudflare settings are unchanged. Retention impact unmeasured.
 
 ## Previous Word Warmups Work
 

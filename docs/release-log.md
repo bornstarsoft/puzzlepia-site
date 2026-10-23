@@ -15,6 +15,10 @@
   and four-width Chromium testing. Verified 36 page checks, 16 completions/
   resets, eight invalid placements, 16 disclosures, keyboard/no-JavaScript
   reading, discovery and metadata. No errors or overflow in tested flows.
+- Deployed `c210824`; Cloudflare Pages succeeded at 2026-10-23 21:38:51 KST.
+  Live four-width checks repeated the page, game and disclosure matrix, plus
+  keyboard/no-JavaScript, discovery, footer and metadata checks. No errors or
+  overflow. Native Safari and retention impact were not measured.
 
 ## Phase 7V Beginner Word Warmups: 2026-10-23
 
