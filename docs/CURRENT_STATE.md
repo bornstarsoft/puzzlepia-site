@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WEEKEND-PAIR-BREAK
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKEND-PAIR-BREAK; weekend challenge and discovery links; main; 2026-11-10)
-LAST_WRITER = CODEX (PUZZLEPIA-FRUIT-PRACTICE; 2026-10-24)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WEEKEND-PAIR-BREAK; 2026-11-10)
 
 ## Current Approved Work
 
@@ -19,8 +19,16 @@ LAST_WRITER = CODEX (PUZZLEPIA-FRUIT-PRACTICE; 2026-10-24)
   link reloads, 16 game completions and 24 resets. Wrong pairs do not advance
   progress. Both games reopen Layout 5 fresh. Keyboard/no-JavaScript disclosures
   pass; screenshots inspected. No console errors or horizontal overflow.
-- NEXT_SINGLE_TASK: deploy and repeat live QA. No new analytics or measured
-  retention claim. Native Safari NOT_RUN.
+- DONE: production application HEAD `10fb5b1`; Cloudflare Pages check success
+  at 2026-11-10 20:53:57 KST. Live challenge, Daily entry and guide verified.
+- Live QA: PASS. Repeated the four-width matrix (24 page checks, 20 disclosures,
+  eight round reloads, 16 game completions, 24 resets), no-JavaScript keyboard
+  checks and sitemap. First browser navigation aborted; direct navigation and
+  the full rerun passed with no console errors or overflow. Local server stopped.
+- BLOCKER: none. NEXT_SINGLE_TASK: compare discovery of the existing practice
+  links using available aggregate evidence before choosing the next expansion.
+  No new analytics, measured retention claim or scheduled monitoring.
+  Native Safari NOT_RUN.
 
 ## Previous Fruit Practice Work
 

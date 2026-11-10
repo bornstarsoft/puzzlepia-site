@@ -8,6 +8,8 @@
   boards. Daily and the short-session guide point readers to the rounds.
 - Home, runtime, analytics and hosting settings unchanged. Site checks and
   four-width browser checks pass; see [current state](CURRENT_STATE.md).
+- Deployed `10fb5b1` at 2026-11-10 20:53:57 KST. Live link, disclosure,
+  game completion/reset and sitemap checks passed. Retention unmeasured.
 
 ## Phase 8B Fruit Word Practice: 2026-10-24
 
