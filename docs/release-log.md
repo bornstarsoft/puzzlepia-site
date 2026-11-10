@@ -8,6 +8,8 @@
   The original guide and prior round lead to the new board and optional answers.
 - Local build, solution/publication checks and four-width browser QA pass.
   Existing game runtime, topic filters and hosting settings are unchanged.
+- Deployed `3e85790` at 2026-11-10 21:03:42 KST. Live list order, links,
+  board/disclosures, topic filtering, keyboard and sitemap verified.
 
 ## Phase 8C Weekend Pair Break: 2026-11-10
 

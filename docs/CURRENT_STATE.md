@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-LATEST-CHALLENGES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-LATEST-CHALLENGES; Daily updates and Sudoku round; main; 2026-11-10)
-LAST_WRITER = CODEX (PUZZLEPIA-WEEKEND-PAIR-BREAK; 2026-11-10)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-LATEST-CHALLENGES; 2026-11-10)
 
 ## Current Approved Work
 
@@ -18,8 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-WEEKEND-PAIR-BREAK; 2026-11-10)
 - Chromium at 390/430/768/1280px: 20 page checks, 16 disclosures, four topic
   filter checks and no-JavaScript keyboard navigation. Board and list captures
   inspected; no console errors or horizontal overflow in the tested views.
-- NEXT_SINGLE_TASK: deploy and repeat the browser checks on the live domain.
-  Retention impact unmeasured; native Safari NOT_RUN.
+- DONE: application HEAD `3e85790`; Cloudflare Pages success at 2026-11-10
+  21:03:42 KST. The same four-width browser matrix passed live, including the
+  latest order, new board, prior-round/guide links, topic filter and keyboard
+  reading without JavaScript. Live sitemap includes the new challenge.
+- BLOCKER: none. NEXT_SINGLE_TASK: review which existing challenge links
+  receive visits when aggregate data is available. Retention impact unmeasured;
+  native Safari NOT_RUN. Local validation server stopped.
 
 ## Previous Weekend Pair Break Work
 
