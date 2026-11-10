@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8C Weekend Pair Break: 2026-11-10
+
+- Turned the existing Weekend Brain Break into two optional, bookmarkable
+  exercises: remember two matching symbols and make two pairs totaling ten.
+- Both exercises use Layout 5 from the playable games and link to those exact
+  boards. Daily and the short-session guide point readers to the rounds.
+- Home, runtime, analytics and hosting settings unchanged. Site checks and
+  four-width browser checks pass; see [current state](CURRENT_STATE.md).
+
 ## Phase 8B Fruit Word Practice: 2026-10-24
 
 - Replaced the old four-row fruit answer list with the real Fruit bowl board,

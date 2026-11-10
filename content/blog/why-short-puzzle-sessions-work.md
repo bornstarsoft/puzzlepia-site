@@ -2,6 +2,7 @@
 title: "Why Short Puzzle Sessions Work So Well"
 description: "Why short puzzle breaks can feel satisfying, easy to repeat, and useful for building a light daily puzzle habit."
 date: 2026-05-29
+lastmod: 2026-11-10
 draft: false
 tags:
   - "short puzzles"
@@ -55,7 +56,7 @@ Some days you may want a word search. Other days a block puzzle might feel bette
 
 This variety keeps the habit from feeling repetitive.
 
-Puzzlepia's Daily section currently offers several starter puzzle types, all designed to stay lightweight. They are simple now, but they give players a small menu of puzzle moods.
+Try the [memory round of Weekend Brain Break](/daily/challenges/weekend-brain-break/#remember-two-symbols) when you feel like remembering places. In another break, try [making two pairs that add to ten](/daily/challenges/weekend-brain-break/#make-ten-twice). Both rounds use fixed game boards, so you can keep a link and return to the same question whenever it suits you.
 
 ## Short does not mean empty
 

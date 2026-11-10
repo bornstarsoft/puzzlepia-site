@@ -1,11 +1,28 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-FRUIT-PRACTICE
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WEEKEND-PAIR-BREAK
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKEND-PAIR-BREAK; weekend challenge and discovery links; main; 2026-11-10)
 LAST_WRITER = CODEX (PUZZLEPIA-FRUIT-PRACTICE; 2026-10-24)
 
 ## Current Approved Work
+
+- Owner approved the next content/return improvement and production deployment.
+  Clean main at `b0a5be1` matches fetched origin/main. Existing repository-only
+  GitHub deployment exception applies. No competing writer recorded.
+- Replace the vague Weekend Brain Break with two short, independently linkable
+  exercises using Memory Pairs and Make 10 Layout 5. Connect them from Daily
+  and the short-session guide. Keep Home and gameplay unchanged.
+- Local QA: PASS. Site build, minified build, 23 automated checks, whitespace,
+  and 2,888 local references across 84 HTML pages. Generated output untracked.
+- Chromium at 390/430/768/1280px: 24 page checks, 20 disclosures, eight round
+  link reloads, 16 game completions and 24 resets. Wrong pairs do not advance
+  progress. Both games reopen Layout 5 fresh. Keyboard/no-JavaScript disclosures
+  pass; screenshots inspected. No console errors or horizontal overflow.
+- NEXT_SINGLE_TASK: deploy and repeat live QA. No new analytics or measured
+  retention claim. Native Safari NOT_RUN.
+
+## Previous Fruit Practice Work
 
 - Owner approved a suitable return/content improvement and verified deployment.
   Clean main at `fc87a8a` matches fetched origin/main; no competing writer.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the two-round reading exercise against its real game boards."""
+"""Validate the mixed reading exercises against their real game boards."""
 
 import json
 from html.parser import HTMLParser
@@ -90,3 +90,35 @@ for route, parsed in [(CHALLENGE, page), (GUIDE, guide)]:
     assert parsed.meta["description"] and parsed.meta["og:description"]
 assert page.meta["description"] != guide.meta["description"]
 print("Mixed practice PASS: both real boards, exact answers, four closed disclosures, round/play links, metadata and sitemap.")
+
+weekend_route = "/daily/challenges/weekend-brain-break/"
+weekend_guide = "/blog/why-short-puzzle-sessions-work/"
+weekend = Page((ROOT / "public" / weekend_route.strip("/") / "index.html").read_text())
+short_sessions = Page((ROOT / "public" / weekend_guide.strip("/") / "index.html").read_text())
+daily = Page((ROOT / "public/daily/index.html").read_text())
+memory = json.loads((ROOT / "data/memory_pairs.json").read_text())[4]
+numbers = json.loads((ROOT / "data/number_pairs.json").read_text())[4]
+
+assert weekend.cells == [
+    f"{value.title()}Card {i}" for i, value in enumerate(memory, 1)
+] + [f"{value}Position {i}" for i, value in enumerate(numbers, 1)]
+for first, second, symbol in [(5, 10, "triangle"), (6, 9, "diamond")]:
+    assert [i for i, value in enumerate(memory, 1) if value == symbol] == [first, second]
+    assert f"{symbol.title()} at {first} matches {second}" in weekend.answer_text
+assert [numbers[i - 1] for i in [1, 4, 5, 8]] == [7, 3, 8, 2]
+for first, second in [(1, 4), (5, 8)]:
+    assert numbers[first - 1] + numbers[second - 1] == 10
+    assert f"positions {first} and {second}" in weekend.answer_text
+assert len(weekend.details) == 5 and all("open" not in d for d in weekend.details)
+assert len(weekend.ids) == len(set(weekend.ids))
+for anchor in ["remember-two-symbols", "make-ten-twice"]:
+    assert anchor in weekend.ids and "#" + anchor in weekend.links
+    assert weekend_route + "#" + anchor in short_sessions.links
+for link in ["/daily/memory-pairs/?layout=5", "/daily/number-pairs/?layout=5", CHALLENGE, weekend_guide]:
+    assert link in weekend.links, link
+assert weekend_route in daily.links
+for route, parsed in [(weekend_route, weekend), (weekend_guide, short_sessions)]:
+    assert "https://puzzlepia.com" + route in urls
+    assert parsed.canonical == "https://puzzlepia.com" + route
+    assert parsed.meta["description"] and parsed.meta["og:description"]
+print("Weekend pairs PASS: both Layout 5 boards, exact answers, five closed disclosures, entry points and sitemap.")
