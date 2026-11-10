@@ -15,9 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 class Page(HTMLParser):
     def __init__(self, html):
         super().__init__()
-        self.cards, self.returns, self.ids = {}, [], []
+        self.cards, self.returns, self.ids, self.latest = {}, [], [], []
         self.topic = None
         self.return_links = None
+        self.in_latest = False
         self.feed(html)
 
     def handle_starttag(self, tag, attrs):
@@ -26,11 +27,18 @@ class Page(HTMLParser):
             self.ids.append(attrs["id"])
         if tag == "article" and "data-discovery-item" in attrs:
             self.topic = attrs["data-topic"]
+        if tag == "details" and attrs.get("id") == "latest-challenges":
+            assert "open" not in attrs
+            self.in_latest = True
+        if self.in_latest and tag == "time":
+            self.latest[-1][1] = attrs["datetime"]
         if tag == "nav" and "challenge-return" in attrs.get("class", "").split():
             assert attrs.get("aria-label") == "More Daily Challenges"
             self.return_links = []
             self.returns.append(self.return_links)
         if tag == "a":
+            if self.in_latest:
+                self.latest.append([attrs["href"], None])
             if self.topic is not None:
                 self.cards[attrs["href"]] = self.topic
             if self.return_links is not None:
@@ -42,6 +50,8 @@ class Page(HTMLParser):
             self.topic = None
         if tag == "nav":
             self.return_links = None
+        if tag == "details":
+            self.in_latest = False
 
 
 def expected(topic):
@@ -51,6 +61,10 @@ def expected(topic):
 hub = Page((ROOT / "public/daily/index.html").read_text())
 assert set(hub.cards.values()) == {"word", "block", "ring", "number", "color", "memory", "mixed"}
 assert "daily-challenge-title" in hub.ids
+assert len(hub.latest) == 3
+assert all(route in hub.cards for route, _ in hub.latest)
+dates = [date for _, date in hub.latest]
+assert dates == sorted(dates, reverse=True)
 checked = 0
 for path in (ROOT / "public").rglob("index.html"):
     route = "/" + str(path.parent.relative_to(ROOT / "public")) + "/"
@@ -71,15 +85,17 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
     files = {
         "hugo.toml": 'baseURL = "https://example.test/"\n',
         "layouts/_default/baseof.html": '{{ block "main" . }}{{ end }}',
-        "layouts/daily/list.html": '{{ define "main" }}Daily{{ end }}',
         "layouts/partials/breadcrumbs.html": "",
+        "layouts/partials/game-card.html": "",
+        "layouts/partials/recent-puzzle.html": "",
         "content/daily/_index.md": '---\ntitle: Daily\n---\n',
     }
     for name, value in files.items():
         path = fixture / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(value)
-    for name in ["layouts/daily/single.html", "layouts/partials/daily-challenge-topic.html"]:
+    for name in ["layouts/daily/list.html", "layouts/daily/single.html", "layouts/partials/daily-challenge-topic.html"]:
+        (fixture / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / name, fixture / name)
     cases = {
         "words": ("WORD SEARCH", "word"), "blocks": ("Block puzzle", "block"),
@@ -99,10 +115,19 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         "draft": {"title": "Draft", "challenge": True, "draft": True},
         "future": {"title": "Future", "challenge": True, "publishDate": "2999-01-01"},
     })
+    fields_by_slug["words"].update(date="2024-01-01", lastmod="2025-03-03")
+    fields_by_slug["blocks"].update(date="2025-03-02")
+    fields_by_slug["rings"].update(date="2025-03-01")
+    fields_by_slug["playable"].update(date="2025-04-01")
+    fields_by_slug["draft"].update(date="2025-04-02")
     for slug, fields in fields_by_slug.items():
         (fixture / "content/daily" / (slug + ".md")).write_text(json.dumps(fields) + "\nExample.\n")
     result = subprocess.run(["hugo", "--source", folder], capture_output=True, text=True)
     assert result.returncode == 0, result.stdout + result.stderr
+    assert Page((fixture / "public/daily/index.html").read_text()).latest == [
+        ["/daily/words/", "2025-03-03"], ["/daily/blocks/", "2025-03-02"],
+        ["/daily/rings/", "2025-03-01"],
+    ]
     for slug, (_, topic) in cases.items():
         assert Page((fixture / "public/daily" / slug / "index.html").read_text()).returns == expected(topic), slug
     for slug in ["ordinary", "playable"]:
@@ -110,4 +135,4 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
     for slug in ["draft", "future"]:
         assert not (fixture / "public/daily" / slug / "index.html").exists()
 
-print(f"Challenge return PASS: {checked} published pages, seven collections, native links, sitemap and 14 type/publication fixtures.")
+print(f"Challenge return PASS: {checked} published pages, seven collections, latest order, sitemap and 14 type/publication fixtures.")

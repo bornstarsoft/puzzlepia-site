@@ -1,11 +1,27 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WEEKEND-PAIR-BREAK
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-LATEST-CHALLENGES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-LATEST-CHALLENGES; Daily updates and Sudoku round; main; 2026-11-10)
 LAST_WRITER = CODEX (PUZZLEPIA-WEEKEND-PAIR-BREAK; 2026-11-10)
 
 ## Current Approved Work
+
+- Owner approved the next content/return improvement and verified deployment.
+  Clean main at `0c754e7` matches fetched origin/main; no competing writer.
+  Existing repository-only GitHub deployment exception applies.
+- Show the latest three published challenge updates in a collapsed Daily list.
+  Publish a third 4x4 Sudoku exercise on finding the only place for one digit.
+  Preserve Home, game runtime, filters, analytics and hosting configuration.
+- Local QA: PASS. Hugo builds, 23 automated checks, unique Sudoku solution,
+  latest ordering and publication fixtures, whitespace and ignored output.
+- Chromium at 390/430/768/1280px: 20 page checks, 16 disclosures, four topic
+  filter checks and no-JavaScript keyboard navigation. Board and list captures
+  inspected; no console errors or horizontal overflow in the tested views.
+- NEXT_SINGLE_TASK: deploy and repeat the browser checks on the live domain.
+  Retention impact unmeasured; native Safari NOT_RUN.
+
+## Previous Weekend Pair Break Work
 
 - Owner approved the next content/return improvement and production deployment.
   Clean main at `b0a5be1` matches fetched origin/main. Existing repository-only

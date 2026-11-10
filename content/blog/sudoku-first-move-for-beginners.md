@@ -63,10 +63,11 @@ Every fixed clue is preserved. Each row, column, and 2x2 box contains 1 to 4 exa
 
 ## Take the idea into another puzzle
 
-Try two short practice rounds, one now or one at your next break:
+Try three short practice rounds, one now or one at your next break:
 
 1. [One Certain Sudoku Number](/daily/challenges/one-certain-sudoku-number/): use a crossing column to remove one candidate.
 2. [Let the Sudoku Box Decide](/daily/challenges/let-the-sudoku-box-decide/): see why checking only the row and column can miss a certain move.
+3. [Find the Only Place for 1](/daily/challenges/only-place-for-one-sudoku/): look across a row to place a digit when one cell still has two candidates.
 
 Both are fixed teaching boards with optional hints and explanations. You can bookmark the next round; there is no timer, streak, or saved progress. For a lighter warmup, Puzzlepia's [Daily Number Puzzle](/daily/number-puzzle/) asks you to tap 1 to 16 in order. That starter is a number-order game, not Sudoku.
 

@@ -58,7 +58,9 @@ for (const [id, board] of Object.entries(boards)) {
   assert.equal(board.rows[r][c], 0, id + " target must be empty");
   assert.ok(validClues(board.rows), id + " starting clues must not conflict");
   assert.deepEqual(solutions(board.rows), [solution], id + " has exactly the published solution");
-  assert.deepEqual(candidates(board.rows, r, c), [board.answer], id + " target is immediately certain");
+  if (id !== "only-place-in-row") {
+    assert.deepEqual(candidates(board.rows, r, c), [board.answer], id + " target is immediately certain");
+  }
   board.rows.forEach((row, r) => row.forEach((n, c) => {
     if (n) assert.equal(solution[r][c], n, id + " preserves every clue");
   }));
@@ -75,7 +77,18 @@ const wrong = box.map(r => r.slice());
 wrong[0][1] = 3;
 assert.equal(validClues(wrong), false, "wrong candidate repeats 3 in its box");
 assert.deepEqual(solutions(wrong), [], "conflicting board is rejected");
+const rowBoard = boards["only-place-in-row"].rows;
+assert.deepEqual(candidates(rowBoard, 0, 0), [1, 3], "A1 alone allows two digits");
+assert.deepEqual(rowBoard[0].flatMap((value, col) => !value && candidates(rowBoard, 0, col).includes(1) ? [col] : []), [0],
+  "1 has only one position in the row");
+assert.equal(rowBoard[2][1], 1, "B3 rules out 1 at B1");
+assert.equal(rowBoard[1][2], 1, "C2 rules out 1 at C1");
+const placed = rowBoard.map(r => r.slice());
+placed[0][0] = 1;
+assert.deepEqual(candidates(placed, 1, 0), [3], "A2 is certain next");
+placed[1][0] = 3;
+assert.deepEqual(candidates(placed, 1, 3), [2], "D2 finishes row 2");
 assert.equal(solutions(Array.from({ length: 4 }, () => [0, 0, 0, 0])).length, 2,
   "ambiguity check stops at two solutions, not one");
 assert.equal(JSON.stringify(boards), original, "checks do not mutate the source");
-console.log("Sudoku practice passed: three unique solutions, fixed clues and targets, box-only deduction, next move, conflict/ambiguity checks and immutable data.");
+console.log("Sudoku practice passed: four unique boards, fixed clues and targets, box and hidden-single deductions, follow-up moves and immutable data.");

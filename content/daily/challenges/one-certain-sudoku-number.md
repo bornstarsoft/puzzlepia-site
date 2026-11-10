@@ -14,7 +14,7 @@ weight: 103
 
 ## Puzzle prompt
 
-**Sudoku practice: 1 of 2.** Start with one certain number, then try a box-based deduction in the next round. Each round also works on its own.
+**Sudoku practice: 1 of 3.** Start with one certain number, then try a box-based deduction in the next round. Each round also works on its own.
 
 Find the number at **D3: column D, row 3**, highlighted with a question mark. This is a small 4x4 Sudoku: every row, column, and thick-bordered 2x2 box must contain **1, 2, 3, and 4 exactly once**. Keep the printed clues fixed.
 

@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8D Latest Challenge Updates: 2026-11-10
+
+- Added a collapsed list of the three latest published challenge updates on
+  Daily, sorted by the Hugo last-modified date. No new script or Home section.
+- Published a third 4x4 Sudoku round on the only position for a digit in a row.
+  The original guide and prior round lead to the new board and optional answers.
+- Local build, solution/publication checks and four-width browser QA pass.
+  Existing game runtime, topic filters and hosting settings are unchanged.
+
 ## Phase 8C Weekend Pair Break: 2026-11-10
 
 - Turned the existing Weekend Brain Break into two optional, bookmarkable

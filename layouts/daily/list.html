@@ -36,6 +36,18 @@
       <h2 id="daily-challenge-title">Find a challenge for your mood</h2>
       <p>Filter short prompts by puzzle type, then open one as a warmup or a simple puzzle break.</p>
     </div>
+{{ with where $challenges "Params.playable" "ne" true }}
+    <details class="puzzle-reveal" id="latest-challenges">
+      <summary>Latest challenge updates</summary>
+      <div>
+        <ul>
+{{ range first 3 .ByLastmod.Reverse }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <time datetime="{{ .Lastmod.Format "2006-01-02" }}">({{ .Lastmod.Format "Jan 2, 2006" }})</time></li>
+{{ end }}
+        </ul>
+      </div>
+    </details>
+{{ end }}
     <div class="discovery-toolbar">
       <div class="filter-tabs" role="group" aria-label="Filter Daily Challenges by puzzle type">
         <button type="button" data-filter-value="all" aria-pressed="true">All</button>

@@ -11,7 +11,7 @@ challenge: true
 weight: 109
 ---
 
-**Sudoku practice: 2 of 2.** Try this round on its own, or warm up with [One Certain Sudoku Number](/daily/challenges/one-certain-sudoku-number/).
+**Sudoku practice: 2 of 3.** Try this round on its own, or warm up with [One Certain Sudoku Number](/daily/challenges/one-certain-sudoku-number/).
 
 ## Two choices are not a reason to guess
 
@@ -49,6 +49,8 @@ Every starting clue stays unchanged. All rows, columns, and 2x2 boxes contain 1 
 {{< /puzzle-reveal >}}
 
 ## Choose your next break
+
+[Continue to round 3: Find the Only Place for 1](/daily/challenges/only-place-for-one-sudoku/). Instead of narrowing one cell to one candidate, find the only cell in a row that can take a particular digit.
 
 Read [Your First Sudoku Move](/blog/sudoku-first-move-for-beginners/) to revisit the three checks, or try [Daily Number Puzzle](/daily/number-puzzle/) for a number-order warmup. That playable starter asks you to tap numbers in order; it is not Sudoku.
 
