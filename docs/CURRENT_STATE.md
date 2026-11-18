@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-SORT
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-FIND-BAKE-CAKE
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-FIND-BAKE-CAKE; Word Search practice content; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SORT; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved one scoped return improvement and verified deployment.
+  Clean main at `d7adb4b` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a short two-word challenge on the existing Fresh baking set. Link
+  the exercise from the direction guide and Daily's existing discovery.
+  Preserve Home, weekly rotation, game code, analytics and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and ignored
+  output. Chromium at 390/430/768/1280px verified the guide and recent list,
+  hint and answer, exact playable board, eight finishes, twelve resets and
+  footer links. The answer opens by keyboard without JavaScript at 390px.
+  No console errors or horizontal overflow in the checked views.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the published practice.
+
+## Previous Daily Challenge Ordering Work
 
 - Owner approved a scoped return improvement and verified deployment.
   Clean main at `b719707` matches fetched origin/main; no competing writer.

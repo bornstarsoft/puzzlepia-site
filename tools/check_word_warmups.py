@@ -9,6 +9,8 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 GUIDE = "/blog/daily-word-games-for-beginners/"
+DIRECTIONS = "/blog/word-search-directions-worked-example/"
+BAKING_ROUTE = "/daily/challenges/find-bake-and-cake/"
 ROUNDS = {
     "easy-word-search-challenge": ("STAR", [[0, 0], [0, 1], [0, 2], [0, 3]], "Row 1, columns 1 to 4"),
     "moon-word-search-mini": ("MOON", [[0, 5], [1, 5], [2, 5], [3, 5]], "Column 6, rows 1 to 4"),
@@ -49,11 +51,12 @@ class Page(HTMLParser):
             self.in_details = False
 
 
-model = json.loads(subprocess.check_output([
+models = json.loads(subprocess.check_output([
     "node", "-e", "const m=require('./static/js/puzzlepia-word-search.js');"
     "const c=require('./data/word_search.json');"
-    "console.log(JSON.stringify(m.prepare(c).sets.find(s=>s.id==='starter')));"
+    "console.log(JSON.stringify(m.prepare(c).sets));"
 ], cwd=ROOT, text=True))
+model = next(board for board in models if board["id"] == "starter")
 guide = Page((ROOT / "public" / GUIDE.strip("/") / "index.html").read_text())
 urls = {n.text for n in ET.parse(ROOT / "public/sitemap.xml").iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
 assert "https://puzzlepia.com" + GUIDE in urls
@@ -74,4 +77,17 @@ for slug, (word, path, answer) in ROUNDS.items():
     assert route in guide.links and "https://puzzlepia.com" + route in urls
     if word == "MOON":
         assert "row 2, column 6" in page.answers and "row 3, column 6" in page.answers
+baking = next(board for board in models if board["id"] == "baking")
+bake_page = Page((ROOT / "public" / BAKING_ROUTE.strip("/") / "index.html").read_text())
+assert bake_page.cells == list("".join(baking["rows"]))
+assert baking["paths"]["BAKE"] == [[0, i] for i in range(4)]
+assert baking["paths"]["CAKE"] == [[2, i] for i in range(4)]
+assert "row 1, columns 1 to 4" in bake_page.answers
+assert "row 3, columns 1 to 4" in bake_page.answers
+assert len(bake_page.details) == 2 and all("open" not in d for d in bake_page.details)
+assert len(bake_page.ids) == len(set(bake_page.ids))
+for link in ["/daily/word-search/?set=baking", DIRECTIONS, "/games/kpop-word-search/"]:
+    assert link in bake_page.links
+directions = Page((ROOT / "public" / DIRECTIONS.strip("/") / "index.html").read_text())
+assert BAKING_ROUTE in directions.links and "https://puzzlepia.com" + BAKING_ROUTE in urls
 print("Word warmups PASS: real board/model paths, answers, closed disclosures, fixed links, reciprocal discovery and sitemap.")

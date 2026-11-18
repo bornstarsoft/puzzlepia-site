@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8M Word Search: BAKE and CAKE: 2026-11-18
+
+- Added a two-word exercise on the existing Fresh baking board. BAKE and
+  CAKE share their final three letters; the exercise asks readers to check
+  the first letter, then provides optional hints and solutions.
+- Linked it from the direction guide and Daily's existing list. The play
+  link opens the same board. Home, weekly practice, game rules, analytics
+  and hosting settings are unchanged.
+
 ## Phase 8L Daily Challenge Ordering: 2026-11-18
 
 - Added a recently updated order to the Daily Challenge collection. Suggested

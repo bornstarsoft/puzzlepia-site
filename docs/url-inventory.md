@@ -53,6 +53,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/one-certain-sudoku-number/`
 - `/daily/challenges/remember-the-star-pair/`
 - `/daily/challenges/find-the-ten-pairs/`
+- `/daily/challenges/find-bake-and-cake/`
 
 ## Game Page URLs
 
