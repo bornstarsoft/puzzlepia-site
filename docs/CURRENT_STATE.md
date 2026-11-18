@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-BLOCK-SPACE-CHOICES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-SPACE-CHOICES; block challenge and guide; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-COAST-WORD-SEARCH; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-SPACE-CHOICES; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-COAST-WORD-SEARCH; 2026-11-18)
 - Chromium at 390/430/768/1280px: Daily and guide links, eight disclosures,
   eight game completions and twelve resets. Keyboard disclosure works without
   JavaScript; no console errors or horizontal overflow in tested pages.
-- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+- DONE: application HEAD `0af29c6`, deployed via Cloudflare Pages at
+  2026-11-18 21:27:56 KST. Live QA: PASS. Four-width browser checks repeated
+  with eight completions and twelve resets, working links, disclosures and
+  sitemap. Local QA server stopped and generated output remains untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review discovery of current challenges
+  when aggregate data is available. Native Safari NOT_RUN; retention unmeasured.
 
 ## Previous Coast Word Search Work
 

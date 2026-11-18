@@ -8,6 +8,8 @@
 - Linked the space management guide and two reproducible Daily Block Puzzle
   finishes. Existing homepage, challenge URL and gameplay are unchanged.
 - Local site checks, exact-placement tests and browser QA passed.
+- Deployed `0af29c6` at 2026-11-18 21:27:56 KST. Live diagram, links,
+  eight game completions, twelve resets and sitemap passed.
 
 ## Phase 8E Coast Word Search: 2026-11-18
 
