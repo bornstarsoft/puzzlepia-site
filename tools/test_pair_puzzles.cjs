@@ -471,3 +471,30 @@ for (const route of fivesRoutes) {
   assert.deepEqual(valuesOf(fives), numberLayouts[3].map(String));
 }
 console.log("Make 10 practice passed: Layout 4's three five-pair groupings, all eight pairs, invalid/same-tile taps, partial/completed reset and replay.");
+
+const recovery = numberFixture();
+init([recovery], { PuzzlepiaNumberLayouts: numberModel, location: { search: "?layout=6" } });
+const recoveryTap = position => recovery.tiles[position - 1].click();
+const recoveryProgress = recovery.querySelector("[data-progress]");
+const recoveryStatus = recovery.querySelector("[data-status]");
+const recoveryReset = recovery.querySelector("[data-reset]");
+const matchedPositions = () => recovery.tiles.flatMap((tile, i) => tile.classList.contains("is-matched") ? [i + 1] : []);
+assert.deepEqual(valuesOf(recovery), numberLayouts[5].map(String));
+for (const order of [[8, 6], [6, 8]]) {
+  [1, 4, 6, 9].forEach(recoveryTap);
+  assert.equal(recoveryProgress.textContent, "1 / 8 pairs found");
+  assert.match(recoveryStatus.textContent, /2 \+ 7 = 9/);
+  assert.deepEqual(matchedPositions(), [1, 4]);
+  recoveryTap(order[0]);
+  assert.ok(recovery.tiles[order[0] - 1].classList.contains("is-selected"));
+  assert.ok(!recovery.tiles.some(tile => tile.classList.contains("is-mismatch")));
+  recoveryTap(order[1]);
+  assert.equal(recoveryProgress.textContent, "2 / 8 pairs found");
+  assert.deepEqual(matchedPositions(), [1, 4, 6, 8]);
+  [3, 7, 2, 5, 10, 15, 9, 11, 12, 13, 14, 16].forEach(recoveryTap);
+  assert.equal(recovery.querySelector("[data-complete]").hidden, false);
+  recoveryReset.click();
+  checkInitial(recovery);
+  assert.deepEqual(valuesOf(recovery), numberLayouts[5].map(String));
+}
+console.log("Make 10 recovery passed: Layout 6, two recovery orders, retained match, completion and reset.");

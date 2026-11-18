@@ -47,6 +47,8 @@ If you choose 6 and 3, the game shows that the sum is 9. Nothing is removed. You
 
 There is no timer, score deduction, or limited number of tries. Reset restores the current layout, including all matched tiles. After completion, you can replay it or choose **Try next layout**.
 
+Try [Keep Going After a Mismatch](/daily/challenges/make-ten-after-a-mismatch/) for a short example on Layout 6. It lets you practise starting a new pair after the wrong total while keeping a pair you already found.
+
 ## Compare two routes on Layout 2
 
 The [Which Eight Can You Choose?](/daily/challenges/choose-either-eight/) exercise uses the real second layout. Its 2 at position 1 can match either 8, at position 3 or position 9. The other 2, at position 12, still has an 8 left in either case. You can test both routes by choosing **Layout 2** in the game and resetting between attempts.

@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8K Make 10 Mismatch Recovery: 2026-11-18
+
+- Added a short exercise on the real Layout 6 board: recover from a total of
+  nine without clearing the pair already found. The hint and answer are optional.
+- Linked the exercise from the Make 10 guide and the existing latest list.
+  Home, weekly rotation, game runtime, analytics and hosting are unchanged.
+- Builds, 24 automated checks and local browser QA passed.
+
 ## Phase 8J Weekly Practice Navigation: 2026-11-18
 
 - Added a next-practice link and a link back to the weekly picks on the six

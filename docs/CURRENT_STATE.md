@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WEEKLY-PRACTICE-NAV
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MAKE-TEN-RECOVERY
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MAKE-TEN-RECOVERY; Make 10 challenge and guide; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE-NAV; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a scoped content improvement and verified deployment. Clean
+  main at `62ba6f9` matches fetched origin/main; no competing writer. The
+  existing Puzzlepia-only GitHub deployment exception applies.
+- Add an optional Make 10 recovery exercise backed by Layout 6, with a fixed
+  play link and guide entry. Preserve Home, weekly rotation, all game rules,
+  analytics and hosting configuration.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks and ignored
+  output. Chromium at 390/430/768/1280px verified the latest list, guide,
+  exact diagram, eight completions, twelve resets and fresh layout reload.
+  Both recovery orders keep the initial match. Keyboard disclosure works
+  without JavaScript; no console errors or horizontal overflow.
+- NEXT_SINGLE_TASK: deploy and repeat the published flow live.
+
+## Previous Weekly Practice Navigation Work
 
 - Owner approved a scoped return improvement and verified deployment.
   Clean main at `444cd7f` matches fetched origin/main; no competing writer.
