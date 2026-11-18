@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-FIND-BAKE-CAKE
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-FEED
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-FEED; Daily challenge RSS; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-FIND-BAKE-CAKE; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved one scoped return improvement and verified deployment.
+  Clean main at `bb29456` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Make the existing Daily feed easy to find and focused on newly published
+  challenges. Preserve Home, game pages, weekly picks, other feeds, analytics
+  and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and XML
+  validation. Fixture builds exclude future, draft, noindex, undated and
+  playable entries; revisions do not alter publication order. Chromium at
+  390/430/768/1280px checked the feed link, 20 items, newest destination
+  and absence of horizontal overflow; keyboard access works without JS.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Daily and RSS.
+
+## Previous BAKE and CAKE Challenge Work
 
 - Owner approved one scoped return improvement and verified deployment.
   Clean main at `d7adb4b` matches fetched origin/main; no competing writer.

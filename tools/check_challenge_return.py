@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Check challenge-to-collection links and Hugo topic/publication boundaries."""
+"""Check challenge navigation and feed publication boundaries."""
 
+from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -18,6 +19,7 @@ class Page(HTMLParser):
         self.cards, self.returns, self.ids, self.latest = {}, [], [], []
         self.weekly, self.weekly_default = [], None
         self.weekly_next = []
+        self.feed_links, self.feed_in_latest = [], []
         self.topic = None
         self.return_links = None
         self.in_latest = False
@@ -32,6 +34,9 @@ class Page(HTMLParser):
         if tag == "details" and attrs.get("id") == "latest-challenges":
             assert "open" not in attrs
             self.in_latest = True
+        if tag == "link" and attrs.get("type") == "application/rss+xml":
+            assert attrs.get("rel") == "alternate"
+            self.feed_links.append(attrs["href"])
         if self.in_latest and tag == "time":
             self.latest[-1][1] = attrs["datetime"]
         if tag == "nav" and "challenge-return" in attrs.get("class", "").split():
@@ -47,7 +52,10 @@ class Page(HTMLParser):
                 assert "aria-current" not in attrs
                 self.weekly.append(attrs["href"])
             if self.in_latest:
-                self.latest.append([attrs["href"], None])
+                if attrs["href"] == "/daily/index.xml":
+                    self.feed_in_latest.append(attrs["href"])
+                else:
+                    self.latest.append([attrs["href"], None])
             if self.topic is not None:
                 self.cards[attrs["href"]] = self.topic
             if self.return_links is not None:
@@ -78,7 +86,28 @@ def check_return(page, route, hub):
     assert page.weekly_next == next_links, route
 
 
+def check_feed(root, origin):
+    feed = ET.parse(root / "daily/index.xml").getroot()
+    assert feed.tag == "rss" and feed.get("version") == "2.0"
+    channel = feed.find("channel")
+    assert channel.findtext("title") == "Puzzlepia Daily Challenges"
+    assert channel.findtext("link") == origin + "/daily/"
+    feed_url = origin + "/daily/index.xml"
+    assert channel.find("{http://www.w3.org/2005/Atom}link").attrib == {
+        "href": feed_url, "rel": "self", "type": "application/rss+xml",
+    }
+    items = channel.findall("item")
+    links = [item.findtext("link") for item in items]
+    assert links == [item.findtext("guid") for item in items]
+    assert len(links) == len(set(links))
+    dates = [parsedate_to_datetime(item.findtext("pubDate")) for item in items]
+    assert dates == sorted(dates, reverse=True)
+    return items
+
+
 hub = Page((ROOT / "public/daily/index.html").read_text())
+assert hub.feed_links == ["https://puzzlepia.com/daily/index.xml"]
+assert hub.feed_in_latest == ["/daily/index.xml"]
 assert set(hub.cards.values()) == {"word", "block", "ring", "number", "color", "memory", "mixed"}
 assert "daily-challenge-title" in hub.ids
 assert len(hub.latest) == 3
@@ -94,12 +123,20 @@ for path in (ROOT / "public").rglob("index.html"):
     route = "/" + str(path.parent.relative_to(ROOT / "public")) + "/"
     page = Page(path.read_text())
     assert len(page.ids) == len(set(page.ids)), path
+    if route != "/daily/":
+        assert "https://puzzlepia.com/daily/index.xml" not in page.feed_links and not page.feed_in_latest, path
     check_return(page, route, hub)
     checked += route in hub.cards
 assert checked == len(hub.cards) > 0
 urls = {n.text for n in ET.parse(ROOT / "public/sitemap.xml").findall(".//{*}loc")}
 assert all("https://puzzlepia.com" + route in urls for route in hub.cards)
 assert all("?topic=" not in url for url in urls), "query variants are not new content"
+feed_items = check_feed(ROOT / "public", "https://puzzlepia.com")
+assert len(feed_items) == min(20, len(hub.cards))
+for item in feed_items:
+    link = item.findtext("link")
+    assert link in urls and link.removeprefix("https://puzzlepia.com") in hub.cards
+    assert item.findtext("title") and item.findtext("description") and not list(item.find("description"))
 
 with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder:
     fixture = Path(folder)
@@ -116,7 +153,7 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         path = fixture / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(value)
-    for name in ["layouts/daily/list.html", "layouts/daily/single.html",
+    for name in ["layouts/daily/list.html", "layouts/daily/single.html", "layouts/daily/rss.xml",
                  "layouts/partials/daily-challenge-topic.html", "layouts/partials/weekly-practice.html"]:
         (fixture / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / name, fixture / name)
@@ -137,9 +174,10 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         "playable": {"title": "Playable", "challenge": True, "playable": True},
         "draft": {"title": "Draft", "challenge": True, "draft": True},
         "future": {"title": "Future", "challenge": True, "publishDate": "2999-01-01"},
+        "unlisted": {"title": "Unlisted", "challenge": True, "noindex": True, "date": "2025-02-28"},
     })
     fields_by_slug["words"].update(date="2024-01-01", lastmod="2025-03-03")
-    fields_by_slug["blocks"].update(date="2025-03-02")
+    fields_by_slug["blocks"].update(date="2025-03-02", title="Blocks & space", description="Which pieces fit: A < B?")
     fields_by_slug["rings"].update(date="2025-03-01")
     fields_by_slug["playable"].update(date="2025-04-01")
     fields_by_slug["draft"].update(date="2025-04-02")
@@ -154,6 +192,15 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         ["/daily/words/", "2025-03-03"], ["/daily/blocks/", "2025-03-02"],
         ["/daily/rings/", "2025-03-01"],
     ]
+    result = subprocess.run(["hugo", "--source", folder, "-D", "-F", "--destination", "with-drafts"],
+                            capture_output=True, text=True)
+    assert result.returncode == 0, result.stdout + result.stderr
+    items = check_feed(fixture / "with-drafts", "https://example.test")
+    assert [item.findtext("link") for item in items] == [
+        f"https://example.test/daily/{slug}/" for slug in ("blocks", "rings", "words")
+    ]
+    assert items[0].findtext("title") == "Blocks & space"
+    assert items[0].findtext("description") == "Which pieces fit: A < B?"
     for slug, (_, topic) in cases.items():
         route = f"/daily/{slug}/"
         assert fixture_hub.cards[route] == topic
@@ -169,4 +216,4 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
             slug, result.stdout, result.stderr
         )
 
-print(f"Challenge return PASS: {checked} published pages, latest/weekly links, sitemap and type/publication guards.")
+print(f"Challenge return PASS: {checked} published pages, latest/weekly links, RSS and sitemap boundaries.")

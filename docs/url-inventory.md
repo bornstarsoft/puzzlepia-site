@@ -103,3 +103,4 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 
 - `/sitemap.xml`
 - `/robots.txt`
+- `/daily/index.xml` (RSS: latest 20 published Daily Challenges, newest first)

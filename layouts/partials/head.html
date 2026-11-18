@@ -15,6 +15,11 @@
 {{ if .Params.noindex }}  <meta name="robots" content="noindex,follow">
 {{ end }}
   <link rel="canonical" href="{{ $canonical }}">
+{{ if and .IsSection (eq .Section "daily") }}
+{{ with .OutputFormats.Get "rss" }}
+  <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="Puzzlepia Daily Challenges">
+{{ end }}
+{{ end }}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="{{ $ogType }}">
   <meta property="og:title" content="{{ $title }}">

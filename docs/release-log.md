@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8N Daily Challenge RSS: 2026-11-18
+
+- Made the existing Daily RSS URL a feed for newly published challenges, with
+  up to 20 entries in publication order, short descriptions and stable links.
+- Added RSS discovery in the Daily page head and one link under Latest
+  challenge updates. Edits do not make old questions look newly published.
+- Home, Blog feed, weekly practice, gameplay, analytics and hosting are
+  unchanged. There is no subscription account or mailing list.
+
 ## Phase 8M Word Search: BAKE and CAKE: 2026-11-18
 
 - Added a two-word exercise on the existing Fresh baking board. BAKE and

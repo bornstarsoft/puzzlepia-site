@@ -1,0 +1,26 @@
+{{- $feed := .OutputFormats.Get "rss" -}}
+{{- $pages := where .RegularPagesRecursive "Params.challenge" true -}}
+{{- $pages = where $pages "Params.playable" "ne" true -}}
+{{- $pages = where $pages "Params.noindex" "ne" true -}}
+{{- $pages = where $pages "Draft" false -}}
+{{- $pages = where $pages "PublishDate.IsZero" false -}}
+{{- $pages = where $pages "PublishDate" "le" now -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Puzzlepia Daily Challenges</title>
+    <link>{{ .Permalink }}</link>
+    <description>New short puzzle questions from Puzzlepia, with optional hints and answers on each page.</description>
+    <language>{{ .Site.Language.LanguageCode }}</language>
+    <atom:link href="{{ $feed.Permalink }}" rel="self" type="{{ $feed.MediaType.Type }}" />
+{{- range first 20 $pages.ByPublishDate.Reverse }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <guid>{{ .Permalink }}</guid>
+      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <description>{{ .Description }}</description>
+    </item>
+{{- end }}
+  </channel>
+</rss>
