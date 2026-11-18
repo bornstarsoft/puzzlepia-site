@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WEEKLY-PRACTICE
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE; Daily recommendation; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SEARCH; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SEARCH; 2026-11-18)
   output. Chromium at 390/430/768/1280px verified rollover in two time zones,
   exercise links, Home isolation, Daily search and keyboard fallback without
   JavaScript. No console errors or horizontal overflow in tested pages.
-- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+- DONE: application HEAD `b5e00c0`, deployed via Cloudflare Pages at
+  2026-11-18 21:53:27 KST. Live four-width browser QA passed: eight simulated
+  rollover checks, all six links, search regression and keyboard fallback.
+  No console errors or horizontal overflow. Local QA server stopped.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate Daily and linked
+  challenge page views when available before changing the rotation.
+  Retention impact unmeasured; native Safari NOT_RUN.
 
 ## Previous Challenge Search Work
 

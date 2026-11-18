@@ -7,6 +7,8 @@
 - No dates need republishing. A static recommendation and list remain usable
   without JavaScript. Home, search, games, storage and tracking are unchanged.
 - Hugo, 24 automated checks and four-width local browser QA passed.
+- Deployed `b5e00c0` at 2026-11-18 21:53:27 KST. Live rollover, links,
+  existing search and no-JavaScript navigation verified.
 
 ## Phase 8H Daily Challenge Search: 2026-11-18
 
