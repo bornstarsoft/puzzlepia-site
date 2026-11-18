@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-DAILY-SHORTCUTS
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-DAILY-SHORTCUTS; compact Daily entry; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-FEED; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-DAILY-SHORTCUTS; 2026-11-18)
 
 ## Current Approved Work
 
@@ -19,7 +19,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-FEED; 2026-11-18)
   recent puzzle, weekly pick, search filters, RSS and DaySudoku are intact.
   At 390px in a fresh session, the games heading moved from y=930px on the
   previous release to y=486px locally. No overflow or console errors.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Daily shortcuts.
+- DONE: feature HEAD `836a958`, pushed to the approved GitHub main; live
+  behavior verified at 2026-11-18 22:51:19 KST. The public Daily HTML serves all
+  three shortcuts with fingerprinted CSS. Four-width Chromium and no-JS
+  keyboard checks passed. No overflow or console errors in tested views.
+  The public sitemap still has 86 canonical URLs. GitHub check-runs API
+  hit its rate limit; live verification used the production domain.
+- BLOCKER: none. NEXT_SINGLE_TASK: review returning Daily visits when a
+  comparable window is available. Retention and native Safari NOT_RUN.
 
 ## Previous Daily Challenge Feed Work
 

@@ -8,6 +8,8 @@
 - Kept all seven playable puzzles, the return card, DaySudoku, the full
   challenge collection and RSS. Home, games, analytics and hosting are
   unchanged.
+- Verified `836a958` on the public site: four widths, touch and keyboard
+  navigation without JavaScript, existing links and the sitemap.
 
 ## Phase 8N Daily Challenge RSS: 2026-11-18
 
