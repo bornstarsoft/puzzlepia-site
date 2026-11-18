@@ -2,6 +2,7 @@
 """Check published starter diagrams and the written example; browser QA checks gameplay."""
 
 from html.parser import HTMLParser
+from itertools import product
 import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -47,11 +48,11 @@ class Page(HTMLParser):
 
 guide = Page((ROOT / "public" / GUIDE.strip("/") / "index.html").read_text())
 urls = {n.text for n in ET.parse(ROOT / "public/sitemap.xml").findall(".//{*}loc")}
+starter_cells = [f".Row {r}, column {c}: empty" for r in range(1, 7) for c in range(1, 7)]
 for slug in ROUNDS:
     route = "/daily/challenges/" + slug + "/"
     page = Page((ROOT / "public" / route.strip("/") / "index.html").read_text())
-    expected = [f".Row {r}, column {c}: empty" for r in range(1, 7) for c in range(1, 7)]
-    assert [c.strip() for c in page.cells] == expected, slug + ": starter board"
+    assert [c.strip() for c in page.cells] == starter_cells, slug + ": starter board"
     assert len(page.details) == 2 and all("open" not in d for d in page.details)
     assert len(page.ids) == len(set(page.ids)), slug + ": duplicate IDs"
     for link in ["/daily/block-puzzle/", "/games/blockzzle/", GUIDE,
@@ -98,3 +99,21 @@ assert all(link in center.links for link in [space_guide, "/daily/block-puzzle/"
 assert center_route in Page((ROOT / "public" / space_guide.strip("/") / "index.html").read_text()).links
 assert "https://puzzlepia.com" + center_route in urls
 print("Center space PASS: two exact diagrams, counts, closed hint/answer, guide, game and sitemap links.")
+
+two_rows_route = "/daily/challenges/block-puzzle-two-rows/"
+two_rows = Page((ROOT / "public" / two_rows_route.strip("/") / "index.html").read_text())
+assert [c.strip() for c in two_rows.cells] == starter_cells
+assert len(two_rows.details) == 3 and all("open" not in d for d in two_rows.details)
+assert all(link in two_rows.links for link in [space_guide, "/daily/block-puzzle/",
+                                               "/daily/challenges/domino-before-the-square/"])
+assert two_rows_route in Page((ROOT / "public" / space_guide.strip("/") / "index.html").read_text()).links
+assert "https://puzzlepia.com" + two_rows_route in urls
+
+pieces = ([(0, 0), (0, 1), (0, 2)], [(0, 0), (0, 1), (1, 0), (1, 1)], [(0, 0), (1, 0), (1, 1)])
+solutions = set()
+for starts in product(product(range(2), range(6)), repeat=len(pieces)):
+    cells = [(r + dr, col + dc) for (r, col), shape in zip(starts, pieces) for dr, dc in shape]
+    if len(set(cells)) == 10 and all(r < 2 and col < 6 for r, col in cells):
+        solutions.add(starts)
+assert solutions == {((0, 1), (0, 4), (0, 0)), ((0, 3), (0, 0), (0, 2))}
+print("Two-row practice PASS: both non-overlapping solutions, starter diagram, three closed disclosures and sitemap.")

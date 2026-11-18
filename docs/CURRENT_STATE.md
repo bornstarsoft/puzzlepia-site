@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-PURPLE-EDGES
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-BLOCK-TWO-ROWS
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-TWO-ROWS; Daily Block Puzzle practice; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-PURPLE-EDGES; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved one scoped content improvement and verified deployment.
+  Clean main at `b2ba955` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a manual two-row packing challenge using the actual Block Puzzle
+  pieces. Link from the space guide and Daily discovery. Keep Home, the
+  game runtime, weekly practice, analytics and hosting unchanged.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, exhaustive
+  verification of the two top-row placements, and four-width Chromium
+  (390/430/768/1280px). Verified board parity, both routes, eight finishes,
+  twelve resets and no-JS keyboard answer. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both routes.
+
+## Previous Purple Color Match Work
 
 - Owner approved a scoped content improvement and verified deployment.
   Clean main at `daff0e6` matches fetched origin/main; no competing writer.

@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8T Block Puzzle Two-Row Practice: 2026-11-18
+
+- Added a fixed exercise on the existing Daily Block Puzzle: fit the three
+  pieces within the top two rows, then use another layout on a replay.
+- Linked it from the space-management guide and the Daily collection.
+  Home, game rules, weekly practice, analytics and hosting are unchanged.
+
 ## Phase 8S Purple Color Match Practice: 2026-11-18
 
 - Added a fixed Color Match exercise that separates the purple targets on

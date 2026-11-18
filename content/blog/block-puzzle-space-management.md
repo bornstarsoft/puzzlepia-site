@@ -2,7 +2,7 @@
 title: "Block Puzzle Space Management Tips"
 description: "Compare two placements on a small block puzzle board and learn how to protect space for the next piece."
 date: 2026-05-28
-lastmod: 2026-10-23T02:40:00+09:00
+lastmod: 2026-11-18T23:22:29+09:00
 draft: false
 tags:
   - "block puzzle"
@@ -49,6 +49,8 @@ Use one round for a short break, or follow the sequence. Each board has an optio
 These are fixed teaching boards, separate from Daily Block Puzzle and Blockzzle. Nothing clears in the examples. Bookmark the next round to return to it later; the sequence does not track visits or completion.
 
 For a later break, try [Keep the Center Open](/daily/challenges/keep-the-center-open/). Both boards have the same number of empty cells, but the line placement changes how many ways the next square can fit.
+
+For a hands-on follow-up, [fit three pieces in two rows](/daily/challenges/block-puzzle-two-rows/) on the actual Daily Block Puzzle board. Solve it once, then reset and try the other arrangement.
 
 ## Avoid isolated gaps
 
