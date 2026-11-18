@@ -7,6 +7,8 @@
 - Added optional hints, a full-board reference and the remaining pairs.
   Daily discovery and the guide link to the exercise. Home, gameplay,
   weekly practice, analytics and hosting settings are unchanged.
+- Deployed `85d8cde` via Cloudflare Pages; browser-tested the exact recovery,
+  completion and reset at four widths. Live RSS and sitemap include the page.
 
 ## Phase 8Q Daily Challenge Difficulty: 2026-11-18
 

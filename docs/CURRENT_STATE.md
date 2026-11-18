@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MEMORY-SECOND-TRY
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MEMORY-SECOND-TRY; Memory Pairs practice; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-DIFFICULTY; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-SECOND-TRY; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-DIFFICULTY; 2026-11-18)
   exact Layout 7, retained stars after clearing a selection, eight finishes
   and twelve resets passed. No console errors or horizontal overflow.
   The answer is keyboard accessible without JavaScript at 390px.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the new practice.
+- DONE: content HEAD `85d8cde`, deployed via Cloudflare Pages at
+  2026-11-18 23:11:46 KST. Live four-width QA verified the diagram, the
+  exact game, retained stars, eight finishes, twelve resets, keyboard
+  fallback, RSS and 88 canonical sitemap URLs. No console errors or
+  overflow in the tested views. Generated output remains untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily
+  and challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Daily Challenge Difficulty Work
 
