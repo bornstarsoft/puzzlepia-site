@@ -8,6 +8,8 @@
   challenge updates. Edits do not make old questions look newly published.
 - Home, Blog feed, weekly practice, gameplay, analytics and hosting are
   unchanged. There is no subscription account or mailing list.
+- Deployed `413e2a5` via Cloudflare Pages; live browser and curl verified the
+  feed and sitemap links. Reader-specific compatibility is unverified.
 
 ## Phase 8M Word Search: BAKE and CAKE: 2026-11-18
 

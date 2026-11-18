@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-FEED
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-FEED; Daily challenge RSS; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-FIND-BAKE-CAKE; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-FEED; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,16 @@ LAST_WRITER = CODEX (PUZZLEPIA-FIND-BAKE-CAKE; 2026-11-18)
   playable entries; revisions do not alter publication order. Chromium at
   390/430/768/1280px checked the feed link, 20 items, newest destination
   and absence of horizontal overflow; keyboard access works without JS.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Daily and RSS.
+- DONE: feature HEAD `413e2a5`, deployed via Cloudflare Pages at
+  2026-11-18 22:35:04 KST. Live Chromium at four widths verified RSS
+  discovery, link, XML and newest destination, with no JS errors or overflow.
+  Keyboard access works without JS. All 20 item URLs match the sitemap; the
+  Blog RSS remains available. Browser and curl succeeded. Default Python
+  urllib returned 403 for both feeds and the sitemap; no hosting changes.
+  Generated output remains ignored and untracked.
+- BLOCKER: none for browser and curl access. Third-party reader testing and
+  retention measurement NOT_RUN. NEXT_SINGLE_TASK: verify the feed with
+  a representative reader before promoting it beyond Daily.
 
 ## Previous BAKE and CAKE Challenge Work
 
