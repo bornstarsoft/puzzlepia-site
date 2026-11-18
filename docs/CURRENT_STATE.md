@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COAST-WORD-SEARCH
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COAST-WORD-SEARCH; coast challenge and discovery links; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-LATEST-CHALLENGES; 2026-11-10)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COAST-WORD-SEARCH; 2026-11-18)
 
 ## Current Approved Work
 
@@ -19,7 +19,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-LATEST-CHALLENGES; 2026-11-10)
   eight Coast completions, twelve resets and fixed-link reloads. Incorrect
   path does not mark a word; keyboard disclosure works without JavaScript.
   No console errors or horizontal overflow in tested pages.
-- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+- DONE: application HEAD `c73ee6b`, deployed via Git-connected Cloudflare
+  Pages at 2026-11-18 21:21:28 KST. Live QA: PASS. The same four-width
+  browser matrix passed, including eight completions and twelve resets.
+  Live sitemap includes the challenge; local QA server stopped.
+- BLOCKER: none. NEXT_SINGLE_TASK: review discovery of current exercises if
+  aggregate data is available before adding more navigation. Retention impact
+  unmeasured. Native Safari NOT_RUN. No generated output tracked.
 
 ## Previous Latest Challenges Work
 

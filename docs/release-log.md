@@ -8,6 +8,8 @@
   appears in Daily's existing latest challenge list. Home, gameplay, tracking
   and hosting configuration are unchanged.
 - Hugo, automated checks and four-width browser QA passed locally.
+- Deployed `c73ee6b` at 2026-11-18 21:21:28 KST. Live links, optional answers,
+  eight game completions, twelve resets and sitemap passed.
 
 ## Phase 8D Latest Challenge Updates: 2026-11-10
 
