@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8W Ring Puzzle Two-Cell Practice: 2026-11-18
+
+- Added a fixed exercise that fits the Daily Ring Puzzle tray into two
+  cells. The large and medium positions are constrained; the final small
+  ring fits in either cell.
+- Linked the exercise from the existing guide and Daily discovery. Home,
+  game rules, weekly practice, analytics and hosting are unchanged.
+
 ## Phase 8V Upcoming Weekly Practice: 2026-11-18
 
 - Added the next exercise and the Monday UTC change date inside the

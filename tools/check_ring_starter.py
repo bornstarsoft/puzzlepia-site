@@ -72,4 +72,13 @@ for slug, example in ROUNDS.items():
         assert "Cell 1 cannot accept it" in page.answers
         assert "unshown empty cells are also compatible" in page.answers
 assert "https://puzzlepia.com" + GUIDE in urls
-print("Ring starter PASS: two data-matched diagrams, optional answers, reciprocal links, guide and sitemap.")
+route = "/daily/challenges/ring-puzzle-two-cells/"
+two_cells = Page((ROOT / "public" / route.strip("/") / "index.html").read_text())
+assert two_cells.example == "two-cell-finish" and two_cells.cells == boards["two-cell-finish"]["cells"]
+assert len(two_cells.details) == 2 and all("open" not in d for d in two_cells.details)
+assert len(two_cells.ids) == len(set(two_cells.ids))
+assert "Pink large in cell 2" in two_cells.answers and "Pink medium in cell 1" in two_cells.answers
+assert "Pink small fits in either cell" in two_cells.answers
+assert all(link in two_cells.links for link in [GUIDE, "/daily/ring-puzzle/", "/daily/challenges/one-cell-three-ring-sizes/"])
+assert route in guide.links and "https://puzzlepia.com" + route in urls
+print("Ring starter PASS: three data-matched diagrams, exact answers, reciprocal links, guide and sitemap.")

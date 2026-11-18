@@ -2,7 +2,7 @@
 title: "Ring Puzzle Basics: Colors, Sizes, and Simple Strategy"
 description: "Read a ring puzzle cell by size and color, then follow a worked placement example with three clearly labeled cells."
 date: 2026-05-28
-lastmod: 2026-10-23T22:02:00+09:00
+lastmod: 2026-11-18T23:46:12+09:00
 draft: false
 tags:
   - "ring puzzle"
@@ -47,6 +47,8 @@ Prefer to check an example in the actual game? [Simple Ring Placement](/daily/ch
 Keep [One Cell, Three Sizes](/daily/challenges/one-cell-three-ring-sizes/) for another break. It compares two valid places for the final Gold medium ring. You can rebuild the same position after reset and try both finishes. These exercises do not require speed, a score or a line clear; they ask you to notice which size is still available.
 
 The diagrams are fixed reading prompts. The game link opens the empty starter, not the illustrated position or a saved game. Each page explains how to reach its diagram using the real tray.
+
+For a compact replay, [fit five rings in two cells](/daily/challenges/ring-puzzle-two-cells/), then reset and move the small ring to the other cell. Both arrangements use the actual starter tray.
 
 ## Three small practice rounds
 

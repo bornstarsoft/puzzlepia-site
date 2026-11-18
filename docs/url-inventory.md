@@ -58,6 +58,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/memory-pairs-clear-one-card/`
 - `/daily/challenges/purple-color-match-edges/`
 - `/daily/challenges/block-puzzle-two-rows/`
+- `/daily/challenges/ring-puzzle-two-cells/`
 
 ## Game Page URLs
 

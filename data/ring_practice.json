@@ -31,6 +31,18 @@
     ],
     "tray": [{"id":"gold-medium","size":"medium","color":"gold"}]
   },
+  "two-cell-finish": {
+    "caption": "The first two cells before placing the three pink rings",
+    "cells": [
+      {"id":"1","small":"","medium":"","large":"mint"},
+      {"id":"2","small":"","medium":"gold","large":""}
+    ],
+    "tray": [
+      {"id":"pink-large","size":"large","color":"pink"},
+      {"id":"pink-medium","size":"medium","color":"pink"},
+      {"id":"pink-small","size":"small","color":"pink"}
+    ]
+  },
   "shared-cell": {
     "caption": "Two tray rings: small pink and medium mint",
     "cells": [

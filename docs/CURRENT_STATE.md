@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WEEKLY-PREVIEW
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-RING-TWO-CELLS
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-RING-TWO-CELLS; Ring Puzzle practice; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PREVIEW; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `0abdf4b` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add one Ring Puzzle exercise for fitting the starter tray in two cells.
+  Link it from the ring guide and Daily discovery. Preserve Home, weekly
+  practice, game code, analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks and four
+  Chromium widths (390/430/768/1280px). Verified the two assignments,
+  diagram parity, duplicate-size rejection, eight finishes, twelve resets
+  and keyboard answer without JS. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both finishes.
+
+## Previous Upcoming Weekly Practice Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `e327f95` matches fetched origin/main; no competing writer.

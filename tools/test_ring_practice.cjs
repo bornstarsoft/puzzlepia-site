@@ -11,7 +11,11 @@ const solutions = {
   "three-spaces": [{ "small-gold": "C", "medium-pink": "A", "large-mint": "B" }],
   "shared-cell": [{ "small-pink": "A", "medium-mint": "A" }, { "small-pink": "A", "medium-mint": "B" }],
   "starter-nest": [{ "pink-medium": "1" }],
-  "starter-finish": [{ "gold-medium": "2" }, { "gold-medium": "3" }]
+  "starter-finish": [{ "gold-medium": "2" }, { "gold-medium": "3" }],
+  "two-cell-finish": [
+    { "pink-large": "2", "pink-medium": "1", "pink-small": "1" },
+    { "pink-large": "2", "pink-medium": "1", "pink-small": "2" }
+  ]
 };
 
 function place(cells, piece, id) {
@@ -78,4 +82,4 @@ const nested = place(nest.cells, nest.tray[0], "1");
 assert.deepEqual(nested[0], boards["starter-finish"].cells[0], "three pink rings match the final exercise");
 assert.equal(place(boards["starter-finish"].cells, { size: "medium", color: "gold" }, "1"), null, "full cell rejects Gold medium");
 assert.equal(JSON.stringify(boards), original, "checks do not mutate the source");
-console.log("Ring practice passed: five boards, all eleven tray orders, unique and two-answer assignments, starter-state continuity, duplicate-size rejection, color independence and immutable data.");
+console.log("Ring practice passed: six boards, all seventeen tray orders, exact assignments, duplicate-size rejection and immutable data.");
