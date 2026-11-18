@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WEEKLY-PRACTICE
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WEEKLY-PRACTICE-NAV
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE-NAV; weekly challenge continuation; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a scoped return improvement and verified deployment.
+  Clean main at `444cd7f` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Give rotation members a stable next practice and a direct return to the
+  weekly list. Reuse the same order as Daily, with no new JS or storage.
+  Preserve Home, game code, filters, schedule, analytics and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks and ignored
+  output. Chromium at 390/430/768/1280px passed 24 next links, four landings
+  at the weekly list, search and keyboard-only navigation without JavaScript.
+  Home and non-weekly pages do not show the links. No errors or overflow.
+- NEXT_SINGLE_TASK: deploy and verify the live navigation.
+
+## Previous Weekly Practice Work
 
 - Owner approved another scoped return improvement and verified deployment.
   Clean main at `dcaa807` matches fetched origin/main; no competing writer.

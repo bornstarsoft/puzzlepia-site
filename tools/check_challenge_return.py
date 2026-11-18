@@ -17,6 +17,7 @@ class Page(HTMLParser):
         super().__init__()
         self.cards, self.returns, self.ids, self.latest = {}, [], [], []
         self.weekly, self.weekly_default = [], None
+        self.weekly_next = []
         self.topic = None
         self.return_links = None
         self.in_latest = False
@@ -38,6 +39,8 @@ class Page(HTMLParser):
             self.return_links = []
             self.returns.append(self.return_links)
         if tag == "a":
+            if "data-next-weekly-practice" in attrs:
+                self.weekly_next.append(attrs["href"])
             if "data-weekly-link" in attrs:
                 self.weekly_default = attrs["href"]
             if "data-weekly-option" in attrs:
@@ -60,8 +63,19 @@ class Page(HTMLParser):
             self.in_latest = False
 
 
-def expected(topic):
-    return [[f"/daily/?topic={topic}#daily-challenge-title", "/daily/#daily-challenge-title"]]
+def check_return(page, route, hub):
+    if route not in hub.cards:
+        assert not page.returns and not page.weekly_next, route
+        return
+    next_links = []
+    if route in hub.weekly:
+        index = hub.weekly.index(route)
+        next_links.append(hub.weekly[(index + 1) % len(hub.weekly)])
+    weekly_links = next_links + ["/daily/#weekly-practice"] if next_links else []
+    topic = hub.cards[route]
+    assert page.returns == [weekly_links + [f"/daily/?topic={topic}#daily-challenge-title",
+                                           "/daily/#daily-challenge-title"]], route
+    assert page.weekly_next == next_links, route
 
 
 hub = Page((ROOT / "public/daily/index.html").read_text())
@@ -74,16 +88,14 @@ assert dates == sorted(dates, reverse=True)
 assert len(hub.weekly) == len(set(hub.weekly)) == 6
 assert hub.weekly_default == hub.weekly[0]
 assert all(route in hub.cards for route in hub.weekly)
+assert hub.ids.count("weekly-practice") == 1
 checked = 0
 for path in (ROOT / "public").rglob("index.html"):
     route = "/" + str(path.parent.relative_to(ROOT / "public")) + "/"
     page = Page(path.read_text())
     assert len(page.ids) == len(set(page.ids)), path
-    if route in hub.cards:
-        assert page.returns == expected(hub.cards[route]), route
-        checked += 1
-    else:
-        assert not page.returns, (route, "non-challenge navigation")
+    check_return(page, route, hub)
+    checked += route in hub.cards
 assert checked == len(hub.cards) > 0
 urls = {n.text for n in ET.parse(ROOT / "public/sitemap.xml").findall(".//{*}loc")}
 assert all("https://puzzlepia.com" + route in urls for route in hub.cards)
@@ -143,7 +155,9 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         ["/daily/rings/", "2025-03-01"],
     ]
     for slug, (_, topic) in cases.items():
-        assert Page((fixture / "public/daily" / slug / "index.html").read_text()).returns == expected(topic), slug
+        route = f"/daily/{slug}/"
+        assert fixture_hub.cards[route] == topic
+        check_return(Page((fixture / "public/daily" / slug / "index.html").read_text()), route, fixture_hub)
     for slug in ["ordinary", "playable"]:
         assert not Page((fixture / "public/daily" / slug / "index.html").read_text()).returns
     for slug in ["draft", "future"]:

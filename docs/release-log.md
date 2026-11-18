@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8J Weekly Practice Navigation: 2026-11-18
+
+- Added a next-practice link and a link back to the weekly picks on the six
+  featured challenges. The sequence wraps and remains available any week.
+- Reused the Daily rotation order and ordinary links, with no new scripts or
+  saved state. Home, existing return links, filters and games are unchanged.
+- Local builds, 24 automated checks and four-width browser QA passed.
+
 ## Phase 8I Weekly Practice: 2026-11-18
 
 - Added one weekly recommendation in Daily Challenges. Six existing exercises

@@ -19,8 +19,22 @@
   </div>
 {{ if and .Params.challenge (not .Params.playable) }}
 {{ $topic := partial "daily-challenge-topic.html" . }}
+{{ $weekly := .Site.Data.weekly_practice }}
+{{ $next := "" }}
+{{ range $index, $path := $weekly }}
+  {{ if and (eq $path $.RelPermalink) (gt (len $weekly) 1) }}
+    {{ $next = index $weekly (mod (add $index 1) (len $weekly)) }}
+  {{ end }}
+{{ end }}
 {{ with .Site.GetPage "/daily" }}
+{{ $dailyURL := .RelPermalink }}
   <nav class="challenge-return" aria-label="More Daily Challenges">
+{{ with $next }}
+{{ with $.Site.GetPage . }}
+    <a href="{{ .RelPermalink }}" data-next-weekly-practice>Next in weekly practice: {{ .Title }}</a>
+{{ end }}
+    <a href="{{ $dailyURL }}#weekly-practice">Weekly practice picks</a>
+{{ end }}
     <a href="{{ printf "%s?topic=%s#daily-challenge-title" .RelPermalink $topic }}">More {{ $topic }} challenges</a>
     <a href="{{ .RelPermalink }}#daily-challenge-title">All Daily Challenges</a>
   </nav>

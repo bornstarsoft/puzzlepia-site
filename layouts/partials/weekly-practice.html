@@ -16,7 +16,7 @@
 {{ end }}
 {{ with $picks }}
 {{ $first := index . 0 }}
-    <nav class="daily-hub__heading" aria-label="Weekly practice" data-weekly-practice>
+    <nav class="daily-hub__heading" id="weekly-practice" aria-label="Weekly practice" data-weekly-practice>
       <p><strong data-weekly-label>Practice pick:</strong> <a data-weekly-link href="{{ $first.RelPermalink }}">{{ $first.Title }}</a></p>
       <details class="puzzle-reveal">
         <summary>Browse all {{ len . }} weekly picks</summary>
