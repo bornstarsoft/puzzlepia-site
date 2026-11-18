@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check challenge navigation and feed publication boundaries."""
+"""Check Daily navigation and feed publication boundaries."""
 
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
@@ -20,6 +20,8 @@ class Page(HTMLParser):
         self.weekly, self.weekly_default = [], None
         self.weekly_next = []
         self.feed_links, self.feed_in_latest = [], []
+        self.shortcuts, self.focus_targets = [], []
+        self.in_shortcuts = False
         self.topic = None
         self.return_links = None
         self.in_latest = False
@@ -29,6 +31,11 @@ class Page(HTMLParser):
         attrs = dict(attrs)
         if "id" in attrs:
             self.ids.append(attrs["id"])
+            if attrs.get("tabindex") == "-1":
+                self.focus_targets.append(attrs["id"])
+        if tag == "nav" and "daily-hub__shortcuts" in attrs.get("class", "").split():
+            assert attrs.get("aria-label") == "On this page"
+            self.in_shortcuts = True
         if tag == "article" and "data-discovery-item" in attrs:
             self.topic = attrs["data-topic"]
         if tag == "details" and attrs.get("id") == "latest-challenges":
@@ -44,6 +51,8 @@ class Page(HTMLParser):
             self.return_links = []
             self.returns.append(self.return_links)
         if tag == "a":
+            if self.in_shortcuts:
+                self.shortcuts.append(attrs["href"])
             if "data-next-weekly-practice" in attrs:
                 self.weekly_next.append(attrs["href"])
             if "data-weekly-link" in attrs:
@@ -67,6 +76,7 @@ class Page(HTMLParser):
             self.topic = None
         if tag == "nav":
             self.return_links = None
+            self.in_shortcuts = False
         if tag == "details":
             self.in_latest = False
 
@@ -106,6 +116,8 @@ def check_feed(root, origin):
 
 
 hub = Page((ROOT / "public/daily/index.html").read_text())
+assert hub.shortcuts == ["#playable-daily-title", "#weekly-practice", "#daily-challenge-title"]
+assert all(link[1:] in hub.focus_targets for link in hub.shortcuts)
 assert hub.feed_links == ["https://puzzlepia.com/daily/index.xml"]
 assert hub.feed_in_latest == ["/daily/index.xml"]
 assert set(hub.cards.values()) == {"word", "block", "ring", "number", "color", "memory", "mixed"}
@@ -125,6 +137,7 @@ for path in (ROOT / "public").rglob("index.html"):
     assert len(page.ids) == len(set(page.ids)), path
     if route != "/daily/":
         assert "https://puzzlepia.com/daily/index.xml" not in page.feed_links and not page.feed_in_latest, path
+        assert not page.shortcuts, path
     check_return(page, route, hub)
     checked += route in hub.cards
 assert checked == len(hub.cards) > 0
@@ -186,6 +199,8 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
     result = subprocess.run(["hugo", "--source", folder], capture_output=True, text=True)
     assert result.returncode == 0, result.stdout + result.stderr
     fixture_hub = Page((fixture / "public/daily/index.html").read_text())
+    assert fixture_hub.shortcuts == hub.shortcuts
+    assert all(link[1:] in fixture_hub.focus_targets for link in fixture_hub.shortcuts)
     assert fixture_hub.weekly == ["/daily/words/", "/daily/blocks/"]
     assert fixture_hub.weekly_default == "/daily/words/"
     assert fixture_hub.latest == [
@@ -209,6 +224,12 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         assert not Page((fixture / "public/daily" / slug / "index.html").read_text()).returns
     for slug in ["draft", "future"]:
         assert not (fixture / "public/daily" / slug / "index.html").exists()
+    (fixture / "data/weekly_practice.json").write_text("[]")
+    (fixture / "content/daily/playable.md").unlink()
+    result = subprocess.run(["hugo", "--source", folder], capture_output=True, text=True)
+    assert result.returncode == 0, result.stdout + result.stderr
+    fixture_hub = Page((fixture / "public/daily/index.html").read_text())
+    assert fixture_hub.shortcuts == ["#daily-challenge-title"]
     for slug in ["words", "ordinary", "playable", "draft", "future", "does-not-exist"]:
         (fixture / "data/weekly_practice.json").write_text(json.dumps(["/daily/words/", f"/daily/{slug}/"]))
         result = subprocess.run(["hugo", "--source", folder], capture_output=True, text=True)

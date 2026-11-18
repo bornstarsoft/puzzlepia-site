@@ -590,6 +590,26 @@ img {
   margin-top: 34px;
 }
 
+.daily-hub__shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  margin-top: 12px;
+}
+
+.daily-hub__shortcuts a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--purple-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.daily-hub [tabindex="-1"] {
+  scroll-margin-top: 16px;
+}
+
 .daily-hub__heading {
   max-width: 720px;
 }

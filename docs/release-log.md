@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8O Daily Shortcuts: 2026-11-18
+
+- Shortened the Daily introduction and added direct links to playable
+  puzzles, the weekly pick and the challenge list. Links use native
+  anchors and work without JavaScript.
+- Kept all seven playable puzzles, the return card, DaySudoku, the full
+  challenge collection and RSS. Home, games, analytics and hosting are
+  unchanged.
+
 ## Phase 8N Daily Challenge RSS: 2026-11-18
 
 - Made the existing Daily RSS URL a feed for newly published challenges, with

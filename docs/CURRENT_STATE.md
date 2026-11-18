@@ -1,11 +1,27 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-FEED
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-DAILY-SHORTCUTS
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-DAILY-SHORTCUTS; compact Daily entry; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-FEED; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `6f31d50` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Shorten the Daily entry and link directly to playable puzzles, the weekly
+  pick and the challenge collection. Keep DaySudoku available below the games.
+  Preserve Home, gameplay, RSS, discovery, analytics and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and four
+  Chromium widths (390/430/768/1280px): all three anchors scroll and focus
+  correctly, including keyboard without JavaScript. Seven playable cards,
+  recent puzzle, weekly pick, search filters, RSS and DaySudoku are intact.
+  At 390px in a fresh session, the games heading moved from y=930px on the
+  previous release to y=486px locally. No overflow or console errors.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Daily shortcuts.
+
+## Previous Daily Challenge Feed Work
 
 - Owner approved one scoped return improvement and verified deployment.
   Clean main at `bb29456` matches fetched origin/main; no competing writer.

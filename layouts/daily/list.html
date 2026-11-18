@@ -7,9 +7,19 @@
     <h1>{{ .Title }}</h1>
 {{ with .Description }}<p>{{ . }}</p>{{ end }}
   </header>
-  <div class="page__content">
-{{ .Content }}
-  </div>
+{{ if or $playable $challenges }}
+  <nav class="daily-hub__shortcuts" aria-label="On this page">
+{{ if $playable }}
+    <a href="#playable-daily-title">Play a puzzle</a>
+{{ end }}
+{{ if $challenges }}
+{{ if .Site.Data.weekly_practice }}
+    <a href="#weekly-practice">Weekly pick</a>
+{{ end }}
+    <a href="#daily-challenge-title">Browse challenges</a>
+{{ end }}
+  </nav>
+{{ end }}
 
   <div class="daily-hub__recent">
 {{ partial "recent-puzzle.html" (dict "titleID" "daily-recent-puzzle-title") }}
@@ -19,7 +29,7 @@
   <section class="daily-hub__section" aria-labelledby="playable-daily-title">
     <div class="daily-hub__heading">
       <p class="eyebrow">Playable puzzles</p>
-      <h2 id="playable-daily-title">Start with a quick game</h2>
+      <h2 id="playable-daily-title" tabindex="-1">Start with a quick game</h2>
     </div>
     <div class="game-grid">
 {{ range $playable.ByWeight }}
@@ -29,11 +39,17 @@
   </section>
 {{ end }}
 
+{{ with .Content }}
+  <div class="page__content">
+{{ . }}
+  </div>
+{{ end }}
+
 {{ if $challenges }}
   <section class="daily-hub__section" aria-labelledby="daily-challenge-title" data-discovery data-discovery-url data-limit="9" data-unit="challenges" data-unit-singular="challenge">
     <div class="daily-hub__heading">
       <p class="eyebrow">Challenge ideas</p>
-      <h2 id="daily-challenge-title">Find a challenge for your mood</h2>
+      <h2 id="daily-challenge-title" tabindex="-1">Find a challenge for your mood</h2>
       <p>Filter short prompts by puzzle type, then open one as a warmup or a simple puzzle break.</p>
     </div>
 {{ partial "weekly-practice.html" . }}
