@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-DIFFICULTY
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-DIFFICULTY; Daily difficulty filter; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-COLUMN; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-DIFFICULTY; 2026-11-18)
 
 ## Current Approved Work
 
@@ -17,7 +17,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-COLUMN; 2026-11-18)
   challenges, topic/search/order combinations, empty state, expanded list,
   bookmarks and history. Blog search unchanged. No errors or overflow;
   full 41-card archive remains available without JavaScript.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Daily difficulty.
+- DONE: feature HEAD `d206708` pushed to approved GitHub main. Production
+  verified at 2026-11-18 23:05:59 KST: markup and fingerprinted JS, four
+  Chromium widths, both levels, combined filters, bookmark/history, Blog,
+  JS-disabled archive and 87 canonical sitemap URLs. No console errors or
+  horizontal overflow in tested views. Generated output remains untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate Daily and Challenge
+  visits when available. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Sudoku Column Practice Work
 

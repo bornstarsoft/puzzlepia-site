@@ -7,6 +7,8 @@
   can be kept together in one bookmark.
 - Home, gameplay, weekly practice, RSS and Blog discovery are unchanged.
   The full archive is still readable without JavaScript.
+- Verified `d206708` on the public site across four widths, including
+  bookmarks, browser history, JS-disabled fallback and the sitemap.
 
 ## Phase 8P Sudoku Column Practice: 2026-11-18
 
