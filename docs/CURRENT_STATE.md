@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COPY-CHALLENGE-LIST
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COPY-CHALLENGE-LIST; Daily collection link; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-FIND-NOTE; 2026-11-19)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COPY-CHALLENGE-LIST; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-FIND-NOTE; 2026-11-19)
   Chromium widths (390/430/768/1280px). Verified the exact URL, clipboard
   success/denial with a simulated API, manual selection, history, reopened
   results and the no-JS archive. No console errors or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the list control.
+- DONE: feature HEAD `314ddfa`, deployed via Cloudflare Pages at
+  2026-11-19 00:16:53 KST. Live Chromium at four widths validated the copy
+  API contract with simulated success and denial, selection, history, URL
+  restoration and the full no-JS archive. JS fingerprint and sitemap
+  (92 URLs) verified. Initial 390px Home overflow was not reproducible
+  in an isolated retry or the full rerun. Generated output untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: check native clipboard in Safari before
+  broadening this feature. Native library/device QA and retention NOT_RUN.
 
 ## Previous Word Search Final-Letter Practice Work
 

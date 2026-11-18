@@ -7,6 +7,8 @@
   current topic, difficulty, keyword, ordering and expanded view.
 - If automatic copy is unavailable, the URL is selected for manual copying.
   No account, storage or network service is used; Home and Blog are unchanged.
+- Deployed `314ddfa` via Cloudflare Pages and verified the production
+  control, simulated clipboard paths, bookmark restoration and sitemap.
 
 ## Phase 8Y Word Search Final-Letter Practice: 2026-11-19
 
