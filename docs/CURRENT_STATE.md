@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-PURPLE-EDGES
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-PURPLE-EDGES; Color Match practice; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-SECOND-TRY; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-PURPLE-EDGES; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-SECOND-TRY; 2026-11-18)
   interior positions, guide and archive, eight finishes, twelve resets
   retaining Purple, and keyboard answer without JavaScript. No console
   errors or overflow in the tested views.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Color Match practice.
+- DONE: content HEAD `5d1656e`, deployed via Cloudflare Pages at
+  2026-11-18 23:18:53 KST. Live four-width QA verified discovery, diagram,
+  both orders, eight finishes, twelve resets, no-JS keyboard answer, RSS
+  and sitemap (89 URLs). No console errors or overflow. Generated output
+  ignored and untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily and
+  challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Memory Pairs Selection Practice Work
 

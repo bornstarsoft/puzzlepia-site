@@ -6,6 +6,8 @@
   the edge from those inside. The linked game uses the same board and target.
 - Linked from the color strategy guide and Daily discovery. Home, game
   rules, weekly practice, analytics and hosting are unchanged.
+- Deployed `5d1656e` via Cloudflare Pages. Four-width browser QA verified
+  both orders and resets; the live RSS and sitemap contain the challenge.
 
 ## Phase 8R Memory Pairs Selection Practice: 2026-11-18
 
