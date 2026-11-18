@@ -48,6 +48,8 @@ Use one round for a short break, or follow the sequence. Each board has an optio
 
 These are fixed teaching boards, separate from Daily Block Puzzle and Blockzzle. Nothing clears in the examples. Bookmark the next round to return to it later; the sequence does not track visits or completion.
 
+For a later break, try [Keep the Center Open](/daily/challenges/keep-the-center-open/). Both boards have the same number of empty cells, but the line placement changes how many ways the next square can fit.
+
 ## Avoid isolated gaps
 
 An isolated gap is a small empty space surrounded by filled cells. Single-cell gaps are especially troublesome because many block shapes cannot use them.

@@ -2,6 +2,7 @@
 """Check published starter diagrams and the written example; browser QA checks gameplay."""
 
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -77,3 +78,23 @@ assert all(0 <= r < 6 and 0 <= c < 6 for r, c in line + square + corner)
 assert any(r >= 6 for r, c in [(5, 4), (6, 4), (6, 5)])
 assert "https://puzzlepia.com" + GUIDE in urls
 print("Block first moves PASS: two labeled 6x6 boards, exact example, optional answers, discovery and sitemap.")
+
+center_route = "/daily/challenges/keep-the-center-open/"
+space_guide = "/blog/block-puzzle-space-management/"
+center = Page((ROOT / "public" / center_route.strip("/") / "index.html").read_text())
+boards = json.loads((ROOT / "data/block_practice.json").read_text())
+expected = [
+    f"X{col}{row}: occupied" if filled else f".{col}{row}: empty"
+    for key in ["edge-line", "inner-line"]
+    for row, values in enumerate(boards[key]["rows"], 1)
+    for col, filled in zip("ABCD", values)
+]
+assert center.cells == expected
+assert len(center.details) == 2 and all("open" not in d for d in center.details)
+assert "Board A has 6 starts:" in center.answers and "Board B has 3 starts:" in center.answers
+assert len(center.ids) == len(set(center.ids))
+assert all(link in center.links for link in [space_guide, "/daily/block-puzzle/",
+                                           "/daily/challenges/domino-before-the-square/"])
+assert center_route in Page((ROOT / "public" / space_guide.strip("/") / "index.html").read_text()).links
+assert "https://puzzlepia.com" + center_route in urls
+print("Center space PASS: two exact diagrams, counts, closed hint/answer, guide, game and sitemap links.")

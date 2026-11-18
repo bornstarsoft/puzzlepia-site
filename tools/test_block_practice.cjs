@@ -78,5 +78,15 @@ for (const [row, col] of starts(tray.rows, tray.pieces.single)) {
 }
 assert.equal(successfulFirstSingles, 1);
 assert.equal(solve(place(tray.rows, tray.pieces.single, 0, 0), ["line", "square"], tray.pieces).length, 0);
+const empty = Array.from({ length: 4 }, () => Array(4).fill(0));
+for (const [id, row, expectedStarts] of [
+  ["edge-line", 0, [[1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]],
+  ["inner-line", 1, [[2, 0], [2, 1], [2, 2]]],
+]) {
+  const board = boards[id];
+  assert.deepEqual(board.rows, place(empty, tray.pieces.line, row, 0), id);
+  assert.equal(board.rows.flat().filter(cell => cell === 0).length, 13);
+  assert.deepEqual(starts(board.rows, board.pieces.square), expectedStarts, id);
+}
 assert.equal(JSON.stringify(boards), original, "validation must not mutate source data");
-console.log("Block practice passed: two checked boards, both domino choices, unique tray packing in all six orders, all eight single-first choices, bounds/overlap and immutable data.");
+console.log("Block practice passed: domino choices, unique tray packing in all six orders, exact edge/inside square starts, bounds/overlap and immutable data.");

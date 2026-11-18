@@ -8,6 +8,20 @@
       "square": [[0, 0], [0, 1], [1, 0], [1, 1]]
     }
   },
+  "edge-line": {
+    "caption": "Board A: Line 3 on the top edge",
+    "rows": [[1, 1, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+    "pieces": {
+      "square": [[0, 0], [0, 1], [1, 0], [1, 1]]
+    }
+  },
+  "inner-line": {
+    "caption": "Board B: Line 3 on the second row",
+    "rows": [[0, 0, 0, 0], [1, 1, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+    "pieces": {
+      "square": [[0, 0], [0, 1], [1, 0], [1, 1]]
+    }
+  },
   "tray": {
     "caption": "Room for a line, a square, and one block",
     "rows": [[0, 0, 0, 1], [1, 1, 1, 0], [1, 0, 0, 1], [1, 0, 0, 1]],

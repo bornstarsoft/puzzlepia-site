@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COAST-WORD-SEARCH
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-BLOCK-SPACE-CHOICES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-SPACE-CHOICES; block challenge and guide; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-COAST-WORD-SEARCH; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a scoped content/return improvement and verified deployment.
+  Clean main at `76e2e75` matches fetched origin/main; no competing writer.
+  Existing Puzzlepia-only GitHub deployment exception applies.
+- Turn the existing center-space prompt into a countable comparison of two
+  block placements. Connect the space management guide and retain the same
+  challenge URL, Daily entry, homepage, game rules and hosting setup.
+- Local QA: PASS. Hugo and minified builds, 23 automated checks, diagram parity,
+  exact square starts, sitemap, whitespace and ignored output.
+- Chromium at 390/430/768/1280px: Daily and guide links, eight disclosures,
+  eight game completions and twelve resets. Keyboard disclosure works without
+  JavaScript; no console errors or horizontal overflow in tested pages.
+- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+
+## Previous Coast Word Search Work
 
 - Owner approved the next content/return improvement and verified deployment.
   Clean main at `6620f38` matches fetched origin/main; no competing writer.

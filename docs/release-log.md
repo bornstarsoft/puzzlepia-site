@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8F Block Space Choices: 2026-11-18
+
+- Replaced the general center-space prompt with two labeled 4x4 boards. Both
+  have 13 empty cells, but a 2x2 square has six starts on one and three on the
+  other. Optional explanations list the starts.
+- Linked the space management guide and two reproducible Daily Block Puzzle
+  finishes. Existing homepage, challenge URL and gameplay are unchanged.
+- Local site checks, exact-placement tests and browser QA passed.
+
 ## Phase 8E Coast Word Search: 2026-11-18
 
 - Added a short upward-word exercise on the real Coast board, with optional
