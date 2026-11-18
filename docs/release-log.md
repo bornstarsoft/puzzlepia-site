@@ -8,6 +8,8 @@
 - Connected the number warmups guide, the existing latest list and playable
   Number Puzzle Layout 6. Home, runtime and hosting settings are unchanged.
 - Local builds, 23 automated checks and four-width browser QA passed.
+- Deployed `3b556f1` at 2026-11-18 21:38:19 KST. Live round links, keyboard
+  reading without JavaScript, game completion/reset and sitemap passed.
 
 ## Phase 8F Block Space Choices: 2026-11-18
 

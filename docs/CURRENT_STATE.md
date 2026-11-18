@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-NUMBER-PATTERN-WARMUPS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-PATTERN-WARMUPS; warmup challenge and guide; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-SPACE-CHOICES; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PATTERN-WARMUPS; 2026-11-18)
 
 ## Current Approved Work
 
@@ -19,7 +19,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-SPACE-CHOICES; 2026-11-18)
   eight round reloads, eight Layout 6 completions and twelve resets. Wrong
   tap preserves progress; keyboard disclosure works without JavaScript.
   No console errors or horizontal overflow in tested pages.
-- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+- DONE: application HEAD `3b556f1`, deployed via Cloudflare Pages at
+  2026-11-18 21:38:19 KST. Live QA: PASS, including 16 disclosures, eight
+  round reloads, eight game completions, twelve resets, and live sitemap.
+  Local QA server stopped. Generated output ignored and untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review discovery of existing practices
+  when aggregate data is available. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Block Space Choices Work
 
