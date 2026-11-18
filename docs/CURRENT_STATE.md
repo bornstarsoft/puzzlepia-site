@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MAKE-TEN-RECOVERY
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-SORT
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SORT; Daily collection sorting; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-MAKE-TEN-RECOVERY; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a scoped return improvement and verified deployment.
+  Clean main at `b719707` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add an optional recently-updated order to the Daily challenge collection;
+  keep the suggested order by default and include the choice in collection
+  links. Preserve Home, game behavior, weekly rotation and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, whitespace,
+  and ignored output. Chromium at 390/430/768/1280px verified ordering,
+  search and topic combinations, expansion, bookmarks, history and Blog.
+  All 39 cards remain available without JavaScript at 390px. No console
+  errors or horizontal overflow in the tested views.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the production sort.
+
+## Previous Make 10 Recovery Work
 
 - Owner approved a scoped content improvement and verified deployment. Clean
   main at `62ba6f9` matches fetched origin/main; no competing writer. The

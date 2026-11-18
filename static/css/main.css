@@ -957,7 +957,18 @@ img {
   font-weight: 900;
 }
 
-.filter-search input {
+.daily-filter-fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+}
+
+.daily-filter-fields > :first-child { flex: 1 1 16rem; }
+.daily-filter-fields > :last-child { flex: 0 1 12rem; }
+
+.filter-search input,
+.filter-search select {
   width: 100%;
   min-height: 46px;
   padding: 10px 12px;
@@ -967,7 +978,8 @@ img {
   background: #ffffff;
 }
 
-.filter-search input:focus {
+.filter-search input:focus,
+.filter-search select:focus {
   border-color: var(--purple);
   outline: 3px solid rgba(111, 69, 216, 0.14);
 }

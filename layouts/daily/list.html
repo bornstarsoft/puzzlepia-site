@@ -50,10 +50,19 @@
     </details>
 {{ end }}
     <div class="discovery-toolbar">
-      <label class="filter-search" for="daily-challenge-search" data-filter-search-wrap hidden>
-        <span>Search challenges</span>
-        <input id="daily-challenge-search" type="search" placeholder="Try wave, sudoku, or square" maxlength="80" autocomplete="off" data-filter-search>
-      </label>
+      <div class="daily-filter-fields" data-filter-search-wrap hidden>
+        <label class="filter-search" for="daily-challenge-search">
+          <span>Search challenges</span>
+          <input id="daily-challenge-search" type="search" placeholder="Try wave, sudoku, or square" maxlength="80" autocomplete="off" data-filter-search>
+        </label>
+        <label class="filter-search" for="daily-challenge-sort" data-filter-sort-wrap hidden>
+          <span>Sort challenges</span>
+          <select id="daily-challenge-sort" data-filter-sort>
+            <option value="suggested">Suggested order</option>
+            <option value="updated">Recently updated</option>
+          </select>
+        </label>
+      </div>
       <div class="filter-tabs" role="group" aria-label="Filter Daily Challenges by puzzle type">
         <button type="button" data-filter-value="all" aria-pressed="true">All</button>
         <button type="button" data-filter-value="word" aria-pressed="false">Words</button>
@@ -71,7 +80,7 @@
 {{ range $challenges.ByWeight }}
 {{ $type := lower (.Params.puzzleType | default "") }}
 {{ $topic := partial "daily-challenge-topic.html" . }}
-      <article class="challenge-card" data-discovery-item data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
+      <article class="challenge-card" data-discovery-item data-updated="{{ .Lastmod.Unix }}" data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
         <div class="game-card__meta">
 {{ with .Params.puzzleType }}<span>{{ . }}</span>{{ end }}
 {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}

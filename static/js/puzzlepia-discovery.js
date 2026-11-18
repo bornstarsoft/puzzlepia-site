@@ -12,6 +12,9 @@
     );
     var search = group.querySelector("[data-filter-search]");
     var searchWrap = group.querySelector("[data-filter-search-wrap]");
+    var sort = group.querySelector("[data-filter-sort]");
+    var sortWrap = group.querySelector("[data-filter-sort-wrap]");
+    var list = group.querySelector("[data-filter-list]");
     var count = group.querySelector("[data-filter-count]");
     var empty = group.querySelector("[data-filter-empty]");
     var more = group.querySelector("[data-filter-more]");
@@ -30,10 +33,18 @@
       return;
     }
 
+    var canSort = sort && list;
+    var updated = canSort ? items.slice().sort(function (a, b) {
+      return Number(b.getAttribute("data-updated")) - Number(a.getAttribute("data-updated"));
+    }) : items;
+    var order = items;
+    var sortMode = "suggested";
+
     function readLocation() {
       activeTopic = "all";
       query = "";
       expanded = false;
+      sortMode = "suggested";
       try {
         var params = new window.URLSearchParams(window.location.search);
         var topic = params.get("topic");
@@ -41,18 +52,23 @@
           return button.getAttribute("data-filter-value") === topic;
         })) activeTopic = topic;
         expanded = params.getAll("view").length === 1 && params.get("view") === "all";
+        if (canSort && params.getAll("sort").length === 1 && params.get("sort") === "updated") {
+          sortMode = "updated";
+        }
         var savedQuery = params.get("q");
         if (search && params.getAll("q").length === 1 && savedQuery.length <= 80) {
           query = savedQuery.trim();
         }
       } catch (_) { /* Keep the complete default collection available. */ }
       if (search) search.value = query;
+      if (canSort) sort.value = sortMode;
     }
 
     function collectionURL() {
       var params = new window.URLSearchParams();
       if (activeTopic !== "all") params.set("topic", activeTopic);
       if (query) params.set("q", query);
+      if (sortMode === "updated") params.set("sort", sortMode);
       if (expanded) params.set("view", "all");
       var queryString = params.toString();
       return window.location.pathname + (queryString ? "?" + queryString : "");
@@ -70,7 +86,12 @@
 
     function render() {
       var needle = query.toLowerCase();
-      var matched = items.filter(function (item) {
+      var nextOrder = sortMode === "updated" ? updated : items;
+      if (order !== nextOrder) {
+        nextOrder.forEach(function (item) { list.appendChild(item); });
+        order = nextOrder;
+      }
+      var matched = order.filter(function (item) {
         var topicMatches =
           activeTopic === "all" || item.getAttribute("data-topic") === activeTopic;
         var searchText = item.getAttribute("data-search-text") || "";
@@ -135,6 +156,15 @@
         render();
         updateLocation();
       });
+    }
+
+    if (canSort) {
+      sort.addEventListener("change", function () {
+        sortMode = sort.value === "updated" ? "updated" : "suggested";
+        render();
+        updateLocation();
+      });
+      if (sortWrap) sortWrap.hidden = false;
     }
 
     if (linked) {

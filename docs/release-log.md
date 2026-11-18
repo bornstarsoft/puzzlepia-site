@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8L Daily Challenge Ordering: 2026-11-18
+
+- Added a recently updated order to the Daily Challenge collection. Suggested
+  order remains the default. Sort can be combined with topic and text search,
+  and collection links restore all three choices.
+- Preserved Home, weekly practice, game rules, analytics and hosting settings.
+  The full collection remains available without JavaScript.
+
 ## Phase 8K Make 10 Mismatch Recovery: 2026-11-18
 
 - Added a short exercise on the real Layout 6 board: recover from a total of
