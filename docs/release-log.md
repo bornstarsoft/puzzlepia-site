@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8H Daily Challenge Search: 2026-11-18
+
+- Added instant keyword search inside Daily Challenges. Combine it with the
+  existing topics and reopen the filtered results by URL.
+- Typing replaces the current history entry; topic selection and expanding
+  results retain their existing navigation. Without JavaScript the full
+  collection remains visible. Home, Blog behavior and game code are unchanged.
+- Builds, 23 automated checks and four-width local browser QA passed.
+
 ## Phase 8G Number Pattern Warmups: 2026-11-18
 
 - Replaced the generic Daily Puzzle Warmup prompt with two number sequences:

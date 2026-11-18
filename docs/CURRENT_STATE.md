@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NUMBER-PATTERN-WARMUPS
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-SEARCH
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SEARCH; Daily challenge discovery only; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PATTERN-WARMUPS; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved the next content/discovery improvement and verified deployment.
+  Clean main at `b046df6` matches fetched origin/main; no competing writer.
+  Existing Puzzlepia-only GitHub deployment exception applies.
+- Add local keyword filtering to the Daily challenge list, combined with
+  its topic filter and bookmarkable collection URL. Preserve Home, Blog
+  behavior, game runtime, existing URLs, tracking and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 23 automated checks, whitespace and
+  ignored output. Browser at 390/430/768/1280px: matching and empty states,
+  topic/query links, Back/Forward, reload, share, clear and expand pass.
+  Home and Blog verified, full collection remains browsable without JavaScript.
+  No console errors or horizontal overflow in tested views.
+- NEXT_SINGLE_TASK: deploy and verify the same flow live.
+
+## Previous Number Pattern Warmups Work
 
 - Owner approved another scoped content/return improvement and verified
   deployment. Clean main at `fa92575` matches fetched origin/main. Existing

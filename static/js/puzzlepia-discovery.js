@@ -11,11 +11,13 @@
       group.querySelectorAll("[data-filter-value]")
     );
     var search = group.querySelector("[data-filter-search]");
+    var searchWrap = group.querySelector("[data-filter-search-wrap]");
     var count = group.querySelector("[data-filter-count]");
     var empty = group.querySelector("[data-filter-empty]");
     var more = group.querySelector("[data-filter-more]");
     var limit = Number.parseInt(group.getAttribute("data-limit"), 10) || items.length;
     var unit = group.getAttribute("data-unit") || "items";
+    var singularUnit = group.getAttribute("data-unit-singular") || unit;
     var activeTopic = "all";
     var query = "";
     var expanded = false;
@@ -30,6 +32,7 @@
 
     function readLocation() {
       activeTopic = "all";
+      query = "";
       expanded = false;
       try {
         var params = new window.URLSearchParams(window.location.search);
@@ -38,32 +41,40 @@
           return button.getAttribute("data-filter-value") === topic;
         })) activeTopic = topic;
         expanded = params.getAll("view").length === 1 && params.get("view") === "all";
+        var savedQuery = params.get("q");
+        if (search && params.getAll("q").length === 1 && savedQuery.length <= 80) {
+          query = savedQuery.trim();
+        }
       } catch (_) { /* Keep the complete default collection available. */ }
+      if (search) search.value = query;
     }
 
     function collectionURL() {
       var params = new window.URLSearchParams();
       if (activeTopic !== "all") params.set("topic", activeTopic);
+      if (query) params.set("q", query);
       if (expanded) params.set("view", "all");
       var queryString = params.toString();
       return window.location.pathname + (queryString ? "?" + queryString : "");
     }
 
-    function updateLocation() {
+    function updateLocation(replace) {
       if (!linked) return;
       var url = collectionURL() + window.location.hash;
       if (url === window.location.pathname + window.location.search + window.location.hash) return;
       try {
-        window.history.pushState(window.history.state, "", url);
+        var method = replace ? "replaceState" : "pushState";
+        window.history[method](window.history.state, "", url);
       } catch (_) { /* Filtering and the ordinary collection link still work. */ }
     }
 
     function render() {
+      var needle = query.toLowerCase();
       var matched = items.filter(function (item) {
         var topicMatches =
           activeTopic === "all" || item.getAttribute("data-topic") === activeTopic;
         var searchText = item.getAttribute("data-search-text") || "";
-        return topicMatches && (!query || searchText.indexOf(query) !== -1);
+        return topicMatches && (!needle || searchText.indexOf(needle) !== -1);
       });
 
       items.forEach(function (item) {
@@ -82,7 +93,7 @@
       });
 
       if (count) {
-        count.textContent = matched.length + " " + unit;
+        count.textContent = matched.length + " " + (matched.length === 1 ? singularUnit : unit);
       }
 
       if (empty) {
@@ -110,10 +121,12 @@
 
     if (search) {
       search.addEventListener("input", function () {
-        query = search.value.trim().toLowerCase();
+        query = search.value.trim();
         expanded = false;
         render();
+        updateLocation(true);
       });
+      if (searchWrap) searchWrap.hidden = false;
     }
 
     if (more) {

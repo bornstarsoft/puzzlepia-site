@@ -30,7 +30,7 @@
 {{ end }}
 
 {{ if $challenges }}
-  <section class="daily-hub__section" aria-labelledby="daily-challenge-title" data-discovery data-discovery-url data-limit="9" data-unit="challenges">
+  <section class="daily-hub__section" aria-labelledby="daily-challenge-title" data-discovery data-discovery-url data-limit="9" data-unit="challenges" data-unit-singular="challenge">
     <div class="daily-hub__heading">
       <p class="eyebrow">Challenge ideas</p>
       <h2 id="daily-challenge-title">Find a challenge for your mood</h2>
@@ -49,6 +49,10 @@
     </details>
 {{ end }}
     <div class="discovery-toolbar">
+      <label class="filter-search" for="daily-challenge-search" data-filter-search-wrap hidden>
+        <span>Search challenges</span>
+        <input id="daily-challenge-search" type="search" placeholder="Try wave, sudoku, or square" maxlength="80" autocomplete="off" data-filter-search>
+      </label>
       <div class="filter-tabs" role="group" aria-label="Filter Daily Challenges by puzzle type">
         <button type="button" data-filter-value="all" aria-pressed="true">All</button>
         <button type="button" data-filter-value="word" aria-pressed="false">Words</button>
@@ -77,7 +81,7 @@
       </article>
 {{ end }}
     </div>
-    <p class="discovery-empty" data-filter-empty hidden>No challenges match this filter yet.</p>
+    <p class="discovery-empty" data-filter-empty hidden>No matching challenges. Try another keyword or topic.</p>
     <div class="discovery-more">
       <button class="button button--secondary" type="button" data-filter-more hidden>Show all challenges</button>
     </div>
