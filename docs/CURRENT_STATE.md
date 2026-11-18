@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CLEAR-CHALLENGE-FILTERS
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CLEAR-CHALLENGE-FILTERS; Daily filter recovery; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-TWO-ROWS; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CLEAR-CHALLENGE-FILTERS; 2026-11-18)
 
 ## Current Approved Work
 
@@ -17,7 +17,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-TWO-ROWS; 2026-11-18)
   Chromium widths (390/430/768/1280px). Tested a bookmarked result, zero
   results, retained ordering, keyboard focus, history and unchanged Blog
   search. No console errors or overflow; 44 cards remain available without JS.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify filter recovery.
+- DONE: feature HEAD `1498042`, deployed via Cloudflare Pages at
+  2026-11-18 23:33:32 KST. Live Chromium at four widths verified
+  bookmarked and empty-state clears, keyboard focus, sorting, history,
+  Blog search and JS-disabled fallback. Live JS fingerprint and 90
+  sitemap URLs verified. No console errors or overflow; output untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily
+  and challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Block Puzzle Two-Row Practice Work
 

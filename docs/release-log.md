@@ -6,6 +6,8 @@
   restores the whole collection in the chosen sort order, and Back returns
   to the former filters. Existing bookmark links still work.
 - Preserved Home, Blog, gameplay, weekly practice, RSS, analytics and hosting.
+- Deployed `1498042` via Cloudflare Pages. Checked four widths, bookmark
+  recovery, keyboard focus, browser history, no-JS fallback and sitemap.
 
 ## Phase 8T Block Puzzle Two-Row Practice: 2026-11-18
 
