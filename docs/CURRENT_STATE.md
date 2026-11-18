@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-SORT
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SORT; Daily collection sorting; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-MAKE-TEN-RECOVERY; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SORT; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-MAKE-TEN-RECOVERY; 2026-11-18)
   search and topic combinations, expansion, bookmarks, history and Blog.
   All 39 cards remain available without JavaScript at 390px. No console
   errors or horizontal overflow in the tested views.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the production sort.
+- DONE: application HEAD `435a7e5`, deployed via Cloudflare Pages at
+  2026-11-18 22:17:32 KST. Live QA: PASS. Repeated the four-width matrix,
+  JavaScript-disabled fallback, and checked the canonical sitemap (85 URLs,
+  no sort variants). No console errors or horizontal overflow. Local QA
+  server stopped; generated output ignored and untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate Daily and Challenge
+  page visits when available. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Make 10 Recovery Work
 

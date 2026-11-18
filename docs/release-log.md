@@ -7,6 +7,8 @@
   and collection links restore all three choices.
 - Preserved Home, weekly practice, game rules, analytics and hosting settings.
   The full collection remains available without JavaScript.
+- Deployed `435a7e5` via Cloudflare Pages. Four-width live browser QA and
+  canonical sitemap checks passed. Retention impact has not been measured.
 
 ## Phase 8K Make 10 Mismatch Recovery: 2026-11-18
 
