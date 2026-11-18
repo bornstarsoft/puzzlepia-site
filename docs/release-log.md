@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8G Number Pattern Warmups: 2026-11-18
+
+- Replaced the generic Daily Puzzle Warmup prompt with two number sequences:
+  alternating jumps and two interleaved tracks. Each has a bookmarkable
+  heading, an optional hint and a worked answer.
+- Connected the number warmups guide, the existing latest list and playable
+  Number Puzzle Layout 6. Home, runtime and hosting settings are unchanged.
+- Local builds, 23 automated checks and four-width browser QA passed.
+
 ## Phase 8F Block Space Choices: 2026-11-18
 
 - Replaced the general center-space prompt with two labeled 4x4 boards. Both

@@ -25,10 +25,18 @@ class BoardPage(HTMLParser):
         self.positions = []
         self.reveals = []
         self.links = []
+        self.ids = set()
+        self.codes = []
+        self.in_code = False
         self.feed(html)
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
+        if "id" in attrs:
+            self.ids.add(attrs["id"])
+        if tag == "code":
+            self.codes.append("")
+            self.in_code = True
         if tag == "td":
             self.cell = ""
         if tag == "small":
@@ -39,6 +47,8 @@ class BoardPage(HTMLParser):
             self.links.append(attrs.get("href", ""))
 
     def handle_data(self, data):
+        if self.in_code:
+            self.codes[-1] += data
         if self.cell is not None:
             if self.small:
                 self.positions.append(data.strip())
@@ -46,6 +56,8 @@ class BoardPage(HTMLParser):
                 self.cell += data
 
     def handle_endtag(self, tag):
+        if tag == "code":
+            self.in_code = False
         if tag == "small":
             self.small = False
         if tag == "td":
@@ -92,3 +104,27 @@ for slug in ["quick-number-focus", "find-the-final-four-numbers"]:
 assert "https://puzzlepia.com" + route in urls
 
 print("Number practice passed: four exact game boards, positions/recovery route, closed disclosures, fixed play links, guide links and sitemap.")
+
+warmup_route = "/daily/challenges/daily-puzzle-warmup/"
+warmup = BoardPage((ROOT / "public" / warmup_route.strip("/") / "index.html").read_text())
+jumps = [2]
+for jump in [2, 3, 2, 3, 2]:
+    jumps.append(jumps[-1] + jump)
+tracks = [n for pair in zip(range(1, 11, 3), range(18, 11, -2)) for n in pair]
+
+
+def with_blanks(values, blank_indexes):
+    return ", ".join("?" if i in blank_indexes else str(n) for i, n in enumerate(values))
+
+
+assert warmup.codes == [with_blanks(jumps, [4]), with_blanks(tracks, [5, 6])]
+source = (ROOT / "content/daily/challenges/daily-puzzle-warmup.md").read_text()
+assert f"missing number is **{jumps[4]}**" in source
+assert f"blanks are **{tracks[5]}, then {tracks[6]}**" in source
+assert warmup.reveals == [False] * 4
+for anchor in ["alternating-jumps", "two-tracks-in-one-line"]:
+    assert anchor in warmup.ids and "#" + anchor in warmup.links
+assert warmup_route in guide.links and warmup_route + "#two-tracks-in-one-line" in guide.links
+assert "/daily/number-puzzle/?layout=6" in warmup.links and guide_route in warmup.links
+assert "https://puzzlepia.com" + warmup_route in urls
+print("Number patterns passed: both sequences and answers, four closed disclosures, round links and sitemap.")

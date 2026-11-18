@@ -52,7 +52,7 @@ The missing number is `8` because the sequence increases by two.
 
 The goal is not to solve a complex formula. It is to notice a simple pattern and confirm that the answer fits.
 
-Other warmups might count down, alternate odd and even numbers, or repeat a short pattern.
+For a change, try [Two Number Patterns](/daily/challenges/daily-puzzle-warmup/). One question alternates two jumps; the other hides a rising track and a falling track in the same line. Keep the [second question](/daily/challenges/daily-puzzle-warmup/#two-tracks-in-one-line) for another break, or open its hint only after you have tried splitting the line.
 
 ## Separate speed from accuracy
 

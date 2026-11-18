@@ -1,11 +1,27 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-BLOCK-SPACE-CHOICES
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NUMBER-PATTERN-WARMUPS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-PATTERN-WARMUPS; warmup challenge and guide; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-SPACE-CHOICES; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved another scoped content/return improvement and verified
+  deployment. Clean main at `fa92575` matches fetched origin/main. Existing
+  Puzzlepia-only GitHub deployment exception applies; no competing writer.
+- Replace the generic warmup with two independent number-pattern questions.
+  Connect the number guide and existing Daily latest list. Preserve the
+  challenge route, Home, runtime, storage, analytics and hosting setup.
+- Local QA: PASS. Hugo and minified builds, 23 automated checks, exact
+  sequences and solutions, round links, sitemap and ignored output.
+- Chromium 390/430/768/1280px: Daily and guide links, sixteen disclosures,
+  eight round reloads, eight Layout 6 completions and twelve resets. Wrong
+  tap preserves progress; keyboard disclosure works without JavaScript.
+  No console errors or horizontal overflow in tested pages.
+- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+
+## Previous Block Space Choices Work
 
 - Owner approved a scoped content/return improvement and verified deployment.
   Clean main at `76e2e75` matches fetched origin/main; no competing writer.
