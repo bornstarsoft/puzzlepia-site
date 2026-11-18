@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-NUMBER-NEIGHBORS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-NEIGHBORS; Number Puzzle practice; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-COPY-CHALLENGE-LIST; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-NEIGHBORS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-COPY-CHALLENGE-LIST; 2026-11-19)
   at 390/430/768/1280px. Verified archive and guide links, hints and answers,
   exact playable boards, invalid taps, completion and reset before and after
   completion, and a no-JS keyboard disclosure. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the production route.
+- DONE: feature HEAD `2c90a44`, deployed via Cloudflare Pages at
+  2026-11-19 00:26:06 KST. Live QA: PASS at all four Chromium widths.
+  Both game layouts completed and reset before and after completion.
+  Verified the new route, both playable layout links, sitemap (93 URLs),
+  and Daily RSS. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate discovery of recent Daily Challenges
+  before deciding whether to add another number exercise.
 
 ## Previous Challenge List Copy Work
 
