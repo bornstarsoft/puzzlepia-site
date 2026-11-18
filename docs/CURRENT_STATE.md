@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-DIFFICULTY
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MEMORY-SECOND-TRY
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MEMORY-SECOND-TRY; Memory Pairs practice; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-DIFFICULTY; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved one scoped return improvement and verified deployment.
+  Clean main at `023cc41` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add one Memory Pairs exercise on clearing the current selection without
+  losing a match. Link to the fixed Layout 7 and the Memory guide.
+  Preserve Home, weekly practice, game code, analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and
+  four Chromium widths (390/430/768/1280px). Guide, latest list and filter,
+  exact Layout 7, retained stars after clearing a selection, eight finishes
+  and twelve resets passed. No console errors or horizontal overflow.
+  The answer is keyboard accessible without JavaScript at 390px.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the new practice.
+
+## Previous Daily Challenge Difficulty Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `69a3d40` matches fetched origin/main; no competing writer.

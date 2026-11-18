@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8R Memory Pairs Selection Practice: 2026-11-18
+
+- Added a short challenge on the existing Layout 7: clear one open card
+  without losing a match, then use an earlier reveal to pair the moons.
+- Added optional hints, a full-board reference and the remaining pairs.
+  Daily discovery and the guide link to the exercise. Home, gameplay,
+  weekly practice, analytics and hosting settings are unchanged.
+
 ## Phase 8Q Daily Challenge Difficulty: 2026-11-18
 
 - Added a difficulty choice to the Daily Challenge collection. The default

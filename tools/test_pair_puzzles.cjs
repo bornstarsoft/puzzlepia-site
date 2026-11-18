@@ -498,3 +498,34 @@ for (const order of [[8, 6], [6, 8]]) {
   assert.deepEqual(valuesOf(recovery), numberLayouts[5].map(String));
 }
 console.log("Make 10 recovery passed: Layout 6, two recovery orders, retained match, completion and reset.");
+
+const clearOne = rotatingFixture();
+init([clearOne], { PuzzlepiaMemoryLayouts: model, location: { search: "?layout=7" } });
+const tapCard = position => clearOne.tiles[position - 1].click();
+const clearOneProgress = clearOne.querySelector("[data-progress]");
+const clearOneReset = clearOne.querySelector("[data-reset]");
+const selectedCards = () => clearOne.tiles.flatMap((tile, i) => tile.classList.contains("is-selected") ? [i + 1] : []);
+assert.deepEqual(valuesOf(clearOne), layouts[6]);
+assert.deepEqual([1, 10, 3, 5, 8, 12].map(i => layouts[6][i - 1]),
+  ["star", "star", "diamond", "moon", "diamond", "moon"]);
+for (let replay = 0; replay < 2; replay++) {
+  [1, 10, 3, 5].forEach(tapCard);
+  assert.deepEqual(selectedCards(), [3, 5]);
+  assert.equal(clearOneProgress.textContent, "1 / 6 pairs found");
+  tapCard(8);
+  assert.deepEqual(selectedCards(), [8]);
+  clearOne.querySelector("[data-clear]").click();
+  assert.deepEqual(selectedCards(), []);
+  assert.equal(clearOne.tiles[7].querySelector(".pair-face").textContent, "?");
+  assert.ok(clearOne.tiles[0].disabled && clearOne.tiles[9].disabled);
+  assert.equal(clearOneProgress.textContent, "1 / 6 pairs found");
+  [12, 5].forEach(tapCard);
+  assert.equal(clearOneProgress.textContent, "2 / 6 pairs found");
+  [3, 8, 2, 11, 4, 7, 6, 9].forEach(tapCard);
+  assert.equal(clearOneProgress.textContent, "6 / 6 pairs found");
+  assert.equal(clearOne.querySelector("[data-complete]").hidden, false);
+  clearOneReset.click();
+  checkInitial(clearOne);
+  assert.deepEqual(valuesOf(clearOne), layouts[6]);
+}
+console.log("Memory selection practice passed: clear one card, keep matched stars, finish Layout 7 and replay.");

@@ -2,7 +2,7 @@
 title: "Memory Matching Tips: Remember Places, Not Just Pictures"
 description: "Learn a simple way to approach memory matching games: name card positions, use each reveal, and follow an eight-card worked example."
 date: 2026-09-12T14:40:00+09:00
-lastmod: 2026-10-23T02:53:00+09:00
+lastmod: 2026-11-18T23:07:59+09:00
 draft: false
 tags: ["memory pairs", "matching games", "beginner guide"]
 categories: ["Puzzle Tips"]
@@ -68,5 +68,7 @@ Choose one small question now and keep the next for another break:
 3. [Remember Two Pair Locations](/daily/challenges/remember-two-pair-locations/): keep the symbols from two mismatches separate on Layout 3 and choose a known partner.
 
 Hints and answers stay closed until you open them. The last two exercises link to their exact playable layouts, so the positions stay consistent when you return. They are fixed examples, not new daily-generated boards or a scored memory test.
+
+For another short practice, try [Clear One Card, Keep Your Match](/daily/challenges/memory-pairs-clear-one-card/). On Layout 7, leave the stars matched while you turn one card back over and look for moons.
 
 Browse the [memory challenge collection](/daily/?topic=memory#daily-challenge-title) for these rounds together. You can return to any question without completing the previous one; no progress is recorded for the exercises.
