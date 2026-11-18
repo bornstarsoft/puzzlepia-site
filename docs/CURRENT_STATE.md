@@ -1,11 +1,27 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-LATEST-CHALLENGES
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COAST-WORD-SEARCH
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COAST-WORD-SEARCH; coast challenge and discovery links; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-LATEST-CHALLENGES; 2026-11-10)
 
 ## Current Approved Work
+
+- Owner approved the next content/return improvement and verified deployment.
+  Clean main at `6620f38` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add an upward-word exercise using the existing Coast board. Link it from
+  the direction guide and Word Search practice list. Daily's existing latest
+  list picks it up automatically. No Home, runtime, tracking or hosting changes.
+- Local QA: PASS. Hugo and minified builds, 23 automated checks, exact board
+  and WAVE path, sitemap, whitespace and ignored output.
+- Chromium 390/430/768/1280px: Daily, guide and game links, eight disclosures,
+  eight Coast completions, twelve resets and fixed-link reloads. Incorrect
+  path does not mark a word; keyboard disclosure works without JavaScript.
+  No console errors or horizontal overflow in tested pages.
+- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+
+## Previous Latest Challenges Work
 
 - Owner approved the next content/return improvement and verified deployment.
   Clean main at `0c754e7` matches fetched origin/main; no competing writer.

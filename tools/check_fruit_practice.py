@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the fruit reading exercise against the actual Word Search model."""
+"""Check fruit and coast reading exercises against the actual Word Search model."""
 
 from html.parser import HTMLParser
 import json
@@ -52,11 +52,16 @@ class Page(HTMLParser):
             self.in_details = False
 
 
-model = json.loads(subprocess.check_output([
-    "node", "-e", "const m=require('./static/js/puzzlepia-word-search.js');"
-    "const c=require('./data/word_search.json');"
-    "console.log(JSON.stringify(m.prepare(c).sets.find(s=>s.id==='fruit')));"
-], cwd=ROOT, text=True))
+def model_for(set_id):
+    return json.loads(subprocess.check_output([
+        "node", "-e", "const m=require('./static/js/puzzlepia-word-search.js');"
+        "const c=require('./data/word_search.json');"
+        "console.log(JSON.stringify(m.prepare(c).sets.find(s=>s.id===process.argv[1])));",
+        set_id,
+    ], cwd=ROOT, text=True))
+
+
+model = model_for("fruit")
 page, guide = Page(ROUTE), Page(GUIDE)
 assert page.cells == list("".join(model["rows"]))
 assert set(model["words"]) == set(PATHS)
@@ -78,3 +83,16 @@ assert "/daily/word-search/?set=fruit" in guide.links
 urls = {n.text for n in ET.parse(ROOT / "public/sitemap.xml").findall(".//{*}loc")}
 assert all("https://puzzlepia.com" + p in urls for p in [ROUTE, GUIDE])
 print("Fruit practice PASS: real 36-cell board, four model paths, answers, eight closed disclosures, section/game links and sitemap.")
+
+coast_route = "/daily/challenges/find-wave-upward/"
+directions = "/blog/word-search-directions-worked-example/"
+coast = Page(coast_route)
+coast_model = model_for("coast")
+assert coast.cells == list("".join(coast_model["rows"]))
+assert coast_model["paths"]["WAVE"] == [[5, 0], [4, 0], [3, 0], [2, 0]]
+assert coast_model["rows"][5][:4] == "WNSQ"
+assert "Column 1, from row 6 up to row 3" in coast.answer_text
+assert len(coast.details) == 2 and all("open" not in d for d in coast.details)
+assert "/daily/word-search/?set=coast" in coast.links and directions in coast.links
+assert coast_route in Page(directions).links and "https://puzzlepia.com" + coast_route in urls
+print("Coast practice PASS: exact board, upward path, closed hint/answer, fixed game URL and sitemap.")

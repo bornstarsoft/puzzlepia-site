@@ -1,5 +1,14 @@
 # Puzzlepia Release Log
 
+## Phase 8E Coast Word Search: 2026-11-18
+
+- Added a short upward-word exercise on the real Coast board, with optional
+  hint and answer and a link to the exact playable set.
+- Connected it to the direction guide and Word Search practice list; it also
+  appears in Daily's existing latest challenge list. Home, gameplay, tracking
+  and hosting configuration are unchanged.
+- Hugo, automated checks and four-width browser QA passed locally.
+
 ## Phase 8D Latest Challenge Updates: 2026-11-10
 
 - Added a collapsed list of the three latest published challenge updates on

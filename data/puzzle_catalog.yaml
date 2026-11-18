@@ -10,6 +10,7 @@
   practice:
     - "/daily/challenges/kiwi-backward-word-search/"
     - "/daily/challenges/star-diagonal-word-search/"
+    - "/daily/challenges/find-wave-upward/"
 "/daily/block-puzzle/":
   preview: block-puzzle
   width: 420

@@ -1,7 +1,8 @@
 ---
 title: "Word Search Directions: Backward and Diagonal Examples"
-description: "Practise backward and diagonal word search with two real Puzzlepia boards, optional hints, and links to play the same sets."
+description: "Practise backward, diagonal and upward word search on real Puzzlepia boards, with optional hints and links to play the same sets."
 date: 2026-10-23T00:00:00+09:00
+lastmod: 2026-11-18T21:18:00+09:00
 draft: false
 tags: [word search, beginner tips, worked examples]
 categories: [Puzzle Tips]
@@ -10,7 +11,7 @@ practiceURL: "/daily/word-search/"
 
 A word can look hidden even when you are looking straight at it. Often the letters are simply running in a direction you have not tried yet. Instead of scanning the whole board faster, choose one starting letter and check its neighbours slowly.
 
-These two examples use actual fixed boards from Puzzlepia's [Daily Word Search](/daily/word-search/). You can read the examples here, leave the answers closed, and then open the same practice set to try the selection yourself. There is no timer and no need to finish every word in one visit.
+These examples use actual fixed boards from Puzzlepia's [Daily Word Search](/daily/word-search/). You can read the examples here, leave the answers closed, and then open the same practice set to try the selection yourself. There is no timer and no need to finish every word in one visit.
 
 ## Start with a direction, not a guess
 
@@ -62,6 +63,6 @@ The word-list buttons are a different kind of help: they reveal the whole word a
 
 ## Make the next break a different exercise
 
-You do not need a faster time to make a replay worthwhile. After practising the backward route, try the diagonal example without opening its answer. On another visit, choose a different practice set and check first letters systematically.
+You do not need a faster time to make a replay worthwhile. After the backward and diagonal examples, try [Find WAVE Upward](/daily/challenges/find-wave-upward/). This time the column stays the same and the row number decreases with each letter. Keep that question for a later break or open the [By the coast set](/daily/word-search/?set=coast) to find all four words.
 
 These are curated, repeatable sets, not an endless supply of new boards. The [Daily Puzzles page](/daily/) also offers block, ring, number, and matching puzzles when you want a different kind of short session. Start with one clear goal, and stop whenever your break is over.

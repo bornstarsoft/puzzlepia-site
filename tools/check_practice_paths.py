@@ -11,7 +11,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 ROUNDS = {
-    "word-search": ["kiwi-backward-word-search", "star-diagonal-word-search"],
+    "word-search": ["kiwi-backward-word-search", "star-diagonal-word-search", "find-wave-upward"],
     "block-puzzle": ["find-the-square-space", "domino-before-the-square", "open-board-block-challenge"],
     "ring-puzzle": ["ring-size-practice", "three-rings-three-spaces", "two-rings-one-cell"],
     "memory-pairs": ["remember-the-star-pair", "two-reveals-one-pair", "remember-two-pair-locations"],
@@ -102,4 +102,4 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-practice-") as folder:
             assert result.returncode != 0, case + " should fail the build"
             assert "practice" in (result.stdout + result.stderr).lower(), case
 
-print("Practice paths passed: seven ordered paths, twenty published rounds, unchanged home, unique IDs, and missing/draft/future/type build guards.")
+print(f"Practice paths passed: seven ordered paths, {sum(map(len, ROUNDS.values()))} published rounds, unchanged home, unique IDs, and missing/draft/future/type build guards.")
