@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-RING-TWO-CELLS
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-NEWEST
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-NEWEST; Daily publication sort; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-RING-TWO-CELLS; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `ea8ce9d` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a publication-date sort alongside suggested and updated order, using
+  the existing Daily control and shareable collection URL. Preserve Home,
+  Blog, gameplay, RSS, analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and four
+  Chromium widths (390/430/768/1280px). Confirmed publication vs. modification
+  order, old and new bookmarks, combined filters, history and clear behavior.
+  No errors or overflow; 45 challenges still available without JavaScript.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the new order.
+
+## Previous Ring Puzzle Two-Cell Practice Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `0abdf4b` matches fetched origin/main; no competing writer.

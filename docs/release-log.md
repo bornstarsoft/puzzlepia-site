@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8X Daily Challenge Publication Sort: 2026-11-18
+
+- Added Recently published to the Daily Challenge sort menu. This uses the
+  publication date, so revisions to old questions do not move them forward.
+- Preserved suggested order, Recently updated, existing bookmarks, filters,
+  Home and RSS. Publication order can be bookmarked without an account.
+
 ## Phase 8W Ring Puzzle Two-Cell Practice: 2026-11-18
 
 - Added a fixed exercise that fits the Daily Ring Puzzle tray into two

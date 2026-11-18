@@ -38,11 +38,19 @@
     }
 
     var canSort = sort && list;
-    var updated = canSort ? items.slice().sort(function (a, b) {
-      return Number(b.getAttribute("data-updated")) - Number(a.getAttribute("data-updated"));
-    }) : items;
+    var dateOrders = canSort ? { newest: byDate("data-published"), updated: byDate("data-updated") } : {};
     var order = items;
     var sortMode = "suggested";
+
+    function byDate(attribute) {
+      return items.slice().sort(function (a, b) {
+        return Number(b.getAttribute(attribute)) - Number(a.getAttribute(attribute));
+      });
+    }
+
+    function validSort(mode) {
+      return Object.prototype.hasOwnProperty.call(dateOrders, mode) ? mode : "suggested";
+    }
 
     function knownLevel(value) {
       return level && Array.prototype.some.call(level.options, function (option) {
@@ -67,8 +75,8 @@
           activeLevel = selectedLevel;
         }
         expanded = params.getAll("view").length === 1 && params.get("view") === "all";
-        if (canSort && params.getAll("sort").length === 1 && params.get("sort") === "updated") {
-          sortMode = "updated";
+        if (params.getAll("sort").length === 1) {
+          sortMode = validSort(params.get("sort"));
         }
         var savedQuery = params.get("q");
         if (search && params.getAll("q").length === 1 && savedQuery.length <= 80) {
@@ -85,7 +93,7 @@
       if (activeTopic !== "all") params.set("topic", activeTopic);
       if (activeLevel !== "all") params.set("level", activeLevel);
       if (query) params.set("q", query);
-      if (sortMode === "updated") params.set("sort", sortMode);
+      if (sortMode !== "suggested") params.set("sort", sortMode);
       if (expanded) params.set("view", "all");
       var queryString = params.toString();
       return window.location.pathname + (queryString ? "?" + queryString : "");
@@ -103,7 +111,7 @@
 
     function render() {
       var needle = query.toLowerCase();
-      var nextOrder = sortMode === "updated" ? updated : items;
+      var nextOrder = dateOrders[sortMode] || items;
       if (order !== nextOrder) {
         nextOrder.forEach(function (item) { list.appendChild(item); });
         order = nextOrder;
@@ -209,7 +217,7 @@
 
     if (canSort) {
       sort.addEventListener("change", function () {
-        sortMode = sort.value === "updated" ? "updated" : "suggested";
+        sortMode = validSort(sort.value);
         render();
         updateLocation();
       });

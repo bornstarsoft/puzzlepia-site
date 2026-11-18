@@ -95,6 +95,7 @@
           <span>Sort challenges</span>
           <select id="daily-challenge-sort" data-filter-sort>
             <option value="suggested">Suggested order</option>
+            <option value="newest">Recently published</option>
             <option value="updated">Recently updated</option>
           </select>
         </label>
@@ -119,7 +120,7 @@
 {{ range $challenges.ByWeight }}
 {{ $type := lower (.Params.puzzleType | default "") }}
 {{ $topic := partial "daily-challenge-topic.html" . }}
-      <article class="challenge-card" data-discovery-item data-updated="{{ .Lastmod.Unix }}" data-topic="{{ $topic }}" data-level="{{ lower (.Params.difficulty | default "") }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
+      <article class="challenge-card" data-discovery-item data-published="{{ .PublishDate.Unix }}" data-updated="{{ .Lastmod.Unix }}" data-topic="{{ $topic }}" data-level="{{ lower (.Params.difficulty | default "") }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
         <div class="game-card__meta">
 {{ with .Params.puzzleType }}<span>{{ . }}</span>{{ end }}
 {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}

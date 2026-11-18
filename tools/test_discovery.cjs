@@ -23,7 +23,8 @@ function setup(search = "", options = {}) {
   const items = options.noItems ? [] : ["ring", "block", "ring", "number", "block", "word"].map((topic, index) =>
     element({ "data-topic": topic, "data-search-text": topic + " practice",
       "data-level": ["easy", "normal", "normal", "easy", "easy", ""][index],
-      "data-id": index, "data-updated": [10, 20, 50, 40, 20, 60][index] }));
+      "data-id": index, "data-published": [5, 5, 1, 35, 18, 55][index],
+      "data-updated": [10, 20, 50, 40, 20, 60][index] }));
   const domOrder = items.slice();
   const controls = Object.fromEntries(["search", "search-wrap", "count", "empty", "more", "link", "link-wrap"].map(key =>
     ["[data-filter-" + key + "]", element()]));
@@ -177,9 +178,29 @@ assert.deepEqual(view.visibleIDs(), [0, 2]);
 view.restore("?sort=updated", "pageshow");
 assert.equal(view.controls["[data-filter-sort]"].value, "updated");
 assert.deepEqual(view.visibleIDs(), [5, 2], "sort applies before the visible limit");
-for (const search of ["?sort=other", "?sort=updated&sort=updated"]) {
+for (const search of ["?sort=other", "?sort=updated&sort=updated", "?sort=newest&sort=updated", "?sort=__proto__"]) {
   assert.deepEqual(setup(search).visibleIDs(), [0, 1]);
 }
+
+view = setup("?sort=newest&view=all");
+assert.equal(view.controls["[data-filter-sort]"].value, "newest");
+assert.deepEqual(view.visibleIDs(), [5, 3, 4, 0, 1, 2], "published order ignores later edits and preserves original order on ties");
+view.sort("updated");
+assert.deepEqual(view.visibleIDs(), [5, 2, 3, 1, 4, 0]);
+view.sort("newest");
+assert.equal(view.link(), "/daily/?sort=newest&view=all#daily-challenge-title");
+view.click("ring");
+view.type("Practice");
+assert.deepEqual(view.visibleIDs(), [0, 2]);
+assert.equal(view.link(), "/daily/?topic=ring&q=Practice&sort=newest#daily-challenge-title");
+view.level("normal");
+assert.deepEqual(view.visibleIDs(), [2]);
+assert.equal(view.link(), "/daily/?topic=ring&level=normal&q=Practice&sort=newest#daily-challenge-title");
+view.clear();
+assert.deepEqual(view.visibleIDs(), [5, 3]);
+assert.equal(view.link(), "/daily/?sort=newest#daily-challenge-title");
+view.restore("?topic=ring&sort=newest");
+assert.deepEqual(view.visibleIDs(), [0, 2]);
 
 view = setup("?level=easy&sort=updated&view=all");
 assert.equal(view.controls["[data-filter-level-wrap]"].hidden, false);
