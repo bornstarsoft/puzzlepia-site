@@ -6,6 +6,8 @@
   pieces within the top two rows, then use another layout on a replay.
 - Linked it from the space-management guide and the Daily collection.
   Home, game rules, weekly practice, analytics and hosting are unchanged.
+- Deployed `844dade` via Cloudflare Pages. Verified both placements, resets,
+  RSS and sitemap on the production site.
 
 ## Phase 8S Purple Color Match Practice: 2026-11-18
 

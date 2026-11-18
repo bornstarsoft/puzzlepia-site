@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-BLOCK-TWO-ROWS
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-TWO-ROWS; Daily Block Puzzle practice; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-PURPLE-EDGES; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-TWO-ROWS; 2026-11-18)
 
 ## Current Approved Work
 
@@ -17,7 +17,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-PURPLE-EDGES; 2026-11-18)
   verification of the two top-row placements, and four-width Chromium
   (390/430/768/1280px). Verified board parity, both routes, eight finishes,
   twelve resets and no-JS keyboard answer. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both routes.
+- DONE: content HEAD `844dade`, deployed via Cloudflare Pages at
+  2026-11-18 23:25:47 KST. Live four-width browser QA confirmed discovery,
+  invalid-placement feedback, both routes, eight finishes, twelve resets
+  and the no-JS keyboard answer. RSS and sitemap (90 URLs) include the page.
+  No console errors or overflow; generated output ignored and untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregated Daily
+  and challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Purple Color Match Work
 
