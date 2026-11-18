@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-FIND-NOTE
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-FIND-NOTE; Word Search music practice; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-NEWEST; 2026-11-19)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-FIND-NOTE; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-NEWEST; 2026-11-19)
   Chromium widths (390/430/768/1280px). Verified both paths, the game board,
   rejection of NOTA, eight finishes, twelve resets and no-JS keyboard
   answer. No errors or overflow in tested views.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the music practice.
+- DONE: content HEAD `03343f7`, deployed via Cloudflare Pages at
+  2026-11-19 00:06:53 KST. After delayed public responses caught up, live
+  QA passed at four widths: guide, filter, fixed board, wrong route,
+  eight finishes, twelve resets, no-JS answer, RSS and sitemap (92 URLs).
+  No console errors or overflow; generated output remains untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily and
+  challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Daily Challenge Publication Sort Work
 

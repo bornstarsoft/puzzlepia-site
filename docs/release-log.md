@@ -6,6 +6,8 @@
   Readers compare two paths that start alike, then play the same set.
 - Linked from the word search guide and Daily discovery. Home, the
   fourteen-set rotation, gameplay, analytics and hosting are unchanged.
+- Deployed `03343f7` via Cloudflare Pages. Confirmed the wrong path,
+  completion, reset, RSS and sitemap on the production site.
 
 ## Phase 8X Daily Challenge Publication Sort: 2026-11-18
 
