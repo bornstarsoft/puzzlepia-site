@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-FIND-BAKE-CAKE
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-FIND-BAKE-CAKE; Word Search practice content; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SORT; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-FIND-BAKE-CAKE; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SORT; 2026-11-18)
   hint and answer, exact playable board, eight finishes, twelve resets and
   footer links. The answer opens by keyboard without JavaScript at 390px.
   No console errors or horizontal overflow in the checked views.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the published practice.
+- DONE: content HEAD `4faec5f`, deployed via Cloudflare Pages at
+  2026-11-18 22:24:58 KST. Live QA: PASS. Four viewport widths, exact board,
+  eight finishes, twelve resets, footer, no-JavaScript keyboard answer and
+  sitemap (86 URLs) verified. No console errors or horizontal overflow.
+  Local QA server stopped; generated output ignored and untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate Daily and Challenge page
+  visits before choosing the next content topic. Retention unmeasured;
+  native Safari NOT_RUN.
 
 ## Previous Daily Challenge Ordering Work
 

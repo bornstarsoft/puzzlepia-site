@@ -8,6 +8,8 @@
 - Linked it from the direction guide and Daily's existing list. The play
   link opens the same board. Home, weekly practice, game rules, analytics
   and hosting settings are unchanged.
+- Deployed `4faec5f` via Cloudflare Pages. Four-width live QA confirmed
+  the new links, hint and answer, eight finishes, twelve resets and sitemap.
 
 ## Phase 8L Daily Challenge Ordering: 2026-11-18
 
