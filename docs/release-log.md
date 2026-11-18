@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 9A Consecutive Number Neighbors: 2026-11-19
+
+- Added two short rounds using Daily Number Puzzle Layouts 3 and 6.
+  Each asks for the only edge-sharing pair that differs by one.
+- Added labeled diagrams, optional answers, the exact play links and a
+  guide link. Home, weekly practice, gameplay, analytics and hosting
+  are unchanged.
+
 ## Phase 8Z Copy Daily Challenge List: 2026-11-19
 
 - Replaced the plain collection link with a compact disclosure containing

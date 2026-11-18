@@ -60,6 +60,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/block-puzzle-two-rows/`
 - `/daily/challenges/ring-puzzle-two-cells/`
 - `/daily/challenges/find-note-check-the-last-letter/`
+- `/daily/challenges/find-consecutive-neighbors/`
 
 ## Game Page URLs
 

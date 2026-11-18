@@ -2,7 +2,7 @@
 title: "Number Puzzle Warmups for Casual Players"
 description: "Try simple number-order, missing-number, and Sudoku warmups designed for short and comfortable puzzle sessions."
 date: 2026-07-24
-lastmod: 2026-10-23T22:17:00+09:00
+lastmod: 2026-11-19T00:21:13+09:00
 draft: false
 tags:
   - "number puzzles"
@@ -113,6 +113,8 @@ Put the scanning ideas into practice with three optional rounds. Each shows an a
 3. [Find the Final Four Numbers](/daily/challenges/find-the-final-four-numbers/) uses Layout 7 to plan the finish after 12.
 
 Choose one question now and leave another for your next break. The diagrams are reading exercises, while each game link starts a fresh full board at 1. Neither the course nor the game records your progress. You can bookmark a round to find the same question again.
+
+For a different kind of scan, [find consecutive neighbors](/daily/challenges/find-consecutive-neighbors/) on two fixed boards. Each round has one pair that shares an edge and differs by 1.
 
 ## Choose clarity over difficulty
 

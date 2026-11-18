@@ -128,3 +128,29 @@ assert warmup_route in guide.links and warmup_route + "#two-tracks-in-one-line" 
 assert "/daily/number-puzzle/?layout=6" in warmup.links and guide_route in warmup.links
 assert "https://puzzlepia.com" + warmup_route in urls
 print("Number patterns passed: both sequences and answers, four closed disclosures, round links and sitemap.")
+
+neighbors_route = "/daily/challenges/find-consecutive-neighbors/"
+neighbors = BoardPage((ROOT / "public" / neighbors_route.strip("/") / "index.html").read_text())
+source = (ROOT / "content/daily/challenges/find-consecutive-neighbors.md").read_text()
+assert neighbors.cells == LAYOUTS[2] + LAYOUTS[5]
+assert neighbors.positions == ["Position " + str(n) for n in range(1, 17)] * 2
+assert neighbors.reveals == [False] * 4
+assert "round-2-layout-6" in neighbors.ids and "#round-2-layout-6" in neighbors.links
+assert neighbors_route in guide.links and guide_route in neighbors.links
+assert "https://puzzlepia.com" + neighbors_route in urls
+for layout, answer in [(3, (6, 7)), (6, (10, 11))]:
+    board = LAYOUTS[layout - 1]
+    matches = set()
+    for i, value in enumerate(board):
+        adjacent = []
+        if i % 4 < 3:
+            adjacent.append(board[i + 1])
+        if i < 12:
+            adjacent.append(board[i + 4])
+        matches.update(tuple(sorted((value, other))) for other in adjacent if abs(value - other) == 1)
+    assert matches == {answer}, (layout, matches)
+    positions = [board.index(value) + 1 for value in answer]
+    assert f"**{answer[0]} and {answer[1]}**" in source
+    assert f"**positions {positions[0]} and {positions[1]}**" in source
+    assert "/daily/number-puzzle/?layout=" + str(layout) in neighbors.links
+print("Consecutive neighbors passed: two unique pairs and their positions, matching game boards, round links and sitemap.")

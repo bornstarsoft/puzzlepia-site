@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COPY-CHALLENGE-LIST
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NUMBER-NEIGHBORS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NUMBER-NEIGHBORS; Number Puzzle practice; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-COPY-CHALLENGE-LIST; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `3879c8e` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a two-round reading challenge using Number Puzzle Layouts 3 and 6.
+  Link to each playable board and keep Home, gameplay and hosting intact.
+- Local QA: PASS. Hugo, minified output, 24 automated checks and Chromium
+  at 390/430/768/1280px. Verified archive and guide links, hints and answers,
+  exact playable boards, invalid taps, completion and reset before and after
+  completion, and a no-JS keyboard disclosure. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the production route.
+
+## Previous Challenge List Copy Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `664664c` matches fetched origin/main; no competing writer.
