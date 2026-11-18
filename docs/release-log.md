@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8U Daily Challenge Filter Recovery: 2026-11-18
+
+- Added Clear filters when a topic, difficulty or keyword is active. It
+  restores the whole collection in the chosen sort order, and Back returns
+  to the former filters. Existing bookmark links still work.
+- Preserved Home, Blog, gameplay, weekly practice, RSS, analytics and hosting.
+
 ## Phase 8T Block Puzzle Two-Row Practice: 2026-11-18
 
 - Added a fixed exercise on the existing Daily Block Puzzle: fit the three

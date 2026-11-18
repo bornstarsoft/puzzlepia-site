@@ -12,7 +12,8 @@ function element(attrs = {}, text = "") {
     hasAttribute(name) { return Object.hasOwn(this.attrs, name); },
     setAttribute(name, value) { this.attrs[name] = value; },
     addEventListener(name, fn) { this.events[name] = fn; },
-    fire(name) { this.events[name]?.(); }
+    fire(name) { this.events[name]?.(); },
+    focus() { this.focused = true; }
   };
 }
 
@@ -27,6 +28,7 @@ function setup(search = "", options = {}) {
   const controls = Object.fromEntries(["search", "search-wrap", "count", "empty", "more", "link", "link-wrap"].map(key =>
     ["[data-filter-" + key + "]", element()]));
   if (!options.blog) {
+    controls["[data-filter-clear]"] = Object.assign(element(), { hidden: true });
     controls["[data-filter-level]"] = Object.assign(element(), {
       options: ["all", "easy", "normal"].map(value => ({ value })), value: "all"
     });
@@ -66,6 +68,7 @@ function setup(search = "", options = {}) {
     active: () => buttons.find(button => button.getAttribute("aria-pressed") === "true")?.getAttribute("data-filter-value"),
     click(topic) { buttons.find(button => button.getAttribute("data-filter-value") === topic).fire("click"); },
     more() { controls["[data-filter-more]"].fire("click"); },
+    clear() { controls["[data-filter-clear]"].fire("click"); },
     level(value) {
       controls["[data-filter-level]"].value = value;
       controls["[data-filter-level]"].fire("change");
@@ -203,6 +206,29 @@ for (const search of ["?level=hard", "?level=easy&level=normal", "?level=EASY", 
   assert.equal(setup(search).link(), "/daily/#daily-challenge-title");
 }
 
+view = setup("?topic=ring&level=normal&q=missing&sort=updated&view=all");
+const clearFilters = view.controls["[data-filter-clear]"];
+assert.equal(clearFilters.hidden, false);
+assert.deepEqual(view.visibleIDs(), [], "a restrictive bookmark may have no matches");
+view.clear();
+assert.equal(clearFilters.hidden, true);
+assert.deepEqual(view.visibleIDs(), [5, 2], "clearing gets back to the first batch in the current sort order");
+assert.equal(view.link(), "/daily/?sort=updated#daily-challenge-title");
+assert.deepEqual(view.pushes, [view.link()], "clearing leaves the previous filter state in history");
+assert.equal(view.controls["[data-filter-search]"].value, "");
+assert.equal(view.controls["[data-filter-level]"].value, "all");
+assert.equal(view.controls["[data-filter-sort]"].value, "updated");
+assert.equal(view.active(), "all");
+assert.equal(view.buttons[0].focused, true, "return keyboard focus to All");
+view.restore("?topic=ring&level=normal&q=missing&sort=updated&view=all");
+assert.equal(clearFilters.hidden, false);
+assert.deepEqual(view.visibleIDs(), []);
+view.restore("?sort=updated&view=all", "pageshow");
+assert.equal(clearFilters.hidden, true, "sort and expansion are not filters");
+for (const query of ["?topic=word", "?level=easy", "?q=Practice"]) {
+  assert.equal(setup(query).controls["[data-filter-clear]"].hidden, false);
+}
+
 view = setup("?topic=ring", { blockHistory: true });
 view.click("word");
 assert.deepEqual(view.visible(), ["word"]);
@@ -217,11 +243,16 @@ assert.equal(view.location.search, "?topic=ring");
 view.level("easy");
 assert.equal(view.link(), "/daily/?topic=word&level=easy&q=Word&sort=updated#daily-challenge-title");
 assert.equal(view.location.search, "?topic=ring");
+view.clear();
+assert.equal(view.link(), "/daily/?sort=updated#daily-challenge-title");
+assert.equal(view.location.search, "?topic=ring");
 view = setup("?topic=ring", { noURL: true });
 assert.equal(view.active(), "all");
 view.click("block");
 assert.deepEqual(view.visible(), ["block", "block"]);
 assert.equal(view.controls["[data-filter-link-wrap]"].hidden, true);
+view.clear();
+assert.equal(view.active(), "all");
 assert.equal(view.pushes.length, 0);
 
 // The shared script must not change Blog URL/search behavior.
@@ -241,4 +272,4 @@ assert.equal(view.location.search, "?topic=ring&view=all&q=missing&sort=updated&
 assert.equal(Object.keys(view.events).length, 0);
 assert.doesNotThrow(() => setup("?topic=ring", { noControls: true }));
 assert.doesNotThrow(() => setup("?topic=ring", { noItems: true }));
-console.log("Discovery passed: topic, difficulty, keyword, sort, links, history, malformed queries and unchanged Blog search.");
+console.log("Discovery passed: topic, difficulty, keyword, sort, clear filters, links, history, malformed queries and unchanged Blog search.");

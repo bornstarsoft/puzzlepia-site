@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-BLOCK-TWO-ROWS
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CLEAR-CHALLENGE-FILTERS
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CLEAR-CHALLENGE-FILTERS; Daily filter recovery; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-TWO-ROWS; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `1fb1fb4` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Give Daily Challenge readers a one-click filter reset when a bookmark
+  or combined filters narrow the list, preserving sort and browser history.
+  Keep Home, Blog, games, analytics and hosting unchanged.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks and four
+  Chromium widths (390/430/768/1280px). Tested a bookmarked result, zero
+  results, retained ordering, keyboard focus, history and unchanged Blog
+  search. No console errors or overflow; 44 cards remain available without JS.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify filter recovery.
+
+## Previous Block Puzzle Two-Row Practice Work
 
 - Owner approved one scoped content improvement and verified deployment.
   Clean main at `b2ba955` matches fetched origin/main; no competing writer.

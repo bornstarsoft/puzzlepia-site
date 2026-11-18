@@ -110,7 +110,10 @@
         <button type="button" data-filter-value="mixed" aria-pressed="false">Mixed</button>
       </div>
       <p class="discovery-count" data-filter-count aria-live="polite">{{ len $challenges }} challenges</p>
-      <p class="discovery-count" data-filter-link-wrap hidden><a href="{{ .RelPermalink }}#daily-challenge-title" data-filter-link>Link to these challenges</a></p>
+      <div class="daily-filter-actions">
+        <p class="discovery-count" data-filter-link-wrap hidden><a href="{{ .RelPermalink }}#daily-challenge-title" data-filter-link>Link to these challenges</a></p>
+        <button type="button" class="button button--secondary" data-filter-clear hidden>Clear filters</button>
+      </div>
     </div>
     <div class="challenge-grid" data-filter-list>
 {{ range $challenges.ByWeight }}

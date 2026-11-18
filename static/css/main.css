@@ -987,6 +987,19 @@ img {
 .daily-filter-fields > :first-child { flex: 1 1 16rem; }
 .daily-filter-fields > label:not(:first-child) { flex: 0 1 10rem; }
 
+.daily-filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.daily-filter-actions button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
 .filter-search input,
 .filter-search select {
   width: 100%;

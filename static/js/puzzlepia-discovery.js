@@ -20,6 +20,7 @@
     var count = group.querySelector("[data-filter-count]");
     var empty = group.querySelector("[data-filter-empty]");
     var more = group.querySelector("[data-filter-more]");
+    var clear = group.querySelector("[data-filter-clear]");
     var limit = Number.parseInt(group.getAttribute("data-limit"), 10) || items.length;
     var unit = group.getAttribute("data-unit") || "items";
     var singularUnit = group.getAttribute("data-unit-singular") || unit;
@@ -142,6 +143,10 @@
         more.hidden = expanded || matched.length <= limit;
       }
 
+      if (clear) {
+        clear.hidden = activeTopic === "all" && activeLevel === "all" && !query;
+      }
+
       if (linked && collectionLink) {
         collectionLink.setAttribute("href", collectionURL() + "#daily-challenge-title");
         if (linkWrap) linkWrap.hidden = false;
@@ -172,6 +177,23 @@
         expanded = true;
         render();
         updateLocation();
+      });
+    }
+
+    if (clear) {
+      clear.addEventListener("click", function () {
+        activeTopic = "all";
+        activeLevel = "all";
+        query = "";
+        expanded = false;
+        if (search) search.value = "";
+        if (level) level.value = "all";
+        render();
+        updateLocation();
+        var all = buttons.find(function (button) {
+          return button.getAttribute("data-filter-value") === "all";
+        });
+        if (all) all.focus();
       });
     }
 
