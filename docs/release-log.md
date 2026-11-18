@@ -7,6 +7,8 @@
 - Reused the Daily rotation order and ordinary links, with no new scripts or
   saved state. Home, existing return links, filters and games are unchanged.
 - Local builds, 24 automated checks and four-width browser QA passed.
+- Deployed `bc9b30d` at 2026-11-18 22:00:39 KST. Live sequence, return
+  links, existing search and no-JavaScript navigation verified.
 
 ## Phase 8I Weekly Practice: 2026-11-18
 

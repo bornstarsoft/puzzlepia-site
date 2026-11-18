@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WEEKLY-PRACTICE-NAV
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE-NAV; weekly challenge continuation; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE-NAV; 2026-11-18)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE; 2026-11-18)
   output. Chromium at 390/430/768/1280px passed 24 next links, four landings
   at the weekly list, search and keyboard-only navigation without JavaScript.
   Home and non-weekly pages do not show the links. No errors or overflow.
-- NEXT_SINGLE_TASK: deploy and verify the live navigation.
+- DONE: application HEAD `bc9b30d`, deployed via Cloudflare Pages at
+  2026-11-18 22:00:39 KST. Live QA: PASS. Four widths, 24 transitions,
+  four returns to the weekly list, search, and keyboard navigation without
+  JavaScript verified. No console errors or horizontal overflow.
+  Local validation server stopped; generated output untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate Daily and challenge
+  page views before expanding the rotation. Retention unmeasured;
+  native Safari NOT_RUN.
 
 ## Previous Weekly Practice Work
 
