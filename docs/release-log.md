@@ -6,6 +6,8 @@
   complete, with an optional hint, deduction walkthrough and full solution.
 - Linked the exercise from the Sudoku guide, row practice and the existing
   Daily collection. Home, weekly practice, games and hosting are unchanged.
+- Verified `c56c605` on the public site: board, solution, four widths,
+  keyboard fallback, RSS and sitemap.
 
 ## Phase 8O Daily Shortcuts: 2026-11-18
 

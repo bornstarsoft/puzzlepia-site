@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-SUDOKU-COLUMN
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-SUDOKU-COLUMN; Sudoku teaching challenge; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-DAILY-SHORTCUTS; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-COLUMN; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-DAILY-SHORTCUTS; 2026-11-18)
   (390/430/768/1280px). Verified guide and prior exercise links, discovery,
   the exact board, three closed disclosures and no-JS keyboard access.
   No console errors or horizontal overflow in tested views.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the new challenge.
+- DONE: content HEAD `c56c605` pushed to approved GitHub main. Production
+  verified at 2026-11-18 22:59:24 KST: public board and disclosures, guide
+  and archive links, four Chromium widths, keyboard fallback, newest RSS
+  item and sitemap (87 canonical URLs). No errors or overflow in tested
+  views. The date is the live verification time, not a deployment job time.
+- BLOCKER: none. NEXT_SINGLE_TASK: compare aggregate Daily and number
+  practice visits when comparable data is available. Retention unmeasured;
+  native Safari NOT_RUN. Generated output ignored and untracked.
 
 ## Previous Daily Shortcuts Work
 
