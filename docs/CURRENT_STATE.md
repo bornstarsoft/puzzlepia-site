@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CLEAR-CHALLENGE-FILTERS
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WEEKLY-PREVIEW
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKLY-PREVIEW; upcoming weekly practice; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-CLEAR-CHALLENGE-FILTERS; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `e327f95` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Show the next weekly pick and rotation date inside the existing Daily
+  disclosure. Preserve the rotating order, Home, all URLs, gameplay,
+  analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and four
+  Chromium widths in the Seoul and Los Angeles time zones. Verified the
+  UTC boundary, wrap, tab return, preview link and keyboard without JS.
+  No console errors or horizontal overflow; Home remains unchanged.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the weekly preview.
+
+## Previous Challenge Filter Recovery Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `1fb1fb4` matches fetched origin/main; no competing writer.

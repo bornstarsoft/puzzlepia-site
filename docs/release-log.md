@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8V Upcoming Weekly Practice: 2026-11-18
+
+- Added the next exercise and the Monday UTC change date inside the
+  existing weekly picks disclosure. Both exercises are available now.
+- The six-week order and no-JavaScript list are unchanged. Home, games,
+  analytics and hosting are unchanged.
+
 ## Phase 8U Daily Challenge Filter Recovery: 2026-11-18
 
 - Added Clear filters when a topic, difficulty or keyword is active. It

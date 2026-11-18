@@ -22,7 +22,10 @@
         <summary>Browse all {{ len . }} weekly picks</summary>
         <div>
           <p>These fixed challenges stay available after their featured week.</p>
-          <p data-weekly-schedule hidden>The pick changes on Mondays at 00:00 UTC.</p>
+{{ if gt (len .) 1 }}
+{{ $second := index . 1 }}
+          <p data-weekly-preview hidden><strong>Next week's pick:</strong> <a data-weekly-preview-link href="{{ $second.RelPermalink }}">{{ $second.Title }}</a> (<time data-weekly-preview-date datetime="00:00">00:00 UTC</time>)</p>
+{{ end }}
           <ol>
 {{ range . }}
             <li><a data-weekly-option href="{{ .RelPermalink }}">{{ .Title }}</a></li>
