@@ -7,6 +7,8 @@
   ring fits in either cell.
 - Linked the exercise from the existing guide and Daily discovery. Home,
   game rules, weekly practice, analytics and hosting are unchanged.
+- Deployed `edefb49` via Cloudflare Pages. Verified both layouts, resets,
+  RSS and sitemap on the production domain.
 
 ## Phase 8V Upcoming Weekly Practice: 2026-11-18
 

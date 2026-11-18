@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-RING-TWO-CELLS
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-RING-TWO-CELLS; Ring Puzzle practice; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PREVIEW; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-RING-TWO-CELLS; 2026-11-18)
 
 ## Current Approved Work
 
@@ -17,7 +17,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PREVIEW; 2026-11-18)
   Chromium widths (390/430/768/1280px). Verified the two assignments,
   diagram parity, duplicate-size rejection, eight finishes, twelve resets
   and keyboard answer without JS. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both finishes.
+- DONE: content HEAD `edefb49`, deployed via Cloudflare Pages at
+  2026-11-18 23:50:18 KST. Live four-width QA verified discovery, exact
+  diagram, both finishes, eight completions, twelve resets and the no-JS
+  answer. RSS and sitemap (91 URLs) include the page. No errors or overflow;
+  generated output remains untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily and
+  challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Upcoming Weekly Practice Work
 
