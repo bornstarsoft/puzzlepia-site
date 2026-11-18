@@ -21,11 +21,17 @@ function setup(search = "", options = {}) {
   const buttons = topics.map(topic => element({ "data-filter-value": topic }, topic));
   const items = options.noItems ? [] : ["ring", "block", "ring", "number", "block", "word"].map((topic, index) =>
     element({ "data-topic": topic, "data-search-text": topic + " practice",
+      "data-level": ["easy", "normal", "normal", "easy", "easy", ""][index],
       "data-id": index, "data-updated": [10, 20, 50, 40, 20, 60][index] }));
   const domOrder = items.slice();
   const controls = Object.fromEntries(["search", "search-wrap", "count", "empty", "more", "link", "link-wrap"].map(key =>
     ["[data-filter-" + key + "]", element()]));
   if (!options.blog) {
+    controls["[data-filter-level]"] = Object.assign(element(), {
+      options: ["all", "easy", "normal"].map(value => ({ value })), value: "all"
+    });
+    controls["[data-filter-level-wrap]"] = element();
+    controls["[data-filter-level-wrap]"].hidden = true;
     controls["[data-filter-sort]"] = element();
     controls["[data-filter-sort-wrap]"] = element();
     controls["[data-filter-sort-wrap]"].hidden = true;
@@ -60,6 +66,10 @@ function setup(search = "", options = {}) {
     active: () => buttons.find(button => button.getAttribute("aria-pressed") === "true")?.getAttribute("data-filter-value"),
     click(topic) { buttons.find(button => button.getAttribute("data-filter-value") === topic).fire("click"); },
     more() { controls["[data-filter-more]"].fire("click"); },
+    level(value) {
+      controls["[data-filter-level]"].value = value;
+      controls["[data-filter-level]"].fire("change");
+    },
     sort(value) {
       controls["[data-filter-sort]"].value = value;
       controls["[data-filter-sort]"].fire("change");
@@ -168,6 +178,31 @@ for (const search of ["?sort=other", "?sort=updated&sort=updated"]) {
   assert.deepEqual(setup(search).visibleIDs(), [0, 1]);
 }
 
+view = setup("?level=easy&sort=updated&view=all");
+assert.equal(view.controls["[data-filter-level-wrap]"].hidden, false);
+assert.deepEqual(view.visibleIDs(), [3, 4, 0], "difficulty and ordering before the limit");
+view.level("normal");
+assert.deepEqual(view.visibleIDs(), [2, 1]);
+assert.equal(view.link(), "/daily/?level=normal&sort=updated#daily-challenge-title");
+view.click("ring");
+view.type("Practice");
+assert.deepEqual(view.visibleIDs(), [2]);
+assert.equal(view.link(), "/daily/?topic=ring&level=normal&q=Practice&sort=updated#daily-challenge-title");
+view.level("easy");
+assert.deepEqual(view.visibleIDs(), [0]);
+view.restore("?topic=ring&level=normal&q=Practice&sort=updated");
+assert.equal(view.controls["[data-filter-level]"].value, "normal");
+assert.deepEqual(view.visibleIDs(), [2]);
+view.restore("?topic=word&level=normal", "pageshow");
+assert.deepEqual(view.visibleIDs(), []);
+assert.equal(view.controls["[data-filter-empty]"].hidden, false);
+view.level("all");
+assert.deepEqual(view.visibleIDs(), [5], "unclassified challenge remains in All levels");
+assert.equal(view.link(), "/daily/?topic=word#daily-challenge-title");
+for (const search of ["?level=hard", "?level=easy&level=normal", "?level=EASY", "?level="]) {
+  assert.equal(setup(search).link(), "/daily/#daily-challenge-title");
+}
+
 view = setup("?topic=ring", { blockHistory: true });
 view.click("word");
 assert.deepEqual(view.visible(), ["word"]);
@@ -179,6 +214,9 @@ assert.equal(view.link(), "/daily/?topic=word&q=Word#daily-challenge-title");
 view.sort("updated");
 assert.equal(view.link(), "/daily/?topic=word&q=Word&sort=updated#daily-challenge-title");
 assert.equal(view.location.search, "?topic=ring");
+view.level("easy");
+assert.equal(view.link(), "/daily/?topic=word&level=easy&q=Word&sort=updated#daily-challenge-title");
+assert.equal(view.location.search, "?topic=ring");
 view = setup("?topic=ring", { noURL: true });
 assert.equal(view.active(), "all");
 view.click("block");
@@ -187,7 +225,7 @@ assert.equal(view.controls["[data-filter-link-wrap]"].hidden, true);
 assert.equal(view.pushes.length, 0);
 
 // The shared script must not change Blog URL/search behavior.
-view = setup("?topic=ring&view=all&q=missing&sort=updated", { blog: true });
+view = setup("?topic=ring&view=all&q=missing&sort=updated&level=easy", { blog: true });
 assert.equal(view.active(), "all");
 assert.equal(view.visible().length, 2);
 view.click("block");
@@ -199,8 +237,8 @@ view.controls["[data-filter-search]"].fire("input");
 assert.deepEqual(view.visible(), ["block", "block"]);
 assert.equal(view.pushes.length, 0);
 assert.equal(view.replacements.length, 0);
-assert.equal(view.location.search, "?topic=ring&view=all&q=missing&sort=updated");
+assert.equal(view.location.search, "?topic=ring&view=all&q=missing&sort=updated&level=easy");
 assert.equal(Object.keys(view.events).length, 0);
 assert.doesNotThrow(() => setup("?topic=ring", { noControls: true }));
 assert.doesNotThrow(() => setup("?topic=ring", { noItems: true }));
-console.log("Discovery passed: topic, keyword, sort, stable ties, share links, history, malformed queries and unchanged Blog search.");
+console.log("Discovery passed: topic, difficulty, keyword, sort, links, history, malformed queries and unchanged Blog search.");

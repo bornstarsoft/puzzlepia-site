@@ -12,6 +12,8 @@
     );
     var search = group.querySelector("[data-filter-search]");
     var searchWrap = group.querySelector("[data-filter-search-wrap]");
+    var level = group.querySelector("[data-filter-level]");
+    var levelWrap = group.querySelector("[data-filter-level-wrap]");
     var sort = group.querySelector("[data-filter-sort]");
     var sortWrap = group.querySelector("[data-filter-sort-wrap]");
     var list = group.querySelector("[data-filter-list]");
@@ -22,6 +24,7 @@
     var unit = group.getAttribute("data-unit") || "items";
     var singularUnit = group.getAttribute("data-unit-singular") || unit;
     var activeTopic = "all";
+    var activeLevel = "all";
     var query = "";
     var expanded = false;
     var linked = group.hasAttribute("data-discovery-url") &&
@@ -40,8 +43,15 @@
     var order = items;
     var sortMode = "suggested";
 
+    function knownLevel(value) {
+      return level && Array.prototype.some.call(level.options, function (option) {
+        return option.value === value;
+      });
+    }
+
     function readLocation() {
       activeTopic = "all";
+      activeLevel = "all";
       query = "";
       expanded = false;
       sortMode = "suggested";
@@ -51,6 +61,10 @@
         if (params.getAll("topic").length === 1 && buttons.some(function (button) {
           return button.getAttribute("data-filter-value") === topic;
         })) activeTopic = topic;
+        var selectedLevel = params.get("level");
+        if (params.getAll("level").length === 1 && knownLevel(selectedLevel)) {
+          activeLevel = selectedLevel;
+        }
         expanded = params.getAll("view").length === 1 && params.get("view") === "all";
         if (canSort && params.getAll("sort").length === 1 && params.get("sort") === "updated") {
           sortMode = "updated";
@@ -61,12 +75,14 @@
         }
       } catch (_) { /* Keep the complete default collection available. */ }
       if (search) search.value = query;
+      if (level) level.value = activeLevel;
       if (canSort) sort.value = sortMode;
     }
 
     function collectionURL() {
       var params = new window.URLSearchParams();
       if (activeTopic !== "all") params.set("topic", activeTopic);
+      if (activeLevel !== "all") params.set("level", activeLevel);
       if (query) params.set("q", query);
       if (sortMode === "updated") params.set("sort", sortMode);
       if (expanded) params.set("view", "all");
@@ -94,8 +110,9 @@
       var matched = order.filter(function (item) {
         var topicMatches =
           activeTopic === "all" || item.getAttribute("data-topic") === activeTopic;
+        var levelMatches = activeLevel === "all" || item.getAttribute("data-level") === activeLevel;
         var searchText = item.getAttribute("data-search-text") || "";
-        return topicMatches && (!needle || searchText.indexOf(needle) !== -1);
+        return topicMatches && levelMatches && (!needle || searchText.indexOf(needle) !== -1);
       });
 
       items.forEach(function (item) {
@@ -156,6 +173,16 @@
         render();
         updateLocation();
       });
+    }
+
+    if (level) {
+      level.addEventListener("change", function () {
+        activeLevel = knownLevel(level.value) ? level.value : "all";
+        expanded = false;
+        render();
+        updateLocation();
+      });
+      if (levelWrap) levelWrap.hidden = false;
     }
 
     if (canSort) {

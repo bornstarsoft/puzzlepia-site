@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-SUDOKU-COLUMN
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-DIFFICULTY
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-DIFFICULTY; Daily difficulty filter; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-COLUMN; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `69a3d40` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a bookmarkable difficulty filter to the Daily challenge collection.
+  Preserve defaults, Home, blog search, games, RSS, analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and
+  four Chromium widths (390/430/768/1280px). Validated 28 Easy and 13 Normal
+  challenges, topic/search/order combinations, empty state, expanded list,
+  bookmarks and history. Blog search unchanged. No errors or overflow;
+  full 41-card archive remains available without JavaScript.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Daily difficulty.
+
+## Previous Sudoku Column Practice Work
 
 - Owner approved a scoped content improvement and verified deployment.
   Clean main at `5c56076` matches fetched origin/main; no competing writer.

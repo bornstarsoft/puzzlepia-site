@@ -1,6 +1,12 @@
 {{ define "main" }}
 {{ $playable := where .RegularPagesRecursive "Params.playable" true }}
 {{ $challenges := where .RegularPagesRecursive "Params.challenge" true }}
+{{ $levels := slice }}
+{{ range slice "Easy" "Normal" "Hard" }}
+  {{ if where $challenges "Params.difficulty" . }}
+    {{ $levels = $levels | append . }}
+  {{ end }}
+{{ end }}
 <section class="page daily-hub">
   <header class="page__header">
     <p class="eyebrow">{{ .Params.kicker | default .Title }}</p>
@@ -74,6 +80,17 @@
           <span>Search challenges</span>
           <input id="daily-challenge-search" type="search" placeholder="Try wave, sudoku, or square" maxlength="80" autocomplete="off" data-filter-search>
         </label>
+{{ with $levels }}
+        <label class="filter-search" for="daily-challenge-level" data-filter-level-wrap hidden>
+          <span>Difficulty</span>
+          <select id="daily-challenge-level" data-filter-level>
+            <option value="all">All levels</option>
+{{ range . }}
+            <option value="{{ lower . }}">{{ . }}</option>
+{{ end }}
+          </select>
+        </label>
+{{ end }}
         <label class="filter-search" for="daily-challenge-sort" data-filter-sort-wrap hidden>
           <span>Sort challenges</span>
           <select id="daily-challenge-sort" data-filter-sort>
@@ -99,7 +116,7 @@
 {{ range $challenges.ByWeight }}
 {{ $type := lower (.Params.puzzleType | default "") }}
 {{ $topic := partial "daily-challenge-topic.html" . }}
-      <article class="challenge-card" data-discovery-item data-updated="{{ .Lastmod.Unix }}" data-topic="{{ $topic }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
+      <article class="challenge-card" data-discovery-item data-updated="{{ .Lastmod.Unix }}" data-topic="{{ $topic }}" data-level="{{ lower (.Params.difficulty | default "") }}" data-search-text="{{ lower (printf "%s %s %s" .Title .Description $type) }}">
         <div class="game-card__meta">
 {{ with .Params.puzzleType }}<span>{{ . }}</span>{{ end }}
 {{ with .Params.difficulty }}<span>{{ . }}</span>{{ end }}
@@ -110,7 +127,7 @@
       </article>
 {{ end }}
     </div>
-    <p class="discovery-empty" data-filter-empty hidden>No matching challenges. Try another keyword or topic.</p>
+    <p class="discovery-empty" data-filter-empty hidden>No matching challenges. Try another difficulty, topic, or keyword.</p>
     <div class="discovery-more">
       <button class="button button--secondary" type="button" data-filter-more hidden>Show all challenges</button>
     </div>

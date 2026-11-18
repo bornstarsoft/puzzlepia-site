@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8Q Daily Challenge Difficulty: 2026-11-18
+
+- Added a difficulty choice to the Daily Challenge collection. The default
+  still shows every level. Active difficulty, topic, text search and ordering
+  can be kept together in one bookmark.
+- Home, gameplay, weekly practice, RSS and Blog discovery are unchanged.
+  The full archive is still readable without JavaScript.
+
 ## Phase 8P Sudoku Column Practice: 2026-11-18
 
 - Added a fixed 4x4 board that takes a column from one certain digit to

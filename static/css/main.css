@@ -985,7 +985,7 @@ img {
 }
 
 .daily-filter-fields > :first-child { flex: 1 1 16rem; }
-.daily-filter-fields > :last-child { flex: 0 1 12rem; }
+.daily-filter-fields > label:not(:first-child) { flex: 0 1 10rem; }
 
 .filter-search input,
 .filter-search select {
