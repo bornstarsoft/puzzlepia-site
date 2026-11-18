@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-SEARCH
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SEARCH; Daily challenge discovery only; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PATTERN-WARMUPS; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SEARCH; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-PATTERN-WARMUPS; 2026-11-18)
   topic/query links, Back/Forward, reload, share, clear and expand pass.
   Home and Blog verified, full collection remains browsable without JavaScript.
   No console errors or horizontal overflow in tested views.
-- NEXT_SINGLE_TASK: deploy and verify the same flow live.
+- DONE: application HEAD `abd85a9`, deployed via Cloudflare Pages at
+  2026-11-18 21:45:57 KST. Live QA: PASS. Four-width interactive matrix,
+  bookmark/reopen, challenge return, unchanged Blog and sitemap passed.
+  No-JavaScript width check passed after waiting for stylesheet load.
+  Local QA server stopped; generated output ignored and untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate Daily discovery evidence
+  when available. Retention impact unmeasured; native Safari NOT_RUN.
 
 ## Previous Number Pattern Warmups Work
 

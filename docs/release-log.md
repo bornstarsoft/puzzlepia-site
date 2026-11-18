@@ -8,6 +8,8 @@
   results retain their existing navigation. Without JavaScript the full
   collection remains visible. Home, Blog behavior and game code are unchanged.
 - Builds, 23 automated checks and four-width local browser QA passed.
+- Deployed `abd85a9` at 2026-11-18 21:45:57 KST. Live search links, history,
+  no-JavaScript browsing, Blog regression and sitemap checks passed.
 
 ## Phase 8G Number Pattern Warmups: 2026-11-18
 
