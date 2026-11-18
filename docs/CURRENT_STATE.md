@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MAKE-TEN-RECOVERY
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MAKE-TEN-RECOVERY; Make 10 challenge and guide; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE-NAV; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MAKE-TEN-RECOVERY; 2026-11-18)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE-NAV; 2026-11-18)
   exact diagram, eight completions, twelve resets and fresh layout reload.
   Both recovery orders keep the initial match. Keyboard disclosure works
   without JavaScript; no console errors or horizontal overflow.
-- NEXT_SINGLE_TASK: deploy and repeat the published flow live.
+- DONE: application HEAD `8291c2e`, deployed via Cloudflare Pages at
+  2026-11-18 22:07:46 KST. Live QA: PASS. Repeated the four-width matrix,
+  both recovery orders, eight completions, twelve resets, keyboard fallback
+  and sitemap. No errors or overflow. Local validation server stopped.
+- BLOCKER: none. NEXT_SINGLE_TASK: review aggregate challenge discovery when
+  available before expanding the weekly rotation. Retention unmeasured;
+  native Safari NOT_RUN. Generated output untracked.
 
 ## Previous Weekly Practice Navigation Work
 

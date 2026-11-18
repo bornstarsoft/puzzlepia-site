@@ -7,6 +7,8 @@
 - Linked the exercise from the Make 10 guide and the existing latest list.
   Home, weekly rotation, game runtime, analytics and hosting are unchanged.
 - Builds, 24 automated checks and local browser QA passed.
+- Deployed `8291c2e` at 2026-11-18 22:07:46 KST. Live guide links, both
+  recovery orders, game completion/reset and sitemap verified.
 
 ## Phase 8J Weekly Practice Navigation: 2026-11-18
 
