@@ -12,8 +12,9 @@ function element(attrs = {}, text = "") {
     hasAttribute(name) { return Object.hasOwn(this.attrs, name); },
     setAttribute(name, value) { this.attrs[name] = value; },
     addEventListener(name, fn) { this.events[name] = fn; },
-    fire(name) { this.events[name]?.(); },
-    focus() { this.focused = true; }
+    fire(name) { return this.events[name]?.(); },
+    focus() { this.focused = true; },
+    select() { this.selected = true; }
   };
 }
 
@@ -30,6 +31,9 @@ function setup(search = "", options = {}) {
     ["[data-filter-" + key + "]", element()]));
   if (!options.blog) {
     controls["[data-filter-clear]"] = Object.assign(element(), { hidden: true });
+    ["link-value", "copy", "copy-status"].forEach(key => {
+      controls["[data-filter-" + key + "]"] = element();
+    });
     controls["[data-filter-level]"] = Object.assign(element(), {
       options: ["all", "easy", "normal"].map(value => ({ value })), value: "all"
     });
@@ -47,7 +51,8 @@ function setup(search = "", options = {}) {
   group.querySelectorAll = selector => selector === "[data-filter-value]" ? buttons : items;
   group.querySelector = selector => options.noControls ? null : controls[selector];
   const events = {}, pushes = [], replacements = [];
-  const location = { pathname: options.blog ? "/blog/" : "/daily/", search, hash: "#daily-challenge-title" };
+  const location = { origin: "https://puzzlepia.com", pathname: options.blog ? "/blog/" : "/daily/",
+    search, hash: "#daily-challenge-title" };
   function changeState(log) {
     return function (state, title, url) {
       if (options.blockHistory) throw Error("History unavailable");
@@ -59,6 +64,7 @@ function setup(search = "", options = {}) {
   }
   const history = { state: { existing: true }, pushState: changeState(pushes), replaceState: changeState(replacements) };
   const window = { location, history, URLSearchParams: options.noURL ? undefined : URLSearchParams,
+    navigator: { clipboard: options.clipboard },
     addEventListener(name, fn) { events[name] = fn; } };
   Object.defineProperty(window, "localStorage", { get() { throw Error("No storage should be used"); } });
   vm.runInNewContext(source, { document: { querySelectorAll: () => [group] }, window });
@@ -294,3 +300,41 @@ assert.equal(Object.keys(view.events).length, 0);
 assert.doesNotThrow(() => setup("?topic=ring", { noControls: true }));
 assert.doesNotThrow(() => setup("?topic=ring", { noItems: true }));
 console.log("Discovery passed: topic, difficulty, keyword, sort, clear filters, links, history, malformed queries and unchanged Blog search.");
+
+async function checkCopy() {
+  const copies = [];
+  const share = setup("?topic=ring&level=normal&q=ring&sort=newest", {
+    clipboard: { async writeText(url) { copies.push(url); } }
+  });
+  const field = share.controls["[data-filter-link-value]"];
+  const status = share.controls["[data-filter-copy-status]"];
+  const button = share.controls["[data-filter-copy]"];
+  assert.equal(field.value, "https://puzzlepia.com" + share.link());
+  assert.equal(field.value, "https://puzzlepia.com/daily/?topic=ring&level=normal&q=ring&sort=newest#daily-challenge-title");
+  await button.fire("click");
+  assert.deepEqual(copies, [field.value]);
+  assert.equal(status.textContent, "Link copied.");
+  assert.equal(button.disabled, false);
+  share.restore("?sort=updated");
+  assert.equal(field.value, "https://puzzlepia.com/daily/?sort=updated#daily-challenge-title");
+  assert.equal(status.textContent, "");
+  const fallback = setup("?q=block&view=all", { clipboard: { async writeText() { throw Error("Denied"); } } });
+  await fallback.controls["[data-filter-copy]"].fire("click");
+  assert.equal(fallback.controls["[data-filter-link-value]"].focused, true);
+  assert.equal(fallback.controls["[data-filter-link-value]"].selected, true);
+  assert.match(fallback.controls["[data-filter-copy-status]"].textContent, /manual copying/);
+  let finish;
+  const pending = setup("?level=easy", { clipboard: { writeText() {
+    return new Promise(resolve => { finish = resolve; });
+  } } });
+  const copy = pending.controls["[data-filter-copy]"].fire("click");
+  pending.level("normal");
+  finish();
+  await copy;
+  assert.equal(pending.controls["[data-filter-copy-status]"].textContent, "");
+  assert.equal(pending.controls["[data-filter-copy]"].disabled, false);
+  assert.equal(pending.controls["[data-filter-link-value]"].value, "https://puzzlepia.com/daily/?level=normal#daily-challenge-title");
+  console.log("Daily link copy passed: exact query, fallback selection, history and stale clipboard response.");
+}
+
+checkCopy().catch(error => { console.error(error); process.exitCode = 1; });

@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8Z Copy Daily Challenge List: 2026-11-19
+
+- Replaced the plain collection link with a compact disclosure containing
+  a copy button, selectable URL and ordinary link. The URL carries the
+  current topic, difficulty, keyword, ordering and expanded view.
+- If automatic copy is unavailable, the URL is selected for manual copying.
+  No account, storage or network service is used; Home and Blog are unchanged.
+
 ## Phase 8Y Word Search Final-Letter Practice: 2026-11-19
 
 - Added a short NOTE exercise on the existing A little music board.

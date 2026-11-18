@@ -32,6 +32,11 @@
       typeof window.URLSearchParams === "function";
     var collectionLink = group.querySelector("[data-filter-link]");
     var linkWrap = group.querySelector("[data-filter-link-wrap]");
+    var linkValue = group.querySelector("[data-filter-link-value]");
+    var copyButton = group.querySelector("[data-filter-copy]");
+    var copyStatus = group.querySelector("[data-filter-copy-status]");
+    var canCopy = linked && collectionLink && linkValue && copyButton && copyStatus;
+    var copyRequest = 0;
 
     if (!items.length) {
       return;
@@ -156,7 +161,16 @@
       }
 
       if (linked && collectionLink) {
-        collectionLink.setAttribute("href", collectionURL() + "#daily-challenge-title");
+        var path = collectionURL() + "#daily-challenge-title";
+        collectionLink.setAttribute("href", path);
+        if (linkValue && linkValue.value !== window.location.origin + path) {
+          linkValue.value = window.location.origin + path;
+          copyRequest += 1;
+          if (canCopy) {
+            copyButton.disabled = false;
+            copyStatus.textContent = "";
+          }
+        }
         if (linkWrap) linkWrap.hidden = false;
       }
     }
@@ -222,6 +236,27 @@
         updateLocation();
       });
       if (sortWrap) sortWrap.hidden = false;
+    }
+
+    if (canCopy) {
+      copyButton.hidden = false;
+      copyButton.addEventListener("click", async function () {
+        var request = ++copyRequest;
+        var url = linkValue.value;
+        copyButton.disabled = true;
+        try {
+          await window.navigator.clipboard.writeText(url);
+          if (request === copyRequest) copyStatus.textContent = "Link copied.";
+        } catch (_) {
+          if (request === copyRequest) {
+            copyStatus.textContent = "Copy is unavailable. The link is selected for manual copying.";
+            linkValue.focus();
+            linkValue.select();
+          }
+        } finally {
+          if (request === copyRequest) copyButton.disabled = false;
+        }
+      });
     }
 
     if (linked) {

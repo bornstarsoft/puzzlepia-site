@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-FIND-NOTE
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COPY-CHALLENGE-LIST
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COPY-CHALLENGE-LIST; Daily collection link; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-FIND-NOTE; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `664664c` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Make the existing Daily collection link copyable in a compact disclosure.
+  Preserve the ordinary link, query format, Home, Blog, gameplay and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks and four
+  Chromium widths (390/430/768/1280px). Verified the exact URL, clipboard
+  success/denial with a simulated API, manual selection, history, reopened
+  results and the no-JS archive. No console errors or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the list control.
+
+## Previous Word Search Final-Letter Practice Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `be8c813` matches fetched origin/main; no competing writer.
