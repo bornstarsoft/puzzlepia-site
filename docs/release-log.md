@@ -6,6 +6,8 @@
   publication date, so revisions to old questions do not move them forward.
 - Preserved suggested order, Recently updated, existing bookmarks, filters,
   Home and RSS. Publication order can be bookmarked without an account.
+- Deployed `fe387c9` via Cloudflare Pages. Verified both date orders,
+  bookmarks, back/forward, no-JavaScript fallback and the sitemap live.
 
 ## Phase 8W Ring Puzzle Two-Cell Practice: 2026-11-18
 

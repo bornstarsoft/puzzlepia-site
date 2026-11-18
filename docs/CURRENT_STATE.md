@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-NEWEST
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-NEWEST; Daily publication sort; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-RING-TWO-CELLS; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-NEWEST; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-RING-TWO-CELLS; 2026-11-18)
   Chromium widths (390/430/768/1280px). Confirmed publication vs. modification
   order, old and new bookmarks, combined filters, history and clear behavior.
   No errors or overflow; 45 challenges still available without JavaScript.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the new order.
+- DONE: feature HEAD `fe387c9`, deployed via Cloudflare Pages at
+  2026-11-18 23:58:35 KST. Live Chromium at four widths checked both
+  date orders, bookmarks, history, filters, Blog and the no-JS fallback.
+  The public JS fingerprint and 91 canonical sitemap URLs were verified.
+  No console errors or horizontal overflow; generated output untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily and
+  challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Ring Puzzle Two-Cell Practice Work
 
