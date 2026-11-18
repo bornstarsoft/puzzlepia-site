@@ -56,6 +56,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/find-bake-and-cake/`
 - `/daily/challenges/sudoku-finish-the-column/`
 - `/daily/challenges/memory-pairs-clear-one-card/`
+- `/daily/challenges/purple-color-match-edges/`
 
 ## Game Page URLs
 

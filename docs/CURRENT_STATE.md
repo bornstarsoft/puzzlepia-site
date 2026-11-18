@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MEMORY-SECOND-TRY
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-PURPLE-EDGES
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-PURPLE-EDGES; Color Match practice; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-MEMORY-SECOND-TRY; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a scoped content improvement and verified deployment.
+  Clean main at `daff0e6` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a Color Match practice for the purple target: scan the perimeter,
+  then check the interior. Link from the guide and use the actual board.
+  Preserve Home, weekly practice, game code, analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, and four
+  Chromium widths (390/430/768/1280px). Verified the exact board, edge and
+  interior positions, guide and archive, eight finishes, twelve resets
+  retaining Purple, and keyboard answer without JavaScript. No console
+  errors or overflow in the tested views.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify Color Match practice.
+
+## Previous Memory Pairs Selection Practice Work
 
 - Owner approved one scoped return improvement and verified deployment.
   Clean main at `023cc41` matches fetched origin/main; no competing writer.

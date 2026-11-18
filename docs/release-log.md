@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8S Purple Color Match Practice: 2026-11-18
+
+- Added a fixed Color Match exercise that separates the purple targets on
+  the edge from those inside. The linked game uses the same board and target.
+- Linked from the color strategy guide and Daily discovery. Home, game
+  rules, weekly practice, analytics and hosting are unchanged.
+
 ## Phase 8R Memory Pairs Selection Practice: 2026-11-18
 
 - Added a short challenge on the existing Layout 7: clear one open card

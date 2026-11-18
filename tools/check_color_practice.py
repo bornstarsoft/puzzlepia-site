@@ -46,21 +46,34 @@ class Page(HTMLParser):
 sitemap = ET.parse(ROOT / "public/sitemap.xml")
 urls = {node.text for node in sitemap.iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
 guide = Page((ROOT / "public/blog/color-puzzle-strategy-basics/index.html").read_text())
-for slug, target in ROUNDS.items():
+
+
+def check_round(slug, target):
     route = "/daily/challenges/" + slug + "/"
     source = (ROOT / "content/daily/challenges" / (slug + ".md")).read_text()
     page = Page((ROOT / "public" / route.strip("/") / "index.html").read_text())
     assert page.colors == COLORS, slug + ": board differs"
     assert page.cells == [color.title() + "Pos. " + str(i + 1) for i, color in enumerate(COLORS)], slug
     positions = [i + 1 for i, color in enumerate(COLORS) if color == target]
-    assert len(positions) == 6
-    assert "**" + ", ".join(map(str, positions)) + "**" in source, slug + ": wrong answer"
     assert len(page.details) == 2 and all("open" not in d for d in page.details), slug
     assert "/daily/color-match/?target=" + target in page.links, slug
     assert "/blog/color-puzzle-strategy-basics/" in page.links, slug
     assert "https://puzzlepia.com" + route in urls and route in guide.links, slug
+    return source, page, positions
+
+
+for slug, target in ROUNDS.items():
+    source, page, positions = check_round(slug, target)
+    assert len(positions) == 6
+    assert "**" + ", ".join(map(str, positions)) + "**" in source, slug + ": wrong answer"
     for other in ROUNDS:
         if other != slug:
             assert "/daily/challenges/" + other + "/" in page.links, slug + ": missing next round"
 
-print("Color practice passed: three real-board diagrams, answers, closed disclosures, exact targets, cross-links and sitemap. Run node tools/test_color_match.cjs to verify runtime board parity.")
+purple, _, positions = check_round("purple-color-match-edges", "purple")
+edge = [pos for pos in positions if any(axis in (0, 4) for axis in divmod(pos - 1, 5))]
+inside = [pos for pos in positions if pos not in edge]
+assert edge == [6, 11, 20, 24, 25] and inside == [12, 19]
+assert "**6, 11, 20, 24, 25**" in purple and "**12 and 19**" in purple
+
+print("Color practice passed: four real-board diagrams, exact targets and answers, closed disclosures, cross-links and sitemap.")
