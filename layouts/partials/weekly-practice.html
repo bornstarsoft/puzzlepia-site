@@ -1,0 +1,34 @@
+{{ $picks := slice }}
+{{ $paths := site.Data.weekly_practice }}
+{{ if ne (len $paths) (len (uniq $paths)) }}
+  {{ errorf "Daily weekly practice picks must be distinct" }}
+{{ end }}
+{{ range $paths }}
+  {{ with site.GetPage . }}
+    {{ if and .IsPage (eq .Section "daily") .Params.challenge (not .Params.playable) (not .Draft) (not (.PublishDate.After now)) }}
+      {{ $picks = $picks | append . }}
+    {{ else }}
+      {{ errorf "Daily weekly practice requires a published challenge: %s" .RelPermalink }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Missing Daily weekly practice challenge: %s" . }}
+  {{ end }}
+{{ end }}
+{{ with $picks }}
+{{ $first := index . 0 }}
+    <nav class="daily-hub__heading" aria-label="Weekly practice" data-weekly-practice>
+      <p><strong data-weekly-label>Practice pick:</strong> <a data-weekly-link href="{{ $first.RelPermalink }}">{{ $first.Title }}</a></p>
+      <details class="puzzle-reveal">
+        <summary>Browse all {{ len . }} weekly picks</summary>
+        <div>
+          <p>These fixed challenges stay available after their featured week.</p>
+          <p data-weekly-schedule hidden>The pick changes on Mondays at 00:00 UTC.</p>
+          <ol>
+{{ range . }}
+            <li><a data-weekly-option href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ end }}
+          </ol>
+        </div>
+      </details>
+    </nav>
+{{ end }}

@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 8I Weekly Practice: 2026-11-18
+
+- Added one weekly recommendation in Daily Challenges. Six existing exercises
+  rotate every Monday at 00:00 UTC and remain independently accessible.
+- No dates need republishing. A static recommendation and list remain usable
+  without JavaScript. Home, search, games, storage and tracking are unchanged.
+- Hugo, 24 automated checks and four-width local browser QA passed.
+
 ## Phase 8H Daily Challenge Search: 2026-11-18
 
 - Added instant keyword search inside Daily Challenges. Combine it with the

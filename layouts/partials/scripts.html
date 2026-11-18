@@ -35,6 +35,10 @@
 {{ $discovery := resources.FromString "js/puzzlepia-discovery.js" (readFile "static/js/puzzlepia-discovery.js") | minify | fingerprint }}
   <script src="{{ $discovery.RelPermalink }}"></script>
 {{ end }}
+{{ if and .IsSection (eq .RelPermalink "/daily/") }}
+{{ $weekly := resources.FromString "js/puzzlepia-weekly-practice.js" (readFile "static/js/puzzlepia-weekly-practice.js") | minify | fingerprint }}
+  <script src="{{ $weekly.RelPermalink }}"></script>
+{{ end }}
 {{ if or .IsHome (eq .Section "daily") }}
 {{ $recentIndex := slice }}
 {{ range where (where .Site.RegularPages "Section" "daily") "Params.playable" true }}

@@ -36,6 +36,7 @@
       <h2 id="daily-challenge-title">Find a challenge for your mood</h2>
       <p>Filter short prompts by puzzle type, then open one as a warmup or a simple puzzle break.</p>
     </div>
+{{ partial "weekly-practice.html" . }}
 {{ with where $challenges "Params.playable" "ne" true }}
     <details class="puzzle-reveal" id="latest-challenges">
       <summary>Latest challenge updates</summary>

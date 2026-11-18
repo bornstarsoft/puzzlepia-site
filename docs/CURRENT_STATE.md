@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-SEARCH
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WEEKLY-PRACTICE
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKLY-PRACTICE; Daily recommendation; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-SEARCH; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved another scoped return improvement and verified deployment.
+  Clean main at `dcaa807` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add one rotating practice recommendation to Daily with six existing,
+  always-available exercises and a static fallback. Preserve Home, Daily
+  search, game runtime, storage, analytics and hosting settings.
+- Local QA: PASS. Hugo builds, 24 automated checks, all six UTC slots and
+  rollover, missing/draft/future/duplicate path guards, sitemap and ignored
+  output. Chromium at 390/430/768/1280px verified rollover in two time zones,
+  exercise links, Home isolation, Daily search and keyboard fallback without
+  JavaScript. No console errors or horizontal overflow in tested pages.
+- NEXT_SINGLE_TASK: deploy and repeat the browser checks live.
+
+## Previous Challenge Search Work
 
 - Owner approved the next content/discovery improvement and verified deployment.
   Clean main at `b046df6` matches fetched origin/main; no competing writer.

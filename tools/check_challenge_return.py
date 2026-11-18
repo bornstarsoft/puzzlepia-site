@@ -16,6 +16,7 @@ class Page(HTMLParser):
     def __init__(self, html):
         super().__init__()
         self.cards, self.returns, self.ids, self.latest = {}, [], [], []
+        self.weekly, self.weekly_default = [], None
         self.topic = None
         self.return_links = None
         self.in_latest = False
@@ -37,6 +38,11 @@ class Page(HTMLParser):
             self.return_links = []
             self.returns.append(self.return_links)
         if tag == "a":
+            if "data-weekly-link" in attrs:
+                self.weekly_default = attrs["href"]
+            if "data-weekly-option" in attrs:
+                assert "aria-current" not in attrs
+                self.weekly.append(attrs["href"])
             if self.in_latest:
                 self.latest.append([attrs["href"], None])
             if self.topic is not None:
@@ -65,6 +71,9 @@ assert len(hub.latest) == 3
 assert all(route in hub.cards for route, _ in hub.latest)
 dates = [date for _, date in hub.latest]
 assert dates == sorted(dates, reverse=True)
+assert len(hub.weekly) == len(set(hub.weekly)) == 6
+assert hub.weekly_default == hub.weekly[0]
+assert all(route in hub.cards for route in hub.weekly)
 checked = 0
 for path in (ROOT / "public").rglob("index.html"):
     route = "/" + str(path.parent.relative_to(ROOT / "public")) + "/"
@@ -88,13 +97,15 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         "layouts/partials/breadcrumbs.html": "",
         "layouts/partials/game-card.html": "",
         "layouts/partials/recent-puzzle.html": "",
+        "data/weekly_practice.json": json.dumps(["/daily/words/", "/daily/blocks/"]),
         "content/daily/_index.md": '---\ntitle: Daily\n---\n',
     }
     for name, value in files.items():
         path = fixture / name
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(value)
-    for name in ["layouts/daily/list.html", "layouts/daily/single.html", "layouts/partials/daily-challenge-topic.html"]:
+    for name in ["layouts/daily/list.html", "layouts/daily/single.html",
+                 "layouts/partials/daily-challenge-topic.html", "layouts/partials/weekly-practice.html"]:
         (fixture / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / name, fixture / name)
     cases = {
@@ -124,7 +135,10 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         (fixture / "content/daily" / (slug + ".md")).write_text(json.dumps(fields) + "\nExample.\n")
     result = subprocess.run(["hugo", "--source", folder], capture_output=True, text=True)
     assert result.returncode == 0, result.stdout + result.stderr
-    assert Page((fixture / "public/daily/index.html").read_text()).latest == [
+    fixture_hub = Page((fixture / "public/daily/index.html").read_text())
+    assert fixture_hub.weekly == ["/daily/words/", "/daily/blocks/"]
+    assert fixture_hub.weekly_default == "/daily/words/"
+    assert fixture_hub.latest == [
         ["/daily/words/", "2025-03-03"], ["/daily/blocks/", "2025-03-02"],
         ["/daily/rings/", "2025-03-01"],
     ]
@@ -134,5 +148,11 @@ with tempfile.TemporaryDirectory(prefix="puzzlepia-challenge-return-") as folder
         assert not Page((fixture / "public/daily" / slug / "index.html").read_text()).returns
     for slug in ["draft", "future"]:
         assert not (fixture / "public/daily" / slug / "index.html").exists()
+    for slug in ["words", "ordinary", "playable", "draft", "future", "does-not-exist"]:
+        (fixture / "data/weekly_practice.json").write_text(json.dumps(["/daily/words/", f"/daily/{slug}/"]))
+        result = subprocess.run(["hugo", "--source", folder], capture_output=True, text=True)
+        assert result.returncode != 0 and "weekly practice" in (result.stdout + result.stderr).lower(), (
+            slug, result.stdout, result.stderr
+        )
 
-print(f"Challenge return PASS: {checked} published pages, seven collections, latest order, sitemap and 14 type/publication fixtures.")
+print(f"Challenge return PASS: {checked} published pages, latest/weekly links, sitemap and type/publication guards.")
