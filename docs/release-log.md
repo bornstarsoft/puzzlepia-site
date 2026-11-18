@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8P Sudoku Column Practice: 2026-11-18
+
+- Added a fixed 4x4 board that takes a column from one certain digit to
+  complete, with an optional hint, deduction walkthrough and full solution.
+- Linked the exercise from the Sudoku guide, row practice and the existing
+  Daily collection. Home, weekly practice, games and hosting are unchanged.
+
 ## Phase 8O Daily Shortcuts: 2026-11-18
 
 - Shortened the Daily introduction and added direct links to playable

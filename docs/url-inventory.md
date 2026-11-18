@@ -54,6 +54,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/remember-the-star-pair/`
 - `/daily/challenges/find-the-ten-pairs/`
 - `/daily/challenges/find-bake-and-cake/`
+- `/daily/challenges/sudoku-finish-the-column/`
 
 ## Game Page URLs
 

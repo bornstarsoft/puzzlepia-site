@@ -6,6 +6,7 @@ const boards = require("../data/sudoku_practice.json");
 const original = JSON.stringify(boards);
 const digits = [1, 2, 3, 4];
 const solution = [[1, 2, 3, 4], [3, 4, 1, 2], [2, 1, 4, 3], [4, 3, 2, 1]];
+const columnSolution = [[3, 4, 2, 1], [2, 1, 3, 4], [4, 3, 1, 2], [1, 2, 4, 3]];
 
 function candidates(rows, row, col, includeBox = true) {
   const used = new Set([...rows[row], ...rows.map(r => r[col])]);
@@ -57,12 +58,13 @@ for (const [id, board] of Object.entries(boards)) {
   const [r, c] = board.target;
   assert.equal(board.rows[r][c], 0, id + " target must be empty");
   assert.ok(validClues(board.rows), id + " starting clues must not conflict");
-  assert.deepEqual(solutions(board.rows), [solution], id + " has exactly the published solution");
-  if (id !== "only-place-in-row") {
+  const expected = id === "finish-column" ? columnSolution : solution;
+  assert.deepEqual(solutions(board.rows), [expected], id + " has exactly the published solution");
+  if (!["only-place-in-row", "finish-column"].includes(id)) {
     assert.deepEqual(candidates(board.rows, r, c), [board.answer], id + " target is immediately certain");
   }
   board.rows.forEach((row, r) => row.forEach((n, c) => {
-    if (n) assert.equal(solution[r][c], n, id + " preserves every clue");
+    if (n) assert.equal(expected[r][c], n, id + " preserves every clue");
   }));
 }
 
@@ -88,7 +90,21 @@ placed[0][0] = 1;
 assert.deepEqual(candidates(placed, 1, 0), [3], "A2 is certain next");
 placed[1][0] = 3;
 assert.deepEqual(candidates(placed, 1, 3), [2], "D2 finishes row 2");
+const column = boards["finish-column"];
+assert.deepEqual(column.target, [2, 2]);
+assert.deepEqual(candidates(column.rows, 2, 2), [1, 4], "C3 alone allows two digits");
+assert.deepEqual(column.rows.flatMap((row, r) => !row[2] && candidates(column.rows, r, 2).includes(1) ? [r] : []),
+  [2], "only C3 can take 1 in column C");
+assert.equal(column.rows[0][3], 1, "D1 eliminates C2 in the box");
+assert.equal(column.rows[3][0], 1, "A4 eliminates C4 in its row");
+const continued = column.rows.map(row => row.slice());
+continued[2][2] = column.answer;
+assert.deepEqual(candidates(continued, 1, 2), [3], "the box fixes C2");
+continued[1][2] = 3;
+assert.deepEqual(candidates(continued, 3, 2), [4], "C4 finishes the column");
+continued[3][2] = 4;
+assert.deepEqual(candidates(continued, 0, 1), [4], "the top row now needs 4 at B1");
 assert.equal(solutions(Array.from({ length: 4 }, () => [0, 0, 0, 0])).length, 2,
   "ambiguity check stops at two solutions, not one");
 assert.equal(JSON.stringify(boards), original, "checks do not mutate the source");
-console.log("Sudoku practice passed: four unique boards, fixed clues and targets, box and hidden-single deductions, follow-up moves and immutable data.");
+console.log("Sudoku practice passed: five boards with one solution each, fixed clues, row and column deductions, and follow-up moves.");

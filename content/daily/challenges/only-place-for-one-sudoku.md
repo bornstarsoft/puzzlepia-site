@@ -2,6 +2,7 @@
 title: "Sudoku: Find the Only Place for 1"
 description: "Find where 1 must go in the top row of a 4x4 Sudoku, even when that cell has two candidates. Check the hint or reveal the full solution."
 date: 2026-11-10T21:00:00+09:00
+lastmod: 2026-11-18T22:54:02+09:00
 draft: false
 difficulty: "Normal"
 puzzleType: "Number puzzle"
@@ -45,4 +46,4 @@ Read each row from columns A through D:
 After A1, column A needs 3 at A2. That leaves 2 at D2, the only empty cell in row 2. The completed board keeps all six starting clues and has one solution.
 {{< /puzzle-reveal >}}
 
-For a later break, compare [Let the Sudoku Box Decide](/daily/challenges/let-the-sudoku-box-decide/), where a box rules out a candidate, or return to [Your First Sudoku Move](/blog/sudoku-first-move-for-beginners/) for all three rounds.
+For the next break, [Finish the Column Without Guessing](/daily/challenges/sudoku-finish-the-column/) uses the same idea in a column. You can also return to [Your First Sudoku Move](/blog/sudoku-first-move-for-beginners/) for the earlier rounds.

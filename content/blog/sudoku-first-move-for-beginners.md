@@ -2,7 +2,7 @@
 title: "Your First Sudoku Move: Rows, Columns, and Boxes"
 description: "Learn Sudoku with a small 4x4 worked example: narrow the candidates, find one certain number, and check the complete solution."
 date: 2026-09-12T08:54:35+09:00
-lastmod: 2026-10-23T02:40:00+09:00
+lastmod: 2026-11-18T22:54:02+09:00
 draft: false
 tags:
   - "sudoku"
@@ -69,7 +69,9 @@ Try three short practice rounds, one now or one at your next break:
 2. [Let the Sudoku Box Decide](/daily/challenges/let-the-sudoku-box-decide/): see why checking only the row and column can miss a certain move.
 3. [Find the Only Place for 1](/daily/challenges/only-place-for-one-sudoku/): look across a row to place a digit when one cell still has two candidates.
 
-Both are fixed teaching boards with optional hints and explanations. You can bookmark the next round; there is no timer, streak, or saved progress. For a lighter warmup, Puzzlepia's [Daily Number Puzzle](/daily/number-puzzle/) asks you to tap 1 to 16 in order. That starter is a number-order game, not Sudoku.
+When you are ready for a longer deduction, [Finish the Column Without Guessing](/daily/challenges/sudoku-finish-the-column/) uses the same idea in a column. Find the only place for 1, then use the remaining digits to finish that column.
+
+These are fixed teaching boards with optional hints and explanations. You can bookmark the next round; there is no timer, streak, or saved progress. For a lighter warmup, Puzzlepia's [Daily Number Puzzle](/daily/number-puzzle/) asks you to tap 1 to 16 in order. That starter is a number-order game, not Sudoku.
 
 When you are ready for a full-size puzzle, [play DaySudoku](https://daysudoku.com/), a related external daily Sudoku site with a Key9 twist. Find the Key9 first, then continue the full Sudoku. Our 4x4 teaching board is separate from its live puzzle.
 

@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-DAILY-SHORTCUTS
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-SUDOKU-COLUMN
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-SUDOKU-COLUMN; Sudoku teaching challenge; main; 2026-11-18)
 LAST_WRITER = CODEX (PUZZLEPIA-DAILY-SHORTCUTS; 2026-11-18)
 
 ## Current Approved Work
+
+- Owner approved a scoped content improvement and verified deployment.
+  Clean main at `5c56076` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add one fixed 4x4 Sudoku challenge on solving a column without guessing.
+  Link from the guide and existing Daily discovery; preserve Home, weekly
+  rotation, games, analytics and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks, exhaustive
+  unique-solution and deduction tests, plus four Chromium widths
+  (390/430/768/1280px). Verified guide and prior exercise links, discovery,
+  the exact board, three closed disclosures and no-JS keyboard access.
+  No console errors or horizontal overflow in tested views.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the new challenge.
+
+## Previous Daily Shortcuts Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `6f31d50` matches fetched origin/main; no competing writer.

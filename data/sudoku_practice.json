@@ -22,5 +22,11 @@
     "rows": [[0,0,0,4],[0,4,1,0],[2,1,0,0],[4,0,0,0]],
     "target": [0,0],
     "answer": 1
+  },
+  "finish-column": {
+    "caption": "Finish column C. Start at C3, marked with a question mark.",
+    "rows": [[3,0,2,1],[0,0,0,4],[0,3,0,0],[1,0,0,0]],
+    "target": [2,2],
+    "answer": 1
   }
 }
