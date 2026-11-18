@@ -90,4 +90,17 @@ for link in ["/daily/word-search/?set=baking", DIRECTIONS, "/games/kpop-word-sea
     assert link in bake_page.links
 directions = Page((ROOT / "public" / DIRECTIONS.strip("/") / "index.html").read_text())
 assert BAKING_ROUTE in directions.links and "https://puzzlepia.com" + BAKING_ROUTE in urls
+
+music_route = "/daily/challenges/find-note-check-the-last-letter/"
+music = next(board for board in models if board["id"] == "music")
+note = Page((ROOT / "public" / music_route.strip("/") / "index.html").read_text())
+assert note.cells == list("".join(music["rows"]))
+decoy = "".join(music["rows"][row][0] for row in range(4, 0, -1))
+assert decoy == "NOTA" and decoy not in music["words"]
+assert music["paths"]["NOTE"] == [[5, col] for col in range(5, 1, -1)]
+assert "row 6, columns 6 to 3" in note.answers and "N O T A" in note.answers
+assert len(note.details) == 2 and all("open" not in d for d in note.details)
+assert len(note.ids) == len(set(note.ids))
+assert all(link in note.links for link in ["/daily/word-search/?set=music", DIRECTIONS, BAKING_ROUTE])
+assert music_route in directions.links and "https://puzzlepia.com" + music_route in urls
 print("Word warmups PASS: real board/model paths, answers, closed disclosures, fixed links, reciprocal discovery and sitemap.")

@@ -2,7 +2,7 @@
 title: "Word Search Directions: Backward and Diagonal Examples"
 description: "Practise backward, diagonal and upward word search on real Puzzlepia boards, with optional hints and links to play the same sets."
 date: 2026-10-23T00:00:00+09:00
-lastmod: 2026-11-18T22:21:04+09:00
+lastmod: 2026-11-19T00:03:07+09:00
 draft: false
 tags: [word search, beginner tips, worked examples]
 categories: [Puzzle Tips]
@@ -66,5 +66,7 @@ The word-list buttons are a different kind of help: they reveal the whole word a
 You do not need a faster time to make a replay worthwhile. After the backward and diagonal examples, try [Find WAVE Upward](/daily/challenges/find-wave-upward/). This time the column stays the same and the row number decreases with each letter. Keep that question for a later break or open the [By the coast set](/daily/word-search/?set=coast) to find all four words.
 
 If you tend to stop scanning as soon as a few letters look familiar, try [Find BAKE and CAKE](/daily/challenges/find-bake-and-cake/). Both words end in A K E. The first letter is what tells you which path you have found.
+
+For the opposite check, [find NOTE on the music board](/daily/challenges/find-note-check-the-last-letter/). Both paths begin N O T, but the last letter tells you which one matches.
 
 These are curated, repeatable sets, not an endless supply of new boards. The [Daily Puzzles page](/daily/) also offers block, ring, number, and matching puzzles when you want a different kind of short session. Start with one clear goal, and stop whenever your break is over.

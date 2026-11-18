@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-NEWEST
-Phase: production verified; release handoff.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-FIND-NOTE
+Phase: local validation complete; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-FIND-NOTE; Word Search music practice; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-NEWEST; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `be8c813` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add a Word Search exercise on comparing two paths that start with N O T.
+  Link to the existing music practice set and direction guide. Preserve
+  Home, weekly practice, game logic, analytics and hosting.
+- Local QA: PASS. Hugo and minified builds, 24 automated checks and four
+  Chromium widths (390/430/768/1280px). Verified both paths, the game board,
+  rejection of NOTA, eight finishes, twelve resets and no-JS keyboard
+  answer. No errors or overflow in tested views.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the music practice.
+
+## Previous Daily Challenge Publication Sort Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `ea8ce9d` matches fetched origin/main; no competing writer.

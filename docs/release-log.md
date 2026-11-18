@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 8Y Word Search Final-Letter Practice: 2026-11-19
+
+- Added a short NOTE exercise on the existing A little music board.
+  Readers compare two paths that start alike, then play the same set.
+- Linked from the word search guide and Daily discovery. Home, the
+  fourteen-set rotation, gameplay, analytics and hosting are unchanged.
+
 ## Phase 8X Daily Challenge Publication Sort: 2026-11-18
 
 - Added Recently published to the Daily Challenge sort menu. This uses the

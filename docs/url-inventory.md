@@ -59,6 +59,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/purple-color-match-edges/`
 - `/daily/challenges/block-puzzle-two-rows/`
 - `/daily/challenges/ring-puzzle-two-cells/`
+- `/daily/challenges/find-note-check-the-last-letter/`
 
 ## Game Page URLs
 
