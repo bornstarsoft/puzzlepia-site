@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WEEKLY-PREVIEW
-Phase: local validation complete; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WEEKLY-PREVIEW; upcoming weekly practice; main; 2026-11-18)
-LAST_WRITER = CODEX (PUZZLEPIA-CLEAR-CHALLENGE-FILTERS; 2026-11-18)
+Phase: production verified; release handoff.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WEEKLY-PREVIEW; 2026-11-18)
 
 ## Current Approved Work
 
@@ -17,7 +17,12 @@ LAST_WRITER = CODEX (PUZZLEPIA-CLEAR-CHALLENGE-FILTERS; 2026-11-18)
   Chromium widths in the Seoul and Los Angeles time zones. Verified the
   UTC boundary, wrap, tab return, preview link and keyboard without JS.
   No console errors or horizontal overflow; Home remains unchanged.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the weekly preview.
+- DONE: feature HEAD `be9237a`, deployed via Cloudflare Pages at
+  2026-11-18 23:42:14 KST. Live Chromium at four widths and two time zones
+  verified the date, wrap, next link, keyboard fallback and 90-URL
+  sitemap. No console errors or overflow. Generated output untracked.
+- BLOCKER: none. NEXT_SINGLE_TASK: review comparable aggregate Daily and
+  challenge traffic. Retention unmeasured; native Safari NOT_RUN.
 
 ## Previous Challenge Filter Recovery Work
 

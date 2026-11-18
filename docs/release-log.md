@@ -6,6 +6,8 @@
   existing weekly picks disclosure. Both exercises are available now.
 - The six-week order and no-JavaScript list are unchanged. Home, games,
   analytics and hosting are unchanged.
+- Deployed `be9237a` via Cloudflare Pages. Live browser QA passed four
+  widths, two time zones, UTC rollover, next link and the static fallback.
 
 ## Phase 8U Daily Challenge Filter Recovery: 2026-11-18
 
