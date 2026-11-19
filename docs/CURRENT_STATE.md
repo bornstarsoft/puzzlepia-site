@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-TILE-FLIPS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-TILE-FLIPS; Daily toggle puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-MINI-PUZZLE-BREAKS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-TILE-FLIPS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -18,7 +18,15 @@ LAST_WRITER = CODEX (PUZZLEPIA-MINI-PUZZLE-BREAKS; 2026-11-19)
   optional reveals, both collection links, direct Round 2 reload, latest
   list, Search return and keyboard access without JS. Home HTML unchanged.
   No console errors, clipped boards or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the live puzzle.
+- DONE: feature HEAD `49ff7cb`, deployed via Cloudflare Pages at
+  2026-11-19 11:13:23 KST. Live Chromium QA: PASS at five widths,
+  including both tile rows and reveals, collection and Search return,
+  Round 2 reload, unchanged weekly picks and keyboard access without JS.
+  Live sitemap (106 URLs) and latest Daily RSS entry verified.
+  Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate discovery of the mini collection
+  and its new rounds after they have had time to reach readers.
 
 ## Previous Mini Puzzle Breaks Work
 
