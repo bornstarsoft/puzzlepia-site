@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COLOR-CODES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-CODES; new Daily color deduction puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-ROUTE-PUZZLES; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COLOR-CODES; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-ROUTE-PUZZLES; 2026-11-19)
   at 320/390/430/768/1280px. Verified both unique solutions, hidden answers,
   Round 2, guide, recap, Search return and keyboard use without JS.
   No errors or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both color codes.
+- DONE: feature HEAD `376b748`, deployed via Cloudflare Pages at
+  2026-11-19 10:43:38 KST. Live Chromium QA: PASS at five widths,
+  including both clues and answers, Round 2, recap, search return and
+  no-JS keyboard access. Sitemap (102 URLs) and Daily RSS verified.
+  Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: compare aggregate discovery across the new puzzle
+  formats before choosing one for further rounds.
 
 ## Previous Route Puzzle Work
 
