@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NUMBER-NEIGHBORS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-RETURN-TO-LIST
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-RETURN-TO-LIST; Daily Challenge navigation; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-NEIGHBORS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `16b491a` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Preserve a visitor's Daily Challenge filters in the contextual return link.
+  Keep the ordinary topic and all-challenge fallbacks, Home and gameplay.
+- Local QA: PASS. Hugo and minified builds, 25 automated checks and Chromium
+  at 390/430/768/1280px. Verified topic, level, search, sort, expanded view,
+  direct visits, canonical URLs, and the no-JS keyboard fallback.
+  No console errors or horizontal overflow on tested pages.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the same flow live.
+
+## Previous Number Neighbor Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `3879c8e` matches fetched origin/main; no competing writer.

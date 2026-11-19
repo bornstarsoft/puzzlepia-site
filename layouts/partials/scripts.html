@@ -39,6 +39,10 @@
 {{ $weekly := resources.FromString "js/puzzlepia-weekly-practice.js" (readFile "static/js/puzzlepia-weekly-practice.js") | minify | fingerprint }}
   <script src="{{ $weekly.RelPermalink }}"></script>
 {{ end }}
+{{ if and .IsPage (eq .Section "daily") .Params.challenge (not .Params.playable) }}
+{{ $return := resources.FromString "js/challenge-list-return.js" (readFile "static/js/challenge-list-return.js") | minify | fingerprint }}
+  <script src="{{ $return.RelPermalink }}"></script>
+{{ end }}
 {{ if or .IsHome (eq .Section "daily") }}
 {{ $recentIndex := slice }}
 {{ range where (where .Site.RegularPages "Section" "daily") "Params.playable" true }}

@@ -19,6 +19,8 @@ class Page(HTMLParser):
         self.cards, self.returns, self.ids, self.latest = {}, [], [], []
         self.weekly, self.weekly_default = [], None
         self.weekly_next = []
+        self.contextual_returns = []
+        self.return_scripts = []
         self.feed_links, self.feed_in_latest = [], []
         self.shortcuts, self.focus_targets = [], []
         self.in_shortcuts = False
@@ -41,6 +43,8 @@ class Page(HTMLParser):
         if tag == "details" and attrs.get("id") == "latest-challenges":
             assert "open" not in attrs
             self.in_latest = True
+        if tag == "script" and "/js/challenge-list-return.min." in attrs.get("src", ""):
+            self.return_scripts.append(attrs["src"])
         if tag == "link" and attrs.get("type") == "application/rss+xml":
             assert attrs.get("rel") == "alternate"
             self.feed_links.append(attrs["href"])
@@ -70,6 +74,9 @@ class Page(HTMLParser):
             if self.return_links is not None:
                 self.return_links.append(attrs["href"])
                 assert "nofollow" not in attrs.get("rel", "").split()
+            if "data-challenge-list-return" in attrs:
+                assert self.return_links is not None
+                self.contextual_returns.append((attrs["data-challenge-list-return"], attrs["href"]))
 
     def handle_endtag(self, tag):
         if tag == "article":
@@ -83,7 +90,7 @@ class Page(HTMLParser):
 
 def check_return(page, route, hub):
     if route not in hub.cards:
-        assert not page.returns and not page.weekly_next, route
+        assert not page.returns and not page.weekly_next and not page.contextual_returns, route
         return
     next_links = []
     if route in hub.weekly:
@@ -94,6 +101,7 @@ def check_return(page, route, hub):
     assert page.returns == [weekly_links + [f"/daily/?topic={topic}#daily-challenge-title",
                                            "/daily/#daily-challenge-title"]], route
     assert page.weekly_next == next_links, route
+    assert page.contextual_returns == [("/daily/", f"/daily/?topic={topic}#daily-challenge-title")], route
 
 
 def check_feed(root, origin):
@@ -139,6 +147,8 @@ for path in (ROOT / "public").rglob("index.html"):
         assert "https://puzzlepia.com/daily/index.xml" not in page.feed_links and not page.feed_in_latest, path
         assert not page.shortcuts, path
     check_return(page, route, hub)
+    assert len(page.return_scripts) == int(route in hub.cards), route
+    assert all((ROOT / "public" / script.lstrip("/")).is_file() for script in page.return_scripts), route
     checked += route in hub.cards
 assert checked == len(hub.cards) > 0
 urls = {n.text for n in ET.parse(ROOT / "public/sitemap.xml").findall(".//{*}loc")}

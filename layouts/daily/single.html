@@ -35,7 +35,7 @@
 {{ end }}
     <a href="{{ $dailyURL }}#weekly-practice">Weekly practice picks</a>
 {{ end }}
-    <a href="{{ printf "%s?topic=%s#daily-challenge-title" .RelPermalink $topic }}">More {{ $topic }} challenges</a>
+    <a href="{{ printf "%s?topic=%s#daily-challenge-title" .RelPermalink $topic }}" data-challenge-list-return="{{ $dailyURL }}">More {{ $topic }} challenges</a>
     <a href="{{ .RelPermalink }}#daily-challenge-title">All Daily Challenges</a>
   </nav>
 {{ end }}

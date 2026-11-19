@@ -1,5 +1,13 @@
 # Puzzlepia Release Log
 
+## Phase 9B Return to a Filtered Daily Challenge List: 2026-11-19
+
+- When a reader opens a challenge from a filtered Daily list, the return link
+  restores that list's filters, sort and expanded view. Direct visits retain
+  the topic link, and All Daily Challenges is always available.
+- No saved browsing history, tracking or new URL variants for challenge pages.
+  Home, games, sitemap and RSS are unchanged.
+
 ## Phase 9A Consecutive Number Neighbors: 2026-11-19
 
 - Added two short rounds using Daily Number Puzzle Layouts 3 and 6.
