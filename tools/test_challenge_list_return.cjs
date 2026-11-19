@@ -7,13 +7,14 @@ const source = fs.readFileSync(require.resolve("../static/js/challenge-list-retu
 const origin = "https://puzzlepia.com";
 const fallback = "/daily/?topic=number#daily-challenge-title";
 
-function run(referrer, { missingLink, missingURL } = {}) {
+function run(referrer, { missingLink, missingURL, missingSearch } = {}) {
   const link = {
     textContent: "More number challenges",
     href: fallback,
     getAttribute(name) {
-      assert.equal(name, "data-challenge-list-return");
-      return "/daily/";
+      if (name === "data-challenge-list-return") return "/daily/";
+      assert.equal(name, "data-challenge-search-path");
+      return missingSearch ? null : "/search/";
     },
     setAttribute(name, value) {
       assert.equal(name, "href");
@@ -55,4 +56,23 @@ for (const url of [
 }
 assert.equal(run(origin + "/daily/?" + filters, { missingLink: true })[0], fallback);
 assert.equal(run(origin + "/daily/?" + filters, { missingURL: true })[0], fallback);
-console.log("Challenge list return PASS: archive controls only, same-origin path and ordinary fallback.");
+
+const searchURL = "/search/?q=word+search&type=challenges&batch=2";
+assert.deepEqual(run(origin + searchURL + "&topic=word&next=https%3A%2F%2Fother.example%2F#top"), [
+  searchURL, "Back to your search results"
+]);
+assert.deepEqual(run(origin + "/search/?q=" + "x".repeat(100)), [
+  "/search/?q=" + "x".repeat(100), "Back to your search results"
+]);
+assert.deepEqual(run(origin + "/search/?type=challenges&batch=2&batch=3"), [
+  "/search/?type=challenges", "Back to your search results"
+]);
+for (const url of [
+  origin + "/search/", origin + "/search/?topic=number",
+  origin + "/search/?q=" + "x".repeat(101), origin + "/search/?q=++",
+  origin + "/search/child/?q=block", "https://other.example/search/?q=block"
+]) {
+  assert.deepEqual(run(url), [fallback, "More number challenges"], url);
+}
+assert.equal(run(origin + searchURL, { missingSearch: true })[0], fallback);
+console.log("Challenge return PASS: Daily and Search controls, same-origin paths, bounds and ordinary fallbacks.");

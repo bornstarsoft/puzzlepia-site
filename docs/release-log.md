@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9J Return to Search Results: 2026-11-19
+
+- Kept a visitor's Search phrase, category and expanded results when they
+  return from a Daily Challenge opened from those results.
+- Reused the existing contextual link. The Daily archive return, direct
+  visit fallbacks, Home and gameplay are unchanged. No history is saved.
+
 ## Phase 9I Block Puzzle Overlap Practice: 2026-11-19
 
 - Added two short rounds on the real starter board. Compare two empty

@@ -11,19 +11,24 @@
   } catch (_) {
     return;
   }
-  if (from.origin !== window.location.origin || from.pathname !== path) return;
+  if (from.origin !== window.location.origin) return;
 
-  // Forward only the collection controls; the archive validates their values.
+  var searchPath = link.getAttribute("data-challenge-search-path");
+  var search = from.pathname === searchPath;
+  if (!search && from.pathname !== path) return;
+
+  // Forward only the source controls. The destination validates the values.
+  var fields = search ? ["q", "type", "batch"] : ["topic", "level", "q", "sort", "view"];
   var params = new URLSearchParams();
-  ["topic", "level", "q", "sort", "view"].forEach(function (name) {
+  fields.forEach(function (name) {
     var values = from.searchParams.getAll(name);
-    if (values.length === 1 && values[0].trim() && values[0].length <= 80) {
+    if (values.length === 1 && values[0].trim() && values[0].length <= (search ? 100 : 80)) {
       params.set(name, values[0]);
     }
   });
   var query = params.toString();
   if (!query) return;
 
-  link.setAttribute("href", path + "?" + query + "#daily-challenge-title");
-  link.textContent = "Back to your challenge list";
+  link.setAttribute("href", search ? searchPath + "?" + query : path + "?" + query + "#daily-challenge-title");
+  link.textContent = search ? "Back to your search results" : "Back to your challenge list";
 })();

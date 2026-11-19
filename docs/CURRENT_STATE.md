@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-BLOCK-OVERLAP
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-RETURN-TO-SEARCH
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-RETURN-TO-SEARCH; Challenge search navigation; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-OVERLAP; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `9336d34` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Preserve Search results when someone opens a Daily Challenge from Search.
+  Preserve the Daily archive return, direct links, Home and gameplay.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Opened result 25 from an expanded search and restored
+  all 32 results, query and category. Verified the Daily return, direct visits
+  and no-JS keyboard fallback. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the restored results live.
+
+## Previous Block Overlap Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `abddfc4` matches fetched origin/main; no competing writer.

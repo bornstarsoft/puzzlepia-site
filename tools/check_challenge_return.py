@@ -22,6 +22,7 @@ class Page(HTMLParser):
         self.weekly, self.weekly_default = [], None
         self.weekly_next = []
         self.contextual_returns = []
+        self.search_returns = []
         self.return_scripts = []
         self.feed_links, self.feed_in_latest = [], []
         self.shortcuts, self.focus_targets = [], []
@@ -84,6 +85,8 @@ class Page(HTMLParser):
             if "data-challenge-list-return" in attrs:
                 assert self.return_links is not None
                 self.contextual_returns.append((attrs["data-challenge-list-return"], attrs["href"]))
+                if "data-challenge-search-path" in attrs:
+                    self.search_returns.append(attrs["data-challenge-search-path"])
 
     def handle_endtag(self, tag):
         if tag == "article":
@@ -159,6 +162,7 @@ for path in (ROOT / "public").rglob("index.html"):
         assert "https://puzzlepia.com/daily/index.xml" not in page.feed_links and not page.feed_in_latest, path
         assert not page.shortcuts, path
     check_return(page, route, hub)
+    assert page.search_returns == (["/search/"] if route in hub.cards else []), route
     assert len(page.return_scripts) == int(route in hub.cards), route
     assert all((ROOT / "public" / script.lstrip("/")).is_file() for script in page.return_scripts), route
     checked += route in hub.cards
