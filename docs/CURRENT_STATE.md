@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-SUDOKU-BOX-SCAN
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-SUDOKU-BOX-SCAN; Daily Sudoku practice; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-LIST; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-BOX-SCAN; 2026-11-19)
 
 ## Current Approved Work
 
@@ -18,7 +18,13 @@ LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-LIST; 2026-11-19)
   Verified the unmarked board, five optional disclosures, Round 2 bookmark,
   guide and filtered Daily links, and no-JS keyboard access. No console
   errors or horizontal overflow on tested pages.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the challenge live.
+- DONE: feature HEAD `b3580ee`, deployed via Cloudflare Pages at
+  2026-11-19 09:21:09 KST. Live QA: PASS at four Chromium widths.
+  Both rounds, keyboard/no-JS fallback, filtered Daily return, guide link,
+  sitemap (94 URLs) and Daily RSS verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate challenge discovery over a comparable
+  week before expanding this practice series again.
 
 ## Previous Filtered Challenge List Work
 
