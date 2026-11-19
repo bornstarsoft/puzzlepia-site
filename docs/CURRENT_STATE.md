@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-PICTURE-GRIDS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WORD-LADDERS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-LADDERS; new Daily word puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-PICTURE-GRIDS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `9698f72` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two short word ladders with a fixed word bank, optional hints,
+  shortest-route explanations and a Round 2 bookmark. Preserve Home,
+  gameplay and hosting.
+- Local QA: PASS. Hugo and minified builds, 29 automated checks, and
+  Chromium at 390/430/768/1280px. Verified exact shortest routes,
+  closed hints/solutions, Round 2 bookmark, guide, Daily recap, Search
+  return and no-JS keyboard answer. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both ladders live.
+
+## Previous Picture Grid Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `6244046` matches fetched origin/main; no competing writer.

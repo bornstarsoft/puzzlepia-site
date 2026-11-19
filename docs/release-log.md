@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9M Mini Word Ladders: 2026-11-19
+
+- Added two word-bank puzzles: a single two-move route and a longer
+  challenge with two shortest routes. Both include optional explanations.
+- Added a guide link and Round 2 bookmark. No changes to Home,
+  game runtime, storage, analytics or hosting.
+
 ## Phase 9L Mini Picture Grids: 2026-11-19
 
 - Added two original 5x5 picture logic puzzles: fill a complete line
