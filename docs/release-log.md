@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9C Sudoku Box Scan: 2026-11-19
+
+- Published a 4x4 Sudoku board with two rounds: find the only place for 1
+  in a box, then finish the top row. Both have optional hints and answers.
+- Linked the challenge from the Sudoku guide and Daily discovery. Home,
+  playable games, weekly rotation, analytics and hosting are unchanged.
+
 ## Phase 9B Return to a Filtered Daily Challenge List: 2026-11-19
 
 - When a reader opens a challenge from a filtered Daily list, the return link

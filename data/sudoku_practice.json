@@ -28,5 +28,11 @@
     "rows": [[3,0,2,1],[0,0,0,4],[0,3,0,0],[1,0,0,0]],
     "target": [2,2],
     "answer": 1
+  },
+  "only-place-in-box": {
+    "caption": "Where can 1 go in the upper-left box? Dots are empty cells.",
+    "rows": [[0,0,0,4],[0,4,1,0],[2,1,0,0],[0,0,0,0]],
+    "target": [0,0],
+    "answer": 1
   }
 }

@@ -61,6 +61,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/ring-puzzle-two-cells/`
 - `/daily/challenges/find-note-check-the-last-letter/`
 - `/daily/challenges/find-consecutive-neighbors/`
+- `/daily/challenges/sudoku-only-place-in-a-box/`
 
 ## Game Page URLs
 

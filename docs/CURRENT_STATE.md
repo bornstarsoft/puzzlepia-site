@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-RETURN-TO-LIST
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-SUDOKU-BOX-SCAN
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-SUDOKU-BOX-SCAN; Daily Sudoku practice; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-LIST; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `b538e73` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish one 4x4 Sudoku board with two short rounds, optional hints,
+  a complete solution and a bookmarkable follow-up. Keep Home,
+  gameplay, weekly rotation, analytics and hosting unchanged.
+- Local QA: PASS. Hugo and minified builds, 25 automated checks, exhaustive
+  solution and follow-up checks, and Chromium at 390/430/768/1280px.
+  Verified the unmarked board, five optional disclosures, Round 2 bookmark,
+  guide and filtered Daily links, and no-JS keyboard access. No console
+  errors or horizontal overflow on tested pages.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the challenge live.
+
+## Previous Filtered Challenge List Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `16b491a` matches fetched origin/main; no competing writer.

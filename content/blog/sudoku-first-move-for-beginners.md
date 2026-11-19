@@ -2,7 +2,7 @@
 title: "Your First Sudoku Move: Rows, Columns, and Boxes"
 description: "Learn Sudoku with a small 4x4 worked example: narrow the candidates, find one certain number, and check the complete solution."
 date: 2026-09-12T08:54:35+09:00
-lastmod: 2026-11-18T22:54:02+09:00
+lastmod: 2026-11-19T09:18:44+09:00
 draft: false
 tags:
   - "sudoku"
@@ -70,6 +70,8 @@ Try three short practice rounds, one now or one at your next break:
 3. [Find the Only Place for 1](/daily/challenges/only-place-for-one-sudoku/): look across a row to place a digit when one cell still has two candidates.
 
 When you are ready for a longer deduction, [Finish the Column Without Guessing](/daily/challenges/sudoku-finish-the-column/) uses the same idea in a column. Find the only place for 1, then use the remaining digits to finish that column.
+
+Next, [Find the Only Place in a Box](/daily/challenges/sudoku-only-place-in-a-box/) asks you to cross out positions mentally using clues outside the box. Find one certain move now, or keep the follow-up round to finish the top row at your next break.
 
 These are fixed teaching boards with optional hints and explanations. You can bookmark the next round; there is no timer, streak, or saved progress. For a lighter warmup, Puzzlepia's [Daily Number Puzzle](/daily/number-puzzle/) asks you to tap 1 to 16 in order. That starter is a number-order game, not Sudoku.
 

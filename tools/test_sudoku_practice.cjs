@@ -60,7 +60,7 @@ for (const [id, board] of Object.entries(boards)) {
   assert.ok(validClues(board.rows), id + " starting clues must not conflict");
   const expected = id === "finish-column" ? columnSolution : solution;
   assert.deepEqual(solutions(board.rows), [expected], id + " has exactly the published solution");
-  if (!["only-place-in-row", "finish-column"].includes(id)) {
+  if (!["only-place-in-row", "finish-column", "only-place-in-box"].includes(id)) {
     assert.deepEqual(candidates(board.rows, r, c), [board.answer], id + " target is immediately certain");
   }
   board.rows.forEach((row, r) => row.forEach((n, c) => {
@@ -104,7 +104,24 @@ continued[1][2] = 3;
 assert.deepEqual(candidates(continued, 3, 2), [4], "C4 finishes the column");
 continued[3][2] = 4;
 assert.deepEqual(candidates(continued, 0, 1), [4], "the top row now needs 4 at B1");
+
+const boxScan = boards["only-place-in-box"];
+const upperLeft = [[0, 0], [0, 1], [1, 0], [1, 1]];
+assert.deepEqual(candidates(boxScan.rows, 0, 0), [1, 3], "A1 alone allows two digits");
+assert.equal(boxScan.rows[2][1], 1, "B3 eliminates B1");
+assert.equal(boxScan.rows[1][2], 1, "C2 eliminates A2");
+assert.deepEqual(upperLeft.filter(([r, c]) =>
+  !boxScan.rows[r][c] && candidates(boxScan.rows, r, c).includes(1)),
+[[0, 0]], "only A1 can take 1 in the box");
+const boxReplay = boxScan.rows.map(row => row.slice());
+boxReplay[0][0] = boxScan.answer;
+for (const [r, c, digit] of [[1, 0, 3], [0, 1, 2], [0, 2, 3]]) {
+  assert.deepEqual(candidates(boxReplay, r, c), [digit], "each follow-up move is forced");
+  boxReplay[r][c] = digit;
+}
+assert.deepEqual(boxReplay[0], solution[0], "round two completes the top row");
+
 assert.equal(solutions(Array.from({ length: 4 }, () => [0, 0, 0, 0])).length, 2,
   "ambiguity check stops at two solutions, not one");
 assert.equal(JSON.stringify(boards), original, "checks do not mutate the source");
-console.log("Sudoku practice passed: five boards with one solution each, fixed clues, row and column deductions, and follow-up moves.");
+console.log("Sudoku practice passed: six unique solutions, fixed clues, row, column and box deductions, and follow-up moves.");
