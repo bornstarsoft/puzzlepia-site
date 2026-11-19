@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-RETURN-TO-SEARCH
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-RETURN-TO-SEARCH; Challenge search navigation; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-OVERLAP; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-SEARCH; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-OVERLAP; 2026-11-19)
   at 390/430/768/1280px. Opened result 25 from an expanded search and restored
   all 32 results, query and category. Verified the Daily return, direct visits
   and no-JS keyboard fallback. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the restored results live.
+- DONE: feature HEAD `ddfae17`; exact script and markup verified on the
+  production domain at 2026-11-19 10:09:02 KST. Live Chromium QA: PASS at
+  four widths, including all 32 restored results, prior Daily return and
+  no-JS links. Search noindex, sitemap (97 URLs) and Daily RSS verified.
+- BLOCKER: none for the live feature. GitHub Checks API status not queried
+  during the active rate limit. Native-device QA and retention: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable aggregate Search and Daily traffic
+  before extending contextual links beyond challenges.
 
 ## Previous Block Overlap Work
 
