@@ -57,3 +57,5 @@ The order is `Words, Numbers, Memory, Block, Rings`.
 {{< /puzzle-reveal >}}
 
 For a different kind of deduction, [try Mini Color Codes](/daily/challenges/mini-color-codes/). For a playable break, choose one of the games in [Daily Puzzles](/daily/). The [daily puzzle habit guide](/blog/how-to-build-a-daily-puzzle-habit/) has more ways to keep a short break simple.
+
+[Browse more mini puzzles](/daily/mini-puzzles/#numbers-and-logic).

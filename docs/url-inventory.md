@@ -6,6 +6,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 
 - `/`
 - `/daily/`
+- `/daily/mini-puzzles/` (curated two-round puzzle collection)
 - `/games/`
 - `/blog/`
 - `/search/` (internal search utility; excluded from search indexing and sitemap)

@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9R Mini Puzzle Breaks: 2026-11-19
+
+- Collected seven two-round challenges by topic, with direct links to all
+  fourteen rounds. Daily links to the collection, which can be bookmarked.
+- Kept Home, game runtime, storage, analytics and the Daily challenge feed
+  unchanged. The collection is not counted as a new standalone challenge.
+
 ## Phase 9Q Mini Balance Puzzles: 2026-11-19
 
 - Added two short shape-weight puzzles with equal scale totals. The second

@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-BALANCE-PUZZLES
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MINI-PUZZLE-BREAKS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MINI-PUZZLE-BREAKS; Daily collection; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-BALANCE-PUZZLES; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a retention improvement and verified deployment.
+  Clean main at `1f4319c` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Collect the seven recent two-round mini puzzles in one Daily page with
+  deep links to each round. Leave Home, gameplay, storage, analytics and
+  the Daily RSS feed unchanged.
+- Local QA: PASS. Hugo and minified builds, 34 automated checks, and
+  Chromium at 320/390/430/768/1280px. All 14 round links land on their
+  headings; keyboard/no-JS, touch, reload, and return links work. No console
+  errors or overflow. Home HTML and Daily RSS were byte-for-byte unchanged.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the collection.
+
+## Previous Balance Puzzles Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `cedc3c9` matches fetched origin/main; no competing writer.

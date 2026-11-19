@@ -52,3 +52,5 @@ After removing the stars, the ring balances 3 units. The moon and ring total 8, 
 {{< /puzzle-reveal >}}
 
 Try [Mini Sum Grids](/daily/challenges/mini-sum-grids/) for totals in rows and columns, or [play Make 10](/daily/number-pairs/) for a quick round of pairing numbers. The [number warmups guide](/blog/number-puzzle-warmups-for-casual-players/) has more short exercises.
+
+[Browse more mini puzzles](/daily/mini-puzzles/#numbers-and-logic).
