@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-ROUTE-PUZZLES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-ROUTE-PUZZLES; new Daily route puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-WORD-LADDERS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-ROUTE-PUZZLES; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-WORD-LADDERS; 2026-11-19)
   Chromium at 320/390/430/768/1280px. Verified both boards, exact shortest
   and fewest-turn routes, optional disclosures, Round 2, guide, Daily recap,
   Search return and keyboard use without JS. No errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both mazes live.
+- DONE: feature HEAD `cffc827`, deployed via Cloudflare Pages at
+  2026-11-19 10:37:12 KST. Live Chromium QA: PASS at five widths,
+  including exact layouts and routes, hidden solutions, Round 2,
+  Daily recap, search return and no-JS keyboard access. Sitemap (101 URLs)
+  and Daily RSS verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable discovery of the new puzzle types
+  before deciding which to expand.
 
 ## Previous Word Ladder Work
 
