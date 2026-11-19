@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WORD-LADDERS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-LADDERS; new Daily word puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-PICTURE-GRIDS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WORD-LADDERS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-PICTURE-GRIDS; 2026-11-19)
   Chromium at 390/430/768/1280px. Verified exact shortest routes,
   closed hints/solutions, Round 2 bookmark, guide, Daily recap, Search
   return and no-JS keyboard answer. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both ladders live.
+- DONE: feature HEAD `65c710e`, deployed via Cloudflare Pages at
+  2026-11-19 10:29:49 KST. Live Chromium QA: PASS at four widths,
+  including both banks and all shortest routes, hidden answers,
+  Round 2, recap, search return and no-JS keyboard access.
+  Sitemap (100 URLs) and Daily RSS verified; generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable discovery of the new puzzle formats
+  before adding another word ladder or a more complex interface.
 
 ## Previous Picture Grid Work
 
