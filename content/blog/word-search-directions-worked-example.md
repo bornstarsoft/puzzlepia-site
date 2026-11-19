@@ -2,7 +2,7 @@
 title: "Word Search Directions: Backward and Diagonal Examples"
 description: "Practise backward, diagonal and upward word search on real Puzzlepia boards, with optional hints and links to play the same sets."
 date: 2026-10-23T00:00:00+09:00
-lastmod: 2026-11-19T00:03:07+09:00
+lastmod: 2026-11-19T09:44:34+09:00
 draft: false
 tags: [word search, beginner tips, worked examples]
 categories: [Puzzle Tips]
@@ -68,5 +68,7 @@ You do not need a faster time to make a replay worthwhile. After the backward an
 If you tend to stop scanning as soon as a few letters look familiar, try [Find BAKE and CAKE](/daily/challenges/find-bake-and-cake/). Both words end in A K E. The first letter is what tells you which path you have found.
 
 For the opposite check, [find NOTE on the music board](/daily/challenges/find-note-check-the-last-letter/). Both paths begin N O T, but the last letter tells you which one matches.
+
+Want to start without the word list? [Two Weather Clues, Two Directions](/daily/challenges/weather-word-search-clues/) lets you guess a word from its meaning before tracing it. Try one clue now and leave the other for a later break.
 
 These are curated, repeatable sets, not an endless supply of new boards. The [Daily Puzzles page](/daily/) also offers block, ring, number, and matching puzzles when you want a different kind of short session. Start with one clear goal, and stop whenever your break is over.

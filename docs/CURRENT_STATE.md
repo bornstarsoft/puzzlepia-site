@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-NEXT-CHALLENGE
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WEATHER-WORD-CLUES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WEATHER-WORD-CLUES; Weather watch practice; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-NEXT-CHALLENGE; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `f892c62` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add two clue-to-word rounds on the published Weather watch board,
+  with optional hints, a bookmarkable second round and the exact play link.
+  Preserve Home, gameplay, rotation, completion recommendations and hosting.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Verified both clues and exact board, grid selection,
+  a wrong path, eight finishes and twelve resets, Round 2 and filtered
+  Daily return, and no-JS keyboard access. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the same paths live.
+
+## Previous Completion Challenge Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `c715a17` matches fetched origin/main; no competing writer.

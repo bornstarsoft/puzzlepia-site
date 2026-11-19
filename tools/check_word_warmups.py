@@ -103,4 +103,25 @@ assert len(note.details) == 2 and all("open" not in d for d in note.details)
 assert len(note.ids) == len(set(note.ids))
 assert all(link in note.links for link in ["/daily/word-search/?set=music", DIRECTIONS, BAKING_ROUTE])
 assert music_route in directions.links and "https://puzzlepia.com" + music_route in urls
+
+weather_route = "/daily/challenges/weather-word-search-clues/"
+weather = next(board for board in models if board["id"] == "weather")
+clues = Page((ROOT / "public" / weather_route.strip("/") / "index.html").read_text())
+assert clues.cells == list("".join(weather["rows"]))
+for word, path, explanation in [
+    ("WIND", [[row, 4] for row in range(5, 1, -1)], "column 5, from row 6 up to row 3"),
+    ("HAIL", [[0, col] for col in range(4)], "row 1, from column 1 across to column 4"),
+]:
+    assert weather["paths"][word] == path, word
+    assert word in clues.answers and explanation in clues.answers, word
+assert set(weather["words"]) == {"WIND", "HAIL", "RAIN", "SNOW"}
+assert len(clues.details) == 4 and all("open" not in details for details in clues.details)
+assert len(clues.ids) == len(set(clues.ids))
+for anchor in ["round-1-what-moves-a-kite", "round-2-ice-in-a-storm"]:
+    assert anchor in clues.ids and "#" + anchor in clues.links, anchor
+assert all(link in clues.links for link in [
+    "/daily/word-search/?set=weather", DIRECTIONS, "/daily/challenges/find-wave-upward/"
+])
+assert weather_route in directions.links and "https://puzzlepia.com" + weather_route in urls
+
 print("Word warmups PASS: real board/model paths, answers, closed disclosures, fixed links, reciprocal discovery and sitemap.")

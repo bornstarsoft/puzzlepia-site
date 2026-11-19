@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9G Weather Word Search Clues: 2026-11-19
+
+- Added two clue-first questions on the fixed Weather watch board, with
+  optional hints, exact paths, a Round 2 bookmark and a same-set play link.
+- Linked the challenge from the directions guide and Daily discovery.
+  Home, gameplay, rotation, completion recommendations and hosting are unchanged.
+
 ## Phase 9F Related Challenges After Play: 2026-11-19
 
 - Offered one related Daily Challenge in each game's existing completion
