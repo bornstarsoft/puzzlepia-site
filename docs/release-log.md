@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9L Mini Picture Grids: 2026-11-19
+
+- Added two original 5x5 picture logic puzzles: fill a complete line
+  in the first and make room for separate groups in the second.
+- Added accessible clue grids, optional pictured solutions, a Round 2
+  bookmark and a color guide link. Home, games and hosting are unchanged.
+
 ## Phase 9K Mini Sum Grids: 2026-11-19
 
 - Added two original 3x3 number puzzles with row and column totals:

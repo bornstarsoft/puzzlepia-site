@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MINI-SUM-GRIDS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-PICTURE-GRIDS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-PICTURE-GRIDS; new Daily picture puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-MINI-SUM-GRIDS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `6244046` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two original 5x5 picture puzzles with optional hints, unique
+  solutions and a Round 2 bookmark. Preserve Home, games and hosting.
+- Local QA: PASS. Hugo and minified builds without warnings, 28 automated
+  checks, and Chromium at 390/430/768/1280px. Verified both unique
+  solutions, exact clues, hidden solutions, Round 2 bookmark, guide
+  and discovery links, and no-JS keyboard access. No errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both picture grids.
+
+## Previous Mini Sum Grid Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `2e5cbc5` matches fetched origin/main; no competing writer.

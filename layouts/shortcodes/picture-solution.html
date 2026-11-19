@@ -1,0 +1,7 @@
+<details class="puzzle-reveal">
+  <summary>{{ .Get "title" }}</summary>
+  <div>
+{{ .Page.RenderString (dict "display" "block") .Inner }}
+{{ partial "picture-grid.html" (dict "id" (.Get "id") "solved" true) }}
+  </div>
+</details>

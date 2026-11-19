@@ -1,0 +1,31 @@
+{{ $id := .id }}
+{{ $solved := .solved }}
+{{ with index site.Data.picture_grids $id }}
+{{ $rows := . }}
+<div class="word-example" data-picture-grid="{{ $id }}" data-solved="{{ $solved }}">
+  <table>
+    <caption>{{ if $solved }}Completed picture{{ else }}Column clues above, row clues on the left{{ end }}</caption>
+    <thead>
+      <tr><th scope="col">Row</th>
+{{ range $col, $label := slice "A" "B" "C" "D" "E" }}
+{{ $line := "" }}
+{{ range $rows }}{{ $line = print $line (substr . $col 1) }}{{ end }}
+        <th scope="col">{{ $label }}<br>{{ partial "picture-grid-clue.html" $line }}</th>
+{{ end }}
+      </tr>
+    </thead>
+    <tbody>
+{{ range $row, $line := $rows }}
+      <tr><th scope="row">{{ add $row 1 }}: {{ partial "picture-grid-clue.html" $line }}</th>
+{{ range split $line "" }}
+{{ $filled := and $solved (eq . "#") }}
+        <td><span aria-hidden="true">{{ if $filled }}&#9632;{{ else }}.{{ end }}</span><span class="visually-hidden">{{ if not $solved }}Unmarked{{ else if $filled }}Filled{{ else }}Empty{{ end }}</span></td>
+{{ end }}
+      </tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ else }}
+{{ errorf "Unknown picture-grid %q" $id }}
+{{ end }}

@@ -66,6 +66,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/weather-word-search-clues/`
 - `/daily/challenges/block-puzzle-check-the-whole-piece/`
 - `/daily/challenges/mini-sum-grids/`
+- `/daily/challenges/mini-picture-grids/`
 
 ## Game Page URLs
 

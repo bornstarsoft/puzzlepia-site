@@ -1,0 +1,5 @@
+{{- $clues := slice -}}
+{{- range findRE "#+" . -}}
+  {{- $clues = $clues | append (len .) -}}
+{{- end -}}
+{{- delimit $clues ", " | default "0" -}}
