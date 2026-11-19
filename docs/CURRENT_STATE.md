@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-CHALLENGE-RECAP
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RECAP; Daily challenge discovery; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-WEATHER-WORD-CLUES; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RECAP; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-WEATHER-WORD-CLUES; 2026-11-19)
   at 390/430/768/1280px. Verified separate dates and ordering, no duplicates,
   publication guards, all six links, weekly pick, filters, original anchor
   and keyboard use without JS. No console errors or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and confirm the split recap live.
+- DONE: feature HEAD `80ec69c`, deployed via Cloudflare Pages at
+  2026-11-19 09:54:21 KST. Live Chromium QA: PASS at all four widths,
+  including 24 challenge link visits, the existing anchor, keyboard
+  navigation without JS, weekly pick and filters. Verified RSS order,
+  sitemap (96 URLs), unchanged Home placement and generated exclusions.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable aggregate traffic to new and revised
+  challenges before adding another discovery control.
 
 ## Previous Weather Word Clues Work
 
