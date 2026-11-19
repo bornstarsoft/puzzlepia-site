@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9T Mini Word Squares: 2026-11-19
+
+- Added two word-bank puzzles where rows and columns spell the same words:
+  a fixed first word in the 3 x 3, then a choice of starts in the 4 x 4.
+- Linked both rounds from Mini Puzzle Breaks with optional hints and
+  explanations. Home, weekly picks, gameplay and hosting are unchanged.
+
 ## Phase 9S Mini Tile Flips: 2026-11-19
 
 - Added a two-round toggle puzzle: protect the middle tile, then find the

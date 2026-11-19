@@ -3,7 +3,7 @@ title: "Mini Puzzle Breaks"
 description: "Choose a short word, maze, picture, color, or number puzzle. Start with Round 1 or open Round 2 directly on your next break."
 kicker: "Daily Challenge collection"
 date: 2026-11-19T11:01:10+09:00
-lastmod: 2026-11-19T11:09:59+09:00
+lastmod: 2026-11-19T11:16:17+09:00
 draft: false
 ---
 
@@ -12,6 +12,13 @@ Pick a puzzle that suits this break. Round 1 introduces the rule; Round 2 gives 
 Browse [words and routes](#words-and-routes), [pictures and colors](#pictures-and-colors), or [numbers and logic](#numbers-and-logic).
 
 ## Words and routes
+
+### Word squares
+
+Choose words that read the same across and down.
+
+- [Round 1: Complete the three-letter square](/daily/challenges/mini-word-squares/#round-1-complete-the-three-letter-square)
+- [Round 2: Choose the first word](/daily/challenges/mini-word-squares/#round-2-choose-the-first-word)
 
 ### Word ladders
 

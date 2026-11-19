@@ -13,7 +13,7 @@ TOPICS = {"words-and-routes", "pictures-and-colors", "numbers-and-logic"}
 EXPECTED = {
     "mini-word-ladders", "mini-route-puzzles", "mini-picture-grids",
     "mini-color-codes", "mini-balance-puzzles", "mini-sum-grids",
-    "mini-logic-lineups", "mini-tile-flips",
+    "mini-logic-lineups", "mini-tile-flips", "mini-word-squares",
 }
 
 
@@ -50,6 +50,7 @@ assert COLLECTION not in Page("/").links
 assert "/daily/#playable-daily-title" in page.links
 for slug in ("mini-balance-puzzles", "mini-logic-lineups", "mini-tile-flips"):
     assert COLLECTION + "#numbers-and-logic" in Page(f"/daily/challenges/{slug}/").links
+assert COLLECTION + "#words-and-routes" in Page("/daily/challenges/mini-word-squares/").links
 
 urls = {node.text for node in ET.parse(PUBLIC / "sitemap.xml").findall(".//{*}loc")}
 feed = {node.text for node in ET.parse(PUBLIC / "daily/index.xml").findall("./channel/item/link")}

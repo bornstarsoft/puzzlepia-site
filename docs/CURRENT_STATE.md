@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-TILE-FLIPS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-WORD-SQUARES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-SQUARES; Daily word squares; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-TILE-FLIPS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a new puzzle or retention improvement and verified deployment.
+  Clean main at `7c2a5f6` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two word squares with optional reveals and direct round links
+  from Mini Puzzle Breaks. Preserve Home, weekly picks, gameplay, storage,
+  analytics and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 36 automated checks and Chromium
+  at 320/390/430/768/1280px. Verified one solution per bank, round links,
+  separate reveals, bookmark reload, Daily latest list, Search return
+  and keyboard use without JS. Home HTML unchanged. No console errors
+  or clipping. Removed the previous puzzle's brittle latest-RSS assertion.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the live puzzle.
+
+## Previous Tile Flips Work
 
 - Owner approved a new puzzle or retention improvement and verified deployment.
   Clean main at `aae71c3` matches fetched origin/main; no competing writer.
