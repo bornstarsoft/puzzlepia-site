@@ -20,7 +20,7 @@
     <button class="button button--secondary" type="button" data-order-today>Today's layout</button>
   </div>
   <p id="order-layout-note" class="memory-layout-note" data-order-note>Seven fixed layouts repeat weekly. Today's pick changes at 00:00 UTC.</p>
-  <p data-layout-link-row hidden><a class="pair-layout-link" data-layout-link href="{{ .RelPermalink }}">Open this layout again</a></p>
+{{ partial "daily-game/layout-link.html" . }}
   <p data-unavailable>The interactive board needs JavaScript. You can still read the guide and try the linked challenge below.</p>
   <div class="number-grid" data-grid aria-label="4 by 4 number puzzle grid"></div>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>

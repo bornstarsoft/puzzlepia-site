@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-SUDOKU-BOX-SCAN
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COPY-BOARD-LINK
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COPY-BOARD-LINK; fixed board links; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-BOX-SCAN; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `daadca5` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Make the fixed-layout links in Number Puzzle, Make 10 and Memory Pairs
+  copyable. Preserve original play links, Home, gameplay and storage.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Verified three games, layout switching, simulated
+  clipboard success and denial, keyboard fallback, exact fresh boards, and
+  completion/reset. No console errors or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the three games live.
+
+## Previous Sudoku Box Scan Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `b538e73` matches fetched origin/main; no competing writer.

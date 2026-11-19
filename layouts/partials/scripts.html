@@ -31,6 +31,10 @@
 {{ end }}
 {{ end }}
 {{ end }}
+{{ if and .Params.playable (in (slice "number-puzzle" "pair-puzzle") .Params.game) }}
+{{ $layoutLink := resources.FromString "js/puzzlepia-layout-link.js" (readFile "static/js/puzzlepia-layout-link.js") | minify | fingerprint }}
+  <script src="{{ $layoutLink.RelPermalink }}"></script>
+{{ end }}
 {{ if and .IsSection (or (eq .Section "daily") (eq .Section "blog")) }}
 {{ $discovery := resources.FromString "js/puzzlepia-discovery.js" (readFile "static/js/puzzlepia-discovery.js") | minify | fingerprint }}
   <script src="{{ $discovery.RelPermalink }}"></script>

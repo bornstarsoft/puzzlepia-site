@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9D Copy a Fixed Puzzle Layout: 2026-11-19
+
+- Made the existing layout link copyable in Number Puzzle, Make 10 and
+  Memory Pairs. The link always opens the same layout with a fresh board.
+- Kept an ordinary link and selectable URL as fallbacks. Home, game rules,
+  storage, analytics, weekly rotation and hosting are unchanged.
+
 ## Phase 9C Sudoku Box Scan: 2026-11-19
 
 - Published a 4x4 Sudoku board with two rounds: find the only place for 1
