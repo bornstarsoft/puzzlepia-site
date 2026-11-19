@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-CHALLENGE-RECAP
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-BLOCK-OVERLAP
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-OVERLAP; Daily Block Puzzle practice; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RECAP; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `abddfc4` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add two rounds about an empty start and a blocked corner, with diagrams
+  based on placements in the actual Daily Block Puzzle. Preserve Home,
+  gameplay, completion links, weekly rotation and hosting.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Verified both diagrams, rejected overlap with
+  selection and board preserved, eight finishes, eight resets, recap,
+  Round 2 bookmark and no-JS keyboard answer. No errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both rounds live.
+
+## Previous Challenge Recap Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `ee71746` matches fetched origin/main; no competing writer.

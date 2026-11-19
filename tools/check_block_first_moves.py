@@ -117,3 +117,40 @@ for starts in product(product(range(2), range(6)), repeat=len(pieces)):
         solutions.add(starts)
 assert solutions == {((0, 1), (0, 4), (0, 0)), ((0, 3), (0, 0), (0, 2))}
 print("Two-row practice PASS: both non-overlapping solutions, starter diagram, three closed disclosures and sitemap.")
+
+overlap_route = "/daily/challenges/block-puzzle-check-the-whole-piece/"
+overlap = Page((ROOT / "public" / overlap_route.strip("/") / "index.html").read_text())
+
+
+def footprint(start, offsets):
+    row, col = start
+    return {(row + dr, col + dc) for dr, dc in offsets}
+
+
+line_shape, square_shape, corner_shape = pieces
+fixed_square = footprint((1, 1), square_shape)
+blocked_start = (2, 3)
+other_start = (2, 4)
+expected = []
+for line_row in (3, 4):
+    fixed_line = footprint((line_row, 1), line_shape)
+    occupied = fixed_line | fixed_square
+    assert len(occupied) == 7 and blocked_start not in occupied and other_start not in occupied
+    for start, hit in [(blocked_start, {(3, 3)} if line_row == 3 else set()), (other_start, set())]:
+        cells = footprint(start, corner_shape)
+        assert all(1 <= r <= 6 and 1 <= c <= 6 for r, c in cells)
+        assert cells & occupied == hit
+        if not hit:
+            assert len(cells | occupied) == 10
+    expected += [
+        f"XRow {r}, column {c}: occupied" if (r, c) in occupied else f".Row {r}, column {c}: empty"
+        for r in range(1, 7) for c in range(1, 7)
+    ]
+assert overlap.cells == expected
+assert len(overlap.details) == 4 and all("open" not in detail for detail in overlap.details)
+assert "Start at row 2, column 4." in overlap.answers and "Row 2, column 3 now fits." in overlap.answers
+assert "round-2-move-the-line-down" in overlap.ids and "#round-2-move-the-line-down" in overlap.links
+assert all(link in overlap.links for link in ["/daily/block-puzzle/", space_guide, two_rows_route])
+assert overlap_route in Page((ROOT / "public" / space_guide.strip("/") / "index.html").read_text()).links
+assert "https://puzzlepia.com" + overlap_route in urls
+print("Block overlap PASS: two exact diagrams, blocked and successful footprints, optional answers, links and sitemap.")

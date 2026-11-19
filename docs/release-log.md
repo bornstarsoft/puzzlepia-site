@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9I Block Puzzle Overlap Practice: 2026-11-19
+
+- Added two short rounds on the real starter board. Compare two empty
+  Corner starts, then move Line 3 down and retry the blocked start.
+- Added labeled diagrams, optional hints, a Round 2 bookmark and guide
+  links. Home, gameplay, completion links and hosting are unchanged.
+
 ## Phase 9H Daily Challenge Recap: 2026-11-19
 
 - Separated newly published and revised puzzles in the existing collapsed
