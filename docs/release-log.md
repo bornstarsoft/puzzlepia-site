@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9H Daily Challenge Recap: 2026-11-19
+
+- Separated newly published and revised puzzles in the existing collapsed
+  Daily recap. Up to three of each appear, with no repeated challenge.
+- Kept the original anchor, RSS link, archive controls and no-JavaScript
+  links. Home, game code, analytics and hosting are unchanged.
+
 ## Phase 9G Weather Word Search Clues: 2026-11-19
 
 - Added two clue-first questions on the fixed Weather watch board, with

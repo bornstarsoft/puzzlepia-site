@@ -59,15 +59,39 @@
       <p>Filter short prompts by puzzle type, then open one as a warmup or a simple puzzle break.</p>
     </div>
 {{ partial "weekly-practice.html" . }}
-{{ with where $challenges "Params.playable" "ne" true }}
+{{ $published := where $challenges "Params.playable" "ne" true }}
+{{ $published = where $published "Params.noindex" "ne" true }}
+{{ $published = where $published "Draft" false }}
+{{ $published = where $published "PublishDate.IsZero" false }}
+{{ $published = where $published "PublishDate" "le" now }}
+{{ with $published }}
+{{ $new := first 3 .ByPublishDate.Reverse }}
+{{ $shown := slice }}
+{{ range $new }}{{ $shown = $shown | append .RelPermalink }}{{ end }}
+{{ $updates := slice }}
+{{ range .ByLastmod.Reverse }}
+{{ if and (not (in $shown .RelPermalink)) (.Lastmod.After .PublishDate) (not (.Lastmod.After now)) }}
+{{ $updates = $updates | append . }}
+{{ if eq (len $updates) 3 }}{{ break }}{{ end }}
+{{ end }}
+{{ end }}
     <details class="puzzle-reveal" id="latest-challenges">
-      <summary>Latest challenge updates</summary>
+      <summary>New and updated challenges</summary>
       <div>
-        <ul>
-{{ range first 3 .ByLastmod.Reverse }}
+        <h3>New challenges</h3>
+        <ul data-recently-published>
+{{ range $new }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <time datetime="{{ .PublishDate.Format "2006-01-02" }}">({{ .PublishDate.Format "Jan 2, 2006" }})</time></li>
+{{ end }}
+        </ul>
+{{ with $updates }}
+        <h3>Updated challenges</h3>
+        <ul data-recently-updated>
+{{ range . }}
           <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <time datetime="{{ .Lastmod.Format "2006-01-02" }}">({{ .Lastmod.Format "Jan 2, 2006" }})</time></li>
 {{ end }}
         </ul>
+{{ end }}
 {{ with $.OutputFormats.Get "rss" }}
         <p><a href="{{ .RelPermalink }}">Follow new challenges (RSS)</a></p>
 {{ end }}

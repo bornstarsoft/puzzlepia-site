@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WEATHER-WORD-CLUES
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-CHALLENGE-RECAP
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RECAP; Daily challenge discovery; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-WEATHER-WORD-CLUES; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `ee71746` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Separate newly published and updated challenges inside the existing
+  Daily disclosure, with stable links and no duplicate entries. Preserve
+  Home, archives, game code, RSS and hosting.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Verified separate dates and ordering, no duplicates,
+  publication guards, all six links, weekly pick, filters, original anchor
+  and keyboard use without JS. No console errors or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and confirm the split recap live.
+
+## Previous Weather Word Clues Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `f892c62` matches fetched origin/main; no competing writer.
