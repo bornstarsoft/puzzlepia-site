@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-LOGIC-LINEUPS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-LOGIC-LINEUPS; new Daily ordering puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-COLOR-CODES; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-LOGIC-LINEUPS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-COLOR-CODES; 2026-11-19)
   at 320/390/430/768/1280px. Verified unique answers, separate reveals,
   Round 2 bookmark, guide, recap and Search return. Keyboard use without JS
   passed at 320px. No errors or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: publish and verify the live page.
+- DONE: feature HEAD `326777c`, deployed via Cloudflare Pages at
+  2026-11-19 10:51:58 KST. Live Chromium QA: PASS at five widths,
+  including separate reveals, Round 2 bookmark, guide, recap, Search
+  return and no-JS keyboard access. Live sitemap (103 URLs) and latest
+  Daily RSS entry verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: compare aggregate discovery across the new puzzle
+  formats before choosing one for further rounds.
 
 ## Previous Color Codes Work
 
