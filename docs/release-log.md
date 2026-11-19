@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9Q Mini Balance Puzzles: 2026-11-19
+
+- Added two short shape-weight puzzles with equal scale totals. The second
+  introduces removing the same shape from both sides.
+- Added optional hints, worked solutions, a Round 2 bookmark and a number
+  warmups guide link. Home, games, storage and hosting are unchanged.
+
 ## Phase 9P Mini Logic Lineups: 2026-11-19
 
 - Added two ordering puzzles: keep two cards together, then combine

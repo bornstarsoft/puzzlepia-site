@@ -2,7 +2,7 @@
 title: "Number Puzzle Warmups for Casual Players"
 description: "Try simple number-order, missing-number, and Sudoku warmups designed for short and comfortable puzzle sessions."
 date: 2026-07-24
-lastmod: 2026-11-19T10:12:15+09:00
+lastmod: 2026-11-19T10:54:41+09:00
 draft: false
 tags:
   - "number puzzles"
@@ -117,6 +117,8 @@ Choose one question now and leave another for your next break. The diagrams are 
 For a different kind of scan, [find consecutive neighbors](/daily/challenges/find-consecutive-neighbors/) on two fixed boards. Each round has one pair that shares an edge and differs by 1.
 
 Try [Mini Sum Grids](/daily/challenges/mini-sum-grids/) when you want to add instead of tap in order. Start with a row that has just one blank, or keep the round with two blanks in every line for a later break.
+
+In [Mini Balance Puzzles](/daily/challenges/mini-balance-puzzles/), use the two sides of a scale to work out what each shape weighs. Try the matching stars first, then keep the three-shape round for your next break.
 
 ## Choose clarity over difficulty
 

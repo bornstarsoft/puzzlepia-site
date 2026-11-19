@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-LOGIC-LINEUPS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-BALANCE-PUZZLES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-BALANCE-PUZZLES; new Daily balance puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-LOGIC-LINEUPS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `cedc3c9` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two balanced-scale rounds with optional hints and solutions, a
+  Round 2 bookmark and a guide link. Preserve Home, games, storage and hosting.
+- Local QA: PASS. Hugo and minified builds, 33 automated checks and Chromium
+  at 320/390/430/768/1280px. Verified both unique answers, separate reveals,
+  the Round 2 bookmark, Daily Numbers and latest lists, guide links and
+  Search return. Keyboard use without JS passed at 320px. No console errors
+  or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the live puzzle.
+
+## Previous Logic Lineups Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `b72a02e` matches fetched origin/main; no competing writer.
