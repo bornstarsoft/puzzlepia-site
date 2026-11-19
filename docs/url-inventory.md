@@ -73,6 +73,7 @@ Use this list when checking links, sitemap coverage, and Search Console indexing
 - `/daily/challenges/mini-color-codes/`
 - `/daily/challenges/mini-logic-lineups/`
 - `/daily/challenges/mini-balance-puzzles/`
+- `/daily/challenges/mini-tile-flips/`
 
 ## Game Page URLs
 

@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9S Mini Tile Flips: 2026-11-19
+
+- Added a two-round toggle puzzle: protect the middle tile, then find the
+  fewest flips with overlapping neighbors. Added optional hints and answers.
+- Linked both rounds from Mini Puzzle Breaks. Home, weekly picks, games,
+  storage, analytics and hosting settings are unchanged.
+
 ## Phase 9R Mini Puzzle Breaks: 2026-11-19
 
 - Collected seven two-round challenges by topic, with direct links to all

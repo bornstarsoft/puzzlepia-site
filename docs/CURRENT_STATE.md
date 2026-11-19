@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-MINI-PUZZLE-BREAKS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-TILE-FLIPS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-TILE-FLIPS; Daily toggle puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-MINI-PUZZLE-BREAKS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a new puzzle or retention improvement and verified deployment.
+  Clean main at `aae71c3` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two static toggle rounds with optional reveals and direct links
+  from Mini Puzzle Breaks. Preserve Home, weekly picks, gameplay, storage,
+  analytics and hosting settings.
+- Local QA: PASS. Hugo and minified builds, 35 automated checks and Chromium
+  at 320/390/430/768/1280px. Verified unique move sets and minimum flips,
+  optional reveals, both collection links, direct Round 2 reload, latest
+  list, Search return and keyboard access without JS. Home HTML unchanged.
+  No console errors, clipped boards or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the live puzzle.
+
+## Previous Mini Puzzle Breaks Work
 
 - Owner approved a retention improvement and verified deployment.
   Clean main at `1f4319c` matches fetched origin/main; no competing writer.

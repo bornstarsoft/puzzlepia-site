@@ -3,6 +3,7 @@ title: "Mini Puzzle Breaks"
 description: "Choose a short word, maze, picture, color, or number puzzle. Start with Round 1 or open Round 2 directly on your next break."
 kicker: "Daily Challenge collection"
 date: 2026-11-19T11:01:10+09:00
+lastmod: 2026-11-19T11:09:59+09:00
 draft: false
 ---
 
@@ -43,6 +44,13 @@ Use feedback from two guesses to find a hidden sequence of three colors.
 - [Round 2: Put the colors in order](/daily/challenges/mini-color-codes/#round-2-put-the-colors-in-order)
 
 ## Numbers and logic
+
+### Tile flips
+
+Turn every tile off by flipping a tile and its neighbors.
+
+- [Round 1: Keep the middle off](/daily/challenges/mini-tile-flips/#round-1-keep-the-middle-off)
+- [Round 2: Find the fewest flips](/daily/challenges/mini-tile-flips/#round-2-find-the-fewest-flips)
 
 ### Balance puzzles
 

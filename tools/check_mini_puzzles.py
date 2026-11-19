@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the mini collection links to both rounds of seven distinct puzzles."""
+"""Verify the mini collection links to both rounds of each listed puzzle."""
 
 from collections import Counter
 from html.parser import HTMLParser
@@ -13,7 +13,7 @@ TOPICS = {"words-and-routes", "pictures-and-colors", "numbers-and-logic"}
 EXPECTED = {
     "mini-word-ladders", "mini-route-puzzles", "mini-picture-grids",
     "mini-color-codes", "mini-balance-puzzles", "mini-sum-grids",
-    "mini-logic-lineups",
+    "mini-logic-lineups", "mini-tile-flips",
 }
 
 
@@ -37,7 +37,7 @@ assert {"#" + topic for topic in TOPICS} <= set(page.links)
 round_links = [
     urlsplit(href) for href in page.links if href.startswith("/daily/challenges/")
 ]
-assert len(round_links) == len(set(round_links)) == 14
+assert len(round_links) == len(set(round_links)) == 2 * len(EXPECTED)
 assert Counter(link.path.strip("/").split("/")[-1] for link in round_links) == dict.fromkeys(EXPECTED, 2)
 for path in {link.path for link in round_links}:
     rounds = [link.fragment for link in round_links if link.path == path]
@@ -48,10 +48,10 @@ for path in {link.path for link in round_links}:
 assert Page("/daily/").links.count(COLLECTION) == 1
 assert COLLECTION not in Page("/").links
 assert "/daily/#playable-daily-title" in page.links
-for slug in ("mini-balance-puzzles", "mini-logic-lineups"):
+for slug in ("mini-balance-puzzles", "mini-logic-lineups", "mini-tile-flips"):
     assert COLLECTION + "#numbers-and-logic" in Page(f"/daily/challenges/{slug}/").links
 
 urls = {node.text for node in ET.parse(PUBLIC / "sitemap.xml").findall(".//{*}loc")}
 feed = {node.text for node in ET.parse(PUBLIC / "daily/index.xml").findall("./channel/item/link")}
 assert "https://puzzlepia.com" + COLLECTION in urls - feed
-print("Mini Puzzle Breaks PASS: seven puzzles, fourteen existing round anchors, and Daily discovery.")
+print(f"Mini Puzzle Breaks PASS: {len(EXPECTED)} puzzles, {len(round_links)} round anchors, and Daily discovery.")
