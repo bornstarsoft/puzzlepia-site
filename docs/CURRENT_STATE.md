@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WEATHER-WORD-CLUES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WEATHER-WORD-CLUES; Weather watch practice; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-NEXT-CHALLENGE; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WEATHER-WORD-CLUES; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-NEXT-CHALLENGE; 2026-11-19)
   at 390/430/768/1280px. Verified both clues and exact board, grid selection,
   a wrong path, eight finishes and twelve resets, Round 2 and filtered
   Daily return, and no-JS keyboard access. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the same paths live.
+- DONE: feature HEAD `7d6d908`, deployed via Cloudflare Pages at
+  2026-11-19 09:47:15 KST. Live Chromium QA: PASS at four widths:
+  grid selection, eight finishes, twelve resets, existing recommendation,
+  both clue rounds, filtered return and no-JS keyboard answer. Sitemap
+  (96 URLs), Daily RSS and generated output exclusions verified.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable aggregate discovery of clue-first
+  and direction-only challenges before adding another clue-first set.
 
 ## Previous Completion Challenge Work
 
