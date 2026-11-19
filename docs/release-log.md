@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9K Mini Sum Grids: 2026-11-19
+
+- Added two original 3x3 number puzzles with row and column totals:
+  a single-blank warmup and a second round that combines two clues.
+- Added labeled boards, optional solutions, a Round 2 bookmark and a
+  guide link. Home, existing games, scripts and hosting are unchanged.
+
 ## Phase 9J Return to Search Results: 2026-11-19
 
 - Kept a visitor's Search phrase, category and expanded results when they

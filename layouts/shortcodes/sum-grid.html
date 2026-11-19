@@ -1,0 +1,22 @@
+{{ $id := .Get "id" }}
+{{ with index site.Data.sum_grids $id }}
+{{ $grid := . }}
+<div class="word-example" data-sum-grid="{{ $id }}">
+  <table>
+    <caption>{{ .caption }}</caption>
+    <thead>
+      <tr><th scope="col">Row</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">Total</th></tr>
+    </thead>
+    <tbody>
+{{ range $row, $values := .rows }}
+      <tr><th scope="row">{{ add $row 1 }}</th>{{ range $values }}<td>{{ if . }}{{ . }}{{ else }}<span aria-hidden="true">.</span><span class="visually-hidden">Empty</span>{{ end }}</td>{{ end }}<td>{{ index $grid.rowTotals $row }}</td></tr>
+{{ end }}
+    </tbody>
+    <tfoot>
+      <tr><th scope="row">Column totals</th>{{ range .columnTotals }}<td>{{ . }}</td>{{ end }}<td><span aria-hidden="true">&ndash;</span><span class="visually-hidden">Not used</span></td></tr>
+    </tfoot>
+  </table>
+</div>
+{{ else }}
+{{ errorf "Unknown sum-grid %q in %s" $id .Page.File.Path }}
+{{ end }}

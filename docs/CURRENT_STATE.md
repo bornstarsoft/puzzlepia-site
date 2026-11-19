@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-RETURN-TO-SEARCH
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-MINI-SUM-GRIDS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-MINI-SUM-GRIDS; new Daily puzzle content; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-SEARCH; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `2e5cbc5` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two original 3x3 sum grids with optional hints, unique solutions,
+  a Round 2 bookmark and a guide link. Preserve Home, gameplay and hosting.
+- Local QA: PASS. Hugo and minified builds, 27 automated checks, and
+  Chromium at 390/430/768/1280px. Verified the two unique solutions,
+  exact tables, optional disclosures, round bookmark, guide, recap and
+  search return, and no-JS keyboard access. No console errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both new grids live.
+
+## Previous Return to Search Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `9336d34` matches fetched origin/main; no competing writer.
