@@ -2,7 +2,7 @@
 title: "Block Puzzle Space Management Tips"
 description: "Compare two placements on a small block puzzle board and learn how to protect space for the next piece."
 date: 2026-05-28
-lastmod: 2026-11-19T09:59:22+09:00
+lastmod: 2026-11-19T10:34:15+09:00
 draft: false
 tags:
   - "block puzzle"
@@ -53,6 +53,8 @@ For a later break, try [Keep the Center Open](/daily/challenges/keep-the-center-
 For a hands-on follow-up, [fit three pieces in two rows](/daily/challenges/block-puzzle-two-rows/) on the actual Daily Block Puzzle board. Solve it once, then reset and try the other arrangement.
 
 [Check the Whole Piece](/daily/challenges/block-puzzle-check-the-whole-piece/) compares two empty starting cells that do not work the same way. Then move the Line 3 down one row and see why the rejected start now fits.
+
+For a different way to read open space, [try Mini Route Puzzles](/daily/challenges/mini-route-puzzles/). Find a short route through a maze, then see if you can make fewer turns on another board.
 
 ## Avoid isolated gaps
 

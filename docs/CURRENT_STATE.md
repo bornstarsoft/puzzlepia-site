@@ -1,11 +1,24 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-WORD-LADDERS
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-ROUTE-PUZZLES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-ROUTE-PUZZLES; new Daily route puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-WORD-LADDERS; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `93638dc` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two short maze rounds, with checked shortest and fewest-turn
+  routes, optional hints, and a Round 2 bookmark. Preserve Home and games.
+- Local QA: PASS. Hugo and minified builds, 30 automated checks, and
+  Chromium at 320/390/430/768/1280px. Verified both boards, exact shortest
+  and fewest-turn routes, optional disclosures, Round 2, guide, Daily recap,
+  Search return and keyboard use without JS. No errors or overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both mazes live.
+
+## Previous Word Ladder Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `9698f72` matches fetched origin/main; no competing writer.

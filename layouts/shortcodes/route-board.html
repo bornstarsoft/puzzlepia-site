@@ -1,0 +1,19 @@
+{{ $id := .Get "id" }}
+{{ with index site.Data.route_boards $id }}
+{{ $columns := first (len (index . 0)) (slice "A" "B" "C" "D" "E" "F" "G") }}
+{{ $symbols := dict "S" "S" "F" "F" "#" "X" "." "." }}
+{{ $labels := dict "S" "Start" "F" "Finish" "#" "Wall" "." "Open" }}
+<div class="word-example block-example" data-route-board="{{ $id }}">
+  <table>
+    <caption>{{ $.Get "caption" }}</caption>
+    <thead><tr><th scope="col">Row</th>{{ range $columns }}<th scope="col">{{ . }}</th>{{ end }}</tr></thead>
+    <tbody>
+{{ range $row, $line := . }}
+      <tr><th scope="row">{{ add $row 1 }}</th>{{ range split $line "" }}<td{{ if eq . "#" }} class="block-example__filled"{{ end }}><span aria-hidden="true">{{ index $symbols . }}</span><span class="visually-hidden">{{ index $labels . }}</span></td>{{ end }}</tr>
+{{ end }}
+    </tbody>
+  </table>
+</div>
+{{ else }}
+{{ errorf "Unknown route-board %q in %s" $id .Page.File.Path }}
+{{ end }}

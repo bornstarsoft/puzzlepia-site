@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9N Mini Route Puzzles: 2026-11-19
+
+- Added two fixed mazes: avoid a dead end, then compare the shortest
+  route with the route that changes direction the fewest times.
+- Added labeled boards, optional explanations, a Round 2 bookmark and
+  a guide link. Home, games and hosting are unchanged.
+
 ## Phase 9M Mini Word Ladders: 2026-11-19
 
 - Added two word-bank puzzles: a single two-move route and a longer
