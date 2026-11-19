@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COLOR-SQUARES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-SQUARES; Color Match practice; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-COPY-BOARD-LINK; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COLOR-SQUARES; 2026-11-19)
 
 ## Current Approved Work
 
@@ -18,7 +18,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-COPY-BOARD-LINK; 2026-11-19)
   optional hints and answers, Round 2 bookmark, filtered Daily return,
   no-JS keyboard access, and both targets' completion/reset.
   No console errors or horizontal overflow in the tested views.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the same paths live.
+- DONE: feature HEAD `9a1abe2`, deployed via Cloudflare Pages at
+  2026-11-19 09:34:18 KST. Live Chromium QA: PASS at all four widths.
+  Verified eight finishes and sixteen resets, Round 2 and filtered return,
+  no-JS keyboard fallback, sitemap (95 URLs) and Daily RSS.
+  Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable aggregate discovery of the latest
+  Color Match challenges before adding more exercises to that board.
 
 ## Previous Copy Board Link Work
 
