@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MINI-PUZZLE-BREAKS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MINI-PUZZLE-BREAKS; Daily collection; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-BALANCE-PUZZLES; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MINI-PUZZLE-BREAKS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-BALANCE-PUZZLES; 2026-11-19)
   Chromium at 320/390/430/768/1280px. All 14 round links land on their
   headings; keyboard/no-JS, touch, reload, and return links work. No console
   errors or overflow. Home HTML and Daily RSS were byte-for-byte unchanged.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the collection.
+- DONE: feature HEAD `7d5ea86`, deployed via Cloudflare Pages at
+  2026-11-19 11:06:32 KST. Live Chromium QA: PASS at five widths and all
+  14 round links. Verified Daily entry and return, topic navigation, direct
+  Round 2 reload, and closed solutions. Live sitemap (105 URLs) and
+  unchanged Daily RSS behavior verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate discovery of the collection and
+  linked rounds after they have had time to reach readers.
 
 ## Previous Balance Puzzles Work
 
