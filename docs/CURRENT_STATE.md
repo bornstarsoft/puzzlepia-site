@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-WORD-SQUARES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-WORD-SQUARES; Daily word squares; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-TILE-FLIPS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-WORD-SQUARES; 2026-11-19)
 
 ## Current Approved Work
 
@@ -18,7 +18,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-TILE-FLIPS; 2026-11-19)
   separate reveals, bookmark reload, Daily latest list, Search return
   and keyboard use without JS. Home HTML unchanged. No console errors
   or clipping. Removed the previous puzzle's brittle latest-RSS assertion.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the live puzzle.
+- DONE: feature HEAD `d632533`, deployed via Cloudflare Pages at
+  2026-11-19 11:19:27 KST. Live Chromium QA: PASS at five widths for both
+  banks, reveals, collection and Search return, Round 2 bookmark reload,
+  and no-JS keyboard access. Live sitemap (107 URLs) and latest Daily RSS
+  entry verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate discovery of the mini collection
+  after readers have had time to try the newest rounds.
 
 ## Previous Tile Flips Work
 
