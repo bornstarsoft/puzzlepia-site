@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-PICTURE-GRIDS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-PICTURE-GRIDS; new Daily picture puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-MINI-SUM-GRIDS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-PICTURE-GRIDS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-MINI-SUM-GRIDS; 2026-11-19)
   checks, and Chromium at 390/430/768/1280px. Verified both unique
   solutions, exact clues, hidden solutions, Round 2 bookmark, guide
   and discovery links, and no-JS keyboard access. No errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both picture grids.
+- DONE: feature HEAD `4359971`, deployed via Cloudflare Pages at
+  2026-11-19 10:22:50 KST. Live Chromium QA: PASS at all four widths,
+  including exact clue and solution diagrams, hidden answers, Round 2,
+  recap and search return, and no-JS keyboard access. Sitemap (99 URLs)
+  and Daily RSS verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable discovery of both new grid formats
+  before adding more rounds or an interactive version.
 
 ## Previous Mini Sum Grid Work
 
