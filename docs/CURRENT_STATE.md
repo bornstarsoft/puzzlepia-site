@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-NEXT-CHALLENGE
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-NEXT-CHALLENGE; Daily game completion links; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-COLOR-SQUARES; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-NEXT-CHALLENGE; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-COLOR-SQUARES; 2026-11-19)
   completed again and opened the exact linked challenge. The links stay
   hidden until completion, and the existing no-JS reading links still work.
   No console errors or horizontal overflow on the tested pages.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify all seven games live.
+- DONE: feature HEAD `d9443fb`, deployed via Cloudflare Pages at
+  2026-11-19 09:40:55 KST. Live Chromium QA: PASS at four widths.
+  Verified 56 completions (including replays), 28 resets and 28
+  destination clicks. No-JS reading fallback, sitemap (95 URLs) and
+  Daily RSS verified. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate landing traffic for the seven linked
+  challenges after a comparable week before adding more completion links.
 
 ## Previous Color Squares Work
 
