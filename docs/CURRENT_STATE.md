@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-BLOCK-OVERLAP
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-BLOCK-OVERLAP; Daily Block Puzzle practice; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RECAP; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-BLOCK-OVERLAP; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-CHALLENGE-RECAP; 2026-11-19)
   at 390/430/768/1280px. Verified both diagrams, rejected overlap with
   selection and board preserved, eight finishes, eight resets, recap,
   Round 2 bookmark and no-JS keyboard answer. No errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both rounds live.
+- DONE: feature HEAD `a11603f`, deployed via Cloudflare Pages at
+  2026-11-19 10:02:01 KST. Live Chromium QA: PASS at all four widths.
+  Verified exact setups, overlap recovery, eight finishes, eight resets,
+  the Round 2 bookmark, no-JS keyboard answer, Daily recap, RSS and
+  sitemap (97 URLs). Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review comparable discovery of the current block
+  exercises before adding more on the same board.
 
 ## Previous Challenge Recap Work
 
