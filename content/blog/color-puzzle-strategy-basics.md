@@ -2,7 +2,7 @@
 title: "Color Puzzle Strategy Basics"
 description: "Learn simple color puzzle strategy ideas for matching groups, reading space, and enjoying visual puzzle play."
 date: 2026-05-29
-lastmod: 2026-11-18T23:15:25+09:00
+lastmod: 2026-11-19T09:31:14+09:00
 draft: false
 tags:
   - "color puzzles"
@@ -81,6 +81,8 @@ Want to look before tapping? These three reading exercises use the same board as
 Each exercise links straight to its matching playable target. Try one now and another during a later break. The board and questions stay fixed, so there is no deadline or daily streak to maintain.
 
 For one more practice, [Find Purple Past the Edges](/daily/challenges/purple-color-match-edges/) separates the outside edge from the middle. Try the same route in the game, then reverse it on a replay.
+
+[One of Each, Then All the Same](/daily/challenges/color-match-two-squares/) gives the same board two different goals: find a 2x2 square with four colors, then find a square with just one. Leave the second round for a later break, or try its Purple target in the game.
 
 ## Try a repeating pattern
 

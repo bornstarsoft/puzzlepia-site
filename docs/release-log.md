@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9E Color Match Two Squares: 2026-11-19
+
+- Added two short searches on the fixed Color Match board: a 2x2 square
+  with four different colors, then a 2x2 square of one color.
+- Added optional hints, answers, a Round 2 bookmark and same-board Gold
+  and Purple play links. Home, gameplay, rotation and hosting are unchanged.
+
 ## Phase 9D Copy a Fixed Puzzle Layout: 2026-11-19
 
 - Made the existing layout link copyable in Number Puzzle, Make 10 and

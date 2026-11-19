@@ -1,11 +1,26 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COPY-BOARD-LINK
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COLOR-SQUARES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-SQUARES; Color Match practice; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-COPY-BOARD-LINK; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused content improvement and verified deployment.
+  Clean main at `0a54e74` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Add two opposite 2x2 searches on the existing Color Match board, with
+  independent hints and answers, a round link and Gold/Purple play links.
+  Home, gameplay, weekly rotation, storage and hosting remain unchanged.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Checked all 16 possible squares, matching boards,
+  optional hints and answers, Round 2 bookmark, filtered Daily return,
+  no-JS keyboard access, and both targets' completion/reset.
+  No console errors or horizontal overflow in the tested views.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the same paths live.
+
+## Previous Copy Board Link Work
 
 - Owner approved a focused return improvement and verified deployment.
   Clean main at `daadca5` matches fetched origin/main; no competing writer.
