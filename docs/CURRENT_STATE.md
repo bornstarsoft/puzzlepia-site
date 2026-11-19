@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-RETURN-TO-LIST
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-RETURN-TO-LIST; Daily Challenge navigation; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-NEIGHBORS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-LIST; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-NUMBER-NEIGHBORS; 2026-11-19)
   at 390/430/768/1280px. Verified topic, level, search, sort, expanded view,
   direct visits, canonical URLs, and the no-JS keyboard fallback.
   No console errors or horizontal overflow on tested pages.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the same flow live.
+- DONE: feature HEAD `9f4b7eb`, deployed via Cloudflare Pages at
+  2026-11-19 09:13:37 KST. Live Chromium QA: PASS at all four widths,
+  including actual return navigation, keyboard fallback and no overflow
+  or console errors. Verified challenge-only script, sitemap (93 URLs)
+  and Daily RSS. Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review a comparable week of aggregate Daily Challenge
+  discovery before adding another archive feature.
 
 ## Previous Number Neighbor Work
 
