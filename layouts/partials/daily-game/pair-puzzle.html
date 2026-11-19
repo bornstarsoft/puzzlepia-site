@@ -38,6 +38,7 @@
   <p class="puzzle-status pair-feedback" data-status role="status">Choose any two {{ if $memory }}cards{{ else }}tiles{{ end }} to begin.</p>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
   <div class="completion-actions" data-complete-actions hidden>
+{{ partial "daily-game/completion-practice.html" . }}
     <button class="button button--secondary" type="button" data-{{ $prefix }}-next hidden>Try next layout</button>
     <a class="button button--primary" href="{{ .Params.nextPuzzle }}">{{ .Params.nextPuzzleLabel }}</a>
     <a class="button button--secondary" href="/daily/">More Daily Puzzles</a>

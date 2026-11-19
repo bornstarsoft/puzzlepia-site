@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9F Related Challenges After Play: 2026-11-19
+
+- Offered one related Daily Challenge in each game's existing completion
+  area. Players can open it after a round or keep the link for another break.
+- Kept the existing game buttons, guide links, reset behavior, Home, weekly
+  rotation, storage, analytics and hosting unchanged.
+
 ## Phase 9E Color Match Two Squares: 2026-11-19
 
 - Added two short searches on the fixed Color Match board: a 2x2 square

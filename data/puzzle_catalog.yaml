@@ -7,6 +7,7 @@
   topic: word
   guide: "/blog/word-search-directions-worked-example/"
   challenge: "/daily/challenges/star-diagonal-word-search/"
+  afterComplete: "/daily/challenges/find-note-check-the-last-letter/"
   practice:
     - "/daily/challenges/kiwi-backward-word-search/"
     - "/daily/challenges/star-diagonal-word-search/"
@@ -20,6 +21,7 @@
   topic: block
   guide: "/blog/block-puzzle-space-management/"
   challenge: "/daily/challenges/find-the-square-space/"
+  afterComplete: "/daily/challenges/block-puzzle-two-rows/"
   practice:
     - "/daily/challenges/find-the-square-space/"
     - "/daily/challenges/domino-before-the-square/"
@@ -33,6 +35,7 @@
   topic: color
   guide: "/blog/ring-puzzle-basics/"
   challenge: "/daily/challenges/three-rings-three-spaces/"
+  afterComplete: "/daily/challenges/ring-puzzle-two-cells/"
   practice:
     - "/daily/challenges/ring-size-practice/"
     - "/daily/challenges/three-rings-three-spaces/"
@@ -46,6 +49,7 @@
   topic: number
   guide: "/blog/number-puzzle-warmups-for-casual-players/"
   challenge: "/daily/challenges/quick-number-focus/"
+  afterComplete: "/daily/challenges/find-consecutive-neighbors/"
   practice:
     - "/daily/challenges/quick-number-focus/"
     - "/daily/challenges/number-order-1-to-10/"
@@ -59,6 +63,7 @@
   topic: color
   guide: "/blog/color-puzzle-strategy-basics/"
   challenge: "/daily/challenges/pink-color-match-challenge/"
+  afterComplete: "/daily/challenges/color-match-two-squares/"
   practice:
     - "/daily/challenges/pink-color-match-challenge/"
     - "/daily/challenges/mint-color-match/"
@@ -72,6 +77,7 @@
   topic: memory
   guide: "/blog/memory-matching-tips/"
   challenge: "/daily/challenges/two-reveals-one-pair/"
+  afterComplete: "/daily/challenges/memory-pairs-clear-one-card/"
   practice:
     - "/daily/challenges/remember-the-star-pair/"
     - "/daily/challenges/two-reveals-one-pair/"
@@ -85,6 +91,7 @@
   topic: number
   guide: "/blog/make-ten-number-puzzle-tips/"
   challenge: "/daily/challenges/choose-either-eight/"
+  afterComplete: "/daily/challenges/make-ten-after-a-mismatch/"
   practice:
     - "/daily/challenges/find-the-ten-pairs/"
     - "/daily/challenges/choose-either-eight/"

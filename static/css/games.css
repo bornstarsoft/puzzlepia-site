@@ -96,6 +96,18 @@
   display: none;
 }
 
+.completion-practice {
+  flex: 0 0 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.completion-practice a {
+  color: var(--purple-dark);
+  font-weight: 750;
+  text-underline-offset: .16em;
+}
+
 .completion-actions .puzzle-cta {
   margin-top: 0;
 }

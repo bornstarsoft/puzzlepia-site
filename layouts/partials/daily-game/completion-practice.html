@@ -1,0 +1,14 @@
+{{ with index site.Data.puzzle_catalog .RelPermalink }}
+{{ with .afterComplete }}
+{{ $path := . }}
+{{ with site.GetPage $path }}
+{{ if and .IsPage (eq .Section "daily") .Params.challenge (not .Params.playable) (not .Draft) (not (.PublishDate.After now)) }}
+    <p class="completion-practice">Next challenge: <a data-completion-practice href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+{{ else }}
+{{ errorf "Completion practice for %s requires a published Daily Challenge: %s" $.RelPermalink $path }}
+{{ end }}
+{{ else }}
+{{ errorf "Missing completion practice for %s: %s" $.RelPermalink $path }}
+{{ end }}
+{{ end }}
+{{ end }}

@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COLOR-SQUARES
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-NEXT-CHALLENGE
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-NEXT-CHALLENGE; Daily game completion links; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-COLOR-SQUARES; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved a focused return improvement and verified deployment.
+  Clean main at `c715a17` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Offer one curated related challenge after completion in each of seven
+  Daily games. Preserve the existing buttons, Home, game code and storage.
+- Local QA: PASS. Hugo and minified builds, 26 automated checks and Chromium
+  at 390/430/768/1280px. Verified all seven games: completed, reset,
+  completed again and opened the exact linked challenge. The links stay
+  hidden until completion, and the existing no-JS reading links still work.
+  No console errors or horizontal overflow on the tested pages.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify all seven games live.
+
+## Previous Color Squares Work
 
 - Owner approved a focused content improvement and verified deployment.
   Clean main at `0a54e74` matches fetched origin/main; no competing writer.

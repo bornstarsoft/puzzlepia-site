@@ -45,6 +45,7 @@
   <p class="word-search-note" id="word-search-set-note">Changing sets starts a fresh board. The daily pick changes at 00:00 UTC and repeats every {{ len $catalog.sets }} days. An open board stays unchanged.</p>
   <p class="puzzle-complete" data-complete hidden>Puzzle complete! Great job.</p>
   <div class="completion-actions" data-complete-actions hidden>
+{{ partial "daily-game/completion-practice.html" . }}
     <button class="button button--primary" type="button" data-next-set>Try another word set</button>
     <a class="button button--secondary" href="/blog/word-search-patterns-to-look-for/">Read word search tips</a>
   </div>
