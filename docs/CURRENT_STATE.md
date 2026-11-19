@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-COPY-BOARD-LINK
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-COPY-BOARD-LINK; fixed board links; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-BOX-SCAN; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-COPY-BOARD-LINK; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-SUDOKU-BOX-SCAN; 2026-11-19)
   at 390/430/768/1280px. Verified three games, layout switching, simulated
   clipboard success and denial, keyboard fallback, exact fresh boards, and
   completion/reset. No console errors or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the three games live.
+- DONE: feature HEAD `ebef070`, deployed via Cloudflare Pages at
+  2026-11-19 09:27:57 KST. Live Chromium QA: PASS at all four widths,
+  with 12 fresh-board checks, completions and resets. Simulated clipboard
+  success/denial, plain keyboard link, 94 sitemap URLs and Daily RSS
+  verified. Generated output untracked.
+- BLOCKER: none. Native-device clipboard and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: check real Safari clipboard behavior before extending
+  the copy control to more games.
 
 ## Previous Sudoku Box Scan Work
 
