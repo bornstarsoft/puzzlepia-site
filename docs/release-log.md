@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9P Mini Logic Lineups: 2026-11-19
+
+- Added two ordering puzzles: keep two cards together, then combine
+  adjacency with a clue that leaves one place between two cards.
+- Added optional hints, worked solutions, a Round 2 bookmark and a
+  guide link. Home, games, storage and hosting are unchanged.
+
 ## Phase 9O Mini Color Codes: 2026-11-19
 
 - Added two three-color deduction puzzles: rule out an unused color,

@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-COLOR-CODES
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-LOGIC-LINEUPS
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-LOGIC-LINEUPS; new Daily ordering puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-COLOR-CODES; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `b72a02e` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two short logic lineups with adjacency and spacing clues,
+  optional hints and solutions, and a Round 2 bookmark. Preserve Home,
+  games, storage and hosting.
+- Local QA: PASS. Hugo and minified builds, 32 automated checks and Chromium
+  at 320/390/430/768/1280px. Verified unique answers, separate reveals,
+  Round 2 bookmark, guide, recap and Search return. Keyboard use without JS
+  passed at 320px. No errors or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: publish and verify the live page.
+
+## Previous Color Codes Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `6a3ebbd` matches fetched origin/main; no competing writer.

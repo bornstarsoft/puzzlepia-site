@@ -2,7 +2,7 @@
 title: "How to Build a Daily Puzzle Habit"
 description: "Build a relaxed puzzle routine with short sessions, reusable board links, and a clear way to return without accounts or streak pressure."
 date: 2026-05-28
-lastmod: 2026-10-23T21:45:00+09:00
+lastmod: 2026-11-19T10:48:00+09:00
 draft: false
 tags:
   - "daily puzzles"
@@ -73,6 +73,8 @@ Word Search separately offers **Remember my progress on this browser**, off by d
 For variety, the regular Word Search, Memory Pairs, Make 10 and Number Puzzle pages select from fixed collections at 00:00 UTC. Their boards repeat; they are not newly generated each day. Color Match, Block Puzzle and Ring Puzzle remain fixed starters. An open game will not change in the middle of play.
 
 Prefer a reading warmup? [Find the Only Square Space](/daily/challenges/find-the-square-space/) has an optional hint and answer. Or use [Search](/search/) to find another topic and keep a link to the results for later. There is no need to finish a list in one sitting.
+
+[Mini Logic Lineups](/daily/challenges/mini-logic-lineups/) gives you two short card-order questions. Try the four-card round in one break and keep the five-card round for another.
 
 ## Keep a collection for your next break
 
