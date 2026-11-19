@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-MINI-SUM-GRIDS
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-MINI-SUM-GRIDS; new Daily puzzle content; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-SEARCH; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-MINI-SUM-GRIDS; 2026-11-19)
 
 ## Current Approved Work
 
@@ -16,7 +16,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-RETURN-TO-SEARCH; 2026-11-19)
   Chromium at 390/430/768/1280px. Verified the two unique solutions,
   exact tables, optional disclosures, round bookmark, guide, recap and
   search return, and no-JS keyboard access. No console errors or overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both new grids live.
+- DONE: feature HEAD `8f405da`, deployed via Cloudflare Pages at
+  2026-11-19 10:15:09 KST. Live Chromium QA: PASS at all four widths.
+  Verified both tables, optional disclosures, Round 2 bookmark, recap,
+  search return and no-JS keyboard solution. Sitemap (98 URLs) and
+  Daily RSS verified; generated output is untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: review aggregate discovery of Mini Sum Grids over a
+  comparable week before deciding on a larger or interactive grid.
 
 ## Previous Return to Search Work
 
