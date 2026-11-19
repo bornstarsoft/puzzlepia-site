@@ -1,5 +1,12 @@
 # Puzzlepia Release Log
 
+## Phase 9O Mini Color Codes: 2026-11-19
+
+- Added two three-color deduction puzzles: rule out an unused color,
+  then use a second clue to distinguish two possible orders.
+- Added optional hints, worked solutions, a Round 2 bookmark and a
+  guide link. Home, gameplay, storage and hosting are unchanged.
+
 ## Phase 9N Mini Route Puzzles: 2026-11-19
 
 - Added two fixed mazes: avoid a dead end, then compare the shortest

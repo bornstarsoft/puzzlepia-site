@@ -2,7 +2,7 @@
 title: "Color Puzzle Strategy Basics"
 description: "Learn simple color puzzle strategy ideas for matching groups, reading space, and enjoying visual puzzle play."
 date: 2026-05-29
-lastmod: 2026-11-19T10:19:07+09:00
+lastmod: 2026-11-19T10:40:52+09:00
 draft: false
 tags:
   - "color puzzles"
@@ -91,6 +91,8 @@ Before another game, try [Pattern Spotter: Repeated Colors](/daily/challenges/re
 Use a round link to return to that same question during another break. These are fixed sequences, not changing daily boards or saved progress. Unlike Color Match, the task is to continue a repeating block; matching every tile of one color would answer a different question.
 
 [Mini Picture Grids](/daily/challenges/mini-picture-grids/) turns a similar scan into a different puzzle: follow the row and column clues to decide which squares form a picture. Try one small grid now and keep the other for another break.
+
+[Mini Color Codes](/daily/challenges/mini-color-codes/) is about order rather than matching tiles. Use a pair of clues to find the three colors, then try a second code where all the colors are known but none starts in the right place.
 
 ## Enjoy the visual reward
 

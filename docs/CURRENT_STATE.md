@@ -1,11 +1,25 @@
 # Puzzlepia Current Work State
 
-WORK-ID: PUZZLEPIA-ROUTE-PUZZLES
-Phase: production deployment verified.
-ACTIVE_WRITER = NONE
+WORK-ID: PUZZLEPIA-COLOR-CODES
+Phase: implementation and validation; approved production deployment.
+ACTIVE_WRITER = CODEX (PUZZLEPIA-COLOR-CODES; new Daily color deduction puzzle; main; 2026-11-19)
 LAST_WRITER = CODEX (PUZZLEPIA-ROUTE-PUZZLES; 2026-11-19)
 
 ## Current Approved Work
+
+- Owner approved new puzzle content and verified deployment.
+  Clean main at `6a3ebbd` matches fetched origin/main; no competing writer.
+  Existing repository-specific GitHub deployment exception applies.
+- Publish two short color code puzzles with exact-position and misplaced
+  clues, optional explanations and a Round 2 bookmark. Preserve Home,
+  games, storage and hosting.
+- Local QA: PASS. Hugo and minified builds, 31 automated checks and Chromium
+  at 320/390/430/768/1280px. Verified both unique solutions, hidden answers,
+  Round 2, guide, recap, Search return and keyboard use without JS.
+  No errors or horizontal overflow.
+- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify both color codes.
+
+## Previous Route Puzzle Work
 
 - Owner approved new puzzle content and verified deployment.
   Clean main at `93638dc` matches fetched origin/main; no competing writer.
