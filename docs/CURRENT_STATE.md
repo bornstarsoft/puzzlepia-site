@@ -1,9 +1,9 @@
 # Puzzlepia Current Work State
 
 WORK-ID: PUZZLEPIA-BALANCE-PUZZLES
-Phase: implementation and validation; approved production deployment.
-ACTIVE_WRITER = CODEX (PUZZLEPIA-BALANCE-PUZZLES; new Daily balance puzzle; main; 2026-11-19)
-LAST_WRITER = CODEX (PUZZLEPIA-LOGIC-LINEUPS; 2026-11-19)
+Phase: production deployment verified.
+ACTIVE_WRITER = NONE
+LAST_WRITER = CODEX (PUZZLEPIA-BALANCE-PUZZLES; 2026-11-19)
 
 ## Current Approved Work
 
@@ -17,7 +17,14 @@ LAST_WRITER = CODEX (PUZZLEPIA-LOGIC-LINEUPS; 2026-11-19)
   the Round 2 bookmark, Daily Numbers and latest lists, guide links and
   Search return. Keyboard use without JS passed at 320px. No console errors
   or horizontal overflow.
-- Live QA: NOT_RUN. NEXT_SINGLE_TASK: deploy and verify the live puzzle.
+- DONE: feature HEAD `1174813`, deployed via Cloudflare Pages at
+  2026-11-19 10:58:40 KST. Live Chromium QA: PASS at five widths, including
+  separate reveals, bookmark, Numbers filter, latest list, guide and Search
+  return. Live sitemap (104 URLs) and latest Daily RSS entry verified.
+  Generated output untracked.
+- BLOCKER: none. Native-device QA and retention measurement: NOT_RUN.
+  NEXT_SINGLE_TASK: compare aggregate discovery of recent puzzle formats
+  after they have had time to reach readers.
 
 ## Previous Logic Lineups Work
 
